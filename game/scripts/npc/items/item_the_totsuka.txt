@@ -1,0 +1,146 @@
+"item_the_totsuka"
+  {
+    "ID"                    "1186"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_the_totsuka"
+    "AbilityCooldown"        "25"
+    "AbilityManaCost"        "100"
+    "AbilityUnitTargetTeam"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityCastRange"        "500"
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "0"
+    "ItemQuality"         "epic"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"       "1"
+    "ItemBaseLevel"         "1"
+    "ItemAliases"           "orchid malevolence;silence;int;intelligence;cast;"
+    "precache"
+    {
+      "particle"  "Hero_Silencer.GlobalSilence.Effect"
+      "particle"  "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+      "soundfile"   "sounds/items/orchid.vsnd"
+    }
+
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+     "OnSpellStart"
+    {
+
+        "FireSound"
+      {
+        "EffectName"  "Hero_Silencer.GlobalSilence.Cast"
+        "Target"    "CASTER"
+      }
+
+      "FireEffect"
+      {
+        "EffectName"  "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+        "EffectAttachType"  "follow_origin"
+        "Target"    "CASTER"
+      }
+
+          "RunScript"
+        {
+          "ScriptFile"    "items.lua"
+          "Function"      "CheckForSpellBlock"
+          
+          "GenericFunction" "GenericSpellFunction"
+          "Modifier1"   "modifier_totsuka_silence"
+          "Duration1"   "%silence_duration"
+          
+          "doDamage"    "false"
+        }
+
+          "FireSound"
+          {
+            "EffectName"  "Hero_Silencer.GlobalSilence.Effect"
+            "Target"    "TARGET"
+          } 
+
+          "FireSound"
+          {
+            "EffectName"  "sounds/items/orchid.vsnd"
+            "Target"    "TARGET"
+          } 
+           
+    
+    }
+
+    "Modifiers"
+    {
+
+      "item_totsuka_modifier"
+      {
+         "Passive" "1"
+         "IsHidden"  "1"
+         "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+         "Properties"
+          {
+            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attackspeed"
+            "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "%bonus_mana_reg_percentage"
+          }
+      }
+
+      "modifier_totsuka_silence"
+      {
+        "IsDebuff"  "1"
+        "Duration"  "%silence_duration"
+        "IsPurgable"  "1"
+        "EffectName"  "particles/generic_gameplay/generic_silence.vpcf"
+        "EffectAttachType"  "follow_overhead"     
+
+        "States"
+        {
+          "MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+        }
+    }
+
+    }
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"         "FIELD_FLOAT"
+        "bonus_damage"        "45.0"
+      }
+      "02"
+      {
+        "var_type"              "FIELD_FLOAT"
+        "bonus_int"             "20.0"
+      }
+       "03"
+      {
+        "var_type"                "FIELD_FLOAT"
+        "attackspeed"             "30.0"
+      }
+       "04"
+      {
+        "var_type"                        "FIELD_FLOAT"
+        "bonus_mana_reg_percentage"        "225.0"
+      }
+       "05"
+      {
+        "var_type"                        "FIELD_FLOAT"
+        "silence_duration"              "5.0"
+      }
+
+    }
+  }
+

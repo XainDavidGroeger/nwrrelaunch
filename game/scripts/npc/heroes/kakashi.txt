@@ -1,0 +1,50 @@
+"DOTAAbilities"
+{
+
+		"npc_dota_hero_beastmaster" //kakashi
+		{
+		  "override_hero"   "npc_dota_hero_beastmaster"
+		  "Model" 			"models/kakashi_hd/kaka_hd_test.vmdl"
+		  "ModelScale"		"0.85"
+		  "LoadoutScale"		"0.85" 
+		  "Ability1"        "kakashi_doton"
+		  "Ability2"        "kakashi_sharingan" 
+		  "Ability3"        "kakashi_bunshin" 
+		  "Ability4"        "kakashi_empty"
+		  "Ability5"        "generic_hidden"
+		  "Ability6"        "kakashi_chidori"
+		   "Ability10"		"special_bonus_spell_amplify_8"
+		   "Ability11"		"special_bonus_hp_175"
+		   "Ability12"		"special_bonus_attack_damage_70"
+		   "Ability13"		"special_bonus_mp_regen_4"
+		   "Ability14"		"special_bonus_armor_8"
+		   "Ability15"		"special_bonus_cast_range_225"
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_cooldown_reduction_25"
+			"AttackDamageMin"   "23"
+		  "AttackDamageMax"   "30"
+		  "Role"			"Carry,Support,Escape,Disabler,Initiator"
+		"Rolelevels"	"2,1,1,1,2"
+		  "AttackRate"    "1.700000"
+		    "StatusHealth"    "145"
+  		"StatusHealthRegen"   "0.300000"
+		  "ArmorPhysical"		"1.000000"
+		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+		  "AttackAnimationPoint"   "0.4"
+		  "AttackRange"				"100"
+		  "MovementSpeed"			"305"
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "2.9" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "17" // Base intelligence
+		  "AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "18" // Base agility
+		  "AttributeAgilityGain" "2.0" // Agility bonus per level.
+		  
+	 	  "ItemSlots"
+	  	  { }
+	  	  "Village"			"konoha"
+	  	  "Gender"			"male"
+		}
+
+
+}

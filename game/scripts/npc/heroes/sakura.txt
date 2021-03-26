@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+
+
+    			"npc_dota_hero_phantom_assassin" //sakura
+		{
+		  "override_hero"   "npc_dota_hero_phantom_assassin"
+		  "Model" 			"models/sakura_new/sakura.vmdl"
+		  "Ability1"        "sakura_earth_slam"
+		  "Ability2"        "sakura_chakra_burst" 
+		  "Ability3"        "sakura_chakra_enhanced_strength" 
+		  "Ability4"        "generic_hidden" 
+		  "Ability5"        "generic_hidden" 
+		  "Ability6"        "sakura_inner_sakura"
+		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+		   "Ability10"		"special_bonus_spell_amplify_8"
+		   "Ability11"		"special_bonus_hp_175"
+		   "Ability12"		"special_bonus_attack_damage_70"
+		   "Ability13"		"special_bonus_mp_regen_4"
+		   "Ability14"		"special_bonus_armor_8"
+		   "Ability15"		"special_bonus_cast_range_225"
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		  "ArmorPhysical"		"1.000000"
+		"ModelScale"		"0.83"
+		"LoadoutScale"		"0.83" 
+		"AttackDamageMin"		"23"
+		"Role"			"Carry,Disabler,Initiator,Durable"
+		"Rolelevels"	"1,2,2,1"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		  "AttackAnimationPoint"   "0.4"
+		 // "AttackRate"				"0.7"
+		  "AttackRange"				"100"
+		    "StatusHealth"    "145"
+  "StatusHealthRegen"   "0.300000"
+		  "MovementSpeed"			"310"
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "2.75" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "14" // Base intelligence
+		  "AttributeIntelligenceGain" "1.3" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "21" // Base agility
+		  "AttributeAgilityGain" "2" // Agility bonus per level.
+	 	  "ItemSlots"
+	  	  { }
+	  	  "Village"			"konoha"
+
+	  	  "Gender"			"female"
+		}
+
+
+}

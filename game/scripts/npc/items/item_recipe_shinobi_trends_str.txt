@@ -1,0 +1,23 @@
+"item_recipe_shinobi_trends_str"
+{
+  // General
+  //-------------------------------------------------------------------------------------------------------------
+  "BaseClass"           "item_datadriven"
+  "ID"              "1139"  //Valve's version of this item uses the ID "62".
+
+  "AbilityTextureName"      "item_recipe"
+  
+  // Item Info
+  //-------------------------------------------------------------------------------------------------------------
+  "ItemCost"            "0" 
+  
+  // Recipe
+  //-------------------------------------------------------------------------------------------------------------
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_shinobi_trends_str"
+  "ItemRequirements"
+  {
+    "01" "item_shinobi_sandals;item_handguards;item_firm_nunchaku"
+  }
+}
+

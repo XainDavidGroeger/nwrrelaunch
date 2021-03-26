@@ -1,0 +1,147 @@
+"neji_internal_bleeding"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"neji_internal_bleeding"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+				"particle"	"particles/generic_gameplay/generic_silence.vpcf"
+				"particle"	"particles/units/heroes/neji/neji_w_debuff_a.vpcf"
+	}	
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"125"
+	"AbilityCastPoint"				"0.5 0.5 0.5"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20 20 20 20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60 75 90 105"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"tick_interval"					"0.5"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"11"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"damage_per_tick"				"4 6 8 10"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"byagukan"						"0"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"ms_slow"						"-10 -20 -30 -40"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"ms_slow_duration"				"3"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"cast_range"					"125"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+        {
+			"ScriptFile"    "items.lua"
+			"Function"      "CheckForSpellBlock"
+			"GenericFunction"	"GenericSpellFunction"
+			
+			"Modifier1"		"modifier_neji_internal_bleeding_dot"
+			"Duration1"		"%duration"
+		}
+
+		"ApplyModifier"
+				{
+					"ModifierName"	"modifier_neji_internal_bleeding_ms_slow"
+					"Target" 		"TARGET"
+					"Duration"		"%ms_slow_duration"
+				}
+	}
+
+	"Modifiers"
+	{
+		"modifier_neji_internal_bleeding_dot"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+			"ThinkInterval"  "%tick_interval"			
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/internal_bleeding.lua"
+					"Function"		"startEffect"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/internal_bleeding.lua"
+					"Function"		"endEffect"
+				}
+			}
+
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/internal_bleeding.lua"
+					"Function"		"internal_bleeding"
+					"ms_slow"		"%ms_slow"
+				}
+			}
+		}
+
+		"modifier_neji_internal_bleeding_ms_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow" 
+			}
+		}
+	}
+}

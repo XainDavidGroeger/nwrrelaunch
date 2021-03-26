@@ -1,0 +1,107 @@
+"item_solar_blade"
+  {
+    "ID"                    "1246"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_solar_blade"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                "0"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"           "1"
+    "ItemSellable"            "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"         "1"
+    "ItemBaseLevel"           "1"
+    "ItemQuality"             "epic"
+    "ItemAliases"             "radiance;damage;burn damage"
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+      "precache"
+    {
+      "particle"  "particles/dire_fx/fire_barracks_glow_b.vpcf"
+      "particle"  "particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_lifebreak_cast_flame.vpcf"
+    }
+
+
+    "Modifiers"
+  {
+    "modifier_item_radiance_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+    "modifier_item_radiance_datadriven_aura_emitter"
+    {
+      "Passive"       "1"
+      "IsHidden"        "0"
+      "EffectName" "particles/econ/items/huskar/huskar_searing_dominator/huskar_searing_lifebreak_cast_flame.vpcf"
+      "EffectAttachType"  "follow_origin"
+      
+      "Aura"          "modifier_item_radiance_datadriven_aura"
+      "Aura_Radius"       "%radius"
+      "Aura_Teams"      "DOTA_UNIT_TARGET_TEAM_ENEMY"
+      "Aura_Types"      "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+      "Aura_Flags"      "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+      "Aura_ApplyToCaster"  "0"
+    }
+    "modifier_item_radiance_datadriven_aura"
+    {
+      "Passive"     "0"
+      "IsHidden"      "0"
+      "IsBuff"      "0"
+      "IsDebuff"      "1"
+      "IsPurgable"    "0"
+      "EffectName"      "particles/dire_fx/fire_barracks_glow_b.vpcf"
+      "EffectAttachType"    "follow_origin"
+      
+      "ThinkInterval"     "1"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"      "items/solar_blade.lua"
+          "Function"        "modifier_item_radiance_datadriven_aura_on_interval_think"
+          "AuraDamageInterval"  "1"
+          "AuraDamagePerSecond" "%aoe_damage"
+        }
+      }
+      
+    }
+  }
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "bonus_damage"              "60.0"
+      }
+      "02"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "aoe_damage"              "40.0"
+      }
+      "03"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "radius"              "500.0"
+      }
+  }
+
+}

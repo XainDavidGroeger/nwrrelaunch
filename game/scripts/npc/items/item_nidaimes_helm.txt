@@ -1,0 +1,113 @@
+"item_nidaimes_helm"
+  {
+    "ID"                    "1236"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_nidaimes_helm"
+    "AbilityCooldown"       "25"
+    "AbilityManaCost"        "25"
+    // Stats
+
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                "0"
+    "ItemQuality"         "rare"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"           "1"
+    "ItemSellable"            "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"         "1"
+    "ItemBaseLevel"           "1"
+    "ItemAliases"             "mask of madness;active;frenzy;lifesteal;ls;attackspeed"
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+    "OnSpellStart"
+        {
+            "ApplyModifier"
+            {
+                "Target"                        "CASTER"
+                "ModifierName"                  "custom_frenzy"
+            }
+        }
+
+    "Modifiers"
+    {
+      "modifier_lifesteal"
+      {
+         "Passive" "1"
+         "IsHidden"  "1"
+         "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+         "Orb"
+           {
+              "Priority"  "DOTA_ORB_PRIORITY_ABILITY"
+           }
+
+        "OnOrbImpact"
+        {
+           "RunScript"
+          {
+            "ScriptFile"      "items/mask_of_ne.lua"
+            "Function"        "modifier_item_lifesteal_datadriven_on_orb_impact"
+            "modifier_name"   "modifier_item_lifesteal_datadriven_lifesteal"
+          } 
+        } 
+      }
+      "custom_frenzy"
+      {
+        "Duration"                      "%frenzy_duration"
+        "Target"      "CASTER"
+         "Properties"
+          {
+            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%frenzy_ms"
+            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%frenzy_as"
+          }
+      }
+            "modifier_item_lifesteal_datadriven_lifesteal"
+    {
+      "Passive"     "0"
+      "IsHidden"      "1"
+      
+      "OnDealDamage"
+      {
+        "Lifesteal"
+        {
+          "Target"      "ATTACKER"
+          "LifestealPercent"  "%lifesteal_bonus"
+        }
+      }
+    }
+    }
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "lifesteal_bonus"            "17.0"
+      }
+      "02"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "frenzy_as"                 "100.0"
+      }
+      "03"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "frenzy_ms"                 "15.0"
+      }
+      "04"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "frenzy_duration"           "12.0"
+      }
+  }
+
+}
+

@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+
+	"npc_dota_hero_medusa" //anko
+{
+		"override_hero"   "npc_dota_hero_medusa"
+		"Model"           "models/anko/anko.vmdl"
+		"Ability1"        "anko_giant_snake"
+		"Ability2"        "anko_senei_jyashu"
+		"Ability3"        "anko_senei_ta_jashu"
+  		"Ability4"        "generic_hidden"
+		"Ability5"        "generic_hidden"
+		"Ability6"        "anko_sojasosai_no_jutsu"      
+		  "Ability10"		"special_bonus_spell_amplify_8"
+		   "Ability11"		"special_bonus_hp_175"
+		   "Ability12"		"special_bonus_attack_damage_70"
+		   "Ability13"		"special_bonus_mp_regen_4"
+		   "Ability14"		"special_bonus_armor_8"
+		   "Ability15"		"special_bonus_cast_range_225"
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		"ModelScale"		"0.80"
+		"LoadoutScale"	"0.80" 
+		"ItemSlots"
+		{ }
+		"ArmorPhysical"   "1.000000"
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackAnimationPoint"		"0.4"
+		"StatusHealth"    "145"
+		"StatusHealthRegen"   "0.300000"
+		"AttackDamageMin"   "23"
+		"AttackDamageMax"   "33"
+		"AttackRate"    "1.700000"
+		"Role"      "Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"  "2,2,2,1"
+
+		"AttackRange"				"100"
+		"MovementSpeed"			"300"
+		"AttributeBaseStrength" "23" // Base strength
+		"AttributeStrengthGain" "3" // Strength bonus per level.
+		"AttributeBaseIntelligence" "16" // Base intelligence
+		"AttributeIntelligenceGain" "1.4" // Intelligence bonus per level.
+		"AttributeBaseAgility" "14" // Base agility
+		"AttributeAgilityGain" "1.6" // Agility bonus per level.
+
+		"Gender"      "female"
+		"Village"			"kirigakure"
+}	
+
+
+}

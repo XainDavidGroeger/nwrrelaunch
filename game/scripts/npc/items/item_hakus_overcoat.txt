@@ -1,0 +1,204 @@
+"item_hakus_overcoat"
+  {
+    "ID"                    "1210"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AURA"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_hakus_overcoat"
+
+    // Stats
+    "AbilityCooldown"       "20"
+    "AbilityDuration"     "40"
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "0"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"       "1"
+    "ItemBaseLevel"         "1"
+    "ItemQuality"           "epic" 
+    "ItemAliases"           "shivas guard;frost armor;int;intelligence;active;armor"   
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+    "precache"
+  {
+    "particle"  "particles/units/heroes/hero_lich/lich_frost_armor.vpcf"
+    "particle"  "particles/status_fx/status_effect_frost_armor.vpcf"
+    "particle"  "particles/status_fx/status_effect_frost.vpcf"
+    "soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+  }
+
+  "OnSpellStart"
+  {
+    "FireSound"
+    {
+      "EffectName"  "Hero_Lich.FrostArmor"
+      "Target"    "CASTER"
+    }
+
+    "ApplyModifier"
+    {
+      "ModifierName"  "modifier_frost_armor"
+      "Target"    "CASTER"
+      "Duration"    "%AbilityDuration"
+    }
+  }
+
+
+    "Modifiers"
+    {
+
+
+    "modifier_frost_armor"
+        {
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%armor_bonus"
+          }
+
+          "OnCreated"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/hakus_overcoat.lua"
+                  "Function"      "FrostArmorParticle"  
+              }
+          }
+
+          "OnDestroy"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/hakus_overcoat.lua"
+                  "Function"      "EndFrostArmorParticle" 
+              }
+          }
+
+          "StatusEffectName"    "particles/status_fx/status_effect_frost_armor.vpcf"
+          "StatusEffectPriority"  "10"
+
+          "OnAttacked"
+          {
+            "ApplyModifier"
+            {
+              "ModifierName"  "modifier_frost_armor_slow"
+              "Target"    "ATTACKER"
+              "Duration"    "%slow_duration"
+            }
+
+            "FireSound"
+            {
+              "EffectName"  "Hero_Lich.FrostArmorDamage"
+              "Target"    "TARGET"
+            }
+          }
+        }
+
+        "modifier_frost_armor_slow"
+        {
+          "IsDebuff"  "1"
+
+          "StatusEffectName"    "particles/status_fx/status_effect_frost.vpcf"
+          "StatusEffectPriority"  "10"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%slow_attack_speed"
+            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow_movement_speed"
+          }
+        }
+
+
+
+      "item_hakus_overcoat_modifier"
+      {
+         "Passive" "1"
+         "IsHidden"  "1"
+         "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+         "Properties"
+          {
+                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+                     "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+          }
+      }
+
+
+      "hakus_overcoat_aura_modifier"
+      {
+          "Passive"           "1"
+          "IsHidden"          "1"
+          "Aura"              "hakus_overcoat_aura"
+          "Aura_Radius"       "%aura_radius"
+          "Aura_Teams"        "DOTA_UNIT_TARGET_TEAM_ENEMY"
+          "Aura_Types"        "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+          "EffectName"        "particles/items_fx/aura_vlads.vpcf"
+          "EffectAttachType"  "follow_origin" 
+
+      }
+
+      "hakus_overcoat_aura"
+      {
+          "IsDebuff"        "1"
+          "IsPurgable"      "0"
+          "Attributes"    "MODIFIER_ATTRIBUTE_NONE"
+          "Properties"
+          {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attackspeed_reduction"
+          }
+      }
+
+    }
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+       "01"
+      {
+        "var_type"         "FIELD_FLOAT"
+        "bonus_armor"       "15.0"
+      }
+      "02"
+      {
+        "var_type"          "FIELD_FLOAT"
+        "bonus_int"        "30.0"
+      }
+      "03"
+      {
+        "var_type"                     "FIELD_FLOAT"
+        "attackspeed_reduction"        "-25.0"
+      }
+      "04"
+      {
+        "var_type"                      "FIELD_FLOAT"
+        "aura_radius"                   "1200.0"//TODO made it up check wc3
+      }
+      "05"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "armor_bonus"     "3"
+      }
+      "06"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "slow_duration"     "2.0"
+      }
+      "07"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "slow_movement_speed" "-30"
+      }
+      "08"
+      {
+        "var_type"        "FIELD_INTEGER"
+        "slow_attack_speed"   "-20"
+      }
+    }
+  }
+

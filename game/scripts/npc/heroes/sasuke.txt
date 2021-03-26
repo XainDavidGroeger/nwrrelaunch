@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+
+			"npc_dota_hero_storm_spirit" //sasuke
+		{
+		  "override_hero"   "npc_dota_hero_storm_spirit"
+		  "Model" 			"models/sasuke_new/sasuke.vmdl"
+		  "Ability1"        "sasuke_chidori_nagashi"
+		  "Ability2"        "sasuke_chidori_eiso" 
+		  "Ability3"        "sasuke_chidori_koken" 
+		  "Ability4"        "generic_hidden"
+		  "Ability5"        "generic_hidden"
+		  "Ability6"        "sasuke_kirin"
+		   "Ability10"		"special_bonus_spell_amplify_8"
+		   "Ability11"		"special_bonus_hp_175"
+		   "Ability12"		"special_bonus_attack_damage_70"
+		   "Ability13"		"special_bonus_mp_regen_4"
+		   "Ability14"		"special_bonus_armor_8"
+		   "Ability15"		"special_bonus_cast_range_225"
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		  "ArmorPhysical"		"1.000000"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"32"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		  "StatusHealth"    "145"
+  "StatusHealthRegen"   "0.300000"
+  "Role"			"Carry,Escape,Nuker,Initiator,Disabler"
+		"Rolelevels"	"2,1,3,1,2"
+		"AttackRate"		"1.700000"		  
+		  "AttackAnimationPoint"   "0.4"
+		 // "AttackRate"				"0.7"
+		  "AttackRange"				"100"
+		  "MovementSpeed"			"310"
+		  "AttributeBaseStrength" "19" // Base strength
+		  "AttributeStrengthGain" "1.75" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "21" // Base intelligence
+		  "AttributeIntelligenceGain" "2.9" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "16" // Base agility
+		  "AttributeAgilityGain" "2.1" // Agility bonus per level.
+		  "ModelScale"		"0.72"
+		 "LoadoutScale"		"0.72" 
+	 	  "ItemSlots"
+	  	  { }
+	  	  "Village"			"konoha_scarred"
+	  	  "Gender"			"male"
+		}
+
+}

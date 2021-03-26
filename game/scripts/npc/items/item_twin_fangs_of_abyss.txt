@@ -1,0 +1,137 @@
+"item_twin_fangs_of_abyss"
+  {
+    "ID"                    "1216"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_twin_fangs_of_abyss"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemQuality"         "rare"
+    "ItemCost"            "0"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"       "1"
+    "ItemBaseLevel"         "1"
+    "ItemAliases"           "maim;greater maim;sange and yasha;as;attackspeed;ms;movementspeed;agi;agility;str;strength"
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+    "Modifiers"
+    {
+        "modifier_item_sange_and_yasha_datadriven"
+      {
+        "Passive"     "1"
+        "IsHidden"      "0"
+        "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+        
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"            "%bonus_damage"
+          "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"            "%bonus_str"
+          "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"             "%bonus_agi"
+          
+          //Attack speed from Yasha-derived items affect your illusions.
+          "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"    "%attackspeed"
+          
+          //Movement speed from Yasha-derived items does not stack with itself but does stack with other percentage-based movement speed bonuses.
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"     "%movementspeed_percentage"
+        }
+        
+        "OnAttackLanded"
+        {
+          "Random"
+          {
+            "Chance"    "%maim_chance"
+            "OnSuccess"
+            {
+              "RunScript"
+              {
+                "ScriptFile"      "items/twin_fangs.lua"
+                "Function"        "modifier_item_sange_and_yasha_datadriven_on_attack_landed_random_on_success"
+              }
+            }
+          }
+        }
+      }
+      "modifier_item_sange_and_yasha_datadriven_greater_maim"
+      {
+        "Duration"        "%maim_duration"
+        "Passive"       "0"
+        "IsHidden"        "0"
+        "IsBuff"        "0"
+        "IsDebuff"        "1"
+        "IsPurgable"      "1"
+        
+        "EffectName"            "particles/items2_fx/sange_maim.vpcf"
+        "EffectAttachType"      "PATTACH_ABSORIGIN"
+        
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"    "%maim_slow_attack"
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"    "%maim_slow_movement"
+        }
+      }
+    }
+    // Special  
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                  "FIELD_FLOAT"
+        "bonus_damage"              "12.0"
+      }
+      "02"
+      {
+        "var_type"                   "FIELD_FLOAT"
+        "bonus_str"                  "16.0"
+      }
+       "03"
+      {
+        "var_type"                    "FIELD_FLOAT"
+        "bonus_agi"                   "16.0"
+      }
+      "04"
+      {
+        "var_type"                    "FIELD_FLOAT"
+        "attackspeed"                 "15.0"
+      }
+      "05"
+      {
+        "var_type"                    "FIELD_FLOAT"
+        "movementspeed_percentage"     "12.0"
+      }
+
+      "06"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "maim_chance"         "16"
+      }
+      "07"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "maim_slow_movement"      "-32"
+      }     
+      "08"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "maim_slow_attack"        "-32"
+      }
+      "09"
+      {
+        "var_type"            "FIELD_FLOAT"
+        "maim_duration"         "5.0"
+      }
+
+    }
+  }
+

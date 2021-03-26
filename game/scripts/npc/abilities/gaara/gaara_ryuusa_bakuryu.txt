@@ -1,0 +1,182 @@
+	
+    "DOTAAbilities"
+{
+    
+    
+    "gaara_ryuusa_bakuryu"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gaara_ryuusa_bakuryu"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+	"AOERadius"						"300"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10 10 10 10"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"100 170 240 300"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"105 120 135 150"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"300"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun_duration"				"1 1 1 1"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"delay"						"0.3 0.3 0.3 0.3"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"thinker_interval"				"1"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"thinker_damage"				"25 42.5 60 75"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"				"2 2 2 2"
+		}
+
+	}
+
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------	
+	"precache"
+	{
+		"particle"						"particles/units/heroes/gaara/sandsturm.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"DelayedAction"
+		{
+			"Delay"     "%delay"
+			"Action"    
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/gaara/gaara_ryuusa_bakuryu.lua"
+					"Function"			"sandstorm"
+					"Target"			"POINT"
+					"dummy_aura"		"modifier_gaara_sandstorm"
+				}	
+				"FireSound"
+				{
+					"EffectName"			"Ability.SandKing_SandStorm.loop"
+					"Target"				"CASTER"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_gaara_sandstorm"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/gaara/sandsturm.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"		"TARGET"
+
+						"ControlPoints"
+						{
+							"01"	"%radius %radius 0"
+						}
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Radius"	"%radius"
+						}
+
+						"Action"
+						{
+							"Stun"
+							{
+								"Duration"   "%stun_duration"
+								"Target" 	 "TARGET"
+							}
+						}
+					}
+
+				}
+
+				"ThinkInterval"		"0.45"
+
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Radius"	"%radius"
+						}
+
+						"Action"
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%thinker_damage"
+							}
+						}
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+	}
+}
+
+}

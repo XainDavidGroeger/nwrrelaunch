@@ -1,0 +1,200 @@
+  "item_shin_guards"
+  {
+    "ID"              "1114"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"           "item_datadriven"
+    "AbilityTextureName"   "item_shin_guards"
+    "ItemQuality"    "component"
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"            "175"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"          "stout shield;block;tank"
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+    "MaxUpgradeLevel"       "1"
+    "ItemBaseLevel"         "1"
+
+    "Modifiers"
+    {
+         "modifier_item_shin_guards_datadriven"
+        {
+          "Passive"     "1"
+          "IsHidden"      "1"
+          "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+          
+          "OnCreated"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/shin_guards.lua"
+              "Function"      "modifier_item_shin_guards_datadriven_on_created"
+            }
+          }
+          
+          "OnDestroy"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/shin_guards.lua"
+              "Function"      "modifier_item_shin_guards_datadriven_on_destroy"
+            }
+          }
+          
+          //Continually check to see if the hero this modifier is on has switched from ranged
+          //to melee, in which case they should be given cleave modifier(s).
+          "ThinkInterval" ".03"
+          "OnIntervalThink"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/shin_guards.lua"
+              "Function"      "modifier_item_shin_guards_datadriven_on_interval_think"
+            }
+          }
+        }
+        "modifier_item_shin_guards_block"  //Only melee units can cleave, so only melee units should get this modifier.
+        {
+          "Passive"     "0"
+          "IsHidden"      "1"
+          "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+          
+         "OnTakeDamage"
+        {
+          "Random"
+          {
+            "Chance" "%block_chance"
+            "OnSuccess"  
+            {
+              "ApplyModifier"
+              {
+                "ModifierName" "modifier_hardened_skin_melee"
+                "Target"     "CASTER" 
+              }     
+            }
+          }
+        }
+          
+          //Continually check to see if the hero this modifier is on is still melee 
+          //(since some units, like Troll Warlord, can switch between ranged/melee forms).
+          "ThinkInterval" ".03"
+          "OnIntervalThink"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/shin_guards.lua"
+              "Function"      "modifier_item_shin_guards_block_on_interval_think"
+            }
+          }
+        }
+
+        "modifier_item_shin_guards_block_range"  //Only melee units can cleave, so only melee units should get this modifier.
+        {
+          "Passive"     "0"
+          "IsHidden"      "1"
+          "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+          
+          "OnTakeDamage"
+        {
+          "Random"
+          {
+            "Chance" "%block_chance"
+            "OnSuccess"  
+            {
+              "ApplyModifier"
+              {
+                "ModifierName" "modifier_hardened_skin_range"
+                "Target"     "CASTER" 
+              }     
+            }
+          }
+        }
+          
+          //Continually check to see if the hero this modifier is on is still melee 
+          //(since some units, like Troll Warlord, can switch between ranged/melee forms).
+          "ThinkInterval" ".03"
+          "OnIntervalThink"
+          {
+            "RunScript"
+            {
+              "ScriptFile"    "items/shin_guards.lua"
+              "Function"      "modifier_item_shin_guards_block_on_interval_think"
+            }
+          }
+        }
+
+        "modifier_hardened_skin_melee"
+        {
+            "Passive"           "1"
+            "Duration"  "1"
+            "IsHidden"          "1"
+    
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_block_melee"
+            }
+            "OnTakeDamage"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"    "modifier_hardened_skin_melee"
+                    "Target"      "CASTER"  
+                 }
+            }   
+          
+        }
+
+        "modifier_hardened_skin_range"
+        {
+            "Passive"           "1"
+            "Duration"  "1"
+            "IsHidden"          "1"
+    
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_block_ranged"
+            }
+            "OnTakeDamage"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"    "modifier_hardened_skin_range"
+                    "Target"      "CASTER"  
+                 }
+            }   
+          
+        }
+    }   
+
+
+    "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_block_melee"    "16"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_block_ranged"   "8"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "block_chance"          "50"
+            }
+        }
+
+  }
+

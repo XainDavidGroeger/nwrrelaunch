@@ -1,0 +1,111 @@
+"item_gelel_stone"
+  {
+    "ID"                    "1208"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "BaseClass"             "item_datadriven"
+    "AbilityTextureName"    "item_gelel_stone"
+
+
+    // Stats
+    "AbilityCooldown"       "80 75 70 65 60 55"
+    "AbilityManaCost"       "0"
+    //-------------------------------------------------------------------------------------------------------------
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemQuality"         "rare"
+    "ItemCost"            "0"
+    "ItemInitialCharges"      "0"
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemRequiresCharges"     "0"
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    "ItemDeclarations"        "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"       "1"
+    "ItemBaseLevel"         "1"
+    "ItemAliases"           "black king bar;magic immunity;spell immunity;str;strength;damage"
+    //pickup sounds
+    "UIPickupSound" "Item.PickUpRingShop" //Sound when adquiring the item
+    "UIDropSound" "Item.DropRecipeShop" //Sound when dropping the item manually
+
+
+   "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "bonus_strength"        "10"
+    }
+    "02"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "bonus_damage"          "24"
+    }
+    "03"
+    {
+      "var_type"            "FIELD_FLOAT"
+      "duration"            "10.0 9.0 8.0 7.0 6.0 5.0"
+    }
+    "04"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "max_level"           "6"
+    }
+    "05"
+    {
+      "var_type"            "FIELD_INTEGER"
+      "percentage_over_model_scale" "30"
+    }
+  }
+  
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"          "items/gelel_stone.lua"
+      "Function"            "item_black_king_bar_datadriven_on_spell_start"
+      "MaxLevel"            "%max_level"
+      "PercentageOverModelScale"    "%percentage_over_model_scale"
+      "Duration"            "%duration"
+    }
+  }
+
+   "Modifiers"
+  {
+    "modifier_item_black_king_bar_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%bonus_strength"
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+      
+      "OnCreated"
+      {
+        "RunScript"
+        {
+          "ScriptFile"          "items/gelel_stone.lua"
+          "Function"            "modifier_item_black_king_bar_datadriven_on_created"
+        }
+      }
+    }
+    "modifier_item_black_king_bar_datadriven_active"
+    {
+      "Duration"                "%duration"
+      "Passive"         "0"
+      "IsHidden"          "0"
+      "EffectName"              "particles/items_fx/black_king_bar_avatar.vpcf"
+      "EffectAttachType"        "PATTACH_ABSORIGIN"
+      
+      "States"
+      {
+        "MODIFIER_STATE_MAGIC_IMMUNE"       "MODIFIER_STATE_VALUE_ENABLED"
+      }
+    }
+  }
+}
+
