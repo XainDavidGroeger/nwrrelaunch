@@ -13,6 +13,7 @@
 *.vsnd_c
 *.vsndevts_c
 *.vpcf_c
+*.vanim_c
 
 # Map files
 
