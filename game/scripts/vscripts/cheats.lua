@@ -8,8 +8,42 @@ CHEAT_CODES = {
     ["riseandshine"] = function() GameMode:RiseAndShine() end,        -- "Set time of day to dawn" 
     ["lightsout"] = function() GameMode:LightsOut() end,              -- "Set time of day to dusk"          
     ["reset"] = function() GameMode:ResetGameTime() end,              -- "Set time of day to dusk"          
-    ["dummy"] = function() GameMode:SpawnDummy() end,              -- "Set time of day to dusk"          
+    ["testmodus"] = function() GameMode:SpawnAllHeroes() end            -- "Set time of day to dusk"          
 }
+
+-- A player has typed something into the chat
+function GameMode:SpawnAllHeroes()
+
+    local player = PlayerResource:GetPlayer(0)
+    local names = {
+        "npc_dota_hero_doom_bringer",  
+        "npc_dota_hero_kunkka",
+        "npc_dota_hero_dragon_knight",
+        "npc_dota_hero_medusa",
+        "npc_dota_hero_centaur",
+        "npc_dota_hero_beastmaster",
+        "npc_dota_hero_sven",	
+        "npc_dota_hero_sand_king",
+        "npc_dota_hero_phantom_assassin",
+        "npc_dota_hero_ogre_magi",	
+        "npc_dota_hero_bloodseeker",
+        "npc_dota_hero_axe",
+        "npc_dota_hero_juggernaut",
+        "npc_dota_hero_antimage",
+        "npc_dota_hero_storm_spirit",
+        "npc_dota_hero_lion",
+        "npc_dota_hero_warlock",
+        "npc_dota_hero_shadow_shaman",
+        "npc_dota_hero_enchantress",
+    }
+    for nameCount = 1, 18 do
+      local illusion = CreateUnitByName(names[nameCount], player:GetAbsOrigin(), true, player, nil, 2)
+      illusion:SetHealth(10000)
+      illusion:SetPlayerID(0)
+      illusion:SetControllableByPlayer(0, true);
+    end      
+end 
+
 -- A player has typed something into the chat
 function GameMode:OnPlayerChat(keys)
 	local text = keys.text
@@ -47,19 +81,6 @@ function GameMode:LvlUp(value)
         hero:HeroLevelUp(true)
     end
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
-end
---[[Author: LearningDave
-  Spawns a dummy unit in front of caster
-]]
-function GameMode:SpawnDummy()
-   
-    	-- Dummy TODO
-	local dummy = CreateUnitByName("npc_dota_creature_gnoll_assassin", target_point, false, caster, caster, 2)
-	dummy:SetOriginalModel("models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl")
-	dummy:SetModelScale(4.0)
-
-    
-
 end
 --[[Author: LearningDave
   Date: october, 30th 2015.

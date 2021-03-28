@@ -2906,7 +2906,7 @@
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
 		"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
 		"particle"	"particles/units/heroes/kisame/water_dome2.vpcf"
-		"model"		"models/kisame_new/kisame_samehada.vmdl"
+		"model"		"models/kisame_shark/kisame_shark.vmdl"
 	}
 
 	"OnSpellStart"
@@ -3027,8 +3027,7 @@
 					"ScriptFile"			"heroes/kisame/water_prison.lua"
 					"Function"				"ModelSwapStart"
 
-					// TODO READD WATER PRISON MODEL / SHARK KISAME
-					"model"					"models/kisame_new/kisame_samehada.vmdl"
+					"model"					"models/kisame_shark/kisame_shark.vmdl"
 					"projectile_model"		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 				}
 
@@ -12605,5 +12604,567 @@
 	}
 	
 }
+
+
+
+//** ------------------------------------------------------------
+// Haku
+//** ------------------------------------------------------------
+"haku_crippling_senbon"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"haku_crippling_senbon"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		"particle"			"particles/units/heroes/haku/senbon.vpcf"		
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12 10 8 6"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 110 140 170"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 60 70 80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_missile_speed"	"2400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun_duration"	"0.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"	"80 110 140 170"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"endless_wounds_stacks"	"9 10 11 12"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"range"					"600"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"           	"TARGET"
+			"EffectName"		"particles/units/heroes/haku/senbon.vpcf"
+			"Dodgeable"			"1"
+			"ProvidesVision"	"0"
+			"MoveSpeed"        	"%magic_missile_speed"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}		
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/endless_wounds.lua"
+			"Function"		"applyModifierFromAbility"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+
+		"DeleteOnHit"	"1"
+
+		"RunScript"
+		{
+			"ScriptFile"    "items.lua"
+			"Function"      "CheckForSpellBlock"
+			
+			"GenericFunction"	"GenericSpellFunction"
+			"Modifier1"		"modifier_haku_senbon_stun"
+			"Duration1"		"%stun_duration"
+			
+			"doDamage"		"true"
+		}
+
+						
+	}
+
+	"Modifiers"
+	{
+		"modifier_haku_senbon_stun"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%stun_duration"
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
+			}
+			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+	}
+}
+
+"haku_endless_wounds"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"haku_endless_wounds"
+	
+		"precache"
+		{
+
+		}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"ms_slow_per_stack"				"-1"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"threshold"						"20 35 50 65"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"		"5"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stacks_per_attack"		"4"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_haku_endless_needles_caster"
+		{
+			"Passive"                   "1"
+            "IsHidden"                  "1"
+        
+           "OnAttackLanded"
+           {
+	              "RunScript"
+	              {
+	                "ScriptFile"  "heroes/haku/endless_wounds.lua"
+	                "Function"    "applyStacksAttack"
+	                "target"	  "TARGET"
+	              }
+        	}
+		}
+
+		"modifier_haku_endless_needles_victim"
+		{
+            "IsHidden"                  "0"
+            "IsPurgable"                "0"
+            "IsDebuff"					"1"
+          	"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ms_slow_per_stack"
+			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/haku/endless_wounds.lua"
+					"Function"		"applyEffect"
+				}
+			}
+		}
+
+	}
+}
+
+"haku_ice_mirrors"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"haku_ice_mirrors"
+
+	"precache"
+	{
+		"particle"					"particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf"
+		"particle"					"particles/units/heroes/haku/mirror_destroy.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+		"soundfile"					"soundevents/haku_mirrors.vsndevts"
+		"soundfile"					"soundevents/haku_mirrors_2.vsndevts"
+		
+	}
+
+
+	"AbilityCastPoint"				"0.25 0.25 0.25"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"90"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"180 240 320"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"radius"					"425"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"8 9 10"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"count"					"12"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"endless_wound_stack"			"1"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"attack_min"						"11 18 25"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"attack_max"					"12 19 26"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"hp"			"160 240 320"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"mirror_attack_range"			"600"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/ice_mirrors.lua"
+			"Function"		"playSound"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/ice_mirrors.lua"
+			"Function"		"create"
+		}
+
+	}
+
+	"Modifiers"
+	{		
+		"modifier_haku_mirror_caster"
+		{
+			"States"
+			{
+				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_haku_mirror_mirror"
+		{
+			"IsHidden"	"1"
+			
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/haku/ice_mirrors.lua"
+					"Function"		"checkIfDeath"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+"haku_needles"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"haku_needles"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"12.0"
+	"AbilityManaCost"				"120 125 130 135"
+
+	"AOERadius"     				"%radius"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"275"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"wave_duration"			"2.8"
+		}		
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wave_count"			"2"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wave_damage"			"70 95 120 145"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"wave_interval"			"1.2"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun_duration"			"0.4"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"endless_wounds_stacks"			"10"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+		"soundfile"	"soundevents/haku_needles.vsndevts"
+		"soundfile"	"soundevents/haku_needles_2.vsndevts"
+		"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+		"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
+		"particle"	"particles/generic_gameplay/generic_slowed_cold.vpcf"
+		"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/needles.lua"
+			"Function"		"playSound"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/needles.lua"
+			"Function"		"BlizzardStartPoint"
+			"Target"		"POINT"
+		}
+	}
+
+	"Modifiers"
+    {
+		
+		"modifier_blizzard_wave"
+		{
+			"OnCreated"
+			{
+				"ApplyModifier"
+         		{
+					"ModifierName"	"modifier_blizzard_thinker"
+         			"Target" 		"TARGET"
+				}
+
+				"DelayedAction"
+			{
+				"Delay"     "%wave_interval"
+				"Action"    
+				{	
+					"ApplyModifier"
+	         		{
+						"ModifierName"	"modifier_blizzard_thinker"
+	         			"Target" 		"TARGET"
+					}
+				}
+			}
+			}
+			
+		}
+		
+		"modifier_blizzard_thinker"
+		{
+			"OnCreated"
+			{
+				"DelayedAction"
+				{
+					"Delay"     "0.3"
+					"Action"    
+					{						
+						"Damage"
+						{
+							"Target"
+							{
+								"Center"  	"TARGET"
+								"Radius" 	"%radius"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+							"Type"			"DAMAGE_TYPE_MAGICAL"
+							"Damage"		"%wave_damage"
+						}
+
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_haku_needles_stun"
+							"Target"
+							{
+								"Center"  	"TARGET"
+								"Radius" 	"%radius"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+							"Duration"		"%duration"
+						}
+
+						"FireSound"
+						{
+							"EffectName"	"hero_Crystal.freezingField.explosion"
+							"Target"
+							{
+								"Center"  	"TARGET"
+								"Radius" 	"%radius"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+						
+						"RemoveModifier"
+						{
+							"ModifierName"	"modifier_blizzard_thinker"
+							"Target" 		"TARGET"
+						}
+
+							"ActOnTargets"
+					{
+						"Target"
+							{
+								"Center"  	"TARGET"
+								"Radius" 	"%radius"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+					
+						"Action"    
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/haku/endless_wounds.lua"
+								"Function"		"applyModifierFromAbility"
+							}
+						}
+					}
+				}
+					}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/haku/needles.lua"
+					"Function"		"BlizzardWave"
+				}
+			}			
+		}
+
+		"modifier_haku_needles_stun"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%stun_duration"
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
+			}
+			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+	}
+	
+}
+
 
 }

@@ -21,6 +21,7 @@
 #base "heroes/sasuke.txt"
 #base "heroes/temari.txt"
 #base "heroes/madara.txt"
+#base "heroes/haku.txt"
 
 
 // Dota Heroes File

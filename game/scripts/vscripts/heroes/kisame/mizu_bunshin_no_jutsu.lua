@@ -18,12 +18,9 @@ function ConjureImage( event )
  illusion:SetOwner(caster)
  --if kisame has his ulti activated, his bunshin should turn into the shark model and have the water prison modifier
  if caster:HasModifier("modifier_kisame_metamorphosis") then 
-
-	-- TODO 
-    --illusion:SetOriginalModel("models/kisame_new/kisame_samehada.vmdl")
+    illusion:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
+	illusion:SetModelScale(0.65)
  end
-
-
 
  -- Set the unit as an illusion
  -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
@@ -31,8 +28,6 @@ ability:ApplyDataDrivenModifier(caster, illusion, "modifier_water_bunshin",  {du
 ability:ApplyDataDrivenModifier(caster, illusion, "modifier_water_bunshin_bonus_damage",  {duration = duration})
 
  
-
-
  GameMode:RemoveWearables( illusion )
 
 illusion:RemoveAbility(caster:GetAbilityByIndex(1):GetName())

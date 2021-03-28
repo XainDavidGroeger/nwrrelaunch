@@ -15,9 +15,8 @@ function ModelSwapStart( keys )
 
 	-- Sets the new model and projectile
 
-	-- TODO model swap fix
-	--caster:SetOriginalModel(model)
-
+	caster:SetOriginalModel(model)
+	caster:SetModelScale(0.65)
     keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
     
@@ -30,10 +29,9 @@ end
 function ModelSwapEnd( keys )
 	local caster = keys.caster
 
-
-	-- TODO model swap fix
-	--caster:SetModel(caster.caster_model)
-	--caster:SetOriginalModel(caster.caster_model)
+	caster:SetModel(caster.caster_model)
+	caster:SetOriginalModel(caster.caster_model)
+	caster:SetModelScale(1)
 	ParticleManager:DestroyParticle( keys.ability.dome, true )
 end
 --[[

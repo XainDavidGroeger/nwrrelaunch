@@ -4,7 +4,7 @@
 		"npc_dota_hero_sven" //onoki
 {
 			"override_hero"		"npc_dota_hero_sven"
-			"Model"				"models/onuki/suprise.vmdl"
+			"Model"				"models/haku_test/haku2_base.vmdl"
 			"Ability1"			"onoki_jinton"
 			"Ability2"			"onoki_stalagmite_armor"
 			"Ability3"			"onoki_turn_to_dust"
@@ -22,8 +22,8 @@
 			"StatusHealth"    "145"
 			"StatusHealthRegen"   "0.300000"
 
-			"ModelScale"		"2.0"
-			"LoadoutScale"		"2.0" 
+			"ModelScale"		"2.5"
+			"LoadoutScale"		"2.5" 
 			"Role"			"Support,Nuker,Disabler,Durable,Initiator"
 			"Rolelevels"	"2,2,2,1,1"
 			// Unit attribute

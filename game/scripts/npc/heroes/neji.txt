@@ -4,7 +4,7 @@
 "npc_dota_hero_axe" //neji
 		{
 		  "override_hero"   "npc_dota_hero_axe"
-		  "Model" 			"models/neji/neji.vmdl"
+		  "Model" 			"models/neji_new/neji.vmdl"
 		  "Ability1"         "neji_kaiten"
 		  "Ability2"         "neji_internal_bleeding" 
 		  "Ability3"         "neji_byakugan" 
@@ -21,8 +21,8 @@
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 
 		  "ArmorPhysical"		"1.000000"
-		"ModelScale"		"0.75"
-		"LoadoutScale"		"0.75" 
+		"ModelScale"		"1"
+		"LoadoutScale"		"1" 
 		"AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackAnimationPoint"   "0.4"
 		"StatusHealth"    "145"

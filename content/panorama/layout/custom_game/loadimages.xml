@@ -23,6 +23,7 @@
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_warlock.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_shadow_shaman.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_enchantress.png" />
+        <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_drow_ranger.png" />
     </Panel>
 
       <Panel class="AddonLoadingRoot">
@@ -46,6 +47,7 @@
         <Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/npc_dota_hero_warlock.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/npc_dota_hero_shadow_shaman.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/npc_dota_hero_enchantress.png" />
+        <Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/npc_dota_hero_drow_ranger.png" />
     </Panel>
 
        <Panel class="AddonLoadingRoot">
@@ -69,6 +71,7 @@
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_warlock.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_shadow_shaman.png" />
         <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_enchantress.png" />
+        <Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_drow_ranger.png" />
     </Panel>
 
 

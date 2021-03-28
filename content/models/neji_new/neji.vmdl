@@ -6,7 +6,7 @@
 		[
 			{
 				m_meshName = "neji"
-				m_meshFile = "models/neji_new/neji.smd"
+				m_meshFile = "models/neji_new/neji.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -59,252 +59,12 @@
 						m_HitBoxes = 
 						[
 							{
-								m_name = "By Miniewee"
+								m_name = "Bip001"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "By Miniewee"
-								m_vMinBounds = [ -6.707767, -4.788381, -18.4659 ]
-								m_vMaxBounds = [ 6.790582, 5.182817, -3.874599 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "5"
-								m_vMinBounds = [ -30.786301, -30.4706, -30.7616 ]
-								m_vMaxBounds = [ 30.0576, 30.929001, 17.725901 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new4"
-								m_vMinBounds = [ -13.409991, -3.178681, -4.263821 ]
-								m_vMaxBounds = [ 0.387566, 3.104218, 2.77948 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new3"
-								m_vMinBounds = [ 0.063095, -3.014888, -4.266613 ]
-								m_vMaxBounds = [ 13.533113, 2.719292, 2.776588 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new12"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new12"
-								m_vMinBounds = [ -3.52752, -4.545472, -14.441601 ]
-								m_vMaxBounds = [ 4.536192, 4.301606, -3.6558 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new10"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new10"
-								m_vMinBounds = [ -4.482357, -4.618024, -14.66016 ]
-								m_vMaxBounds = [ 3.581396, 4.382625, -1.966763 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new5"
-								m_vMinBounds = [ -13.155188, -4.181815, -2.937141 ]
-								m_vMaxBounds = [ 0.243107, 4.699463, 3.179855 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new6"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new6"
-								m_vMinBounds = [ -0.166485, -4.198981, -3.016739 ]
-								m_vMaxBounds = [ 13.23271, 4.681657, 3.101463 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new11"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new11"
-								m_vMinBounds = [ -3.604568, -3.066134, -13.224201 ]
-								m_vMaxBounds = [ 3.343234, 4.572604, 2.620098 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new9"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new9"
-								m_vMinBounds = [ -3.483168, -3.07007, -13.45796 ]
-								m_vMaxBounds = [ 3.464634, 4.568679, 2.386339 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new7"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new7"
-								m_vMinBounds = [ -7.83219, -4.107696, -1.568291 ]
-								m_vMaxBounds = [ 1.942604, 2.444553, 1.338707 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "3"
-								m_vMinBounds = [ -1.785486, -4.108232, -1.567139 ]
-								m_vMaxBounds = [ 7.98871, 2.445307, 1.341766 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Head"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Head"
-								m_vMinBounds = [ -4.727989, -3.966558, -5.867119 ]
-								m_vMaxBounds = [ 4.659399, 7.389839, 10.927086 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "1"
-								m_vMinBounds = [ -15.534824, -5.816563, -23.092272 ]
-								m_vMaxBounds = [ 3.573282, 6.757376, 0.38723 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new17"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new17"
-								m_vMinBounds = [ -2.673, -9.649862, -9.57578 ]
-								m_vMaxBounds = [ 3.037699, 2.637114, -1.855321 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "4"
-								m_vMinBounds = [ -3.177006, -5.893728, -22.599195 ]
-								m_vMaxBounds = [ 16.258869, 6.68026, 0.450806 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new16"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new16"
-								m_vMinBounds = [ -3.037701, -9.134237, -9.833525 ]
-								m_vMaxBounds = [ 2.673008, 3.152749, -2.11305 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new2"
-								m_vMinBounds = [ -3.207757, -3.1545, -1.81366 ]
-								m_vMaxBounds = [ 3.206842, 3.224949, 1.488941 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "2"
-								m_vMinBounds = [ -0.469044, -0.449356, -1.842628 ]
-								m_vMaxBounds = [ 0.463554, 0.476856, 0.101479 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "6"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "6"
-								m_vMinBounds = [ -0.452034, -0.439998, -1.677231 ]
-								m_vMaxBounds = [ 0.375664, 0.382117, 0.048363 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "bone_new15"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "bone_new15"
-								m_vMinBounds = [ -4.139215, -1.595229, -23.856255 ]
-								m_vMaxBounds = [ 4.244944, 1.707931, -3.264549 ]
+								m_sBoneName = "Bip001"
+								m_vMinBounds = [ -70.0, -70.0, -100.0 ]
+								m_vMaxBounds = [ 70.0, 70.0, 100.0 ]
 								m_flShapeRadius = 0.0
 								m_nShapeType = "VHITBOX_SHAPE_BOX"
 								m_bTranslationOnly = false
@@ -330,7 +90,7 @@
 						m_influences = 
 						[
 							{
-								m_influenceName = "origin Ref"
+								m_influenceName = "fuﬂbone"
 								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
 								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
 								m_flWeight = 1.0
@@ -343,33 +103,7 @@
 						m_influences = 
 						[
 							{
-								m_influenceName = "bone_new12"
-								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
-								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_left_hand"
-						m_influences = 
-						[
-							{
-								m_influenceName = "hand left Ref"
-								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
-								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_hand_right"
-						m_influences = 
-						[
-							{
-								m_influenceName = "hand right Ref"
+								m_influenceName = "Bip001"
 								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
 								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
 								m_flWeight = 1.0
@@ -398,10 +132,10 @@
 			m_Vanim = 
 			[
 				{
-					m_Animationname = "neji ani"
-					m_Filepath = "models/neji_new/neji ani.smd"
+					m_Animationname = "neji"
+					m_Filepath = "models/neji_new/neji.fbx"
 					m_nStartframe = 0
-					m_nEndframe = 629
+					m_nEndframe = 583
 					m_flFps = 30.0
 					m_Loop = 
 					{
@@ -438,61 +172,15 @@
 					m_MotionFramesRootBone = ""
 				},
 				{
-					m_Animationname = "neji_stand"
-					m_Filepath = "models/neji_new/neji ani.smd"
-					m_nStartframe = 10
-					m_nEndframe = 40
-					m_flFps = 30.0
-					m_Loop = 
-					{
-						m_bLoop = true
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_IDLE"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
 					m_Animationname = "neji_run"
-					m_Filepath = "models/neji_new/neji ani.smd"
-					m_nStartframe = 190
-					m_nEndframe = 213
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 160
+					m_nEndframe = 184
 					m_flFps = 30.0
 					m_Loop = 
 					{
 						m_bLoop = true
-						m_bSmoothLoop = false
+						m_bSmoothLoop = true
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
 						m_StartLoop = 
@@ -530,10 +218,148 @@
 					m_MotionFramesRootBone = ""
 				},
 				{
+					m_Animationname = "neji_idle"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 91
+					m_nEndframe = 140
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "neji_attack_1"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 202
+					m_nEndframe = 231
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "neji_attack_2"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 254
+					m_nEndframe = 285
+					m_flFps = 60.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CHANNEL_ABILITY_6"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
 					m_Animationname = "neji_die"
-					m_Filepath = "models/neji_new/neji ani.smd"
-					m_nStartframe = 1
-					m_nEndframe = 1200
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 553
+					m_nEndframe = 583
 					m_flFps = 30.0
 					m_Loop = 
 					{
@@ -554,6 +380,144 @@
 					[
 						{
 							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "neji_spell_1"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 431
+					m_nEndframe = 484
+					m_flFps = 60.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "neji_attack_ulti"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 254
+					m_nEndframe = 285
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK2"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "neji_spell_2"
+					m_Filepath = "models/neji_new/neji.fbx"
+					m_nStartframe = 202
+					m_nEndframe = 231
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_2"
 							m_nWeight = 1
 						},
 					]
@@ -617,12 +581,12 @@
 		m_vMaterialRemapList = 
 		[
 			{
-				m_sSearchMaterial = "imported material 01.vmat"
-				m_sReplaceMaterial = "materials/neji_new/neji.vmat"
+				m_sSearchMaterial = "imported material 02.vmat"
+				m_sReplaceMaterial = "materials/neji/neji_new_face.vmat"
 			},
 			{
-				m_sSearchMaterial = ""
-				m_sReplaceMaterial = "materials/neji_new/neji.vmat"
+				m_sSearchMaterial = "imported material 01.vmat"
+				m_sReplaceMaterial = "materials/neji/neji_new.vmat"
 			},
 		]
 	}

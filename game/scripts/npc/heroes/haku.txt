@@ -1,0 +1,53 @@
+"DOTAAbilities"
+{
+
+"npc_dota_hero_drow_ranger" //Haku
+{
+  "override_hero"   "npc_dota_hero_drow_ranger"
+  "Ability1"        "haku_crippling_senbon"
+  "Ability2"        "haku_needles"
+  "Ability3"        "haku_endless_wounds" 
+  "Ability4"        "generic_hidden" 
+  "Ability5"        "generic_hidden" 
+  "Ability6"        "haku_ice_mirrors"
+  	  "Ability10"		"special_bonus_spell_amplify_8"
+		   "Ability11"		"special_bonus_hp_175"
+		   "Ability12"		"special_bonus_attack_damage_70"
+		   "Ability13"		"special_bonus_mp_regen_4"
+		   "Ability14"		"special_bonus_armor_8"
+		   "Ability15"		"special_bonus_cast_range_225"
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_cooldown_reduction_25"
+  "ModelScale"		"2.7"
+  "LoadoutScale"	"2.7" 
+
+  "Model" 		"models/haku_test/haku2_base.vmdl"
+  "ItemSlots"
+  { }
+    "StatusHealth"    "145"
+  "StatusHealthRegen"   "0.300000"
+  "ArmorPhysical"   "1.000000"
+  "AttributePrimary"    "DOTA_ATTRIBUTE_INTELLECT"
+    "AttackDamageMin"   "19"
+    "Role"      "Support,Carry,Nuker,Disabler"
+    "Rolelevels"  "3,1,1,1"
+    "AttackDamageMax"   "23"
+    "AttackRate"    "1.700000"
+  "AttackAnimationPoint"		"0.4"
+ // "AttackRate"				"1.0"
+  "AttackRange"				"600"
+  "ProjectileModel"   "particles/units/heroes/haku/maiden_base_attack.vpcf"
+  "ProjectileSpeed"  "1200"
+  "MovementSpeed"			"295"
+  "AttributeBaseStrength" "17" // Base strength
+  "AttributeStrengthGain" "1.6" // Strength bonus per level.
+  "AttributeBaseIntelligence" "23" // Base intelligence
+  "AttributeIntelligenceGain" "2.6" // Intelligence bonus per level.
+  "AttributeBaseAgility" "19" // Base agility
+  "AttributeAgilityGain" "1.9" // Agility bonus per level.
+  "Village"			"kirigakure"
+  "Gender"      "male"  
+}	
+
+
+}

@@ -4,7 +4,7 @@
     		"npc_dota_hero_kunkka" //kisame
 		{
 		  "override_hero"   "npc_dota_hero_kunkka"
-		  "Model" 			"models/kisame/kisame.vmdl"
+		  "Model" 			"models/kisame_new/kisame.vmdl"
 		 "Ability1"         "kisame_suikodan_no_jutsu"
 		  "Ability2"         "kisame_mizu_bunshin_no_jutsu" 
 		  "Ability3"         "kisame_samehada" 
@@ -20,8 +20,8 @@
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 		  "ArmorPhysical"		"1.000000"
-			"ModelScale"		"0.65"
-			"LoadoutScale"		"0.65" 
+			"ModelScale"		"1"
+			"LoadoutScale"		"1" 
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 		  "AttackAnimationPoint"   "0.4"
 		  "AttackDamageMin"   "26"
