@@ -35,6 +35,8 @@ function suikodan_no_jutsu( keys )
 	}
 	-- Saving the projectile ID so that we can destroy it later
 	projectile_id = ProjectileManager:CreateLinearProjectile( projectileTable )
+	
+	-- TODO check which targets are hit and apply -armor manually
 
 	-- Timer to provide vision
 	Timers:CreateTimer( function()

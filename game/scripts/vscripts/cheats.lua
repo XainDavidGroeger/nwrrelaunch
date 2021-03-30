@@ -22,7 +22,7 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_medusa",
         "npc_dota_hero_centaur",
         "npc_dota_hero_beastmaster",
-        "npc_dota_hero_sven",	
+        "npc_dota_hero_drow_ranger",	
         "npc_dota_hero_sand_king",
         "npc_dota_hero_phantom_assassin",
         "npc_dota_hero_ogre_magi",	
@@ -224,4 +224,6 @@ function GameMode:Setup_Hero_Tables()
         GameRules.nwrHeroTable[18] = "anko"
     end
 end
+
+
 

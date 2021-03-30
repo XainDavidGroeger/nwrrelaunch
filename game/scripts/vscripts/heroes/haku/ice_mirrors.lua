@@ -1,6 +1,15 @@
 function create( keys )
+
 	local attack_min = keys.ability:GetLevelSpecialValueFor("attack_min", keys.ability:GetLevel() - 1)
+
 	local attack_max = keys.ability:GetLevelSpecialValueFor("attack_max", keys.ability:GetLevel() - 1)
+
+	local ability = keys.caster:FindAbilityByName("special_bonus_haku_5")
+	if ability:IsTrained() then
+		attack_min = attack_min + 25
+		attack_max = attack_min + 25
+	end
+
 	local hp = keys.ability:GetLevelSpecialValueFor("hp", keys.ability:GetLevel() - 1)
 	local radius = keys.ability:GetLevelSpecialValueFor("radius", keys.ability:GetLevel() - 1)
 	local duration = keys.ability:GetLevelSpecialValueFor("duration", keys.ability:GetLevel() - 1)

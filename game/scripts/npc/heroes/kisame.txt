@@ -1,5 +1,10 @@
 "DOTAAbilities"
 {
+		// TODO fix -armor debuff on -5 Shark Bullet Armor - doenst work currently
+		//25: +20% Shark Dance Slow / -5 Shark Bullet Armor
+		//20: +10% more hp / +7% Samehada Mana Steal
+		//15: +90 Shark Bullet Damage / 10% Cooldown Reduction
+		//10: +20 Damage / +15 Movement Speed
 
     		"npc_dota_hero_kunkka" //kisame
 		{
@@ -11,14 +16,14 @@
 		    "Ability4"		"generic_hidden"
 		  "Ability5"		"generic_hidden"
 		  "Ability6"         "kisame_water_prison"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		   "Ability10"		"special_bonus_attack_damage_20"
+		   "Ability11"		"special_bonus_movement_speed_15"
+		   "Ability12"		"special_bonus_cooldown_reduction_10"
+		   "Ability13"		"special_bonus_kisame_1"
+		   "Ability14"		"special_bonus_kisame_2"
+		   "Ability15"		"special_bonus_kisame_3"
+		   "Ability16"		"special_bonus_kisame_4"
+		   "Ability17"		"special_bonus_kisame_5"
 		  "ArmorPhysical"		"1.000000"
 			"ModelScale"		"1"
 			"LoadoutScale"		"1" 

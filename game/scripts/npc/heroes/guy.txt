@@ -20,8 +20,8 @@
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
-			"ModelScale"		"1.0"
-		"LoadoutScale"		"1.0" 
+			"ModelScale"		"1.05"
+		"LoadoutScale"		"1.05" 
 		  "AttackAnimationPoint"   "0.4"
 			
 		  "Role"			"Carry,Jungler"

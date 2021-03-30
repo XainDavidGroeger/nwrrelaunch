@@ -1,7 +1,12 @@
 "DOTAAbilities"
 {
 
-			"npc_dota_hero_storm_spirit" //sasuke
+		// TODO special_bonus_sasuke_3 
+		//25: +40 Intelligence / -0.75s Kirin Cast Time
+		//20: +12% Spell Amplification / +225 Chidori Spear Range
+		//15: +14 Strength / +70 Chidori Nagashi Damage
+		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
+		"npc_dota_hero_storm_spirit" //sasuke
 		{
 		  "override_hero"   "npc_dota_hero_storm_spirit"
 		  "Model" 			"models/sasuke_new/sasuke.vmdl"
@@ -11,14 +16,19 @@
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "sasuke_kirin"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
+
+		   "Ability10"		"special_bonus_mp_regen_250"
+		   "Ability11"		"special_bonus_sasuke_1"
+
+		   "Ability12"		"special_bonus_sasuke_2"
+		   "Ability13"		"special_bonus_strength_14"
+
+		   "Ability14"		"special_bonus_spell_amplify_12"
+		   "Ability15"		"special_bonus_sasuke_3"
+
 		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		   "Ability17"		"special_bonus_sasuke_4"
+
 		  "ArmorPhysical"		"1.000000"
 		"AttackDamageMin"		"22"
 		"AttackDamageMax"		"32"
@@ -38,8 +48,8 @@
 		  "AttributeIntelligenceGain" "2.9" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "16" // Base agility
 		  "AttributeAgilityGain" "2.1" // Agility bonus per level.
-		  "ModelScale"		"0.72"
-		 "LoadoutScale"		"0.72" 
+		  "ModelScale"		"0.90"
+		 "LoadoutScale"		"0.90" 
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha_scarred"

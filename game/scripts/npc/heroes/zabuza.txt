@@ -1,6 +1,11 @@
 "DOTAAbilities"
 {
 
+		// TODO fix cast range and weak spo cooldown for talentrees
+		//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
+		//20: +100% Cleave / -3 Armor Track
+		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
+		//10: +175 Health / +20 Movement Speed
     	"npc_dota_hero_bloodseeker" //zabuza
 		{
 		  "override_hero"   "npc_dota_hero_bloodseeker"
@@ -10,16 +15,20 @@
 		      "Ability4"		"generic_hidden"
 		  "Ability5"		"generic_hidden"
 		  "Ability6"        "zabuza_track" 
-		    "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
-		  "ModelScale"		"0.90"
-		  "LoadoutScale"		"0.90" 
+
+		    "Ability10"		"special_bonus_hp_175"
+		   "Ability11"		"special_bonus_movement_speed_20"
+
+		   "Ability12"		"special_bonus_zabuza_1"
+		   "Ability13"		"special_bonus_zabuza_2"
+
+		   "Ability14"		"special_bonus_cleave_100"
+		   "Ability15"		"special_bonus_zabuza_3"
+
+		   "Ability16"		"special_bonus_zabuza_4"
+		   "Ability17"		"special_bonus_zabuza_5"
+		  "ModelScale"		"1"
+		  "LoadoutScale"		"1" 
 		  "Model" 			"models/zabuza/zabuza.vmdl"
 	 	  "ItemSlots"
 	  	  { }

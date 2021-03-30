@@ -8,27 +8,6 @@
 {
 	"Version"		"1"
 
-
-	"special_bonus_intelligence_50"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"9998"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"50"
-			}
-		}
-	}
-
   
     "gaara_ryuusa_bakuryu"
 {
@@ -721,6 +700,7 @@
         {
             "var_type" "FIELD_FLOAT"
             "duration" "2.0"
+			"LinkedSpecialBonus" "special_bonus_neji_3"
         }
 
          "03"
@@ -883,6 +863,12 @@
 			"var_type"						"FIELD_INTEGER"
 			"damage_per_interval"			"10 13.33 16.66"
 		}
+		"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"silence_duration"			    "0 0 0"
+			"LinkedSpecialBonus" 	"special_bonus_neji_4"
+		}
 	}
 
 	"OnSpellStart"
@@ -909,8 +895,9 @@
 			"ModifierName"	"modifier_hyaku_nijuuhachi_shou_caster"
 			"Target" 		"CASTER"
 		}	
-		
+
 	}
+
 
 	"OnChannelInterrupted"
 	{
@@ -933,6 +920,7 @@
 			"ModifierName"	"modifier_hyaku_nijuuhachi_shou_caster"
 			"Target" 		"CASTER"
 		}
+
 	}
 
 	"Modifiers"
@@ -957,6 +945,7 @@
 					"Function"		"hyaku_nijuuhachi_shou_invis_check"
 					"modifier_reveal"	"modifier_fiend_grip_invis_datadriven"
 				}
+				
 			}
 
 			"ThinkInterval"	"%tick_interval"
@@ -987,7 +976,6 @@
 			"States"
 			{
 				"MODIFIER_STATE_STUNNED" 	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVISIBILITY"	"MODIFIER_STATE_VALUE_DISABLED"
 			}
 		}
 
@@ -1012,6 +1000,12 @@
 					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
 					"Function"		"removeParticle"
 				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"silenceTarget"
+				}
 			}
 
 			"States"
@@ -1024,6 +1018,18 @@
 		{
 			"IsDebuff"	"1"
 			"Duration"	"0.1"
+			"IsPurgable"	"1"
+			"EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
+			"EffectAttachType"	"follow_overhead"			
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_hyaku_nijuuhachi_shou_special_silence"
+		{
+			"IsDebuff"	"1"
 			"IsPurgable"	"1"
 			"EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
 			"EffectAttachType"	"follow_overhead"			
@@ -1097,6 +1103,7 @@
 		{
 			"var_type"						"FIELD_FLOAT"
 			"ms_slow"						"-10 -20 -30 -40"
+			"LinkedSpecialBonus" 			"special_bonus_neji_2"
 		}
 		"06"
 		{
@@ -1240,6 +1247,7 @@
         {
             "var_type" "FIELD_FLOAT"
             "stun_duration" "1 1.5 2 2.5"
+			"LinkedSpecialBonus" "special_bonus_neji_1"
         }
 
     }
@@ -1876,6 +1884,7 @@
         { 
             "var_type"  "FIELD_FLOAT"
             "reset_hp_percentage" "25.0 30.0 35.0 40.0"
+			"LinkedSpecialBonus"	"special_bonus_hidan_3"
         }
     }
 
@@ -1959,15 +1968,16 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"25"
 
-	//Stats
-	"AbilityDamage"					"175 250 325"
-
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-
-
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"175 250 325"
+			"LinkedSpecialBonus"	"special_bonus_hidan_2"
+		}
 	}
 
 	"precache"
@@ -2029,6 +2039,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"350"
+			"LinkedSpecialBonus"	"special_bonus_hidan_1"
 		}
 		"02"
 		{
@@ -2392,6 +2403,7 @@
       {
         "var_type"                               "FIELD_FLOAT"
         "illusion_max_hp_percentage"              "14 18 22 26"
+		"LinkedSpecialBonus"					 "special_bonus_kisame_2"
       }
 
       "02"
@@ -2512,7 +2524,6 @@
         "01"
         { 
             "var_type"  "FIELD_FLOAT"
-
             "manasteal_percentage" "5.0 8.0 11.0 14.0"
         }
     }
@@ -2610,6 +2621,7 @@
         { 
             "var_type"  "FIELD_FLOAT"
             "manasteal_percentage" "8.0 12.0 16.0 20.0"
+			"LinkedSpecialBonus"	"special_bonus_kisame_3"
         }
     }
 
@@ -2703,46 +2715,62 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"07"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"wave_speed"		"2000.0"
-		}
-		"10"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"wave_width"		"450"
-		}
 		"01"
 		{
 			"var_type"			"FIELD_FLOAT"
 			"wave_range"		"800"
 		}
-		"08"
+		"02"
 		{
-			"var_type"			"FIELD_FLOAT"
-			"wave_aoe"			"150"
-		}
+			"var_type"			"FIELD_INTEGER"
+			"damage"		"110 150 190 230"
+			"LinkedSpecialBonus"	"special_bonus_kisame_1"
+		}	
+
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
 			"ms_slow_percentage"	"-25 -25 -25 -25"
 		}
+
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
 			"slow_duration"		"4 4 4 4"
+		}	
+
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"armor_debuff"			"-1 -2 -3 -4"
+			"LinkedSpecialBonus"	"special_bonus_kisame_5"
+		}	
+
+		"07"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"wave_speed"		"2000.0"
 		}
+	
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"wave_aoe"			"150"
+		}
+	
 		"09"
 		{
 			"var_type"			"FIELD_INTEGER"
 			"cast_range"		"450"
 		}	
-		"02"
+		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"		"110 150 190 230"
-		}				
+			"wave_width"		"450"
+		}
+
+
+				
 	}
 
 	"OnAbilityPhaseStart"
@@ -2858,6 +2886,7 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"ms_slow_percentage"	"-20"
+			"LinkedSpecialBonus"	"special_bonus_kisame_4"
 		}
 
 		"05"
@@ -3138,6 +3167,7 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"spread_aoe"				"100 150 200"
+			"LinkedSpecialBonus"		"special_bonus_itachi_4"
 		}
 
 	}
@@ -3478,11 +3508,13 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"slow_duration"				"1.5 2.0 2.5 3.0"
+			"LinkedSpecialBonus"		"special_bonus_itachi_1"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"stun_duration"				"1.0"
+			"LinkedSpecialBonus"		"special_bonus_itachi_3"
 		}
 	}
 
@@ -4577,6 +4609,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"250 275 300 325"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_4"
 		}
 		"02"
 		{
@@ -4587,6 +4620,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"miss_percentage"		"40 50 60 70"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_2"
 		}
 		"04"
 		{
@@ -4839,6 +4873,12 @@
 			"var_type"				"FIELD_FLOAT"
 			"gold_steal"			"0.2 0.3 0.4"
 		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_debuff"			"-1 -2 -3 -4"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
+		}
 	}
 
 	"OnSpellStart"
@@ -4853,6 +4893,9 @@
 			"Duration1"		"%duration"
 			
 			"Modifier2"		"modifier_track_datadriven"
+			"Duration2"		"%duration"
+
+			"Modifier2"		"modifier_track_armor_debuff_datadriven"
 			"Duration2"		"%duration"
 		}
 
@@ -4952,6 +4995,14 @@
 						"TargetFlags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 					}
 				}
+			}
+		}
+
+		"modifier_track_armor_debuff_datadriven"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_debuff"
 			}
 		}
 
@@ -10874,13 +10925,13 @@
 {
     // General  
     // ----------------------------------------------------------------------------------------
-    "BaseClass"              "ability_datadriven"
+    "BaseClass"             	 	"ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"     "sasuke_chidori_eiso"
+    "AbilityTextureName"     		"sasuke_chidori_eiso"
 
     "precache"
     {
@@ -10893,7 +10944,7 @@
     "AbilityCastPoint"       "0.2 0.2 0.2 0.2"
     "AbilityCooldown"        "20"
     "AbilityManaCost"        "100 110 120 130"
-    "AbilityCastRange"       "250"
+    "AbilityCastRange"       "%cast_range"
     "AbilityDamage"          "50 75 100 125"
 
     "AbilitySpecial"
@@ -10912,6 +10963,13 @@
         {
             "var_type"  "FIELD_INTEGER"
             "damage"    "50 75 100 125"
+        }
+		  "04"
+        {
+            "var_type"  "FIELD_INTEGER"
+            "cast_range"    "250"
+			"LinkedSpecialBonus" "special_bonus_sasuke_3"
+
         }
     }
 
@@ -10954,14 +11012,12 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"sasuke_chidori_koken"
-	
 	"AbilityDuration"				"0.6 0.6 0.6 0.6"
-	"AbilityDamage"					"30 45 60 75"
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -11000,8 +11056,14 @@
 			"var_type"					"FIELD_FLOAT"
 			"tooltip_duration"			"0.6 0.6 0.6 0.6"
 		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"			"30 45 60 75"
+			"LinkedSpecialBonus" "special_bonus_sasuke_1"
+		}
 	}
-	
+
 	"Modifiers"
 	{
 		"modifier_overload_passive_datadriven"
@@ -11099,6 +11161,7 @@
         { 
             "var_type"  "FIELD_INTEGER"
             "aoe_damage" "75 125 175 225"
+			"LinkedSpecialBonus" "special_bonus_sasuke_2"
         }
     }
 
@@ -12754,8 +12817,9 @@
 	{
 		"01"
 		{
-			"var_type"						"FIELD_INTEGER"
+			"var_type"						"FIELD_FLOAT"
 			"ms_slow_per_stack"				"-1"
+			"LinkedSpecialBonus"			"special_bonus_haku_1"
 		}
 		"02"
 		{
@@ -12990,6 +13054,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"wave_damage"			"70 95 120 145"
+			"LinkedSpecialBonus"	"special_bonus_haku_4"
 		}
 		"05"
 		{
@@ -13165,6 +13230,899 @@
 	}
 	
 }
+
+"dummy_passive_vulnerable"
+		{
+			"BaseClass" 		"ability_datadriven"
+			"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Modifiers"
+			{
+				"dummy_modifier"
+				{
+					"Passive"	"1"
+					"States"
+					{
+						"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"	
+					}
+				}
+			}
+		}
+
+
+	//=================================================================================================================
+	// Neji Special Bonus
+	//=================================================================================================================
+	//10: +9 Strength / +20 Attack Speed
+	//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
+	//20: +28 Mana Break / +20% Internal Bleeding MS Slow
+	//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+	"special_bonus_neji_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"neji_kaiten"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"0.25"
+			}
+		}
+	}
+
+	"special_bonus_neji_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"neji_internal_bleeding"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-20"
+			}
+		}
+	}
+
+	"special_bonus_neji_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"neji_byakugan"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"30"
+			}
+		}
+	}
+
+	"special_bonus_neji_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"neji_hyaku_nijuuhachi_shou"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"8"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mana_break_40"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6695"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"28"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"burn_illusions_ranged"				"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"burn_illusions_melee"				"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_burn"				"0.8"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Sasuke Special Bonus
+	//=================================================================================================================
+	//25: +40 Intelligence / -0.75s Kirin Cast Time
+	//20: +12% Spell Amplification / +225 Chidori Spear Range
+	//15: +14 Strength / +70 Chidori Nagashi Damage
+	//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
+	"special_bonus_sasuke_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"sasuke_chidori_koken"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"25"
+			}
+		}
+	}
+
+	"special_bonus_sasuke_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"sasuke_chidori_nagashi"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"70"
+			}
+		}
+	}
+
+	"special_bonus_sasuke_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"sasuke_chidori_eiso"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1000"
+			}
+		}
+	
+	}
+
+	"special_bonus_sasuke_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"sasuke_kirin"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-0.75"
+			}
+		}
+	}
+
+	"special_bonus_intelligence_35"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6248"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"40"
+			}
+		}
+
+		
+	}
+
+
+	//=================================================================================================================
+	// Sasuke Special Bonus
+	//=================================================================================================================
+	//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE
+	//20: +20 Agility / -3s Crow Genjutsu Cooldown
+	//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
+	//10: +20 Movement Speed / +1.75 Mana Regen
+	"special_bonus_itachi_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"itachi_tsukiyomi"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"2.5"
+			}
+		}
+	}
+	
+	"special_bonus_itachi_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"itachi_dust_crow_genjustsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-3"
+			}
+		}
+	}
+
+	"special_bonus_itachi_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"itachi_tsukiyomi"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"1.5"
+			}
+		}
+	}
+	
+	"special_bonus_itachi_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"itachi_amateratsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"225"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Haku Special Bonus
+	//=================================================================================================================
+	//25: +170 Water Needles Damage / +25 Ice Mirror Damage
+	//20: -2s Crippling Senbon Cooldown / +450 Crippling Senbon Range
+	//15: +0.25% Endless Wounds Slow / +100 Attack Range
+	//10: +1.75 Mana Regen / +5 Armor
+
+	"special_bonus_haku_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"haku_endless_wounds"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-0.25"
+			}
+		}
+	}
+
+	"special_bonus_haku_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"haku_crippling_senbon"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"-2"
+			}
+		}
+	}
+
+	"special_bonus_haku_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"haku_crippling_senbon"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"450"
+			}
+		}
+	}
+
+	"special_bonus_haku_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"haku_needles"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"170"
+			}
+		}
+	}
+
+	"special_bonus_haku_5"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"haku_ice_mirrors"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"25"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Kisame Special Bonus
+	//=================================================================================================================
+	//25: +20% Shark Dance Slow / -5 Shark Bullet Armor
+	//20: +10% more hp / +7% Samehada Mana Steal
+	//15: +90 Shark Bullet Damage / 10% Cooldown Reduction
+	//10: +20 Damage / +15 Movement Speed
+	"special_bonus_kisame_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"kisame_suikodan_no_jutsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"90"
+			}
+		}
+	}
+
+	"special_bonus_kisame_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"kisame_mizu_bunshin_no_jutsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"10"
+			}
+		}
+	}
+
+	"special_bonus_kisame_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"kisame_samehada"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"7.0"
+			}
+		}
+	}
+
+	"special_bonus_kisame_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"kisame_water_prison"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-20"
+			}
+		}
+	}
+
+	"special_bonus_kisame_5"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"kisame_suikodan_no_jutsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-5"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Hidan Special Bonus
+	//=================================================================================================================
+	//25: +325 Self Pain Damage / +15% Jashin's Blessing Heal
+	//20: +70 Taunt AoE / +20 Strength
+	//15: +30 Attack Damage / +25 Movement Speed
+	//10: +1.75 MP Regeneration / +5 HP Regeneration
+	"special_bonus_hidan_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"hidan_taunt"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"70"
+			}
+		}
+	}
+
+	"special_bonus_hidan_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"hidan_self_pain"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"325"
+			}
+		}
+	}
+
+	"special_bonus_hidan_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"hidan_jashins_blessing"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"15.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Zabuza Special Bonus
+	//=================================================================================================================
+	//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
+	//20: +100% Cleave / -3 Armor Track
+	//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
+	//10: +175 Health / +20 Movement Speed
+	"special_bonus_zabuza_1"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"zabuza_stealth"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"300"
+			}
+		}
+	}
+
+	"special_bonus_zabuza_2"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"zabuza_kirigakure_no_jutsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"35"
+			}
+		}
+	}
+
+	"special_bonus_zabuza_3"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"zabuza_track"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-3"
+			}
+		}
+	}
+
+	"special_bonus_zabuza_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"zabuza_kirigakure_no_jutsu"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"175"
+			}
+		}
+	}
+
+	"special_bonus_zabuza_5"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"zabuza_weak_spot"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-1.75"
+			}
+		}
+	}
+
+
 
 
 }

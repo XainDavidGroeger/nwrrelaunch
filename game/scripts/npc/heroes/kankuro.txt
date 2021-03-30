@@ -19,8 +19,8 @@
 		"Ability15"		"special_bonus_cast_range_225"
 		"Ability16"		"special_bonus_intelligence_35"
 		"Ability17"		"special_bonus_cooldown_reduction_25"
-		"ModelScale"		"0.80"
-		"LoadoutScale"	"0.80" 
+		"ModelScale"		"1.0"
+		"LoadoutScale"	"1.0" 
 		"ItemSlots"
 		{ }
 		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"

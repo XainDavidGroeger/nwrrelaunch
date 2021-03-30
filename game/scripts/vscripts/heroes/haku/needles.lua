@@ -50,16 +50,13 @@ function BlizzardWave( event )
 	ParticleManager:SetParticleControl( particle5, 0, target_position-RandomVector(RandomInt(50,100)) ) end)
 end
 
-
 function BlizzardEnd( event )
-
-
 	local caster = event.caster
 	caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")
 	caster:RemoveModifierByName("modifier_blizzard_channelling")
 	
 	local blizzard_dummy_point_pointer = caster.blizzard_dummy_point
-	blizzard_dummy_point_pointer:RemoveSelf()
+	Timers:CreateTimer(0.4,function() blizzard_dummy_point_pointer:RemoveSelf() end)
 end
 
 function playSound( keys )

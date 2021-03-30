@@ -7,7 +7,14 @@
 function self_pain( keys )
 	local caster = keys.caster
 	local ability = keys.ability
-	local damage = ability:GetAbilityDamage()
+
+	local damage = ability:GetLevelSpecialValueFor("damage",ability:GetLevel() - 1))
+
+	local ability = keys.caster:FindAbilityByName("special_bonus_hidan_2")
+	if ability:IsTrained() then
+		damage = damage + 325
+	end
+
 	local override_damage = false
 	local health = caster:GetHealth()
 	PopupDamage(caster, damage)

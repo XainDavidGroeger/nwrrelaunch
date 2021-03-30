@@ -28,8 +28,14 @@ if keys.target:GetTeamNumber() ~= keys.caster:GetTeamNumber() then
 
 		local caster = keys.caster
 		local aoe_radius = keys.ability:GetLevelSpecialValueFor("aoe_radius", keys.ability:GetLevel() - 1)
-		local damage = keys.ability:GetAbilityDamage()
+
+		local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1)
 		local target = keys.target
+
+		local specialBonus = keys.caster:FindAbilityByName("special_bonus_sasuke_1")
+		if specialBonus:IsTrained() then
+			damage = damage + 25;
+		end
 
 		EmitSoundOn("Hero_StormSpirit.Overload", target)
 
