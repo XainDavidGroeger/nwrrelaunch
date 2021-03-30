@@ -27,22 +27,22 @@
 		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttackAnimationPoint"		"0.4"
-		"StatusHealth"    "145"
+		"StatusHealth"    "200"
 		"StatusHealthRegen"   "0.300000"
-		"AttackDamageMin"   "23"
-		"AttackDamageMax"   "33"
+		"AttackDamageMin"   "39"
+		"AttackDamageMax"   "45"
 		"AttackRate"    "1.700000"
 		"Role"      "Disabler,Initiator,Durable,Nuker"
 		"Rolelevels"  "2,2,2,1"
 
 		"AttackRange"				"100"
 		"MovementSpeed"			"300"
-		"AttributeBaseStrength" "23" // Base strength
+		"AttributeBaseStrength" "24" // Base strength
 		"AttributeStrengthGain" "3" // Strength bonus per level.
-		"AttributeBaseIntelligence" "16" // Base intelligence
-		"AttributeIntelligenceGain" "1.4" // Intelligence bonus per level.
+		"AttributeBaseIntelligence" "17" // Base intelligence
+		"AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
 		"AttributeBaseAgility" "14" // Base agility
-		"AttributeAgilityGain" "1.6" // Agility bonus per level.
+		"AttributeAgilityGain" "1.4" // Agility bonus per level.
 
 		"Gender"      "female"
 		"Village"			"kirigakure"

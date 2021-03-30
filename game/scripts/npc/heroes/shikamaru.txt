@@ -22,25 +22,25 @@
 		  "ModelScale"		"0.60"
 		"LoadoutScale"		"0.60" 
 		"ArmorPhysical"		"0.000000"
-		"AttackDamageMin"		"19"
-		"AttackDamageMax"		"29"
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"30"
 		"AttackRate"		"1.700000"		  
 		  "AttackAnimationPoint"   "0.4"
 		  	"Role"			"Support,Pusher,Disabler,Nuker,Initiator"
 		"Rolelevels"	"2,3,3,2,1"
 		 // "AttackRate"				"0.7"
-		  "AttackRange"				"500"
-		"AttackDamageMin"			"20"	// Damage range min.
-		"AttackDamageMax"			"30"	// Damage range max.
-		  "StatusHealth"    "145"
+		  "AttackRange"				"600"
+		"AttackDamageMin"			"21"	// Damage range min.
+		"AttackDamageMax"			"31"	// Damage range max.
+		  "StatusHealth"    "200"
   "StatusHealthRegen"   "0.300000"
 		  "MovementSpeed"			"290"
-		  "AttributeBaseStrength" "17" // Base strength
-		  "AttributeStrengthGain" "1.8" // Strength bonus per level.
-		  "AttributeBaseAgility" "15" // Base agility
-		  "AttributeAgilityGain" "1.5" // Agility bonus per level.
-		"AttributeBaseIntelligence" "23" // Base intelligence
-		  "AttributeIntelligenceGain" "3" // Intelligence bonus per level.
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "2.1" // Strength bonus per level.
+		  "AttributeBaseAgility" "16" // Base agility
+		  "AttributeAgilityGain" "1.8" // Agility bonus per level.
+		"AttributeBaseIntelligence" "25" // Base intelligence
+		  "AttributeIntelligenceGain" "3.5" // Intelligence bonus per level.
 		  
 	 	  "ItemSlots"
 	  	  { }

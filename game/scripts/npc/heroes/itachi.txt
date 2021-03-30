@@ -36,24 +36,24 @@
 	"Role"			"Carry,Escape,Nuker"
 	"Rolelevels"	"3,3,1"
 
-	"AttackDamageMin"   "16"
-	"AttackDamageMax"   "26"
+	"AttackDamageMin"   "32"
+	"AttackDamageMax"   "34"
 	"AttackRate"    "1.700000"
 	"ArmorPhysical"		"1.000000"
     // Movement
     //----------------------------------------------------------------
-	"MovementSpeed"					"300"
+	"MovementSpeed"					"305"
 	"StatusHealth"    "145"
   	"StatusHealthRegen"   "0.300000"
     // Attibutes
     //----------------------------------------------------------------
 	"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
-	"AttributeBaseStrength"			"20"
-	"AttributeStrengthGain"			"1.35"
-	"AttributeBaseIntelligence"		"16"
-	"AttributeIntelligenceGain"		"1.6"
+	"AttributeBaseStrength"			"21"
+	"AttributeStrengthGain"			"2.2"
+	"AttributeBaseIntelligence"		"17"
+	"AttributeIntelligenceGain"		"2.0"
 	"AttributeBaseAgility"			"22"
-	"AttributeAgilityGain"			"2.75"
+	"AttributeAgilityGain"			"2.8"
 
 	"ItemSlots"	{ }
 	"Village"			"konoha_scarred"

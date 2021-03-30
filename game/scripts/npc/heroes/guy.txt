@@ -20,7 +20,7 @@
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
-			"ModelScale"		"1.05"
+		"ModelScale"		"1.05"
 		"LoadoutScale"		"1.05" 
 		  "AttackAnimationPoint"   "0.4"
 			
@@ -28,19 +28,19 @@
 		  "Rolelevels"	"2,1"
 
 		  "AttackDamageMin"   "27"
-		  "AttackDamageMax"   "31"
+		  "AttackDamageMax"   "35"
 		  "AttackRate"    "1.700000"
-		  "ArmorPhysical"		"3.000000"
+		  "ArmorPhysical"		"2.000000"
 		  "AttackRange"				"100"
-		  "StatusHealth"    "145"
+		  "StatusHealth"    "200"
  		  "StatusHealthRegen"   "0.300000"
-		  "MovementSpeed"			"300"
-		  "AttributeBaseStrength" "19" // Base strength
-		  "AttributeStrengthGain" "2.2" // Strength bonus per level.
+		  "MovementSpeed"			"305"
+		  "AttributeBaseStrength" "2.1" // Base strength
+		  "AttributeStrengthGain" "2.5" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "13" // Base intelligence
-		  "AttributeIntelligenceGain" "1.15" // Intelligence bonus per level.
+		  "AttributeIntelligenceGain" "1.20" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "21" // Base agility
-		  "AttributeAgilityGain" "2.9" // Agility bonus per level.
+		  "AttributeAgilityGain" "3.3" // Agility bonus per level.
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha"

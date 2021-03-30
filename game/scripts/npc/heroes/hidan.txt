@@ -30,26 +30,26 @@
 		   "Ability16"		"special_bonus_hidan_2"
 		   "Ability17"		"special_bonus_hidan_3"
 		 "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
-		 "ModelScale"		"0.87"
+		"ModelScale"		"0.87"
 		 "LoadoutScale"		"0.87" 
-		 "Role"			"Carry,Disabler,Initiator,Durable,Nuker"
+		 "Role"			"Disabler,Initiator,Durable,Nuker"
 		"Rolelevels"	"1,2,2,2,1"
-		   "StatusHealth"    "145"
+		   "StatusHealth"    "200"
   "StatusHealthRegen"   "0.300000"
-		 "AttackDamageMin"   "22"
-		  "AttackDamageMax"   "26"
+		 "AttackDamageMin"   "30"
+		  "AttackDamageMax"   "33"
 		  "AttackRate"    "1.700000"
 		  
 		  "AttackAnimationPoint"   "0.4"
-		  "AttackRange"				"100"
+		  "AttackRange"				"170"
 
-		  "MovementSpeed"			"290"
+		  "MovementSpeed"			"300"
 		  "AttributeBaseStrength" "27" // Base strength
-		  "AttributeStrengthGain" "2.4" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "17" // Base intelligence
-		  "AttributeIntelligenceGain" "1.4" // Intelligence bonus per level.
+		  "AttributeStrengthGain" "4.2" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "15" // Base intelligence
+		  "AttributeIntelligenceGain" "1.6" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "15" // Base agility
-		  "AttributeAgilityGain" "1.1" // Agility bonus per level.
+		  "AttributeAgilityGain" "1.0" // Agility bonus per level.
 		}
 
 

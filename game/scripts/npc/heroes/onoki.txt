@@ -34,17 +34,17 @@
 			"AttackRate"		"1.700000"	
 			// Movement
 			//----------------------------------------------------------------
-			"MovementSpeed"					"295"
+			"MovementSpeed"					"300"
 
 			// Attibutes
 			//----------------------------------------------------------------
 			"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-			"AttributeBaseStrength"			"20"
-			"AttributeStrengthGain"			"2.6"
+			"AttributeBaseStrength"			"25"
+			"AttributeStrengthGain"			"3.2"
 			"AttributeBaseIntelligence"		"18"
-			"AttributeIntelligenceGain"		"1.95"
-			"AttributeBaseAgility"			"15"
-			"AttributeAgilityGain"			"1"
+			"AttributeIntelligenceGain"		"1.90"
+			"AttributeBaseAgility"			"13"
+			"AttributeAgilityGain"			"1.8"
 
 			"ItemSlots"	{ }
 			"Village"			"iwagakure"

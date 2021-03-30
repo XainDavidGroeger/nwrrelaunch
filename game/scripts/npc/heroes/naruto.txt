@@ -21,26 +21,26 @@
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 		  "ArmorPhysical"		"1.000000"
-		"ModelScale"		"0.75"
+	"ModelScale"		"0.75"
 		"LoadoutScale"		"0.75" 
 		  "AttackAnimationPoint"   "0.4"
 		 
 		  "AttackRange"				"100"
-  "StatusHealth"    "145"
+  "StatusHealth"    "205"
   "StatusHealthRegen"   "0.300000"
-		  "AttackDamageMin"   "23"
-		  "AttackDamageMax"   "30"
+		  "AttackDamageMin"   "29"
+		  "AttackDamageMax"   "36"
 		  "AttackRate"    "1.700000"
 		  "Role"			"Carry,Pusher,Durable,Disabler,Initiator"
 		"Rolelevels"	"2,3,2,2,1"
 
 		  "MovementSpeed"			"305"
-		  "AttributeBaseStrength" "21" // Base strength
-		  "AttributeStrengthGain" "2.7" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "15" // Base intelligence
-		  "AttributeIntelligenceGain" "1.3" // Intelligence bonus per level.
-		  "AttributeBaseAgility" "17" // Base agility
-		  "AttributeAgilityGain" "2.4" // Agility bonus per level.
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "3.4" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "18" // Base intelligence
+		  "AttributeIntelligenceGain" "1.2" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "18" // Base agility
+		  "AttributeAgilityGain" "1.4" // Agility bonus per level.
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha"

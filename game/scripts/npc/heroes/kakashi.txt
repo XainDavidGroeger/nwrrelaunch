@@ -21,24 +21,24 @@
 		   "Ability15"		"special_bonus_cast_range_225"
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
-			"AttackDamageMin"   "23"
-		  "AttackDamageMax"   "30"
-		  "Role"			"Carry,Support,Escape,Disabler,Initiator"
+		"AttackDamageMin"   "34"
+		  "AttackDamageMax"   "37"
+		  "Role"			"Carry,Escape,Disabler,Initiator"
 		"Rolelevels"	"2,1,1,1,2"
 		  "AttackRate"    "1.700000"
-		    "StatusHealth"    "145"
+		    "StatusHealth"    "200"
   		"StatusHealthRegen"   "0.300000"
-		  "ArmorPhysical"		"1.000000"
+		  "ArmorPhysical"		"0.000000"
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 		  "AttackAnimationPoint"   "0.4"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"305"
 		  "AttributeBaseStrength" "22" // Base strength
-		  "AttributeStrengthGain" "2.9" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "17" // Base intelligence
-		  "AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
-		  "AttributeBaseAgility" "18" // Base agility
-		  "AttributeAgilityGain" "2.0" // Agility bonus per level.
+		  "AttributeStrengthGain" "3.0" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "19" // Base intelligence
+		  "AttributeIntelligenceGain" "2.0" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "17" // Base agility
+		  "AttributeAgilityGain" "1.8" // Agility bonus per level.
 		  
 	 	  "ItemSlots"
 	  	  { }

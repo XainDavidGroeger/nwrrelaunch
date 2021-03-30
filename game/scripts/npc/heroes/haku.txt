@@ -25,30 +25,30 @@
   "ModelScale"		"2.7"
   "LoadoutScale"	"2.7" 
 
-  "Model" 		"models/haku_test/haku2_base.vmdl"
+    "Model" 		"models/haku_test/haku2_base.vmdl"
   "ItemSlots"
   { }
-    "StatusHealth"    "145"
+    "StatusHealth"    "200"
   "StatusHealthRegen"   "0.300000"
-  "ArmorPhysical"   "1.000000"
+  "ArmorPhysical"   "-1.000000"
   "AttributePrimary"    "DOTA_ATTRIBUTE_INTELLECT"
-    "AttackDamageMin"   "19"
-    "Role"      "Support,Carry,Nuker,Disabler"
+    "AttackDamageMin"   "21"
+    "Role"      "Support,Nuker,Disabler"
     "Rolelevels"  "3,1,1,1"
-    "AttackDamageMax"   "23"
+    "AttackDamageMax"   "26"
     "AttackRate"    "1.700000"
   "AttackAnimationPoint"		"0.4"
  // "AttackRate"				"1.0"
-  "AttackRange"				"600"
+  "AttackRange"				"550"
   "ProjectileModel"   "particles/units/heroes/haku/maiden_base_attack.vpcf"
   "ProjectileSpeed"  "1200"
-  "MovementSpeed"			"295"
-  "AttributeBaseStrength" "17" // Base strength
-  "AttributeStrengthGain" "1.6" // Strength bonus per level.
+  "MovementSpeed"			"290"
+  "AttributeBaseStrength" "18" // Base strength
+  "AttributeStrengthGain" "1.8" // Strength bonus per level.
   "AttributeBaseIntelligence" "23" // Base intelligence
-  "AttributeIntelligenceGain" "2.6" // Intelligence bonus per level.
+  "AttributeIntelligenceGain" "3.4" // Intelligence bonus per level.
   "AttributeBaseAgility" "19" // Base agility
-  "AttributeAgilityGain" "1.9" // Agility bonus per level.
+  "AttributeAgilityGain" "1.6" // Agility bonus per level.
   "Village"			"kirigakure"
   "Gender"      "male"  
 }	

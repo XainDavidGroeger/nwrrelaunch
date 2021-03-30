@@ -27,28 +27,29 @@
 		   "Ability17"		"special_bonus_neji_4"
 		   
 
-		  "ArmorPhysical"		"1.000000"
+	
+		  "ArmorPhysical"		"3.000000"
 		"ModelScale"		"1"
 		"LoadoutScale"		"1" 
 		"AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackAnimationPoint"   "0.4"
-		"StatusHealth"    "145"
+		"StatusHealth"    "200"
   		"StatusHealthRegen"   "0.300000"
-		"AttackDamageMin"		"16"
-		"AttackDamageMax"		"26"
+		"AttackDamageMin"		"28"
+		"AttackDamageMax"		"32"
 		"AttackRate"		"1.700000"
 
 		"Role"			"Initiator,Disabler,Carry"
 		"Rolelevels"	"3,3,1"
 
 		  "AttackRange"				"128"
-		  "MovementSpeed"			"300"
-		  "AttributeBaseStrength" "19" // Base strength
-		  "AttributeStrengthGain" "2.0" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "14" // Base intelligence
-		  "AttributeIntelligenceGain" "1.85" // Intelligence bonus per level.
+		  "MovementSpeed"			"310"
+		  "AttributeBaseStrength" "18" // Base strength
+		  "AttributeStrengthGain" "2.4" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "16" // Base intelligence
+		  "AttributeIntelligenceGain" "1.9" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "22" // Base agility
-		  "AttributeAgilityGain" "2.5" // Agility bonus per level.
+		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
 		  
 	 	  "ItemSlots"
 	  	  { }

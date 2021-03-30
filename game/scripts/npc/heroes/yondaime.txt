@@ -22,25 +22,25 @@
 	"Ability15"		"special_bonus_cast_range_225"
 	"Ability16"		"special_bonus_intelligence_35"
 	"Ability17"		"special_bonus_cooldown_reduction_25"
-	"AttackDamageMin"	"25"
-	"AttackDamageMax"	"31"
-	"StatusHealth"    	"145"
+	"AttackDamageMin"	"21"
+	"AttackDamageMax"	"25"
+	"StatusHealth"    	"200"
 	"StatusHealthRegen"	"0.300000"
 	"AttackRate"		"1.700000"		
-	"ArmorPhysical"		"1.000000"
+	"ArmorPhysical"		"0.000000"
 	"AttackAnimationPoint"   "0.4"
 	"AttackRange"		"100"
-	"MovementSpeed"		"310"
+	"MovementSpeed"		"315"
 	"MovementTurnRate""1.000000"
 
 	
 	"AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
-	"AttributeBaseStrength"		"17"	// Base strength
-	"AttributeStrengthGain"		"1.9"	// Strength bonus per level.
-	"AttributeBaseAgility"		"21"	// Base agility
-	"AttributeAgilityGain"		"2.5"	// Agility bonus per level.
+	"AttributeBaseStrength"		"19"	// Base strength
+	"AttributeStrengthGain"		"2.1"	// Strength bonus per level.
+	"AttributeBaseAgility"		"32"	// Base agility
+	"AttributeAgilityGain"		"2.8"	// Agility bonus per level.
 	"AttributeBaseIntelligence" "16" 	// Base intelligence
-	"AttributeIntelligenceGain" "1.6"	// Intelligence bonus per level.
+	"AttributeIntelligenceGain" "1.7"	// Intelligence bonus per level.
 
 	"Village"			"konoha"
 	"Gender"			"male"

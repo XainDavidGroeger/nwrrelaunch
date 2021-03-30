@@ -21,23 +21,23 @@
 		   "Ability17"		"special_bonus_cooldown_reduction_25"
 		  "Role"			"Support,Nuker,Disabler,Durable,Initiator"
 		"Rolelevels"	"2,2,2,1,1"
-		"AttackDamageMin"		"34"
+	"AttackDamageMin"		"34"
 		"AttackDamageMax"		"39"
 		"AttackRate"		"1.700000"
-		  "StatusHealth"    "145"
-  "StatusHealthRegen"   "0.300000"
+		  "StatusHealth"    "200"
+  "StatusHealthRegen"   "1.600000"
 		  "AttackAnimationPoint"   "0.4"
 		  "ModelScale"		"1.1"
 		 // "AttackRate"				"0.7"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"310"
 		  "AttributeBaseStrength" "22" // Base strength
-		  "AttributeStrengthGain" "2.0" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "19" // Base intelligence
-		  "AttributeIntelligenceGain" "2.4" // Intelligence bonus per level.
-		  "AttributeBaseAgility" "15" // Base agility
+		  "AttributeStrengthGain" "2.8" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "21" // Base intelligence
+		  "AttributeIntelligenceGain" "3.1" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "17" // Base agility
 		  "AttributeAgilityGain" "1.6" // Agility bonus per level.
-		  "ArmorPhysical"		"5.000000"
+		  "ArmorPhysical"		"3.000000"
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha"
