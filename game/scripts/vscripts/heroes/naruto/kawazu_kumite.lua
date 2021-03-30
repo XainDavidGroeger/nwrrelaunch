@@ -32,11 +32,24 @@ function ConjureImage( event )
         local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
         local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
         if kage_bunshin_mastery_ability:GetLevel() > 0 then 
+
            outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           local ability = keys.caster:FindAbilityByName("special_bonus_naruto_5")
+           if ability:IsTrained() then
+            outgoingDamage = outgoingDamage - 13
+           end
+
            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           
         else
-           outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
+
+         outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
+         local ability = keys.caster:FindAbilityByName("special_bonus_naruto_5")
+         if ability:IsTrained() then
+            outgoingDamage = outgoingDamage - 13
+         end
            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
+
         end 
      end
 

@@ -8,7 +8,13 @@
 function ManaShield( event )
 	local caster = event.caster
 	local ability = event.ability
+
 	local damage_per_mana = ability:GetLevelSpecialValueFor("damage_per_mana", ability:GetLevel() - 1 )
+	local ability = keys.caster:FindAbilityByName("special_bonus_gaara_1")
+	if ability:IsTrained() then
+		damage_per_mana = damage_per_mana + 0.3
+	end
+
 	local absorption_percent = ability:GetLevelSpecialValueFor("absorption_tooltip", ability:GetLevel() - 1 ) * 0.01
 	local damage = event.Damage * absorption_percent
 	local not_reduced_damage = event.Damage - damage

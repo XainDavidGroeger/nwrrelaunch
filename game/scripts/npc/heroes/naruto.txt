@@ -1,50 +1,59 @@
 "DOTAAbilities"
 {
 
-
+		//25: +320 Rasenshuriken Damage / -5s Bunshin Rasengan Cooldown
+		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
+		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
+		//10: +5 All Stats / +200 Bunshin Swap Range
     		"npc_dota_hero_dragon_knight" //naruto
 		{
-		  "override_hero"   "npc_dota_hero_dragon_knight"
-		  "Model" 			"models/naruto_new/naruto.vmdl"
-		 "Ability1"        "naruto_kage_bunshin_rasengan"
-		  "Ability2"        "naruto_kawazu_kumite" 
-		  "Ability3"        "naruto_kage_bunshin_mastery" 
+		  	"override_hero"   "npc_dota_hero_dragon_knight"
+		  	"Model" 			"models/naruto_new/naruto.vmdl"
+		 	"Ability1"        "naruto_kage_bunshin_rasengan"
+		  	"Ability2"        "naruto_kawazu_kumite" 
+		  	"Ability3"        "naruto_kage_bunshin_mastery" 
+		    "Ability4"		"generic_hidden"
 		    "Ability5"		"generic_hidden"
-		  "Ability6"        "zabuza_track" 
-		  "Ability6"        "naruto_rasenshuriken"
-		  	   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
-		  "ArmorPhysical"		"1.000000"
-	"ModelScale"		"0.75"
-		"LoadoutScale"		"0.75" 
-		  "AttackAnimationPoint"   "0.4"
-		 
-		  "AttackRange"				"100"
-  "StatusHealth"    "205"
-  "StatusHealthRegen"   "0.300000"
-		  "AttackDamageMin"   "29"
-		  "AttackDamageMax"   "36"
-		  "AttackRate"    "1.700000"
-		  "Role"			"Carry,Pusher,Durable,Disabler,Initiator"
-		"Rolelevels"	"2,3,2,2,1"
+		  	"Ability6"        "naruto_rasenshuriken"
 
-		  "MovementSpeed"			"305"
-		  "AttributeBaseStrength" "22" // Base strength
-		  "AttributeStrengthGain" "3.4" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "18" // Base intelligence
-		  "AttributeIntelligenceGain" "1.2" // Intelligence bonus per level.
-		  "AttributeBaseAgility" "18" // Base agility
-		  "AttributeAgilityGain" "1.4" // Agility bonus per level.
-	 	  "ItemSlots"
-	  	  { }
-	  	  "Village"			"konoha"
-	  	  "Gender"			"male"
+		  	"Ability10"		"special_bonus_all_stats_5"
+		    "Ability11"		"special_bonus_naruto_1"
+
+		    "Ability12"		"special_bonus_naruto_2"
+		    "Ability13"		"special_bonus_naruto_3"
+
+		    "Ability14"		"special_bonus_naruto_4"
+		    "Ability15"		"special_bonus_naruto_5"
+
+		    "Ability16"		"special_bonus_naruto_6"
+		    "Ability17"		"special_bonus_naruto_7"
+
+
+		  	"ArmorPhysical"		"1.000000"
+			"ModelScale"		"0.75"
+			"LoadoutScale"		"0.75" 
+		  	"AttackAnimationPoint"   "0.4"
+		 
+		  	"AttackRange"				"100"
+  			"StatusHealth"    "205"
+  			"StatusHealthRegen"   "0.300000"
+		  	"AttackDamageMin"   "29"
+		  	"AttackDamageMax"   "36"
+		  	"AttackRate"    "1.700000"
+		  	"Role"			"Carry,Pusher,Durable,Disabler,Initiator"
+			"Rolelevels"	"2,3,2,2,1"
+
+			"MovementSpeed"			"305"
+			"AttributeBaseStrength" "22" // Base strength
+			"AttributeStrengthGain" "3.4" // Strength bonus per level.
+			"AttributeBaseIntelligence" "18" // Base intelligence
+			"AttributeIntelligenceGain" "1.2" // Intelligence bonus per level.
+			"AttributeBaseAgility" "18" // Base agility
+			"AttributeAgilityGain" "1.4" // Agility bonus per level.
+			"ItemSlots"
+			{ }
+			"Village"			"konoha"
+			"Gender"			"male"
 		}
 
 

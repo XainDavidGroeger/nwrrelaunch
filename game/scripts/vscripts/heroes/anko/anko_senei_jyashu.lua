@@ -10,7 +10,13 @@ function anko_senei_jyashu(params)
 		local ability = params.ability
 		local radius = ability:GetSpecialValueFor("seek_radius")
 		local duration =  ability:GetSpecialValueFor("snake_damage_interval")
-		local final_damage = ability:GetSpecialValueFor("snake_damage")
+
+		local final_damage = ability:GetLevelSpecialValueFor("snake_damage", keys.ability:GetLevel() - 1 )
+		local ability = keys.caster:FindAbilityByName("special_bonus_anko_3")
+		if ability:IsTrained() then
+			final_damage = final_damage + 80
+		end
+
 		local caster = params.caster
 
 		local team = caster:GetTeamNumber()

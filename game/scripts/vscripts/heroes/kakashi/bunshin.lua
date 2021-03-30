@@ -5,7 +5,13 @@ function ConjureImage( event )
 	local ability = event.ability
 	local unit_name = caster:GetUnitName()
 	local origin = caster:GetAbsOrigin()	-- + RandomVector(100)
+
 	local duration = ability:GetLevelSpecialValueFor( "illusion_duration", ability:GetLevel() - 1 )
+	local ability = keys.caster:FindAbilityByName("special_bonus_kakashi_1")
+	if ability:IsTrained() then
+		duration = duration + 2
+	end
+
 	local run_to_position = caster:GetAbsOrigin() + 400 * caster:GetForwardVector():Normalized() 
 	local outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", ability:GetLevel()-1)
 	local incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", ability:GetLevel()-1)

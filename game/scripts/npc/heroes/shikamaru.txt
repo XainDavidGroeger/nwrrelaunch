@@ -1,6 +1,10 @@
 "DOTAAbilities"
 {
 
+		//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
+		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
+		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
+		//10: +175 Health / +140 Shadow Bind Total Damage
 			"npc_dota_hero_shadow_shaman"  //Shikamaru
 		{
 		  "override_hero"   "npc_dota_hero_shadow_shaman" 
@@ -11,14 +15,19 @@
   		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"         "shikamaru_kage_nui"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+
+		   "Ability10"		"special_bonus_hp_175"
+		   "Ability11"		"special_bonus_shikamaru_1"
+
+		   "Ability12"		"special_bonus_shikamaru_2"
+		   "Ability13"		"special_bonus_cast_range_100"
+
+		   "Ability14"		"special_bonus_shikamaru_3"
+		   "Ability15"		"special_bonus_shikamaru_4"
+
+		   "Ability16"		"special_bonus_shikamaru_5"
+		   "Ability17"		"special_bonus_shikamaru_6"
+
 		  "ModelScale"		"0.60"
 		"LoadoutScale"		"0.60" 
 		"ArmorPhysical"		"0.000000"

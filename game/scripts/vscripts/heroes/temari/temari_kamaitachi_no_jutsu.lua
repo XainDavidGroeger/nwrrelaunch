@@ -122,7 +122,17 @@ function temari_kamaitachi_no_jutsu_on_projectile_hit_unit(keys)
 		--Store the target's forward vector so they can be left facing in the same direction when they land.
 		keys.target.temari_tornado_forward_vector = keys.target:GetForwardVector()
 		
-		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_temari_kamaitachi_no_jutsu_cyclone", {duration = keys.caster.temari_tornado_lift_duration})
+		local duration = keys.caster.temari_tornado_lift_duration
+
+
+		-- TODO FIX
+	--	local abilitySpecial = keys.caster:FindAbilityByName("special_bonus_temari_1")
+	--	if abilitySpecial:IsTrained() then
+	--		duration = duration + 3.0
+	--	end
+
+		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_temari_kamaitachi_no_jutsu_cyclone", 
+		{duration = duration})
 		
 		keys.target:EmitSound("Hero_Invoker.Tornado.Target")
 		

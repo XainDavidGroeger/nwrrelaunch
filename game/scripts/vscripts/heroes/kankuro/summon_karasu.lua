@@ -16,6 +16,10 @@ function summon_karasu( keys )
     local bonus_hp = 0
     if kugusta_ability:GetLevel() > 0 then
     	bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
+		local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
+		if abilityspecial:IsTrained() then
+			bonus_hp = bonus_hp + 350
+		end
 	end
 	-- Ability variables
 	local puppet_duration = ability:GetSpecialValueFor("puppet_duration") 
@@ -27,9 +31,27 @@ function summon_karasu( keys )
 
 	--Creates the Puppet next to the Caster
 	local karasu_unit  = CreateUnitByName("npc_karasu", caster_location + RandomVector(100), true, caster, caster, caster:GetTeamNumber())
+	
 	--Stores the unit for tracking
 	ability.karasu = karasu_unit
 	karasu_unit:AddNewModifier(caster, ability, "modifier_phased", {duration = 0.03})
+
+	-- set movement speed
+	local karasu_ms = ability:GetLevelSpecialValueFor("ms", ability:GetLevel() - 1)
+	local ability = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
+	if ability:IsTrained() then
+		karasu_ms = karasu_ms + 50
+	end
+	karasu_unit:SetBaseMoveSpeed(karasu_ms)
+
+	-- set bonus attack speed
+	local karasu_as = ability:GetLevelSpecialValueFor("as_buff", ability:GetLevel() - 1)
+	local ability = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
+	if ability:IsTrained() then
+		karasu_as = karasu_as + 50
+	end
+
+	-- todo add bonus AS to puppet
 
 	--Sets the stats gain per level
 	karasu_unit:SetHPGain(hp_gain)

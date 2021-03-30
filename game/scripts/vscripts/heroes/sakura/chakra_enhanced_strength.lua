@@ -27,12 +27,19 @@ function chakra_enhanced_strength_apply( keys )
 		keys.ability.enemy:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
 
 
+		local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
+
+		local ability = keys.caster:FindAbilityByName("special_bonus_sakura_1")
+		if ability:IsTrained() then
+			damage = damage + 70
+		end
+
 		local damageTable = {}
 		damageTable.attacker = keys.caster
 		damageTable.victim = keys.ability.enemy
 		damageTable.damage_type = keys.ability:GetAbilityDamageType()
 		damageTable.ability = keys.ability
-		damageTable.damage = keys.damage
+		damageTable.damage = damage
 		ApplyDamage(damageTable)
 
 

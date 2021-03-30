@@ -1,6 +1,11 @@
 "DOTAAbilities"
 {
 
+
+		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun
+		//20: -2s Forest Emergence Cooldown / +160 Damage Fire Annihilation Explosion
+		//15: -9% Manacost/Manaloss Reduction ( * ) / +6 Armor
+		//10: +12 Intelligence / +70 Susano’o Radius
 		"npc_dota_hero_ogre_magi" //madara
 		{
 		  "override_hero"   "npc_dota_hero_ogre_magi"
@@ -11,14 +16,18 @@
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "madara_meteor"
-		    "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+		    "Ability10"		"special_bonus_intelligence_12"
+		   "Ability11"		"special_bonus_madara_1"
+
+		   "Ability12"		"special_bonus_madara_2"
+		   "Ability13"		"special_bonus_armor_6"
+
+		   "Ability14"		"special_bonus_madara_3"
+		   "Ability15"		"special_bonus_madara_4"
+
+		   "Ability16"		"special_bonus_madara_5"
+		   "Ability17"		"special_bonus_madara_6"
+
 		  "Role"			"Support,Nuker,Disabler,Durable,Initiator"
 		"Rolelevels"	"2,2,2,1,1"
 	"AttackDamageMin"		"34"

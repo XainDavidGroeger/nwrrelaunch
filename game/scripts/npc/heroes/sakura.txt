@@ -1,8 +1,11 @@
 "DOTAAbilities"
 {
 
-
-    			"npc_dota_hero_phantom_assassin" //sakura
+		//25: +4s Chakra Burst Duration / +20% Chakra Punch Chance
+		//20: -3s Earth Slam Cooldown / +15 Inner Sakura Armor
+		//15: +12 Strength / +70 Chakra Punch Damage
+		//10: +20 Attack Speed / +2.5 Mana Regen
+    	"npc_dota_hero_phantom_assassin" //sakura
 		{
 		  "override_hero"   "npc_dota_hero_phantom_assassin"
 		  "Model" 			"models/sakura_new/sakura.vmdl"
@@ -13,14 +16,19 @@
 		  "Ability5"        "generic_hidden" 
 		  "Ability6"        "sakura_inner_sakura"
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+
+		   "Ability10"		"special_bonus_attack_speed_20"
+		   "Ability11"		"special_bonus_mp_regen_2"
+
+		   "Ability12"		"special_bonus_strength_12"
+		   "Ability13"		"special_bonus_sakura_1"
+
+		   "Ability14"		"special_bonus_sakura_2"
+		   "Ability15"		"special_bonus_sakura_3"
+
+		   "Ability16"		"special_bonus_sakura_4"
+		   "Ability17"		"special_bonus_sakura_5"
+
 		 "ArmorPhysical"		"1.000000"
 		"ModelScale"		"1.0"
 		"LoadoutScale"		"1.0" 

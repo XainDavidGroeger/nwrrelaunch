@@ -6,8 +6,13 @@
 function Shield( event )
 	-- Variables
 	local caster = event.caster
+
 	local max_damage_absorb = event.ability:GetLevelSpecialValueFor("charge_damage_amount", event.ability:GetLevel() - 1 )
-	print(max_damage_absorb)
+	local ability = keys.caster:FindAbilityByName("special_bonus_raikage_2")
+	if ability:IsTrained() then
+		max_damage_absorb = max_damage_absorb + 275
+	end
+
 	-- Reset the shield
 	caster.RaitonShield = max_damage_absorb
 end

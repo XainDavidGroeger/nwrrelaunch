@@ -30,8 +30,6 @@ function Launch(keys)
 	local sound_impact = keys.sound_impact
 	local particle_impact = keys.particle_impact
 
-	
-
 
 	caster:EmitSound(keys.sound_cast)
 	AddPhysics(caster)
@@ -51,7 +49,22 @@ function Launch(keys)
 			ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
 			ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_POINT_FOLLOW, "attach_origin", enemy_loc, true)
 			FinishChidori(keys)
-			CheckForSpellBlock(keys)
+
+			local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
+
+			local ability = keys.caster:FindAbilityByName("special_bonus_kakashi_4")
+			if ability:IsTrained() then
+				damage = damage + 420
+			end
+
+			local damageTable = {
+				victim = target,
+				attacker = caster,
+				damage = damage,
+				damage_type = keys.ability:GetAbilityDamageType()
+			}
+			ApplyDamage( damageTable )
+
 			target:EmitSound(sound_impact)
 			return nil
 		end

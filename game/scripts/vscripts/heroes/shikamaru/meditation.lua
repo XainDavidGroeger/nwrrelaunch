@@ -6,7 +6,13 @@ function MeditationRemovePositive( keys )
 	local modifier = keys.modifier
 
 	-- Modifier variables
+
 	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
+	local abilityspecial = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if abilityspecial:IsTrained() then
+		duration = duration + 2
+	end
+
 	local tick_interval = ability:GetLevelSpecialValueFor("tick_interval", ability_level)
 
 	-- Calculating how many modifiers we have to remove

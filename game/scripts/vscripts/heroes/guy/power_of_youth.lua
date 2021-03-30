@@ -4,7 +4,12 @@ function power_of_youth( keys )
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 	local modifier = keys.modifier
+
 	local max_stacks = ability:GetLevelSpecialValueFor("max_stacks", ability_level)
+	local ability = keys.caster:FindAbilityByName("special_bonus_guy_4")
+	if ability:IsTrained() then
+		max_stacks = max_stacks + 3
+	end
 
 	--Prevent Sharingan
 	if(not caster:HasAbility("guy_power_of_youth") )then

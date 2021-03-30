@@ -1,26 +1,35 @@
 "DOTAAbilities"
 {
 
+		//25: 25% Cooldown Reduction / +420 Raikiri Damage
+		//20: + 325 Tracking Fang Range / -8s Kage Bunshin Cooldown
+		//15: +2s Kage Bunshin Duration / +6 All Stats
+		//10: +200 Mana / +30 Attack Damage
 		"npc_dota_hero_beastmaster" //kakashi
 		{
 		  "override_hero"   "npc_dota_hero_beastmaster"
 		  "Model" 			"models/kakashi_hd/kaka_hd_test.vmdl"
 		  "ModelScale"		"0.85"
-		  "LoadoutScale"		"0.85" 
+		  "LoadoutScale"	"0.85" 
 		  "Ability1"        "kakashi_doton"
 		  "Ability2"        "kakashi_sharingan" 
 		  "Ability3"        "kakashi_bunshin" 
 		  "Ability4"        "kakashi_empty"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "kakashi_chidori"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+
+		   "Ability10"		"special_bonus_mp_200"
+		   "Ability11"		"special_bonus_attack_damage_30"
+
+		   "Ability12"		"special_bonus_kakashi_1"
+		   "Ability13"		"special_bonus_all_stats_6"
+
+		   "Ability14"		"special_bonus_kakashi_2"
+		   "Ability15"		"special_bonus_kakashi_3"
+
+		   "Ability16"		"special_bonus_cooldown_reduction_25"
+		   "Ability17"		"special_bonus_kakashi_4"
+
 		"AttackDamageMin"   "34"
 		  "AttackDamageMax"   "37"
 		  "Role"			"Carry,Escape,Disabler,Initiator"

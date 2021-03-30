@@ -56,8 +56,21 @@ function BurnEnemies( keys )
 	-- Variables
 	local caster = keys.caster
 	local ability = keys.ability
+
 	local burn_radius = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
+
+	local ability = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if ability:IsTrained() then
+		burn_radius = burn_radius + 70
+	end
+
+
 	local burn_damage = keys.ability:GetLevelSpecialValueFor("burn_damage", keys.ability:GetLevel() - 1 )
+	local ability = keys.caster:FindAbilityByName("special_bonus_madara_5")
+	if ability:IsTrained() then
+		burn_damage = burn_damage + 100
+	end
+
 	local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, burn_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 		if targetEntities then
 			for _,oneTarget in pairs(targetEntities) do
@@ -85,7 +98,13 @@ function BurnTrees( keys )
     local wood_ability_level = keys.caster:GetAbilityByIndex(ability_index):GetLevel()
     local tree_vision = wood_ability:GetLevelSpecialValueFor("tree_vision", wood_ability_level)
     local tree_burn_duration = wood_ability:GetLevelSpecialValueFor("tree_burn_duration", wood_ability_level)
+
     local aoe = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
+	local ability = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if ability:IsTrained() then
+		aoe = aoe + 70
+	end
+
 
     if wood_ability_level > 0 then
 		local trees = GridNav:GetAllTreesAroundPoint(keys.caster:GetAbsOrigin(), aoe, false) 
