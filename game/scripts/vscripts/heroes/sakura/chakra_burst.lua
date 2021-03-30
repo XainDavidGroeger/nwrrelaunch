@@ -8,8 +8,8 @@ function gainMaxMoveSpeed( keys )
 	local ability = keys.ability
 
 	local duration =  ability:GetLevelSpecialValueFor("duration", ability:GetLevel() - 1)
-	local ability = keys.caster:FindAbilityByName("special_bonus_sakura_4")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_sakura_4")
+	if abilityS:IsTrained() then
 		duration = duration + 4
 	end
 

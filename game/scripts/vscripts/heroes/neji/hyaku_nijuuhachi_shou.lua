@@ -23,8 +23,8 @@ function removeParticle( keys )
 end
 
 function silenceTarget( keys )
-	local ability = keys.caster:FindAbilityByName("special_bonus_neji_4")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_neji_4")
+	if abilityS:IsTrained() then
 		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.ability.target, "modifier_hyaku_nijuuhachi_shou_special_silence", {duration = 8})
 	end
 end

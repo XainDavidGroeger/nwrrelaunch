@@ -13,8 +13,8 @@ function ResetHp( keys )
 	local cooldown = ability:GetCooldown( ability:GetLevel() )
 
 	local reset_hp_percentage = keys.ability:GetLevelSpecialValueFor("reset_hp_percentage", keys.ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_hidan_3")
-	if ability:IsTrained() then
+	local abilityS = caster:FindAbilityByName("special_bonus_hidan_3")
+	if abilityS:IsTrained() then
 		reset_hp_percentage = reset_hp_percentage + 15
 	end
 

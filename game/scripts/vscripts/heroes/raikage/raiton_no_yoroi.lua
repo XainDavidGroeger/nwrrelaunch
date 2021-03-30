@@ -8,8 +8,8 @@ function Shield( event )
 	local caster = event.caster
 
 	local max_damage_absorb = event.ability:GetLevelSpecialValueFor("charge_damage_amount", event.ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_raikage_2")
-	if ability:IsTrained() then
+	local abilityS = caster:FindAbilityByName("special_bonus_raikage_2")
+	if abilityS:IsTrained() then
 		max_damage_absorb = max_damage_absorb + 275
 	end
 

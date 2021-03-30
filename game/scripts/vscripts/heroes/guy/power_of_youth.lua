@@ -6,8 +6,8 @@ function power_of_youth( keys )
 	local modifier = keys.modifier
 
 	local max_stacks = ability:GetLevelSpecialValueFor("max_stacks", ability_level)
-	local ability = keys.caster:FindAbilityByName("special_bonus_guy_4")
-	if ability:IsTrained() then
+	local abilityS = caster:FindAbilityByName("special_bonus_guy_4")
+	if abilityS:IsTrained() then
 		max_stacks = max_stacks + 3
 	end
 

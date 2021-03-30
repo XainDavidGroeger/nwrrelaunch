@@ -10,8 +10,8 @@ function ManaShield( event )
 	local ability = event.ability
 
 	local damage_per_mana = ability:GetLevelSpecialValueFor("damage_per_mana", ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_gaara_1")
-	if ability:IsTrained() then
+	local abilityS = caster:FindAbilityByName("special_bonus_gaara_1")
+	if abilityS:IsTrained() then
 		damage_per_mana = damage_per_mana + 0.3
 	end
 

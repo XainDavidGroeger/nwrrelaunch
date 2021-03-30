@@ -59,15 +59,15 @@ function BurnEnemies( keys )
 
 	local burn_radius = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
 
-	local ability = keys.caster:FindAbilityByName("special_bonus_madara_1")
-	if ability:IsTrained() then
+	local abilityS1 = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if abilityS1:IsTrained() then
 		burn_radius = burn_radius + 70
 	end
 
 
 	local burn_damage = keys.ability:GetLevelSpecialValueFor("burn_damage", keys.ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_madara_5")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_5")
+	if abilityS:IsTrained() then
 		burn_damage = burn_damage + 100
 	end
 
@@ -100,8 +100,8 @@ function BurnTrees( keys )
     local tree_burn_duration = wood_ability:GetLevelSpecialValueFor("tree_burn_duration", wood_ability_level)
 
     local aoe = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_madara_1")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if abilityS:IsTrained() then
 		aoe = aoe + 70
 	end
 

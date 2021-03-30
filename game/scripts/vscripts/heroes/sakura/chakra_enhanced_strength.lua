@@ -29,8 +29,8 @@ function chakra_enhanced_strength_apply( keys )
 
 		local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
 
-		local ability = keys.caster:FindAbilityByName("special_bonus_sakura_1")
-		if ability:IsTrained() then
+		local abilityS = keys.caster:FindAbilityByName("special_bonus_sakura_1")
+		if abilityS:IsTrained() then
 			damage = damage + 70
 		end
 

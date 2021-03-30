@@ -38,16 +38,16 @@ function summon_karasu( keys )
 
 	-- set movement speed
 	local karasu_ms = ability:GetLevelSpecialValueFor("ms", ability:GetLevel() - 1)
-	local ability = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
+	if abilityS:IsTrained() then
 		karasu_ms = karasu_ms + 50
 	end
 	karasu_unit:SetBaseMoveSpeed(karasu_ms)
 
 	-- set bonus attack speed
 	local karasu_as = ability:GetLevelSpecialValueFor("as_buff", ability:GetLevel() - 1)
-	local ability = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
+	if abilityS:IsTrained() then
 		karasu_as = karasu_as + 50
 	end
 

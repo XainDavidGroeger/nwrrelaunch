@@ -8,9 +8,9 @@ function applyDamage( keys )
 		if keys.target:HasModifier("modifier_gaara_sabaku_kyuu") then
 			local abilityDamageType = keys.ability:GetAbilityDamageType()
 
-			local damage = ability:GetLevelSpecialValueFor("damage", ability:GetLevel() - 1 )
-			local ability = keys.caster:FindAbilityByName("special_bonus_gaara_4")
-			if ability:IsTrained() then
+			local damage = keys.ability:GetLevelSpecialValueFor("damage", ability:GetLevel() - 1 )
+			local abilityS = keys.caster:FindAbilityByName("special_bonus_gaara_4")
+			if abilityS:IsTrained() then
 				damage = damage + 380
 			end
 

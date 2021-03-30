@@ -7,8 +7,8 @@ function ConjureImage( event )
 	local origin = caster:GetAbsOrigin()	-- + RandomVector(100)
 
 	local duration = ability:GetLevelSpecialValueFor( "illusion_duration", ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_kakashi_1")
-	if ability:IsTrained() then
+	local abilityspecial = caster:FindAbilityByName("special_bonus_kakashi_1")
+	if abilityspecial:IsTrained() then
 		duration = duration + 2
 	end
 

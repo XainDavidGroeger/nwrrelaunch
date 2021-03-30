@@ -52,8 +52,8 @@ function Launch(keys)
 
 			local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
 
-			local ability = keys.caster:FindAbilityByName("special_bonus_kakashi_4")
-			if ability:IsTrained() then
+			local abilityS = keys.caster:FindAbilityByName("special_bonus_kakashi_4")
+			if abilityS:IsTrained() then
 				damage = damage + 420
 			end
 

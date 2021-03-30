@@ -4,8 +4,8 @@ function rasenshuriken_impact(keys)
 	local ability = keys.ability
 
 	local damage = ability:GetLevelSpecialValueFor( "damage", ability:GetLevel() - 1 )
-	local ability = keys.caster:FindAbilityByName("special_bonus_naruto_6")
-	if ability:IsTrained() then
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_naruto_6")
+	if abilityS:IsTrained() then
 		damage = damage + 320
 	end
 

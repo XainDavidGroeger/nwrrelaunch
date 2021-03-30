@@ -8,7 +8,7 @@ function MeditationRemovePositive( keys )
 	-- Modifier variables
 
 	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
-	local abilityspecial = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	local abilityspecial = keys.caster:FindAbilityByName("special_bonus_shikamaru_3")
 	if abilityspecial:IsTrained() then
 		duration = duration + 2
 	end
