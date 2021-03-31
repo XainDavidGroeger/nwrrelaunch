@@ -48,12 +48,13 @@
 	"npc_dota_hero_enchantress" "1" // temari
 	"npc_dota_hero_drow_ranger" "1" //haku
 
-	
+
 	// Dota
     "npc_dota_hero_earthshaker" "0"		// Jirobo
 	"npc_dota_hero_ember_spirit" "0"	// Namikaze Minato
 	"npc_dota_hero_lone_druid" "0"		// Inuzuka Kiba
 	"npc_dota_hero_winter_wyvern" "0"	// Yamanaka Ino
+	"npc_dota_hero_lina" "0"
 	// Str Melee
 	"npc_dota_hero_abaddon" "0"
 	"npc_dota_hero_abyssal_underlord" "0"
@@ -136,7 +137,6 @@
 	"npc_dota_hero_keeper_of_the_light" "0"
 	"npc_dota_hero_leshrac" "0"
 	"npc_dota_hero_lich" "0"
-	"npc_dota_hero_lina" "0"
 	"npc_dota_hero_necrolyte" "0"
 	"npc_dota_hero_obsidian_destroyer" "0"
 	"npc_dota_hero_oracle" "0"

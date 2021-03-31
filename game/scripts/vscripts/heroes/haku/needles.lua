@@ -54,7 +54,7 @@ function BlizzardEnd( event )
 	local caster = event.caster
 	caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")
 	caster:RemoveModifierByName("modifier_blizzard_channelling")
-	
+
 	local blizzard_dummy_point_pointer = caster.blizzard_dummy_point
 	Timers:CreateTimer(0.4,function() blizzard_dummy_point_pointer:RemoveSelf() end)
 end
