@@ -24,12 +24,16 @@ function dynamic_entry_hit(keys)
 	local damage = ability:GetAbilityDamage()
 	local particle_impact = "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
 	
-	print(damage)
+	local modifier_name = keys.EntryModifier
+	local abilityS = caster:FindAbilityByName("special_bonus_guy_1")
+	if abilityS:IsTrained() then
+		modifier_name = keys.EntryModfierSpecial
+	end
 
 	ability:ApplyDataDrivenModifier(
 			caster,
 			target,
-			keys.EntryModifier,
+			modifier_name,
 			{}
 		)
 		

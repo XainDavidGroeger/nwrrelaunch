@@ -44,7 +44,7 @@
 		  "StatusHealth"    "200"
  		  "StatusHealthRegen"   "0.300000"
 		  "MovementSpeed"			"305"
-		  "AttributeBaseStrength" "2.1" // Base strength
+		  "AttributeBaseStrength" "21" // Base strength
 		  "AttributeStrengthGain" "2.5" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "13" // Base intelligence
 		  "AttributeIntelligenceGain" "1.20" // Intelligence bonus per level.

@@ -7191,6 +7191,12 @@
 			"duration"						"10"
 		}
 
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"miss_chance_special"			"55 63 71 79"
+		}
+
 	}
 
 	"OnSpellStart"
@@ -7204,6 +7210,7 @@
 			"functionName"	"dynamic_entry_start"
 			
 			"EntryModifier"	"modifier_guy_dynamic_entry_miss"
+			"EntryModifierSpecial"	"modifier_guy_dynamic_entry_miss_special"
 		}
 	}
 
@@ -7221,6 +7228,23 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance"
+			}
+
+		}
+
+
+		"modifier_guy_dynamic_entry_miss_special"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+			"EffectName"    "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
+			"EffectAttachType"  "follow_origin"
+      
+			"StatusEffectName"		"particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"     
+			"StatusEffectPriority"  "10"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance_special"
 			}
 			
 
@@ -7285,6 +7309,11 @@
             "chance"       "10 16 22 28"
 			"LinkedSpecialBonus"	"special_bonus_guy_3"
         }
+		"03"
+        {
+            "var_type" "FIELD_FLOAT"
+            "chance_special"       "45 51 57 63"
+        }
     }
 
     "Modifiers"
@@ -7295,22 +7324,49 @@
             "IsHidden"                  "1"
             "IsPurgable"                "0"
         
+			"OnAttackLanded"
+			{
+			"Random"
+			{
+				"Chance" "%chance"
+				"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+				"OnSuccess"
+				{
+				"RunScript"
+				{
+					"ScriptFile"  "heroes/guy/gouken_mastery.lua"
+					"Function"    "ApplyDoubleDamage"
+					"special"	  "0"
+				}
+				}
+			}
+			}
+            
+        }
+
+		"modifier_guy_gouken_mastery_special"
+        {
+            "Passive"                   "1"
+            "IsHidden"                  "1"
+            "IsPurgable"                "0"
+        
            "OnAttackLanded"
            {
-          "Random"
-          {
-            "Chance" "%chance"
-            "PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
-            "OnSuccess"
-            {
-              "RunScript"
-              {
-                "ScriptFile"  "heroes/guy/gouken_mastery.lua"
-                "Function"    "ApplyDoubleDamage"
-              }
-            }
-          }
-        }
+			"Random"
+			{
+				"Chance" "%chance_special"
+				"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+				"OnSuccess"
+				{
+					"RunScript"
+					{
+						"ScriptFile"  "heroes/guy/gouken_mastery.lua"
+						"Function"    "ApplyDoubleDamage"
+						"special"	  "1"
+					}
+				}
+			}
+			}
             
         }
     }
@@ -7321,7 +7377,7 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"FightRecapLevel"				"1"
@@ -7334,8 +7390,8 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
 		"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
-		 "particle"	"particles/addons_gameplay/lamp_flame_tintable.vpcf"
-		 "particle"			"particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+		"particle"			"particles/addons_gameplay/lamp_flame_tintable.vpcf"
+		"particle"			"particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
 	}
 	
 	// Casting
@@ -7363,8 +7419,14 @@
 		}
 		"02"
 		{
-			"var_type"			"FIELD_FLOAT"
+			"var_type"					"FIELD_FLOAT"
 			"base_attack_time"			"1.4 1.2 1.0"		
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_ms_special"			"50 60 70"		
 		}
 	}
 
@@ -7378,15 +7440,17 @@
 
 		"FireEffect"
 		{
-			"EffectName"	"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
-			"EffectAttachType"	"follow_origin"
-			"Target"		"CASTER"
+			"EffectName"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+			"EffectAttachType"		"follow_origin"
+			"Target"				"CASTER"
 		}
 
-		"ApplyModifier"
+		"RunScript"
 		{
-			"ModifierName"	"modifier_guy_open_gates"
-			"Target"		"CASTER"
+			"ScriptFile"			"heroes/guy/open_gates.lua"
+			"Function"				"Launch"
+			"ModifierName"			"modifier_guy_open_gates"
+			"ModifierNameSpecial"	"modifier_guy_open_gates_special"
 		}
 
 	}
@@ -7454,6 +7518,70 @@
 			{
 				"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%base_attack_time"
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_ms"
+			}
+		}
+
+		"modifier_guy_open_gates_special"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"Duration"		"%AbilityDuration"
+
+			"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
+			"StatusEffectPriority"	"10"
+             
+			"OnCreated"
+			{
+				   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_left_hand"
+                    }
+                }
+						   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_right_hand"
+                    }
+                }
+
+                 "AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_origin"
+                    	}
+                	}
+
+                	"AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_hitloc"
+                    	}
+                	}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%base_attack_time"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_ms_special"
 			}
 		}
 	}

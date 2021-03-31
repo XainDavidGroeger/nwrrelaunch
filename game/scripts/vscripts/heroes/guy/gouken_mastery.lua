@@ -5,6 +5,15 @@
 ]]
 function ApplyDoubleDamage( keys )
 	if not keys.target:IsBuilding() then
+
+		local abilityS2 = keys.caster:FindAbilityByName("special_bonus_guy_3")
+		if abilityS2:IsTrained() == false and keys.special == 1 then
+			return false
+		end
+		if abilityS2:IsTrained() and keys.special == 0 then
+			return false
+		end
+
 		local target = keys.target
 		local caster = keys.caster
 		local ability = keys.ability
