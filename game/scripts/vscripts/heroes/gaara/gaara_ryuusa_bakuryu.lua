@@ -10,7 +10,13 @@ function sandstorm( keys )
 	-- Special Variables
 	local duration = ability:GetLevelSpecialValueFor("duration", (ability:GetLevel() - 1))
 	-- Dummy
+
 	local dummy_modifier = keys.dummy_aura
+	local abilityS = caster:FindAbilityByName("special_bonus_gaara_2")
+	if abilityS:IsTrained() then
+		dummy_modifier = keys.dummy_aura_special
+	end
+
 	local dummy = CreateUnitByName("npc_dummy_unit", target_point, false, caster, caster, caster:GetTeam())
 	dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 	ability:ApplyDataDrivenModifier(caster, dummy, dummy_modifier, {duration = duration})
