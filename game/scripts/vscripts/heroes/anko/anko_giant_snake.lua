@@ -30,7 +30,15 @@ function anko_giant_snake:OnSpellStart()
 	self.hook_damage = self:GetSpecialValueFor( "hook_damage" )  
 	self.hook_speed = self:GetSpecialValueFor( "hook_speed" )
 	self.hook_width = self:GetSpecialValueFor( "hook_width" )
+
+
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
+
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_anko_1")
+	if abilityS:IsTrained() then
+		self.hook_distance = self.hook_distance + 250
+	end
+
 	self.hook_followthrough_constant = self:GetSpecialValueFor( "hook_followthrough_constant" )
 
 	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
@@ -89,6 +97,16 @@ function anko_giant_snake:OnSpellStart()
 	self.bRetracting = false
 	self.hVictim = nil
 	self.bDiedInHook = false
+
+	local abilityS2 = self:GetCaster():FindAbilityByName("special_bonus_anko_5")
+	if abilityS2:IsTrained() then
+		self:EndCooldown()
+		self:StartCooldown(self:GetCooldown(self:GetLevel() - 1) -4)
+	end
+
+	-- TODO
+	-- change tooltips to show reduced cooldown
+
 end
 
 --------------------------------------------------------------------------------

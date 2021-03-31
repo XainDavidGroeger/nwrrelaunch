@@ -6,6 +6,15 @@ anko_senei_jyashu = class({})
 --------------------------------------------------------------------------------
 function anko_senei_jyashu(params)
 	if params.caster:IsRealHero() then
+
+		local abilityS2 = params.caster:FindAbilityByName("special_bonus_anko_4")
+		if abilityS2:IsTrained() == false and params.special == 1 then
+			return false
+		end
+		if abilityS2:IsTrained() and params.special == 0 then
+			return false
+		end
+
 		local parent = params.target
 		local ability = params.ability
 		local radius = ability:GetSpecialValueFor("seek_radius")
@@ -84,5 +93,6 @@ function anko_senei_jyashu(params)
 		ApplyDamage(damage_table)
 
 	end
-	
+
 end
+

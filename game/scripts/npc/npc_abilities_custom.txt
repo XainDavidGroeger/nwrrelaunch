@@ -6664,6 +6664,7 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hook_distance"		"500 700 850 1000"
+			"LinkedSpecialBonus"	"special_bonus_anko_1"
 		}
 		"04"
 		{
@@ -6684,6 +6685,12 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hook_damage"		"90 180 270 360"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"cd_reduc"		"1 1 1 1"
+			"LinkedSpecialBonus"	"special_bonus_anko_5"
 		}
 	}
 }
@@ -6728,7 +6735,7 @@
 		}
 		"03"
 		{
-			"var_type"			"FIELD_FLOAT"
+			"var_type"			"FIELD_INTEGER"
 			"snake_damage_interval"		"2" 
 			"LinkedSpecialBonus"	"special_bonus_anko_4"
 		}
@@ -6742,7 +6749,6 @@
 			"var_type"			"FIELD_INTEGER"
 			"projectile_speed"		"1250"
 		}
-
 	}
 
 	"Modifiers"
@@ -6760,6 +6766,30 @@
 					"ScriptFile"	"heroes/anko/anko_senei_jyashu.lua"
 					"Function"		"anko_senei_jyashu"
 					"sound_enemy"		"Hero_Medusa.MysticSnake.Target"
+					"special"		"0"
+					"mystic_snake_projectile"	"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%senei_jyashu_magic_resist"
+			}
+		}
+
+		"modifier_senei_jyashu_special"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+			
+			"ThinkInterval" "1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/anko/anko_senei_jyashu.lua"
+					"Function"		"anko_senei_jyashu"
+					"sound_enemy"		"Hero_Medusa.MysticSnake.Target"
+					"special"		"1"
 					"mystic_snake_projectile"	"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
 				}
 			}
@@ -6769,7 +6799,7 @@
 			}
 		}
 		
-
+	
 	}
 }
 
@@ -6851,13 +6881,7 @@
 	}
 	"OnSpellStart"
 	{
-		"ApplyModifier"
-		{
-			"ModifierName"	"modifier_anko_senei_ta_jashu_slow"
-			"Target" 		"TARGET"
-			"Duration"		"%slow_duration"
-		}
-		
+
 		"ApplyModifier"
 		{
 			"ModifierName"	"modifier_anko_senei_ta_jashu_dot"
@@ -14929,7 +14953,6 @@
 	//15: +250 Giant Snake Cast Range / +2s Striking Snakes Movement Speed Debuff Duration
 	//10: +2 Mana Regeneration / +100 Cast Range
 
-	// TODO fix
 	"special_bonus_anko_1"	
 	{
 		// General
@@ -15026,13 +15049,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"value"					"-1"
 			}
 		}
 	}
 
-	// TODO FIx
+	// TODO fix cooldown display on tooltip after talent is skilled it should be -4 seconds
 	"special_bonus_anko_5"	
 	{
 		// General
