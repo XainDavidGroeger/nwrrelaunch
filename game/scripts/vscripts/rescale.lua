@@ -19,10 +19,10 @@ end
 
 function GameMode:rescaleCourier( unit )
 	if unit:GetModelName() == "models/props_gameplay/donkey.vmdl" then
-		unit:SetModelScale(0.6)
+--		unit:SetModelScale(0.6)
 	end
 	if unit:GetModelName() == "models/props_gameplay/donkey_dire.vmdl" then
-		unit:SetModelScale(0.6)
+--		unit:SetModelScale(0.6)
 	end
 end
 

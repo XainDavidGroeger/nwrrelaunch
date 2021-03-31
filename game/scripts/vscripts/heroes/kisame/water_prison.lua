@@ -32,7 +32,7 @@ function ModelSwapEnd( keys )
 	caster:SetModel(caster.caster_model)
 	caster:SetOriginalModel(caster.caster_model)
 	caster:SetModelScale(1)
-	ParticleManager:DestroyParticle( keys.ability.dome, true )
+	--ParticleManager:DestroyParticle( keys.ability.dome, true )
 end
 --[[
 	Author LearningDave

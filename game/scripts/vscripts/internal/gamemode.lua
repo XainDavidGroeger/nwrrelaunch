@@ -18,6 +18,8 @@ function GameMode:_InitGameMode()
   GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
   GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
 
+  GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+
   GameRules:SetFirstBloodActive( ENABLE_FIRST_BLOOD )
   GameRules:SetHideKillMessageHeaders( HIDE_KILL_BANNERS )
 

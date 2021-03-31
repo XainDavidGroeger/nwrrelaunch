@@ -10,6 +10,8 @@ CHEATS_ACTIVATED = true
 if GameMode == nil then
     _G.GameMode = class({})
 end
+
+
 --TODO find a way to get position of the shops by name/entityname
 --base shop position team 1 
 SHOP_TEAM_1 = Vector(-832, 768, 128) 
@@ -96,6 +98,9 @@ end
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
+
+
+
 
 end
 
