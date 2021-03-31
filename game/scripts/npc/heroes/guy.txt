@@ -29,8 +29,8 @@
 		   "Ability17"		"special_bonus_guy_5"
 
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
-		"ModelScale"		"1.05"
-		"LoadoutScale"		"1.05" 
+		"ModelScale"		"1.06"
+		"LoadoutScale"		"1.06" 
 		  "AttackAnimationPoint"   "0.4"
 			
 		  "Role"			"Carry,Jungler"

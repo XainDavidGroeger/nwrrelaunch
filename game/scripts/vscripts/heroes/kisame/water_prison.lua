@@ -17,8 +17,8 @@ function ModelSwapStart( keys )
 
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(0.65)
-    keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
+  --  keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+--	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
     
 	
 end

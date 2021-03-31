@@ -30,8 +30,8 @@
 
 
 		  	"ArmorPhysical"		"1.000000"
-			"ModelScale"		"0.75"
-			"LoadoutScale"		"0.75" 
+			"ModelScale"		"0.74"
+			"LoadoutScale"		"0.74" 
 		  	"AttackAnimationPoint"   "0.4"
 		 
 		  	"AttackRange"				"100"
