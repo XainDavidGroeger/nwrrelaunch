@@ -6,8 +6,8 @@ function create( keys )
 
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_haku_5")
 	if abilityS:IsTrained() then
-		attack_min = attack_min + 25
-		attack_max = attack_min + 25
+		attack_min = attack_min + 18
+		attack_max = attack_min + 18
 	end
 
 	local hp = keys.ability:GetLevelSpecialValueFor("hp", keys.ability:GetLevel() - 1)

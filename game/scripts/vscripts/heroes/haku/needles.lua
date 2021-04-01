@@ -9,7 +9,14 @@ function BlizzardStartPoint( event )
 	local point = event.target_points[1]
 
 	caster.blizzard_dummy_point = CreateUnitByName("dummy_unit_vulnerable", point, false, caster, caster, caster:GetTeam())
-	event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)	
+
+	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
+	if abilityS:IsTrained() then
+		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave_special", nil)	
+	else 
+		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)		
+	end
+
 end
 
 
@@ -52,7 +59,14 @@ end
 
 function BlizzardEnd( event )
 	local caster = event.caster
-	caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")
+
+	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
+	if abilityS:IsTrained() then
+		caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave_special")
+	else 
+		caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")	
+	end
+	
 	caster:RemoveModifierByName("modifier_blizzard_channelling")
 
 	local blizzard_dummy_point_pointer = caster.blizzard_dummy_point

@@ -1,3 +1,7 @@
+
+"DOTAAbilities"
+{
+
 "neji_kaiten"
 {
     // General  
@@ -56,6 +60,7 @@
         {
             "var_type" "FIELD_FLOAT"
             "stun_duration" "1 1.5 2 2.5"
+			"LinkedSpecialBonus" "special_bonus_neji_1"
         }
 
     }
@@ -148,5 +153,8 @@
             }
         }
     }
+
+}
+
 
 }

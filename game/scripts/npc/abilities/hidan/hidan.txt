@@ -1,0 +1,4 @@
+#base "hidan_cull_the_weak.txt"
+#base "hidan_death_possession_blood.txt"
+#base "hidan_jashins_blessing.txt"
+#base "hidan_self_pain.txt"

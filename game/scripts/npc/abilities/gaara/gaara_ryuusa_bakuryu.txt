@@ -3,7 +3,7 @@
 {
     
     
-    "gaara_ryuusa_bakuryu"
+     "gaara_ryuusa_bakuryu"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
@@ -17,7 +17,9 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"750"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-	"AOERadius"						"300"
+
+	// TODO change aoeradius on special bonus / move ability to lua?
+	"AOERadius"						"%radius"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -43,6 +45,7 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"300"
+			"LinkedSpecialBonus"		"special_bonus_gaara_2"
 		}
 		"02"
 		{
@@ -69,6 +72,11 @@
 			"var_type"					"FIELD_FLOAT"
 			"duration"				"2 2 2 2"
 		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius_special"					"380"
+		}
 
 	}
 
@@ -91,7 +99,8 @@
 					"ScriptFile"		"heroes/gaara/gaara_ryuusa_bakuryu.lua"
 					"Function"			"sandstorm"
 					"Target"			"POINT"
-					"dummy_aura"		"modifier_gaara_sandstorm"
+					"dummy_aura"				"modifier_gaara_sandstorm"
+					"dummy_aura_special"		"modifier_gaara_sandstorm_special"
 				}	
 				"FireSound"
 				{
@@ -176,7 +185,82 @@
 					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
+
+
+			"modifier_gaara_sandstorm_special"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/gaara/sandsturm.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"		"TARGET"
+
+						"ControlPoints"
+						{
+							"01"	"%radius_special %radius_special 0"
+						}
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Radius"	"%radius_special"
+						}
+
+						"Action"
+						{
+							"Stun"
+							{
+								"Duration"   "%stun_duration"
+								"Target" 	 "TARGET"
+							}
+						}
+					}
+
+				}
+
+				"ThinkInterval"		"0.45"
+
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Radius"	"%raradius_specialdius"
+						}
+
+						"Action"
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%thinker_damage"
+							}
+						}
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 	}
-}
+	
+	}
 
 }
