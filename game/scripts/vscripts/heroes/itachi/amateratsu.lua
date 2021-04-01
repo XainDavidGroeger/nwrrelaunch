@@ -32,7 +32,14 @@ end
 -- Spreads the amaterasu dot to nearby units
 function spread_fire( event )
 	local target = event.target
+
 	local spread_aoe = event.ability:GetLevelSpecialValueFor( "spread_aoe", ( event.ability:GetLevel() - 1 ) )
+
+	local abilityS = event.caster:FindAbilityByName("special_bonus_itachi_4")
+	if abilityS:IsTrained() then
+		spread_aoe = spread_aoe + 225
+	end
+
 	local duration     = event.ability:GetLevelSpecialValueFor( "duration", ( event.ability:GetLevel() - 1 ) )
 	local allyEntities = FindUnitsInRadius(event.caster:GetTeamNumber(), target:GetAbsOrigin(), nil, spread_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
   

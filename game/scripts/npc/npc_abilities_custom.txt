@@ -214,6 +214,13 @@
 			"var_type"				"FIELD_INTEGER"
 			"illusion_duration"		"4"
 		}
+
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_itachi_2"
+		}
 	}
 
 	"OnSpellStart"
@@ -370,7 +377,6 @@
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityTextureName"		"itachi_tsukiyomi"
 
-
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -402,11 +408,18 @@
 			"slow_duration"				"1.5 2.0 2.5 3.0"
 			"LinkedSpecialBonus"		"special_bonus_itachi_1"
 		}
+	
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"stun_duration"				"1.0"
 			"LinkedSpecialBonus"		"special_bonus_itachi_3"
+		}
+
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"slow_duration_special"		"4 4.0 5.0 5.5"
 		}
 	}
 
@@ -457,20 +470,73 @@
 
 			"OnDestroy"
 			{
-				"ApplyModifier"
+				"RunScript"
 				{
-					"ModifierName"	"modifier_itachi_tsukiyomi_slow"
-					"Target" 		"TARGET"
+					"ScriptFile"	"heroes/itachi/tsukiyomi.lua"
+					"Function"		"applySlowModifier"
 				}
 			}
 
 		}
+
+
+		"modifier_itachi_tsukiyomi_stun_special"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%stun_duration_special"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnCreated"
+			{			
+				"AttachEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"ControlPointEntities"
+					{
+						"TARGET"	"follow_origin"
+					}
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/tsukiyomi.lua"
+					"Function"		"applySlowModifier"
+				}
+			}
+
+		}
+
 		"modifier_itachi_tsukiyomi_slow"
 		{
 			"Passive"			"0"
 			"IsHidden"			"0"
 			"IsDebuff"			"1"
 			"Duration"			"%slow_duration"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_percent"
+			}
+		
+		}
+
+		"modifier_itachi_tsukiyomi_slow_special"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%slow_duration_special"
 
 			"Properties"
 			{
@@ -4549,17 +4615,23 @@
         "var_type"                               "FIELD_FLOAT"
         "illusion_outgoing_damage_percent_tooltip"       "25"
        }
+	   "10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration_special"			"5 7 9 11"
+		}
+
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cd_reduc"					"0 0 0 0"
+			"LinkedSpecialBonus"		"special_bonus_kakashi_3"
+		}
 		
 	}
-	
 
 	"OnSpellStart"
 	{	
-		"ApplyModifier"
-		{
-			"Target"	"CASTER"
-			"ModifierName"	"modifier_wind_walk_datadriven"
-		}
 		"ApplyModifier"
 		{
 			"Target"	"CASTER"
@@ -4570,7 +4642,6 @@
 			"ScriptFile"      "heroes/kakashi/bunshin.lua"
 			"Function"        "ConjureImage"
 		}
-
 	}
 
 	"Modifiers"
@@ -4600,6 +4671,61 @@
 				{
 					"Target"	"CASTER"
 					"ModifierName"	"modifier_wind_walk_datadriven"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED" 
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+		}
+
+
+		"modifier_wind_walk_datadriven_special"
+		{
+			"Duration"	"%duration_special"
+			"isBuff"	"1"
+
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven_special"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"OnAbilityExecuted"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven_special"
 				}
 				"RemoveModifier"
 				{
@@ -11164,7 +11290,7 @@
 	//=================================================================================================================
 	// Hidan Special Bonus
 	//=================================================================================================================
-	//25: +325 Self Pain Damage / +15% Jashin's Blessing Heal
+	//25: +225 Self Pain Damage / +15% Jashin's Blessing Heal
 	//20: +70 Taunt AoE / +20 Strength
 	//15: +30 Attack Damage / +25 Movement Speed
 	//10: +1.75 MP Regeneration / +5 HP Regeneration
@@ -11213,7 +11339,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"325"
+				"value"					"225"
 			}
 		}
 	}
@@ -12036,8 +12162,7 @@
 		}
 	}
 
-	// TODO fix
-	"special_bonus_kakashi_2"	
+	"special_bonus_kakashi_3"	
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -12058,13 +12183,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"-2"
+				"value"					"-3"
 			}
 		}
 	}
 
 	// TODO FIX
-	"special_bonus_kakashi_3"	
+	"special_bonus_kakashi_2"	
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

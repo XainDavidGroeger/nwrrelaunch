@@ -12,7 +12,7 @@ function self_pain( keys )
 
 	local abilityS = caster:FindAbilityByName("special_bonus_hidan_2")
 	if abilityS:IsTrained() then
-		damage = damage + 325
+		damage = damage + 225
 	end
 
 	local override_damage = false
