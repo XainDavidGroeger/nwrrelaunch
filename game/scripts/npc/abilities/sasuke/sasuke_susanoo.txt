@@ -151,7 +151,7 @@
 		"precache"
 		{
 			"particle" "particles/econ/events/ti5/teleport_start_lvl2_black_ti5.vpcf"
-			"model"	"models/heroes/zuus/sasuno.vmdl"
+			"model"	"models/sasuke/sasuno.vmdl"
 			"particle"  "particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		}
