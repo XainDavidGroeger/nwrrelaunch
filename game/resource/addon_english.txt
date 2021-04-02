@@ -544,6 +544,19 @@
 		"DOTA_Tooltip_ability_sasuke_susanoo_bonus_e_ms"     "LOSS OF MOVEMENT SPEED: "
 		"DOTA_Tooltip_ability_sasuke_susanoo_bonus_armor"     "ADDITIONAL ARMOR: "
 
+                "DOTA_Tooltip_ability_Amaterasu"     "Amaterasu"
+                "DOTA_Tooltip_ability_Amaterasu_Description"     "Sasuke ignites this area with a black flame. The enemies in it receive periodic damage, and their armor is reduced."
+                "DOTA_Tooltip_ability_Amaterasu_damage"     "DAMAGE PER SEC: "
+                "DOTA_Tooltip_ability_Amaterasu_duration"     "DURATION: "
+		"DOTA_Tooltip_ability_Amaterasu_radius"     "RADIUS: "
+		"DOTA_Tooltip_ability_Amaterasu_armor_reduction"     "ARMOR REDUSED: "
+		"DOTA_Tooltip_ability_sasunoo_arrow"     "Susanoo Arrow"
+                "DOTA_Tooltip_ability_sasunoo_arrow_Description"     "Sasuke releases an arrow that stuns the first creature in its path and causes damage to it. The distance traveled by the arrow increases its damage and the duration of the stun."
+                "DOTA_Tooltip_ability_sasunoo_arrow_damage"     "DAMAGE: "
+                "DOTA_Tooltip_ability_sasunoo_arrow_arrow_min_stun"     "MIN. STUNNING: "
+		"DOTA_Tooltip_ability_sasunoo_arrow_arrow_max_stun"     "MAX. STUNNING: "
+		"DOTA_Tooltip_ability_sasunoo_arrow_arrow_bonus_damage"     "MAX. ADDITIONAL DAMAGE: "
+
 		//--------------------
 		//Kakashi
 		//--------------------
