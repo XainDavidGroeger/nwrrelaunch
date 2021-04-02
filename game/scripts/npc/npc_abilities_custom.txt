@@ -3,6 +3,8 @@
 #base "special_bonus_flat.txt"
 #base "abilities/gaara/gaara_ryuusa_bakuryu"
 #base "abilities/sasuke/sasuke_susanoo.txt"
+#base "abilities/sasuke/sasuke_susanoo_arrow.txt"
+#base "abilities/sasuke/sasuke_amaterasu.txt"
 
 // Dota Heroes File
 "DOTAAbilities"
