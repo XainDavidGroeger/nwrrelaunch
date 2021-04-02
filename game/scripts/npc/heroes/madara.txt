@@ -36,7 +36,8 @@
 		  "StatusHealth"    "200"
   "StatusHealthRegen"   "1.600000"
 		  "AttackAnimationPoint"   "0.4"
-		  "ModelScale"		"1.1"
+		  "ModelScale"		"1"
+
 		 // "AttackRate"				"0.7"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"310"
@@ -46,7 +47,9 @@
 		  "AttributeIntelligenceGain" "3.1" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "17" // Base agility
 		  "AttributeAgilityGain" "1.6" // Agility bonus per level.
+
 		  "ArmorPhysical"		"3.000000"
+                  "DisableWearables" "1"
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha"

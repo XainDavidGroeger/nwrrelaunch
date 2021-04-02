@@ -1,11 +1,13 @@
 
 //special bonus flat
 #base "special_bonus_flat.txt"
-
 #base "abilities/gaara/gaara.txt"
 #base "abilities/neji/neji.txt"
 #base "abilities/hidan/hidan.txt"
 #base "abilities/kisame/kisame.txt"
+#base "abilities/sasuke/sasuke_susanoo.txt"
+#base "abilities/sasuke/sasuke_susanoo_arrow.txt"
+#base "abilities/sasuke/sasuke_amaterasu.txt"
 
 // Dota Heroes File
 "DOTAAbilities"
