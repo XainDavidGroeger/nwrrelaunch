@@ -77,7 +77,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	"heroes/ability_sasuke.lua"
+						"ScriptFile"	"heroes/sasuke/susanoo_sasuke.lua"
 						"Function"		"sasuke_susanoo_end"
 					}
 				}
@@ -137,7 +137,7 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"	"heroes/ability_sasuke.lua"
+				"ScriptFile"	"heroes/sasuke/susanoo_sasuke.lua"
 				"Function"		"sasuke_susanoo"
 			}
 			"ApplyModifier"
@@ -151,7 +151,7 @@
 		"precache"
 		{
 			"particle" "particles/econ/events/ti5/teleport_start_lvl2_black_ti5.vpcf"
-			"model"	"models/sasuke/sasuno.vmdl"
+			"model"	"models/heroes/zuus/sasuno.vmdl"
 			"particle"  "particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		}
