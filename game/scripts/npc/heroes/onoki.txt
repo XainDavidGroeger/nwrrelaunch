@@ -4,7 +4,7 @@
 		"npc_dota_hero_sven" //onoki
 {
 			"override_hero"		"npc_dota_hero_sven"
-			"Model"				"models/haku_test/haku2_base.vmdl"
+			"Model"				"models/onuki/onoki_model.vmdl"
 			"Ability1"			"onoki_jinton"
 			"Ability2"			"onoki_stalagmite_armor"
 			"Ability3"			"onoki_turn_to_dust"
@@ -22,8 +22,8 @@
 			"StatusHealth"    "145"
 			"StatusHealthRegen"   "0.300000"
 
-			"ModelScale"		"2.5"
-			"LoadoutScale"		"2.5" 
+			"ModelScale"		"2.35"
+			"LoadoutScale"		"2.35" 
 			"Role"			"Support,Nuker,Disabler,Durable,Initiator"
 			"Rolelevels"	"2,2,2,1,1"
 			// Unit attribute
@@ -46,6 +46,7 @@
 			"AttributeBaseAgility"			"13"
 			"AttributeAgilityGain"			"1.8"
 
+                        "DisableWearables" "1"
 			"ItemSlots"	{ }
 			"Village"			"iwagakure"
 			"Gender"			"male"
