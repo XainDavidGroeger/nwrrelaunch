@@ -60,7 +60,7 @@
             {
                 "var_type"					"FIELD_FLOAT"
                 "mana_gain"					"100"
-                "LinkedSpecialBonus"		"special_bonus_kankuro_1"
+               
             }
             "04"
             {
@@ -79,6 +79,13 @@
                 "var_type"					"FIELD_FLOAT"
                 "as_buff"					"0 0 0 0"
                 "LinkedSpecialBonus"		"special_bonus_kankuro_5"
+            }
+
+             "07"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "mp_reg"					"1.0 1.0 1.0 1.0"
+                "LinkedSpecialBonus"		"special_bonus_kankuro_1"
             }
         }
         
