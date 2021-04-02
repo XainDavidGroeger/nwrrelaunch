@@ -1,4 +1,4 @@
-s﻿"lang"
+"lang"
 {
 
 	"Language"		"Russian"
@@ -480,6 +480,19 @@ s﻿"lang"
 		"DOTA_Tooltip_ability_sasuke_susanoo_bonus_e_bat"     "ЗАДЕРЖКА ПЕРЕД АТАКОЙ: "
 		"DOTA_Tooltip_ability_sasuke_susanoo_bonus_e_ms"     "ПОТЕРЯ СКОРОСТИ ПЕРЕДВИЖЕНИЯ: "
 		"DOTA_Tooltip_ability_sasuke_susanoo_bonus_armor"     "ДОП. БРОНЯ: "
+
+                "DOTA_Tooltip_ability_Amaterasu"     "Аматерасу"
+                "DOTA_Tooltip_ability_Amaterasu_Description"     "Саске поджигает указанную область черным пламенем. Находящиеся в нем враги получают переодический урон, а их броня снижается."
+                "DOTA_Tooltip_ability_Amaterasu_damage"     "Урон в секунду: "
+                "DOTA_Tooltip_ability_Amaterasu_duration"     "Длительность: "
+		"DOTA_Tooltip_ability_Amaterasu_radius"     "РАДИУС ПЛАМЕНИ: "
+		"DOTA_Tooltip_ability_Amaterasu_armor_reduction"     "СНИЖЕНИЕ БРОНИ: "
+		"DOTA_Tooltip_ability_sasunoo_arrow"     "Стрела Сусаноо"
+                "DOTA_Tooltip_ability_sasunoo_arrow_Description"     "Саске выпускает стрелу, оглушающую первое существо на своем пути и наносящую ему урон. Преодоленное стрелой расстояние увеличивает её урон и длительность оглушения."
+                "DOTA_Tooltip_ability_sasunoo_arrow_damage"     "УРОН: "
+                "DOTA_Tooltip_ability_sasunoo_arrow_arrow_min_stun"     "МИН. ОГЛУШЕНИЕ: "
+		"DOTA_Tooltip_ability_sasunoo_arrow_arrow_max_stun"     "МАКС. ОГЛУШЕНИЕ: "
+		"DOTA_Tooltip_ability_sasunoo_arrow_arrow_bonus_damage"     "МАКС. ДОПОЛНИТЕЛЬНЫЙ УРОН: "
 
 		//--------------------
 		//Kakashi
