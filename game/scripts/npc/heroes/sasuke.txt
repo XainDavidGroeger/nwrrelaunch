@@ -4,7 +4,7 @@
 			"npc_dota_hero_storm_spirit" //sasuke
 		{
 		  "override_hero"   "npc_dota_hero_storm_spirit"
-		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
+		  "Model" 			"models/sasuke/zuozhu.vmdl"
 		  "Ability1"        "sasuke_chidori_nagashi"
 		  "Ability2"        "sasuke_chidori_eiso" 
 		  "Ability3"        "sasuke_chidori_koken" 
