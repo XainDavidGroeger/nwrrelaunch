@@ -1,0 +1,4 @@
+#base "karasu_critical_strike.txt"
+#base "karasu_daggers.txt"
+#base "karasu_dismantle_parts.txt"
+#base "karasu_poison_gas.txt"

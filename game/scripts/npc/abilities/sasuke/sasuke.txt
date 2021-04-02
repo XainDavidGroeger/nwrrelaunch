@@ -1,0 +1,3 @@
+#base "sasuke_susanoo.txt"
+#base "sasuke_susanoo_arrow.txt"
+#base "sasuke_amaterasu.txt"
