@@ -4,4 +4,8 @@ function resetCooldown( keys )
 		keys.ability:EndCooldown()
 		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
 	end
+
+
+	
+
 end

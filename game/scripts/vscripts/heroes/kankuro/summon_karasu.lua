@@ -53,6 +53,7 @@ function summon_karasu( keys )
 
 	-- todo add bonus AS to puppet
 
+
 	--Sets the stats gain per level
 	karasu_unit:SetHPGain(hp_gain)
 
@@ -61,6 +62,13 @@ function summon_karasu( keys )
 	local ability1 = keys.caster:FindAbilityByName("special_bonus_kankuro_1")
 	if ability1:IsTrained() then
 		mp_reg = mp_reg + 4.0
+	end
+
+	local ability4 = keys.caster:FindAbilityByName("special_bonus_kankuro_4")
+	if ability4:IsTrained() then
+		karasu_unit:AddAbility("special_bonus_kankuro_4")
+		local abilityUnit4 = karasu_unit:FindAbilityByName("special_bonus_kankuro_4")
+		abilityUnit4:SetLevel(1)
 	end
 
 	karasu_unit:SetBaseManaRegen(mp_reg)
