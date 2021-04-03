@@ -19,7 +19,6 @@ function Precache( context )
   ]]
 
 
-  DebugPrint("[BAREBONES] Performing pre-load precache")
 
   -- Particles can be precached individually or by folder
   -- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed

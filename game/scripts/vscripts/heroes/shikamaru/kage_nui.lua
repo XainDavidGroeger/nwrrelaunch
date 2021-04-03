@@ -8,3 +8,14 @@ function SetDamage( event )
 	target:SetBaseDamageMin(attack_damage_min)
 
 end
+
+
+function resetCooldown( keys )
+
+	local ability6 = keys.caster:FindAbilityByName("special_bonus_shikamaru_6")
+	if ability6:IsTrained() then
+		keys.ability:EndCooldown()
+		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 45)
+	end
+
+end

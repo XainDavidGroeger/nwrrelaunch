@@ -52,7 +52,7 @@
       {
         "var_type"                               "FIELD_FLOAT"
         "illusion_max_hp_percentage"              "14 18 22 26"
-		"LinkedSpecialBonus"					 "special_bonus_kisame_2"
+		    "LinkedSpecialBonus"					 "special_bonus_kisame_2"
       }
 
       "02"

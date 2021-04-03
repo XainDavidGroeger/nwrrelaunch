@@ -73,6 +73,12 @@
 			"LinkedSpecialBonus"	"special_bonus_kisame_5"
 		}	
 
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"armor_debuff_special"			"-6 -7 -8 -9"
+		}	
+
 		"07"
 		{
 			"var_type"			"FIELD_FLOAT"
@@ -137,16 +143,50 @@
 			"Duration"		"%debuff_duration"
 		}
 
-		"Damage"
+		"RunScript"
 		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage"
+			"ScriptFile"	"heroes/kisame/suikodan_no_jutsu.lua"
+			"Function"			"suikodan_no_jutsu_apply_damage"
 		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/kisame/suikodan_no_jutsu.lua"
+			"Function"			"suikodan_no_jutsu_apply_armor_debuff"
+		}
+
 	}
 
 	"Modifiers"
 	{
+		"modifier_suikodan_no_jutsu_debuff_armor"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%slow_duration"
+
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff"
+			}
+		}
+
+		"modifier_suikodan_no_jutsu_debuff_armor_special"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%slow_duration"
+
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff_special"
+			}
+		}
+
 		"modifier_suikodan_no_jutsu_debuff"
 		{
 			"Passive"			"0"
@@ -161,6 +201,7 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_percentage"
+				
 			}
 		}
 

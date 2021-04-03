@@ -5,7 +5,6 @@
 function initiateValues( keys )
 	keys.ability.hitTargets = {}
 	keys.ability.hasTargets = false
-print(keys.ability.hasTargets)
 end
 --[[Author: LearningDave
 	Date: November, 2th 2015.

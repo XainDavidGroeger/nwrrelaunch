@@ -727,6 +727,19 @@
 							},
 						]
 					},
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "bone_new27"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},

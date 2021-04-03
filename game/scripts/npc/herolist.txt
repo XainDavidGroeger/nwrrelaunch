@@ -32,7 +32,12 @@
 	// Agi Melee
 	"npc_dota_hero_bloodseeker" "1" //zabuza
 	"npc_dota_hero_axe" "1"  //neji
-	"npc_dota_hero_juggernaut" "1"  //minato
+
+
+	// bugged currently removed until its fixed TODO
+	"npc_dota_hero_juggernaut" "0"  //minato
+
+
 	"npc_dota_hero_antimage" "1" //itachi
 	
 	// Agi Ranged

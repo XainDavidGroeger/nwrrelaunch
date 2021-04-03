@@ -1,117 +1,58 @@
-function MeditationRemovePositive( keys )
-	local caster = keys.caster
-	local target = keys.target
+
+
+function applyArmorBuffDebuffModifiers ( keys ) 
+
 	local ability = keys.ability
-	local ability_level = ability:GetLevel() - 1
-	local modifier = keys.modifier
+	local caster = keys.caster
+	local radius = ability:GetLevelSpecialValueFor("radius",ability:GetLevel() - 1)
+	local duration = ability:GetLevelSpecialValueFor("duration",ability:GetLevel() - 1)
+	local targets = FindUnitsInRadius(
+		keys.caster:GetTeamNumber(), 
+		keys.caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
 
-	-- Modifier variables
+	local modifier_name_debuff = "modifier_meditation_negative"
 
-	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
-	local abilityspecial = keys.caster:FindAbilityByName("special_bonus_shikamaru_3")
-	if abilityspecial:IsTrained() then
+	local ability3 = caster:FindAbilityByName("special_bonus_shikamaru_3")
+	if ability3:IsTrained() then
+		modifier_name_debuff = "modifier_meditation_negative_special"
 		duration = duration + 2
 	end
 
-	local tick_interval = ability:GetLevelSpecialValueFor("tick_interval", ability_level)
 
-	-- Calculating how many modifiers we have to remove
-	local modifiers_to_remove = duration / tick_interval
-
-	-- Removing them
-	for i = 1, modifiers_to_remove do
-		target:RemoveModifierByNameAndCaster(modifier, caster)
-	end
-end
-
-function MeditationRemoveNegative( keys )
-	local caster = keys.caster
-	local target = keys.target
-	local ability = keys.ability
-	local ability_level = ability:GetLevel() - 1
-	local modifier = keys.modifier
-
-	-- Modifier variables
-	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
-	local tick_interval = ability:GetLevelSpecialValueFor("tick_interval", ability_level)
-
-	-- Calculating how many modifiers we have to remove
-	local modifiers_to_remove = duration / tick_interval
-
-	-- Removing them
-	for i = 1, modifiers_to_remove do
-		target:RemoveModifierByNameAndCaster(modifier, caster)
-	end
-end
-
-function MeditationPositiveParticle( event )
-	local target = event.target
-	local location = target:GetAbsOrigin()
-	local particleName = event.particle_name
-	local modifier = event.modifier
-
-	-- Count the number of weave modifiers
-	local count = 0
-
-	for i = 0, target:GetModifierCount() do
-		if target:GetModifierNameByIndex(i) == modifier then
-			count = count + 1
-		end
+	for _, unit in pairs(targets) do
+		ability:ApplyDataDrivenModifier(keys.caster, unit, modifier_name_debuff, {duration = duration})
 	end
 
-	-- If its the first one then apply the particle
-	if count == 1 then 
-		target.WeavePositiveParticle = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, target)
-		ParticleManager:SetParticleControl(target.WeavePositiveParticle, 0, target:GetAbsOrigin())
-		ParticleManager:SetParticleControl(target.WeavePositiveParticle, 1, target:GetAbsOrigin())
+	local friends = FindUnitsInRadius(
+		keys.caster:GetTeamNumber(), 
+		keys.caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
 
-		ParticleManager:SetParticleControlEnt(target.WeavePositiveParticle, 1, target, PATTACH_OVERHEAD_FOLLOW, "attach_overhead", target:GetAbsOrigin(), true)
-	end
-end
+	local modifier_name = "modifier_meditation_positive"
 
--- Destroys the particle when the modifier is destroyed, only when the target doesnt have the modifier
-function EndMeditationPositiveParticle( event )
-	local target = event.target
-	local particleName = event.particle_name
-	local modifier = event.modifier
-
-	if not target:HasModifier(modifier) then
-		ParticleManager:DestroyParticle(target.WeavePositiveParticle,false)
-	end
-end
-
-function MeditationNegativeParticle( event )
-	local target = event.target
-	local location = target:GetAbsOrigin()
-	local particleName = event.particle_name
-	local modifier = event.modifier
-
-	-- Count the number of weave modifiers
-	local count = 0
-
-	for i = 0, target:GetModifierCount() do
-		if target:GetModifierNameByIndex(i) == modifier then
-			count = count + 1
-		end
+	local ability3 = caster:FindAbilityByName("special_bonus_shikamaru_3")
+	if ability3:IsTrained() then
+		modifier_name = "modifier_meditation_positive_special"
+		duration = duration + 2
 	end
 
-	-- If its the first one then apply the particle
-	if count == 1 then 
-		target.WeaveNegativeParticle = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, target)
-		ParticleManager:SetParticleControl(target.WeaveNegativeParticle, 0, target:GetAbsOrigin())
-		ParticleManager:SetParticleControl(target.WeaveNegativeParticle, 1, target:GetAbsOrigin())
-
-		ParticleManager:SetParticleControlEnt(target.WeaveNegativeParticle, 1, target, PATTACH_OVERHEAD_FOLLOW, "attach_overhead", target:GetAbsOrigin(), true)
+	for _, unit in pairs(friends) do
+		ability:ApplyDataDrivenModifier(keys.caster, unit, modifier_name, {duration = duration})
 	end
-end
 
--- Destroys the particle when the modifier is destroyed, only when the target doesnt have the modifier
-function EndMeditationNegativeParticle( event )
-	local target = event.target
-	local particleName = event.particle_name
-	local modifier = event.modifier
-
-	if not target:HasModifier(modifier) then
-		ParticleManager:DestroyParticle(target.WeaveNegativeParticle,false)
-	end
 end

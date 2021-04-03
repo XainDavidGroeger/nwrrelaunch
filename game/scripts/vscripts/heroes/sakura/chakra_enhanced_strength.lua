@@ -3,9 +3,19 @@ function chakra_enhanced_strength( keys )
 		keys.ability.enemy = keys.target
 		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_name, {duration = 1})
 	end
+
+
 end
 
 function chakra_enhanced_strength_apply( keys )
+
+	if keys.caster:HasModifier("modifier_sakura_chakra_enhanced_strength") then
+		local ability5 = keys.caster:FindAbilityByName("special_bonus_sakura_5")
+		if ability5:IsTrained() then
+			keys.caster:RemoveModifierByName("modifier_sakura_chakra_enhanced_strength")
+			keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
+		end
+	end
 
 	if keys.caster:IsRealHero() then
 
@@ -27,16 +37,16 @@ function chakra_enhanced_strength_apply( keys )
 		keys.ability.enemy:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
 
 
-		local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
+		local damage = keys.ability:GetLevelSpecialValueFor("bonus_damage", keys.ability:GetLevel() - 1 )
 
-		local abilityS = keys.caster:FindAbilityByName("special_bonus_sakura_1")
-		if abilityS:IsTrained() then
+		local ability1 = keys.caster:FindAbilityByName("special_bonus_sakura_1")
+		if ability1:IsTrained() then
 			damage = damage + 70
 		end
 
 		local damageTable = {}
 		damageTable.attacker = keys.caster
-		damageTable.victim = keys.ability.enemy
+		damageTable.victim = keys.target
 		damageTable.damage_type = keys.ability:GetAbilityDamageType()
 		damageTable.ability = keys.ability
 		damageTable.damage = damage
@@ -46,4 +56,15 @@ function chakra_enhanced_strength_apply( keys )
 		keys.caster:RemoveModifierByName(keys.modifier_name)
 
 	end
+end
+
+function replaceModifer( keys )
+	DebugPrint("replace sakura modifier")
+	if keys.caster:HasModifier("modifier_sakura_chakra_enhanced_strength") then
+		DebugPrint("remove sakura modifier")
+		keys.caster:RemoveModifierByName("modifier_sakura_chakra_enhanced_strength")
+		DebugPrint("remove sakura modifier")
+		keys.caster:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
+	end
+
 end

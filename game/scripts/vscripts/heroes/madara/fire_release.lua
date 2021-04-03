@@ -171,8 +171,58 @@ end
 ]]
 function fireExplosion(keys)
 	local target_point = keys.target_points[1]
-	print(target_point)
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil) 
 	ParticleManager:SetParticleControl(particle , 0, target_point)
 	ParticleManager:SetParticleControl(particle , 3, target_point)
+end
+
+
+function applyDamageAndStun( keys )
+
+	local target_point = keys.target_points[1]
+	local ability = keys.ability
+	local caster = keys.caster
+
+	local radius = ability:GetLevelSpecialValueFor("explosion_radius", ability:GetLevel() - 1)
+	local damage = ability:GetLevelSpecialValueFor("explosion_damage",ability:GetLevel() - 1)
+	local duration = ability:GetLevelSpecialValueFor("explosion_stun_duration",ability:GetLevel() - 1)
+
+	
+
+	local targets = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		target_point, 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	local ability4 = caster:FindAbilityByName("special_bonus_madara_4")
+	if ability4:IsTrained() then
+		damage = damage + 160
+	end
+
+	local ability6 = caster:FindAbilityByName("special_bonus_madara_6")
+	if ability6:IsTrained() then
+		duration = duration + 1
+	end
+
+	for _, unit in pairs(targets) do
+
+		local damageTable = {
+			victim = unit,
+			attacker = caster,
+			damage = damage,
+			damage_type = ability:GetAbilityDamageType()
+		}
+		ApplyDamage( damageTable )
+
+		unit:AddNewModifier(unit, ability, "modifier_stunned", {duration = duration})
+
+	end
+
 end

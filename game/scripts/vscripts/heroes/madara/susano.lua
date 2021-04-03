@@ -30,7 +30,13 @@ function ManaCost( keys )
 	print("test")
 	local caster = keys.caster
 	local ability = keys.ability
+
 	local manacost_per_second = keys.ability:GetLevelSpecialValueFor("mana_cost_per_second", keys.ability:GetLevel() - 1 )
+	local ability2 = caster:FindAbilityByName("special_bonus_madara_2")
+	if ability2:IsTrained() then
+		manacost_per_second = manacost_per_second - 0.72
+	end
+
 	local current_mana = caster:GetMana()
 	local new_mana = current_mana - manacost_per_second
 	print(new_mana)
@@ -63,7 +69,6 @@ function BurnEnemies( keys )
 	if abilityS1:IsTrained() then
 		burn_radius = burn_radius + 70
 	end
-
 
 	local burn_damage = keys.ability:GetLevelSpecialValueFor("burn_damage", keys.ability:GetLevel() - 1 )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_5")

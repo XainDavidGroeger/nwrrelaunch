@@ -2,7 +2,7 @@
 {
 
     //25: 45/3% Sheer Wind per Stack / +3s Wind Scythe Lift Duration
-    //20: +200 Cast Range / +12% Spell Amplification
+    //20: +200 Cast Range / +60 Blade Dance Tornado Damage
     //15: +350 Health / -2s Dust Wind Cooldown
     //10: +75 Dust Wind Damage / +30 Attack Damage
     "npc_dota_hero_enchantress" //Temari

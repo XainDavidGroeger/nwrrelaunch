@@ -102,6 +102,21 @@
                 "Function"		"summon_karasu"
             }
         }
+
+
+        "Modifiers"
+        {
+            "modifier_karasu_special_bonus_as"
+            {
+                "Passive"   "0"
+                "Hidden"   "1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"70"
+                }
+            }
+        }
     }
 
 }

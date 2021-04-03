@@ -45,7 +45,6 @@ function spread_fire( event )
   
 	if allyEntities then
 		for _,ally in pairs(allyEntities) do
-			print(ally)
 			if not ally:HasModifier("modifier_itachi_amateratsu_spread_fire") and not ally:HasModifier("modifier_itachi_amateratsu_spread_fire_cd") then
 				event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire", {Duration = duration})
 				event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire_cd", {Duration = 55})

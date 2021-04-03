@@ -68,7 +68,6 @@
     "OnSpellStart"
     {
     
-
         "Knockback"
                 {
                     "Target"
@@ -86,18 +85,11 @@
                     "ShouldStun"        "0" 
                 }
 
-        "Stun"
+        "RunScript"
         {
-            "Target"
-            {
-                "Center"            "CASTER"
-                "Radius"            "%aoe_target"
-                "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-            }
-            "Duration"          "%stun_duration"
+            "ScriptFile"    "heroes/neji/kaiten.lua"
+            "Function"      "applyStun"
         }
-
 
         "Damage"
         {

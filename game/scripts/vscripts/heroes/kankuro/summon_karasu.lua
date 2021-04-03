@@ -14,6 +14,7 @@ function summon_karasu( keys )
 	local ability_index = keys.caster:FindAbilityByName("kankuro_kugusta_no_jutsu"):GetAbilityIndex()
     local kugusta_ability = keys.caster:GetAbilityByIndex(ability_index)
     local bonus_hp = 0
+
     if kugusta_ability:GetLevel() > 0 then
     	bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
 		local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
@@ -38,20 +39,37 @@ function summon_karasu( keys )
 
 	-- set movement speed
 	local karasu_ms = ability:GetLevelSpecialValueFor("ms", ability:GetLevel() - 1)
-	local abilityS = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
-	if abilityS:IsTrained() then
+	local ability3 = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
+	if ability3:IsTrained() then
 		karasu_ms = karasu_ms + 50
 	end
 	karasu_unit:SetBaseMoveSpeed(karasu_ms)
 
 	-- set bonus attack speed
 	local karasu_as = ability:GetLevelSpecialValueFor("as_buff", ability:GetLevel() - 1)
-	local abilityS = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if abilityS:IsTrained() then
+	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
+	if ability5:IsTrained() then
 		karasu_as = karasu_as + 50
 	end
 
+	-- set bonus attack damage
+	local ability7 = keys.caster:FindAbilityByName("special_bonus_kankuro_7")
+	if ability7:IsTrained() then
+		karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 225)
+		karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 225)
+	end
+
+
 	-- todo add bonus AS to puppet
+	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
+	if ability5:IsTrained() then
+		keys.ability:ApplyDataDrivenModifier(
+			caster,
+			karasu_unit,
+			"modifier_karasu_special_bonus_as",
+			{}
+		)
+	end
 
 
 	--Sets the stats gain per level
@@ -77,7 +95,10 @@ function summon_karasu( keys )
 
 	karasu_unit:SetDamageGain(damage_gain)
 
-	karasu_unit:SetMaxHealth(karasu_unit:GetMaxHealth() + bonus_hp)
+	DebugPrint(bonus_hp)
+	DebugPrint(karasu_unit:GetBaseMaxHealth())
+	karasu_unit:SetBaseMaxHealth(karasu_unit:GetBaseMaxHealth() + bonus_hp)
+	DebugPrint(karasu_unit:GetBaseMaxHealth())
 
 	--Determine Karasu's Skills
 	if (ability:GetLevel() == 1) then

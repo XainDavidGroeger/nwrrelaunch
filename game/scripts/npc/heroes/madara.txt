@@ -1,7 +1,6 @@
 "DOTAAbilities"
 {
 
-
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun
 		//20: -2s Forest Emergence Cooldown / +160 Damage Fire Annihilation Explosion
 		//15: -9% Manacost/Manaloss Reduction ( * ) / +6 Armor
@@ -16,7 +15,7 @@
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "madara_meteor"
-		    "Ability10"		"special_bonus_intelligence_12"
+		  "Ability10"		"special_bonus_intelligence_12"
 		   "Ability11"		"special_bonus_madara_1"
 
 		   "Ability12"		"special_bonus_madara_2"

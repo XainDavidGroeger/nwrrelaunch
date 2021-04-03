@@ -120,8 +120,6 @@ end
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
 -- operations here
 function GameMode:OnEntityHurt(keys)
-  --DebugPrint("[BAREBONES] Entity Hurt")
-  --DebugPrintTable(keys)
 
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
   if keys.entindex_attacker ~= nil then

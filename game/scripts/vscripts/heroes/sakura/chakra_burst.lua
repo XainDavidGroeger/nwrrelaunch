@@ -24,3 +24,14 @@ function gainMaxMoveSpeed( keys )
 	)
 
 end
+
+function applyBurstModifier( keys )
+
+	local duration = keys.ability:GetLevelSpecialValueFor("duration", keys.ability:GetLevel() - 1)
+	local ability4 = keys.caster:FindAbilityByName("special_bonus_sakura_4")
+	if ability4:IsTrained() then
+		duration = duration + 4
+	end
+
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_sakura_chakra_burst", {duration = duration})
+end

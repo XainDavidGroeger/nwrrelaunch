@@ -138,6 +138,14 @@ function temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit(keys)
 	local ability = keys.ability
 
 	local burst_damage = ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1)
+
+	-- TODO fix
+	--local ability3 = keys.ability:GetOwner():FindAbilityByName("special_bonus_temari_3")
+
+	--if ability3:IsTrained() then
+	--	burst_damage = burst_damage + 60
+	--end
+
 	keys.target:EmitSound("Hero_Invoker.Tornado.Target")
 
 	print(REALCASTER)

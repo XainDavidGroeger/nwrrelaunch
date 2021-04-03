@@ -91,3 +91,34 @@ function domeFollowHero( keys )
 		end
 	end
 end
+
+
+function applySlowModifer( keys )
+
+	local ability = keys.ability
+	local caster = keys.caster
+	local radius = ability:GetLevelSpecialValueFor("radius",ability:GetLevel() - 1)
+	local targets = FindUnitsInRadius(
+		keys.target:GetTeamNumber(), 
+		keys.caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	local ability4 = caster:FindAbilityByName("special_bonus_kisame_4")
+	if ability4:IsTrained() then
+		for _, unit in pairs(targets) do
+			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow_special",{duration = 0.2})
+		end
+	else
+		for _, unit in pairs(targets) do
+			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow",{duration = 0.2})
+		end
+	end
+end
+

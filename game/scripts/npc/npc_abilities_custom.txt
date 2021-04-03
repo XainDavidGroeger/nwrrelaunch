@@ -2343,7 +2343,8 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"illusion_outgoing_damage_percent"			"30 35 40 45"
+			"illusion_outgoing_damage_percent"			"-70 -65 -60 -55"
+			"LinkedSpecialBonus"	"special_bonus_naruto_5"
 		}
 		"03"
 		{
@@ -2355,6 +2356,12 @@
 			"var_type"				"FIELD_FLOAT"
 			"range"					"600"
 			"LinkedSpecialBonus"	"special_bonus_naruto_1"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cd_reduc"				"0 0 0 0"
+			"LinkedSpecialBonus"	"special_bonus_naruto_2"
 		}
 
 	}
@@ -2422,7 +2429,6 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"illusion_outgoing_damage_percent"			"-100 -70 -65 -60 -55"
-			"LinkedSpecialBonus"	"special_bonus_naruto_5"
 		}
 		"06"
 		{
@@ -2439,6 +2445,13 @@
 			"var_type"				"FIELD_INTEGER"
 			"damage"				"50 70 90 110"
 			"LinkedSpecialBonus"	"special_bonus_naruto_3"
+		}
+
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0 0 0 0"
+			"LinkedSpecialBonus"	"special_bonus_naruto_7"
 		}
 	}
 
@@ -2485,11 +2498,10 @@
 	
 			"OnCreated"
 			{
-				"Damage"
+				"RunScript"
 				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%damage"
+					"ScriptFile"	"heroes/naruto/kage_bunshin_rasengan.lua"
+					"Function"		"applyDamage"
 				}
 			}
 
@@ -2608,7 +2620,6 @@
       {
         "var_type"                               "FIELD_FLOAT"
         "illusion_outgoing_damage_percent"       "-100 -70 -65 -60 -55"
-		"LinkedSpecialBonus"					 "special_bonus_naruto_5"
       }
        "03"
       {
@@ -2636,6 +2647,12 @@
         "var_type"                               "FIELD_FLOAT"
         "agility_bonus"                "10 20 30 40"
       }	
+
+	   "08"
+      {
+        "var_type"                            "FIELD_FLOAT"
+        "duration_special"                            "9.5"
+      }   
 	}
 
 
@@ -2652,11 +2669,14 @@
 	"OnSpellStart"
   {
 
-    "ApplyModifier"
+
+	"RunScript"
     {
-      "ModifierName"  "modfiier_naruto_kawazu_kumite"
-      "Target"      "CASTER"
+     "ScriptFile"      "heroes/naruto/kawazu_kumite.lua"
+      "Function"        "applyModifier"
+	  "ModiferName"		"modfiier_naruto_kawazu_kumite"
     }
+
     "RunScript"
     {
      "ScriptFile"      "heroes/naruto/kawazu_kumite.lua"
@@ -2666,12 +2686,26 @@
 
     "Modifiers"
     {
+
      "modfiier_naruto_kawazu_kumite"
     {
       "IsBuff"    "1"
       "Passive"    "0"
 
       "Duration"  "%duration"
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%strength_agility_bonus"
+        "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"     "%strength_agility_bonus" 
+      }
+    }
+
+	 "modfiier_naruto_kawazu_kumite_special"
+    {
+      "IsBuff"    "1"
+      "Passive"    "0"
+
+      "Duration"  "%duration_special"
       "Properties"
       {
         "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%strength_agility_bonus"
@@ -2954,7 +2988,8 @@
 		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage	"			"70 130 190 250"
+			"damage"			"70 130 190 250"
+			"LinkedSpecialBonus"	"special_bonus_shikamaru_5"
 		}
 	}
 	
@@ -2976,32 +3011,12 @@
 			"EffectName"			"Hero_Crystal.CrystalNova"
 			"Target"				"CASTER"
 		}
-	
-		"ActOnTargets"
+
+		"RunScript"
 		{
-			"Target"
-			{
-				"Center"		"POINT"
-				"Radius"		"%radius"
-				"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
-				"Type"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			}
-			
-			"Action"
-			{
-				"Damage"
-				{
-					"Target"	"TARGET"
-					"Damage"	"%damage"
-					"Type"		"DAMAGE_TYPE_MAGICAL"
-				}
-				
-				"ApplyModifier"
-				{
-					"Target"		"TARGET"
-					"ModifierName"	"modifier_shikamaru_explosive_kunai_slow"
-				}
-			}
+			"ScriptFile"		"heroes/shikamaru/explosive_kunai.lua"
+			"Function"			"applyDamage"
+			"Target"			"POINT"
 		}
 		
 		"RunScript"
@@ -3079,12 +3094,16 @@
 			"var_type"			"FIELD_FLOAT"
 			"total_damage"		"100 128 160 188"
 		}
-		// Extra, calculated as total_damage / channel_time * tick_interval
 		"03"
 		{
 			"var_type"			"FIELD_FLOAT"
 			"damage_per_tick"	"4.0 4.0 4.0 4.0"
 			"LinkedSpecialBonus" "special_bonus_shikamaru_1"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_per_tick_special"	"9.0 9.0 9.0 9.0"
 		}
 	}
 
@@ -3159,12 +3178,13 @@
 			"ThinkInterval"  "%tick_interval"
 			"OnIntervalThink"
 			{
-				"Damage"
+
+				"RunScript"
 				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%damage_per_tick"
+					"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
+					"Function"		"applyDamage"
 				}
+			
 			}
 
 			"OnCreated"
@@ -3234,21 +3254,13 @@
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"700"
 		}
-		"02"
-		{	
-			"var_type"					"FIELD_FLOAT"
-			"armor_per_second"			"-1"
-		}
+	
 		"03"
 		{	
 			"var_type"					"FIELD_FLOAT"
 			"duration"					"4.0 6.0 8.0 10.0"
 			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
-		}
-		"04"
-		{	
-			"var_type"					"FIELD_FLOAT"
-			"negative_armor_per_second"		"1"
+			"LinkedSpecialBonusField"	"duration"
 		}
 		"05"
 		{	
@@ -3260,11 +3272,25 @@
 			"var_type"					"FIELD_FLOAT"
 			"armor"						"4.0 6.0 8.0 10.0"
 			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			"LinkedSpecialBonusField"	"armor_buff"
 		}
 		"07"
 		{	
 			"var_type"					"FIELD_FLOAT"
 			"negative_armor"			"-4.0 -6.0 -8.0 -10.0"
+			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			"LinkedSpecialBonusField"	"armor_debuff"
+		}
+
+		"08"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"armor_special"						"6.0 8.0 10.0 12.0"
+		}
+		"09"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"negative_armor_special"			"-6.0 -8.0 -10.0 -12.0"
 		}
 	}
 
@@ -3288,41 +3314,14 @@
 			}
 		}
 
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
-				"Types" 	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			}
-		
-			"Action"    
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_meditation_positive"
-					"Target"
-					{
-						"Center"	"TARGET"
-						"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					}
-					"Duration"		"%duration"
-				}
 
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_meditation_negative"
-					"Target"
-					{
-						"Center"	"TARGET"
-						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					}
-					"Duration"		"%duration"
-				}
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/shikamaru/meditation.lua"
+				"Function"		"applyArmorBuffDebuffModifiers"
 			}
-		}
+
+		
 	}
 
 	"Modifiers"
@@ -3333,121 +3332,48 @@
 			"IsHidden"			"0"
 			"IsBuff"			"1"
 	
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"MeditationPositiveParticle"
-					"particle_name"		"particles/units/heroes/hero_dazzle/dazzle_armor_friend.vpcf"
-					"modifier"		"modifier_meditation_positive"
-				}
-			}
-
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor"
 			}
 	
-			"ThinkInterval"  "%tick_interval"
-			"OnIntervalThink"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_meditation_positive_decay"
-					"Target" 		"TARGET"
-				}
-			}
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"MeditationRemovePositive"
-					"modifier"		"modifier_meditation_positive_decay"
-				}
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"EndMeditationPositiveParticle"
-					"modifier"		"modifier_meditation_positive"
-				}
-			}
 		}
 
 		"modifier_meditation_negative"
 		{
 			"IsDebuff"			"1"
 
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"MeditationNegativeParticle"
-					"particle_name"		"particles/units/heroes/hero_dazzle/dazzle_armor_enemy.vpcf"
-					"modifier"		"modifier_meditation_negative"
-				}
-			}
-
 			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%negative_armor"
 			}
-
-			"ThinkInterval"  "%tick_interval"
-			"OnIntervalThink"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_meditation_negative_decay"
-					"Target" 		"TARGET"
-				}
-			}
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"MeditationRemoveNegative"
-					"modifier"		"modifier_meditation_negative_decay"
-				}
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/meditation.lua"
-					"Function"		"EndMeditationNegativeParticle"
-					"modifier"		"modifier_meditation_negative"
-				}
-			}
 		}
 
-		"modifier_meditation_positive_decay"
+		"modifier_meditation_positive_special"
 		{
-			"IsHidden"		"1"
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+	
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_per_second" 
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_special"
 			}
+	
 		}
 
-		"modifier_meditation_negative_decay"
+		"modifier_meditation_negative_special"
 		{
-			"IsHidden"		"1"
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsDebuff"			"1"
 
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%negative_armor_per_second" 
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%negative_armor_special"
 			}
 		}
+	
 	}
 }
 
@@ -3485,20 +3411,30 @@
 			"var_type"			"FIELD_INTEGER"
 			"ward_count"		"8"
 		}
+
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_min"			"20 27 35"
 		}
+
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_max"			"20 27 35"
 		}
+
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"				"15.0"
+		}
+
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_shikamaru_6"
 		}
 	}
 
@@ -3515,6 +3451,12 @@
 			"EffectName"		"Hero_ShadowShaman.SerpentWard"
 			"Target"			"CASTER"
 		}
+
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/shikamaru/kage_nui.lua"
+				"Function"		"resetCooldown"
+			}
 
 		"SpawnUnit"
 		{
@@ -3649,7 +3591,7 @@
 		"08"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"cd_reduc"		"1 1 1 1"
+			"cd_reduc"		"0 0 0 0"
 			"LinkedSpecialBonus"	"special_bonus_anko_5"
 		}
 	}
@@ -6050,12 +5992,18 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"armor_reduction_duration"	"2 3 4"//TODO
+			"armor_reduction_duration"	"2 3 4"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"cast_range"			"120"//TODO
+			"cast_range"			"120"
+		}
+
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"reduce_armor_special"	"-12 -12 -12"
 		}
 	}
 	
@@ -6102,6 +6050,24 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%reduce_armor"
+			}
+		}
+
+		"raikage_knockup_special"
+		{
+			"Passive"     "0"
+			"IsHidden"      "0"
+			"IsDebuff"      "1"
+
+			"EffectName"    "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
+			"EffectAttachType"  "follow_origin"
+
+			"StatusEffectName"    "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"     
+			"StatusEffectPriority"  "10"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%reduce_armor_special"
 			}
 		}
 		
@@ -6154,17 +6120,11 @@
 							"Damage"			"%AbilityDamage"
 						}
 						
-						"ApplyModifier"
+
+						"RunScript"
 						{
-							"ModifierName"  "raikage_knockup"
-							"Target"
-							{
-								"Center"  "TARGET"
-								"Radius"  "%target_aoe"
-								"Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							}
-							"Duration"    "%armor_reduction_duration"
+							"ScriptFile"	"heroes/raikage/raikage_raiga_no_bomu.lua"
+							"Function"		"applyRaikageKnockupModifier"
 						}
 					
 					
@@ -6256,6 +6216,11 @@
             "var_type"  "FIELD_INTEGER"
             "damage_reduction_duration" "2"
         }
+		 "05"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "damage_reduction_special" "-75.0 -80.0 -85.0 -90.0"
+        }
     }
 
 	"Modifiers"
@@ -6323,6 +6288,35 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"     "%damage_reduction"
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+					"EffectAttachType" "follow_origin"
+
+					"Target" "TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"    "attach_hitloc"
+					}
+				}
+			}
+
+		}
+
+		"modifier_raigyaku_debuff_special"
+		{
+			"Duration"        "%damage_reduction_duration"     
+			"IsDebuff"        "1"
+			"IsPurgable"      "0"
+			"Attributes"    "MODIFIER_ATTRIBUTE_NONE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"     "%damage_reduction_special"
 			}
 
 			"OnCreated"
@@ -6720,13 +6714,11 @@
 
 	"OnSpellStart"
 	{
-	     
-	        "ApplyModifier"
-	        {
-	        	"ModifierName"	"modifier_sakura_chakra_burst"
-	        	"Target" 		"CASTER"
-	        	"Duration"		"%duration"
-	        }
+			"RunScript"
+			{
+				"ScriptFile"    "heroes/sakura/chakra_burst.lua"
+                "Function"      "applyBurstModifier"
+			}
 	}
 
 
@@ -6735,7 +6727,6 @@
 		"modifier_sakura_chakra_burst"
 		{
 			"IsBuff"	"1"
-			"Duration"	"%duration"
 
 			"Properties"
 			{
@@ -6836,12 +6827,18 @@
             "chance"       "15.0"
 			"LinkedSpecialBonus" 	"special_bonus_sakura_5"
         }
+		 "04"
+        {
+            "var_type" "FIELD_FLOAT"
+            "chance_special"       "35.0"
+        }
     }
 
 
     "Modifiers"
     {
-        "modifier_sakura_chakra_enhanced_strength"
+
+		  "modifier_sakura_chakra_enhanced_strength"
       {
          "Passive" "1"
          "IsHidden"  "1"
@@ -6850,7 +6847,28 @@
           "Random"
           {
             "Chance" "%chance"
-            "PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
+            "OnSuccess"  
+            {
+              "RunScript"
+              {
+                "ScriptFile"  "heroes/sakura/chakra_enhanced_strength.lua"
+                "Function"    "chakra_enhanced_strength"
+                "modifier_name" "modifier_sakura_chakra_enhanced_strength_bash"
+              }
+            }
+          }
+        }
+
+      }
+
+        "modifier_sakura_chakra_enhanced_strength_special"
+      {
+         "IsHidden"  "1"
+          "OnAttackStart"
+        {
+          "Random"
+          {
+            "Chance" "%chance_special"
             "OnSuccess"  
             {
               "RunScript"
@@ -6927,6 +6945,12 @@
 			"var_type"						"FIELD_INTEGER"
 			"stomp_damage"					"75 150 225 300"
 		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"cd_reduc"						"0 0 0 0"
+			"LinkedSpecialBonus"			"special_bonus_sakura_3"
+		}
 	}
 
 	"precache"
@@ -6960,7 +6984,11 @@
 			}
 		}
 
-	
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/sakura/earth_slam.lua"
+			"Function"		"resetCooldown"
+		}
 
 		"FireSound"
 		{
@@ -7066,6 +7094,11 @@
 			"var_type"			"FIELD_INTEGER"
 			"duration"			"20"		
 		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_armor_special"			"21 24 27"		
+		}
 	}
 
 	"OnAbilityPhaseStart"
@@ -7092,11 +7125,12 @@
 			"Target"		"CASTER"
 		}
 
-		"ApplyModifier"
+		"RunScript"
 		{
-			"ModifierName"	"modifier_sakura_inner_sakura"
-			"Target"		"CASTER"
+			"ScriptFile"		"heroes/sakura/inner_sakura.lua"
+			"Function"			"applyArmorModifier"
 		}
+	
 	}
 
 	"Modifiers"
@@ -7114,6 +7148,71 @@
 			{
 				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%gods_strength_damage"
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
+			}
+
+
+			"OnCreated"
+			{
+				   "AttachEffect"
+                	{
+                    	"EffectName" "particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                     		"CASTER"    "attach_left_hand"
+                    	}
+                	}
+
+					"AttachEffect"
+                	{
+                    	"EffectName" "particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_right_hand"
+                    	}
+                	}
+
+	                "AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_left_foot"
+                    	}
+                	}
+
+					"AttachEffect"
+                	{
+                    	"EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_right_foot"
+                    }
+                }
+			}
+		}
+
+		"modifier_sakura_inner_sakura_special"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"Duration"		"%duration"
+
+			"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
+			"StatusEffectPriority"	"10"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%gods_strength_damage"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor_special"
 			}
 
 
@@ -7445,12 +7544,12 @@
 
             "Action"
             {
-                "Damage"
-                {
-                    "Target"    "TARGET"
-                    "Type"      "DAMAGE_TYPE_MAGICAL"
-                    "Damage"    "%aoe_damage"
-                }
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/sasuke/chidori_nagashi.lua"
+					"Function"		"applyDamage"
+				}
 
                 "FireEffect"
                 {
@@ -7611,6 +7710,13 @@
 			"damage"				"100 150 200 250"
 			"LinkedSpecialBonus"	"special_bonus_temari_1"
 		}
+
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_temari_2"
+		}
 	}
 	"OnSpellStart"
 	{
@@ -7619,6 +7725,12 @@
 		{
 			"ScriptFile"	"heroes/temari/temari_sheer_wind.lua"
 			"Function"		"sheer_wind_call"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+			"Function"		"resetCooldown"
 		}
 
 		"TrackingProjectile"
@@ -7636,13 +7748,12 @@
 	{
 		"DeleteOnHit"	"1"
 
-
-		"Damage"
+		"RunScript"
 		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%damage"
-		}						
+			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+			"Function"		"applyDamage"
+		}
+						
 	}
 }
 
@@ -7708,7 +7819,7 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"lift_duration"			"1.3"
-			"LinkedSpecialBonus"	"special_bonus_temari_4"
+			"LinkedSpecialBonus"	"special_bonus_temari_5"
 		}
 		"07"
 		{
@@ -7906,6 +8017,7 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"base_damage"			"70 120 170"
+			"LinkedSpecialBonus"	"special_bonus_temari_3"
 		}
 		"07"
 		{
@@ -8013,14 +8125,14 @@
 		{
 			"var_type"							"FIELD_INTEGER"
 			"sheer_wind_attack_speed_bonus"		"20 30 40 50"
-			"LinkedSpecialBonus"				"special_bonus_temari_3"
+			"LinkedSpecialBonus"				"special_bonus_temari_4"
 			"LinkedSpecialBonusField"			"as_bonus"
 		}
 		"02"
 		{
 			"var_type"							"FIELD_INTEGER"
 			"sheer_wind_move_speed_bonus"		"2 3 4 5"
-			"LinkedSpecialBonus"				"special_bonus_temari_3"
+			"LinkedSpecialBonus"				"special_bonus_temari_4"
 			"LinkedSpecialBonusField"			"ms_bonus"
 		}
 		"03"
@@ -8282,7 +8394,6 @@
 		"DeleteOnHit"		"0"
 
 		
-
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/madara/fire_release.lua"
@@ -8298,8 +8409,6 @@
 			"Type"			"DAMAGE_TYPE_MAGICAL"
 			"Damage"		"%wave_damage"
 		}
-
-
 		
 	}
 
@@ -8312,32 +8421,11 @@
 			"TARGET"		"POINT"
 		}
 
-		"ActOnTargets"
+		"RunScript"
 		{
-			"Target"
-			{
-				"Center"	"POINT"
-				"Radius"	"%explosion_radius"
-				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY" 
-				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			}
-			
-			"Action"
-			{
-				"Stun"
-				{
-					"Duration"   "%explosion_stun_duration"
-					"Target" 	 "TARGET"
-				}
-
-
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%explosion_damage"
-				}
-			}
+			"ScriptFile"	"heroes/madara/fire_release.lua"
+			"Function"		"applyDamageAndStun"
+			"TARGET"		"POINT"
 		}
 	}
 }
@@ -8576,6 +8664,7 @@
         {
             "var_type"              "FIELD_FLOAT"
             "mana_cost_per_second"  "8"
+			"LinkedSpecialBonus"	"special_bonus_madara_2"
         }
 
         "05"
@@ -8742,6 +8831,7 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"mana_cost_per_second"	"8"
+			"LinkedSpecialBonus"	"special_bonus_madara_2"
 		}
 
 		"05"
@@ -8871,6 +8961,13 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"tree_vision"				"150"
+		}
+
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cd_reduc"					"0 0 0 0"
+			"LinkedSpecialBonus"		"special_bonus_madara_3"
 		}
 
 	}
@@ -9695,7 +9792,7 @@
 	//10: +9 Strength / +20 Attack Speed
 	//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
 	//20: +28 Mana Break / +20% Internal Bleeding MS Slow
-	//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+	//25: +10s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
 	"special_bonus_neji_1"	
 	{
 		// General
@@ -9766,7 +9863,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"30"
+				"value"					"10"
 			}
 		}
 	}
@@ -9791,7 +9888,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"8"
+				"value"					"5"
 			}
 		}
 	}
@@ -10587,7 +10684,6 @@
 		}
 	}
 
-	// TODO talk to spastic
 	"special_bonus_madara_2"	
 	{
 		// General
@@ -10612,12 +10708,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"-9"
+				"value"					"-0.72"
 			}
 		}
 	}
 
-	// TODO fix cooldown reduction on talent
 	"special_bonus_madara_3"	
 	{
 		// General
@@ -11027,7 +11122,6 @@
 		}
 	}
 
-	// TODO fix
 	"special_bonus_naruto_2"	
 	{
 		// General
@@ -11127,7 +11221,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"-13"
+				"value"					"13"
 			}
 		}
 	}
@@ -11157,7 +11251,6 @@
 		}
 	}
 
-	// TOOD fix
 	"special_bonus_naruto_7"	
 	{
 		// General
@@ -11404,7 +11497,6 @@
 		}
 	}
 
-	// TODO fix cooldown display on tooltip after talent is skilled it should be -4 seconds
 	"special_bonus_anko_5"	
 	{
 		// General
@@ -11735,7 +11827,6 @@
 		}
 	}
 
-	// TODO fix
 	"special_bonus_sakura_2"	
 	{
 		// General
@@ -11757,13 +11848,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"-2"
+				"value"					"-3"
 			}
 		}
 	}
 
 
-	// TODO fix
 	"special_bonus_sakura_3"	
 	{
 		// General
@@ -11816,7 +11906,6 @@
 	}
 
 
-	// TODO fix move to lua
 	"special_bonus_sakura_5"	
 	{
 		// General
@@ -12036,9 +12125,8 @@
 	//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
 	//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
 	//15: -2s Explosive Kunai Cooldown / +100 Cast Range
-	//10: +175 Health / +140 Shadow Bind Total Damage
+	//10: +175 Health / +50 Shadow Bind Damage per Second
 
-	// TODO fix
 	"special_bonus_shikamaru_1"	
 	{
 		// General
@@ -12059,12 +12147,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"2.0"
+				"value"					"5.0"
 			}
 		}
 	}
 
-	// TODO fix move to lua
 	"special_bonus_shikamaru_2"	
 	{
 		// General
@@ -12111,7 +12198,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"2"
+				"armor_buff"					"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_debuff"					"-2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"					"2"
 			}
 		}
 	}
@@ -12142,7 +12239,6 @@
 		}
 	}
 
-	// Todo need fix
 	"special_bonus_shikamaru_5"	
 	{
 		// General
@@ -12168,8 +12264,6 @@
 		}
 	}
 
-
-	// todo fix move to lua
 	"special_bonus_shikamaru_6"	
 	{
 		// General
@@ -12227,7 +12321,6 @@
 		}
 	}
 
-	// TODO fix move to lua
 	"special_bonus_temari_2"	
 	{
 		// General
@@ -12264,6 +12357,32 @@
 
 		"LinkedAbility"
 		{
+			"01" 	"temari_kuchiyose_kirikiri_mai"
+
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"60"
+			}
+		}
+	}
+
+	"special_bonus_temari_4"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
 			"01" 	"temari_sheer_wind"
 		}
 
@@ -12284,7 +12403,7 @@
 		}
 	}
 
-	"special_bonus_temari_4"	
+	"special_bonus_temari_5"	
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

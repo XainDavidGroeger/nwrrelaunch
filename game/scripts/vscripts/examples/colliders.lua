@@ -126,10 +126,8 @@ if testCount == 0 then
     return IsPhysicsUnit(collided) or (collided.IsRealHero and collided:IsRealHero())
   end
   collider.postaction = function(self, collider, collided)
-    print("post: " .. collided:GetName() .. " -- " .. VectorDistance(collider:GetAbsOrigin(), collided:GetAbsOrigin()))
   end
   collider.preaction = function(self, collider, collided)
-    print("pre: " .. collided:GetName() .. " -- " .. VectorDistance(collider:GetAbsOrigin(), collided:GetAbsOrigin()))
   end
 
 
@@ -393,18 +391,10 @@ if testCount == 15 then
 end
 
 
-print(testCount)
 testCount = testCount + 1
 
 --PrintTable(Physics.Colliders)
 
-print('0----0')
---print(testUnit:GetModelRadius())
---print(testUnit:BoundingRadius2D())
---print(testUnit:GetHullRadius())
---print(testUnit:GetPaddedCollisionRadius())
-PrintTable(Physics.Colliders)
-print('0----0')
 
 hero:Hibernate(false)
 
@@ -443,6 +433,3 @@ Timers:CreateTimer("asdf", {callback = function()
   end
   return .01
 end})
-
---print(VectorDistance(hero:GetAbsOrigin(), testUnit:GetAbsOrigin()))
---print(VectorDistance(hero:GetAbsOrigin(), testUnit:GetAbsOrigin()))

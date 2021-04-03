@@ -2,7 +2,7 @@
 {
 		// TODO fix -armor debuff on -5 Shark Bullet Armor - doenst work currently
 		//25: +20% Shark Dance Slow / -5 Shark Bullet Armor
-		//20: -50% Water Clone Incoming Damage ( * ) / +7% Samehada Mana Steal
+		//20: 10% Water Clone HP / +7% Samehada Mana Steal
 		//15: +90 Shark Bullet Damage / 10% Cooldown Reduction
 		//10: +20 Damage / +15 Movement Speed
     		"npc_dota_hero_kunkka" //kisame

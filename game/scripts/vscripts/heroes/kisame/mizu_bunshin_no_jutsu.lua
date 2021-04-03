@@ -8,11 +8,15 @@ function ConjureImage( event )
  local origin = caster:GetAbsOrigin() + RandomVector(100)
  local duration = ability:GetLevelSpecialValueFor( "illusion_duration", ability:GetLevel() - 1 )
  local damage_percentage = ability:GetLevelSpecialValueFor( "damage_percentage", ability:GetLevel() - 1 )
+
  local illusion_max_hp_percentage = ability:GetLevelSpecialValueFor( "illusion_max_hp_percentage", ability:GetLevel()-1)
+ local ability2 = caster:FindAbilityByName("special_bonus_kisame_2")
+ if ability2:IsTrained() then
+	illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
+ end
 
  -- handle_UnitOwner needs to be nil, else it will crash the game.
  local illusion = CreateUnitByName("kisame_bunshin", origin, true, caster, nil, caster:GetTeamNumber())
- PrintTable(illusion)
  
  illusion:SetControllableByPlayer(player, true)
  illusion:SetOwner(caster)
@@ -44,9 +48,7 @@ AbilityWater:SetAbilityIndex(1)
 AbilityWater:SetLevel(event.ability:GetLevel())
 
 
- print(illusion:GetMaxHealth())
  illusion:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
- print(illusion:GetMaxHealth())
 
  local hp_caster_percentage = caster:GetHealth() / (caster:GetMaxHealth() / 100)
  illusion:SetHealth(illusion:GetMaxHealth() / 100 * hp_caster_percentage)

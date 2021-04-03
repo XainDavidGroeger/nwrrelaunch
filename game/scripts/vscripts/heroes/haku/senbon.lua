@@ -6,6 +6,4 @@ function resetCooldown( keys )
 	end
 
 
-	
-
 end

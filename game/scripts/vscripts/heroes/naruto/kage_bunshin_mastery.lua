@@ -8,7 +8,6 @@ naruto_kage_bunshin_mastery = class({})
 function naruto_kage_bunshin_mastery:OnSpellStart( event )
 
 	
-
 		local ability = self
 		local caster = ability:GetCaster()
 		local target = ability:GetCursorTarget()
@@ -22,6 +21,13 @@ function naruto_kage_bunshin_mastery:OnSpellStart( event )
 		caster:RemoveNoDraw()
 		target:RemoveNoDraw()
 
+
+	--reset CD if special is skilled
+	local abilityS2 = caster:FindAbilityByName("special_bonus_naruto_2")
+	if abilityS2:IsTrained() then
+		ability:EndCooldown()
+		 ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 2 )
+	end
 
 end
 

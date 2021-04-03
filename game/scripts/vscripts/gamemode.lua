@@ -79,7 +79,6 @@ end
   The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-  DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
 
    GameMode:RemoveWearables( hero )
@@ -150,15 +149,12 @@ function GameMode:RemoveWearables( hero )
     local model = hero:FirstMoveChild()
     while model ~= nil do
         if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
-          print(model:GetName())
-            --print(model:GetModelName())
             table.insert(wearables, model)
         end
         model = model:NextMovePeer()
     end
 
     for i = 1, #wearables do
-        --print("removed 1 wearable")
         wearables[i]:RemoveSelf()
     end
 end

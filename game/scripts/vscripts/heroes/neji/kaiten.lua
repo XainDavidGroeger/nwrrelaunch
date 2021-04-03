@@ -9,3 +9,35 @@ function removeParticle( keys )
 	keys.caster:Stop()
 	ParticleManager:DestroyParticle( keys.ability.ultiParticle, true )
 end
+
+function applyStun( keys ) 
+
+	local ability = keys.ability
+	local caster = keys.caster
+
+	local radius = ability:GetLevelSpecialValueFor("aoe_target", ability:GetLevel() - 1)
+
+	local duration = ability:GetLevelSpecialValueFor("stun_duration",ability:GetLevel() - 1)
+
+	local ability1 = caster:FindAbilityByName("special_bonus_neji_1")
+	if ability1:IsTrained() then
+		duration = duration + 0.25
+	end
+
+	local targets = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	for _, unit in pairs(targets) do
+		unit:AddNewModifier(unit, ability, "modifier_stunned", {duration = duration})
+	end
+
+end

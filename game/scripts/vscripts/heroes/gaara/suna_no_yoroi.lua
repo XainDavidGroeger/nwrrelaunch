@@ -27,7 +27,6 @@ function ManaShield( event )
 
 	-- If it doesnt then do the HP calculation
 	if oldHealth >= 1 then
-		print("Damage taken "..damage.." | Mana needed: "..mana_needed.." | Current Mana: "..caster_mana)
 
 		-- If the caster has enough mana, fully heal for the damage done
 		if mana_needed <= caster_mana then

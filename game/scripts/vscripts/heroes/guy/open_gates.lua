@@ -1,6 +1,5 @@
 function Launch(keys)
 
-	DebugPrint("apply open gates modifier")
 
 	local caster = keys.caster
 	local ability = keys.ability

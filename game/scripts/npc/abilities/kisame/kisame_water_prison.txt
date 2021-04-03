@@ -83,6 +83,12 @@
 			"damage"		"40 64 88"
 		}
 
+		"11"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"ms_slow_percentage_special"	"-40"
+		}
+
 	}
 
 	"precache"
@@ -188,6 +194,26 @@
         
 		}
 
+		"modifer_water_prison_slow_special"
+		{
+
+          "Passive"     "0"
+          "IsHidden"      "0"
+          "IsDebuff"      "1"
+          "EffectName"    "particles/units/heroes/kisame/brewmaster_thunder_clap_debuff.vpcf"
+          "EffectAttachType"  "follow_origin"
+      
+          "StatusEffectName"    "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"     
+          "StatusEffectPriority"  "10"
+
+          "Properties"
+          {
+
+            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_percentage_special"
+          } 
+        
+		}
+
 		"modifer_water_prison_hp_reg"
 		{
 
@@ -246,18 +272,13 @@
 					"Damage"	"%damage_per_millisecond"
 				}
 
-				 "ApplyModifier"
-				    {
-				      "ModifierName"  "modifer_water_prison_slow"
-				      "Target"
-				      {
-				        "Center"  "CASTER"
-				        "Radius"  "%radius"
-				        "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				        "Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				      }
-				      "Duration"    "0.2"
-				    }
+
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/kisame/water_prison.lua"
+					"Function"				"applySlowModifer"
+				}
+				
 			}
 
 
