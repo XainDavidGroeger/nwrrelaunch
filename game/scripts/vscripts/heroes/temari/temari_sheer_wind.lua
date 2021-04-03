@@ -7,7 +7,15 @@ function sheer_wind( keys )
 	local maxStack = ability:GetLevelSpecialValueFor("sheer_wind_max_stacks", (ability:GetLevel() - 1))
 	local modifierCount = caster:GetModifierCount()
 	local currentStack = 0
+
 	local modifierBuffName = "modifier_sheer_wind_buff"
+
+	
+	local ability4 = keys.caster:FindAbilityByName("special_bonus_temari_4")
+	if ability4:IsTrained() then
+		modifierBuffName = "modifier_sheer_wind_buff_special"
+	end
+
 	local modifierStackName = "modifier_sheer_wind_buff_stack"
 	local modifierName
 
@@ -64,6 +72,12 @@ function sheer_wind_call( keys )
 		local modifierCount = caster:GetModifierCount()
 		local currentStack = 0
 		local modifierBuffName = "modifier_sheer_wind_buff"
+
+		local ability4 = keys.caster:FindAbilityByName("special_bonus_temari_4")
+		if ability4:IsTrained() then
+			modifierBuffName = "modifier_sheer_wind_buff_special"
+		end
+
 		local modifierStackName = "modifier_sheer_wind_buff_stack"
 		local modifierName
 

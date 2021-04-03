@@ -139,16 +139,16 @@ function temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit(keys)
 
 	local burst_damage = ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1)
 
-	-- TODO fix
-	--local ability3 = keys.ability:GetOwner():FindAbilityByName("special_bonus_temari_3")
+	DebugPrint(burst_damage)
+	local ability3 = REALCASTER:FindAbilityByName("special_bonus_temari_3")
 
-	--if ability3:IsTrained() then
-	--	burst_damage = burst_damage + 60
-	--end
+	if ability3:IsTrained() then
+		burst_damage = burst_damage + 60
+	end
 
 	keys.target:EmitSound("Hero_Invoker.Tornado.Target")
+	DebugPrint(burst_damage)
 
-	print(REALCASTER)
 
 
 	ApplyDamage({victim = keys.target, attacker = REALCASTER, damage = burst_damage, damage_type = DAMAGE_TYPE_MAGICAL,})

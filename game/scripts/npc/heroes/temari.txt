@@ -22,10 +22,10 @@
       "Ability13"		"special_bonus_temari_2"
 
       "Ability14"		"special_bonus_cast_range_200"
-      "Ability15"		"special_bonus_spell_amplify_12"
+      "Ability15"		"special_bonus_temari_3"
 
-      "Ability16"		"special_bonus_temari_3"
-      "Ability17"		"special_bonus_temari_4"
+      "Ability16"		"special_bonus_temari_4"
+      "Ability17"		"special_bonus_temari_5"
 
       "ModelScale"		"1.75"
       "LoadoutScale"	"1.75" 

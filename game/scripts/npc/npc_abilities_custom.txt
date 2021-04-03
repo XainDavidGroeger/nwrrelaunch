@@ -1597,6 +1597,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cast_range"		"450"
 		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"miss_percentage_special"		"75 85 95 100"
+		}
 	}
 
 	"OnSpellStart"
@@ -1629,43 +1634,29 @@
 		{
 			"OnCreated"
 			{
-				"AttachEffect"
-				{
-					"EffectName"	"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
-					"EffectAttachType"	"attach_origin"
-					"Target"		"TARGET"
 
-					"ControlPoints"
-					{
-						"01"	"%radius %radius 0"
-					}
+				"RunScript"
+				{
+						"ScriptFile"		"heroes/zabuza/kirigakure_no_jutsu.lua"
+						"Function"			"attachEffect"
+						"Target"			"TARGET"
 				}
+				
 			}
 			
 			"ThinkInterval"		"0.1"
 
 			"OnIntervalThink"
 			{
-				"ActOnTargets"
-				{
-					"Target"
-					{
-						"Center"	"TARGET"
-						"Types"		"DOTA_UNIT_TARGET_ALL"
-						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Radius"	"%radius"
-					}
 
-					"Action"
-					{
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_zabuza_kirigakure_no_jutsu_silence"
-							"Target" 		"TARGET"
-							"Duration"		"1"
-						}
-					}
+				"RunScript"
+				{
+						"ScriptFile"		"heroes/zabuza/kirigakure_no_jutsu.lua"
+						"Function"			"applySmokeModifierNew"
+						"Target"			"TARGET"
 				}
+
+				
 			}
 
 			"States"
@@ -1693,6 +1684,26 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"%miss_percentage"
+			}
+			
+		}
+
+		"modifier_zabuza_kirigakure_no_jutsu_silence_special"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"0.1"
+			"IsPurgable"	"1"
+			"EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
+			"EffectAttachType"	"follow_overhead"	
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"%miss_percentage_special"
 			}
 			
 		}
@@ -1849,24 +1860,19 @@
 			"armor_debuff"			"-1 -2 -3 -4"
 			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_debuff_special"	"-4 -5 -6 -7"
+		}
 	}
 
 	"OnSpellStart"
 	{	
 		"RunScript"
         {
-			"ScriptFile"    "items.lua"
-			"Function"      "CheckForSpellBlock"
-			"GenericFunction"	"GenericSpellFunction"
-			
-			"Modifier1"		"modifier_track_aura_datadriven"
-			"Duration1"		"%duration"
-			
-			"Modifier2"		"modifier_track_datadriven"
-			"Duration2"		"%duration"
-
-			"Modifier2"		"modifier_track_armor_debuff_datadriven"
-			"Duration2"		"%duration"
+			"ScriptFile"    "heroes/zabuza/track.lua"
+			"Function"      "applyModifiers"
 		}
 
 		"FireEffect"
@@ -1952,6 +1958,7 @@
 		{
 			"Duration"	"%duration"
 			"IsHidden"	"1"
+			"IsDebuff"	"1"
 
 			"OnDestroy"
 			{
@@ -1970,14 +1977,27 @@
 
 		"modifier_track_armor_debuff_datadriven"
 		{
+			"IsHidden"	"1"
+			"IsDebuff"	"1"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_debuff"
 			}
 		}
 
+			"modifier_track_armor_debuff_datadriven_special"
+		{
+			"IsHidden"	"1"
+			"IsDebuff"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_debuff_special"
+			}
+		}
+
 		"modifier_track_speed_datadriven"
 		{
+
 			"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
 			"EffectAttachType"	"follow_origin"
 
@@ -1989,6 +2009,7 @@
 
 		"modifier_track_reveal_datadriven"
 		{
+			"IsDebuff"	"1"
 			"IsHidden"		"1"
 			"IsPurgable"	"0"
 			"Priority"		"MODIFIER_PRIORITY_HIGH"
@@ -2229,7 +2250,7 @@
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"8 8 8 8"
 		
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -2239,6 +2260,12 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"crit_multiplier"		"130 150 170 200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_5"
 		}
 	}
 
@@ -2290,6 +2317,7 @@
 				{
 					"ScriptFile"	"heroes/zabuza/weak_spot.lua"	
 					"Function"		"weak_spot_reset_cd"
+					"Caster"		"CASTER"		
 				}
 			}
 
@@ -8140,6 +8168,18 @@
 			"var_type"					"FIELD_INTEGER"
 			"sheer_wind_max_stacks"		"3"
 		}
+
+		"04"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_move_speed_bonus_special"		"5 6 7 8"
+		}
+
+		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_attack_speed_bonus_special"		"65 75 85 95"
+		}
 	}
 
 	"Modifiers"
@@ -8161,6 +8201,20 @@
 			{
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus"
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus"
+			}
+		}
+
+		"modifier_sheer_wind_buff_special"
+		{
+			"IsHidden"		"1"
+			"Duration"		"%AbilityDuration"
+
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus_special"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus_special"
 			}
 		}
 	}
@@ -10570,7 +10624,7 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"value"					"35"
 			}
 		}
@@ -10646,7 +10700,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"-1.75"
+				"value"					"-1.5"
 			}
 		}
 	}

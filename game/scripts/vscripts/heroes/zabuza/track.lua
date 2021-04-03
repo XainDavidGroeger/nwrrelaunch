@@ -30,3 +30,23 @@ function Track( keys )
 	-- NOTE: Trying to do this in KV is not possible it seems
 	target:RemoveModifierByName("modifier_track_aura_datadriven") 
 end
+
+
+function applyModifiers( keys )
+	local ability = keys.ability
+	local caster = keys.caster
+	local target = keys.target
+	local duration = ability:GetLevelSpecialValueFor("duration", (ability:GetLevel() - 1))
+
+ 
+	local armor_debuff = "modifier_track_armor_debuff_datadriven"
+ 
+	local ability3 = keys.caster:FindAbilityByName("special_bonus_zabuza_3")
+	if ability3:IsTrained() then
+		armor_debuff = "modifier_track_armor_debuff_datadriven_special"
+	end
+ 
+	 ability:ApplyDataDrivenModifier(caster, target, armor_debuff, {duration = duration})
+	 ability:ApplyDataDrivenModifier(caster, target, "modifier_track_aura_datadriven", {duration = duration})
+	 ability:ApplyDataDrivenModifier(caster, target, "modifier_track_datadriven", {duration = duration})
+ end
