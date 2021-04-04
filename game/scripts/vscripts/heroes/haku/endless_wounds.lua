@@ -24,15 +24,7 @@ function applyStacksAttack( keys )
 					keys.target:SetModifierStackCount(modifier_victim:GetName(),keys.ability,threshold)
 				end
 			else
-				if abilityS2:IsTrained() then
-					keys.ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim_special",{})
-					local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim_special")
-					keys.target:SetModifierStackCount(modifier_victim:GetName(),keys.ability,stacks_per_attack)
-				else
-					keys.ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim",{})
-					local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim")
-					keys.target:SetModifierStackCount(modifier_victim:GetName(),keys.ability,stacks_per_attack)
-				end
+					-- todo
 			end
 		end	
 		Timers:CreateTimer( duration, function()
@@ -83,7 +75,6 @@ function applyModifierFromAbility( keys )
 				keys.target:SetModifierStackCount(modifier_victim:GetName(),endless_wounds_ability,endless_wounds_threshold)
 			end
 		else
-
 			if keys.target:HasModifier("modifier_haku_endless_needles_victim_special") then
 				local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim_special")
 				local stacks = keys.target:GetModifierStackCount(modifier_victim:GetName(),keys.ability)
@@ -93,23 +84,16 @@ function applyModifierFromAbility( keys )
 					keys.target:SetModifierStackCount(modifier_victim:GetName(),endless_wounds_ability,endless_wounds_threshold)
 				end
 			else
-
-				if keys.target:HasModifier("modifier_haku_endless_needles_victim") then
-					local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim")
-					endless_wounds_ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim",{})
-					keys.target:SetModifierStackCount(modifier_victim:GetName(),endless_wounds_ability,endless_wounds_stacks)
-				end
-
-				if keys.target:HasModifier("modifier_haku_endless_needles_victim_special") then
+				if abilityS2:IsTrained() then
+					keys.ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim_special",{})
 					local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim_special")
-					endless_wounds_ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim_special",{})
-					keys.target:SetModifierStackCount(modifier_victim:GetName(),endless_wounds_ability,endless_wounds_stacks)
+					keys.target:SetModifierStackCount(modifier_victim:GetName(),keys.ability,stacks_per_attack)
+				else
+					keys.ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_haku_endless_needles_victim",{})
+					local modifier_victim = keys.target:FindModifierByName("modifier_haku_endless_needles_victim")
+					keys.target:SetModifierStackCount(modifier_victim:GetName(),keys.ability,stacks_per_attack)
 				end
-
 			end
-
-
-			
 		end	
 		Timers:CreateTimer( endless_wounds_duration, function()
 			if  keys.target:HasModifier("modifier_haku_endless_needles_victim") then

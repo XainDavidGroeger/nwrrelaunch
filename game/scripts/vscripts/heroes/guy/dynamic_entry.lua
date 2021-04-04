@@ -4,7 +4,7 @@ guy_dynamic_entry = guy_dynamic_entry or class({})
 LinkLuaModifier("modifier_guy_dynamic_entry_miss", "heroes/guy/dynamic_entry.lua", LUA_MODIFIER_MOTION_NONE)
 
 function guy_dynamic_entry:GetAbilityTextureName()
-	return "dynamic_entry"
+	return "guy_dynamic_entry"
 end
 
 function guy_dynamic_entry:GetCastRange(location, target)

@@ -9003,7 +9003,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/haku/senbon.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9067,87 +9068,6 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"range"					"600"
-		}
-
-		"06"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"cd_reduc"			"0 0 0 0"
-			"LinkedSpecialBonus" "special_bonus_haku_2"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"TrackingProjectile"
-		{
-			"Target"           	"TARGET"
-			"EffectName"		"particles/units/heroes/haku/senbon.vpcf"
-			"Dodgeable"			"1"
-			"ProvidesVision"	"0"
-			"MoveSpeed"        	"%magic_missile_speed"
-			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-		}		
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/endless_wounds.lua"
-			"Function"		"applyModifierFromAbility"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/senbon.lua"
-			"Function"		"resetCooldown"
-		}
-
-		"FireSound"
-        {
-          "EffectName"  "haku_senbon_cast"
-          "Target"    "CASTER"
-        }
-
-	}
-
-	"OnProjectileHitUnit"
-	{
-
-		"DeleteOnHit"	"1"
-
-		"RunScript"
-		{
-			"ScriptFile"    "items.lua"
-			"Function"      "CheckForSpellBlock"
-			
-			"GenericFunction"	"GenericSpellFunction"
-			"Modifier1"		"modifier_haku_senbon_stun"
-			"Duration1"		"%stun_duration"
-			
-			"doDamage"		"true"
-		}
-
-
-		"FireSound"
-        {
-          "EffectName"  "haku_senbon_impact"
-          "Target"    "TARGET"
-        }
-						
-	}
-
-	"Modifiers"
-	{
-		"modifier_haku_senbon_stun"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%stun_duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
 		}
 	}
 }
