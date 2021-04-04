@@ -4820,7 +4820,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/kakashi/kakashi_doton.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4873,7 +4874,13 @@
 			"var_type"				"FIELD_FLOAT"
 			"damage"	"50 75 100 125"
 		}
-			}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"range"					"500"
+		}
+
+	}
 
 	"OnSpellStart"
 	{
@@ -4920,21 +4927,6 @@
 						
 	}
 
-	"Modifiers"
-	{
-		"modifier_kakashi_doton"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%stun_duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
-		}
-	}
 }
 
 "kakashi_empty"

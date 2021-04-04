@@ -1,6 +1,3 @@
-
-
-
 haku_crippling_senbon = haku_crippling_senbon or class({})
 
 LinkLuaModifier("modifier_haku_endless_needles_victim", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
