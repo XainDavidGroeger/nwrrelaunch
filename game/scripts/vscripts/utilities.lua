@@ -1,3 +1,29 @@
+
+function MergeTables( t1, t2 )
+	for name,info in pairs(t2) do
+		t1[name] = info
+	end
+end
+
+-- Returns an unit's existing increased cast range modifiers
+function GetCastRangeIncrease( unit )
+	local cast_range_increase = 0
+	-- Only the greatefd st increase counts for items, they do not stack
+	for _, parent_modifier in pairs(unit:FindAllModifiers()) do        
+		if parent_modifier.GetModifierCastRangeBonus then
+			cast_range_increase = math.max(cast_range_increase,parent_modifier:GetModifierCastRangeBonus())
+		end
+	end
+
+	for _, parent_modifier in pairs(unit:FindAllModifiers()) do        
+		if parent_modifier.GetModifierCastRangeBonusStacking and parent_modifier:GetModifierCastRangeBonusStacking() then
+			cast_range_increase = cast_range_increase + parent_modifier:GetModifierCastRangeBonusStacking()
+		end
+	end
+
+	return cast_range_increase
+end
+
 --[[Author: LearningDave
   Date: october, 19th 2015.
   returns the index of a item from a given UnitEntity and itemname

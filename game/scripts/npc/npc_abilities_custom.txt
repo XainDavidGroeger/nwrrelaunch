@@ -1634,14 +1634,12 @@
 		{
 			"OnCreated"
 			{
-
 				"RunScript"
 				{
 						"ScriptFile"		"heroes/zabuza/kirigakure_no_jutsu.lua"
 						"Function"			"attachEffect"
 						"Target"			"TARGET"
 				}
-				
 			}
 			
 			"ThinkInterval"		"0.1"
@@ -1655,8 +1653,6 @@
 						"Function"			"applySmokeModifierNew"
 						"Target"			"TARGET"
 				}
-
-				
 			}
 
 			"States"
@@ -1710,72 +1706,6 @@
 	}
 }
 
-"zabuza_stealth"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"zabuza_stealth"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-				"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-	}	
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"500 600 700 800"
-	"AbilityCastPoint"				"0.1 0.1 0.1"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"20 15 10 5"
-
-	//Damage
-	"AbilityDamage"					"0"
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60"		
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"				"250 275 300 325"
-		}
-	}
-
-	"OnSpellStart"
-	{
-
-		"Blink"
-		{
-			"Target"	"TARGET"
-		}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/zabuza/stealth.lua"
-					"Function"		"attackAfterBlink"
-				}
-		"FireSound"
-		{
-				
-		}
-		
-	}
-}
 
 "zabuza_track"
 {
@@ -3983,7 +3913,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/guy/dynamic_entry.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -4006,7 +3937,7 @@
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"375"
+	"AbilityCastRange"				"475 525 575 625"
 	"AbilityCastPoint"				"0.25 0.25 0.25"
 
 	// Time		
@@ -4035,27 +3966,12 @@
 			"duration"						"10"
 		}
 
-		"01"
+		"03"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"miss_chance_special"			"55 63 71 79"
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"475 525 575 625"
 		}
 
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-        {
-			"ScriptFile"    "items.lua"
-			"Function"      "CheckForSpellBlock"
-			
-			"filePath"		"heroes/guy/dynamic_entry"
-			"functionName"	"dynamic_entry_start"
-			
-			"EntryModifier"	"modifier_guy_dynamic_entry_miss"
-			"EntryModifierSpecial"	"modifier_guy_dynamic_entry_miss_special"
-		}
 	}
 
 	"Modifiers"
@@ -4092,12 +4008,6 @@
 			}
 			
 
-		}
-
-
-		"modifier_dynamic_entry_stunned"
-		{
-			"Passive"			"0"
 		}
 	}
 }
@@ -12478,6 +12388,55 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"value"					"3"
+			}
+		}
+	}
+
+	"zabuza_stealth"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/zabuza/zabuza_stealth_new.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"zabuza_stealth"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+					"particle"	"particles/generic_gameplay/generic_silence.vpcf"
+		}	
+
+		// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500 600 700 800"
+	"AbilityCastPoint"				"0.1 0.1 0.1"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20 15 10 5"
+
+	//Damage
+	"AbilityDamage"					"0"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"				"250 275 300 325"
 			}
 		}
 	}
