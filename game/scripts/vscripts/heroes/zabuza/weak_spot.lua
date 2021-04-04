@@ -23,19 +23,10 @@ function weak_spot( keys )
 end
 
 function weak_spot_reset_cd (keys)
-	local ability = keys.ability
 	if keys.target:GetTeamNumber() ~= keys.caster:GetTeamNumber() and not keys.target:IsBuilding() then		
-
-		local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
-
-		DebugPrint(ability5:IsTrained())
-
+		local new_cd = keys.ability:GetCooldownTimeRemaining() - 1.0
 		keys.ability:EndCooldown()
-		if ability5:IsTrained() then
-			ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 1.5)
-		else
-			ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1))
-		end
+		keys.ability:StartCooldown(new_cd)
 	end
 end
 

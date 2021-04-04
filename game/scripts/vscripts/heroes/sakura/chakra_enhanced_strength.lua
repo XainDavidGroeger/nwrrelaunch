@@ -21,19 +21,19 @@ function chakra_enhanced_strength_apply( keys )
 
 		local vCaster = keys.caster:GetAbsOrigin()
 		local vTarget = keys.ability.enemy:GetAbsOrigin()
-		local len = ( vTarget - vCaster ):Length2D()
-		len = keys.distance - keys.distance * ( len / keys.range )
+
 		local knockbackModifierTable =
 		{
 			should_stun = 1,
 			knockback_duration = keys.duration,
 			duration = keys.duration,
-			knockback_distance = len,
+			knockback_distance = 152,
 			knockback_height = 0,
 			center_x = keys.caster:GetAbsOrigin().x,
 			center_y = keys.caster:GetAbsOrigin().y,
 			center_z = keys.caster:GetAbsOrigin().z
 		}
+
 		keys.ability.enemy:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
 
 

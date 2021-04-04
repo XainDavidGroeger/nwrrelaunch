@@ -1,7 +1,6 @@
 "DOTAAbilities"
 {
 
-		// TODO fix cast range and weak spo cooldown for talentrees
 		//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
 		//20: +100% Cleave / -3 Armor Track
 		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance

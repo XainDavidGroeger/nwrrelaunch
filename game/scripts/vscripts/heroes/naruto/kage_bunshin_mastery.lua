@@ -5,8 +5,15 @@
 ]]
 naruto_kage_bunshin_mastery = class({})
 
-function naruto_kage_bunshin_mastery:OnSpellStart( event )
+function naruto_kage_bunshin_mastery:GetCastRange(location, target)
+	local castrangebonus = 0
+	if self:GetCaster():FindAbilityByName("special_bonus_naruto_1"):GetLevel() > 0 then
+		castrangebonus = 200
+	end
+	return self:GetSpecialValueFor("range") + castrangebonus
+end
 
+function naruto_kage_bunshin_mastery:OnSpellStart( event )
 	
 		local ability = self
 		local caster = ability:GetCaster()
@@ -41,9 +48,6 @@ function naruto_kage_bunshin_mastery:CastFilterResultTarget( target )
 	local ability = self
 	local caster = ability:GetCaster()
 
-
-	print(target:GetName())
-	print(caster:GetName())
 	-- Check illusion target
 	if target:IsIllusion() and target:GetTeamNumber() == caster:GetTeamNumber() and caster:GetName() == target:GetName() then 
 		return UF_SUCCESS

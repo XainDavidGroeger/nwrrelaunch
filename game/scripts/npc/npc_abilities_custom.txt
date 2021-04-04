@@ -2264,16 +2264,14 @@
 	}
 }
 
-
-
 "naruto_kage_bunshin_mastery"
 {
 	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/naruto/kage_bunshin_mastery.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-	"ScriptFile"					"heroes/naruto/kage_bunshin_mastery.lua"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"naruto_kage_bunshin_mastery"
@@ -2313,7 +2311,6 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"range"					"600"
-			"LinkedSpecialBonus"	"special_bonus_naruto_1"
 		}
 		"05"
 		{
@@ -3003,13 +3000,12 @@
 	}
 }
 
-// Shikamaru's Kage Kubishibari no Jutsu (Q) Channeled Hold
-// Author: Mognakor
 "shikamaru_kage_kubishibari"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
+	"BaseClass"					"ability_lua"
+	"ScriptFile"				"heroes/shikamaru/shikamaru_kage_kubishibari.lua"
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELED"
 	"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3052,16 +3048,21 @@
 			"var_type"			"FIELD_FLOAT"
 			"total_damage"		"100 128 160 188"
 		}
-		"03"
+		"04"
 		{
 			"var_type"			"FIELD_FLOAT"
 			"damage_per_tick"	"4.0 4.0 4.0 4.0"
 			"LinkedSpecialBonus" "special_bonus_shikamaru_1"
 		}
-		"03"
+		"05"
 		{
 			"var_type"			"FIELD_FLOAT"
 			"damage_per_tick_special"	"9.0 9.0 9.0 9.0"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"		"2.50 3.25 4.00 4.75"
 		}
 	}
 
@@ -3075,106 +3076,14 @@
 		"particle"	"particles/units/heroes/shikamaru/shikamaru_spectral_test_tracking.vpcf"
 	}
 
-	"OnSpellStart"
-	{
-		"RunScript"
-        {
-			"ScriptFile"    "items.lua"
-			"Function"      "CheckForSpellBlock"
-			"GenericFunction"	"GenericSpellFunction"
-			
-			"Modifier1"		"modifier_kubishibari"
-			"Duration1"		"%channel_time"
-		}
-	}
-	
-	"OnChannelInterrupted"
-	{
-		"RemoveModifier"
-		{
-			"ModifierName"	"modifier_kubishibari"
-			"Target" 		"TARGET"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
-			"Function"		"StopSound"
-		}
-	}
-
-	"OnChannelFinish"
-	{
-		"RemoveModifier"
-		{
-			"ModifierName"	"modifier_kubishibari"
-			"Target" 		"TARGET"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
-			"Function"		"StopSound"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_kubishibari"
-		{
-			"IsDebuff"			"1"
-	
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-
-			"StatusEffectPriority"  "10"
-
-			"OverrideAnimation"     "ACT_DOTA_DISABLED"
-
-			"ThinkInterval"  "%tick_interval"
-			"OnIntervalThink"
-			{
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
-					"Function"		"applyDamage"
-				}
-			
-			}
-
-			"OnCreated"
-			{
-	
-				"AttachEffect"
-				{
-					"EffectName"			"particles/units/heroes/shikamaru/shikamaru_shackle_aladeen.vpcf"
-					"EffectAttachType"		"follow_origin"
-					"Target"				"TARGET"
-					"ControlPointEntities"
-					{
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"CASTER"	"attach_hitloc" //Attach to the hands or any desired attach point of the hero
-						"CASTER"	"attach_hitloc"
-					}
-				}
-			}
-		}
-	}
-
 }
 
 "shikamaru_meditation"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/shikamaru/shikamaru_meditation.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"FightRecapLevel"				"1"
@@ -3250,88 +3159,6 @@
 			"var_type"					"FIELD_FLOAT"
 			"negative_armor_special"			"-6.0 -8.0 -10.0 -12.0"
 		}
-	}
-
-	"OnSpellStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Dazzle.Weave"
-			"Target" 		"CASTER"
-		}
-
-		"FireEffect"
-		{
-			"EffectName"        "particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
-			"EffectAttachType"  "start_at_customorigin"
-			"TargetPoint"            "CASTER"
-
-			"ControlPoints"
-			{
-				"01"	"%radius 0 0"
-			}
-		}
-
-
-		"RunScript"
-			{
-				"ScriptFile"	"heroes/shikamaru/meditation.lua"
-				"Function"		"applyArmorBuffDebuffModifiers"
-			}
-
-		
-	}
-
-	"Modifiers"
-	{
-		"modifier_meditation_positive"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsBuff"			"1"
-	
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor"
-			}
-	
-		}
-
-		"modifier_meditation_negative"
-		{
-			"IsDebuff"			"1"
-
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%negative_armor"
-			}
-		}
-
-		"modifier_meditation_positive_special"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsBuff"			"1"
-	
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_special"
-			}
-	
-		}
-
-		"modifier_meditation_negative_special"
-		{
-			"IsDebuff"			"1"
-
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%negative_armor_special"
-			}
-		}
-	
 	}
 }
 
@@ -7178,7 +7005,8 @@
 {
     // General  
     // ----------------------------------------------------------------------------------------
-    "BaseClass"             	 	"ability_datadriven"
+    "BaseClass"             	 	"ability_lua"
+    "ScriptFile"             	 	"heroes/sasuke/sasuke_chidori_eiso.lua"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7197,7 +7025,7 @@
     "AbilityCastPoint"       "0.2 0.2 0.2 0.2"
     "AbilityCooldown"        "20"
     "AbilityManaCost"        "100 110 120 130"
-    "AbilityCastRange"       "%cast_range"
+    "AbilityCastRange"       "250"
     "AbilityDamage"          "50 75 100 125"
 
     "AbilitySpecial"
@@ -7221,44 +7049,8 @@
         {
             "var_type"  "FIELD_INTEGER"
             "cast_range"    "250"
-			"LinkedSpecialBonus" "special_bonus_sasuke_3"
-
         }
     }
-
-    "OnSpellStart"
-    {    
-        "FireSound"
-        {
-            "EffectName"    "Ability.PlasmaFieldImpact"
-            "Target"        "CASTER"
-        }
-                
-        "RunScript"
-        {
-            "ScriptFile"                "heroes/sasuke/chidori_eiso.lua"
-            "Function"                  "chidori_eiso"
-            "Target"                    "TARGET"
-
-            "particle"                  "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-        }
-    }
-
-	"Modifiers"
-	{
-		"modifier_chidori_eiso"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%stun_duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
-		}
-	}
 }
 
 "sasuke_chidori_koken"
@@ -7466,12 +7258,13 @@
 {
     // General  
     // ----------------------------------------------------------------------------------------
-    "BaseClass"              "ability_datadriven"
+    "BaseClass"              		"ability_lua"
+	"ScriptFile"			 		"heroes/sasuke/sasuke_kirin.lua"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
     "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
     "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"     "sasuke_kirin"
-    "AOERadius"                     "%radius"
+    "AbilityTextureName"     		"sasuke_kirin"
+    "AOERadius"                     "400"
 
     "precache"
     {
@@ -7500,56 +7293,19 @@
             "var_type"  "FIELD_INTEGER"
             "cast_range" "1000 1500 2500"
         }
+		 "03"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "damage" "150 250 350"
+        }
 
-    }
-
-    "OnAbilityPhaseStart"
-    {
-        "FireSound"
-        {
-            "EffectName"    "Hero_Zuus.GodsWrath.PreCast"
-            "Target"        "CASTER"
+		 "04"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "castpoint" "1.25"
         }
     }
 
-    "OnSpellStart"
-    {
-        "FireSound"
-        {
-            "EffectName"    "Hero_Zuus.GodsWrath.Target"
-            "Target"        "CASTER"
-        }
-    
-        "ActOnTargets"
-        {
-            "Target"
-            {
-                "Center"            "POINT"
-                "Radius"            "%radius"
-                "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-            }
-            
-            "Action"
-            {
-                "Damage"
-                {
-                    "Target"            "TARGET"
-                    "Damage"            "%AbilityDamage"
-                    "Type"              "DAMAGE_TYPE_MAGICAL"
-                }
-            }
-        }
-                
-        "RunScript"
-        {
-            "ScriptFile"                "heroes/sasuke/kirin.lua"
-            "Function"                  "kirin_teleport"
-            "Target"                    "POINT"
-
-            "particle"                  "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-        }
-    }
 }
 
 

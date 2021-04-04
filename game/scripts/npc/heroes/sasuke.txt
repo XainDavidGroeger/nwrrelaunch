@@ -1,7 +1,5 @@
 "DOTAAbilities"
 {
-
-		// TODO special_bonus_sasuke_3 
 		//25: +40 Intelligence / -0.75s Kirin Cast Time
 		//20: +12% Spell Amplification / +225 Chidori Spear Range
 		//15: +14 Strength / +70 Chidori Nagashi Damage
