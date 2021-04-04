@@ -4056,18 +4056,14 @@
         { 
             "var_type"  "FIELD_FLOAT"
             "bonus_damage_percentage" "100"
+			"LinkedSpecialBonus"	"special_bonus_guy_3"
         }
         "02"
         {
             "var_type" "FIELD_FLOAT"
             "chance"       "10 16 22 28"
-			"LinkedSpecialBonus"	"special_bonus_guy_3"
         }
-		"03"
-        {
-            "var_type" "FIELD_FLOAT"
-            "chance_special"       "45 51 57 63"
-        }
+
     }
 
     "Modifiers"
@@ -4090,39 +4086,13 @@
 				{
 					"ScriptFile"  "heroes/guy/gouken_mastery.lua"
 					"Function"    "ApplyDoubleDamage"
-					"special"	  "0"
 				}
 				}
 			}
 			}
             
         }
-
-		"modifier_guy_gouken_mastery_special"
-        {
-            "Passive"                   "1"
-            "IsHidden"                  "1"
-            "IsPurgable"                "0"
-        
-           "OnAttackLanded"
-           {
-			"Random"
-			{
-				"Chance" "%chance_special"
-				"PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
-				"OnSuccess"
-				{
-					"RunScript"
-					{
-						"ScriptFile"  "heroes/guy/gouken_mastery.lua"
-						"Function"    "ApplyDoubleDamage"
-						"special"	  "1"
-					}
-				}
-			}
-			}
-            
-        }
+		
     }
 
 }
@@ -9076,7 +9046,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/haku/endless_wounds.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"haku_endless_wounds"
 	
@@ -9091,7 +9062,7 @@
 	{
 		"01"
 		{
-			"var_type"						"FIELD_FLOAT"
+		    "var_type"						"FIELD_FLOAT"
 			"ms_slow_per_stack"				"-1"
 			"LinkedSpecialBonus"			"special_bonus_haku_1"
 		}
@@ -9115,66 +9086,6 @@
 			"var_type"						"FIELD_FLOAT"
 			"ms_slow_per_stack_special"				"-1.25"
 		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_haku_endless_needles_caster"
-		{
-			"Passive"                   "1"
-            "IsHidden"                  "1"
-        
-           "OnAttackLanded"
-           {
-	              "RunScript"
-	              {
-	                "ScriptFile"  "heroes/haku/endless_wounds.lua"
-	                "Function"    "applyStacksAttack"
-	                "target"	  "TARGET"
-	              }
-        	}
-		}
-
-		"modifier_haku_endless_needles_victim"
-		{
-            "IsHidden"                  "0"
-            "IsPurgable"                "0"
-            "IsDebuff"					"1"
-          	"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ms_slow_per_stack"
-			}
-
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/haku/endless_wounds.lua"
-					"Function"		"applyEffect"
-				}
-			}
-		}
-
-		"modifier_haku_endless_needles_victim_special"
-		{
-            "IsHidden"                  "0"
-            "IsPurgable"                "0"
-            "IsDebuff"					"1"
-          	"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ms_slow_per_stack_special"
-			}
-
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/haku/endless_wounds.lua"
-					"Function"		"applyEffect"
-				}
-			}
-		}
-
 	}
 }
 
@@ -9529,8 +9440,9 @@
 						{
 							"RunScript"
 							{
-								"ScriptFile"	"heroes/haku/endless_wounds.lua"
-								"Function"		"applyModifierFromAbility"
+								"ScriptFile"	"heroes/haku/needles.lua"
+								"Function"		"applyEndlessWounds"
+								"Target" 		"TARGET"
 							}
 						}
 					}

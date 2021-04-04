@@ -81,3 +81,37 @@ function playSound( keys )
 		EmitSoundOn("haku_needles_2",keys.caster)
 	end
 end
+
+
+function applyEndlessWounds( keys )
+
+	local caster = keys.caster
+	local target = keys.target
+	local ability = caster:FindAbilityByName("haku_needles")
+
+	if caster:FindAbilityByName("haku_endless_wounds"):GetLevel() > 0 then 
+
+		local endless_wounds = caster:FindAbilityByName("haku_endless_wounds")
+
+		local threshold = endless_wounds:GetSpecialValueFor("threshold")
+		local duration = endless_wounds:GetSpecialValueFor("duration")
+		local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
+
+		local stack_modifier = "modifier_haku_endless_needles_victim"
+
+		if target:HasModifier(stack_modifier) then
+			local stacks = target:GetModifierStackCount(stack_modifier, endless_wounds)
+			if (stacks + endless_wounds_stacks) <= threshold then
+				target:SetModifierStackCount(stack_modifier,endless_wounds, stacks + endless_wounds_stacks)
+			else
+				target:SetModifierStackCount(stack_modifier,endless_wounds, threshold)
+			end
+		else 
+			modifier_debuff = target:AddNewModifier(caster, endless_wounds, stack_modifier, {duration = duration})
+			target:SetModifierStackCount(stack_modifier, endless_wounds, endless_wounds_stacks)
+		end
+
+	end
+
+
+end

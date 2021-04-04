@@ -17,8 +17,7 @@
 	"npc_dota_hero_beastmaster" "1" // kakashi
 
 
-	// TODO ADD MODEL 
-	"npc_dota_hero_sven" "0"	// onoki
+	"npc_dota_hero_sven" "1"	// onoki
 
 
 	"npc_dota_hero_sand_king" "1" // raikage
