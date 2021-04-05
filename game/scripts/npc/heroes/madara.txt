@@ -35,7 +35,7 @@
 		  "StatusHealth"    "200"
   "StatusHealthRegen"   "1.600000"
 		  "AttackAnimationPoint"   "0.4"
-		  "ModelScale"		"1"
+		  "ModelScale"		"0.9"
 
 		 // "AttackRate"				"0.7"
 		  "AttackRange"				"100"

@@ -79,8 +79,16 @@ end
 
 function modifier_haku_endless_needles_victim:GetModifierMoveSpeedBonus_Percentage()
 	local value = 0
-	if self.caster:FindAbilityByName("special_bonus_haku_1"):GetLevel() > 0 then
-		value = 0.25
+
+	if self.caster:FindAbilityByName("special_bonus_haku_1") == nil then
+		if self.caster:GetOwner():FindAbilityByName("special_bonus_haku_1"):GetLevel() > 0 then
+			value = 0.25
+		end
+	else
+		if self.caster:FindAbilityByName("special_bonus_haku_1"):GetLevel() > 0 then
+			value = 0.25
+		end
 	end
+	
     return  self:GetStackCount() * (-1 - value)
 end

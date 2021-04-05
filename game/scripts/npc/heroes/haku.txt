@@ -1,7 +1,7 @@
 "DOTAAbilities"
 {
 
-//25: +170 Water Needles Damage / +25 Ice Mirror Damage
+//25: +170 Water Needles Damage / +18 Ice Mirror Damage
 //20: -2s Crippling Senbon Cooldown / +450 Crippling Senbon Range
 //15: +0.25% Endless Wounds Slow / +100 Attack Range
 //10: +1.75 Mana Regen / +5 Armor

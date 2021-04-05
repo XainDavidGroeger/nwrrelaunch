@@ -113,6 +113,7 @@ function dynamic_entry_periodic(gameEntity, keys)
 	--Abort Distance / caster died / target died
 	if ( keys.distance >= 9000 ) or (not caster:IsAlive()) or (not target:IsAlive()) or (target:IsNull()) then
 		remove_physics(caster)
+		FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 		return nil
 	end
 	

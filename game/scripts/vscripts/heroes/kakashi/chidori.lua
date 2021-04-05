@@ -19,6 +19,8 @@ function FinishChidori(keys)
 	RemovePhysics(keys.caster)
 	keys.caster:RemoveModifierByName(keys.modifier_caster)
 	keys.caster:RemoveModifierByName("modifier_raikiri_stunned")
+	keys.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_2)
+	keys.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_1)
 end
 
 function Launch(keys)	
@@ -30,6 +32,9 @@ function Launch(keys)
 	local sound_impact = keys.sound_impact
 	local particle_impact = keys.particle_impact
 
+
+	caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2)
+	caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_1, 1)
 
 	caster:EmitSound(keys.sound_cast)
 	AddPhysics(caster)
@@ -44,6 +49,7 @@ function Launch(keys)
 			FinishChidori(keys)
 			return nil
 		elseif vector:Length2D() <= 2 * target:GetPaddedCollisionRadius() then
+
 			local enemy_loc = target:GetAbsOrigin()
 			local impact_pfx = ParticleManager:CreateParticle(particle_impact, PATTACH_POINT_FOLLOW, target)
 			ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
@@ -66,6 +72,8 @@ function Launch(keys)
 			ApplyDamage( damageTable )
 
 			target:EmitSound(sound_impact)
+
+			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 			return nil
 		end
 		return 0.03
@@ -73,10 +81,20 @@ function Launch(keys)
 end
 
 function ChannelChidori( keys )
-	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_caster, {})
 	keys.caster:EmitSound(keys.sound_cast)
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_caster, {})
+	keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_2, 0.3)
 end
 
 function RemoveChannelChidori(keys)
+	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_2)
 	keys.caster:RemoveModifierByName(keys.modifier_caster)
+end
+
+function applyThunderEffect (keys)
+
+
+
+
+
 end

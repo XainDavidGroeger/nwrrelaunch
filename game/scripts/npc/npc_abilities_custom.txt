@@ -51,7 +51,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"damage"					"20 25 30"
+			"damage"					"30 45 60"
 		}
 		"03"
 		{
@@ -309,6 +309,11 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"itachi_sharingan"
 	
+	"precache"
+	{
+		"soundfile"  	"soundevents/itachi_sharingan_proc.vsndevts"
+	}
+
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -4562,7 +4567,6 @@
 		{
 			"ScriptFile"		"heroes/kakashi/chidori.lua"
 			"Function"			"ChannelChidori"
-			"particle_name"		"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 			"modifier_caster"	"modifier_imba_storm_bolt_caster"
 			"sound_cast"		"Hero_Sven.StormBolt"
 		}
@@ -4613,15 +4617,16 @@
 			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_5"
 
 			"OnCreated"
-			{		   
+			{		
+
 				"AttachEffect"
 				{
-					"EffectName"		"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+					"EffectName"		"particles/units/heroes/kakashi/chidori.vpcf"
 					"EffectAttachType"	"follow_origin"
 					"Target"			"TARGET"
 					"ControlPointEntities"
 					{
-						"TARGET"	"attach_left_hand"
+						"TARGET"	"attach_right_hand"
 					}
 				}
 			}
@@ -8856,9 +8861,7 @@
 		"particle"					"particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf"
 		"particle"					"particles/units/heroes/haku/mirror_destroy.vpcf"
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
-		"soundfile"					"soundevents/haku_mirrors.vsndevts"
-		"soundfile"					"soundevents/haku_mirrors_2.vsndevts"
-		
+		"soundfile"					"soundevents/haku_mirrors_cast.vsndevts"
 	}
 
 

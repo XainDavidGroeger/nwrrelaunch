@@ -51,7 +51,7 @@ function create( keys )
 
 			local endless_wounds_ability = keys.caster:FindAbilityByName("haku_endless_wounds")
 			if endless_wounds_ability:GetLevel() > 0 then
-				endless_wounds_ability:ApplyDataDrivenModifier(keys.caster,mirror,"modifier_haku_endless_needles_caster",{})
+				mirror:AddNewModifier(keys.caster,endless_wounds_ability,"modifier_haku_endless_needles_caster",{})
 			end
 			local embrace = ParticleManager:CreateParticle("particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", PATTACH_ABSORIGIN, mirror)
 			ParticleManager:SetParticleControl(embrace, 0, mirror:GetAbsOrigin())
@@ -126,10 +126,5 @@ function trackEnemy( keys )
 end
 
 function playSound( keys )
-	local random = math.random(1, 2)
-	if random == 1 then
-		EmitSoundOn("haku_mirrors",keys.caster)
-	elseif random == 2 then
-		EmitSoundOn("haku_mirrors_2",keys.caster)
-	end
+	EmitSoundOn("haku_mirrors_cast",keys.caster)
 end
