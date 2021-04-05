@@ -67,24 +67,12 @@
 
     "OnSpellStart"
     {
+           "RunScript"
+        {
+            "ScriptFile"    "heroes/neji/kaiten.lua"
+            "Function"      "knockBack"
+        }
     
-        "Knockback"
-                {
-                    "Target"
-                     {
-                        "Center"            "CASTER"
-                        "Radius"            "%aoe_target"
-                        "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-                    "Center"            "Target"
-                    "Distance"          "%push_back_length"
-                    "Duration"          "1.0"
-                    "Height"            "0"
-                    "IsFixedDistance"   "0"
-                    "ShouldStun"        "0" 
-                }
-
         "RunScript"
         {
             "ScriptFile"    "heroes/neji/kaiten.lua"

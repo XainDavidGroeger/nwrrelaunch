@@ -41,3 +41,41 @@ function applyStun( keys )
 	end
 
 end
+
+
+function knockBack( keys )
+
+	local ability = keys.ability
+	local caster = keys.caster
+
+	local radius = ability:GetLevelSpecialValueFor("aoe_target", ability:GetLevel() - 1)
+	local stun_duration = ability:GetLevelSpecialValueFor("stun_duration", ability:GetLevel() - 1)
+	local push_back_length = ability:GetLevelSpecialValueFor("push_back_length",ability:GetLevel() - 1)
+
+
+	local targets = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	for _, unit in pairs(targets) do
+
+		local knockback = {	center_x = unit.x,
+									center_y = unit.y,
+									center_z = unit.z,
+									duration = 1.0,
+									knockback_distance = push_back_length,
+									knockback_height = 0,
+									knockback_duration = 1.0 * 0.67,	}
+		unit:AddNewModifier(caster, ability, "modifier_knockback", knockback)
+
+	end
+
+end
