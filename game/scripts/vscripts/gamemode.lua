@@ -23,6 +23,8 @@ require('libraries/timers')
 require('libraries/physics')
 -- This library can be used for advanced 3D projectile systems.
 require('libraries/projectiles')
+require('libraries/keyvalues')
+require('libraries/vanilla_extension')
 require('utilities')
 -- These internal libraries set up barebones's events and processes.  Feel free to inspect them/change them if you need to.
 require('internal/gamemode')

@@ -49,7 +49,7 @@ function sasuke_susanoo_end(keys)
 		caster:CastAbilityImmediately(ability, caster:GetPlayerID())
 	end
 	
-	if caster:GetUnitName() == "npc_dota_hero_beastmaster" then
+	if caster:GetUnitName() == "npc_dota_hero_kakashi" then
 	caster:SetModel("models/kakashi/kaka.vmdl")
 	caster:SetOriginalModel("models/kakashi/kaka.vmdl")
 	caster:SetModelScale(0.82)
