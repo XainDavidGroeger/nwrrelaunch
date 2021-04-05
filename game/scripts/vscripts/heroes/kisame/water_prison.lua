@@ -5,6 +5,7 @@
 function ModelSwapStart( keys )
 	local caster = keys.caster
 	local model = keys.model
+	local ability = keys.ability
 	local projectile_model = keys.projectile_model
 
 	-- Saves the original model and attack capability
@@ -17,9 +18,9 @@ function ModelSwapStart( keys )
 
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(0.65)
-  --  keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
---	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
-    
+
+	keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
 	
 end
 --[[Author LearningDave
@@ -28,11 +29,10 @@ end
 ]]
 function ModelSwapEnd( keys )
 	local caster = keys.caster
-
 	caster:SetModel(caster.caster_model)
 	caster:SetOriginalModel(caster.caster_model)
 	caster:SetModelScale(1)
-	--ParticleManager:DestroyParticle( keys.ability.dome, true )
+	ParticleManager:DestroyParticle( keys.ability.dome, true )
 end
 --[[
 	Author LearningDave

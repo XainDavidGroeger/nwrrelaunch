@@ -99,6 +99,7 @@
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
+		"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
 		"model"		"models/kisame_shark/kisame_shark.vmdl"
 	}
 
