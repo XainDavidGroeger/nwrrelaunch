@@ -1,0 +1,21 @@
+"AddonInfo"
+{
+  "TeamCount" "10"
+  "maps"      "2x2 duel dota"
+  "IsPlayable"  "1"
+  "HeroGuidesSupported" "1"
+  
+  "2x2"
+  {
+    "MaxPlayers"                    "4"
+  }
+  
+ "duel"
+  {
+    "MaxPlayers"                    "2"
+  }
+  "dota"
+  {
+    "MaxPlayers"                    "10"
+  }
+}
