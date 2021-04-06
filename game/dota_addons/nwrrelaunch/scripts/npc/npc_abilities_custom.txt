@@ -8805,10 +8805,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"haku_endless_wounds"
 	
-		"precache"
-		{
-
-		}
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------

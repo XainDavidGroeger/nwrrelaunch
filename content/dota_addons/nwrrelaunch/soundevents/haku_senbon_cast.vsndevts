@@ -1,4 +1,4 @@
-"haku_mirrors_cast"
+"haku_senbon_cast"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/haku_mirrors_cast.vsnd"
+                              "value0"        "sounds/haku_senbon_cast.vsnd"
                         }
                     }
                     "volume"            {   "value"     "2.50000"  }
