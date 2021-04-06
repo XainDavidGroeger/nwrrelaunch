@@ -1,3 +1,5 @@
+#base "heroes/kakashi.txt"
+
 // Units File
 "DOTAUnits"
 {

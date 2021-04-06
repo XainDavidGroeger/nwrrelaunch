@@ -1,0 +1,13 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/vanilla_hud_overrides.js" /> 
+	</scripts>
+
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/vanilla_hud_overrides.css" />
+	</styles>
+
+	<Panel>
+	</Panel>
+</root>

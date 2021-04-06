@@ -8,35 +8,38 @@
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_COURIER, true);
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true);
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_MINIMAP, true );
-	function FixHeroIcons(){
-		var topbar = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("topbar")
-		var scoreboard = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("scoreboard")
-		var teampicker = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("Header")
 
-		var scoreboardslots = scoreboard.FindChildrenWithClassTraverse("ScoreboardHeroImage")
-		for ( i in scoreboardslots ){
-			var img = scoreboardslots[i];
-			if (img.heroname.length > 0) {
-				var new_img = $.CreatePanel( "Image", img, "ImageOverride" )
-				new_img.SetImage( "file://{images}/custom_game/heroes/npc_dota_hero_"+ img.heroname + ".png" )
+		function FixHeroIcons(){
+			var topbar = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("topbar")
+			var scoreboard = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("scoreboard")
+			var teampicker = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("Header")
+
+			var scoreboardslots = scoreboard.FindChildrenWithClassTraverse("ScoreboardHeroImage")
+			for ( i in scoreboardslots ){
+				var img = scoreboardslots[i];
+				if (img.heroname.length > 0) {
+					var new_img = $.CreatePanel( "Image", img, "ImageOverride" )
+					new_img.SetImage( "file://{images}/custom_game/heroes/npc_dota_hero_"+ img.heroname + ".png" )
+				}
 			}
-    	}
 
-		var playerSlots = topbar.FindChildrenWithClassTraverse("TopBarPlayerSlot")
-		 for ( k in playerSlots ){
-        	var img = playerSlots[k].FindChildTraverse("HeroImage")
-			if (img.heroname.length > 0) {
-				var new_img = $.CreatePanel( "Image", img, "ImageOverride" )
-				new_img.SetImage( "file://{images}/custom_game/heroes/npc_dota_hero_"+ img.heroname + ".png" )
+			var playerSlots = topbar.FindChildrenWithClassTraverse("TopBarPlayerSlot")
+			 for ( k in playerSlots ){
+		    	var img = playerSlots[k].FindChildTraverse("HeroImage")
+				if (img.heroname.length > 0) {
+					var new_img = $.CreatePanel( "Image", img, "ImageOverride" )
+					new_img.SetImage( "file://{images}/custom_game/heroes/npc_dota_hero_"+ img.heroname + ".png" )
+				}
 			}
-    	}
-        $.Schedule( 0.1, FixHeroIcons )
-    }
+		    $.Schedule( 0.1, FixHeroIcons )
+		}
 
-	FixHeroIcons()
-
-
+		FixHeroIcons();
 	</script>
+
 	<Panel>
+		<CustomUIElement type="GameInfo" layoutfile="file://{resources}/layout/custom_game/precache.xml" />
+		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/vanilla_hero_selection_override.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/vanilla_hud_overrides.xml" />
 	</Panel>
 </root>
