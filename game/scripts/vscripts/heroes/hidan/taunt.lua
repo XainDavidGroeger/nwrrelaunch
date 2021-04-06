@@ -78,3 +78,38 @@ function initiateTaunt( keys )
 	keys.ability.bonusStr = 0
 	keys.ability.removeIt = false
 end
+
+
+function tauntEnemies( keys )
+	
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+
+	local radius = keys.ability:GetLevelSpecialValueFor( "radius", ( keys.ability:GetLevel() - 1 ) )
+
+	local abbility1 = caster:FindAbilityByName("special_bonus_hidan_1")
+	if abbility1:IsTrained() then
+		radius = radius + 70
+	end
+
+	local duration = keys.ability:GetLevelSpecialValueFor( "duration", ( keys.ability:GetLevel() - 1 ) )
+
+	local targets = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, 
+		0, 
+		false
+	)
+
+	for _, unit in pairs(targets) do
+		ability:ApplyDataDrivenModifier(caster, unit, "modifier_beserkers_call_enemy_datadriven", {duration = duration})
+	end
+
+
+end

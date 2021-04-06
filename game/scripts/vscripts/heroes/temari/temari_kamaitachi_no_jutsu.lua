@@ -18,7 +18,16 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	print(REALCASTER)
 
 	tornado_travel_distance = keys.ability:GetLevelSpecialValueFor("travel_distance", ability:GetLevel() - 1)
+
+
 	tornado_lift_duration = keys.ability:GetLevelSpecialValueFor("lift_duration",  ability:GetLevel() - 1)
+	
+	local ability5 = keys.caster:FindAbilityByName("special_bonus_temari_5")
+	if ability5:IsTrained() then
+		tornado_lift_duration = tornado_lift_duration + 3.0
+	end
+
+
 
 	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.
 	--Its invoker_tornado_datadriven ability also applies the cyclone modifier to hit enemy units, since if Invoker uninvokes Tornado,
@@ -122,7 +131,17 @@ function temari_kamaitachi_no_jutsu_on_projectile_hit_unit(keys)
 		--Store the target's forward vector so they can be left facing in the same direction when they land.
 		keys.target.temari_tornado_forward_vector = keys.target:GetForwardVector()
 		
-		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_temari_kamaitachi_no_jutsu_cyclone", {duration = keys.caster.temari_tornado_lift_duration})
+		local duration = keys.caster.temari_tornado_lift_duration
+
+
+		-- TODO FIX
+	--	local abilitySpecial = keys.caster:FindAbilityByName("special_bonus_temari_1")
+	--	if abilitySpecial:IsTrained() then
+	--		duration = duration + 3.0
+	--	end
+
+		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_temari_kamaitachi_no_jutsu_cyclone", 
+		{duration = duration})
 		
 		keys.target:EmitSound("Hero_Invoker.Tornado.Target")
 		

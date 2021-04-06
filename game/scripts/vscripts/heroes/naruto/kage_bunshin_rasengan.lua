@@ -27,8 +27,11 @@ function ConjureImage( event )
         local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
         local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
         if kage_bunshin_mastery_ability:GetLevel() > 0 then 
-           outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
-           incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           local abilityS5 = caster:FindAbilityByName("special_bonus_naruto_5")
+           if abilityS5:IsTrained() then
+            outgoingDamage = outgoingDamage + 13
+           end
         else
            outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
@@ -71,6 +74,7 @@ function ConjureImage( event )
      end
 
      illusion:SetHealth(caster:GetHealth())
+
      -- Set the unit as an illusion
      -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
      illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
@@ -81,6 +85,18 @@ function ConjureImage( event )
     caster.bunshinCount =  caster.bunshinCount + 1
     GameMode:RemoveWearables( illusion )
     Launch(event, illusion)
+
+
+    local ability = event.ability
+    local caster = event.caster
+  
+    --reset CD if special is skilled
+    local ability7 = caster:FindAbilityByName("special_bonus_naruto_7")
+    if ability7:IsTrained() then
+      ability:EndCooldown()
+      ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 5 )
+    end  
+  
 
 end
 
@@ -94,7 +110,30 @@ function initiateBunshinCount( keys )
   end
 end
 
+function applyDamage( keys )
 
+  local ability = keys.ability
+  local caster = keys.caster
+
+	local damage = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel() - 1))
+
+	local ability3 = caster:FindAbilityByName("special_bonus_naruto_3")
+  
+	if ability3:IsTrained() then
+		damage = damage + 90
+	end
+
+  local damage_table = {
+    victim = keys.target,
+    attacker = keys.caster,
+    damage = damage,
+    damage_type = DAMAGE_TYPE_MAGICAL,		
+    ability = keys.abiltiy
+  }
+
+  ApplyDamage( damage_table )
+
+end
 
 function AddPhysics(caster)
   Physics:Unit(caster)

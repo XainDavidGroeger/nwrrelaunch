@@ -10,6 +10,8 @@ CHEATS_ACTIVATED = true
 if GameMode == nil then
     _G.GameMode = class({})
 end
+
+
 --TODO find a way to get position of the shops by name/entityname
 --base shop position team 1 
 SHOP_TEAM_1 = Vector(-832, 768, 128) 
@@ -79,7 +81,6 @@ end
   The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-  DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
 
    GameMode:RemoveWearables( hero )
@@ -98,6 +99,9 @@ end
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
+
+
+
 
 end
 
@@ -147,15 +151,12 @@ function GameMode:RemoveWearables( hero )
     local model = hero:FirstMoveChild()
     while model ~= nil do
         if model ~= nil and model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
-          print(model:GetName())
-            --print(model:GetModelName())
             table.insert(wearables, model)
         end
         model = model:NextMovePeer()
     end
 
     for i = 1, #wearables do
-        --print("removed 1 wearable")
         wearables[i]:RemoveSelf()
     end
 end

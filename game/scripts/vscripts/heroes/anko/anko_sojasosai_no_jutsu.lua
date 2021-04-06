@@ -30,8 +30,6 @@ function anko_sojasosai_no_jutsu( keys )
 						damage_type = damageType
 					}
 	ApplyDamage( damageTable )
-	print(final_damage)
-	print(damageType)
 	-- Apply Animation to Target
 
 	-- Apply damage to Self
@@ -51,8 +49,6 @@ function anko_sojasosai_no_jutsu( keys )
 	end
 
 
-	print(final_damage)
-	print(damageType)
 
 end
 

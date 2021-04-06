@@ -32,11 +32,19 @@ function ConjureImage( event )
         local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
         local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
         if kage_bunshin_mastery_ability:GetLevel() > 0 then 
-           outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+
+           outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
+           if abilityS:IsTrained() then
+            outgoingDamage = outgoingDamage + 13
+           end
            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+           
         else
-           outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
-           incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
+
+         outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
+         incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
+
         end 
      end
 
@@ -78,6 +86,7 @@ function ConjureImage( event )
      local hp_percentage = caster:GetHealth() / (caster:GetMaxHealth() / 100)
      local bunshin_hp = illusion:GetMaxHealth() / 100 * hp_percentage
      illusion:SetHealth(bunshin_hp)
+
      -- Set the unit as an illusion
      -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
      illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
@@ -102,4 +111,19 @@ end
 
 function reduceBunshinCount( keys )
   keys.caster.bunshinCount = keys.caster.bunshinCount -1
+end
+
+
+function applyModifier( keys )
+   local ability = keys.ability
+   local caster = keys.caster
+
+   local naruto_modifier = "modfiier_naruto_kawazu_kumite"
+
+   local ability4 = keys.caster:FindAbilityByName("special_bonus_naruto_4")
+   if ability4:IsTrained() then
+      naruto_modifier = "modfiier_naruto_kawazu_kumite_special"
+   end
+
+	ability:ApplyDataDrivenModifier(caster, caster, naruto_modifier, {})
 end

@@ -92,7 +92,6 @@ function apply_damage( keys )
 		local abilityDamageType = keys.ability:GetAbilityDamageType()
 		local damage = keys.Damage
 		local displayDamage = tonumber(string.format("%." ..  0 .. "f", damage))
-		print(displayDamage)
 		PopupDamage(target, displayDamage)
 
 		local damageTable = {

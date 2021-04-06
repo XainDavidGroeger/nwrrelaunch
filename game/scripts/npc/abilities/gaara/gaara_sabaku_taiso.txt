@@ -1,0 +1,190 @@
+	
+    "DOTAAbilities"
+{
+    
+"gaara_sabaku_taiso"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"gaara_sabaku_taiso"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"1.0 1.0 1.0 1.0"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"130 100 70"
+	"AbilityDuration"				"5.0"
+
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"300 450 600"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175 250 350"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.25"	// Applies two modifiers 
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"start_radius"			"50 50 50"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"end_radius"			"300 300 300"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"					"900 900 900"
+			"LinkedSpecialBonus"	"special_bonus_gaara_3"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"500 500 500"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun_duration"			"1.25 1.75 2.25"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
+		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf"
+		"particle"					"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+		"particle"					"particles/items_fx/cyclone.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		
+
+		"RunScript"
+		{
+			"Target"			"POINT"
+			"ScriptFile"		"heroes/gaara/sabaku_taiso.lua"
+			"Function"			"launch_earthquake"
+			
+			"distance"			"%range"
+			"start_radius"		"%start_radius"
+			"end_radius"		"%end_radius"
+			"speed"				"%speed"
+		}
+		
+
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"		"0"
+
+		"Knockback"
+		{
+			"Target"            "TARGET"
+			"Center" 	        "CASTER"
+			"Distance"	        "0"
+			"Duration"	        "1"
+			"Height"	        "300"
+			"IsFixedDistance"	"1"
+			"ShouldStun"        "1"	
+		}
+
+		 "FireSound"
+	    {
+	      "EffectName"  "Hero_Brewmaster.ThunderClap"
+	      "Target"    "CASTER"
+	    }
+
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%AbilityDamage"
+		}
+
+		"Stun"
+		{
+			"Duration"   "%stun_duration"
+			"Target" 	 "TARGET"
+		}
+
+		"RunScript"
+		{
+					"ScriptFile"		"heroes/gaara/sabaku_taiso.lua"
+					"Function"			"launchCyclone"
+					"Target"			"TARGET"
+					"dummy_aura"		"modifier_gaara_cyclone"
+		}	
+	}
+	
+	"Modifiers"
+	{
+		"modifier_gaara_cyclone"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/items_fx/cyclone.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"		"TARGET"
+
+						"ControlPoints"
+						{
+							"01"	"50 50 0"
+						}
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"		"TARGET"
+
+						"ControlPoints"
+						{
+							"01"	"50 50 0"
+						}
+					}
+
+					
+
+				}
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+	}
+}
+
+}

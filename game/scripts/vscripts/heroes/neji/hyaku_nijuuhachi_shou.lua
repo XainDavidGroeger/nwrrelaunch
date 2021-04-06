@@ -22,6 +22,13 @@ function removeParticle( keys )
 	ParticleManager:DestroyParticle( keys.ability.ultiParticle, true )
 end
 
+function silenceTarget( keys )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_neji_4")
+	if abilityS:IsTrained() then
+		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.ability.target, "modifier_hyaku_nijuuhachi_shou_special_silence", {duration = 5})
+	end
+end
+
 function removeModifiers( keys )
 	keys.caster:RemoveModifierByName("modifier_hyaku_nijuuhachi_shou_caster")
 	keys.ability.target:RemoveModifierByName("modifier_hyaku_nijuuhachi_shou")

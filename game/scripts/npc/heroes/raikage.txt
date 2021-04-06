@@ -1,6 +1,12 @@
 "DOTAAbilities"
 {
 
+
+//25: -5 Liger Bomb Armor Reduction/ +60% Lightning Horizontal Damage Reduction
+//20: +275 Lightning Armor Max Damage / +220 Lariat Damage.
+//15: +50% Lightning Horizontal Strength Damage / +25 Movement Speed
+//10: +20 Damage / +6 Health Regen
+
 "npc_dota_hero_sand_king" //raikage
 		{
 		  "override_hero"   "npc_dota_hero_sand_king"
@@ -11,37 +17,42 @@
 		  "Ability4"        "generic_hidden" 
 		  "Ability5"        "generic_hidden" 
 		  "Ability6"        "raikage_raiga_no_bomu"
-		  "Ability10"		"special_bonus_spell_amplify_8"
-		  "Ability11"		"special_bonus_hp_175"
-		  "Ability12"		"special_bonus_attack_damage_70"
-		  "Ability13"		"special_bonus_mp_regen_4"
-		  "Ability14"		"special_bonus_armor_8"
-		  "Ability15"		"special_bonus_cast_range_225"
-		  "Ability16"		"special_bonus_intelligence_35"
-		  "Ability17"		"special_bonus_cooldown_reduction_25"
 
+		  "Ability10"		"special_bonus_attack_damage_20"
+		  "Ability11"		"special_bonus_hp_regen_6"
+
+		  "Ability12"		"special_bonus_raikage_1"
+		  "Ability13"		"special_bonus_movement_speed_25"
+
+		  "Ability14"		"special_bonus_raikage_2"
+		  "Ability15"		"special_bonus_raikage_3"
+
+		  "Ability16"		"special_bonus_raikage_4"
+		  "Ability17"		"special_bonus_raikage_5"
+
+	
 		  "ArmorPhysical"		"1.000000"
-		"AttackDamageMin"		"25"
-		"AttackDamageMax"		"27"
+		"AttackDamageMin"		"34"
+		"AttackDamageMax"		"39"
 		"AttackRate"		"1.700000"
-  "StatusHealth"    "145"
-  "StatusHealthRegen"   "0.300000"
+ 		 "StatusHealth"    "145"
+  		"StatusHealthRegen"   "0.300000"
 		  "Village"			"kumogakure"
 		  "Role"			"Initiator,Durable,Disabler"
 		"Rolelevels"		"3,3,2"
-			"ModelScale"		"0.75"
-		"LoadoutScale"		"0.75" 
+			"ModelScale"		"0.85"
+		"LoadoutScale"		"0.85" 
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 		  "AttackAnimationPoint"		"0.4"
 		 // "AttackRate"				"1.0"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"300"
-		  "AttributeBaseStrength" "21" // Base strength
-		  "AttributeStrengthGain" "2.6" // Strength bonus per level.
+		  "AttributeBaseStrength" "23" // Base strength
+		  "AttributeStrengthGain" "3.2" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "18" // Base intelligence
-		  "AttributeIntelligenceGain" "1.85" // Intelligence bonus per level.
+		  "AttributeIntelligenceGain" "1.9" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "16" // Base agility
-		  "AttributeAgilityGain" "1.3" // Agility bonus per level.
+		  "AttributeAgilityGain" "1.5" // Agility bonus per level.
 		  
 	 	  "ItemSlots"
 	  	  { }

@@ -10,8 +10,11 @@ function summon_sanshouuo( keys )
     local bonus_hp = 0
     if kugusta_ability:GetLevel() > 0 then
     	bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
+		local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
+		if abilityspecial:IsTrained() then
+			bonus_hp = bonus_hp + 350
+		end
 	end
-
 
 	local sanshouuo  = CreateUnitByName("npc_sanshouuo", keys.caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
 	sanshouuo:AddNewModifier(caster, nil, "modifier_phased", { duration = (duration+0.5) } )

@@ -4,7 +4,6 @@ Dota2 Reborn Naruto MOBA.
 
 # Contributing
 
-```
 1. checkout dev
 2. create a new branch for each feature you want to add
 3. create a pull request into dev

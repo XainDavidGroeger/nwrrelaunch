@@ -27,8 +27,6 @@ function GameMode:ModifyGoldGainDC( hero )
 				end
 			end
 			local shareGold = leaverGold / teammebers
-			print(teammebers)
-			print(shareGold)
 
 			local addGoldGain = 1.67 / teammebers
 

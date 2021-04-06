@@ -30,3 +30,23 @@ end
 function endEffect( keys )
 	ParticleManager:DestroyParticle(keys.ability.dotParticle, true) 
 end
+
+function applySlowModifier( keys )
+
+	local ability = keys.ability
+	local caster = keys.caster
+	local target = keys.target
+	local neji_modifier_ms_slow = "modifier_neji_internal_bleeding_ms_slow"
+
+	local ability2 = caster:FindAbilityByName("special_bonus_neji_2")
+	if ability2:IsTrained() then
+		neji_modifier_ms_slow = "modifier_neji_internal_bleeding_ms_slow_special"
+	end
+
+	ability:ApplyDataDrivenModifier(
+			caster,
+			target,
+			neji_modifier_ms_slow,
+			{}
+	)
+end

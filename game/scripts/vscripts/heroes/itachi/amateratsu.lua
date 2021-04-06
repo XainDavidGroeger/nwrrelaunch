@@ -8,8 +8,8 @@ function initialize(event)
 	EmitSoundOn("itachi_amateratsu", event.caster)
 	event.ability.saved_damage = 0
 	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_itachi_amateratsu", {duration = duration})
+	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_itachi_amateratsu_spread_fire_cd", {Duration = 55})
 	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_itachi_amateratsu_fire_sound", {duration = duration})
-	
 end
 
 --- Save damage taken by target
@@ -32,17 +32,25 @@ end
 -- Spreads the amaterasu dot to nearby units
 function spread_fire( event )
 	local target = event.target
+
 	local spread_aoe = event.ability:GetLevelSpecialValueFor( "spread_aoe", ( event.ability:GetLevel() - 1 ) )
+
+	local abilityS = event.caster:FindAbilityByName("special_bonus_itachi_4")
+	if abilityS:IsTrained() then
+		spread_aoe = spread_aoe + 225
+	end
+
 	local duration     = event.ability:GetLevelSpecialValueFor( "duration", ( event.ability:GetLevel() - 1 ) )
 	local allyEntities = FindUnitsInRadius(event.caster:GetTeamNumber(), target:GetAbsOrigin(), nil, spread_aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
   
 	if allyEntities then
 		for _,ally in pairs(allyEntities) do
-			print(ally)
-			if not ally:HasModifier("modifier_itachi_amateratsu_spread_fire") and not ally:HasModifier("modifier_itachi_amateratsu_spread_fire_cd") then
-				event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire", {Duration = duration})
-				event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire_cd", {Duration = 55})
-				event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_fire_sound", {Duration = duration})
+				if not ally:HasModifier("modifier_itachi_amateratsu_spread_fire") and not ally:HasModifier("modifier_itachi_amateratsu_spread_fire_cd") then
+					if not ally:HasModifier("modifier_itachi_amateratsu") then
+						event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire_cd", {Duration = 55})
+						event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_spread_fire", {Duration = duration})
+						event.ability:ApplyDataDrivenModifier(event.caster, ally, "modifier_itachi_amateratsu_fire_sound", {Duration = duration})
+					end
 			end
 		end
 	end

@@ -4,12 +4,19 @@
 	Steals mana from target and gives it to the caster
 ]]
 function StealMana( event )
-	if not event.target:IsBuilding() and event.target:GetMaxMana() > 0 then
+	if (event.target:IsHero() or event.target:IsIllusion()) and event.target:GetMaxMana() > 0 then
 		-- Variables
 		local caster = event.caster
 		local ability = event.ability
 		local target = event.target
+
 		local manasteal_percentage = event.ability:GetLevelSpecialValueFor("manasteal_percentage", event.ability:GetLevel() - 1 )
+
+		local ability3 = caster:FindAbilityByName("special_bonus_kisame_3")
+		if ability3:IsTrained() then
+			manasteal_percentage = manasteal_percentage + 7.0
+		end
+
 		local mana = target:GetMana()
 		print("steal percentage: "..manasteal_percentage)
 		print("start mana: "..mana)

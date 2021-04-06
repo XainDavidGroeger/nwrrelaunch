@@ -1,6 +1,10 @@
 "DOTAAbilities"
 {
 
+		//25: +3 Power of Youth Max Stacks / +550 Dynamic Entry Range
+		//20: +40 Sixth Gate Movement Speed / +35% Gouken Critical Damage
+		//15: +35% Dynamic Entry Miss Chance/ +15% Lifesteal
+		//10: +15 Damage / +200 Health
 		"npc_dota_hero_centaur" //guy
 		{
 		  "override_hero"   "npc_dota_hero_centaur"
@@ -11,36 +15,41 @@
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "guy_open_gates"
-		   "Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+
+		   "Ability10"		"special_bonus_attack_damage_15"
+		   "Ability11"		"special_bonus_hp_200"
+
+		   "Ability12"		"special_bonus_guy_1"
+		   "Ability13"		"special_bonus_lifesteal_15"
+
+		   "Ability14"		"special_bonus_guy_2"
+		   "Ability15"		"special_bonus_guy_3"
+
+		   "Ability16"		"special_bonus_guy_4"
+		   "Ability17"		"special_bonus_guy_5"
+
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
-			"ModelScale"		"1.0"
-		"LoadoutScale"		"1.0" 
+		"ModelScale"		"1.06"
+		"LoadoutScale"		"1.06" 
 		  "AttackAnimationPoint"   "0.4"
 			
 		  "Role"			"Carry,Jungler"
 		  "Rolelevels"	"2,1"
 
 		  "AttackDamageMin"   "27"
-		  "AttackDamageMax"   "31"
+		  "AttackDamageMax"   "35"
 		  "AttackRate"    "1.700000"
-		  "ArmorPhysical"		"3.000000"
+		  "ArmorPhysical"		"2.000000"
 		  "AttackRange"				"100"
-		  "StatusHealth"    "145"
+		  "StatusHealth"    "200"
  		  "StatusHealthRegen"   "0.300000"
-		  "MovementSpeed"			"300"
-		  "AttributeBaseStrength" "19" // Base strength
-		  "AttributeStrengthGain" "2.2" // Strength bonus per level.
+		  "MovementSpeed"			"305"
+		  "AttributeBaseStrength" "21" // Base strength
+		  "AttributeStrengthGain" "2.5" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "13" // Base intelligence
-		  "AttributeIntelligenceGain" "1.15" // Intelligence bonus per level.
+		  "AttributeIntelligenceGain" "1.20" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "21" // Base agility
-		  "AttributeAgilityGain" "2.9" // Agility bonus per level.
+		  "AttributeAgilityGain" "3.3" // Agility bonus per level.
 	 	  "ItemSlots"
 	  	  { }
 	  	  "Village"			"konoha"

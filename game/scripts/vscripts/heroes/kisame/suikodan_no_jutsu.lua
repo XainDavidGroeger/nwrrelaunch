@@ -35,6 +35,8 @@ function suikodan_no_jutsu( keys )
 	}
 	-- Saving the projectile ID so that we can destroy it later
 	projectile_id = ProjectileManager:CreateLinearProjectile( projectileTable )
+	
+	-- TODO check which targets are hit and apply -armor manually
 
 	-- Timer to provide vision
 	Timers:CreateTimer( function()
@@ -53,4 +55,36 @@ function suikodan_no_jutsu( keys )
 			return 1/30
 		end
 	end)
+end
+
+
+function suikodan_no_jutsu_apply_damage( keys )
+
+	local ability = keys.ability
+
+	local damage = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel() - 1))
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_kisame_1")
+	if ability1:IsTrained() then
+		damage = damage + 90
+	end
+
+	local damageTable = {
+		victim = keys.target,
+		attacker = keys.caster,
+		damage = damage,
+		damage_type = DAMAGE_TYPE_MAGICAL
+	}
+	ApplyDamage( damageTable )
+
+end
+
+function suikodan_no_jutsu_apply_armor_debuff( keys )
+	local ability = keys.ability
+	local ability5 = keys.caster:FindAbilityByName("special_bonus_kisame_5")
+	if ability5:IsTrained() then
+		ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor_special",{})
+	else
+		ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor",{})
+	end
 end

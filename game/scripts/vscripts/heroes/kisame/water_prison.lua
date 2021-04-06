@@ -5,6 +5,7 @@
 function ModelSwapStart( keys )
 	local caster = keys.caster
 	local model = keys.model
+	local ability = keys.ability
 	local projectile_model = keys.projectile_model
 
 	-- Saves the original model and attack capability
@@ -15,12 +16,11 @@ function ModelSwapStart( keys )
 
 	-- Sets the new model and projectile
 
-	-- TODO model swap fix
-	--caster:SetOriginalModel(model)
+	caster:SetOriginalModel(model)
+	caster:SetModelScale(0.65)
 
-    keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
-    
 	
 end
 --[[Author LearningDave
@@ -29,11 +29,9 @@ end
 ]]
 function ModelSwapEnd( keys )
 	local caster = keys.caster
-
-
-	-- TODO model swap fix
-	--caster:SetModel(caster.caster_model)
-	--caster:SetOriginalModel(caster.caster_model)
+	caster:SetModel(caster.caster_model)
+	caster:SetOriginalModel(caster.caster_model)
+	caster:SetModelScale(1)
 	ParticleManager:DestroyParticle( keys.ability.dome, true )
 end
 --[[
@@ -93,3 +91,34 @@ function domeFollowHero( keys )
 		end
 	end
 end
+
+
+function applySlowModifer( keys )
+
+	local ability = keys.ability
+	local caster = keys.caster
+	local radius = ability:GetLevelSpecialValueFor("radius",ability:GetLevel() - 1)
+	local targets = FindUnitsInRadius(
+		keys.target:GetTeamNumber(), 
+		keys.caster:GetAbsOrigin(), 
+		nil, 
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	local ability4 = caster:FindAbilityByName("special_bonus_kisame_4")
+	if ability4:IsTrained() then
+		for _, unit in pairs(targets) do
+			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow_special",{duration = 0.2})
+		end
+	else
+		for _, unit in pairs(targets) do
+			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow",{duration = 0.2})
+		end
+	end
+end
+

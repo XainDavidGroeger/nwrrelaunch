@@ -17,21 +17,8 @@ function Kakashi_Sharingan.new(caster,ability)
 end
 
 function Kakashi_Sharingan:LevelUp_Stolen(keys)
-	print("LevelUp_Stolen",self.caster:GetPlayerID(),keys.player)
-	
-	print("Sharingan")
-	for k,v in pairs(self) do
-		print(k,v)
-	end
-	
-	print("keys")
-	for k,v in pairs(keys) do
-		print(k,v)
-	end
-	print("endkeys")
 	
 	if( self.caster:GetPlayerID() ~= (keys.player-1) ) then
-		print("PlayerMismatch", self.caster:GetPlayerID() , (keys.player-1) )
 		return;
 	end
 	
@@ -39,7 +26,6 @@ function Kakashi_Sharingan:LevelUp_Stolen(keys)
 	if( keys.abilityname == "kakashi_sharingan" ) then
 		lvlUpAbil = self.ability
 	else
-		print(self.ability:GetAbilityName(),keys.abilityname)
 		if(	self.ability:GetAbilityName() ~= keys.abilityname ) then
 			return
 		end

@@ -16,3 +16,30 @@ function PoisonGasSound( event )
 	end)
 
 end
+
+
+
+function applyDamageInterval ( keys ) 
+
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+
+	local damage = ability:GetLevelSpecialValueFor("damage", ability:GetLevel())
+
+	local abilityS = caster:GetOwner():FindAbilityByName("special_bonus_kankuro_4")
+	if abilityS:IsTrained() then
+		damage = damage + 20
+	end
+
+	ApplyDamage({
+		attacker = caster,
+		victim = target,
+		ability = ability,
+		damage = damage,
+		damage_type = ability:GetAbilityDamageType(),
+		ability=ability
+	})
+
+end
+

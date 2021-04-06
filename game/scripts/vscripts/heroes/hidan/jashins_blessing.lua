@@ -11,7 +11,13 @@ function ResetHp( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 	local cooldown = ability:GetCooldown( ability:GetLevel() )
+
 	local reset_hp_percentage = keys.ability:GetLevelSpecialValueFor("reset_hp_percentage", keys.ability:GetLevel() - 1 )
+	local abilityS = caster:FindAbilityByName("special_bonus_hidan_3")
+	if abilityS:IsTrained() then
+		reset_hp_percentage = reset_hp_percentage + 15
+	end
+
 	local cooldown = ability:GetCooldown( ability:GetLevel() )
 	local modifierName = "modifier_jashins_blessing"
 	if not keys.caster:IsAlive() then

@@ -8,7 +8,13 @@
 function ManaShield( event )
 	local caster = event.caster
 	local ability = event.ability
+
 	local damage_per_mana = ability:GetLevelSpecialValueFor("damage_per_mana", ability:GetLevel() - 1 )
+	local abilityS = caster:FindAbilityByName("special_bonus_gaara_1")
+	if abilityS:IsTrained() then
+		damage_per_mana = damage_per_mana + 0.3
+	end
+
 	local absorption_percent = ability:GetLevelSpecialValueFor("absorption_tooltip", ability:GetLevel() - 1 ) * 0.01
 	local damage = event.Damage * absorption_percent
 	local not_reduced_damage = event.Damage - damage
@@ -21,7 +27,6 @@ function ManaShield( event )
 
 	-- If it doesnt then do the HP calculation
 	if oldHealth >= 1 then
-		print("Damage taken "..damage.." | Mana needed: "..mana_needed.." | Current Mana: "..caster_mana)
 
 		-- If the caster has enough mana, fully heal for the damage done
 		if mana_needed <= caster_mana then

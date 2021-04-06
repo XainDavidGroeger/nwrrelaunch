@@ -6,10 +6,8 @@
 
 function parts_poison(keys)
 
-	print("Poisoned")
 	local damage_to_deal = keys.PoisonDamagePerSecond * keys.PoisonDamageInterval   --This gives us the damage per interval.
 	local current_hp = keys.caster:GetHealth()
-	print("Poisoned Damage", damage_to_deal)
 	if damage_to_deal >= current_hp then  --Poison Attack damage over time is non-lethal, so deal less damage if needed.
 		damage_to_deal = current_hp - 1
 	end

@@ -1,0 +1,53 @@
+
+"DOTAAbilities"
+{
+
+
+"hidan_self_pain"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityTextureName"			"hidan_self_pain"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.5"
+	"MaxLevel" 						"3"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"11"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"25"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"175 250 325"
+			"LinkedSpecialBonus"	"special_bonus_hidan_2"
+		}
+	}
+
+	"precache"
+	{
+		"particle" "particles/units/heroes/hidan/hidan_passive_a.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hidan/self_pain.lua"
+				"Function"		"self_pain"
+			}      
+	}
+}
+
+}

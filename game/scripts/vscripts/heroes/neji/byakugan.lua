@@ -7,9 +7,13 @@ function vision( keys )
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 	local radius = ability:GetLevelSpecialValueFor("vision_aoe", ability_level)
+
 	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
+	local ability3 = caster:FindAbilityByName("special_bonus_neji_3")
+	if ability3:IsTrained() then
+		duration = duration + 10
+	end
 
 	AddFOWViewer(caster:GetTeamNumber(), caster:GetAbsOrigin(), radius, duration, false)
-
 
 end

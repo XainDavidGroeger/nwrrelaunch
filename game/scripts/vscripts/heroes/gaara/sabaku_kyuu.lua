@@ -7,7 +7,15 @@ function applyDamage( keys )
 	Timers:CreateTimer( delay_to_damage, function()
 		if keys.target:HasModifier("modifier_gaara_sabaku_kyuu") then
 			local abilityDamageType = keys.ability:GetAbilityDamageType()
-			local damage = keys.ability:GetAbilityDamage()
+
+			local ability = keys.ability
+
+			local damage = ability:GetLevelSpecialValueFor("dmg", ability:GetLevel() - 1 )
+			local abilityS = keys.caster:FindAbilityByName("special_bonus_gaara_4")
+			if abilityS:IsTrained() then
+				damage = damage + 380
+			end
+
 			PopupDamage(keys.target, damage)
 			local damageTable = {
 						victim = keys.target,
@@ -16,7 +24,6 @@ function applyDamage( keys )
 						damage_type = abilityDamageType
 					}
 			ApplyDamage( damageTable )
-
 
 			local particle_impact = keys.particle_impact
 			local enemy_loc = keys.target:GetAbsOrigin()

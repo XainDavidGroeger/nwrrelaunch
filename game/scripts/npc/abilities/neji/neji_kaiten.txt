@@ -1,3 +1,7 @@
+
+"DOTAAbilities"
+{
+
 "neji_kaiten"
 {
     // General  
@@ -56,43 +60,24 @@
         {
             "var_type" "FIELD_FLOAT"
             "stun_duration" "1 1.5 2 2.5"
+			"LinkedSpecialBonus" "special_bonus_neji_1"
         }
 
     }
 
     "OnSpellStart"
     {
-    
-
-        "Knockback"
-                {
-                    "Target"
-                     {
-                        "Center"            "CASTER"
-                        "Radius"            "%aoe_target"
-                        "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-                    "Center"            "Target"
-                    "Distance"          "%push_back_length"
-                    "Duration"          "1.0"
-                    "Height"            "0"
-                    "IsFixedDistance"   "0"
-                    "ShouldStun"        "0" 
-                }
-
-        "Stun"
+           "RunScript"
         {
-            "Target"
-            {
-                "Center"            "CASTER"
-                "Radius"            "%aoe_target"
-                "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-            }
-            "Duration"          "%stun_duration"
+            "ScriptFile"    "heroes/neji/kaiten.lua"
+            "Function"      "knockBack"
         }
-
+    
+        "RunScript"
+        {
+            "ScriptFile"    "heroes/neji/kaiten.lua"
+            "Function"      "applyStun"
+        }
 
         "Damage"
         {
@@ -148,5 +133,8 @@
             }
         }
     }
+
+}
+
 
 }

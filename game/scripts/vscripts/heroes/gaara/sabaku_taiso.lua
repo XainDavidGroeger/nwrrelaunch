@@ -12,6 +12,13 @@ function launch_earthquake( event )
 	local direction = targetPos - casterOrigin
 	direction = direction / direction:Length2D()
 
+	local distance =  event.distance
+
+	local abilityS = caster:FindAbilityByName("special_bonus_gaara_3")
+	if abilityS:IsTrained() then
+		distance = distance + 600
+	end
+
 	ProjectileManager:CreateLinearProjectile( {
 		Ability				= ability,
 	--	EffectName			= "",

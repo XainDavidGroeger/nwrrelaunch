@@ -26,6 +26,15 @@ function wood_release( keys )
 			--local dummy = CreateUnitByName( "npc_tree", Vector(posX, posY, 0.0), false, keys.caster, nil, keys.caster:GetTeamNumber() )
 	end
 	AddFOWViewer( keys.caster:GetTeamNumber(), target_point, tree_vision, tree_duration, false )
+
+
+	--reset cd if talent is skilled
+	local abilityS4 = keys.caster:FindAbilityByName("special_bonus_madara_3")
+	if abilityS4:IsTrained() then
+		keys.ability:EndCooldown()
+		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+	end
+
 end
 
 function wood_sound( keys )

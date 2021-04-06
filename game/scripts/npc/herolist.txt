@@ -16,6 +16,8 @@
 	"npc_dota_hero_centaur" "1" // guy
 	"npc_dota_hero_kakashi" "1" // kakashi
 	"npc_dota_hero_sven" "1"	// onoki
+
+
 	"npc_dota_hero_sand_king" "1" // raikage
 	"npc_dota_hero_phantom_assassin" "1" // sakura
 	"npc_dota_hero_ogre_magi" "1"		// madara
@@ -27,7 +29,12 @@
 	// Agi Melee
 	"npc_dota_hero_bloodseeker" "1" //zabuza
 	"npc_dota_hero_axe" "1"  //neji
-	"npc_dota_hero_juggernaut" "1"  //minato
+
+
+	// bugged currently removed until its fixed TODO
+	"npc_dota_hero_juggernaut" "0"  //minato
+
+
 	"npc_dota_hero_antimage" "1" //itachi
 	
 	// Agi Ranged
@@ -41,14 +48,15 @@
 	"npc_dota_hero_warlock" "1"  // kankuro
 	"npc_dota_hero_shadow_shaman" "1"	// Nara Shikamaru
 	"npc_dota_hero_enchantress" "1" // temari
+	"npc_dota_hero_drow_ranger" "1" //haku
 
 
-	
 	// Dota
     "npc_dota_hero_earthshaker" "0"		// Jirobo
 	"npc_dota_hero_ember_spirit" "0"	// Namikaze Minato
 	"npc_dota_hero_lone_druid" "0"		// Inuzuka Kiba
 	"npc_dota_hero_winter_wyvern" "0"	// Yamanaka Ino
+	"npc_dota_hero_lina" "0"
 	// Str Melee
 	"npc_dota_hero_abaddon" "0"
 	"npc_dota_hero_abyssal_underlord" "0"
@@ -98,7 +106,6 @@
 	
 	// Agi Ranged
 	"npc_dota_hero_clinkz" "0"
-	"npc_dota_hero_drow_ranger" "0"
 	"npc_dota_hero_gyrocopter" "0"
 	"npc_dota_hero_luna" "0"
 	"npc_dota_hero_mirana" "0"
@@ -132,7 +139,6 @@
 	"npc_dota_hero_keeper_of_the_light" "0"
 	"npc_dota_hero_leshrac" "0"
 	"npc_dota_hero_lich" "0"
-	"npc_dota_hero_lina" "0"
 	"npc_dota_hero_necrolyte" "0"
 	"npc_dota_hero_obsidian_destroyer" "0"
 	"npc_dota_hero_oracle" "0"

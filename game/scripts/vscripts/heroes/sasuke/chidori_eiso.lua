@@ -6,6 +6,7 @@ function chidori_eiso(keys)
 	local particle = keys.particle
 	local ability = keys.ability
 	local duration = ability:GetLevelSpecialValueFor("stun_duration", ability:GetLevel() - 1)
+	local castrange = ability:GetLevelSpecialValueFor("cast_range", ability:GetLevel() - 1)
 
 	-- Lightning particle
 	local pid = ParticleManager:CreateParticle(particle, PATTACH_CUSTOMORIGIN, caster)

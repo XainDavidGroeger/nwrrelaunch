@@ -30,7 +30,13 @@ function ManaCost( keys )
 	print("test")
 	local caster = keys.caster
 	local ability = keys.ability
+
 	local manacost_per_second = keys.ability:GetLevelSpecialValueFor("mana_cost_per_second", keys.ability:GetLevel() - 1 )
+	local ability2 = caster:FindAbilityByName("special_bonus_madara_2")
+	if ability2:IsTrained() then
+		manacost_per_second = manacost_per_second - 0.72
+	end
+
 	local current_mana = caster:GetMana()
 	local new_mana = current_mana - manacost_per_second
 	print(new_mana)
@@ -56,8 +62,20 @@ function BurnEnemies( keys )
 	-- Variables
 	local caster = keys.caster
 	local ability = keys.ability
+
 	local burn_radius = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
+
+	local abilityS1 = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if abilityS1:IsTrained() then
+		burn_radius = burn_radius + 70
+	end
+
 	local burn_damage = keys.ability:GetLevelSpecialValueFor("burn_damage", keys.ability:GetLevel() - 1 )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_5")
+	if abilityS:IsTrained() then
+		burn_damage = burn_damage + 100
+	end
+
 	local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, burn_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 		if targetEntities then
 			for _,oneTarget in pairs(targetEntities) do
@@ -85,7 +103,13 @@ function BurnTrees( keys )
     local wood_ability_level = keys.caster:GetAbilityByIndex(ability_index):GetLevel()
     local tree_vision = wood_ability:GetLevelSpecialValueFor("tree_vision", wood_ability_level)
     local tree_burn_duration = wood_ability:GetLevelSpecialValueFor("tree_burn_duration", wood_ability_level)
+
     local aoe = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_1")
+	if abilityS:IsTrained() then
+		aoe = aoe + 70
+	end
+
 
     if wood_ability_level > 0 then
 		local trees = GridNav:GetAllTreesAroundPoint(keys.caster:GetAbsOrigin(), aoe, false) 

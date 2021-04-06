@@ -2,7 +2,14 @@ function rasenshuriken_impact(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	local damage = ability:GetAbilityDamage()
+
+	local damage = ability:GetLevelSpecialValueFor( "damage", ability:GetLevel() - 1 )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_naruto_6")
+	if abilityS:IsTrained() then
+		damage = damage + 320
+	end
+
+
 	local damage_type = ability:GetAbilityDamageType()
 	local target_flags = ability:GetAbilityTargetType()
 	

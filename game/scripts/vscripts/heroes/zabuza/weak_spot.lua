@@ -7,10 +7,16 @@ function weak_spot( keys )
 	if not keys.target:IsBuilding() then
 		local ability = keys.ability
 		local level = ability:GetLevel() - 1
-		local cooldown = ability:GetCooldown(level)
 		local caster = keys.caster	
 		local modifierName = "modifier_weak_spot"
-		ability:StartCooldown(cooldown)
+
+		keys.ability:EndCooldown()
+		local ability5 = caster:FindAbilityByName("special_bonus_zabuza_5")
+		if ability5:IsTrained() then
+			ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 1.5)
+		else
+			ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1))
+		end
 
 		caster:RemoveModifierByName(modifierName) 
 	end	

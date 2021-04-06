@@ -146,15 +146,12 @@ end
 function GameMode:OnItemPickedUp(keys)
 	DebugPrint( '[BAREBONES] OnItemPickedUp' )
 	DebugPrintTable(keys)
+
 	local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
-
-
 end
-
-
 
 -- An item was purchased by a player
 function GameMode:OnItemPurchased( keys )
@@ -192,8 +189,7 @@ function GameMode:OnItemPurchased( keys )
 				return nil
 		 end
 		 )
-	end 
- 
+	end
 end
 
 -- An ability was used by a player
@@ -327,8 +323,7 @@ function GameMode:OnPlayerPickHero(keys)
 			-- modifies the name/label of a player
 			GameMode:setPlayerHealthLabel(player)
 		end  
-	end 
-	
+	end
 end
 
 -- A player killed another player in a multi-team context
@@ -348,7 +343,6 @@ function GameMode:OnEntityKilled( keys )
 	DebugPrintTable( keys )
 
 	GameMode:_OnEntityKilled( keys )
-	
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
@@ -365,12 +359,7 @@ function GameMode:OnEntityKilled( keys )
 		GameMode:SupportItemCooldownReset(killedUnit, killerEntity)
 		GameMode:PlayKillSound(killerEntity, killedUnit)
 	end
-
-
-
 end
-
-
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected

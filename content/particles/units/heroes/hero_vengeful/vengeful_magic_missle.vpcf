@@ -110,14 +110,14 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/couriers/pakkun/pakkun.vmdl"
+					m_model = resource:"models/pakkun/pakkun.vmdl"
 				},
 			]
 			m_bAnimated = true
 			m_nLOD = 1
 			m_bForceLoopingAnimation = true
 			m_flAnimationRate = 60.0
-			m_hOverrideMaterial = resource:"materials/couriers/pakkun/pakkun_body.vmat"
+			m_hOverrideMaterial = resource:"materials/pakkun/pakkun.vmat"
 			m_vecComponentScale = 
 			{
 				m_nType = "PVEC_TYPE_LITERAL"
@@ -318,6 +318,7 @@
 					m_Stops = [  ]
 				}
 			}
+			m_ActivityName = "ACT_DOTA_RUN"
 		},
 	]
 }

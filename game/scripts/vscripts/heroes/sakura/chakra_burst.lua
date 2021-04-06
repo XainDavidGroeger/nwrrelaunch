@@ -6,7 +6,12 @@
 function gainMaxMoveSpeed( keys )
 	local caster = keys.caster
 	local ability = keys.ability
+
 	local duration =  ability:GetLevelSpecialValueFor("duration", ability:GetLevel() - 1)
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_sakura_4")
+	if abilityS:IsTrained() then
+		duration = duration + 4
+	end
 
 	local speed = caster:GetIdealSpeed()
 	--TODO get max ms value dynamicly
@@ -18,4 +23,15 @@ function gainMaxMoveSpeed( keys )
 	end
 	)
 
+end
+
+function applyBurstModifier( keys )
+
+	local duration = keys.ability:GetLevelSpecialValueFor("duration", keys.ability:GetLevel() - 1)
+	local ability4 = keys.caster:FindAbilityByName("special_bonus_sakura_4")
+	if ability4:IsTrained() then
+		duration = duration + 4
+	end
+
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_sakura_chakra_burst", {duration = duration})
 end

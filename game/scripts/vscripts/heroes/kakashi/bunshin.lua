@@ -5,7 +5,9 @@ function ConjureImage( event )
 	local ability = event.ability
 	local unit_name = caster:GetUnitName()
 	local origin = caster:GetAbsOrigin()	-- + RandomVector(100)
+
 	local duration = ability:GetLevelSpecialValueFor( "illusion_duration", ability:GetLevel() - 1 )
+
 	local run_to_position = caster:GetAbsOrigin() + 400 * caster:GetForwardVector():Normalized() 
 	local outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", ability:GetLevel()-1)
 	local incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", ability:GetLevel()-1)
@@ -59,13 +61,27 @@ function ConjureImage( event )
 	event.caster.bunshin = illusion
 	GameMode:RemoveWearables( illusion )
 	
-	print(illusion:GetOwner(),illusion:GetTeam())
+	-- apply invis modifier
+	local abilityS = caster:FindAbilityByName("special_bonus_kakashi_1")
+	if abilityS:IsTrained() then
+		ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven_special", {})  
+	else
+		ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven", {})  
+	end
+
 	-- Move to the same direction as the caster
 	Timers:CreateTimer(0.05,
 		function() 
 			illusion:MoveToPosition(run_to_position)
 		end
 	)
+
+	local abilityS2 = event.caster:FindAbilityByName("special_bonus_kakashi_3")
+	if abilityS2:IsTrained() then
+		event.ability:EndCooldown()
+		event.ability:StartCooldown(event.ability:GetCooldown(event.ability:GetLevel()) - 3)
+	end
+
 end
 
 

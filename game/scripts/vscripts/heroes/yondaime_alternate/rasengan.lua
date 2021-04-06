@@ -9,7 +9,14 @@ function rasengan(keys)
 		return
 	end
 	local range = keys.ability:GetLevelSpecialValueFor( "distance", ( keys.ability:GetLevel() - 1 ) )
+
+
 	local bonus_damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_6")
+	if abilityS:IsTrained() then
+		bonus_damage_percent = bonus_damage_percent + 80
+	end
+
 	local base_bonus_damage = keys.ability:GetLevelSpecialValueFor( "base_bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	
 	keys.caster:RemoveModifierByName(keys.modifier)
@@ -20,12 +27,18 @@ function rasengan(keys)
 	local len = ( vTarget - vCaster ):Length2D()
 	len = range - range * ( len / range )
 
-	
+
+	local stun_duration = keys.ability:GetLevelSpecialValueFor( "stun_duration", ( keys.ability:GetLevel() - 1 ) )
+	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_3")
+	if abilityS:IsTrained() then
+		stun_duration = stun_duration + 0.3
+	end
+
 	local knockbackModifierTable =
 	{
 		should_stun = 1,
 		knockback_duration = 0.75,
-		duration = 0.75,
+		duration = stun_duration,
 		knockback_distance = len,
 		knockback_height = 0,
 		center_x = keys.caster:GetAbsOrigin().x,

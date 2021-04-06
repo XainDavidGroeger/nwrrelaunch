@@ -1,3 +1,29 @@
+
+function MergeTables( t1, t2 )
+	for name,info in pairs(t2) do
+		t1[name] = info
+	end
+end
+
+-- Returns an unit's existing increased cast range modifiers
+function GetCastRangeIncrease( unit )
+	local cast_range_increase = 0
+	-- Only the greatefd st increase counts for items, they do not stack
+	for _, parent_modifier in pairs(unit:FindAllModifiers()) do        
+		if parent_modifier.GetModifierCastRangeBonus then
+			cast_range_increase = math.max(cast_range_increase,parent_modifier:GetModifierCastRangeBonus())
+		end
+	end
+
+	for _, parent_modifier in pairs(unit:FindAllModifiers()) do        
+		if parent_modifier.GetModifierCastRangeBonusStacking and parent_modifier:GetModifierCastRangeBonusStacking() then
+			cast_range_increase = cast_range_increase + parent_modifier:GetModifierCastRangeBonusStacking()
+		end
+	end
+
+	return cast_range_increase
+end
+
 --[[Author: LearningDave
   Date: october, 19th 2015.
   returns the index of a item from a given UnitEntity and itemname
@@ -28,7 +54,6 @@ function GameMode:KillUnit( unit )
     unit:ForceKill(false)
 
   else
-    print("Given unit is not a neutral unit type, didn't kill it.")
   end
 end
 --[[Author: LearningDave
@@ -42,7 +67,6 @@ function GameMode:StackItem( cd, max_stacks, modifier_name, ability, caster)
   ability:StartCooldown(cd)
   --start a timer once its reached do something
   Timers:CreateTimer( cd, function()
-    print("timer started")
     --if the current stack didnt reach its max limit repeat the former steps (didnt know how to include recursion with timers)
     if ability.current_stacks < max_stacks then
       ability.shortCD = false
@@ -85,12 +109,9 @@ end
 --[[Author: https://github.com/MNoya/DotaCraft/blob/01a29892b124f695cadd0a134afb8d056c83015a/game/dota_addons/dotacraft/scripts/vscripts/utilities.lua
 ]]
 function getUnitIndex(list, unitName)
-    -- print("Given Table")
-    --DeepPrintTable(list)
     if list == nil then return false end
     for k,v in pairs(list) do
         for key,value in pairs(list[k]) do
-            -- print(key,value)
             if value == unitName then 
                 return key
             end
@@ -150,7 +171,6 @@ end
 ]]
 function TableFindKey( table, val )
     if table == nil then
-        print( "nil" )
         return nil
     end
 

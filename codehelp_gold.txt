@@ -1,0 +1,12 @@
+Value definitions:
+https://github.com/Shushishtok/dota-reimagined/blob/master/game/scripts/vscripts/GameMode.ts#L32-L33
+
+Function call when game is in progress:
+https://github.com/Shushishtok/dota-reimagined/blob/master/game/scripts/vscripts/GameMode.ts#L561-L575
+
+Granting passive gold tick only when a courier is found and the courier is alive:
+https://github.com/Shushishtok/dota-reimagined/blob/master/game/scripts/vscripts/GameMode.ts#L578-L598
+
+My GetAllPlayers() function is custom, you can find it here:
+https://github.com/Shushishtok/dota-reimagined/blob/61652e4e69ab73f2a2bc4af5fcf79096c05454c8/game/scripts/vscripts/lib/util.ts#L855-L872
+but of course, feel free to change it accordingly based on your game

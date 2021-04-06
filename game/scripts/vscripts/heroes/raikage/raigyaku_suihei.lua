@@ -17,7 +17,15 @@ function ReleaseAoeDamage( event )
 	if targetEntities then
 		--Loop each target / Apply damage to each target and add modfier
 		local strength = caster:GetStrength()
+
+
 		local str_ratio = event.ability:GetLevelSpecialValueFor("str_ratio_damage", ability_level )
+
+		local ability1 = caster:FindAbilityByName("special_bonus_raikage_1")
+		if ability1:IsTrained() then
+			str_ratio = str_ratio + 0.5
+		end
+
 		local spell_damage = strength * str_ratio
 		
 		local damage_table = {
@@ -31,7 +39,15 @@ function ReleaseAoeDamage( event )
 		for _,target in pairs(targetEntities) do
 			damage_table.victim = target
 			ApplyDamage(damage_table)
-			ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff",{})
+
+			local ability5 = caster:FindAbilityByName("special_bonus_raikage_5")
+			if ability5:IsTrained() then
+				ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff_special",{})
+			else
+				ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff",{})
+			end
+
+
 		end
 	end
 
