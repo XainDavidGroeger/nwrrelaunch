@@ -118,7 +118,7 @@ function kakashi_doton_new_lua:OnSpellStart()
 	    ParticleManager:ReleaseParticleIndex(pakkunSpawn_particle)
 	    --ParticleManager:ReleaseParticleIndex(dogSides1_particle)
 	    --ParticleManager:ReleaseParticleIndex(dogSides2_particle)
-		local blood_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_POINT, target)
+		local blood_particle = ParticleManager:CreateParticle("particles/bloody_particle.vpcf", PATTACH_POINT, target)
 		ParticleManager:SetParticleControl(blood_particle, 4, target:GetAbsOrigin())
 		target:EmitSound("Hero_LifeStealer.consume")
 		
