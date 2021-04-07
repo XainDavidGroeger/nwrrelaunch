@@ -7,12 +7,13 @@
 "dummy_passive_vulnerable"
 		{
 			"BaseClass" 		"ability_datadriven"
-			"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 			"Modifiers"
 			{
 				"dummy_modifier"
 				{
 					"Passive"	"1"
+                                        "IsHidden"  "1" //Show in the UI
 					"States"
 					{
 						"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"

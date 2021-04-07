@@ -55,7 +55,7 @@
 		"AttributeBaseAgility" "18" // Base agility
 		"AttributeAgilityGain" "2.0" // Agility bonus per level.
 
-		"Ability1"					"kakashi_doton"
+		"Ability1"					"kakashi_doton_new_lua"
 		"Ability2"					"kakashi_sharingan" 
 		"Ability3"					"kakashi_bunshin" 
 		"Ability4"					"kakashi_empty"
