@@ -1,0 +1,78 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_hFallback = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody_mid.vpcf"
+	m_nFallbackMaxCount = 2
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 60
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 8.0, 229.0, 96.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 61
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_HSVShiftToCP"
+			m_DefaultHSVColor = [ 190, 10, 10 ]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_ring_proj.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood04.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_lights.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood01.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_blood03.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_uptrail.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_ring.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_ring_edge.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}
