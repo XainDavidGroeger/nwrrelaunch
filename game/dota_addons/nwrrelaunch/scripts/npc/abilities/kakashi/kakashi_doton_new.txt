@@ -47,7 +47,7 @@
 	    "model"     "models/uhei/dog_uhei.vmdl"
 	    "model"     "models/guruko/dog_guruko.vmdl"
 		"particle"  "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
-		"particle"  "particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf"
+		"particle"  "particles/bloody_particle.vpcf.vpcf"
 		"particle"  "particles/units/heroes/kakashi/doton_dog_summon.vpcf"
 		"soundfile" "soundevents/kakashi_dog_cast.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
