@@ -802,11 +802,12 @@
 		"npc_dota_hero_kakashi"  									"Kakashi"
 		"npc_dota_hero_kakashi_lore"  								""
 		// Doton
-		"DOTA_Tooltip_ability_kakashi_doton"							"Fanged Pursuit Technique"
-		"DOTA_Tooltip_ability_kakashi_doton_lore"						"Doton: Tsuiga No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_doton_description"				"Sends a summoned ninja dog towards a target enemy unit, trained to pin the enemy to the ground and bite into them. Upon reaching the target, the enemy is immobilized and dealt minor magic damage."
-		"DOTA_Tooltip_ability_kakashi_doton"							"Doton: Tsuiga No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_doton_stun_duration"				"STUN DURATION: "
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Tracking Fang Technique"
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_lore"						"Doton: Tsuiga No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him, while Kakashi teleports behind the target's back and pushes him away with a leg kick."
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Doton: Tsuiga No Jutsu"
+                "DOTA_Tooltip_ability_kakashi_doton_new_lua_damage"				"Damage: "
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_root_duration"				"Root duration: "
 
 		// Sharingan
 		"DOTA_Tooltip_ability_kakashi_sharingan"						"Sharingan"
