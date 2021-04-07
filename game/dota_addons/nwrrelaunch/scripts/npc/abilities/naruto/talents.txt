@@ -11,7 +11,6 @@
 	//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 	//10: +5 All Stats / +200 Bunshin Swap Range
 
-	// TODO fix
 	"special_bonus_naruto_1"	
 	{
 		// General

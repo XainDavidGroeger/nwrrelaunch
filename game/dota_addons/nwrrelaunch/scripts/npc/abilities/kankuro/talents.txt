@@ -37,7 +37,6 @@
 		}
 	}
 
-	// TODO fix move to lua
 	"special_bonus_kankuro_2"	
 	{
 		// General
@@ -115,7 +114,6 @@
 		}
 	}
 
-	// Todo need fix
 	"special_bonus_kankuro_5"	
 	{
 		// General
@@ -167,7 +165,6 @@
 	}
 
 
-	// Todo need fix
 	"special_bonus_kankuro_7"	
 	{
 		// General
