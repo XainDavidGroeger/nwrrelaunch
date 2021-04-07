@@ -1,6 +1,4 @@
-if modifier_huskar_inner_vitality_lua == nil then
-    modifier_huskar_inner_vitality_lua = class({})
-end
+modifier_huskar_inner_vitality_lua = modifier_huskar_inner_vitality_lua or class({})
 
 --[[
     Author: Bude

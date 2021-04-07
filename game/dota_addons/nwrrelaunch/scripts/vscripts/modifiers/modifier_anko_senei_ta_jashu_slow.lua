@@ -1,4 +1,4 @@
-modifier_anko_senei_ta_jashu_ms_slow = class({})
+modifier_anko_senei_ta_jashu_ms_slow = modifier_anko_senei_ta_jashu_ms_slow or class({})
 
 function modifier_anko_senei_ta_jashu_ms_slow:IsDebuff()
     return 1

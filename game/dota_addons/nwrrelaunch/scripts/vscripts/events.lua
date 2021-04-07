@@ -57,6 +57,8 @@ end
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
+	self:_OnNPCSpawned(keys)
+
 	GameMode:RescaleUnit(npc)
 end
 

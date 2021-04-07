@@ -16,6 +16,7 @@ SHOP_TEAM_1 = Vector(-832, 768, 128)
 --base shop position team 2
 SHOP_TEAM_2 = Vector(-832, 768, 128)
 
+require('libraries/vanilla_extension')
 require('libraries/adv_log') -- extended print functionalities. Credits: Dota IMBA
 -- This library allow for easily delayed/timed actions
 require('libraries/timers')
@@ -23,6 +24,8 @@ require('libraries/timers')
 require('libraries/physics')
 -- This library can be used for advanced 3D projectile systems.
 require('libraries/projectiles')
+require('libraries/keyvalues')
+
 require('utilities')
 -- These internal libraries set up barebones's events and processes.  Feel free to inspect them/change them if you need to.
 require('internal/gamemode')
@@ -83,12 +86,13 @@ function GameMode:OnHeroInGame(hero)
 
 	GameMode:RemoveWearables( hero )
 
-	--[[ --These lines if uncommented will replace the W ability of any hero that loads into the game
-		--with the "example_ability" ability
-
-	local abil = hero:GetAbilityByIndex(1)
-	hero:RemoveAbility(abil:GetAbilityName())
-	hero:AddAbility("example_ability")]]
+	print(hero:GetUnitName(), hero:IsCustomHero())
+	if hero:IsCustomHero() then
+		CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
+			player_id = hero:GetPlayerID(),
+			icon_path = hero:GetUnitName(),
+		})
+	end
 end
 
 --[[
