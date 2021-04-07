@@ -127,7 +127,6 @@ function GameMode:ExampleConsoleCommand()
 	end
 end
 
-
 function GameMode:RemoveWearables( hero )
 	local wearables = {}
 	local model = hero:FirstMoveChild()
@@ -147,4 +146,18 @@ function GameMode:OnThink()
 	GarbageCollector:OnThink()
 
 	return 1
+end
+
+function GameMode:SetShops()
+	local shopkeeper_radiant = Entities:FindByModel(nil, "models/heroes/shopkeeper/shopkeeper.vmdl")
+
+	if shopkeeper_radiant then
+		shopkeeper_radiant:SetModelScale(2.4)
+	end
+
+	local shopkeeper_dire = Entities:FindByModel(nil, "models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl")
+
+	if shopkeeper_dire then
+		shopkeeper_dire:SetModelScale(2.4)
+	end
 end

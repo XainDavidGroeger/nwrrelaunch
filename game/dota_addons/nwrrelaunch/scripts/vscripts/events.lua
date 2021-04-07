@@ -12,30 +12,8 @@ require('label')
 -- leaverGold.lua, relevant functions to modify gold income after some1 disconnects the game
 require('leaverGold')
 
-TEAM_1_VIEW = false
-TEAM_2_VIEW = false
-
 --cheats.lua, includes functions which listen to chat inputs of the players
 require('cheats')
-
--- Cleanup a player when they leave
-function GameMode:OnDisconnect(keys)
-	DebugPrint('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
-	DebugPrintTable(keys)
-
-	local name = keys.name
-	local networkid = keys.networkid
-	local reason = keys.reason
-	local userid = keys.userid
-end
-
--- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
--- state as necessary
-function GameMode:OnPlayerReconnect(keys)
-	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
-	DebugPrintTable(keys) 
-
-end
 
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
@@ -43,39 +21,35 @@ function GameMode:OnGameRulesStateChange(keys)
 	DebugPrintTable(keys)
 	-- This internal handling is used to set up main barebones functions
 	GameMode:_OnGameRulesStateChange(keys)
-	local newState = GameRules:State_Get()
 
-	if newState == 4 then
-		local shopkeeper = Entities:FindByModel(nil, "models/heroes/shopkeeper/shopkeeper.vmdl")
-		shopkeeper:SetModelScale(2.4)
-		local shopkeeper_dire = Entities:FindByModel(nil, "models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl")
-		shopkeeper_dire:SetModelScale(2.4)
-	end
- 
- --TODO LEAVRE SYSTEM
-	-- if newState == 6 then
-		 -- A timer running every second that starts immediately on the next frame, respects pauses
-	--      Timers:CreateTimer(function()
-	--          for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-	--            if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-	--              if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 then
-	--                GameRules:SendCustomMessage(hero:GetName() .." has 2 minutes to reconnect.", 0, 0)
-	--                 GameMode:ModifyGoldGainDC(hero)
-	--              elseif not hero:HasOwnerAbandoned() then
-	--               hero.isDC = false
-	--              end 
-	--            end
-	--          end
-	--          return 1.0  
-	--     end
-	--      )
-	--end
+	local newState = GameRules:State_Get()
 
 	--This function controls the music on each gamestate
 	GameMode:PlayGameMusic(newState)
 
-	if newState == 2 then
+	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:ChangeBuildings()
+	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+		GameMode:SetShops()
+	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+		--TODO LEAVRE SYSTEM
+		-- A timer running every second that starts immediately on the next frame, respects pauses
+--[[
+		Timers:CreateTimer(function()
+			for _,hero in pairs(HeroList:GetAllHeroes()) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
+					if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 then
+						GameRules:SendCustomMessage(hero:GetName() .." has 2 minutes to reconnect.", 0, 0)
+						GameMode:ModifyGoldGainDC(hero)
+					elseif not hero:HasOwnerAbandoned() then
+						hero.isDC = false
+					end 
+				end
+			end
+
+			return 1.0  
+		end)
+--]]
 	end
 end
 
@@ -84,30 +58,6 @@ function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
 	GameMode:RescaleUnit(npc)
-end
-
--- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
--- operations here
-function GameMode:OnEntityHurt(keys)
-	--DebugPrint("[BAREBONES] Entity Hurt")
-	--DebugPrintTable(keys)
-
-	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
-	if keys.entindex_attacker ~= nil then
-		local entCause = EntIndexToHScript(keys.entindex_attacker)
-	end
-	local entVictim = EntIndexToHScript(keys.entindex_killed)
-end
-
--- An item was picked up off the ground
-function GameMode:OnItemPickedUp(keys)
-	DebugPrint( '[BAREBONES] OnItemPickedUp' )
-	DebugPrintTable(keys)
-	local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
-	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local itemname = keys.itemname
-
 end
 
 -- An item was purchased by a player
@@ -133,30 +83,129 @@ function GameMode:OnItemPurchased( keys )
 
 	if itemName == "item_flying_courier" then
 		Timers:CreateTimer( 0.5, function()
-				local flying_courier = Entities:FindByModel(nil, "models/props_gameplay/donkey_wings.vmdl")
-				flying_courier:SetModelScale(1.2)
-				return nil
-		 end
-		 )
+			local flying_courier = Entities:FindByModel(nil, "models/props_gameplay/donkey_wings.vmdl")
+			flying_courier:SetModelScale(1.2)
+			return nil
+		end)
 	end 
+
 	if itemName == "courier_radiant_flying" then
 		Timers:CreateTimer( 0.5, function()
-				local flying_courier = Entities:FindByModel(nil, "models/props_gameplay/donkey_dire.vmdl")
-				flying_courier:SetModelScale(1.2)
-				return nil
-		 end
-		 )
+			local flying_courier = Entities:FindByModel(nil, "models/props_gameplay/donkey_dire.vmdl")
+			flying_courier:SetModelScale(1.2)
+			return nil
+		end)
 	end 
- 
 end
 
--- An ability was used by a player
-function GameMode:OnAbilityUsed(keys)
-	DebugPrint('[BAREBONES] AbilityUsed')
+-- A player picked a hero
+function GameMode:OnPlayerPickHero(keys)
+	DebugPrint('[BAREBONES] OnPlayerPickHero')
 	DebugPrintTable(keys)
 
-	local player = EntIndexToHScript(keys.PlayerID)
-	local abilityname = keys.abilityname
+	local player = EntIndexToHScript(keys.player)
+
+	if player ~= nil then
+		local hero = player:GetAssignedHero()
+
+		--hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
+
+		if hero ~= nil then
+			local model = hero:FirstMoveChild()
+
+			while model ~= nil do
+				if model:GetClassname() == "dota_item_wearable" then
+					model:AddEffects(EF_NODRAW) -- Set model hidden
+					table.insert(hero.hiddenWearables, model)
+				end
+				model = model:NextMovePeer()
+			end
+
+			local heroClass = keys.hero
+			local heroEntity = EntIndexToHScript(keys.heroindex)
+
+			-- modifies the name/label of a player
+			GameMode:setPlayerHealthLabel(player)
+		end  
+	end 
+end
+
+-- An entity died
+function GameMode:OnEntityKilled( keys )
+	DebugPrint( '[BAREBONES] OnEntityKilled Called' )
+	DebugPrintTable( keys )
+
+	GameMode:_OnEntityKilled( keys )
+
+	-- The Unit that was Killed
+	local killedUnit = EntIndexToHScript( keys.entindex_killed )
+	-- The Killing entity
+	local killerEntity = nil
+
+	if keys.entindex_attacker ~= nil then
+		killerEntity = EntIndexToHScript( keys.entindex_attacker )
+	end
+
+	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
+
+	--Items
+	if killerEntity ~= nil then
+		GameMode:SupportItemCooldownReset(killedUnit, killerEntity)
+		GameMode:PlayKillSound(killerEntity, killedUnit)
+	end
+end
+
+-- This function is called once when the player fully connects and becomes "Ready" during Loading
+function GameMode:OnConnectFull(keys)
+	DebugPrint('[BAREBONES] OnConnectFull')
+	DebugPrintTable(keys)
+
+	GameMode:_OnConnectFull(keys)
+	
+	local entIndex = keys.index+1
+	-- The Player entity of the joining user
+	local ply = EntIndexToHScript(entIndex)
+	
+	-- The Player ID of the joining player
+	local playerID = ply:GetPlayerID()
+end
+
+-- This function is called whenever an item is combined to create a new item
+function GameMode:OnItemCombined(keys)
+	DebugPrint('[BAREBONES] OnItemCombined')
+	DebugPrintTable(keys)
+
+	-- The playerID of the hero who is buying something
+	local plyID = keys.PlayerID
+	if not plyID then return end
+	local player = PlayerResource:GetPlayer(plyID)
+
+	-- The name of the item purchased
+	local itemName = keys.itemname 
+	
+	-- The cost of the item purchased
+	local itemcost = keys.itemcost
+
+	if itemName == "item_chakra_armor" then
+		GameMode:ChakraArmorOnItemPickedUp(player, itemName)
+	end
+end
+
+--[[
+////////////////////////////////////////////////////////////////////////////////////////
+	Listeners below are disabled in internal/gamemode.lua for performance purpose
+////////////////////////////////////////////////////////////////////////////////////////
+--]]
+
+-- An item was picked up off the ground
+function GameMode:OnItemPickedUp(keys)
+	DebugPrint( '[BAREBONES] OnItemPickedUp' )
+	DebugPrintTable(keys)
+	local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
+	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
+	local player = PlayerResource:GetPlayer(keys.PlayerID)
+	local itemname = keys.itemname
+
 end
 
 -- A non-player entity (necro-book, chen creep, etc) used an ability
@@ -247,45 +296,28 @@ function GameMode:OnRuneActivated (keys)
 	]]
 end
 
--- A player took damage from a tower
-function GameMode:OnPlayerTakeTowerDamage(keys)
-	DebugPrint('[BAREBONES] OnPlayerTakeTowerDamage')
-	DebugPrintTable(keys)
+-- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
+-- operations here
+function GameMode:OnEntityHurt(keys)
+	--DebugPrint("[BAREBONES] Entity Hurt")
+	--DebugPrintTable(keys)
 
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local damage = keys.damage
+	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
+
+	if keys.entindex_attacker ~= nil then
+		local entCause = EntIndexToHScript(keys.entindex_attacker)
+	end
+
+	local entVictim = EntIndexToHScript(keys.entindex_killed)
 end
 
--- A player picked a hero
-function GameMode:OnPlayerPickHero(keys)
-	DebugPrint('[BAREBONES] OnPlayerPickHero')
+-- An ability was used by a player
+function GameMode:OnAbilityUsed(keys)
+	DebugPrint('[BAREBONES] AbilityUsed')
 	DebugPrintTable(keys)
 
-	local player = EntIndexToHScript(keys.player)
-
-	if player ~= nil then
-		local hero = player:GetAssignedHero()
-
-		--hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
-
-		if hero ~= nil then
-			local model = hero:FirstMoveChild()
-
-			while model ~= nil do
-				if model:GetClassname() == "dota_item_wearable" then
-					model:AddEffects(EF_NODRAW) -- Set model hidden
-					table.insert(hero.hiddenWearables, model)
-				end
-				model = model:NextMovePeer()
-			end
-
-			local heroClass = keys.hero
-			local heroEntity = EntIndexToHScript(keys.heroindex)
-
-			-- modifies the name/label of a player
-			GameMode:setPlayerHealthLabel(player)
-		end  
-	end 
+	local player = EntIndexToHScript(keys.PlayerID)
+	local abilityname = keys.abilityname
 end
 
 -- A player killed another player in a multi-team context
@@ -299,29 +331,32 @@ function GameMode:OnTeamKillCredit(keys)
 	local killerTeamNumber = keys.teamnumber
 end
 
--- An entity died
-function GameMode:OnEntityKilled( keys )
-	DebugPrint( '[BAREBONES] OnEntityKilled Called' )
-	DebugPrintTable( keys )
+-- A player took damage from a tower
+function GameMode:OnPlayerTakeTowerDamage(keys)
+	DebugPrint('[BAREBONES] OnPlayerTakeTowerDamage')
+	DebugPrintTable(keys)
 
-	GameMode:_OnEntityKilled( keys )
+	local player = PlayerResource:GetPlayer(keys.PlayerID)
+	local damage = keys.damage
+end
 
-	-- The Unit that was Killed
-	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	-- The Killing entity
-	local killerEntity = nil
+-- Cleanup a player when they leave
+function GameMode:OnDisconnect(keys)
+	DebugPrint('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
+	DebugPrintTable(keys)
 
-	if keys.entindex_attacker ~= nil then
-		killerEntity = EntIndexToHScript( keys.entindex_attacker )
-	end
+	local name = keys.name
+	local networkid = keys.networkid
+	local reason = keys.reason
+	local userid = keys.userid
+end
 
-	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
+-- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
+-- state as necessary
+function GameMode:OnPlayerReconnect(keys)
+	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
+	DebugPrintTable(keys) 
 
-	--Items
-	if killerEntity ~= nil then
-		GameMode:SupportItemCooldownReset(killedUnit, killerEntity)
-		GameMode:PlayKillSound(killerEntity, killedUnit)
-	end
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
@@ -331,49 +366,12 @@ function GameMode:PlayerConnect(keys)
 	DebugPrintTable(keys)
 end
 
--- This function is called once when the player fully connects and becomes "Ready" during Loading
-function GameMode:OnConnectFull(keys)
-	DebugPrint('[BAREBONES] OnConnectFull')
-	DebugPrintTable(keys)
-
-	GameMode:_OnConnectFull(keys)
-	
-	local entIndex = keys.index+1
-	-- The Player entity of the joining user
-	local ply = EntIndexToHScript(entIndex)
-	
-	-- The Player ID of the joining player
-	local playerID = ply:GetPlayerID()
-end
-
 -- This function is called whenever illusions are created and tells you which was/is the original entity
 function GameMode:OnIllusionsCreated(keys)
 	DebugPrint('[BAREBONES] OnIllusionsCreated')
 	DebugPrintTable(keys)
 
 	local originalEntity = EntIndexToHScript(keys.original_entindex)
-end
-
--- This function is called whenever an item is combined to create a new item
-function GameMode:OnItemCombined(keys)
-	DebugPrint('[BAREBONES] OnItemCombined')
-	DebugPrintTable(keys)
-
-	-- The playerID of the hero who is buying something
-	local plyID = keys.PlayerID
-	if not plyID then return end
-	local player = PlayerResource:GetPlayer(plyID)
-
-	-- The name of the item purchased
-	local itemName = keys.itemname 
-	
-	-- The cost of the item purchased
-	local itemcost = keys.itemcost
-
-	if itemName == "item_chakra_armor" then
-		GameMode:ChakraArmorOnItemPickedUp(player, itemName)
-	end
-
 end
 
 -- This function is called whenever an ability begins its PhaseStart phase (but before it is actually cast)
