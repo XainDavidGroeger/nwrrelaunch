@@ -9,25 +9,26 @@ leavergold_inc_3 = 4.17
 leavergold_inc_4 = 8.33
 
 function GameMode:ModifyGoldGainDC( hero )
-
 	hero.isDC = true
-	Timers:CreateTimer( 5, function()
-    	if hero.isDC then
-    		GameRules:SendCustomMessage(" didnt reconnect in time, his gold will be split upon his team.", 0, 0)
-    		local leaverGold = hero:GetGold()
-    		local teammebers = 0
 
-    		for playerID=0,10 do
+	Timers:CreateTimer( 5, function()
+		if hero.isDC then
+			GameRules:SendCustomMessage(" didnt reconnect in time, his gold will be split upon his team.", 0, 0)
+			local leaverGold = hero:GetGold()
+			local teammebers = 0
+
+			for playerID=0,10 do
 				if PlayerResource:IsValidPlayerID(playerID) then
 					local player = PlayerResource:GetPlayer(playerID)
+
 					if  hero:GetName() ~= player:GetAssignedHero():GetName() and hero:GetTeamNumber() == player:GetAssignedHero():GetTeamNumber() then
 						teammebers = teammebers + 1
 						local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
 					end	
 				end
 			end
-			local shareGold = leaverGold / teammebers
 
+			local shareGold = leaverGold / teammebers
 			local addGoldGain = 1.67 / teammebers
 
 			for playerID=0,10 do
@@ -40,10 +41,10 @@ function GameMode:ModifyGoldGainDC( hero )
 				end
 			end
 
-			  -- A timer running every second that starts immediately on the next frame, respects pauses
-			  Timers:CreateTimer(function()
-			     keys:GetAssignedHero():SetGold(0,false)
-			     for playerID=0,10 do
+			-- A timer running every second that starts immediately on the next frame, respects pauses
+			Timers:CreateTimer(function()
+				keys:GetAssignedHero():SetGold(0,false)
+				for playerID=0,10 do
 					if PlayerResource:IsValidPlayerID(playerID) then
 						local player = PlayerResource:GetPlayer(playerID)
 						if  hero:GetName() ~= player:GetAssignedHero():GetName() and hero:GetTeamNumber() == player:GetAssignedHero():GetTeamNumber() then
@@ -52,17 +53,15 @@ function GameMode:ModifyGoldGainDC( hero )
 						end	
 					end
 				end
-			     if hero.isDC then
-			     	return 1.0
-			     else
-			     	return nil
-			     end
-			      
-			    end
-			  )
 
+				if hero.isDC then
+					return 1.0
+				else
+					return nil
+				end
+			end)
+		end
 
-    	end
 		return nil
 	end
 	)

@@ -17,10 +17,7 @@
     function PrintNumbers( keys )
         PopupDamage(keys.target_points[1], keys.damage)
     end
-        
-
 ]]
-
 
 local popup = {}
  
@@ -43,7 +40,6 @@ POPUP_SYMBOL_POST_SKULL = 5
 POPUP_SYMBOL_POST_EYE = 6
 POPUP_SYMBOL_POST_SHIELD = 7
 POPUP_SYMBOL_POST_POINTFIVE = 8
-
 
 -- e.g. when healed by an ability
 function PopupHealing(target, amount)
