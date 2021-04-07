@@ -54,7 +54,7 @@ end
 
 function GarbageCollector:OnThink()
 	for k, v in pairs(self.ACTIVE_PARTICLES) do
-		if v[2] >= 60 then
+		if v[2] >= 90 then
 			if v[1] and type(v[1]) == "number" then
 				ParticleManager:DestroyParticle(v[1], false)
 				ParticleManager:ReleaseParticleIndex(v[1])
