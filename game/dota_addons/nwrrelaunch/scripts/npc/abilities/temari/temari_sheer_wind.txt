@@ -1,0 +1,99 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+// Temari's Sheer Wind
+// Author: Zenicus
+// Date: 19.11.2015.
+
+"temari_sheer_wind"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"temari_sheer_wind"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDuration"				"7"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_attack_speed_bonus"		"20 30 40 50"
+			"LinkedSpecialBonus"				"special_bonus_temari_4"
+			"LinkedSpecialBonusField"			"as_bonus"
+		}
+		"02"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_move_speed_bonus"		"2 3 4 5"
+			"LinkedSpecialBonus"				"special_bonus_temari_4"
+			"LinkedSpecialBonusField"			"ms_bonus"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"sheer_wind_max_stacks"		"3"
+		}
+
+		"04"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_move_speed_bonus_special"		"5 6 7 8"
+		}
+
+		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"sheer_wind_attack_speed_bonus_special"		"65 75 85 95"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_sheer_wind_buff_stack"
+		{
+			"Duration"	"%AbilityDuration"
+			"IsBuff"	"1"
+		}
+
+		"modifier_sheer_wind_buff"
+		{
+			"IsHidden"		"1"
+			"Duration"		"%AbilityDuration"
+
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus"
+			}
+		}
+
+		"modifier_sheer_wind_buff_special"
+		{
+			"IsHidden"		"1"
+			"Duration"		"%AbilityDuration"
+
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus_special"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus_special"
+			}
+		}
+	}
+}
+
+
+}

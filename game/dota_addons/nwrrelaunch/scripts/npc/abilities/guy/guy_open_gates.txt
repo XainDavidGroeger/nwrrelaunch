@@ -1,0 +1,220 @@
+	
+    "DOTAAbilities"
+{
+    
+  
+"guy_open_gates"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"guy_open_gates"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+		"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
+		"particle"			"particles/addons_gameplay/lamp_flame_tintable.vpcf"
+		"particle"			"particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"90"
+	"AbilityDuration"				"30" //TODO
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125 150 175"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_ms"			"10 20 30"		
+			"LinkedSpecialBonus"	"special_bonus_guy_2"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"base_attack_time"			"1.4 1.2 1.0"		
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_ms_special"			"50 60 70"		
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Sven.GodsStrength"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+			"EffectAttachType"		"follow_origin"
+			"Target"				"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/guy/open_gates.lua"
+			"Function"				"Launch"
+			"ModifierName"			"modifier_guy_open_gates"
+			"ModifierNameSpecial"	"modifier_guy_open_gates_special"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_guy_open_gates"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"Duration"		"%AbilityDuration"
+
+			"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
+			"StatusEffectPriority"	"10"
+             
+			"OnCreated"
+			{
+				   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_left_hand"
+                    }
+                }
+						   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_right_hand"
+                    }
+                }
+
+                 "AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_origin"
+                    	}
+                	}
+
+                	"AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_hitloc"
+                    	}
+                	}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%base_attack_time"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_ms"
+			}
+		}
+
+		"modifier_guy_open_gates_special"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"Duration"		"%AbilityDuration"
+
+			"StatusEffectName"	"particles/status_fx/status_effect_gods_strength.vpcf"
+			"StatusEffectPriority"	"10"
+             
+			"OnCreated"
+			{
+				   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_left_hand"
+                    }
+                }
+						   "AttachEffect"
+                {
+                    "EffectName" "particles/addons_gameplay/lamp_flame_tintable.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_right_hand"
+                    }
+                }
+
+                 "AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_origin"
+                    	}
+                	}
+
+                	"AttachEffect"
+	                {
+                    	"EffectName" "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
+                    	"EffectAttachType" "follow_origin"
+                    	"Target" "CASTER"
+                    	"ControlPointEntities"
+                   		{
+                      		"CASTER"    "attach_hitloc"
+                    	}
+                	}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%base_attack_time"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_ms_special"
+			}
+		}
+	}
+}
+
+}

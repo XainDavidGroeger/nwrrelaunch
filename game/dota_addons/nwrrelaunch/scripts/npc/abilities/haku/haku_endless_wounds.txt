@@ -1,0 +1,52 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+
+"haku_endless_wounds"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/haku/endless_wounds.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"haku_endless_wounds"
+	
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+		    "var_type"						"FIELD_FLOAT"
+			"ms_slow_per_stack"				"-1"
+			"LinkedSpecialBonus"			"special_bonus_haku_1"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"threshold"						"20 35 50 65"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"duration"		"5"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stacks_per_attack"		"4"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"ms_slow_per_stack_special"				"-1.25"
+		}
+	}
+}
+
+
+}

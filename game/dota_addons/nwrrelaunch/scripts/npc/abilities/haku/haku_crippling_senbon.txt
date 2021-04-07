@@ -1,0 +1,82 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+"haku_crippling_senbon"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/haku/senbon.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"haku_crippling_senbon"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile" 		"soundevents/haku_senbon_cast.vsndevts"
+		"soundfile" 		"soundevents/haku_senbon_impact.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		"particle"			"particles/units/heroes/haku/senbon.vpcf"		
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12 10 8 6"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 110 140 170"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 60 70 80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_missile_speed"	"2400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stun_duration"	"0.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"	"80 110 140 170"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"endless_wounds_stacks"	"9 10 11 12"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"range"					"600"
+		}
+	}
+}
+
+
+
+}

@@ -1,0 +1,5 @@
+#base "haku_crippling_senbon.txt"
+#base "haku_endless_wounds.txt"
+#base "haku_ice_mirrors.txt"
+#base "haku_needles.txt"
+#base "talents.txt"

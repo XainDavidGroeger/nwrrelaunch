@@ -1,0 +1,108 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+
+// Temari's Fusajin No Jutsu
+// Author: Zenicus
+// Date: 19.11.2015.
+
+"temari_fusajin_no_jutsu"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"temari_fusajin_no_jutsu"
+	
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 110 120 130"
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_missile_speed"	"700"
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"100 150 200 250"
+			"LinkedSpecialBonus"	"special_bonus_temari_1"
+		}
+
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_temari_2"
+		}
+	}
+	"OnSpellStart"
+	{
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/temari/temari_sheer_wind.lua"
+			"Function"		"sheer_wind_call"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+			"Function"		"resetCooldown"
+		}
+
+		"TrackingProjectile"
+		{
+			"Target"           	"TARGET"
+			"EffectName"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+			"Dodgeable"			"0"
+			"ProvidesVision"	"0"
+			"MoveSpeed"        	"%magic_missile_speed"
+			"SourceAttachment"	"attach_right_hand"
+		}		
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+			"Function"		"applyDamage"
+		}
+						
+	}
+}
+
+}
