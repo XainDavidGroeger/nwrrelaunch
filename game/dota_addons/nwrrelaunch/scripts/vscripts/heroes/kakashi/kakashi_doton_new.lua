@@ -37,12 +37,12 @@ function kakashi_doton_new_lua:OnSpellStart()
 	local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local dummy2 = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local dummy3 = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
-	dummy:AddAbility("custom_point_dummy")
-	dummy2:AddAbility("custom_point_dummy")
-	dummy3:AddAbility("custom_point_dummy")
-	local abl = dummy:FindAbilityByName("custom_point_dummy")
-	local abl2 = dummy2:FindAbilityByName("custom_point_dummy")
-	local abl3 = dummy3:FindAbilityByName("custom_point_dummy")
+	dummy:AddAbility("dummy_passive_vulnerable")
+	dummy2:AddAbility("dummy_passive_vulnerable")
+	dummy3:AddAbility("dummy_passive_vulnerable")
+	local abl = dummy:FindAbilityByName("dummy_passive_vulnerable")
+	local abl2 = dummy2:FindAbilityByName("dummy_passive_vulnerable")
+	local abl3 = dummy3:FindAbilityByName("dummy_passive_vulnerable")
 	if abl ~= nil then abl:SetLevel(1) end
 	if abl2 ~= nil then abl2:SetLevel(1) end
 	if abl3 ~= nil then abl3:SetLevel(1) end
@@ -79,17 +79,17 @@ function kakashi_doton_new_lua:OnSpellStart()
 	--[[--this is create particles for dogs on the sides, but it doesn't work properly--
 	local pDummy1 = CreateUnitByName("npc_dummy_unit", dummy2:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local pDummy2 = CreateUnitByName("npc_dummy_unit", dummy3:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
-	pDummy1:AddAbility("custom_point_dummy")
-	pDummy2:AddAbility("custom_point_dummy")
-	local pabl1 = dummy3:FindAbilityByName("custom_point_dummy")
-	local pabl2 = dummy3:FindAbilityByName("custom_point_dummy")
+	pDummy1:AddAbility("dummy_passive_vulnerable")
+	pDummy2:AddAbility("dummy_passive_vulnerable")
+	local pabl1 = dummy3:FindAbilityByName("dummy_passive_vulnerable")
+	local pabl2 = dummy3:FindAbilityByName("dummy_passive_vulnerable")
 	if pabl1 ~= nil then abl3:SetLevel(1) end
 	if pabl2 ~= nil then abl3:SetLevel(1) end
 	ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, pDummy1)
 	ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, pDummy2)
 	--need to find a solution how to make CreateParticle take into the angle of rotation of the dogs--]]
 	
-    dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
+        dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy2:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy3:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	
