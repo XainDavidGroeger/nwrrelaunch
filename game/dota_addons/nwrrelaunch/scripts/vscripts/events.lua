@@ -18,7 +18,6 @@ TEAM_2_VIEW = false
 --cheats.lua, includes functions which listen to chat inputs of the players
 	require('cheats')
 
-
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
 	DebugPrint('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
@@ -28,7 +27,6 @@ function GameMode:OnDisconnect(keys)
 	local networkid = keys.networkid
 	local reason = keys.reason
 	local userid = keys.userid
-
 end
 
 -- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
@@ -48,10 +46,10 @@ function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
 
 	if newState == 4 then
-		 local shopkeeper = Entities:FindByModel(nil, "models/heroes/shopkeeper/shopkeeper.vmdl")
-		 shopkeeper:SetModelScale(2.4)
-		 local shopkeeper_dire = Entities:FindByModel(nil, "models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl")
-		 shopkeeper_dire:SetModelScale(2.4)
+		local shopkeeper = Entities:FindByModel(nil, "models/heroes/shopkeeper/shopkeeper.vmdl")
+		shopkeeper:SetModelScale(2.4)
+		local shopkeeper_dire = Entities:FindByModel(nil, "models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl")
+		shopkeeper_dire:SetModelScale(2.4)
 	end
  
  --TODO LEAVRE SYSTEM
@@ -81,20 +79,12 @@ function GameMode:OnGameRulesStateChange(keys)
 	end
 end
 
+
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
 	if npc:IsRealHero() then
-		if npc:IsCustomHero() then
-			CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
-				player_id = npc:GetPlayerID(),
-				icon_path = npc:GetUnitName(),
-			})
-		end
-
-		GameMode:RemoveWearables( npc )
-
 		if npc:GetTeamNumber() == 1 and not TEAM_1_VIEW then
 			AddFOWViewer(npc:GetTeamNumber(),Vector(5528, 5000, 256), 10000000000, 0.1, false)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(1500, 1000, 256), 10000000000, 0.1, false)
@@ -102,12 +92,10 @@ function GameMode:OnNPCSpawned(keys)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(6200, -500, 256), 10000000000, 0.1, false)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, -2000, 240), 10000000000, 0.1, false)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(-5932, -5348, 240), 10000000000, 0.1, false)
-
---			if npc:GetUnitName() == "npc_dota_hero_lion" then
---			  npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
---			end
-
-			TEAM_1_VIEW = true
+			TEAM_1_VIEW= true
+		 -- if npc:GetUnitName() == "npc_dota_hero_lion" then
+		--    npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
+		 -- end
 		end
 
 		if npc:GetTeamNumber() == 2 and not TEAM_2_VIEW then
@@ -117,12 +105,10 @@ function GameMode:OnNPCSpawned(keys)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(6200, -500, 256), 10000000000, 0.1, false)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, -2000, 240), 10000000000, 0.1, false)
 			AddFOWViewer(npc:GetTeamNumber(),Vector(-5932, -5348, 240), 10000000000, 0.1, false)
-
---			if npc:GetUnitName() == "npc_dota_hero_lion" then
---				npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
---			end
-
-			TEAM_2_VIEW = true
+		 -- if npc:GetUnitName() == "npc_dota_hero_lion" then
+		--    npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
+		 -- end
+		 TEAM_2_VIEW = true
 		end
 	end
 
@@ -146,12 +132,15 @@ end
 function GameMode:OnItemPickedUp(keys)
 	DebugPrint( '[BAREBONES] OnItemPickedUp' )
 	DebugPrintTable(keys)
-
 	local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
+
+
 end
+
+
 
 -- An item was purchased by a player
 function GameMode:OnItemPurchased( keys )
@@ -189,7 +178,8 @@ function GameMode:OnItemPurchased( keys )
 				return nil
 		 end
 		 )
-	end
+	end 
+ 
 end
 
 -- An ability was used by a player
@@ -323,7 +313,8 @@ function GameMode:OnPlayerPickHero(keys)
 			-- modifies the name/label of a player
 			GameMode:setPlayerHealthLabel(player)
 		end  
-	end
+	end 
+	
 end
 
 -- A player killed another player in a multi-team context
@@ -343,6 +334,7 @@ function GameMode:OnEntityKilled( keys )
 	DebugPrintTable( keys )
 
 	GameMode:_OnEntityKilled( keys )
+	
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
@@ -359,7 +351,12 @@ function GameMode:OnEntityKilled( keys )
 		GameMode:SupportItemCooldownReset(killedUnit, killerEntity)
 		GameMode:PlayKillSound(killerEntity, killedUnit)
 	end
+
+
+
 end
+
+
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
