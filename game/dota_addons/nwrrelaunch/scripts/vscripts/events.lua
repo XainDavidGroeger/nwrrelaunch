@@ -16,7 +16,7 @@ TEAM_1_VIEW = false
 TEAM_2_VIEW = false
 
 --cheats.lua, includes functions which listen to chat inputs of the players
-	require('cheats')
+require('cheats')
 
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
@@ -79,38 +79,9 @@ function GameMode:OnGameRulesStateChange(keys)
 	end
 end
 
-
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-
-	if npc:IsRealHero() then
-		if npc:GetTeamNumber() == 1 and not TEAM_1_VIEW then
-			AddFOWViewer(npc:GetTeamNumber(),Vector(5528, 5000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(1500, 1000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, 6000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(6200, -500, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, -2000, 240), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-5932, -5348, 240), 10000000000, 0.1, false)
-			TEAM_1_VIEW= true
-		 -- if npc:GetUnitName() == "npc_dota_hero_lion" then
-		--    npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
-		 -- end
-		end
-
-		if npc:GetTeamNumber() == 2 and not TEAM_2_VIEW then
-			AddFOWViewer(npc:GetTeamNumber(),Vector(5528, 5000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(1500, 1000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, 6000, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(6200, -500, 256), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-2500, -2000, 240), 10000000000, 0.1, false)
-			AddFOWViewer(npc:GetTeamNumber(),Vector(-5932, -5348, 240), 10000000000, 0.1, false)
-		 -- if npc:GetUnitName() == "npc_dota_hero_lion" then
-		--    npc:AddItem(CreateItem("item_chakra_armor_male", npc, npc))
-		 -- end
-		 TEAM_2_VIEW = true
-		end
-	end
 
 	GameMode:RescaleUnit(npc)
 end
@@ -137,10 +108,7 @@ function GameMode:OnItemPickedUp(keys)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
 
-
 end
-
-
 
 -- An item was purchased by a player
 function GameMode:OnItemPurchased( keys )
@@ -190,8 +158,6 @@ function GameMode:OnAbilityUsed(keys)
 	local player = EntIndexToHScript(keys.PlayerID)
 	local abilityname = keys.abilityname
 end
-
-
 
 -- A non-player entity (necro-book, chen creep, etc) used an ability
 function GameMode:OnNonPlayerUsedAbility(keys)
@@ -296,11 +262,15 @@ function GameMode:OnPlayerPickHero(keys)
 	DebugPrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
+
 	if player ~= nil then
 		local hero = player:GetAssignedHero()
+
 		--hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
+
 		if hero ~= nil then
 			local model = hero:FirstMoveChild()
+
 			while model ~= nil do
 				if model:GetClassname() == "dota_item_wearable" then
 					model:AddEffects(EF_NODRAW) -- Set model hidden
@@ -308,13 +278,14 @@ function GameMode:OnPlayerPickHero(keys)
 				end
 				model = model:NextMovePeer()
 			end
+
 			local heroClass = keys.hero
 			local heroEntity = EntIndexToHScript(keys.heroindex)
+
 			-- modifies the name/label of a player
 			GameMode:setPlayerHealthLabel(player)
 		end  
 	end 
-	
 end
 
 -- A player killed another player in a multi-team context
@@ -334,7 +305,6 @@ function GameMode:OnEntityKilled( keys )
 	DebugPrintTable( keys )
 
 	GameMode:_OnEntityKilled( keys )
-	
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
@@ -346,17 +316,13 @@ function GameMode:OnEntityKilled( keys )
 	end
 
 	local damagebits = keys.damagebits -- This might always be 0 and therefore useless
+
 	--Items
 	if killerEntity ~= nil then
 		GameMode:SupportItemCooldownReset(killedUnit, killerEntity)
 		GameMode:PlayKillSound(killerEntity, killedUnit)
 	end
-
-
-
 end
-
-
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
