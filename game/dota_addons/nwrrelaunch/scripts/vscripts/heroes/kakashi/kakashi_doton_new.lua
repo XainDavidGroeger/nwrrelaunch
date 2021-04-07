@@ -37,7 +37,7 @@ function kakashi_doton_new_lua:OnSpellStart()
 	local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local dummy2 = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local dummy3 = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
-	dummy:AddAbility("dummy_passive_vulnerable")
+	dummy:AddAbility("dummy_passive_vulnerable") --dummy_passive_vulnerable
 	dummy2:AddAbility("dummy_passive_vulnerable")
 	dummy3:AddAbility("dummy_passive_vulnerable")
 	local abl = dummy:FindAbilityByName("dummy_passive_vulnerable")
@@ -71,34 +71,30 @@ function kakashi_doton_new_lua:OnSpellStart()
 	dummy2:SetAngles(dummy2:GetAnglesAsVector().x - 90, dummy2:GetAnglesAsVector().y - 90, dummy2:GetAnglesAsVector().z)
 	dummy3:SetAngles(dummy3:GetAnglesAsVector().x - 75, dummy3:GetAnglesAsVector().y + 90, dummy3:GetAnglesAsVector().z)
 	
+	--[[--this is create particles for dogs on the sides, but it doesn't work properly--
 	local dogSides1_particle = ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, dummy2)
 	local dogSides2_particle = ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, dummy3)
-	ParticleManager:SetParticleControl(dogSides1_particle, 1, dummy2:GetAnglesAsVector())
-	ParticleManager:SetParticleControl(dogSides2_particle, 2, dummy3:GetAnglesAsVector()) --проверить
+	ParticleManager:SetParticleControl(dogSides1_particle, 1, dummy2:GetAbsOrigin())
+	ParticleManager:SetParticleControl(dogSides2_particle, 2, dummy3:GetAbsOrigin()) --проверить
+	ParticleManager:SetParticleControlOrientation(dogSides1_particle, 1, dummy2:GetForwardVector(), dummy2:GetRightVector(), dummy2:GetUpVector()) --проверить
+	ParticleManager:SetParticleControlOrientation(dogSides2_particle, 2, dummy3:GetForwardVector(), dummy3:GetRightVector(), dummy3:GetUpVector()) --проверить
 	
-	--[[--this is create particles for dogs on the sides, but it doesn't work properly--
 	local pDummy1 = CreateUnitByName("npc_dummy_unit", dummy2:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
 	local pDummy2 = CreateUnitByName("npc_dummy_unit", dummy3:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
-	pDummy1:AddAbility("dummy_passive_vulnerable")
-	pDummy2:AddAbility("dummy_passive_vulnerable")
-	local pabl1 = dummy3:FindAbilityByName("dummy_passive_vulnerable")
-	local pabl2 = dummy3:FindAbilityByName("dummy_passive_vulnerable")
+	pDummy1:AddAbility("custom_point_dummy")
+	pDummy2:AddAbility("custom_point_dummy")
+	local pabl1 = dummy3:FindAbilityByName("custom_point_dummy")
+	local pabl2 = dummy3:FindAbilityByName("custom_point_dummy")
 	if pabl1 ~= nil then abl3:SetLevel(1) end
 	if pabl2 ~= nil then abl3:SetLevel(1) end
 	ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, pDummy1)
 	ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, pDummy2)
 	--need to find a solution how to make CreateParticle take into the angle of rotation of the dogs--]]
 	
-        dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
+    dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy2:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy3:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	
-	ParticleManager:DestroyParticle(pakkunSpawn_particle, true)
-	ParticleManager:DestroyParticle(dogSides1_particle, true)
-	ParticleManager:DestroyParticle(dogSides2_particle, true) --проверить
-	ParticleManager:ReleaseParticleIndex(pakkunSpawn_particle)
-	ParticleManager:ReleaseParticleIndex(dogSides1_particle)
-	ParticleManager:ReleaseParticleIndex(dogSides2_particle)
 	--pDummy1:RemoveSelf()
 	--pDummy2:RemoveSelf()
 	
@@ -116,6 +112,12 @@ function kakashi_doton_new_lua:OnSpellStart()
 	end)
 
 	Timers:CreateTimer(0.5, function ()
+	    ParticleManager:DestroyParticle(pakkunSpawn_particle, true)
+	    --ParticleManager:DestroyParticle(dogSides1_particle, true)
+	    --ParticleManager:DestroyParticle(dogSides2_particle, true)
+	    ParticleManager:ReleaseParticleIndex(pakkunSpawn_particle)
+	    --ParticleManager:ReleaseParticleIndex(dogSides1_particle)
+	    --ParticleManager:ReleaseParticleIndex(dogSides2_particle)
 		local blood_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_emerge_bloody.vpcf", PATTACH_POINT, target)
 		ParticleManager:SetParticleControl(blood_particle, 4, target:GetAbsOrigin())
 		target:EmitSound("Hero_LifeStealer.consume")
