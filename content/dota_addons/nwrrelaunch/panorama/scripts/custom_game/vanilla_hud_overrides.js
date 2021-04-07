@@ -60,6 +60,16 @@ function OverrideScoreboardHeroImage(args) {
 	OverrideImage(image_container, args.icon_path);
 }
 
+function SetTopBarBackground() {
+	var container = Parent.FindChildTraverse("HUDSkinTopBarBG");
+
+	container.style.visibility = "visible";
+	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/tophud.png')";
+	container.style.backgroundSize = "100% 100%";
+	container.style.width = "76.8%";
+	container.style.height = "90px";
+}
+
 (function() {
 	GameEvents.Subscribe("override_hero_image", OverrideTopBarHeroImage);
 	GameEvents.Subscribe("override_hero_image", OverrideScoreboardHeroImage);
@@ -76,4 +86,6 @@ function OverrideScoreboardHeroImage(args) {
 		icon_path: "npc_dota_hero_kakashi",
 	})
 */
+
+	SetTopBarBackground();
 })();
