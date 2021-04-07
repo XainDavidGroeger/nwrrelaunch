@@ -86,7 +86,6 @@ function GameMode:OnHeroInGame(hero)
 
 	GameMode:RemoveWearables( hero )
 
-	print(hero:GetUnitName(), hero:IsCustomHero())
 	if hero:IsCustomHero() then
 		CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
 			player_id = hero:GetPlayerID(),
