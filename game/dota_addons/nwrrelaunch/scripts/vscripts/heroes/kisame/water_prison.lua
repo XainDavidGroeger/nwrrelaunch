@@ -122,3 +122,14 @@ function applySlowModifer( keys )
 	end
 end
 
+function emitCastSound( keys )
+	keys.caster:EmitSound("kisame_water_prison_cast")
+end
+
+function AddToggleSound( keys )
+	keys.togglesound = keys.caster:EmitSound("kisame_water_prison_toggle")
+end
+
+function RemoveToggleSound( keys )
+	keys.caster:StopSound("kisame_water_prison_toggle")
+end

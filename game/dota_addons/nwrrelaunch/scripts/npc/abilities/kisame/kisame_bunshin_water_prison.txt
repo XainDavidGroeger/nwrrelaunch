@@ -48,18 +48,11 @@
 	"precache"
 	{
 		"particle"	"particles/units/heroes/kisame/shadowshaman_shackle.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		"soundfile" "soundevents/kisame_prison_cast.vsndevts"
 	}
-
-
 
 	"OnSpellStart"
 	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_ShadowShaman.Shackles.Cast"
-			"Target" 		"CASTER"
-		}
 
 		"ApplyModifier"
 		{
@@ -115,10 +108,10 @@
 
 			"OnCreated"
 			{
-				"FireSound"
+				"RunScript"
 				{
-					"EffectName"	"Hero_ShadowShaman.Shackles"
-					"Target" 		"TARGET"
+					"ScriptFile"	"heroes/kisame/bunshin_water_prison.lua"
+					"Function" 		"emitCastSound"
 				}
 				
 				"AttachEffect"
