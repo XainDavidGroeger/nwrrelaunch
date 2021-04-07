@@ -190,10 +190,6 @@
 		m_vMaterialRemapList = 
 		[
 			{
-				m_sSearchMaterial = "material #27.vmat"
-				m_sReplaceMaterial = "materials/guruko/guruko_bandage.vmat"
-			},
-			{
 				m_sSearchMaterial = "*"
 				m_sReplaceMaterial = "materials/guruko/guruko.vmat"
 			},
