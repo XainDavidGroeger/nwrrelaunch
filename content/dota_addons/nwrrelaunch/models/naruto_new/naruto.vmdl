@@ -558,7 +558,7 @@
 					m_Filepath = "models/naruto_new/naruto anim.smd"
 					m_nStartframe = 90
 					m_nEndframe = 128
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true

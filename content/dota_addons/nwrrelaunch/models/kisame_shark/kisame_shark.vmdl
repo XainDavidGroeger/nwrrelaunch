@@ -268,7 +268,7 @@
 					m_Filepath = "models/kisame_shark/kisame_shark.fbx"
 					m_nStartframe = 14
 					m_nEndframe = 60
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true

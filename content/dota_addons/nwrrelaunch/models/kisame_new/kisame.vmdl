@@ -544,7 +544,7 @@
 					m_Filepath = "models/kisame_new/kisame.fbx"
 					m_nStartframe = 706
 					m_nEndframe = 776
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true
