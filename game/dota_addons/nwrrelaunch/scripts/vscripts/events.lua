@@ -56,6 +56,10 @@ end
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
+	
+	if not npc or npc:GetClassname() == "npc_dota_thinker" or npc:IsPhantom() then
+         return
+        end
 
 	self:_OnNPCSpawned(keys)
 
