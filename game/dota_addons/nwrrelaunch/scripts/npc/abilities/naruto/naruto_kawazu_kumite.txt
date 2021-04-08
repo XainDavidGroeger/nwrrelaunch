@@ -130,6 +130,9 @@
 
         "Duration"  "%duration"
 
+				"EffectName"		"particles/units/heroes/naruto/naruto_kawazu_kumite_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
 				"StatusEffectName"	"particles/units/heroes/naruto/naruto_kawazu_kumite_status_effect.vpcf"
 				"StatusEffectPriority"	"10"
         "Properties"

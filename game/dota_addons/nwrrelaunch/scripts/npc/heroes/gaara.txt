@@ -30,6 +30,8 @@
 
 		   "ModelScale"		"0.42"
 		  "LoadoutScale"		"0.42" 
+		  "SpectatorLoadoutScale" "0.42" 
+		"VersusScale"			"0.42" 
 		  "Role"			"Disabler,Support,Nuker"
 		  "Rolelevels"	"2,3,2"
 		  "ArmorPhysical"		"1.000000"

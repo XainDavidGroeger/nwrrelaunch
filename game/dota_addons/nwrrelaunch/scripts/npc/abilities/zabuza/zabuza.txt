@@ -3,4 +3,5 @@
 #base "zabuza_track.txt"
 #base "zabuza_water_dragon_datadriven.txt"
 #base "zabuza_weak_spot.txt"
+#base "zabuza_stealth.txt"
 #base "talents.txt"

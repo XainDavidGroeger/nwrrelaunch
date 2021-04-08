@@ -31,6 +31,10 @@
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
 		"ModelScale"		"1.06"
 		"LoadoutScale"		"1.06" 
+	  "SpectatorLoadoutScale""1.06" 
+		"VersusScale"			"1.06" 
+
+
 		  "AttackAnimationPoint"   "0.4"
 			
 		  "Role"			"Carry,Jungler"

@@ -60,7 +60,6 @@
 		}
 	}
 
-	// TODO FIX
 	"special_bonus_kakashi_2"	
 	{
 		// General

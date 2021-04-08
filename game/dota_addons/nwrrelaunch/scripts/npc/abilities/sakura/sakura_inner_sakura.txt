@@ -183,9 +183,10 @@
 			{
 				   "AttachEffect"
                 	{
-                    	"EffectName" "particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
-                    	"EffectAttachType" "follow_origin"
-                    	"Target" "CASTER"
+                    	"EffectName" 		"particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
+                    	"EffectAttachType"  "follow_origin"
+                    	"Target" 			"CASTER"
+
                     	"ControlPointEntities"
                    		{
                      		"CASTER"    "attach_left_hand"
@@ -194,9 +195,10 @@
 
 					"AttachEffect"
                 	{
-                    	"EffectName" "particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
-                    	"EffectAttachType" "follow_origin"
-                    	"Target" "CASTER"
+                    	"EffectName" 		"particles/units/heroes/sakura/lamp_flame_tintable.vpcf"
+                    	"EffectAttachType"  "follow_origin"
+                    	"Target" 			"CASTER"
+
                     	"ControlPointEntities"
                    		{
                       		"CASTER"    "attach_right_hand"
@@ -221,7 +223,7 @@
 
                     "Target" "CASTER"
                     "ControlPointEntities"
-                   {
+                    {
                       "CASTER"    "attach_right_foot"
                     }
                 }

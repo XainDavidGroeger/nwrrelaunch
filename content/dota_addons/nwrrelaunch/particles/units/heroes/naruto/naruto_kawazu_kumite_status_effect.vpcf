@@ -18,7 +18,7 @@
 	[
 		{
 			_class = "C_INIT_StatusEffect"
-			m_flColorWarpIntensity = 1.0
+			m_flColorWarpIntensity = 0.5
 		},
 	]
 	m_Operators = 
@@ -38,7 +38,7 @@
 	[
 		{
 			_class = "C_OP_RenderStatusEffect"
-			m_pTextureColorWarp = resource:"materials/models/heroes/statuseffects/colorwarp_goldenglow2.vtex"
+			m_pTextureColorWarp = resource:"materials/models/heroes/statuseffects/colorwarp_goldenglow.vtex"
 		},
 	]
 }

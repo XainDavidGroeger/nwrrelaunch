@@ -42,6 +42,9 @@
 		"Rolelevels"		"3,3,2"
 			"ModelScale"		"0.85"
 		"LoadoutScale"		"0.85" 
+		"SpectatorLoadoutScale" 	"0.85"
+		"VersusScale"			"0.85"
+		
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 		  "AttackAnimationPoint"		"0.4"
 		 // "AttackRate"				"1.0"

@@ -1,0 +1,179 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 64
+	m_flConstantLifespan = 10.0
+	m_nBehaviorVersion = 11
+	m_nFirstMultipleOverride_BackwardCompat = 7
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_POINT_FOLLOW"
+					m_attachmentName = "attach_attack1"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "parent"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/brewmaster/brewmaster.vmdl"
+				m_nModSpecificData = 158
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flStartTime = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 0.2
+			}
+			m_bDisableOperator = true
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.7
+			m_fLifetimeMin = 0.5
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 2
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 15.0
+			m_flRadiusMin = 5.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 255, 169, 64 ]
+			m_ColorMax = [ 255, 207, 64 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 250.0 ]
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.5
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.3
+			m_flEndScale = 3.0
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 188, 125, 18 ]
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_flEndTime_max = 0.7
+			m_flEndTime_min = 0.5
+			m_flStartTime_max = 0.3
+			m_flStartTime_min = 0.2
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flDepthBias = -64.0
+			m_flAnimationRate = 1.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_flAddSelfAmount = 4.0
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/lanaya/plasma_flame.vtex"
+				},
+			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+			m_OutlineColor = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_flAnimationRate = 0.5
+			m_flAddSelfAmount = 2.0
+			m_flOverbrightFactor = 4.0
+			m_flDepthBias = -64.0
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/smoke/curls/smoke_curls.vtex"
+				},
+			]
+			m_OutlineColor = [ 255, 255, 255 ]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_dark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_trail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_embers.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_bubbles.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_splash.vpcf"
+			m_flDelay = 0.1
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_foam.vpcf"
+			m_flDelay = 0.1
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/naruto/naruto_kawazu_kumite_buff_droplets.vpcf"
+			m_flDelay = 0.1
+		},
+	]
+}

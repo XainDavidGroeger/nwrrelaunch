@@ -410,7 +410,7 @@
 				{
 					m_Animationname = "kaakshi_run"
 					m_Filepath = "models/kakashi_hd/kaka_hd_animations_new.smd"
-					m_nStartframe = 488
+					m_nStartframe = 491
 					m_nEndframe = 507
 					m_flFps = 30.0
 					m_Loop = 
