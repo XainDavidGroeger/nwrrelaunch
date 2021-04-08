@@ -60,6 +60,13 @@ function GameMode:OnNPCSpawned(keys)
 	self:_OnNPCSpawned(keys)
 
 	GameMode:RescaleUnit(npc)
+
+        if GetMapName() == "turbo" then --If the map was selected turbo, then at the beginning of the game each courier is given a buff for speed, and the player is given a buff for experience and gold.
+	    npc:AddNewModifier(npc, nil, 'modifier_global_boost', nil) --Give players a buff for experience and gold
+	 if npc:GetUnitName() == "npc_dota_courier" then --if it's a courier
+	    npc:AddNewModifier(npc_dota_courier, nil, 'modifier_courier_speed', nil) --Give courier a buff for ms
+	 end
+	end
 end
 
 -- An item was purchased by a player
