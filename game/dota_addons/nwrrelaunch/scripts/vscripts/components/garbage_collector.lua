@@ -10,7 +10,6 @@ end
 local original_CreateParticle = CScriptParticleManager.CreateParticle
 CScriptParticleManager.CreateParticle = function(self, sParticleName, iAttachType, hParent)
 
-	print("CreateParticle response:", sParticleName)
 
 	-- call the original function
 	local response = original_CreateParticle(self, sParticleName, iAttachType, hParent)
@@ -25,7 +24,6 @@ end
 -- Call custom functions whenever CreateParticleForTeam is being called anywhere
 local original_CreateParticleForTeam = CScriptParticleManager.CreateParticleForTeam
 CScriptParticleManager.CreateParticleForTeam = function(self, sParticleName, iAttachType, hParent, iTeamNumber)
-	print("Create Particle (override):", sParticleName, iAttachType, hParent, iTeamNumber, hCaster)
 
 	-- call the original function
 	local response = original_CreateParticleForTeam(self, sParticleName, iAttachType, hParent, iTeamNumber)
@@ -40,7 +38,6 @@ end
 -- Call custom functions whenever CreateParticleForPlayer is being called anywhere
 local original_CreateParticleForPlayer = CScriptParticleManager.CreateParticleForPlayer
 CScriptParticleManager.CreateParticleForPlayer = function(self, sParticleName, iAttachType, hParent, hPlayer)
-	print("Create Particle (override):", sParticleName, iAttachType, hParent, hPlayer, hCaster)
 
 	-- call the original function
 	local response = original_CreateParticleForPlayer(self, sParticleName, iAttachType, hParent, hPlayer)
@@ -54,11 +51,7 @@ end
 
 function GarbageCollector:OnThink()
 
-
 	for k, v in pairs(self.ACTIVE_PARTICLES) do
-
-		print(self.ACTIVE_PARTICLES[k])
-
 		if v[2] >= 60 then
 			if v[1] and type(v[1]) == "number" then
 				ParticleManager:DestroyParticle(v[1], false)

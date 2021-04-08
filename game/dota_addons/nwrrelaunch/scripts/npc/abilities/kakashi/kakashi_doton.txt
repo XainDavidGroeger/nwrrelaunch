@@ -5,115 +5,59 @@
   
 "kakashi_doton"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/kakashi/kakashi_doton.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"kakashi_doton"
+	"BaseClass"								"ability_lua"
+    "ScriptFile"                            "heroes/kakashi/kakashi_doton.lua"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-		"particle"			"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"		
-	}
+	"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			        "kakashi_doton"
 
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"500"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15"
+	"AbilityType"							"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"								"4"
 
-	// Damage.
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityDamage"					"25 50 75 100"
+	"AbilityCastPoint"						"0.3"
+	"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"					"2"
+	"AnimationIgnoresModelScale"			"1"
 
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110 120 130 140"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
+	// Stats
+	//----------------------------------------------------------------------------------------
+	"AbilityManaCost"						"110 120 130 140"
+	"AbilityCooldown"						"15"
+	"AbilityCastRange"						"500"
 	"AbilitySpecial"
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_missile_speed"	"700"
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"25 50 75 100"
 		}
 		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun_duration"	"1.5 2 2.5 3"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"	"50 75 100 125"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"range"					"500"
-		}
-
+	    {
+		    "var_type"			"FIELD_FLOAT"
+		    "root_duration"	    "1.1"
+	    }
+        "03"
+	    {
+		    "var_type"			"FIELD_FLOAT"
+		    "range"	            "500"
+	    }
 	}
-
-	"OnSpellStart"
+	
+	"precache"
 	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_VengefulSpirit.MagicMissile"
-			"Target" 		"CASTER"
-		}
-		
-		"TrackingProjectile"
-		{
-			"Target"           	"TARGET"
-			"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
-			"Dodgeable"			"1"
-			"ProvidesVision"	"0"
-			"MoveSpeed"        	"%magic_missile_speed"
-			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-		}		
+	    "model"     "models/couriers/pakkun/pakkun.vmdl"
+	    "model"     "models/uhei/dog_uhei.vmdl"
+	    "model"     "models/guruko/dog_guruko.vmdl"
+		"particle"  "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+		"particle"  "particles/bloody_particle.vpcf.vpcf"
+		"particle"  "particles/units/heroes/kakashi/doton_dog_summon.vpcf"
+		"soundfile" "soundevents/kakashi_dog_cast.vsndevts"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
 	}
-
-	"OnProjectileHitUnit"
-	{
-
-		"DeleteOnHit"	"1"
-
-		"RunScript"
-		{
-			"ScriptFile"    "items.lua"
-			"Function"      "CheckForSpellBlock"
-			
-			"GenericFunction"	"GenericSpellFunction"
-			"Modifier1"		"modifier_kakashi_doton"
-			"Duration1"		"%stun_duration"
-			
-			"doDamage"		"true"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
-			"Target" 		"TARGET"
-		}
-		
-						
-	}
-
 }
+
 
 }
