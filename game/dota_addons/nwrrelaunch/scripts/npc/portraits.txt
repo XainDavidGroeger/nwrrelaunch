@@ -703,6 +703,45 @@
 	}
 
 
+	"models/neji_new/neji.vmdl"
+	{
+		"PortraitLightPosition"		"236.429993 -18.010000 333.350006"
+		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
+		"PortraitLightFOV"		"100.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"202 188 188"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"0 161 155"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor2"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor3"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor4"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/full_view_background.vmat"
+		"PortraitBackgroundModel"		"models/heroes/pedestal/pedestal_1_small.vmdl"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"670.000000 -48.000000 126.000000"
+				"PortraitAngles"		"357.600006 175.899994 0.000000"
+				"PortraitFOV"		"4.500000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+	}
+
 	"models/neji/neji.vmdl"
 	{
 		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
