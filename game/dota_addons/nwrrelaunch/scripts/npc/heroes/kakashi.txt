@@ -10,8 +10,12 @@
 		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
 		"ModelScale"				"0.85"
 		"LoadoutScale"				"0.85" 
+		"SpectatorLoadoutScale" 	"0.85" 
+		"VersusScale"				"0.85" 
+
+
 		"SoundSet"					"Hero_Beastmaster"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kakashi.vsndevts"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		"particle_folder"			"particles/hero/sohei"
 		"GibType"					"default"
 

@@ -25,6 +25,9 @@
   "ModelScale"		"2.7"
   "LoadoutScale"	"2.7" 
 
+  	  "SpectatorLoadoutScale" "2.7" 
+		"VersusScale"		"2.7" 
+
     "Model" 		"models/haku_test/haku2_base.vmdl"
   "ItemSlots"
   { }

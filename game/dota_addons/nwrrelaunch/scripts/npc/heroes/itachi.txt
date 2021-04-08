@@ -28,6 +28,9 @@
 
 	"ModelScale"		"0.85"
 	"LoadoutScale"		"0.85" 
+	"SpectatorLoadoutScale" "0.85" 
+	"VersusScale"		"0.85" 
+
 
 	// Unit attribute
 	"AttackRange"					"100"

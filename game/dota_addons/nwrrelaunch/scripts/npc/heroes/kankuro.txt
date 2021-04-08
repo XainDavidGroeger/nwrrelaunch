@@ -30,6 +30,10 @@
 
 		"ModelScale"		"1.0"
 		"LoadoutScale"	"1.0" 
+		"SpectatorLoadoutScale" 	"1.0" 
+		"VersusScale"				"1.0" 
+
+		
 		"ItemSlots"
 		{ }
 		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"

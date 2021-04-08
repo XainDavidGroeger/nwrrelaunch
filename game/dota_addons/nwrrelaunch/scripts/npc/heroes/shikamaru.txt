@@ -30,6 +30,8 @@
 
 		  "ModelScale"		"0.60"
 		"LoadoutScale"		"0.60" 
+		"SpectatorLoadoutScale" 	"0.60" 
+		"VersusScale"				"0.60" 
 		"ArmorPhysical"		"0.000000"
 		"AttackDamageMin"		"20"
 		"AttackDamageMax"		"30"
