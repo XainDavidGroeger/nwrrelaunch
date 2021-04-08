@@ -13,7 +13,6 @@
 		"SpectatorLoadoutScale" 	"0.85" 
 		"VersusScale"				"0.85" 
 
-
 		"SoundSet"					"Hero_Beastmaster"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
 		"particle_folder"			"particles/hero/sohei"
@@ -22,11 +21,11 @@
 		//Picking Screen
 		"IsCustom"					"1"
 
-		"Role"			"Carry,Support,Escape,Disabler,Initiator"
-		"Rolelevels"	"2,1,1,1,2"
-		"Complexity"	"2"
-
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"Role"						"Carry,Support,Escape,Disabler,Initiator"
+		"Rolelevels"				"2,1,1,1,2"
+		"Complexity"				"2"
+   
+	    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementTurnRate"			"1.5"
 		"MovementSpeed"				"305"
 

@@ -826,13 +826,11 @@
 		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_outgoing_damage_percent_tooltip"		"%BUNSHIN OUTGOING DAMAGE: "
 		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_incoming_damage_percent"		"%BUNSHIN INCOMING DAMAGE: "
 		
-
 		// Chidori
 		"DOTA_Tooltip_ability_kakashi_chidori"							"Raikiri"
 		"DOTA_Tooltip_ability_kakashi_chidori_description"				"Kakashi channels a large amount of lightning chakra in his hand, to the point that the chakra becomes visible to the naked eye. Once the technique is complete, Kakashi charges toward his target and thrusts Raikiri into them, dealing Magical damage."
 		"DOTA_Tooltip_ability_kakashi_chidori_damage"					"DAMAGE: "
 		"DOTA_Tooltip_ability_kakashi_chidori_range"					"RANGE: "
-
 
 		//--------------------
 		//Guy
@@ -840,37 +838,41 @@
 		"npc_dota_hero_centaur"  										"Gai"
 		"npc_dota_hero_centaur_lore"  									""
 		// Dynamic Entry
-		"DOTA_Tooltip_ability_guy_dynamic_entry"						"Dynamic Entry"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
-		"DOTA_Tooltip_ability_guy_dynamic_entry_miss_chance"			"%MISS CHANCE DEBUFF: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new"						"Dynamic Entry"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range_ulti"		"RANGE ULTI: "
 
-		
-
-		"DOTA_Tooltip_modifier_guy_dynamic_entry_miss"					"Dynamic Entry"
-		"DOTA_Tooltip_modifier_guy_dynamic_entry_miss_description"		"This Unit has a chance to miss its attacks."
-		// Power of Youth
-		"DOTA_Tooltip_ability_guy_power_of_youth"						"Power of Youth"
-		"DOTA_Tooltip_ability_guy_power_of_youth_description"			"Guy's passion burns with the power of youth, giving him motivation to push himself to his limits. With each succesive attack on a single target, Guy's attack speed is increased up to a maximum of 4 stacks. Changing targets will cause Guy's attack speed bonus to be cut in half."
-		"DOTA_Tooltip_ability_guy_power_of_youth_bonus_attack_speed"	"%BONUS AS PER STACK: "
-		"DOTA_Tooltip_ability_guy_power_of_youth_max_stacks"			"MAX STACKS: "
-		"DOTA_Tooltip_modifier_guy_power_of_youth_as_bonus"				"Power of Youth"
-		"DOTA_Tooltip_modifier_guy_power_of_youth_as_bonus_description" "This Unit has increased Attack Speed."
-		// Gouken Mastery
-		"DOTA_Tooltip_ability_guy_gouken_mastery"						"Gouken Mastery"
-		"DOTA_Tooltip_ability_guy_gouken_mastery_bonus_damage_percentage"	"%CRIT DAMAGE: "
-		"DOTA_Tooltip_ability_guy_gouken_mastery_chance"				"%CRIT CHANCE: "
-		"DOTA_Tooltip_ability_guy_gouken_mastery_description"			"Guy and Lee's characteristic fighting style 'Strong Fist' focuses on causing extreme external damage through powerful and accurate strikes. Grants a chance for Guy to inflict a critical strike on basic attacks."
+		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
+		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased movement speed."
+		// Leaf Strong Whirlwind
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_lore"			"Konoha Gōriki Senpū"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_description"	"Guy performs a quick spin kick, dealing physical damage and briefly stunning all enemies near Guy. Has a lower cast time (0.1 instead of 0.3 secodns) if Guy has opened the seventh gate." 
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_radius"			"RADIUS: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stun_duration"	"STUN DURATION: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stomp_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_cast_time"			"CAST TIME: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_cast_time_ulti"			"CAST TIME: "
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun"						"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun_description" 			"This Unit is stunned."
+		// Strong Fist
+		"DOTA_Tooltip_ability_guy_strong_fist"						"Strong Fist"
+		"DOTA_Tooltip_ability_guy_strong_fist:lore"						"Goken"
+		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRIT DAMAGE: "
+		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION ULTI: "
+		"DOTA_Tooltip_ability_guy_strong_fist_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
 		// Hachimon Tonkou: Dairoku Keimon
-		"DOTA_Tooltip_ability_guy_open_gates"							"Sixth Celestial Gate: Open"
-		"DOTA_Tooltip_ability_guy_open_gates_lore"						"Dairoku Keimon"
-		"DOTA_Tooltip_ability_guy_open_gates_bonus_ms"					"MS BONUS: "
-		"DOTA_Tooltip_ability_guy_open_gates_base_attack_time"			"BAT: "
+		"DOTA_Tooltip_ability_guy_seventh_gate_open"				"Seventh Gate: Open"
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_lore"			"Kyomon: Kai"
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_ms_bonus"		"%MS BONUS: "
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_bonus_damage"	"BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_bat"			"BAT: "
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_hp_drain"		"%HP COST PER SECOND: "
 		
-		"DOTA_Tooltip_ability_guy_open_gates_description"				"Opens six of the eight chakra gates within Guy's body, granting him an enormous chakra boost and allowing himself to push his body beyond it's limits. Gives additional movement speed while decreasing the user's Base Attack Time."
-		"DOTA_Tooltip_modifier_guy_open_gates"							"Sixth Celestial Gate: Open"
-		"DOTA_Tooltip_modifier_guy_open_gates_description"				"This Unit has decreased base attack time and increased Movement Speed."
-
 		
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"Guy unleashes seven of his inner chakra gates, granting extra damage, decreasing his BAT, increasing his movement speed, improving his other abilities, but draining a percentage of his HP per second. This ability can be toggled off."
 		"DOTA_Tooltip_modifier_guy_seventh_gate"							"Seventh Gate: Open"

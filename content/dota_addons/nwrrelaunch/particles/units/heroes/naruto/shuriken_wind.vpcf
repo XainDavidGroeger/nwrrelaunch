@@ -1,7 +1,7 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		255,
 		255,
@@ -9,7 +9,7 @@
 		70,
 	]
 	m_nMaxParticles = 100
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -36,7 +36,7 @@
 			m_flOutputMin = 0.250000
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -48,7 +48,7 @@
 			m_flAnimationRate = 1.212000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -67,13 +67,13 @@
 		{
 			_class = "C_INIT_CreateWithinSphere"
 			m_fSpeedMax = 24.000000
-			m_LocalCoordinateSystemSpeedMin =
+			m_LocalCoordinateSystemSpeedMin = 
 			[
 				70.000000,
 				0.000000,
 				0.000000,
 			]
-			m_LocalCoordinateSystemSpeedMax =
+			m_LocalCoordinateSystemSpeedMax = 
 			[
 				70.000000,
 				0.000000,
@@ -82,14 +82,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				116,
 				97,
 				60,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				158,
 				142,
@@ -99,7 +99,7 @@
 			m_nTintBlendMode = "2"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

@@ -3,24 +3,24 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 2
-	m_BoundingBoxMin =
+	m_BoundingBoxMin = 
 	[
 		-10.000000,
 		-10.000000,
 		0.000000,
 	]
-	m_BoundingBoxMax =
+	m_BoundingBoxMax = 
 	[
 		10.000000,
 		10.000000,
 		0.000000,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
 			m_nSkin = 7
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/rasen.vmdl"
@@ -31,7 +31,7 @@
 			m_nLOD = 1
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -54,7 +54,7 @@
 			m_flEndTime = 2.000000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -75,7 +75,7 @@
 			m_bDisableOperator = true
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

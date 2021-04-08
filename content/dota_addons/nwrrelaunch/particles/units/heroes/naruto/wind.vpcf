@@ -4,14 +4,14 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 24
 	m_flConstantRadius = 38.000000
-	m_ConstantColor =
-[
-117,
-255,
-255,
+	m_ConstantColor = 
+	[
+		117,
+		255,
+		255,
 		18,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -22,12 +22,12 @@
 			m_flAnimationRate = 0.500000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_MaintainSequentialPath"
 			m_flNumToAssign = 24.000000
-			m_PathParams =
+			m_PathParams = 
 			{
 				m_nEndControlPointNumber = 1
 			}
@@ -57,12 +57,12 @@
 			m_flOscMult = 1.000000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateSequentialPath"
 			m_flNumToAssign = 24.000000
-			m_PathParams =
+			m_PathParams = 
 			{
 				m_nEndControlPointNumber = 1
 			}
@@ -81,7 +81,7 @@
 			_class = "C_INIT_RandomRotation"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

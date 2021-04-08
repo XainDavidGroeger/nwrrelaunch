@@ -9,12 +9,12 @@
 		{
 		  "override_hero"   "npc_dota_hero_centaur"
 		  "Model" 			"models/guy/gai.vmdl"
-		  "Ability1"        "guy_dynamic_entry"
-		  "Ability2"        "guy_power_of_youth" 
-		  "Ability3"        "guy_gouken_mastery" 
+		  "Ability1"        "guy_dynamic_entry_new"
+		  "Ability2"        "guy_leaf_strong_whirlwind" 
+		  "Ability3"        "guy_strong_fist" 
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
-		  "Ability6"        "guy_open_gates"
+		  "Ability6"        "guy_seventh_gate_open"
 
 		   "Ability10"		"special_bonus_attack_damage_15"
 		   "Ability11"		"special_bonus_hp_200"
