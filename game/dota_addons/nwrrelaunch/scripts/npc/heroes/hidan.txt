@@ -30,11 +30,13 @@
 		   "Ability16"		"special_bonus_hidan_2"
 		   "Ability17"		"special_bonus_hidan_3"
 		 "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+
 		"ModelScale"		"1"
 		 "LoadoutScale"		"1" 
 
 	  	"SpectatorLoadoutScale" "1" 
 		"VersusScale"		"1" 
+
 
 		 "Role"			"Disabler,Initiator,Durable,Nuker"
 		"Rolelevels"	"1,2,2,2,1"

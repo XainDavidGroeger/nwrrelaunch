@@ -110,17 +110,17 @@
 				}
 
 				"DelayedAction"
-			{
-				"Delay"     "%wave_interval"
-				"Action"    
-				{	
-					"ApplyModifier"
-	         		{
-						"ModifierName"	"modifier_blizzard_thinker"
-	         			"Target" 		"TARGET"
+				{
+					"Delay"     "%wave_interval"
+					"Action"    
+					{	
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_blizzard_thinker"
+							"Target" 		"TARGET"
+						}
 					}
 				}
-			}
 			}
 			
 		}
@@ -136,17 +136,17 @@
 				}
 
 				"DelayedAction"
-			{
-				"Delay"     "%wave_interval"
-				"Action"    
-				{	
-					"ApplyModifier"
-	         		{
-						"ModifierName"	"modifier_blizzard_thinker_special"
-	         			"Target" 		"TARGET"
+				{
+					"Delay"     "%wave_interval"
+					"Action"    
+					{	
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_blizzard_thinker_special"
+							"Target" 		"TARGET"
+						}
 					}
 				}
-			}
 			}
 			
 		}
