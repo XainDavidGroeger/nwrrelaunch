@@ -65,14 +65,17 @@
 		"Ability5"					"generic_hidden"
 		"Ability6"					"kakashi_chidori"
 
-		"Ability10"					"special_bonus_spell_amplify_8"
-		"Ability11"					"special_bonus_hp_175"
-		"Ability12"					"special_bonus_attack_damage_70"
-		"Ability13"					"special_bonus_mp_regen_4"
-		"Ability14"					"special_bonus_armor_8"
-		"Ability15"					"special_bonus_cast_range_225"
-		"Ability16"					"special_bonus_intelligence_35"
-		"Ability17"					"special_bonus_cooldown_reduction_25"
+  		"Ability10"		"special_bonus_mp_200"
+		"Ability11"		"special_bonus_attack_damage_30"
+
+		"Ability12"		"special_bonus_kakashi_1"
+		"Ability13"		"special_bonus_all_stats_6"
+
+		"Ability14"		"special_bonus_kakashi_2"
+		"Ability15"		"special_bonus_kakashi_3"
+
+		"Ability16"		"special_bonus_cooldown_reduction_25"
+		"Ability17"		"special_bonus_kakashi_4"
 
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"

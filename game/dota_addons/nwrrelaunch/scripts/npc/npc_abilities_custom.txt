@@ -22,7 +22,7 @@
 #base "abilities/dummy/dummy.txt"
 #base "abilities/dummy/dummy_passive_vulnerable.txt"
 #base "abilities/sakura/sakura.txt"
-#base "abilities/sakura/sasuke.txt"
+#base "abilities/sasuke/sasuke.txt"
 #base "abilities/temari/temari.txt"
 #base "abilities/madara/madara.txt"
 #base "abilities/haku/haku.txt"
