@@ -42,11 +42,18 @@
 
 	"OnSpellStart"
 	{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hidan/self_pain.lua"
-				"Function"		"self_pain"
-			}      
+		"FireEffect"
+		{
+			"EffectName"		"particles/units/heroes/hidan/self_pain.vpcf"
+			"EffectAttachType"		"follow_origin"
+			"Target"		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hidan/self_pain.lua"
+			"Function"		"self_pain"
+		}      
 	}
 }
 
