@@ -85,7 +85,7 @@ function GameMode:PlayKillSound(killer, killed)
         EmitSoundOn("sasuke_kills_naruto", killer)
       elseif killedName == "npc_dota_hero_lion" then
        EmitSoundOn("sasuke_kills_gaara", killer)
-      elseif killedName == "npc_dota_hero_antimage" then
+      elseif killedName == "npc_dota_hero_itachi" then
         EmitSoundOn("sasuke_kills_itachi", killer)
       end
       print("sasuke killed someone")
