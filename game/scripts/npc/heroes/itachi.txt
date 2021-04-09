@@ -1,57 +1,91 @@
 "DOTAAbilities"
 {
+//TODO cooldown special bonus
+//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE
+//20: +20 Agility / -3s Crow Genjutsu Cooldown
+//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
+//10: +20 Movement Speed / +1.75 Mana Regen
 
-"npc_dota_hero_antimage" //itachi
-{
-	"override_hero"			"npc_dota_hero_antimage"
-	"Model"					"models/itachi_new/itachi.vmdl"
-	"Ability1"				"itachi_tsukiyomi"
-	"Ability2"				"itachi_dust_crow_genjustsu"
-	"Ability3"				"itachi_sharingan"
-	"Ability4"				"generic_hidden"
-	"Ability5"				"generic_hidden"
-	"Ability6"				"itachi_amateratsu"
-	"Ability10"		"special_bonus_spell_amplify_8"
-	"Ability11"		"special_bonus_hp_175"
-	"Ability12"		"special_bonus_attack_damage_70"
-	"Ability13"		"special_bonus_mp_regen_4"
-	"Ability14"		"special_bonus_armor_8"
-	"Ability15"		"special_bonus_cast_range_225"
-	"Ability16"		"special_bonus_intelligence_35"
-	"Ability17"		"special_bonus_cooldown_reduction_25"
-
-	"ModelScale"		"0.85"
-	"LoadoutScale"		"0.85" 
-
-	// Unit attribute
-	"AttackRange"					"100"
-	"AttackAnimationPoint"			"0.4"
-
-	"Role"			"Carry,Escape,Nuker"
-	"Rolelevels"	"3,3,1"
-
-	"AttackDamageMin"   "16"
-	"AttackDamageMax"   "26"
-	"AttackRate"    "1.700000"
-	"ArmorPhysical"		"1.000000"
-    // Movement
-    //----------------------------------------------------------------
-	"MovementSpeed"					"300"
-	"StatusHealth"    "145"
-  	"StatusHealthRegen"   "0.300000"
-    // Attibutes
-    //----------------------------------------------------------------
-	"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
-	"AttributeBaseStrength"			"20"
-	"AttributeStrengthGain"			"1.35"
-	"AttributeBaseIntelligence"		"16"
-	"AttributeIntelligenceGain"		"1.6"
-	"AttributeBaseAgility"			"22"
-	"AttributeAgilityGain"			"2.75"
-
-	"ItemSlots"	{ }
-	"Village"			"konoha_scarred"
-	"Gender"			"male"
-}
-
+    "npc_dota_hero_itachi" 
+    {
+        "BaseClass"					"npc_dota_hero_antimage"
+    	"HeroID"					"123"
+		"Model"					"models/itachi_new/itachi.vmdl"
+		"ModelScale"		"0.85"
+	        "LoadoutScale"		"0.85"
+		"SoundSet"					"Itachi"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_itachi.vsndevts"
+		"particle_folder"			"particles/hero/sohei"  //for the future, i think
+		"GibType"					"default"
+		
+		//Picking Screen
+		"IsCustom"					"1"
+		
+		"Role"			"Carry,Escape,Nuker"
+		"Rolelevels"	"3,3,1"
+		
+		"Complexity"	"2"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementTurnRate"			"1.5"
+		"MovementSpeed"				"305"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		
+		"AttackDamageMin"			"32"
+		"AttackDamageMax"			"34"
+		"AttackRange"				"100"
+		"AttackRate"				"1.7"
+		"AttackAnimationPoint"		"0.4"
+		
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+		
+		"ArmorPhysical"				"1"
+		"MagicalResistance"			"25"
+		
+		"StatusHealth"				"145"
+		"StatusHealthRegen"			"0.3"
+		"StatusManaRegen"			"0.9"
+		"StatusMana"				"75"
+		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength" "21" // Base strength
+		"AttributeStrengthGain" "2.2" // Strength bonus per level.
+		"AttributeBaseIntelligence" "17" // Base intelligence
+		"AttributeIntelligenceGain" "2.0" // Intelligence bonus per level.
+		"AttributeBaseAgility" "22" // Base agility
+		"AttributeAgilityGain" "2.8" // Agility bonus per level.
+		
+		"Ability1"				"itachi_tsukiyomi"
+	        "Ability2"				"itachi_dust_crow_genjustsu"
+	        "Ability3"				"itachi_sharingan"
+	        "Ability4"				"generic_hidden"
+	        "Ability5"				"generic_hidden"
+	        "Ability6"				"itachi_amateratsu"
+		
+		"Ability10"		"special_bonus_movement_speed_20"
+	        "Ability11"		"special_bonus_mp_regen_175"
+	        "Ability12"		"special_bonus_attack_speed_20"
+	        "Ability13"		"special_bonus_itachi_1"
+	        "Ability14"		"special_bonus_agility_20"
+	        "Ability15"		"special_bonus_itachi_2"
+	        "Ability16"		"special_bonus_itachi_3"
+	        "Ability17"		"special_bonus_itachi_4"
+		
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		"HasInventory"				"1" // This KV is required for units file only
+		
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+		
+		// Custom KV's
+		"Village"			"konoha_scarred"
+		"Gender"			"male"
+    }
 }
