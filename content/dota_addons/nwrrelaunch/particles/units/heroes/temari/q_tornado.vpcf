@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 64
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -12,11 +12,11 @@
 			m_hTexture = resource:"materials/particle/leaf/leaf.vtex"
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -37,19 +37,19 @@
 		{
 			_class = "C_OP_OscillateVector"
 			m_bProportional = false
-			m_RateMin =
+			m_RateMin = 
 			[
 				-6.000000,
 				-6.000000,
 				-6.000000,
 			]
-			m_RateMax =
+			m_RateMax = 
 			[
 				6.000000,
 				6.000000,
 				6.000000,
 			]
-			m_FrequencyMax =
+			m_FrequencyMax = 
 			[
 				3.000000,
 				3.000000,
@@ -75,17 +75,17 @@
 			_class = "C_OP_PositionLock"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_LocalCoordinateSystemSpeedMax =
+			m_LocalCoordinateSystemSpeedMax = 
 			[
 				200.000000,
 				0.000000,
 				200.000000,
 			]
-			m_LocalCoordinateSystemSpeedMin =
+			m_LocalCoordinateSystemSpeedMin = 
 			[
 				100.000000,
 				0.000000,
@@ -94,7 +94,7 @@
 			m_fSpeedMin = 24.000000
 			m_fSpeedMax = 136.000000
 			m_fRadiusMax = 32.000000
-			m_vecDistanceBias =
+			m_vecDistanceBias = 
 			[
 				1.000000,
 				1.000000,
@@ -113,14 +113,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				92,
 				186,
 				217,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				156,
 				203,
@@ -136,20 +136,20 @@
 			m_nSequenceMax = 9
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 106.400000
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
 			m_fFalloffPower = -0.100000
 			m_fForceAmount = 1000.000000
-			m_vecComponentScale =
+			m_vecComponentScale = 
 			[
 				1.000000,
 				1.000000,
@@ -162,7 +162,7 @@
 			m_fForceAmount = 1100.000000
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/temari/q_tornado_2.vpcf"

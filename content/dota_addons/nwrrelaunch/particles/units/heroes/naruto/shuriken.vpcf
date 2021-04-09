@@ -6,12 +6,12 @@
 	m_flConstantRadius = 1.100000
 	m_bShouldSort = false
 	m_flMaxRecreationTime = -1.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
 			m_bSuppressTint = true
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/heroes/bounty_hunter/bounty_hunter_shuriken.vmdl"
@@ -21,7 +21,7 @@
 			m_nLOD = 1
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -62,7 +62,7 @@
 			m_bNormalize = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -74,14 +74,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				213,
 				240,
 				246,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				213,
 				240,
@@ -97,14 +97,14 @@
 			m_nControlPoint = 1
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 1
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow_ribbon.vpcf"
