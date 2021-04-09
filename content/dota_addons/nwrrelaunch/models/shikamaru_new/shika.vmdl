@@ -805,7 +805,7 @@
 					m_Filepath = "models/shikamaru_new/shika anim.smd"
 					m_nStartframe = 10
 					m_nEndframe = 36
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true

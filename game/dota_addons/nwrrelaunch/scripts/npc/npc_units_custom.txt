@@ -1,4 +1,3 @@
-#base "lanecreeps/lanecreeps.txt"
 
 // Units File
 "DOTAUnits"

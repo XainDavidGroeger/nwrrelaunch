@@ -568,7 +568,7 @@
 								m_Filepath = "models/raikage/raikage_animations.fbx"
 								m_nStartframe = 4
 								m_nEndframe = 42
-								m_flFps = 30.0
+								m_flFps = 6.0
 								m_Loop = 
 								{
 									m_bLoop = true

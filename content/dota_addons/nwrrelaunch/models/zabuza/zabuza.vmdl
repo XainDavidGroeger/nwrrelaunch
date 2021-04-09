@@ -491,7 +491,7 @@
 								m_Filepath = "models/zabuza/zabuza_animations.fbx"
 								m_nStartframe = 159
 								m_nEndframe = 187
-								m_flFps = 30.0
+								m_flFps = 5.0
 								m_Loop = 
 								{
 									m_bLoop = true
