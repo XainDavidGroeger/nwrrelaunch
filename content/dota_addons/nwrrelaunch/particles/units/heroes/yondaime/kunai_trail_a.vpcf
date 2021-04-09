@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 128
 	m_flConstantRadius = 15.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -14,11 +14,11 @@
 			m_flAnimationRate = 2.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
+			m_Gravity = 
 			[
 				-325.000000,
 				0.000000,
@@ -47,7 +47,7 @@
 		{
 			_class = "C_OP_VectorNoise"
 			m_bAdditive = true
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-1.000000,
 				-1.000000,
@@ -65,19 +65,19 @@
 		{
 			_class = "C_OP_OscillateVector"
 			m_bOffset = true
-			m_FrequencyMin =
+			m_FrequencyMin = 
 			[
 				0.300000,
 				0.300000,
 				0.300000,
 			]
-			m_RateMax =
+			m_RateMax = 
 			[
 				55.000000,
 				55.000000,
 				55.000000,
 			]
-			m_RateMin =
+			m_RateMin = 
 			[
 				-55.000000,
 				-55.000000,
@@ -86,7 +86,7 @@
 			m_nOpEndCapState = 1
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -98,13 +98,13 @@
 			m_flNoiseScaleLoc = 0.301000
 			m_bLocalSpace = true
 			m_flOffset = 1.000000
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				14.000000,
 				24.000000,
 				16.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-24.000000,
 				-24.000000,
@@ -128,14 +128,14 @@
 			m_bScaleInitialRange = true
 			m_nOpScaleCP = 16
 			m_nCPInput = 15
-			m_vInputMax =
+			m_vInputMax = 
 			[
 				255.000000,
 				255.000000,
 				255.000000,
 			]
 			m_nFieldOutput = 6
-			m_vOutputMax =
+			m_vOutputMax = 
 			[
 				1.000000,
 				1.000000,
@@ -147,13 +147,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				-15.000000,
 				0.000000,
 				0.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				-15.000000,
 				0.000000,
@@ -161,7 +161,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_NoiseEmitter"

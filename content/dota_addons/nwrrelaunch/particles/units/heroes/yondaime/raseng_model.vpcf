@@ -3,24 +3,24 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 2
-	m_BoundingBoxMin =
+	m_BoundingBoxMin = 
 	[
 		-10.000000,
 		-10.000000,
 		0.000000,
 	]
-	m_BoundingBoxMax =
+	m_BoundingBoxMax = 
 	[
 		10.000000,
 		10.000000,
 		0.000000,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
 			m_nSkin = 7
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/particle/sphere.vmdl"
@@ -31,7 +31,7 @@
 			m_nLOD = 1
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -75,7 +75,7 @@
 			m_flStartScale = 0.000000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -97,14 +97,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				0,
 				255,
 				255,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				0,
 				85,
@@ -113,7 +113,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
@@ -121,7 +121,7 @@
 		},
 	]
 	m_flConstantRadius = 1.500000
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/yondaime/raseng_pre_a.vpcf"

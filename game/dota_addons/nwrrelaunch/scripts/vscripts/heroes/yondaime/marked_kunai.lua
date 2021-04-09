@@ -22,7 +22,7 @@ function createDaggerParticle( keys )
 
 	-- Dummy
 	local dummy = CreateUnitByName("npc_marked_kunai", target_point, false, caster, caster, caster:GetTeam())
-	dummy:SetOriginalModel("models/yondaime_new/yondakunai.vmdl")
+	dummy:SetOriginalModel("models/heroes/yondaime_new/yondakunai.vmdl")
 	dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 	dummy:SetModelScale(4.0)
 	ability:ApplyDataDrivenModifier(caster, dummy, "modifier_yondaime_marked_kunai", {duration = duration})
@@ -81,10 +81,9 @@ function startKunai( keys )
 
 	direction = direction / direction:Length2D()
 
-
 	ProjectileManager:CreateLinearProjectile( {
 		Ability				= ability,
-		EffectName			= "particles/units/heroes/yondaime/kunai_proc.vpcf",
+		EffectName			= "particles/units/heroes/yondaime/kunai_alt.vpcf",
 		vSpawnOrigin		= casterOrigin,
 		fDistance			= distance,
 		fStartRadius		= dagger_radius,
@@ -97,6 +96,7 @@ function startKunai( keys )
 		iUnitTargetType		= DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
 	--	fExpireTime			= ,
 		bDeleteOnHit 		= false,
+		vVelocity			= direction * keys.speed,
 		bProvidesVision		= false,
 		iVisionRadius		= 300,
 		iVisionTeamNumber	= caster:GetTeamNumber(),

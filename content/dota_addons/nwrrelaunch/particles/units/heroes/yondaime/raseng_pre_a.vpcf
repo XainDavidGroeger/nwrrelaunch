@@ -1,7 +1,7 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -10,14 +10,14 @@
 			_class = "C_OP_FadeAndKill"
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -33,14 +33,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				0,
 				255,
 				255,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				0,
 				170,
@@ -49,7 +49,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

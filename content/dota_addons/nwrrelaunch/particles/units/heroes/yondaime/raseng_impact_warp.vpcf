@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 8
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -15,7 +15,7 @@
 			m_nOrientationType = 2
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_FadeOutSimple"
@@ -34,7 +34,7 @@
 			_class = "C_OP_FadeInSimple"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -59,13 +59,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				0.000000,
 				0.000000,
 				5.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
@@ -73,7 +73,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

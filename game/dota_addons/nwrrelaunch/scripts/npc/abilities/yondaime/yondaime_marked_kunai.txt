@@ -23,7 +23,7 @@
 		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
 		"particle"			"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
 		"particle"			"particles/units/heroes/yondaime/blink_core.vpcf"
-		"model"				"models/heroes/yondaime/yondakunai.vmdl"
+		"model"				"models/heroes/yondaime_new/yondakunai.vmdl"
 		"particle"			"particles/units/heroes/yondaime/kunai_ground.vpcf"
 		
 	}

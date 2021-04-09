@@ -3,14 +3,14 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 32
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		255,
 		252,
 		220,
 		55,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderRopes"
@@ -25,7 +25,7 @@
 			m_nMinTesselation = 3
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -55,7 +55,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade =
+			m_ColorFade = 
 			[
 				248,
 				227,
@@ -79,7 +79,7 @@
 			m_FrequencyMax = 33.000000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -109,13 +109,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				15.000000,
 				0.000000,
 				0.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				-15.000000,
 				0.000000,
@@ -124,14 +124,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
 				127,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
@@ -140,7 +140,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"

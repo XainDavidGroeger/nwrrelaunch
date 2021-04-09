@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 12
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		248,
 		224,
@@ -12,11 +12,11 @@
 	]
 	m_flNoDrawTimeToGoToSleep = 2.000000
 	m_bShouldSort = false
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			VisibilityInputs =
+			VisibilityInputs = 
 			{
 				m_flCameraBias = -8.000000
 			}
@@ -32,7 +32,7 @@
 			m_flAnimationRate = 24.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -46,7 +46,7 @@
 		{
 			_class = "C_OP_ColorInterpolate"
 			m_flFadeStartTime = 0.200000
-			m_ColorFade =
+			m_ColorFade = 
 			[
 				40,
 				38,
@@ -63,7 +63,7 @@
 		},
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -78,7 +78,7 @@
 			m_flStartTime_min = 0.500000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRadius"
@@ -106,14 +106,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				0,
 				255,
 				127,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				0,
 				85,
@@ -125,7 +125,7 @@
 			_class = "C_INIT_CreateFromParentParticles"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"

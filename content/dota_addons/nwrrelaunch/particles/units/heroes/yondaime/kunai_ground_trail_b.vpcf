@@ -6,7 +6,7 @@
 	m_flConstantRadius = 3.000000
 	m_flConstantLifespan = 0.740000
 	m_nGroupID = 1
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderRopes"
@@ -21,7 +21,7 @@
 			m_nMinTesselation = 3
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -40,7 +40,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade =
+			m_ColorFade = 
 			[
 				226,
 				160,
@@ -65,7 +65,7 @@
 			m_nControlPointNumber = 1
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RingWave"
@@ -75,14 +75,14 @@
 			m_flParticlesPerOrbit = 8.000000
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 32.000000
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/yondaime/kunai_ground_trail_c.vpcf"

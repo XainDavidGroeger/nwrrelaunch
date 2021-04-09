@@ -5,14 +5,14 @@
 	m_nMaxParticles = 30
 	m_flConstantRadius = 64.000000
 	m_flConstantLifespan = 0.125000
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		189,
 		250,
 		253,
 		255,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
@@ -28,7 +28,7 @@
 			m_flFinalTextureOffsetU = 1.000000
 			m_flFinalTextureScaleV = -1.000000
 			m_flFinalTextureOffsetV = 1.000000
-			m_vEndTrailTintFactor =
+			m_vEndTrailTintFactor = 
 			[
 				1.000000,
 				1.000000,
@@ -37,7 +37,7 @@
 			]
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_EndCapTimedDecay"
@@ -77,7 +77,7 @@
 		{
 			_class = "C_OP_SetSingleControlPointPosition"
 			m_nCP1 = 3
-			m_vecCP1Pos =
+			m_vecCP1Pos = 
 			[
 				0.000000,
 				0.000000,
@@ -86,7 +86,7 @@
 			m_bSetOnce = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRadius"
@@ -103,13 +103,13 @@
 		},
 		{
 			_class = "C_INIT_PositionWarp"
-			m_vecWarpMax =
+			m_vecWarpMax = 
 			[
 				1.000000,
 				1.000000,
 				0.000000,
 			]
-			m_vecWarpMin =
+			m_vecWarpMin = 
 			[
 				1.000000,
 				1.000000,
@@ -118,13 +118,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				0.000000,
 				0.000000,
 				1024.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
@@ -158,13 +158,13 @@
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				0.000000,
 				0.000000,
 				-550.000000,
 			]
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				0.000000,
 				0.000000,
@@ -187,14 +187,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
 				0,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
@@ -203,7 +203,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
@@ -211,7 +211,7 @@
 			m_flEmissionDuration = 0.400000
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/yondaime/blink_smoke.vpcf"

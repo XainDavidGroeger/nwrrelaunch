@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 100
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
@@ -17,7 +17,7 @@
 			m_flFinalTextureOffsetV = 1.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -38,7 +38,7 @@
 			m_flEndScale = 0.100000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -67,13 +67,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				0.000000,
 				0.000000,
 				90.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
@@ -88,14 +88,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				85,
 				0,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				170,
@@ -110,13 +110,13 @@
 		{
 			_class = "C_INIT_InitialVelocityNoise"
 			m_flNoiseScaleLoc = 0.600000
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-250.000000,
 				-250.000000,
 				-250.000000,
 			]
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				250.000000,
 				250.000000,
@@ -124,7 +124,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
@@ -132,7 +132,7 @@
 			m_flEmissionDuration = 0.180000
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"

@@ -4,11 +4,11 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 32
 	m_flConstantRadius = 25.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			VisibilityInputs =
+			VisibilityInputs = 
 			{
 				m_flCameraBias = -10.000000
 			}
@@ -18,7 +18,7 @@
 			m_nOrientationType = 2
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -53,7 +53,7 @@
 			m_RateMin = 0.100000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -72,13 +72,13 @@
 		{
 			_class = "C_INIT_PositionOffset"
 			m_bLocalCoords = true
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				15.000000,
 				0.000000,
 				0.000000,
 			]
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				15.000000,
 				0.000000,
@@ -98,14 +98,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
 				0,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
@@ -114,7 +114,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
