@@ -135,11 +135,15 @@
 
 		"modifier_hidan_metamorphosis"
 		{
-			
-
 			"duration"			"%duration"
 
 			"AllowsIllusionDuplicate"	"1"
+
+			"EffectName"		"particles/units/heroes/hidan/ritual_owner.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"StatusEffectName"		"particles/units/heroes/hidan/ritual_self_status_effect.vpcf"
+			"StatusEffectPriority"		"10"
 
 			"OnCreated"
 			{

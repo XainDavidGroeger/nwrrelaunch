@@ -7,14 +7,14 @@
 		//10: +5 All Stats / +200 Bunshin Swap Range
     		"npc_dota_hero_dragon_knight" //naruto
 		{
-		  	"override_hero"   "npc_dota_hero_dragon_knight"
-		  	"Model" 			"models/naruto_new/naruto.vmdl"
-		 	"Ability1"        "naruto_kage_bunshin_rasengan"
-		  	"Ability2"        "naruto_kawazu_kumite" 
-		  	"Ability3"        "naruto_kage_bunshin_mastery" 
+		  	"override_hero" "npc_dota_hero_dragon_knight"
+		  	"Model" 		"models/naruto_new/naruto.vmdl"
+		 	"Ability1"      "naruto_kage_bunshin_rasengan"
+		  	"Ability2"      "naruto_kawazu_kumite" 
+		  	"Ability3"      "naruto_kage_bunshin_mastery" 
 		    "Ability4"		"generic_hidden"
 		    "Ability5"		"generic_hidden"
-		  	"Ability6"        "naruto_rasenshuriken"
+		  	"Ability6"      "naruto_rasenshuriken"
 
 		  	"Ability10"		"special_bonus_all_stats_5"
 		    "Ability11"		"special_bonus_naruto_1"
