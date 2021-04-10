@@ -130,7 +130,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 
 	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
-	target:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
+	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
 end
 

@@ -371,7 +371,6 @@
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_creep_damage" "CREEP DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_hero_damage"	"HERO DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_dagger_duration"	"DURATION: "
-		"DOTA_Tooltip_ability_yondaime_marked_kunai_cd_reduc"			"CD REDUCTION: "
 
 		"DOTA_Tooltip_modifier_marked_kunai_debuff"						"Marked Kunai"
 		"DOTA_Tooltip_modifier_marked_kunai_debuff_description"			"This Unit's Armor is reduced."

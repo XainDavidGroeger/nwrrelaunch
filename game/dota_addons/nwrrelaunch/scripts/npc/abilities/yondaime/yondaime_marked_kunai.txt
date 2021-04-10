@@ -96,12 +96,6 @@
 			"var_type"				"FIELD_INTEGER"
 			"hero_damage"				"30 45 60 75"	
 		}
-		"11"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cd_reduc"				"0"	
-			"LinkedSpecialBonus"	"special_bonus_yondaime_1"
-		}
 
     }
 
