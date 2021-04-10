@@ -6,15 +6,13 @@
 "CustomHeroList"
 {
 
-
-
 	// Str Melee
 	"npc_dota_hero_doom_bringer" "1"  //hidan
 	"npc_dota_hero_kunkka" "1" //kisame
 	"npc_dota_hero_dragon_knight" "1" //naruto
 	"npc_dota_hero_medusa" "1" //anko
 	"npc_dota_hero_centaur" "1" // guy
-	"npc_dota_hero_kakashi" "1" // kakashi
+	"npc_dota_hero_beastmaster" "1" // kakashi
 	"npc_dota_hero_sven" "1"	// onoki
 
 
@@ -35,7 +33,7 @@
 	"npc_dota_hero_juggernaut" "1"  //minato
 
 
-	"npc_dota_hero_itachi" "1" //itachi
+	"npc_dota_hero_antimage" "1" //itachi
 	
 	// Agi Ranged
 

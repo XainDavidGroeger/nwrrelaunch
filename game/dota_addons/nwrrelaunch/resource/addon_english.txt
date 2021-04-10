@@ -725,8 +725,8 @@
 		//--------------------
 		//Itachi
 		//--------------------
-		"npc_dota_hero_itachi"  										"Itachi"
-		"npc_dota_hero_itachi_lore"  									""
+		"npc_dota_hero_antimage"  										"Itachi"
+		"npc_dota_hero_antimage_lore"  									""
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"Dust Crow Genjutsu"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_cd_reduc"		"CD REDUCTION: "
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"Using genjutsu, Itachi dissapears, leaving a flock of crows behind, and reappears at target location."
@@ -799,8 +799,8 @@
 		//--------------------
 		//Kakashi
 		//--------------------
-		"npc_dota_hero_kakashi"  									"Kakashi"
-		"npc_dota_hero_kakashi_lore"  								""
+		"npc_dota_hero_beastmaster"  									"Kakashi"
+		"npc_dota_hero_beastmaster_lore"  								""
 		// Doton
 		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Tracking Fang Technique"
 		"DOTA_Tooltip_ability_kakashi_doton_new_lua_lore"						"Doton: Tsuiga No Jutsu"

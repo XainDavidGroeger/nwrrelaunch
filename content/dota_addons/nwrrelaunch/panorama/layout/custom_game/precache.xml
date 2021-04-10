@@ -29,9 +29,8 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud2.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/uibottom.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_kakashi.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_itachi.png" />
-
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_beastmaster.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_antimage.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_doom_bringer.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_kunkka.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_dragon_knight.png" />
