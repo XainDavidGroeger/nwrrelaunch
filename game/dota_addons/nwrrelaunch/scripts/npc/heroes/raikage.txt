@@ -41,7 +41,7 @@
 		  "Role"			"Initiator,Durable,Disabler"
 		"Rolelevels"		"3,3,2"
 			"ModelScale"		"0.85"
-		"LoadoutScale"		"0.85" 
+		"LoadoutScale"		"0.79" 
 		"SpectatorLoadoutScale" 	"0.85"
 		"VersusScale"			"0.85"
 		

@@ -54,8 +54,10 @@
 		  "AttributeBaseAgility" "22" // Base agility
 		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
 		  
-	 	  "ItemSlots"
-	  	  { }
+	 	"DisableWearables" 			"1"
+
+		"ItemSlots"
+		{ }
 
 	  	  "Village"			"konoha"
 	  	  "Gender"			"male"

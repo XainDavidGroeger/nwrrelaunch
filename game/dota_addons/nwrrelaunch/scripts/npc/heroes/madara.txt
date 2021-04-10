@@ -36,7 +36,7 @@
   "StatusHealthRegen"   "1.600000"
 		  "AttackAnimationPoint"   "0.4"
 		  "ModelScale"		"0.9"
-			"LoadoutScale"		"0.9"
+			"LoadoutScale"		"0.78"
 		  	"SpectatorLoadoutScale" 	"0.9"
 			"VersusScale"			"0.9"
 

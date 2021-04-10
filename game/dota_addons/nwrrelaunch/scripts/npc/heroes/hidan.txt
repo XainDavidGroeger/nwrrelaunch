@@ -32,10 +32,10 @@
 		 "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
 
 		"ModelScale"		"1"
-		 "LoadoutScale"		"1" 
+		 "LoadoutScale"		"0.87" 
 
-	  	"SpectatorLoadoutScale" "1" 
-		"VersusScale"		"1" 
+	  	"SpectatorLoadoutScale" "0.87" 
+		"VersusScale"		"0.87"  
 
 
 		 "Role"			"Disabler,Initiator,Durable,Nuker"
