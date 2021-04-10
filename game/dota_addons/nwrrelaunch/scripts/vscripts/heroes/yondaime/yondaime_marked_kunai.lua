@@ -1,6 +1,7 @@
 yondaime_marked_kunai = yondaime_marked_kunai or class({})
 LinkLuaModifier( "modifier_marked_kunai_debuff", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_yondaime_marked_kunai", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_marked_kunai_bonus", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_marked_kunai", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
 
 
 function yondaime_marked_kunai:GetAbilityTextureName()
@@ -8,7 +9,11 @@ function yondaime_marked_kunai:GetAbilityTextureName()
 end
 
 function yondaime_marked_kunai:GetCooldown(iLevel)
-	return self.BaseClass.GetCooldown(self, iLevel)
+	local cdreduction = 0
+	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_1"):GetLevel() > 0 then
+		cdreduction = 1
+	end
+	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
 end
 
 function yondaime_marked_kunai:GetCastRange(location, target)
@@ -89,7 +94,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		dummy:SetOriginalModel("models/yondaime_new/yondakunai.vmdl")
 		dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 		dummy:SetModelScale(4.0)
-		dummy:AddNewModifier(caster, ability, "modifier_yondaime_marked_kunai", {duration = duration})
+		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai", {duration = duration})
 	
 		dummy:SetUnitName("npc_marked_kunai")
 	
@@ -123,8 +128,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self.creep_damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	end
 
-	hTarget:AddNewModifier("modifier_marked_kunai_debuff")
-
+	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
 	target:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
@@ -165,27 +169,45 @@ end
 
 modifier_marked_kunai = class({})
 
-
-
 function modifier_marked_kunai:IsBuff()
 	return true
 end
 
-function modifier_marked_kunai:IsAura()						return true end
-function modifier_marked_kunai:IsAuraActiveOnDeath() 		return false end
+function modifier_marked_kunai:IsAura()						
+	return true 
+end
+function modifier_marked_kunai:IsAuraActiveOnDeath() 		
+	return false 
+end
 
-function modifier_marked_kunai:GetAuraDuration()			return 0.1 end
-function modifier_marked_kunai:GetAuraRadius()				return self.radius end
-function modifier_marked_kunai:GetAuraSearchFlags()			return DOTA_UNIT_TARGET_FLAG_NONE end
-function modifier_marked_kunai:GetAuraSearchTeam()			return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
-function modifier_marked_kunai:GetAuraSearchType()			return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP end
-function modifier_marked_kunai:GetModifierAura()			return "modifier_marked_kunai_bonus" end
+function modifier_marked_kunai:GetAuraDuration()			
+	return 0.1 
+end
 
---------------------------------------------------------------------------------
+function modifier_marked_kunai:GetAuraRadius()				
+	return self.radius 
+end
+
+function modifier_marked_kunai:GetAuraSearchFlags()			
+	return DOTA_UNIT_TARGET_FLAG_NONE 
+end
+
+function modifier_marked_kunai:GetAuraSearchTeam()			
+	return DOTA_UNIT_TARGET_TEAM_FRIENDLY 
+end
+
+function modifier_marked_kunai:GetAuraSearchType()			
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP 
+end
+
+function modifier_marked_kunai:GetModifierAura()			
+	return "modifier_marked_kunai_bonus" 
+end
+
 
 modifier_marked_kunai_bonus = class({})
 
-function modifier_marked_kunai_bonus:IsPassive()()
+function modifier_marked_kunai_bonus:IsPassive()
 	return true
 end
 

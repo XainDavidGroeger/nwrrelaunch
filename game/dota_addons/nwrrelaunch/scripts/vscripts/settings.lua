@@ -80,8 +80,8 @@ ENABLED_RUNES[DOTA_RUNE_BOUNTY] = true
 
 if GetMapName() == "dota" then
 	MAX_NUMBER_OF_TEAMS = 2              -- How many potential teams can be in this game mode?
-elseif GetMapName() == "ranked" then
-	MAX_NUMBER_OF_TEAMS = 3              -- How many potential teams can be in this game mode?
+elseif GetMapName() == "turbo" then
+	MAX_NUMBER_OF_TEAMS = 2              -- How many potential teams can be in this game mode?
 end
 
 
