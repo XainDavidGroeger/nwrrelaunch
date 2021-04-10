@@ -64,7 +64,8 @@ function SetTopBarBackground() {
 	var container = Parent.FindChildTraverse("HUDSkinTopBarBG");
 
 	container.style.visibility = "visible";
-	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/tophud.png')";
+//	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/tophud.png')";
+	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/tophud2.png')";
 	container.style.backgroundSize = "100% 100%";
 	container.style.width = "76.8%";
 	container.style.height = "90px";

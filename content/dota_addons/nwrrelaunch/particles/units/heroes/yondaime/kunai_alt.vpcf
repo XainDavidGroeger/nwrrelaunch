@@ -15,7 +15,7 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/yondaime_new/yonda_kunai.vmdl"
+					m_model = resource:"models/yondaime_new/yondakunai.vmdl"
 				},
 			]
 			m_nLOD = 1

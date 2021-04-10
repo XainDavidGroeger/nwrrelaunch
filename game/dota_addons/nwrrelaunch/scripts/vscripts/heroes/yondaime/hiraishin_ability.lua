@@ -172,7 +172,7 @@ function hiraishin_dashDO(gameEntity, keys)
 		target:AddNewModifier(caster, caster.ulti, "modifier_hiraishin_armor_debuff", {duration = caster.ulti:GetSpecialValueFor( "armor_duration")})
 		
 		
-		local damage = caster:GetAverageTrueAttackDamage()
+		local damage = caster:GetAverageTrueAttackDamage(caster)
 		print(damage)
 		local extra_damage = caster.ulti:GetSpecialValueFor( "damage")
 		print(extra_damage)

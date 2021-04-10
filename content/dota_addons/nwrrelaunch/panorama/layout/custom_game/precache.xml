@@ -28,6 +28,7 @@
 
 			<!-- Top Bar -->
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud2.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/uibottom.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_kakashi.png" />
 
