@@ -8,7 +8,7 @@
 	"npc_dota_hero_warlock" //kankuro
 {
 		"override_hero"   "npc_dota_hero_warlock"
-		"Model"           "models/kankuro_new/kankuro_anim_test.vmdl"
+		"Model"           "models/kankuro/kankuro.vmdl"
 		"Ability1"        "kankuro_summon_kuroari"
 		"Ability2"        "kankuro_summon_karasu"
 		"Ability3"        "kankuro_kugusta_no_jutsu"
@@ -28,10 +28,10 @@
 		"Ability16"		"special_bonus_cooldown_reduction_20"
 		"Ability17"		"special_bonus_kankuro_7"
 
-		"ModelScale"	"0.19"
-		"LoadoutScale"	"0.19"
-		"SpectatorLoadoutScale" "0.19"
-		"VersusScale"				"0.19"
+		"ModelScale"	"1.0"
+		"LoadoutScale"	"0.85"
+		"SpectatorLoadoutScale" "1.0"
+		"VersusScale"				"1.0"
 
 		
 		"ItemSlots"
