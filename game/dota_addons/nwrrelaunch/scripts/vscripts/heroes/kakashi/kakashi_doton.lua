@@ -17,7 +17,8 @@ function kakashi_doton:GetCastRange(location, target)
 end
 
 function kakashi_doton:OnSpellStart()
-    local caster = self:GetCaster()
+    self.caster = self:GetCaster()
+    local caster = self.caster
     self.target = self:GetCursorTarget()
 	local target = self.target --for global variables and don't change all "target" to "self.target"
     self.ability = self
