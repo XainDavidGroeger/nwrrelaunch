@@ -35,7 +35,7 @@
 	"npc_dota_hero_juggernaut" "1"  //minato
 
 
-	"npc_dota_hero_antimage" "1" //itachi
+	"npc_dota_hero_itachi" "1" //itachi
 	
 	// Agi Ranged
 
