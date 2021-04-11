@@ -69,7 +69,7 @@ function anko_giant_snake:OnSpellStart()
 
 	self.nChainParticleFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleAlwaysSimulate( self.nChainParticleFXIndex )
-	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_weapon_chain_rt", self:GetCaster():GetOrigin() + self.vHookOffset, true )
+	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_right_hand", self:GetCaster():GetOrigin() + self.vHookOffset, true )
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 1, vHookTarget )
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 2, Vector( self.hook_speed, self.hook_distance, self.hook_width ) )
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 3, vKillswitch )
@@ -192,7 +192,7 @@ function anko_giant_snake:OnProjectileHit( hTarget, vLocation )
 
 		if self:GetCaster():IsAlive() then
 			self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 );
-			self:GetCaster():StartGesture( ACT_DOTA_CHANNEL_ABILITY_1 );
+			self:GetCaster():StartGesture( ACT_DOTA_ATTACK );
 		end
 
 		self.bRetracting = true

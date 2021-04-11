@@ -63,7 +63,7 @@ function rasenshuriken_start( keys )
 		iMoveSpeed = keys.rs_speed,
         iVisionRadius = keys.vision_radius,
         iVisionTeamNumber = keys.caster:GetTeamNumber(),
-		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
+		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION 
 	}
 	ProjectileManager:CreateTrackingProjectile( info )
 
