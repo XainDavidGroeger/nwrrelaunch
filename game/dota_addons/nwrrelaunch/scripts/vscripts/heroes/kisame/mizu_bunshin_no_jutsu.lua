@@ -15,6 +15,9 @@ function ConjureImage( event )
 	illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
  end
 
+
+ caster:EmitSound("kisame_clone_cast")
+
  -- handle_UnitOwner needs to be nil, else it will crash the game.
  local illusion = CreateUnitByName("kisame_bunshin", origin, true, caster, nil, caster:GetTeamNumber())
  

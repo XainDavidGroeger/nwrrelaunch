@@ -802,12 +802,11 @@
 		"npc_dota_hero_beastmaster"  									"Kakashi"
 		"npc_dota_hero_beastmaster_lore"  								""
 		// Doton
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Tracking Fang Technique"
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_lore"						"Doton: Tsuiga No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him, while Kakashi teleports behind the target's back and pushes him away with a leg kick."
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Doton: Tsuiga No Jutsu"
-                "DOTA_Tooltip_ability_kakashi_doton_new_lua_damage"				"Damage: "
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_root_duration"				"Root duration: "
+		"DOTA_Tooltip_ability_kakashi_doton"							"Tracking Fang Technique"
+		"DOTA_Tooltip_ability_kakashi_doton_lore"						"Doton: Tsuiga No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_doton_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him."
+        "DOTA_Tooltip_ability_kakashi_doton_damage"						"Damage: "
+		"DOTA_Tooltip_ability_kakashi_doton_root_duration"				"Stun duration: "
 
 		// Sharingan
 		"DOTA_Tooltip_ability_kakashi_sharingan"						"Sharingan"
