@@ -3,11 +3,14 @@ function rasengan(keys)
 	local target = keys.target
 	local ability = keys.ability
 	
-	EmitSoundOn("minato_rasengan", keys.target)
 
 	if target:IsBuilding() then
 		return
 	end
+
+	caster:StopSound("minato_rasengan_loop.loop")
+	EmitSoundOn("minato_rasengan", keys.target)
+
 	local range = keys.ability:GetLevelSpecialValueFor( "distance", ( keys.ability:GetLevel() - 1 ) )
 
 
@@ -65,7 +68,6 @@ function rasengan_bonus_damage( keys )
 	local damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	local damage = (keys.caster:GetAttackDamage() / 100 * damage_percent)
 	keys.caster:SetModifierStackCount("modifier_rasengan_bonus_damage", keys.ability, damage)
-
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/yondaime/raseng_model.vpcf", PATTACH_POINT_FOLLOW, keys.caster) 
 	ParticleManager:SetParticleControlEnt(particle, 0, keys.caster, PATTACH_POINT_FOLLOW, "attach_right_hand", keys.caster:GetAbsOrigin(), true)

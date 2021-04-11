@@ -1,4 +1,4 @@
-"kisame_clone_cast"
+"kisame_samehada_trigger"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_clone_cast.vsnd"
+                              "value0"        "sounds/kisame_samehada_trigger.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

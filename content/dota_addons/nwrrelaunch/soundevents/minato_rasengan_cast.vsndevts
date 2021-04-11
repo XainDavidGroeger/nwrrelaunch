@@ -1,4 +1,4 @@
-"kisame_clone_cast"
+"minato_rasengan_cast"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_clone_cast.vsnd"
+                              "value0"        "sounds/minato_rasengan_cast.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

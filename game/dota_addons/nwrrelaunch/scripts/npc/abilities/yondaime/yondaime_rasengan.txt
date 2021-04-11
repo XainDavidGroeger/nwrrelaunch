@@ -37,6 +37,8 @@
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
         "particle"  "particles/units/heroes/yondaime/raseng_model.vpcf"
         "particle"  "particles/units/heroes/yondaime/raseng_impact.vpcf"
+        "soundfile" "soundevents/minato_rasengan_cast.vsndevts"
+        "soundfile" "soundevents/minato_rasengan_loop.vsndevts"
     }
 
     "AbilitySpecial"
@@ -94,6 +96,17 @@
             "Function"      "rasengan_bonus_damage"
         }
 
+        "FireSound"
+        {
+            "EffectName"  "minato_rasengan_cast"
+            "Target"    "CASTER"
+        }
+
+        "FireSound"
+        {
+            "EffectName"  "minato_rasengan_loop.loop"
+            "Target"    "CASTER"
+        }
 
     }
 
@@ -111,6 +124,7 @@
                 "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms" 
             }
 
+     
 
             "OnAttackStart"
             {
@@ -138,6 +152,7 @@
                     "ScriptFile"    "heroes/yondaime_alternate/rasengan.lua"
                     "Function"        "destroyRasenParticle"
                 }
+             
             }
         }
 

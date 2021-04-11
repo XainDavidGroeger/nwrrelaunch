@@ -4,6 +4,6 @@ function stopChannelOnDead( keys )
 	end
 end
 
-function emitCastSound( keys )
-	keys.target:EmitSound("kisame_prison_cast")
+function emitSoundOnTarget( keys )
+	keys.target:EmitSound("kisame_bunshin_water_prison")
 end

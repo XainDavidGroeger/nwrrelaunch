@@ -1,4 +1,4 @@
-"kisame_clone_cast"
+"minato_rasengan_loop.loop"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_clone_cast.vsnd"
+                              "value0"        "sounds/minato_rasengan_loop.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
@@ -24,8 +24,10 @@
                     "soundlevel"        {   "value"     "100.00000" }
                     "distance_max"      {   "value"     "1600.000"  }
                     "event_type"        {   "value"     "1.000000"  }
+                    "vsnd_duration"      {   "value"     "1.000000"  }
                 }
             }
         }
     }
 }
+

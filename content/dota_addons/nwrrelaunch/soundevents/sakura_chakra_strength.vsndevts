@@ -1,4 +1,4 @@
-"kisame_clone_cast"
+"sakura_chakra_strength"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_clone_cast.vsnd"
+                              "value0"        "sounds/sakura_chakra_strength.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

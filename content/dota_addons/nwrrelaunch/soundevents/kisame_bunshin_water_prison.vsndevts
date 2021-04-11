@@ -1,4 +1,4 @@
-"kisame_clone_cast"
+"kisame_bunshin_water_prison"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_clone_cast.vsnd"
+                              "value0"        "sounds/kisame_bunshin_water_prison.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
