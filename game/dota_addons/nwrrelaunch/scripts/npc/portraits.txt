@@ -313,46 +313,6 @@
 		}
 	}
 
-	"models/creeps/roshan/roshan.vmdl"
-	{
-		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
-		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
-		"PortraitLightFOV"		"63.000000"
-		"PortraitLightDistance"		"471.000000"
-		"PortraitLightColor"		"195 181 254"
-		"PortraitShadowColor"		"131 131 131"
-		"PortraitShadowScale"		"1.025000"
-		"PortraitGroundShadowScale"		"1.500000"
-		"PortraitAmbientColor"		"0 161 155"
-		"PortraitAmbientScale"		"5.000000"
-		"PortraitSpecularColor"		"251 74 84"
-		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
-		"PortraitSpecularPower"		"16.000000"
-		"PortraitBackgroundColor1"		"0.550000 0.450000 0.600000"
-		"PortraitBackgroundColor2"		"0.550000 0.450000 0.600000"
-		"PortraitBackgroundColor3"		"0.550000 0.450000 0.600000"
-		"PortraitBackgroundColor4"		"0.550000 0.450000 0.600000"
-		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/full_view_background.vmat"
-		"PortraitBackgroundModel"		"models/heroes/pedestal/pedestal_1_small.vmdl"
-		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
-		"PortraitAnimationCycle"		"0.000000"
-		"PortraitAnimationRate"		"1.000000"
-		"PortraitHideHero"		"0"
-		"PortraitLightScale"		"3.650000"
-		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
-		"cameras"
-		{
-			"default"
-			{
-				"PortraitPosition"		"640.000000 -48.000000 530.000000"
-				"PortraitAngles"		"357.600006 175.899994 0.000000"
-				"PortraitFOV"		"20"
-				"PortraitFar"		"1000.000000"
-			}
-		}
-	}
-
-	
 
 	"models/tsunade/tsunade.vmdl"
 	{
@@ -721,6 +681,46 @@
 				"PortraitPosition"		"540.000000 -48.000000 140.000000"
 				"PortraitAngles"		"357.600006 175.899994 0.000000"
 				"PortraitFOV"		"4.400000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+	}
+
+
+	"models/creeps/roshan/roshan.vmdl"
+	{
+		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
+		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
+		"PortraitLightFOV"		"63.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"195 181 254"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"0 161 155"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		 "PortraitBackgroundColor1"      ".933 .455 .255"
+        "PortraitBackgroundColor2"      "1 0 0"
+        "PortraitBackgroundColor3"      "1 0 0"
+        "PortraitBackgroundColor4"      ".6 .1 0"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/full_view_background.vmat"
+		"PortraitBackgroundModel"		"models/heroes/pedestal/pedestal_1_small.vmdl"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"580.000000 -48.000000 110.000000"
+				"PortraitAngles"		"357.600006 175.899994 0.000000"
+				"PortraitFOV"		"15.400000"
 				"PortraitFar"		"1000.000000"
 			}
 		}
@@ -8809,37 +8809,7 @@
 		"PortraitAnimationRate"		"1.000000"
 		"PortraitHideHero"		"0"
 	}
-	"models/creeps/roshan/roshan.vmdl"
-	{
-		"PortraitLightPosition"		"139.30 73.18 272.36"
-		"PortraitLightAngles"		"32.76 241.98 0.00"
-		"PortraitLightFOV"		"85"
-		"PortraitLightDistance"		"218"
-		"PortraitLightColor"		"254 220 221"
-		"PortraitShadowColor"		"69 69 69"
-		"PortraitShadowScale"		"4.000000"
-		"PortraitAmbientColor"		"117 136 254"
-		"PortraitAmbientScale"		"2.500000"
-		"PortraitSpecularColor"		"251 74 84"
-		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/roshan.vmat"
-		"PortraitBackgroundColor1"		"1 1 1"
-		"PortraitBackgroundColor2"		"1 1 1"
-		"PortraitBackgroundColor3"		"1 1 1"
-		"PortraitBackgroundColor4"		"1 1 1"
-		"PortraitLightScale"		"5.000000"
-		"PortraitGroundShadowScale"		"1.500000"
-		"PortraitAmbientDirection"		"19.170 -1.500 -59.580"
-		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
-		"cameras"
-		{
-			"default"
-			{
-				"PortraitPosition"		"329.17 -69.46 255.47"
-				"PortraitAngles"		"8.52 164.14 0.00"
-				"PortraitFOV"		"27"
-			}
-		}
-	}
+
 	"models/creeps/baby_rosh_halloween/baby_rosh_dire/baby_rosh_dire.vmdl"
 	{
 		"PortraitLightPosition"		"54.06 -65.19 179.03"

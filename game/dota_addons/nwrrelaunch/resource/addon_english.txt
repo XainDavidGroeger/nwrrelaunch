@@ -16,8 +16,8 @@
 
 		"error_must_target_owner_illusion"			"Must target own Illisions"
 
-		"npc_dota_roshan"								"Juubi"
-		"npc_dota_roshan_datadriven"								"Juubi"
+		"npc_dota_roshan"								"Kurama"
+		"npc_dota_roshan_datadriven"								"Kurama"
 		"npc_dota_neutral_black_drake"					"Kyuubi Chibi"
 		"npc_dota_neutral_black_dragon"					"Kyuubi"
 		"npc_dota_neutral_rock_golem"					"Shukaku Chibi"

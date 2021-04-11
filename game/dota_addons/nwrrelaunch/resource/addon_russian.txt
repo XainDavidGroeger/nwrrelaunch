@@ -17,7 +17,7 @@
 
 		"error_must_target_owner_illusion"			"Must target own Illisions"
 
-		"npc_dota_roshan"								"Kyuubi"
+		"npc_dota_roshan"								"Kurama"
 		//--------------------
 		//Heroes
 		//--------------------
