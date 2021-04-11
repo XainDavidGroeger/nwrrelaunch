@@ -889,7 +889,7 @@
 		}
 	}
 
-	"models/raikage/raikage.vmdl"
+	"models/raikage_new/raikage_base.vmdl"
 	{
 		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
 		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
