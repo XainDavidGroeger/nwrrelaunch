@@ -32,6 +32,7 @@ function kakashi_doton:OnSpellStart()
 	target:Stop()
 	target:SetForwardVector(-forward)
 	
+        caster:AddNewModifier(caster, ability, "modifier_rooted", {duration = rootDuration})
 	target:AddNewModifier(caster, ability, "modifier_rooted", {duration = rootDuration})
 
 	local dummy = CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber())
@@ -91,7 +92,7 @@ function kakashi_doton:OnSpellStart()
 	ParticleManager:CreateParticle("particles/units/heroes/kakashi/doton_dog_summon.vpcf", PATTACH_ABSORIGIN, pDummy2)
 	--need to find a solution how to make CreateParticle take into the angle of rotation of the dogs--]]
 	
-    dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
+        dummy:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy2:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	dummy3:StartGestureWithPlaybackRate(ACT_DOTA_IDLE, 0.5)
 	
@@ -132,6 +133,7 @@ function kakashi_doton:OnSpellStart()
 		    ProjectileManager:ProjectileDodge(caster)
 		    FindClearSpaceForUnit(caster, backstub, true)
 			caster:EmitSound("Hero_PhantomLancer.SpiritLance.Impact")
+                        caster:SetForwardVector(target:GetForwardVector())
 			caster:MoveToTargetToAttack(target)
 	        caster:StartGesture(ACT_DOTA_ATTACK2)
 		end)
@@ -146,11 +148,11 @@ function kakashi_doton:OnSpellStart()
 		ApplyDamage(damageTable)
 		
 		Timers:CreateTimer(1.0, function ()
-		    local range = self:GetSpecialValueFor("range")
+		local range = self:GetSpecialValueFor("range")
 	        local length = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
 	        length = range - range * (length / range)
 			
-			ParticleManager:DestroyParticle(blood_particle, true)
+		ParticleManager:DestroyParticle(blood_particle, true)
 	        ParticleManager:ReleaseParticleIndex(blood_particle)
 	        
 	        local knockbackModifierTable =
