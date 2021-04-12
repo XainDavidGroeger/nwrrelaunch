@@ -67,6 +67,9 @@ end
 function rasengan_bonus_damage( keys )
 	local damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	local damage = (keys.caster:GetAttackDamage() / 100 * damage_percent)
+
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_rasengan", {})  
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_rasengan_bonus_damage", {})  
 	keys.caster:SetModifierStackCount("modifier_rasengan_bonus_damage", keys.ability, damage)
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/yondaime/raseng_model.vpcf", PATTACH_POINT_FOLLOW, keys.caster) 
@@ -76,6 +79,8 @@ function rasengan_bonus_damage( keys )
  	if not keys.caster.rasenParticle then
  		keys.caster.rasenParticle = {}
  	end
+
+
  	table.insert(keys.caster.rasenParticle, particle)
 end
 
