@@ -33,14 +33,15 @@
 
 
 			<!-- Top Bar -->
-			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud2.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/uibottom.png" />
 
-			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_abilities.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_inventory.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_minimap.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_portrait.png" />
+		<!--	<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_abilities.png" />-->
+		<!--	<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_inventory.png" />-->
+		<!--	<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_minimap.png" />-->
+		<!--	<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_portrait.png" />-->
+
+		
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/scoreboard_shinobi.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/scoreboard_akat_480.png" />
 

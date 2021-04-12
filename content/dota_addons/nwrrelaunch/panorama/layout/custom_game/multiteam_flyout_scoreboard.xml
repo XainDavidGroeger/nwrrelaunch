@@ -6,7 +6,7 @@
 	</styles>
 
 	<scripts>
-		<include src="s2r://panorama/scripts/custom_game/shared_scoreboard_updater.js"/>
+	<include src="s2r://panorama/scripts/custom_game/shared_scoreboard_updater.js"/>
 		<include src="s2r://panorama/scripts/custom_game/multiteam_flyout_scoreboard.js"/>
 	</scripts>
 

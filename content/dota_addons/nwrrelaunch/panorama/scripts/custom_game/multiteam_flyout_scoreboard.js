@@ -1,5 +1,6 @@
 "use strict";
 
+
 var g_ScoreboardHandle = null;
 
 

@@ -35,6 +35,18 @@
 
 
 		//--------------------
+		//Scorebaord
+		//--------------------
+		"scoreboard_last_hits" 						"LH"
+		"scoreboard_denies" 						"D"
+		"scoreboard_damage_dealt" 						"DD"
+		"scoreboard_damage_taken" 						"DT"
+		"DOTA_CUSTOM2"									"Shinobi Alliance"
+		"DOTA_CUSTOM3"									"Akatsuki Force"
+		"DOTA_GoodGuys"   								"Shinobi Alliance"
+		"DOTA_BadGuys"    								"Akatsuki Force"
+
+		//--------------------
 		//Heroes
 		//--------------------
 

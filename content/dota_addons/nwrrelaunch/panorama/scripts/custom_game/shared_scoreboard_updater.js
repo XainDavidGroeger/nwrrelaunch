@@ -243,12 +243,6 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 	if ( teamIconPanel )
 		{
 			
-			if (teamId == 2){
-					teamIconPanel.SetImage( "file://{images}/team/shinobi_alliance.png" );
-			}else{
-					
-					teamIconPanel.SetImage( "file://{images}/team/akatsuki_symbol.png" );
-			}
 			
 		}
 	if ( GameUI.CustomUIConfig().team_colors )
