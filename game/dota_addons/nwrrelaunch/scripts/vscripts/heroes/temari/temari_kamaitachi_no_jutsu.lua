@@ -23,10 +23,11 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	tornado_lift_duration = keys.ability:GetLevelSpecialValueFor("lift_duration",  ability:GetLevel() - 1)
 	
 	local ability5 = keys.caster:FindAbilityByName("special_bonus_temari_5")
-	if ability5:IsTrained() then
-		tornado_lift_duration = tornado_lift_duration + 3.0
+	if abiltiy5 ~= nil then
+		if ability5:IsTrained() then
+			tornado_lift_duration = tornado_lift_duration + 3.0
+		end
 	end
-
 
 
 	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.

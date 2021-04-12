@@ -88,9 +88,11 @@ function tauntEnemies( keys )
 
 	local radius = keys.ability:GetLevelSpecialValueFor( "radius", ( keys.ability:GetLevel() - 1 ) )
 
-	local abbility1 = caster:FindAbilityByName("special_bonus_hidan_1")
-	if abbility1:IsTrained() then
-		radius = radius + 70
+	if caster:FindAbilityByName("special_bonus_hidan_1") ~= nil then
+		local abbility1 = caster:FindAbilityByName("special_bonus_hidan_1")
+		if abbility1:IsTrained() then
+			radius = radius + 70
+		end
 	end
 
 	local duration = keys.ability:GetLevelSpecialValueFor( "duration", ( keys.ability:GetLevel() - 1 ) )

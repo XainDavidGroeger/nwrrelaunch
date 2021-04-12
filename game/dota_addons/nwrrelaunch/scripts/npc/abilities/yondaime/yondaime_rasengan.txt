@@ -80,16 +80,7 @@
 
     "OnSpellStart"
     {           
-        "ApplyModifier"
-        {
-            "ModifierName"          "modifier_rasengan"
-            "Target"                "CASTER"
-        }
-         "ApplyModifier"
-        {
-            "ModifierName"          "modifier_rasengan_bonus_damage"
-            "Target"                "CASTER"
-        }
+        
         "RunScript"
         {
            "ScriptFile"     "heroes/yondaime_alternate/rasengan.lua"

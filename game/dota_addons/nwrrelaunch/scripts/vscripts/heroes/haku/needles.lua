@@ -11,11 +11,16 @@ function BlizzardStartPoint( event )
 	caster.blizzard_dummy_point = CreateUnitByName("dummy_unit_vulnerable", point, false, caster, caster, caster:GetTeam())
 
 	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
-	if abilityS:IsTrained() then
-		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave_special", nil)	
-	else 
-		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)		
+	if abilityS ~= nil then
+		if abilityS:IsTrained() then
+			event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave_special", nil)	
+		else 
+			event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)		
+		end
+	else
+		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)
 	end
+
 
 end
 
@@ -61,11 +66,16 @@ function BlizzardEnd( event )
 	local caster = event.caster
 
 	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
-	if abilityS:IsTrained() then
-		caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave_special")
-	else 
+	if abilityS ~= nil then
+		if abilityS:IsTrained() then
+			caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave_special")
+		else 
+			caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")	
+		end
+	else
 		caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")	
 	end
+	
 	
 	caster:RemoveModifierByName("modifier_blizzard_channelling")
 

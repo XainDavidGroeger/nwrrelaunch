@@ -11,9 +11,12 @@ function ConjureImage( event )
 
  local illusion_max_hp_percentage = ability:GetLevelSpecialValueFor( "illusion_max_hp_percentage", ability:GetLevel()-1)
  local ability2 = caster:FindAbilityByName("special_bonus_kisame_2")
- if ability2:IsTrained() then
-	illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
+ if ability2 ~= nil then
+	if ability2:IsTrained() then
+		illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
+	 end
  end
+
 
 
  caster:EmitSound("kisame_clone_cast")
@@ -28,6 +31,11 @@ function ConjureImage( event )
     illusion:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
 	illusion:SetModelScale(0.65)
  end
+
+if caster:GetName() == 'npc_dota_hero_beastmaster' then
+	illusion:SetOriginalModel("models/kakashi_hd/kaka_hd_test.vmdl")
+	illusion:SetModelScale(1.03)
+end
 
  -- Set the unit as an illusion
  -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 

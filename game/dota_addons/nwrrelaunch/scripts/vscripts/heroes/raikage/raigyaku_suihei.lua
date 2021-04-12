@@ -22,9 +22,13 @@ function ReleaseAoeDamage( event )
 		local str_ratio = event.ability:GetLevelSpecialValueFor("str_ratio_damage", ability_level )
 
 		local ability1 = caster:FindAbilityByName("special_bonus_raikage_1")
-		if ability1:IsTrained() then
-			str_ratio = str_ratio + 0.5
+
+		if ability1 ~= nil then
+			if ability1:IsTrained() then
+				str_ratio = str_ratio + 0.5
+			end
 		end
+		
 
 		local spell_damage = strength * str_ratio
 		
@@ -41,12 +45,15 @@ function ReleaseAoeDamage( event )
 			ApplyDamage(damage_table)
 
 			local ability5 = caster:FindAbilityByName("special_bonus_raikage_5")
-			if ability5:IsTrained() then
-				ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff_special",{})
+			if ability5 ~= nil then
+				if ability5:IsTrained() then
+					ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff_special",{})
+				else
+					ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff",{})
+				end
 			else
 				ability:ApplyDataDrivenModifier(caster, target, "modifier_raigyaku_debuff",{})
 			end
-
 
 		end
 	end

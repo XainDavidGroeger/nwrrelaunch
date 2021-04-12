@@ -16,10 +16,12 @@ function rasengan(keys)
 
 	local bonus_damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_6")
-	if abilityS:IsTrained() then
-		bonus_damage_percent = bonus_damage_percent + 80
+	if abilityS ~= nil then 
+		if abilityS:IsTrained() then
+			bonus_damage_percent = bonus_damage_percent + 80
+		end
 	end
-
+	
 	local base_bonus_damage = keys.ability:GetLevelSpecialValueFor( "base_bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	
 	keys.caster:RemoveModifierByName(keys.modifier)
@@ -33,8 +35,10 @@ function rasengan(keys)
 
 	local stun_duration = keys.ability:GetLevelSpecialValueFor( "stun_duration", ( keys.ability:GetLevel() - 1 ) )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_3")
-	if abilityS:IsTrained() then
-		stun_duration = stun_duration + 0.3
+	if abilityS ~= nil then
+		if abilityS:IsTrained() then
+			stun_duration = stun_duration + 0.3
+		end
 	end
 
 	local knockbackModifierTable =

@@ -39,8 +39,10 @@ function applySlowModifier( keys )
 	local neji_modifier_ms_slow = "modifier_neji_internal_bleeding_ms_slow"
 
 	local ability2 = caster:FindAbilityByName("special_bonus_neji_2")
-	if ability2:IsTrained() then
-		neji_modifier_ms_slow = "modifier_neji_internal_bleeding_ms_slow_special"
+	if ability2 ~= nil then
+		if ability2:IsTrained() then
+			neji_modifier_ms_slow = "modifier_neji_internal_bleeding_ms_slow_special"
+		end
 	end
 
 	ability:ApplyDataDrivenModifier(

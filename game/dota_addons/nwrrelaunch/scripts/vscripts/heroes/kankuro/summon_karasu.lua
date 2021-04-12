@@ -11,17 +11,21 @@ function summon_karasu( keys )
 	local mana_gain = ability:GetSpecialValueFor("mana_gain")
 	local damage_gain = ability:GetSpecialValueFor("damage_gain")
 
-	local ability_index = keys.caster:FindAbilityByName("kankuro_kugusta_no_jutsu"):GetAbilityIndex()
-    local kugusta_ability = keys.caster:GetAbilityByIndex(ability_index)
+    local kugusta_ability = keys.caster:FindAbilityByName("kankuro_kugusta_no_jutsu")
     local bonus_hp = 0
 
-    if kugusta_ability:GetLevel() > 0 then
-    	bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
-		local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
-		if abilityspecial:IsTrained() then
-			bonus_hp = bonus_hp + 350
+	if kugusta_ability ~= nil then
+		if kugusta_ability:GetLevel() > 0 then
+			bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
+			local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
+			if abilityspecial ~= nil then
+				if abilityspecial:IsTrained() then
+					bonus_hp = bonus_hp + 350
+				end
+			end
 		end
 	end
+    
 	-- Ability variables
 	local puppet_duration = ability:GetSpecialValueFor("puppet_duration") 
 
@@ -40,37 +44,45 @@ function summon_karasu( keys )
 	-- set movement speed
 	local karasu_ms = ability:GetLevelSpecialValueFor("ms", ability:GetLevel() - 1)
 	local ability3 = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
-	if ability3:IsTrained() then
-		karasu_ms = karasu_ms + 50
+	if ability3 ~= nil then
+		if ability3:IsTrained() then
+			karasu_ms = karasu_ms + 50
+		end
 	end
+
 	karasu_unit:SetBaseMoveSpeed(karasu_ms)
 
 	-- set bonus attack speed
 	local karasu_as = ability:GetLevelSpecialValueFor("as_buff", ability:GetLevel() - 1)
 	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if ability5:IsTrained() then
-		karasu_as = karasu_as + 50
+	if ability5 ~= nil then
+		if ability5:IsTrained() then
+			karasu_as = karasu_as + 50
+		end
 	end
+
 
 	-- set bonus attack damage
 	local ability7 = keys.caster:FindAbilityByName("special_bonus_kankuro_7")
-	if ability7:IsTrained() then
-		karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 225)
-		karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 225)
+	if ability7 ~= nil then
+		if ability7:IsTrained() then
+			karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 225)
+			karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 225)
+		end
 	end
-
-
-	-- todo add bonus AS to puppet
+	
 	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if ability5:IsTrained() then
-		keys.ability:ApplyDataDrivenModifier(
-			caster,
-			karasu_unit,
-			"modifier_karasu_special_bonus_as",
-			{}
-		)
+	if ability5 ~= nil then
+		if ability5:IsTrained() then
+			keys.ability:ApplyDataDrivenModifier(
+				caster,
+				karasu_unit,
+				"modifier_karasu_special_bonus_as",
+				{}
+			)
+		end
 	end
-
+	
 
 	--Sets the stats gain per level
 	karasu_unit:SetHPGain(hp_gain)
@@ -78,16 +90,22 @@ function summon_karasu( keys )
 
 	local mp_reg = ability:GetSpecialValueFor("mp_reg")
 	local ability1 = keys.caster:FindAbilityByName("special_bonus_kankuro_1")
-	if ability1:IsTrained() then
-		mp_reg = mp_reg + 4.0
+	if ability1 ~= nil then
+		if ability1:IsTrained() then
+			mp_reg = mp_reg + 4.0
+		end
 	end
 
+
 	local ability4 = keys.caster:FindAbilityByName("special_bonus_kankuro_4")
-	if ability4:IsTrained() then
-		karasu_unit:AddAbility("special_bonus_kankuro_4")
-		local abilityUnit4 = karasu_unit:FindAbilityByName("special_bonus_kankuro_4")
-		abilityUnit4:SetLevel(1)
+	if ability4 ~= nil then 
+		if ability4:IsTrained() then
+			karasu_unit:AddAbility("special_bonus_kankuro_4")
+			local abilityUnit4 = karasu_unit:FindAbilityByName("special_bonus_kankuro_4")
+			abilityUnit4:SetLevel(1)
+		end
 	end
+	
 
 	karasu_unit:SetBaseManaRegen(mp_reg)
 
