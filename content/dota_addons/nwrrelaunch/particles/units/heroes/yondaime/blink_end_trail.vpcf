@@ -5,7 +5,7 @@
 	m_nMaxParticles = 128
 	m_nConstantSequenceNumber = 7
 	m_flMaxRecreationTime = -1.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
@@ -16,7 +16,7 @@
 			m_flRadiusScale = 0.500000
 			m_flFinalTextureScaleV = -1.000000
 			m_flFinalTextureOffsetV = 1.000000
-			m_vEndTrailTintFactor =
+			m_vEndTrailTintFactor = 
 			[
 				1.000000,
 				0.500000,
@@ -26,12 +26,12 @@
 			m_flOverbrightFactor = 5.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.050000
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -56,7 +56,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade =
+			m_ColorFade = 
 			[
 				255,
 				255,
@@ -65,18 +65,18 @@
 			]
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
 				0,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
@@ -107,13 +107,13 @@
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				64.000000,
 				64.000000,
 				46.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-64.000000,
 				-64.000000,
@@ -130,7 +130,7 @@
 			m_flVelocityScale = 1.000000
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
@@ -139,7 +139,7 @@
 			m_flStartTime = 0.100000
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"

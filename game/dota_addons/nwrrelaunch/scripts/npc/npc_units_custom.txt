@@ -1,4 +1,3 @@
-#base "heroes/kakashi.txt"
 
 // Units File
 "DOTAUnits"
@@ -114,8 +113,8 @@
 	"SoundSet"					"Hero_Kunkka"					// Name of sound set.
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 	"Level"						"1"
-	"ModelScale"		"1.17"
-    "LoadoutScale"		"1.17" 
+	"ModelScale"		"1.4"
+    "LoadoutScale"		"1.4" 
 
 	// Precache
 	//----------------------------------------------------------------

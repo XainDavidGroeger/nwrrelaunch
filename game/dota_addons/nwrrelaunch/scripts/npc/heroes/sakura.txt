@@ -32,6 +32,9 @@
 		 "ArmorPhysical"		"1.000000"
 		"ModelScale"		"1.0"
 		"LoadoutScale"		"1.0" 
+		"SpectatorLoadoutScale" 	"1.0"
+		"VersusScale"			"1.0"
+		
 		"AttackDamageMin"		"38"
 		"Role"			"Carry,Disabler,Initiator,Durable"
 		"Rolelevels"	"1,2,2,1"

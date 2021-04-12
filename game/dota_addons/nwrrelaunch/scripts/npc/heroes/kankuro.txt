@@ -28,8 +28,12 @@
 		"Ability16"		"special_bonus_cooldown_reduction_20"
 		"Ability17"		"special_bonus_kankuro_7"
 
-		"ModelScale"		"1.0"
-		"LoadoutScale"	"1.0" 
+		"ModelScale"	"1.0"
+		"LoadoutScale"	"0.85"
+		"SpectatorLoadoutScale" "1.0"
+		"VersusScale"				"1.0"
+
+		
 		"ItemSlots"
 		{ }
 		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"

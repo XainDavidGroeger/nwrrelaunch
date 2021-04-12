@@ -10,7 +10,7 @@ function apply_bonus_damage( data )
 		local caster = data.caster
 		local ms = data.caster:GetIdealSpeed()
 		local ms_bonus_percent_damage = data.ability:GetLevelSpecialValueFor("bonus_damage_ms_percent", data.ability:GetLevel() - 1 )
-		local average_damage = caster:GetBaseDamageMin() + ((caster:GetBaseDamageMax() - caster:GetBaseDamageMin())  / 2 )
+		local average_damage = caster:GetAverageTrueAttackDamage(caster)
 		local agility_bonus = caster:GetAgility()
 		local add_damage = ms / 100 * ms_bonus_percent_damage
 		local modifierName = "modifier_agile_speed"

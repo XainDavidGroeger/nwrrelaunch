@@ -10,6 +10,8 @@ function StealMana( event )
 		local ability = event.ability
 		local target = event.target
 
+		target:EmitSound("kisame_samehada_trigger")
+
 		local manasteal_percentage = event.ability:GetLevelSpecialValueFor("manasteal_percentage", event.ability:GetLevel() - 1 )
 
 		local ability3 = caster:FindAbilityByName("special_bonus_kisame_3")
@@ -71,8 +73,7 @@ function StealManaBunshin( event )
 		local target = event.target
 		local manasteal_percentage = event.ability:GetLevelSpecialValueFor("manasteal_percentage", event.ability:GetLevel() - 1 )
 		local mana = target:GetMana()
-		print("steal percentage: "..manasteal_percentage)
-		print("start mana: "..mana)
+		target:EmitSound("kisame_samehada_trigger")
 		local reduce_mana_amount = target:GetMana() / 100 * manasteal_percentage
 		local new_mana = mana - reduce_mana_amount
 		target:SetMana(new_mana)

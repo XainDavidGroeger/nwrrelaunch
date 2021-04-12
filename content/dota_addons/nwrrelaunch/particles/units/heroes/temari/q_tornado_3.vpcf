@@ -3,14 +3,14 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 128
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		86,
 		86,
 		86,
 		255,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -22,11 +22,11 @@
 			m_hTexture = resource:"materials/particle/juggernaut/juggernaut_blade_fury.vtex"
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -66,13 +66,13 @@
 		},
 		{
 			_class = "C_OP_VectorNoise"
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				0.500000,
 				0.500000,
 				1.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-0.500000,
 				-0.500000,
@@ -94,13 +94,13 @@
 		{
 			_class = "C_OP_VectorNoise"
 			m_bAdditive = true
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				3.000000,
 				3.000000,
 				3.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-3.000000,
 				-3.000000,
@@ -130,7 +130,7 @@
 			m_flLerpTime = 0.200000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -149,14 +149,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				89,
 				89,
 				89,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				100,
 				100,
@@ -178,19 +178,19 @@
 		{
 			_class = "C_INIT_InitialVelocityNoise"
 			m_flNoiseScale = 1.500000
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				196.000000,
 				196.000000,
 				942.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-196.000000,
 				-196.000000,
 				942.000000,
 			]
-			m_vecAbsVal =
+			m_vecAbsVal = 
 			[
 				1.000000,
 				1.000000,
@@ -205,7 +205,7 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
@@ -213,13 +213,13 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/neutral_fx/tornado_ambient_b.vpcf"

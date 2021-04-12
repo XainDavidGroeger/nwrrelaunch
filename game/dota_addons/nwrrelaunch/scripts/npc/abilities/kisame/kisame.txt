@@ -4,3 +4,4 @@
 #base "kisame_samehada.txt"
 #base "kisame_suikodan_no_jutsu.txt"
 #base "kisame_water_prison.txt"
+#base "talents.txt"

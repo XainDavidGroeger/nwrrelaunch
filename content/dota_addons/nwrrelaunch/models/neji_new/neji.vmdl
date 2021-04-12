@@ -222,7 +222,7 @@
 					m_Filepath = "models/neji_new/neji.fbx"
 					m_nStartframe = 91
 					m_nEndframe = 140
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true

@@ -29,7 +29,9 @@
 		   "Ability17"		"special_bonus_shikamaru_6"
 
 		  "ModelScale"		"0.60"
-		"LoadoutScale"		"0.60" 
+		"LoadoutScale"		"0.53" 
+		"SpectatorLoadoutScale" 	"0.60" 
+		"VersusScale"				"0.60" 
 		"ArmorPhysical"		"0.000000"
 		"AttackDamageMin"		"20"
 		"AttackDamageMax"		"30"

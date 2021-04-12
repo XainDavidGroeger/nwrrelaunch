@@ -1,0 +1,5 @@
+#base "shikamaru_explosive_kunai.txt"
+#base "shikamaru_kage_kubishibari.txt"
+#base "shikamaru_kage_nui.txt"
+#base "shikamaru_meditation.txt"
+#base "talents.txt"

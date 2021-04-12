@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 1
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		0,
 		0,
@@ -12,12 +12,12 @@
 	]
 	m_nConstantSequenceNumber = 1
 	m_bShouldSort = false
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
 			m_nSkin = 5
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/particle/sphere.vmdl"
@@ -28,7 +28,7 @@
 			m_nLOD = 1
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -63,7 +63,7 @@
 			m_flFadeOutTime = 1.000000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -94,14 +94,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				0,
 				85,
 				255,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				0,
 				255,
@@ -110,7 +110,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

@@ -5,7 +5,7 @@
 	m_nMaxParticles = 2
 	m_flConstantRadius = 120.000000
 	m_flConstantLifespan = 0.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -15,7 +15,7 @@
 			m_nOrientationType = 2
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -30,14 +30,14 @@
 			m_nControlPointNumber = 3
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
 			m_nControlPointNumber = 3
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

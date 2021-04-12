@@ -199,7 +199,7 @@
 					m_Filepath = "models/creeps/newanbu/anbu - death.FBX"
 					m_nStartframe = 0
 					m_nEndframe = 100
-					m_flFps = 65.0
+					m_flFps = 80.0
 					m_Loop = 
 					{
 						m_bLoop = false
@@ -262,7 +262,7 @@
 					m_Filepath = "models/creeps/newanbu/anbu - run.FBX"
 					m_nStartframe = 0
 					m_nEndframe = 55
-					m_flFps = 55.0
+					m_flFps = 86.0
 					m_Loop = 
 					{
 						m_bLoop = true

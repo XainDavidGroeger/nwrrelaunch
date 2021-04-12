@@ -1,0 +1,5 @@
+#base "onoki_jinton.txt"
+#base "onoki_kajutan_no_jutsu.txt"
+#base "onoki_stalagmite_armor_new.txt"
+#base "onoki_stalagmite_armor.txt"
+#base "onoki_turn_to_dust.txt"

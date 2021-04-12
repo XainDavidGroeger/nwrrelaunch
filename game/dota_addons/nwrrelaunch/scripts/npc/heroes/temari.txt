@@ -29,6 +29,8 @@
 
       "ModelScale"		"1.75"
       "LoadoutScale"	"1.75" 
+      "SpectatorLoadoutScale" 	"1.75" 
+		  "VersusScale"					"1.75" 
       "Model" 		"models/temari/temari.vmdl"
       "ItemSlots"
       { }

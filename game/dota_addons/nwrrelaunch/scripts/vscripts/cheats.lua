@@ -21,7 +21,7 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_dragon_knight",
         "npc_dota_hero_medusa",
         "npc_dota_hero_centaur",
-        "npc_dota_hero_beastmaster",
+        "npc_dota_hero_kakashi",
         "npc_dota_hero_drow_ranger",	
         "npc_dota_hero_sand_king",
         "npc_dota_hero_phantom_assassin",
@@ -29,7 +29,7 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_bloodseeker",
         "npc_dota_hero_axe",
         "npc_dota_hero_juggernaut",
-        "npc_dota_hero_antimage",
+        "npc_dota_hero_itachi",
         "npc_dota_hero_storm_spirit",
         "npc_dota_hero_lion",
         "npc_dota_hero_warlock",
@@ -186,7 +186,7 @@ function GameMode:Setup_Hero_Tables()
         GameRules.heroTable[1] = "npc_dota_hero_lion"
         GameRules.heroTable[2] = "npc_dota_hero_centaur"
         GameRules.heroTable[3] = "npc_dota_hero_doom_bringer"
-        GameRules.heroTable[4] = "npc_dota_hero_antimage"
+        GameRules.heroTable[4] = "npc_dota_hero_itachi"
         GameRules.heroTable[5] = "npc_dota_hero_kakashi"
         GameRules.heroTable[6] = "npc_dota_hero_windrunner"
         GameRules.heroTable[7] = "npc_dota_hero_kunkka"

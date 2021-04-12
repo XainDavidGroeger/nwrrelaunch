@@ -1052,7 +1052,7 @@
 		[
 			{
 				m_sSearchMaterial = "*"
-				m_sReplaceMaterial = "materials/temari/temari1.vmat"
+				m_sReplaceMaterial = "materials/temari/temari_new.vmat"
 			},
 		]
 	}

@@ -94,7 +94,8 @@
 	"precache"
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-		"soundfile"	"soundevents/kisame_ulti.vsndevts"
+		"soundfile"	"soundevents/kisame_water_prison_cast.vsndevts"
+		"soundfile"	"soundevents/kisame_water_prison_toggle.vsndevts"
 		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
@@ -106,11 +107,6 @@
 	"OnSpellStart"
 	{
 		
-		"FireSound"
-		{
-			"EffectName"		"kisame_ulti"
-			"Target"			"CASTER"
-		}
 		"FireEffect"
 		{
 			"EffectName"		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
@@ -132,11 +128,13 @@
 
 	"OnToggleOn"
 	{
-			"FireSound"
+
+		"RunScript"
 		{
-			"EffectName"		"kisame_ulti"
-			"Target"			"CASTER"
+			"ScriptFile"	"heroes/kisame/water_prison.lua"
+			"Function"		"emitCastSound"
 		}
+
 		"ApplyModifier"
 		{
 			"ModifierName"		"modifier_kisame_metamorphosis"
@@ -148,6 +146,12 @@
 			"ModifierName"		"modifer_water_prison_hp_reg"
 			"Target"			"CASTER"
 		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/kisame/water_prison.lua"
+			"Function"		"AddToggleSound"
+		}
 		
 
 	}
@@ -158,6 +162,11 @@
 		{
 			"ScriptFile"	"heroes/kisame/water_prison.lua"
 			"Function"		"ModelSwapEnd"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/kisame/water_prison.lua"
+			"Function"		"RemoveToggleSound"
 		}
 		"RemoveModifier"
 		{

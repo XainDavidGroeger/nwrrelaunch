@@ -31,3 +31,7 @@ function applyRaikageKnockupModifier( keys )
 
 end
 
+
+function startRaikageAnimation (keys)
+	keys.caster:StartGesture(ACT_DOTA_CAST_ABILITY_6)
+end

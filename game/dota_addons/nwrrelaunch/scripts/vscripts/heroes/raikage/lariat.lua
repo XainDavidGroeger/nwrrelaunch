@@ -20,12 +20,18 @@ function remove_physics(caster)
 	--caster:SetNavCollisionType(PHYSICS_NAV_SLIDE)
 	caster:SetAutoUnstuck(true)
 	caster:FollowNavMesh(true)
+
+	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_3)
+
 end
 
 function LariatHit(keys,target)
 	local caster = keys.caster
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
+
+	caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_3)
+	caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_3_END, 2)
 
 	local damage = ability:GetLevelSpecialValueFor("damage", ability_level)
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_raikage_3")
@@ -56,7 +62,7 @@ function LariatPeriodic(gameEntity, keys)
 	local l_keys = keys.keys
 	local caster = l_keys.caster
 	local ability = l_keys.ability
-	
+
 	local ability_level = ability:GetLevel() - 1
 
 	local caster = l_keys.caster
@@ -108,7 +114,13 @@ function Lariat(keys)
 	local sound_impact = "Hero_Sven.StormBoltImpact"
 	local particle_impact = "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 
+	caster:FadeGesture(ACT_DOTA_IDLE)
+	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
+
+
 	add_physics(caster)
+
+	
 	
 	local timer_tbl =
 		{

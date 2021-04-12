@@ -37,6 +37,7 @@
     {
 
       "particle"  "particles/generic_gameplay/generic_manaburn.vpcf"
+      "soundfile"   "soundevents/kisame_samehada_trigger.vsndevts"
 
     }
 

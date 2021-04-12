@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 128
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -13,7 +13,7 @@
 			m_hTexture = resource:"materials/particle/impact/fleks5.vtex"
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -50,13 +50,13 @@
 		},
 		{
 			_class = "C_OP_VectorNoise"
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				0.500000,
 				0.500000,
 				1.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-0.500000,
 				-0.500000,
@@ -83,13 +83,13 @@
 		{
 			_class = "C_OP_VectorNoise"
 			m_bAdditive = true
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				3.000000,
 				3.000000,
 				3.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-3.000000,
 				-3.000000,
@@ -104,7 +104,7 @@
 			m_nFieldOutput = 16
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -123,14 +123,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				89,
 				89,
 				89,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				157,
 				157,
@@ -151,19 +151,19 @@
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				196.000000,
 				196.000000,
 				780.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-196.000000,
 				-196.000000,
 				842.000000,
 			]
-			m_vecAbsVal =
+			m_vecAbsVal = 
 			[
 				1.000000,
 				1.000000,
@@ -179,13 +179,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
 				25.000000,
 			]
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				0.000000,
 				0.000000,
@@ -193,7 +193,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"

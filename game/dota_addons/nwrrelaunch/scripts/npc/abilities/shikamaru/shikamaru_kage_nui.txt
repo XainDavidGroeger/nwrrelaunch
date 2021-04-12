@@ -1,0 +1,133 @@
+	
+    "DOTAAbilities"
+{
+    
+  
+"shikamaru_kage_nui"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"shikamaru_kage_nui"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"90"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 300 400"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ward_count"		"8"
+		}
+
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_min"			"20 27 35"
+		}
+
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_max"			"20 27 35"
+		}
+
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"15.0"
+		}
+
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_shikamaru_6"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_shadowshaman/shadow_shaman_ward_base_attack.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_ShadowShaman.SerpentWard"
+			"Target"			"CASTER"
+		}
+
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/shikamaru/kage_nui.lua"
+				"Function"		"resetCooldown"
+			}
+
+		"SpawnUnit"
+		{
+			"UnitName"			"shikamaru_tentacle_datadriven"
+			"Target"			"POINT"
+			"UnitCount"			"%ward_count"
+			"Duration"			"%duration"
+			"SpawnRadius"		"?10 100"
+			"GrantsGold"		"1"
+			"GrantsXP"			"1"
+
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_phased"
+					"Target"		"TARGET"
+					"Duration"		"0.03"
+				}
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_shika_tentacle"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}	
+	}
+
+	"Modifiers"
+	{
+		"modifier_shika_tentacle"
+		{
+			"IsHidden"			"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/shikamaru/kage_nui.lua"
+					"Function"		"SetDamage"
+				}
+			}
+		}
+	}
+}
+
+}
