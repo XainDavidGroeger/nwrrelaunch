@@ -5,7 +5,16 @@
 ]]
 function wood_release( keys )
 	local radius = keys.ability:GetLevelSpecialValueFor("radius", keys.ability:GetLevel() - 1)
+
 	local tree_duration = keys.ability:GetLevelSpecialValueFor("tree_duration", keys.ability:GetLevel() - 1)
+	
+	local ability2 = keys.caster:FindAbilityByName("special_bonus_madara_2")
+	if ability2 ~= nil then
+		if ability2:IsTrained() then
+			tree_duration = tree_duration + 1.5
+		end
+	end 
+
 	local tree_vision = keys.ability:GetLevelSpecialValueFor("tree_vision", keys.ability:GetLevel() - 1)
 	local target_point = keys.target_points[1]
 	local tree_count = 10
