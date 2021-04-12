@@ -23,6 +23,9 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"50"
 
+	//Stats
+	"AbilityDamage"					"35 50 65 80"
+
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
@@ -48,19 +51,13 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"mana_cost_per_second"	"8"
+			"LinkedSpecialBonus"	"special_bonus_madara_2"
 		}
 
 		"05"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"mana_cost_per_second_percentage"	"3"
-		}
-
-		"06"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"damage"							"35 50 65 80"
-			"LinkedSpecialBonus"				"special_bonus_madara_5"
 		}
 
 	}

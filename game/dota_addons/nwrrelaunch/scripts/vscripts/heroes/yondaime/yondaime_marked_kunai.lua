@@ -85,8 +85,6 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		local caster = self.caster
 		local ability = self.ability
 		local target_point = vLocation
-
-		self.buff_duration = self.ability:GetSpecialValueFor("duration")
 	
 		-- Special Variables
 		local duration = ability:GetSpecialValueFor("dagger_duration")
@@ -130,9 +128,9 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self.creep_damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	end
 
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
+	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
+	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {})
 
 end
 
