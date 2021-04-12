@@ -1,0 +1,5 @@
+#base "guy_dynamic_entry.txt"
+#base "guy_gouken_mastery.txt"
+#base "guy_open_gates.txt"
+#base "guy_power_of_youth.txt"
+#base "talents.txt"

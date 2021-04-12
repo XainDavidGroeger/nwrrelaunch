@@ -1,5 +1,15 @@
 yondaime_body_flicker = class({})
 
+
+function yondaime_body_flicker:GetCooldown(iLevel)
+	local cdreduction = 0
+	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_5"):GetLevel() > 0 then
+		cdreduction = 4
+	end
+	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
+end
+
+
 function yondaime_body_flicker:OnSpellStart( event )
 
 	local ability = self

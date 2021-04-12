@@ -1,0 +1,102 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+"sakura_chakra_burst"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"sakura_chakra_burst"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30 25 20 15"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"25"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"3 4 5 6"
+			"LinkedSpecialBonus"	"special_bonus_sakura_4"
+		}
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"ms_bonus"			"500"
+		}
+
+	}
+
+	"precache"
+	{
+		"particle"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_buff.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+			"RunScript"
+			{
+				"ScriptFile"    "heroes/sakura/chakra_burst.lua"
+                "Function"      "applyBurstModifier"
+			}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_sakura_chakra_burst"
+		{
+			"IsBuff"	"1"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%ms_bonus" 
+			}
+
+
+			"OnCreated"
+			{
+				"AttachEffect"
+                {
+                    "EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_left_foot"
+                    }
+                }
+						   "AttachEffect"
+                {
+                    "EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "CASTER"
+                    "ControlPointEntities"
+                   {
+                      "CASTER"    "attach_right_foot"
+                    }
+                }
+			}		
+		}
+
+	}
+}
+
+
+}

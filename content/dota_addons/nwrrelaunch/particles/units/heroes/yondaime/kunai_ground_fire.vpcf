@@ -5,18 +5,18 @@
 	m_nMaxParticles = 30
 	m_flConstantRadius = 20.000000
 	m_flConstantLifespan = 1.500000
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		255,
 		255,
 		255,
 		55,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			VisibilityInputs =
+			VisibilityInputs = 
 			{
 				m_flCameraBias = -3.000000
 			}
@@ -31,7 +31,7 @@
 			m_flAnimationRate = 0.500000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -52,7 +52,7 @@
 			_class = "C_OP_PositionLock"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -70,14 +70,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
 				0,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
@@ -99,7 +99,7 @@
 			m_flInitialRadius = 10.000000
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"

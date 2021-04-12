@@ -6,7 +6,7 @@
 	m_nConstantSequenceNumber = 6
 	m_bShouldSort = false
 	m_flMaxRecreationTime = -1.000000
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
@@ -21,7 +21,7 @@
 			m_flFinalTextureOffsetV = 1.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -41,7 +41,7 @@
 			m_bSetOrientation = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -60,14 +60,14 @@
 			m_flMaxLength = 0.400000
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 1
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
@@ -76,7 +76,7 @@
 			m_nControlPointNumber = 1
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_necrolyte/necrolyte_pulse_launch.vpcf"

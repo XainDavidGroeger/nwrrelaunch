@@ -28,6 +28,8 @@
 		   "Ability17"		"special_bonus_zabuza_5"
 		  "ModelScale"		"1"
 		  "LoadoutScale"		"1" 
+		"SpectatorLoadoutScale" "1"
+		"VersusScale"			"1"
 		  "Model" 			"models/zabuza/zabuza.vmdl"
 	 	 "ItemSlots"
 	  	  { }

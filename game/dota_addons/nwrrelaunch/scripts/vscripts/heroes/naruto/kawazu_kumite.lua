@@ -10,13 +10,11 @@ function ConjureImage( event )
     EmitSoundOn("naruto_bunshin", event.caster)
   end
 
-  print(event.caster.bunshinCount)
    if  event.caster.bunshinCount > 2 then
     event.caster.bunshins[0]:Destroy()
     event.caster.bunshins[0] = event.caster.bunshins[1]
     event.caster.bunshins[1] = event.caster.bunshins[2]
     event.caster.bunshinCount = event.caster.bunshinCount - 1
-    print(event.caster.bunshins)
   end
      local target = event.target
      local caster = event.caster
@@ -90,7 +88,7 @@ function ConjureImage( event )
      -- Set the unit as an illusion
      -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
      illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
-     ability:ApplyDataDrivenModifier(caster, illusion, "modfiier_naruto_bunshin_reduce_count", {duration = duration})
+     ability:ApplyDataDrivenModifier(caster, illusion, "modifier_naruto_bunshin_reduce_count", {duration = duration})
 
      -- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
      illusion:MakeIllusion()
@@ -115,15 +113,22 @@ end
 
 
 function applyModifier( keys )
+   --[[TODO: For now talent only changes duration.
+             If we want in future to add stat changes we need to create lua modifier.
+             it is more convenient than having to separate modifiers.
+   ]]
    local ability = keys.ability
    local caster = keys.caster
 
-   local naruto_modifier = "modfiier_naruto_kawazu_kumite"
+   local naruto_modifier = keys.ModiferName
 
-   local ability4 = keys.caster:FindAbilityByName("special_bonus_naruto_4")
-   if ability4:IsTrained() then
-      naruto_modifier = "modfiier_naruto_kawazu_kumite_special"
+	local applied_modifier = ability:ApplyDataDrivenModifier(caster, caster, naruto_modifier, {})
+
+   --If naruto has buuf duration talent
+   local duration_bonus_talent = keys.caster:FindAbilityByName("special_bonus_naruto_4")
+   if duration_bonus_talent:IsTrained() then
+      duration = ability:GetLevelSpecialValueFor('duration_special', ability:GetLevel())
+      applied_modifier:SetDuration(duration, true)
    end
-
-	ability:ApplyDataDrivenModifier(caster, caster, naruto_modifier, {})
+   
 end

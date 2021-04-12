@@ -3,14 +3,14 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 128
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		204,
 		232,
 		255,
 		55,
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -20,12 +20,12 @@
 			m_flAnimationRate = 0.500000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.070000
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -48,13 +48,13 @@
 		{
 			_class = "C_OP_VectorNoise"
 			m_bAdditive = true
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				4.000000,
 				4.000000,
 				4.000000,
 			]
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-4.000000,
 				-4.000000,
@@ -72,7 +72,7 @@
 			m_flFadeOutTime = 0.100000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRadius"
@@ -102,13 +102,13 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_LocalCoordinateSystemSpeedMax =
+			m_LocalCoordinateSystemSpeedMax = 
 			[
 				0.000000,
 				0.000000,
 				400.000000,
 			]
-			m_LocalCoordinateSystemSpeedMin =
+			m_LocalCoordinateSystemSpeedMin = 
 			[
 				0.000000,
 				0.000000,
@@ -120,13 +120,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				-100.000000,
 				0.000000,
 				200.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				110.000000,
 				0.000000,
@@ -134,7 +134,7 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"

@@ -94,6 +94,24 @@ function GameMode:OnHeroInGame(hero)
 	end
 end
 
+function GameMode:OnNewHeroSelected(event)
+
+
+	DebugPrint("TESSSSSST")
+	DebugPrintTable(event)
+
+
+end
+
+function GameMode:OnNewHeroChosen(event)
+
+
+	DebugPrint("TESSST2")
+	DebugPrintTable(event)
+
+
+end
+
 --[[
 	This function is called once and only once when the game completely begins (about 0:00 on the clock).  At this point,
 	gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.  This function

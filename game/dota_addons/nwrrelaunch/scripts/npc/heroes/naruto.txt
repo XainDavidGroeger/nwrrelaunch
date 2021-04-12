@@ -7,14 +7,14 @@
 		//10: +5 All Stats / +200 Bunshin Swap Range
     		"npc_dota_hero_dragon_knight" //naruto
 		{
-		  	"override_hero"   "npc_dota_hero_dragon_knight"
-		  	"Model" 			"models/naruto_new/naruto.vmdl"
-		 	"Ability1"        "naruto_kage_bunshin_rasengan"
-		  	"Ability2"        "naruto_kawazu_kumite" 
-		  	"Ability3"        "naruto_kage_bunshin_mastery" 
+		  	"override_hero" "npc_dota_hero_dragon_knight"
+		  	"Model" 		"models\naruto_new_2/naruto_base.vmdl"
+		 	"Ability1"      "naruto_kage_bunshin_rasengan"
+		  	"Ability2"      "naruto_kawazu_kumite" 
+		  	"Ability3"      "naruto_kage_bunshin_mastery" 
 		    "Ability4"		"generic_hidden"
 		    "Ability5"		"generic_hidden"
-		  	"Ability6"        "naruto_rasenshuriken"
+		  	"Ability6"      "naruto_rasenshuriken"
 
 		  	"Ability10"		"special_bonus_all_stats_5"
 		    "Ability11"		"special_bonus_naruto_1"
@@ -22,7 +22,7 @@
 		    "Ability12"		"special_bonus_naruto_2"
 		    "Ability13"		"special_bonus_naruto_3"
 
-		    "Ability14"		"special_bonus_naruto_4"
+		    "Ability14"		"special_bonus_naruto_4"  //kawazu kumite duration bonus
 		    "Ability15"		"special_bonus_naruto_5"
 
 		    "Ability16"		"special_bonus_naruto_6"
@@ -31,7 +31,11 @@
 
 		  	"ArmorPhysical"		"1.000000"
 			"ModelScale"		"0.74"
-			"LoadoutScale"		"0.74" 
+			"LoadoutScale"		"0.64" 
+
+			"SpectatorLoadoutScale" 	"0.64" 
+			"VersusScale"			"0.64" 
+
 		  	"AttackAnimationPoint"   "0.4"
 		 
 		  	"AttackRange"				"100"

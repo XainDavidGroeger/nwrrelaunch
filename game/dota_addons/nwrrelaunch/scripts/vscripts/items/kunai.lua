@@ -24,7 +24,7 @@ function kunaiBuff( keys )
 	 	else
 	 		bonus_percentage = bonus_damage_melee
 		end
-		local extra_damage = keys.caster:GetAverageTrueAttackDamage() / 100 * bonus_percentage
+		local extra_damage = caster:GetAverageTrueAttackDamage(caster) / 100 * bonus_percentage
 		local damageTable = {
 				victim = target,
 				attacker = caster,

@@ -1,11 +1,16 @@
+
+
 <root>
+
+
+
 	<Panel style="visibility:collapse;">
 		<Panel id="container" style="visibility:collapse;">
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/antimage.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/heroes/npc_dota_hero_antimage.png" />
 
 			<!-- Selection -->
-			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_antimage.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_itachi.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_doom_bringer.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_kunkka.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_dragon_knight.png" />
@@ -19,15 +24,19 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_bloodseeker.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_axe.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_juggernaut.png" />
-			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_antimage.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_storm_spirit.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_lion.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_warlock.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_shadow_shaman.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_enchantress.png" />
 
+
+
 			<!-- Top Bar -->
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/tophud2.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/uibottom.png" />
+
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_abilities.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_inventory.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/custom_game/dhb_minimap.png" />
@@ -56,6 +65,9 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_warlock.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_shadow_shaman.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_enchantress.png" />
+
+
+
 		</Panel>
 	</Panel>
 </root>

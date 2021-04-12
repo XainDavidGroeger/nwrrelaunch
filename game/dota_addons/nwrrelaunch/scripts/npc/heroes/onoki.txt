@@ -23,7 +23,12 @@
 			"StatusHealthRegen"   "0.300000"
 
 			"ModelScale"		"2.35"
-			"LoadoutScale"		"2.35" 
+			"LoadoutScale"		"2.0" 
+			"SpectatorLoadoutScale" 	"2.35"
+			"VersusScale"			"2.35"
+
+
+
 			"Role"			"Support,Nuker,Disabler,Durable,Initiator"
 			"Rolelevels"	"2,2,2,1,1"
 			// Unit attribute

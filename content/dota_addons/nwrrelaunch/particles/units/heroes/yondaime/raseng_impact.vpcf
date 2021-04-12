@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 64
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -14,12 +14,12 @@
 			m_flAnimationRate = 1.500000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.080000
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -43,18 +43,18 @@
 			m_flFadeOutTime = 0.500000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				201,
 				223,
 				255,
 				255,
 			]
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				174,
 				174,
@@ -83,13 +83,13 @@
 			_class = "C_INIT_InitialVelocityNoise"
 			m_flNoiseScale = 2.000000
 			m_flNoiseScaleLoc = 2.000000
-			m_vecOutputMin =
+			m_vecOutputMin = 
 			[
 				-16.000000,
 				-16.000000,
 				150.000000,
 			]
-			m_vecOutputMax =
+			m_vecOutputMax = 
 			[
 				16.000000,
 				16.000000,
@@ -129,13 +129,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				0.000000,
 				0.000000,
 				-100.000000,
 			]
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				0.000000,
 				0.000000,
@@ -143,14 +143,14 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 50
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/yondaime/raseng_impact_warp.vpcf"

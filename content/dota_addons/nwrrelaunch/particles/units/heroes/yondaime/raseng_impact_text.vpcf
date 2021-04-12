@@ -5,7 +5,7 @@
 	m_nMaxParticles = 1
 	m_flConstantRadius = 100.000000
 	m_flConstantLifespan = 1.500000
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		178,
 		202,
@@ -13,11 +13,11 @@
 		255,
 	]
 	m_nConstantSequenceNumber = 3
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			VisibilityInputs =
+			VisibilityInputs = 
 			{
 				m_flCameraBias = -50.000000
 			}
@@ -28,7 +28,7 @@
 			m_hTexture = resource:"materials/rasengan.vtex"
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -42,7 +42,7 @@
 		{
 			_class = "C_OP_ColorInterpolate"
 			m_flFadeEndTime = 0.500000
-			m_ColorFade =
+			m_ColorFade = 
 			[
 				188,
 				14,
@@ -62,25 +62,25 @@
 		{
 			_class = "C_OP_OscillateVector"
 			m_bOffset = true
-			m_RateMin =
+			m_RateMin = 
 			[
 				-250.000000,
 				-250.000000,
 				-250.000000,
 			]
-			m_RateMax =
+			m_RateMax = 
 			[
 				250.000000,
 				250.000000,
 				250.000000,
 			]
-			m_FrequencyMin =
+			m_FrequencyMin = 
 			[
 				10.000000,
 				10.000000,
 				10.000000,
 			]
-			m_FrequencyMax =
+			m_FrequencyMax = 
 			[
 				15.000000,
 				15.000000,
@@ -91,7 +91,7 @@
 		},
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
+			m_Gravity = 
 			[
 				0.000000,
 				0.000000,
@@ -99,7 +99,7 @@
 			]
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -114,13 +114,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				-20.000000,
 				0.000000,
 				200.000000,
 			]
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				-20.000000,
 				0.000000,
@@ -131,14 +131,14 @@
 			_class = "C_INIT_RandomSequence"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 1
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_tusk/tusk_walruspunch_txt_glow.vpcf"

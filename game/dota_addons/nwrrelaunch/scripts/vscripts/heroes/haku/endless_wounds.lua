@@ -29,9 +29,12 @@ end
 
 function modifier_haku_endless_needles_caster:OnCreated()
 	-- Ability properties
-	self.caster = self:GetParent()
+	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.stacks = 0
+
+	-- todo fix
+		--self:GetCaster():SetRangedProjectileName("particles/units/heroes/haku/haku_base_attack_wounds_active.vpcf")
 end
 
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )

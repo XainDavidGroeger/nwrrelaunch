@@ -1,0 +1,90 @@
+	
+    "DOTAAbilities"
+{
+    
+
+"shikamaru_meditation"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/shikamaru/shikamaru_meditation.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"shikamaru_meditation"
+	"AOERadius"						"%radius"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_weave.vpcf"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_armor_friend.vpcf"
+		"particle"			"particles/units/heroes/hero_dazzle/dazzle_armor_enemy.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"70 80 90 100"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"700"
+		}
+	
+		"03"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.0 6.0 8.0 10.0"
+			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			"LinkedSpecialBonusField"	"duration"
+		}
+		"05"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"tick_interval"				"1.0"
+		}
+		"06"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"armor"						"4.0 6.0 8.0 10.0"
+			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			"LinkedSpecialBonusField"	"armor_buff"
+		}
+		"07"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"negative_armor"			"-4.0 -6.0 -8.0 -10.0"
+			"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			"LinkedSpecialBonusField"	"armor_debuff"
+		}
+
+		"08"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"armor_special"						"6.0 8.0 10.0 12.0"
+		}
+		"09"
+		{	
+			"var_type"					"FIELD_FLOAT"
+			"negative_armor_special"			"-6.0 -8.0 -10.0 -12.0"
+		}
+	}
+}
+
+}

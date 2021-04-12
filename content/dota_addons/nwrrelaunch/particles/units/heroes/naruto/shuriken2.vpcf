@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 1
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderModels"
@@ -12,7 +12,7 @@
 			m_bOrientZ = true
 			m_nAnimationScaleField = 18
 			m_bSuppressTint = true
-			m_ModelList =
+			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/heroes/bounty_hunter/bounty_hunter_shuriken.vmdl"
@@ -22,7 +22,7 @@
 			m_nLOD = 1
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -50,7 +50,7 @@
 			m_nFirstControlPoint = 3
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -72,14 +72,14 @@
 			m_flRadiusMin = 1.500000
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 1
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
@@ -89,7 +89,7 @@
 			m_fForceAmount = 100000.000000
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_bounty_hunter/bounty_hunter_shuriken_toss_main.vpcf"

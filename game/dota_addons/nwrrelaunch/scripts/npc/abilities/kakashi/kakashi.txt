@@ -1,0 +1,6 @@
+#base "kakashi_bunshin.txt"
+#base "kakashi_chidori.txt"
+#base "kakashi_doton.txt"
+#base "kakashi_empty.txt"
+#base "kakashi_sharingan.txt"
+#base "talents.txt"

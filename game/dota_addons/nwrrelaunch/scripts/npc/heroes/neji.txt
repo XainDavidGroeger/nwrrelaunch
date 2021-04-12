@@ -30,6 +30,10 @@
 		  "ArmorPhysical"		"3.000000"
 		"ModelScale"		"1"
 		"LoadoutScale"		"1" 
+		"SpectatorLoadoutScale" 	"1"
+		"VersusScale"			"1"
+
+		
 		"AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackAnimationPoint"   "0.4"
 		"StatusHealth"    "200"
@@ -50,8 +54,10 @@
 		  "AttributeBaseAgility" "22" // Base agility
 		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
 		  
-	 	  "ItemSlots"
-	  	  { }
+	 	"DisableWearables" 			"1"
+
+		"ItemSlots"
+		{ }
 
 	  	  "Village"			"konoha"
 	  	  "Gender"			"male"

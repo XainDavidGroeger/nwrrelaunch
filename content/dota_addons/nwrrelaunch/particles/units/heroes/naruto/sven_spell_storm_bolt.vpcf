@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 1
 	m_flConstantRadius = 0.000000
-	m_ConstantColor =
+	m_ConstantColor = 
 	[
 		115,
 		145,
@@ -12,12 +12,12 @@
 		255,
 	]
 	m_bShouldSort = false
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderDeferredLight"
 			m_hTexture = resource:"materials/particle/particle_flares/aircraft_yellow.vtex"
-			m_ColorScale =
+			m_ColorScale = 
 			[
 				170,
 				85,
@@ -25,7 +25,7 @@
 			]
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_MovementRigidAttachToCP"
@@ -53,7 +53,7 @@
 			_class = "C_OP_SetSingleControlPointPosition"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -66,7 +66,7 @@
 			_class = "C_INIT_InitFromCPSnapshot"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
@@ -77,7 +77,7 @@
 			m_flEmitRate = 91.300000
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
@@ -87,7 +87,7 @@
 			m_bDisableOperator = true
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_glow_c.vpcf"

@@ -56,10 +56,10 @@ function Launch(keys)
 			ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_POINT_FOLLOW, "attach_origin", enemy_loc, true)
 			FinishChidori(keys)
 
-			local damage = keys.ability:GetLevelSpecialValueFor("damage", keys.ability:GetLevel() - 1 )
+			local damage = keys.ability:GetSpecialValueFor("damage")
 
-			local abilityS = keys.caster:FindAbilityByName("special_bonus_kakashi_4")
-			if abilityS:IsTrained() then
+			local ability4 = caster:FindAbilityByName("special_bonus_kakashi_4")
+			if ability4:IsTrained() then
 				damage = damage + 420
 			end
 
@@ -72,6 +72,8 @@ function Launch(keys)
 			ApplyDamage( damageTable )
 
 			target:EmitSound(sound_impact)
+
+
 
 			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 			return nil

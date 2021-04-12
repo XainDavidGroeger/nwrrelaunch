@@ -77,7 +77,7 @@ function hiraishin_dashDO(gameEntity, keys)
 			end
 		)
 		
-		local damage = caster:GetAverageTrueAttackDamage()
+		local damage = caster:GetAverageTrueAttackDamage(caster)
 		ApplyDamage({attacker = caster, victim = target, ability = keys.ability, damage = damage, damage_type = keys.ability:GetAbilityDamageType()})
 		--caster:PerformAttack(target, true, false, true, false)
 		

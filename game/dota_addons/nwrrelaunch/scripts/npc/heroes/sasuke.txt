@@ -50,6 +50,9 @@
 		  "AttributeAgilityGain" "1.8" // Agility bonus per level.
 		  "ModelScale"		"0.90"
 		 "LoadoutScale"		"0.90" 
+		"SpectatorLoadoutScale" 	"0.90" 
+		"VersusScale"			"0.90" 
+		
 
 	 	  "ItemSlots"
 	  	  { }

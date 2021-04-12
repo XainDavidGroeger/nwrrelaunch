@@ -1,0 +1,11 @@
+"Layer0"
+{
+	"shader"	"global_lit_simple.vfx"
+	"F_DO_NOT_CAST_SHADOWS"	"1"
+	"g_vColorTint"	"[1 1 1 0]"
+	"g_vTexCoordOffset"	"[0 0 0 0]"
+	"g_vTexCoordScale"	"[1 1 0 0]"
+	"g_tColor"	"materials/temari/temari_fan_tga_a8d0c0e8.vtex"
+	"RepresentativeTextureWidth"	"128"
+	"RepresentativeTextureHeight"	"128"
+}

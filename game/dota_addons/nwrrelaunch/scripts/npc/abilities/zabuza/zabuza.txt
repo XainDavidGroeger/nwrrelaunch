@@ -1,0 +1,7 @@
+#base "zabuza_demonic_intent_datadriven.txt"
+#base "zabuza_kirigakure_no_jutsu.txt"
+#base "zabuza_track.txt"
+#base "zabuza_water_dragon_datadriven.txt"
+#base "zabuza_weak_spot.txt"
+#base "zabuza_stealth.txt"
+#base "talents.txt"

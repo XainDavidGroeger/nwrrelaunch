@@ -1,0 +1,6 @@
+#base "anko_giant_snake.txt"
+#base "anko_senei_jyashu.txt"
+#base "anko_senei_ta_jashu.txt"
+#base "anko_sojasosai_no_jutsu.txt"
+#base "talents.txt"
+

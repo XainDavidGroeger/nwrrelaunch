@@ -1,0 +1,161 @@
+	
+    "DOTAAbilities"
+{
+    
+ 
+"itachi_amateratsu"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"					"ability_datadriven"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityTextureName"		"itachi_amateratsu"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	
+	"AbilityCooldown"				"100 80 60"
+	"AbilityManaCost"				"120"
+	"AbilityCastRange"				"500"
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+		"soundfile"	"soundevents/itachi_amateratsu.vsndevts"
+		"soundfile"	"soundevents/itachi_amateratsu_burning.vsndevts"
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_factor"				"0.06 0.08 0.1"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage"					"30 45 60"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"spread_aoe"				"100 150 200"
+			"LinkedSpecialBonus"		"special_bonus_itachi_4"
+		}
+
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+        {
+        	"ScriptFile"    "items.lua"
+            "Function"      "CheckForSpellBlock"
+            "filePath"      "heroes/itachi/amateratsu"
+            "functionName"  "initialize"
+        }
+	}
+
+	"Modifiers"
+	{
+		"modifier_itachi_amateratsu"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/amateratsu.lua"
+					"Function"		"save_damage"
+					"Damage"		"%attack_damage"
+				}
+			}
+
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/amateratsu.lua"
+					"Function"		"deal_dps_damage"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/amateratsu.lua"
+					"Function"		"spread_fire"
+				}
+			}
+
+		}
+
+		"modifier_itachi_amateratsu_spread_fire"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/amateratsu.lua"
+					"Function"		"deal_dps_damage"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/itachi/amateratsu.lua"
+					"Function"		"spread_fire"
+				}
+			}
+
+		}
+
+		"modifier_itachi_amateratsu_spread_fire_cd"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+		}
+
+		"modifier_itachi_amateratsu_fire_sound"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+
+			"ThinkInterval"  "0.75"
+			"OnIntervalThink"
+			{
+				"FireSound"
+				{
+					"EffectName"	"itachi_amateratsu_burning"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+		
+	}
+}
+
+
+}

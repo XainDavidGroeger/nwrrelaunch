@@ -992,7 +992,7 @@
 					m_Filepath = "models/itachi_new/itachi anim.smd"
 					m_nStartframe = 11
 					m_nEndframe = 70
-					m_flFps = 30.0
+					m_flFps = 10.0
 					m_Loop = 
 					{
 						m_bLoop = true

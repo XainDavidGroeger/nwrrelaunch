@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 100
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
@@ -13,7 +13,7 @@
 			m_flAnimationRate = 0.000000
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
@@ -39,7 +39,7 @@
 			m_flLifeTimeLerpEnd = 0.150000
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -65,13 +65,13 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMax =
+			m_OffsetMax = 
 			[
 				132.000000,
 				132.000000,
 				132.000000,
 			]
-			m_OffsetMin =
+			m_OffsetMin = 
 			[
 				-132.000000,
 				-132.000000,
@@ -80,14 +80,14 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
+			m_ColorMin = 
 			[
 				255,
 				255,
 				0,
 				255,
 			]
-			m_ColorMax =
+			m_ColorMax = 
 			[
 				255,
 				85,
@@ -96,23 +96,23 @@
 			]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_RandomForce"
-			m_MaxForce =
+			m_MaxForce = 
 			[
 				1200.000000,
 				1200.000000,
 				1200.000000,
 			]
-			m_MinForce =
+			m_MinForce = 
 			[
 				-1200.000000,
 				-1200.000000,
@@ -127,7 +127,7 @@
 			m_fForceAmount = -100.000000
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/yondaime/blink_end_flash.vpcf"
