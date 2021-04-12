@@ -1,0 +1,40 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c"/>
+		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c"/>
+		<include src="file://{resources}/styles/custom_game/multiteam_flyout_scoreboard.css"/>
+	</styles>
+
+	<Panel class="FlyoutTeam" hittest="false">
+		<Panel class="FlyoutTeamData" id="FlyoutTeamData" >
+			<Panel class="Legend">
+
+				<Panel class="ScoreCol_Team ScoreboardPanel" id="Team">
+					<Image id="TeamIcon" scaling="stretch-to-fit-preserve-aspect" heroimagestyle="landscape"/>
+				</Panel>
+
+				<Panel class="ScoreCol_PlayerDetails ScoreboardPanel" id="TeamDetailsContainer">
+					<Panel id="TeamNameContainer">
+						<Label id="TeamName" text="AAAAA"/>
+					</Panel>
+				</Panel>
+
+				<Label class="LegendPanel ScoreCol_Kills" text="#custom_end_screen_legend_kills"/>
+
+				<Label class="LegendPanel ScoreCol_Deaths" text="#custom_end_screen_legend_deaths"/>
+
+				<Label class="LegendPanel ScoreCol_Assists" text="#custom_end_screen_legend_assists"/>
+
+				<Label class="ScoreCol_LastHits LegendPanel " id="ScoreCol_LastHits" text="#scoreboard_last_hits"/>
+
+				<Label class="ScoreCol_Denies LegendPanel "  id="ScoreCol_Denies" text="#scoreboard_denies"/>
+
+				<Label class="ScoreCol_DmgDealt LegendPanel " id="ScoreCol_DmgDealt" text="#scoreboard_damage_dealt"/>
+
+				<Label class="ScoreCol_DmgTaken LegendPanel " id="ScoreCol_DmgTaken" text="#scoreboard_damage_taken"/>
+			</Panel>
+
+			<Panel id="PlayersContainer"/>
+		</Panel>
+	</Panel>
+</root>

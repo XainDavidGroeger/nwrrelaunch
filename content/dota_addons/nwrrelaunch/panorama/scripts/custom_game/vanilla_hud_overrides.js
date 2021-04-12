@@ -60,6 +60,13 @@ function OverrideScoreboardHeroImage(args) {
 	OverrideImage(image_container, args.icon_path);
 }
 
+function SetCustomHUD() {
+	SetTopBarBackground();
+//	SetInventoryBackground();
+//	SetAbilityBackground();
+	SetFlyoutScoreboardBackground();
+}
+
 function SetTopBarBackground() {
 	var container = Parent.FindChildTraverse("HUDSkinTopBarBG");
 
@@ -68,6 +75,44 @@ function SetTopBarBackground() {
 	container.style.backgroundSize = "100% 100%";
 	container.style.width = "76.8%";
 	container.style.height = "90px";
+}
+
+function SetInventoryBackground() {
+	var container = Parent.FindChildTraverse("InventoryBG");
+
+//	container.style.visibility = "visible";
+	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/dhb_inventory.png')";
+//	container.style.backgroundSize = "100% 100%";
+//	container.style.width = "76.8%";
+//	container.style.height = "90px";
+}
+
+function SetAbilityBackground() {
+	var container = Parent.FindChildTraverse("center_bg");
+
+	container.style.visibility = "visible";
+	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/dhb_abilities.png')";
+//	container.style.backgroundSize = "100% 100%";
+//	container.style.width = "76.8%";
+//	container.style.height = "90px";
+}
+
+function SetFlyoutScoreboardBackground() {
+	var container = Parent.FindChildTraverse("RadiantTeamContainer");
+
+//	container.style.visibility = "visible";
+	container.style.backgroundImage = "url('s2r://panorama/images/custom_game/scoreboard_shinobi.png')";
+	container.style.backgroundSize = "100% 100%";
+//	container.style.width = "76.8%";
+//	container.style.height = "90px";
+
+	for (var i = 0; i < container.GetChildCount(); i++) {
+		var child = container.GetChild(i);
+
+		if (child) {
+			child.style.backgroundColor = "none";
+		}
+	}
 }
 
 (function() {
@@ -87,5 +132,5 @@ function SetTopBarBackground() {
 	})
 */
 
-	SetTopBarBackground();
+	SetCustomHUD();
 })();

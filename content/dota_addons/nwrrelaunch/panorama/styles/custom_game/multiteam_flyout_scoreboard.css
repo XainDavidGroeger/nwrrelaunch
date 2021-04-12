@@ -1,0 +1,490 @@
+@define BACKGROUND_COLOR: black;
+@define BACKGROUND_COLOR_WHITE: black;
+
+
+.FlyoutScoreboardRoot
+{
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 150px;
+    flow-children: down;
+    padding: 10px;
+	color:black;
+    transform: translatex( -800px );
+    transition-property: transform;
+    transition-duration: 0.2s;
+    min-height: 350px;
+}
+
+.FlyoutScoreboardRoot.flyout_scoreboard_visible
+{
+    transform: translatey( 0px );
+}
+
+#TeamsContainer
+{
+    flow-children: down;
+    horizontal-align: center;
+
+}
+
+.FlyoutTeam
+{
+
+
+}
+
+.AkatBoard
+{
+	background-image: url("file://panorama/images/scoreboard/scoreboard_akat_png.png");
+}
+
+.ShinobiBoard
+{
+	background-image: url("file://panorama/images/scoreboard/scoreboard_shinobi_png.png");
+}
+
+.FlyoutTeam.no_players
+{
+	
+}
+
+.local_player_team.FlyoutTeam
+{
+	z-index: 99;
+}
+
+.FlyoutTeamData
+{
+    flow-children: down;
+    min-width:600px;
+	min-height:376px;
+}
+
+.TeamInfo
+{
+	margin-top: 1px;
+	height: 100%;
+}
+
+#TeamColor_GradentFromTransparentLeft
+{
+	width: 100%;
+	height: 100%;
+}
+
+#TeamColorOverlay
+{
+	width: 100%;
+	height: 100%;
+}
+
+.FlyoutPlayer
+{ 
+    flow-children: right;
+}
+
+.TeamCloseSpacer
+{
+}
+
+#PlayersContainer
+{
+    flow-children: down;
+}
+
+.local_player_team #PlayersContainer
+{
+    box-shadow: fill #ffffff40 -3px -3px 3px 6px;
+}
+
+.TeamId
+{
+    flow-children: right;
+}
+
+#TeamLogo
+{
+	vertical-align: top;
+	horizontal-align: right;
+    height: 30px;
+    width: 15px;
+	margin-top: 2px;
+	margin-right: 2px;
+}
+
+#TeamScore
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: black;
+	font-size: 42px;
+	text-shadow: 2px 2px 2px black;
+	font-weight: bold;
+	margin-top: -3px;
+	text-overflow: clip;
+}
+
+.one_player #TeamScore
+{
+	font-size: 32px;
+}
+
+
+#TeamScorePanel
+{
+	margin-top: 1px;
+	margin-left: 266px;
+	width: 29px;
+	height: 100%;
+}
+
+.Legend
+{
+	margin-left:69px;
+	flow-children: right;
+	
+}
+
+.Legend Label
+{
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+
+	width:40px;
+	color:black;
+
+}
+
+.PlayerRow
+{
+	margin-left: 73px;
+	height: 32px;
+	margin-bottom: 16px;
+}
+
+#PlayerRowContainer
+{
+	flow-children: right;
+	height: 32px;
+}
+
+.TeamRow
+{
+	
+	margin-left: 70px;
+	height: 50px;
+}
+
+#TeamRowContainer
+{
+	flow-children: right;
+	height: 50px;
+}
+
+#Team
+{
+	margin-top:30px;
+}
+
+#HeroIcon
+{
+    vertical-align: middle;
+	border: 1px solid black;
+}
+
+#LevelContainer,
+#DeathsContainer,
+#AssistsContainer,
+#DeniesContainer
+{
+	color:black;
+	height: 100%;
+}
+
+#KillsContainer
+{
+	color:black;
+	height: 100%;
+	margin-left:5px;
+}
+
+#LastHitsContainer
+{
+	margin-left:20px;
+	color:black;
+	height: 100%;
+}
+
+#LastHitsContainer Label
+{
+	font-size: 18px;
+}
+
+#DeniesContainer Label
+{
+	font-size: 18px;
+}
+
+
+
+#DamageTakenContainer
+{
+	color:black;
+	width:50px;
+	height: 100%;
+}
+
+#DamageDealtContainer
+{
+	margin-left:9px;
+	color:black;
+	width:50px;
+	height: 100%;
+}
+
+#DamageDealtContainer Label
+{
+	font-size: 18px;
+}
+
+#DamageTakenContainer Label
+{
+	font-size: 18px;
+}
+
+.ScoreboardPanel
+{
+	margin-top: 1px;
+	margin-left: 1px;
+}
+
+.LegendPanel
+{
+	margin-top: 28px;
+	width: 30px;
+}
+
+.is_local_player .ScoreboardPanel
+{
+//    background-color: BACKGROUND_COLOR_WHITE;
+}
+
+.ScoreboardPanel Label
+{
+	font-size: 30px;
+	text-shadow: 2px 2px 2px black;
+}
+
+.UltimateIndicatorShared
+{
+	margin-left: 44px;
+	margin-top: 2px;
+	vertical-align: center;
+	width: 20px;
+	height: 20px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#Level
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: black;
+}
+
+#Kills,
+#Deaths,
+#Assists,
+#LastHits,
+#Denies,
+#DamageDealt,
+#DamageTaken
+{
+	vertical-align: center;
+	font-size: 23px;
+	color:black;
+
+	margin-top: 3px;
+	width: 50px;
+}
+
+#AssistsContainer
+{
+
+}
+
+
+
+#PlayerName
+{
+	color: black;
+	font-size: 14px;
+	margin-bottom: -4px;
+	margin-top: 0px;
+	white-space: nowrap;
+}
+
+#HeroNameAndDescription
+{
+	color: black;
+	font-size: 13px;
+
+	margin-top: -1px;
+}
+#MuteButton
+{
+	margin-right: 0px;
+	margin-top: 0px;
+	horizontal-align: right;
+	vertical-align: top;
+	width: 18px;
+	height: 18px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("file://panorama/images/custom_game/button_audio_on_psd.png");
+	visibility: collapse;
+	opacity: 0.8;
+}
+
+.local_player_teammate #MuteButton
+{
+	visibility: visible;
+}
+
+#MuteButton:hover
+{
+	opacity: 1;
+}
+
+.player_muted #MuteButton
+{
+    background-image: url("file://panorama/images/custom_game/button_audio_off_psd.png");
+}
+
+#TeammateGoldAmount
+{
+	margin-right: -1px;
+	margin-bottom: -2px;
+	vertical-align: bottom;
+	horizontal-align: right;
+	color: #AD9C36;
+	text-shadow: 0px 0px 0px black;
+	font-size: 13px;
+	visibility: collapse;
+}
+
+.local_player_team #TeammateGoldAmount
+{
+	visibility: visible;
+}
+
+#PlayerDetailsContainer
+{
+	height: 100%;
+}
+
+#TeamDetailsContainer{
+	width: 136px;
+}
+
+#PlayerAndHeroName
+{
+	flow-children: down;
+	padding-left: 8px;
+}
+
+.is_local_player #Kills,
+.is_local_player #Deaths,
+.is_local_player #Assists,
+.is_local_player #Level,
+.is_local_player #HeroName,
+.is_local_player #LastHits,
+.is_local_player #Denies,
+.is_local_player #DamageDealt,
+.is_local_player #DamageTaken
+{
+	color: black;
+}
+
+.ScoreCol_TeamInfo
+{
+	width: 30px;
+}
+
+.ScoreCol_PlayerDetails
+{
+	width: 130px;
+}
+
+.ScoreCol_Hero
+{
+	width: 53px;
+}
+
+.ScoreCol_Team
+{
+	margin-top:12px;
+	width: 53px;
+}
+
+
+.ScoreCol_Kills,
+.ScoreCol_Deaths,
+.ScoreCol_Assists
+{
+	font-size: 23px;
+	width: 40px;
+}
+
+.ScoreCol_Kills
+{
+	margin-left:0px;
+}
+
+.ScoreCol_LastHits
+{
+	width: 40px;
+	margin-top: 32px;
+	margin-left:24px;
+}
+
+.ScoreCol_Denies
+{
+	width: 40px;
+	margin-top: 32px;
+
+}
+
+#ScoreCol_DmgDealt
+{
+	width: 55px;
+	margin-top: 32px;
+	margin-left:9px;
+}
+
+#ScoreCol_DmgTaken
+{
+	width: 40px;
+	margin-top: 32px;
+}
+
+#TeamNameContainer
+{
+	color:black;
+	margin-top:32px;
+}
+
+#TeamName
+{
+	
+	vertical-align: bottom;
+	height: 40px;
+	font-size: 18px;
+	width: 150px;
+	color:black;
+	
+}

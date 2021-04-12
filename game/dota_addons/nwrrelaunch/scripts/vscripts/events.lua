@@ -31,6 +31,11 @@ function GameMode:OnGameRulesStateChange(keys)
 		GameMode:ChangeBuildings()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		GameMode:SetShops()
+
+		if IsInToolsMode() then
+			SendToServerConsole('sm_gmode 1')
+			SendToServerConsole('dota_bot_populate')
+		end
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		--TODO LEAVRE SYSTEM
 		-- A timer running every second that starts immediately on the next frame, respects pauses

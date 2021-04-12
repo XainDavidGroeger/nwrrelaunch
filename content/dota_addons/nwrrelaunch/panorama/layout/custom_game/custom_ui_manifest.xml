@@ -8,6 +8,7 @@
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_COURIER, true);
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true);
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_MINIMAP, true );
+		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );
 
 		function FixHeroIcons(){
 			var topbar = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("topbar")
@@ -38,8 +39,9 @@
 	</script>
 
 	<Panel>
-<!--		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/precache.xml" /> -->
 		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/vanilla_hero_selection_override.xml" />
+		<CustomUIElement type="FlyoutScoreboard" layoutfile="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/precache.xml" />
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/vanilla_hud_overrides.xml" />
 	</Panel>
 </root>
