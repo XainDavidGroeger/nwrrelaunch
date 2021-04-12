@@ -449,6 +449,38 @@
 		}
 	}
 
+	"models/heroes/antimage_female/antimage_female.vmdl"
+	{
+		"PortraitLightPosition"		"81.44 0.80 343.45"
+		"PortraitLightAngles"		"56.94 171.91 0.00"
+		"PortraitLightFOV"		"69"
+		"PortraitLightDistance"		"377"
+		"PortraitLightColor"		"254 235 192"
+		"PortraitShadowColor"		"38 79 69"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"126 148 120"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+	 "PortraitBackgroundColor1"      ".933 .455 .255"
+        "PortraitBackgroundColor2"      "1 0 0"
+        "PortraitBackgroundColor3"      "1 0 0"
+        "PortraitBackgroundColor4"      ".6 .1 0"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_coolinterior.vmat"
+		"PortraitLightScale"		"1.800000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-35.210 -88.060 -30.160"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"415.72 272.07 360.34"
+				"PortraitAngles"		"18.76 214.24 0.00"
+				"PortraitFOV"		"4.5"
+			}
+		}
+	}
+
 	"models/kakashi/kaka.vmdl"
 	{
 		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
@@ -929,6 +961,45 @@
 	}
 
 	"models/sakura_new/sakura.vmdl"
+	{
+		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
+		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
+		"PortraitLightFOV"		"63.000000"
+		"PortraitLightDistance"		"471.000000"
+		"PortraitLightColor"		"254 235 192"
+		"PortraitShadowColor"		"131 131 131"
+		"PortraitShadowScale"		"1.025000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientColor"		"0 161 155"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
+		"PortraitSpecularPower"		"16.000000"
+		"PortraitBackgroundColor1"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor2"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor3"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundColor4"		"0.550000 0.450000 0.600000"
+		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/full_view_background.vmat"
+		"PortraitBackgroundModel"		"models/heroes/pedestal/pedestal_1_small.vmdl"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"PortraitAnimationCycle"		"0.000000"
+		"PortraitAnimationRate"		"1.000000"
+		"PortraitHideHero"		"0"
+		"PortraitLightScale"		"3.650000"
+		"PortraitAmbientDirection"		"-76.520 7.960 38.340"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"540.000000 -48.000000 105.000000"
+				"PortraitAngles"		"357.600006 175.899994 0.000000"
+				"PortraitFOV"		"4.30000"
+				"PortraitFar"		"1000.000000"
+			}
+		}
+	}
+
+	"models/heroes/phantom_assassin/pa_arcana.vmdl"
 	{
 		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
 		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
@@ -4081,42 +4152,6 @@
 		}
 	}
 	"models/heroes/phantom_assassin/phantom_assassin.vmdl"
-	{
-		"PortraitLightPosition"		"88.03 -21.71 182.76"
-		"PortraitLightAngles"		"37.50 160.44 0.00"
-		"PortraitLightFOV"		"46"
-		"PortraitLightDistance"		"138"
-		"PortraitLightColor"		"241 250 254"
-		"PortraitShadowColor"		"56 56 56"
-		"PortraitShadowScale"		"1.500000"
-		"PortraitAmbientColor"		"56 63 74"
-		"PortraitAmbientScale"		"2.750000"
-		"PortraitSpecularColor"		"251 74 84"
-		"PortraitSpecularDirection"		"0.000000 0.000000 -1.000000"
-		"PortraitSpecularPower"		"16.000000"
-		"PortraitBackgroundColor1"		"1.000000 1.000000 1.000000"
-		"PortraitBackgroundColor2"		"1.000000 1.000000 1.000000"
-		"PortraitBackgroundColor3"		"1.000000 1.000000 1.000000"
-		"PortraitBackgroundColor4"		"1.000000 1.000000 1.000000"
-		"PortraitBackgroundTexture"		"materials/portraits_card/portrait_backgrounds/phantom_assassin.vmat"
-		"PortraitAnimationActivity"		"ACT_DOTA_CAPTURE"
-		"PortraitAnimationCycle"		"0.000000"
-		"PortraitAnimationRate"		"1.000000"
-		"PortraitHideHero"		"0"
-		"PortraitLightScale"		"1.250000"
-		"PortraitGroundShadowScale"		"1.500000"
-		"PortraitAmbientDirection"		"197.900 4.530 -33.190"
-		"cameras"
-		{
-			"default"
-			{
-				"PortraitPosition"		"118.36 -17.22 152.62"
-				"PortraitAngles"		"5.26 167.61 2.11"
-				"PortraitFOV"		"21"
-			}
-		}
-	}
-	"models/heroes/phantom_assassin/pa_arcana.vmdl"
 	{
 		"PortraitLightPosition"		"88.03 -21.71 182.76"
 		"PortraitLightAngles"		"37.50 160.44 0.00"
