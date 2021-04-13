@@ -99,7 +99,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/anko/anko_senei_ta_jashu.lua"
-			"Function"		"anko_senei_ta_jashu"
+			"Function"		"apply_slow_modifier"
 		}
 
 		"FireSound"
