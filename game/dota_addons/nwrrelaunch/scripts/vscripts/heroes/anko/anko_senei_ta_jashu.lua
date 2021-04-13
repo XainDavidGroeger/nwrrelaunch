@@ -18,7 +18,6 @@ function anko_senei_ta_jashu( keys )
 	local ms_slow = ability:GetLevelSpecialValueFor("ms_slow",(ability:GetLevel() - 1))
 
 
-
 	local damageType = ability:GetAbilityDamageType()
 	local damageTable = {
 						victim = target,
@@ -29,8 +28,18 @@ function anko_senei_ta_jashu( keys )
 	ApplyDamage( damageTable )
 	PopupDamage(target, poison_damage)
 
+end
+
+function apply_slow_modifier( keys )
+
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
 
 	local ms_slow_duration = ability:GetLevelSpecialValueFor("slow_duration",(ability:GetLevel() - 1))
+	print("slow duration")
+	print(ms_slow_duration)
+
 	local abilityS = caster:FindAbilityByName("special_bonus_anko_2")
 	if abilityS:IsTrained() then
 		ms_slow_duration = ms_slow_duration + 2

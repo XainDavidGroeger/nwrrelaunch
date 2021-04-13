@@ -263,12 +263,14 @@
 		"DOTA_Tooltip_ability_madara_susano_burn_radius"			"AOE: "
 		"DOTA_Tooltip_ability_madara_susano_magic_resistance_percent"	"%BONUS MR: "
 		"DOTA_Tooltip_ability_madara_susano_mana_cost_per_second"	"MANACOST PER SECOND: "	
+		"DOTA_Tooltip_ability_madara_susano_damage"					"DAMAGE: "	
 		// Susano’o Ribcage activated
 		"DOTA_Tooltip_ability_madara_susano_active"						"Susano’o Ribcage"
 		"DOTA_Tooltip_ability_madara_susano_active_description"			"Upon activation, grants magic resistance and burns nearby enemies while draining the user’s mana. Using this ability again will deactivate it and stop mana from draining. Trees within the radius of the burn will be lit on fire if Wood Release: Deep Forest Emergence is leveled. If Madara runs out of mana, the effect will end."
 		"DOTA_Tooltip_ability_madara_susano_active_burn_radius"			"AOE: "
 		"DOTA_Tooltip_ability_madara_susano_active_magic_resistance_percent"	"%BONUS MR: "
 		"DOTA_Tooltip_ability_madara_susano_active_mana_cost_per_second"	"MANACOST PER SECOND: "	
+		"DOTA_Tooltip_ability_madara_susano_active_damage"					"DAMAGE: "	
 		"DOTA_Tooltip_modifier_madara_susano"							"Susano’o Ribcage"
 		"DOTA_Tooltip_modifier_madara_susano_description"				"Nearby Units will burn."
 		// Heaven Concealed (Tengai Shinsei)
@@ -857,6 +859,15 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range"				"RANGE: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range_ulti"		"RANGE ULTI: "
 
+		// Dynamic Entry Ulti
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult"						"Dynamic Entry"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range_ulti"		"RANGE ULTI: "
+
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased movement speed."
 		// Leaf Strong Whirlwind
@@ -870,12 +881,36 @@
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_cast_time_ulti"			"CAST TIME: "
 		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun"						"Leaf Strong Whirlwind"
 		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun_description" 			"This Unit is stunned."
+		
+		
+		// Leaf Strong Whirlwind Ulti
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult"				"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_lore"			"Konoha Gōriki Senpū"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_description"	"Guy performs a quick spin kick, dealing physical damage and briefly stunning all enemies near Guy. Has a lower cast time (0.1 instead of 0.3 secodns) if Guy has opened the seventh gate." 
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_radius"			"RADIUS: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stun_duration"	"STUN DURATION: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stomp_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_cast_time"			"CAST TIME: "
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_cast_time_ulti"			"CAST TIME: "
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun"						"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun_description" 			"This Unit is stunned."
+
+		
 		// Strong Fist
 		"DOTA_Tooltip_ability_guy_strong_fist"						"Strong Fist"
-		"DOTA_Tooltip_ability_guy_strong_fist:lore"						"Goken"
+		"DOTA_Tooltip_ability_guy_strong_fist_lore"						"Goken"
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRIT DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION ULTI: "
 		"DOTA_Tooltip_ability_guy_strong_fist_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
+		
+		// Strong Fist Ulti
+		"DOTA_Tooltip_ability_guy_strong_fist_ult"						"Strong Fist"
+		"DOTA_Tooltip_ability_guy_strong_fist_ult_lore"						"Goken"
+		"DOTA_Tooltip_ability_guy_strong_fist_ult_crit"					"%CRIT DAMAGE: "
+		"DOTA_Tooltip_ability_guy_strong_fist_ult_stun"					"STUN DURATION ULTI: "
+		"DOTA_Tooltip_ability_guy_strong_fist_ult_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
+		
+		
 		// Hachimon Tonkou: Dairoku Keimon
 		"DOTA_Tooltip_ability_guy_seventh_gate_open"				"Seventh Gate: Open"
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_lore"			"Kyomon: Kai"
@@ -1066,7 +1101,7 @@
 		"DOTA_Tooltip_ability_anko_giant_snake_lore"				"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"RANGE: "
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"DAMAGE: "
-		"DOTA_Tooltip_ability_anko_giant_snake_hook_cd_reduc"			"CD REDUC: "
+		"DOTA_Tooltip_ability_anko_giant_snake_cd_reduc"			"CD REDUC: "
 		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"Anko summons a Giant Snake that will grab the first target it encounters, dealing damage, then dragging the victim back to Anko."
 		
 		"DOTA_Tooltip_ability_anko_senei_jyashu"					"Striking Snakes"

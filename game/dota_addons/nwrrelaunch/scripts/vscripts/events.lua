@@ -30,34 +30,8 @@ function GameMode:OnGameRulesStateChange(keys)
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:ChangeBuildings()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-
-		DebugPrint("tst4")
-		Print("tst3")
-
 		GameMode:SetShops()
-
-	
-
-
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		--TODO LEAVRE SYSTEM
-		-- A timer running every second that starts immediately on the next frame, respects pauses
---[[
-		Timers:CreateTimer(function()
-			for _,hero in pairs(HeroList:GetAllHeroes()) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-					if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 then
-						GameRules:SendCustomMessage(hero:GetName() .." has 2 minutes to reconnect.", 0, 0)
-						GameMode:ModifyGoldGainDC(hero)
-					elseif not hero:HasOwnerAbandoned() then
-						hero.isDC = false
-					end 
-				end
-			end
-
-			return 1.0  
-		end)
---]]
 	end
 end
 
