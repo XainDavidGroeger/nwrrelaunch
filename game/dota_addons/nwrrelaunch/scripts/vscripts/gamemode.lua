@@ -97,17 +97,9 @@ end
 function GameMode:OnNewHeroSelected(event)
 
 
-	DebugPrint("TESSSSSST")
-	DebugPrintTable(event)
-
-
 end
 
 function GameMode:OnNewHeroChosen(event)
-
-
-	DebugPrint("TESSST2")
-	DebugPrintTable(event)
 
 
 end

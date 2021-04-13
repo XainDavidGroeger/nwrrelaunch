@@ -67,9 +67,18 @@ function knockBack( keys )
 
 	for _, unit in pairs(targets) do
 
-		local knockback = {	center_x = unit.x,
-									center_y = unit.y,
-									center_z = unit.z,
+
+		local casterabs = caster:GetAbsOrigin()
+		local unitabs = unit:GetAbsOrigin()
+
+		-- get direction the push back should go
+		local len = ( unitabs - casterabs ):Length2D()
+		len = push_back_length - push_back_length * ( len / push_back_length )
+		
+
+		local knockback = {	center_x = caster:GetAbsOrigin().x,
+									center_y = caster:GetAbsOrigin().y,
+									center_z = caster:GetAbsOrigin().z,
 									duration = 1.0,
 									knockback_distance = push_back_length,
 									knockback_height = 0,

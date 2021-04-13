@@ -8,11 +8,13 @@ function anko_senei_jyashu(params)
 	if params.caster:IsRealHero() then
 
 		local abilityS2 = params.caster:FindAbilityByName("special_bonus_anko_4")
-		if abilityS2:IsTrained() == false and params.special == 1 then
-			return false
-		end
-		if abilityS2:IsTrained() and params.special == 0 then
-			return false
+		if abilityS2 ~= nil then
+			if abilityS2:IsTrained() == false and params.special == 1 then
+				return false
+			end
+			if abilityS2:IsTrained() and params.special == 0 then
+				return false
+			end
 		end
 
 		local parent = params.target
@@ -21,9 +23,13 @@ function anko_senei_jyashu(params)
 		local duration =  ability:GetSpecialValueFor("snake_damage_interval")
 
 		local final_damage = ability:GetLevelSpecialValueFor("snake_damage", params.ability:GetLevel() - 1 )
+
+
 		local abilityS = params.caster:FindAbilityByName("special_bonus_anko_3")
-		if abilityS:IsTrained() then
-			final_damage = final_damage + 80
+		if ability5 ~= nil then
+			if abilityS:IsTrained() then
+				final_damage = final_damage + 80
+			end
 		end
 
 		local caster = params.caster

@@ -22,6 +22,8 @@ function chakra_enhanced_strength_apply( keys )
 		local vCaster = keys.caster:GetAbsOrigin()
 		local vTarget = keys.ability.enemy:GetAbsOrigin()
 
+		keys.caster:EmitSound("sakura_chakra_strength")
+
 		local knockbackModifierTable =
 		{
 			should_stun = 1,

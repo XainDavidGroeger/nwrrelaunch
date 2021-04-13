@@ -9,7 +9,7 @@
 	"npc_dota_hero_medusa" //anko
 	{
 		"override_hero"   "npc_dota_hero_medusa"
-		"Model"           "models/anko/anko.vmdl"
+		"Model"           "models/anko_new/anko_base.vmdl"
 		"Ability1"        "anko_giant_snake"
 		"Ability2"        "anko_senei_jyashu"
 		"Ability3"        "anko_senei_ta_jashu"
@@ -29,10 +29,10 @@
 		"Ability16"		"special_bonus_anko_4"
 		"Ability17"		"special_bonus_anko_5"
 
-		"ModelScale"		"0.90"
+		"ModelScale"		"1.0"
 		"LoadoutScale"	"0.90" 
-		"SpectatorLoadoutScale" 	"0.90" 
-		"VersusScale"			"0.90" 
+		"SpectatorLoadoutScale" 	"1.0" 
+		"VersusScale"			"1.0" 
 
 
 		"ArmorPhysical"   "1.000000"

@@ -38,9 +38,12 @@ function applySmokeModifier( keys )
 
 
 	local ability2 = caster:FindAbilityByName("special_bonus_zabuza_2")
-	if ability2:IsTrained() then
-		modifier_name = "modifier_zabuza_kirigakure_no_jutsu_silence_special"
+	if ability2 ~= nil then
+		if ability2:IsTrained() then
+			modifier_name = "modifier_zabuza_kirigakure_no_jutsu_silence_special"
+		end
 	end
+	
 
 	keys.ability:ApplyDataDrivenModifier(caster,target,modifier_name, 
 		{
@@ -58,9 +61,12 @@ function applySmokeModifierNew( keys )
 
 
 	local ability4 = caster:FindAbilityByName("special_bonus_zabuza_4")
-	if ability4:IsTrained() then
-		radius = radius + 175
+	if ability4 ~= nil then
+		if ability4:IsTrained() then
+			radius = radius + 175
+		end
 	end
+	
 
 	local targets = FindUnitsInRadius(
 		caster:GetTeamNumber(), 
@@ -80,9 +86,12 @@ function applySmokeModifierNew( keys )
 	local modifier_name = "modifier_zabuza_kirigakure_no_jutsu_silence"
 
 	local ability2 = caster:FindAbilityByName("special_bonus_zabuza_2")
-	if ability2:IsTrained() then
-		modifier_name = "modifier_zabuza_kirigakure_no_jutsu_silence_special"
+	if ability2 ~= nil then
+		if ability2:IsTrained() then
+			modifier_name = "modifier_zabuza_kirigakure_no_jutsu_silence_special"
+		end
 	end
+	
 
 	for _, unit in pairs(targets) do
 		keys.ability:ApplyDataDrivenModifier(caster,unit,modifier_name, 
@@ -104,9 +113,12 @@ function attachEffect( keys )
 	local radius = ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1)
 	local duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel() - 1)
 	local ability4 = caster:FindAbilityByName("special_bonus_zabuza_4")
-	if ability4:IsTrained() then
-		radius = radius + 175
+	if ability4 ~= nil then
+		if ability4:IsTrained() then
+			radius = radius + 175
+		end
 	end
+	
 
 	local smoke_particle = "particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
 	local particle = ParticleManager:CreateParticle(smoke_particle, PATTACH_WORLDORIGIN, keys.target)

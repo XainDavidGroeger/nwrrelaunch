@@ -20,8 +20,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-					"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-					"particle"	"particles/units/heroes/neji/neji_w_debuff_a.vpcf"
+			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
+			"particle"	"particles/units/heroes/neji/neji_w_debuff_a.vpcf"
+			"soundfile" "soundevents/heroes/neji/neji_bleeding_cast.vsndevts"
 		}	
 
 		// Casting
@@ -101,6 +102,12 @@
 				"ScriptFile"    "heroes/neji/internal_bleeding.lua"
 				"Function"      "applySlowModifier"
 			}
+
+			  "FireSound"
+            {
+              	"EffectName"	"neji_bleeding_cast"
+				"Target"		"TARGET"
+            }
 		
 		}
 

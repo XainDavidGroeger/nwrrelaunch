@@ -29,9 +29,12 @@ function applyDamage( keys )
 	local damage = ability:GetLevelSpecialValueFor("damage",ability:GetLevel() - 1)
 
 	local ability5 = caster:FindAbilityByName("special_bonus_shikamaru_5")
-	if ability5:IsTrained() then
-		damage = damage + 240
+	if ability5 ~= nil then
+		if ability5:IsTrained() then
+			damage = damage + 240
+		end
 	end
+	
 
 	for _, unit in pairs(targets) do
 		local damage_table = {}

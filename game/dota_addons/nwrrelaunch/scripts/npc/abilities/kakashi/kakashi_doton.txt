@@ -32,12 +32,12 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"25 50 75 100"
+			"damage"			"50 75 100 125"
 		}
 		"02"
 	    {
 		    "var_type"			"FIELD_FLOAT"
-		    "root_duration"	    "1.1"
+		   "stun_duration"		"1.5 2 2.5 3"
 	    }
         "03"
 	    {

@@ -5,7 +5,16 @@
 ]]
 function wood_release( keys )
 	local radius = keys.ability:GetLevelSpecialValueFor("radius", keys.ability:GetLevel() - 1)
+
 	local tree_duration = keys.ability:GetLevelSpecialValueFor("tree_duration", keys.ability:GetLevel() - 1)
+	
+	local ability2 = keys.caster:FindAbilityByName("special_bonus_madara_2")
+	if ability2 ~= nil then
+		if ability2:IsTrained() then
+			tree_duration = tree_duration + 1.5
+		end
+	end 
+
 	local tree_vision = keys.ability:GetLevelSpecialValueFor("tree_vision", keys.ability:GetLevel() - 1)
 	local target_point = keys.target_points[1]
 	local tree_count = 10
@@ -27,12 +36,13 @@ function wood_release( keys )
 	end
 	AddFOWViewer( keys.caster:GetTeamNumber(), target_point, tree_vision, tree_duration, false )
 
-
 	--reset cd if talent is skilled
 	local abilityS4 = keys.caster:FindAbilityByName("special_bonus_madara_3")
-	if abilityS4:IsTrained() then
-		keys.ability:EndCooldown()
-		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+	if abilityS4 ~= nil then
+		if abilityS4:IsTrained() then
+			keys.ability:EndCooldown()
+			keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+		end
 	end
 
 end

@@ -3,20 +3,25 @@ function rasengan(keys)
 	local target = keys.target
 	local ability = keys.ability
 	
-	EmitSoundOn("minato_rasengan", keys.target)
 
 	if target:IsBuilding() then
 		return
 	end
+
+	caster:StopSound("minato_rasengan_loop.loop")
+	EmitSoundOn("minato_rasengan", keys.target)
+
 	local range = keys.ability:GetLevelSpecialValueFor( "distance", ( keys.ability:GetLevel() - 1 ) )
 
 
 	local bonus_damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_6")
-	if abilityS:IsTrained() then
-		bonus_damage_percent = bonus_damage_percent + 80
+	if abilityS ~= nil then 
+		if abilityS:IsTrained() then
+			bonus_damage_percent = bonus_damage_percent + 80
+		end
 	end
-
+	
 	local base_bonus_damage = keys.ability:GetLevelSpecialValueFor( "base_bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	
 	keys.caster:RemoveModifierByName(keys.modifier)
@@ -30,8 +35,10 @@ function rasengan(keys)
 
 	local stun_duration = keys.ability:GetLevelSpecialValueFor( "stun_duration", ( keys.ability:GetLevel() - 1 ) )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_yondaime_3")
-	if abilityS:IsTrained() then
-		stun_duration = stun_duration + 0.3
+	if abilityS ~= nil then
+		if abilityS:IsTrained() then
+			stun_duration = stun_duration + 0.3
+		end
 	end
 
 	local knockbackModifierTable =
@@ -64,8 +71,10 @@ end
 function rasengan_bonus_damage( keys )
 	local damage_percent = keys.ability:GetLevelSpecialValueFor( "bonus_damage", ( keys.ability:GetLevel() - 1 ) )
 	local damage = (keys.caster:GetAttackDamage() / 100 * damage_percent)
-	keys.caster:SetModifierStackCount("modifier_rasengan_bonus_damage", keys.ability, damage)
 
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_rasengan", {})  
+	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_rasengan_bonus_damage", {})  
+	keys.caster:SetModifierStackCount("modifier_rasengan_bonus_damage", keys.ability, damage)
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/yondaime/raseng_model.vpcf", PATTACH_POINT_FOLLOW, keys.caster) 
 	ParticleManager:SetParticleControlEnt(particle, 0, keys.caster, PATTACH_POINT_FOLLOW, "attach_right_hand", keys.caster:GetAbsOrigin(), true)
@@ -74,6 +83,8 @@ function rasengan_bonus_damage( keys )
  	if not keys.caster.rasenParticle then
  		keys.caster.rasenParticle = {}
  	end
+
+
  	table.insert(keys.caster.rasenParticle, particle)
 end
 

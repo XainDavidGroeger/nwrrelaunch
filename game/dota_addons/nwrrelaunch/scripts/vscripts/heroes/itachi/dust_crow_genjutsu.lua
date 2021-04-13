@@ -85,9 +85,11 @@ function createBunshin( event )
 	GameMode:RemoveWearables( illusion )
 
 	local abilityS2 = event.caster:FindAbilityByName("special_bonus_itachi_2")
-	if abilityS2:IsTrained() then
-		event.ability:EndCooldown()
-		event.ability:StartCooldown(event.ability:GetCooldown(event.ability:GetLevel() - 1) - 3)
+	if abilityS ~= nil then
+		if abilityS2:IsTrained() then
+			event.ability:EndCooldown()
+			event.ability:StartCooldown(event.ability:GetCooldown(event.ability:GetLevel() - 1) - 3)
+		end
 	end
 
 end

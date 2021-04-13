@@ -8,7 +8,7 @@
     		"npc_dota_hero_dragon_knight" //naruto
 		{
 		  	"override_hero" "npc_dota_hero_dragon_knight"
-		  	"Model" 		"models/naruto_new/naruto.vmdl"
+		  	"Model" 		"models\naruto_new_2/naruto_base.vmdl"
 		 	"Ability1"      "naruto_kage_bunshin_rasengan"
 		  	"Ability2"      "naruto_kawazu_kumite" 
 		  	"Ability3"      "naruto_kage_bunshin_mastery" 

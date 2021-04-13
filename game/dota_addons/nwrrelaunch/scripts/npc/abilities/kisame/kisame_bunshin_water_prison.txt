@@ -5,6 +5,8 @@
     
 "kisame_bunshin_water_prison"
 {
+
+
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"					"ability_datadriven"
@@ -47,11 +49,18 @@
 	"precache"
 	{
 		"particle"	"particles/units/heroes/kisame/shadowshaman_shackle.vpcf"
-		"soundfile" "soundevents/kisame_prison_cast.vsndevts"
+	 	"soundfile"  "soundevents/kisame_bunshin_water_prison.vsndevts"
 	}
 
 	"OnSpellStart"
 	{
+
+		"RunScript"
+			{
+				"ScriptFile"	"heroes/kisame/bunshin_water_prison.lua"
+				"Function"		"emitSoundOnTarget"
+				"target"		"TARGET"
+			}
 
 		"ApplyModifier"
 		{
@@ -68,12 +77,7 @@
 			"ModifierName"	"modifier_bunshin_water_prison_hold"
 			"Target" 		"TARGET"
 		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
-			"Function"		"StopSound"
-		}
+	
 	}
 
 	"OnChannelInterrupted"
@@ -83,12 +87,7 @@
 			"ModifierName"	"modifier_bunshin_water_prison_hold"
 			"Target" 		"TARGET"
 		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/shikamaru/kage_kubishibari.lua"
-			"Function"		"StopSound"
-		}
+	
 	}
 
 	"Modifiers"
@@ -110,7 +109,7 @@
 				"RunScript"
 				{
 					"ScriptFile"	"heroes/kisame/bunshin_water_prison.lua"
-					"Function" 		"emitCastSound"
+					"Function" 		"emitSoundOnTarget"
 				}
 				
 				"AttachEffect"

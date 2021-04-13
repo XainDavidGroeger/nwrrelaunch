@@ -16,8 +16,8 @@
 
 		"error_must_target_owner_illusion"			"Must target own Illisions"
 
-		"npc_dota_roshan"								"Juubi"
-		"npc_dota_roshan_datadriven"								"Juubi"
+		"npc_dota_roshan"								"Kurama"
+		"npc_dota_roshan_datadriven"								"Kurama"
 		"npc_dota_neutral_black_drake"					"Kyuubi Chibi"
 		"npc_dota_neutral_black_dragon"					"Kyuubi"
 		"npc_dota_neutral_rock_golem"					"Shukaku Chibi"
@@ -33,6 +33,18 @@
 		"npc_dota_neutral_polar_furbolg_ursa_warrior"	"Gamabunta Chibi"
 		"npc_dota_neutral_polar_furbolg_champion"		"Gamabunta"
 
+
+		//--------------------
+		//Scorebaord
+		//--------------------
+		"scoreboard_last_hits" 						"LH"
+		"scoreboard_denies" 						"D"
+		"scoreboard_damage_dealt" 						"DD"
+		"scoreboard_damage_taken" 						"DT"
+		"DOTA_CUSTOM2"									"Shinobi Alliance"
+		"DOTA_CUSTOM3"									"Akatsuki Force"
+		"DOTA_GoodGuys"   								"Shinobi Alliance"
+		"DOTA_BadGuys"    								"Akatsuki Force"
 
 		//--------------------
 		//Heroes
@@ -802,12 +814,11 @@
 		"npc_dota_hero_beastmaster"  									"Kakashi"
 		"npc_dota_hero_beastmaster_lore"  								""
 		// Doton
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Tracking Fang Technique"
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_lore"						"Doton: Tsuiga No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him, while Kakashi teleports behind the target's back and pushes him away with a leg kick."
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Doton: Tsuiga No Jutsu"
-                "DOTA_Tooltip_ability_kakashi_doton_new_lua_damage"				"Damage: "
-		"DOTA_Tooltip_ability_kakashi_doton_new_lua_root_duration"				"Root duration: "
+		"DOTA_Tooltip_ability_kakashi_doton"							"Tracking Fang Technique"
+		"DOTA_Tooltip_ability_kakashi_doton_lore"						"Doton: Tsuiga No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_doton_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him."
+        "DOTA_Tooltip_ability_kakashi_doton_damage"						"Damage: "
+		"DOTA_Tooltip_ability_kakashi_doton_root_duration"				"Stun duration: "
 
 		// Sharingan
 		"DOTA_Tooltip_ability_kakashi_sharingan"						"Sharingan"
@@ -2124,10 +2135,10 @@
 
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun
 		//20: -2s Forest Emergence Cooldown / +160 Damage Fire Annihilation Explosion
-		//15: -9% Manacost/Manaloss Reduction ( * ) / +6 Armor
+		//15: +1.5s Deep Forest Duration ( * ) / +6 Armor
 		//10: +12 Intelligence / +70 Susano’o Radius
 		"DOTA_Tooltip_Ability_special_bonus_madara_1"						"+70 Susano’o Radius"
-		"DOTA_Tooltip_Ability_special_bonus_madara_2"						"-9% Manacost/Manaloss Reduction"
+		"DOTA_Tooltip_Ability_special_bonus_madara_2"						"+1.5s Deep Forest Duration"
 		"DOTA_Tooltip_Ability_special_bonus_madara_3"						"-2s Forest Emergence Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_madara_4"						"+160 Damage Fire Annihilation Explosion"
 		"DOTA_Tooltip_Ability_special_bonus_madara_5"						"+100 Susano’o Damage"

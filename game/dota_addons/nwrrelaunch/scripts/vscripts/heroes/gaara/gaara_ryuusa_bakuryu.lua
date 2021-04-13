@@ -8,10 +8,13 @@ end
 -------------------------------------------
 function gaara_ryuusa_bakuryu:GetAOERadius()
 	local extraaoe = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
-		extraaoe =  80
-	end
 
+	if self:GetCaster():FindAbilityByName("special_bonus_gaara_2") ~= nil then
+		if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
+			extraaoe =  80
+		end
+	end
+	
 	return self:GetSpecialValueFor("radius") + extraaoe
 end
 
@@ -26,9 +29,13 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 	self.stun_duration = self.ability:GetSpecialValueFor("stun_duration")
 	self.radius = self.ability:GetSpecialValueFor("radius")
 
-	if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
-		self.radius =  self.radius + 80
+	if self:GetCaster():FindAbilityByName("special_bonus_gaara_2") ~= nil then
+		if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
+			self.radius =  self.radius + 80
+		end
 	end
+
+
 
 	self.damage_interval = self.ability:GetSpecialValueFor("thinker_interval")
 
@@ -88,9 +95,12 @@ function modifier_gaara_sandstorm_thinker:OnCreated(keys)
 		self.damage = self.ability:GetSpecialValueFor("thinker_damage")
 		self.radius = self.ability:GetSpecialValueFor("radius")
 
-		if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
-			self.radius =  self.radius + 80
+		if self:GetCaster():FindAbilityByName("special_bonus_gaara_2") ~= nil then
+			if self:GetCaster():FindAbilityByName("special_bonus_gaara_2"):GetLevel() > 0 then
+				self.radius =  self.radius + 80
+			end
 		end
+		
 
 		self.damage_interval = self.ability:GetSpecialValueFor("thinker_interval")
 

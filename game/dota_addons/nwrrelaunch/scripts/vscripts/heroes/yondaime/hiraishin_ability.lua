@@ -195,7 +195,7 @@ function hiraishin_dashDO(gameEntity, keys)
 			end
 		)	
 	
-		FindClearSpaceForUnit(caster,target:GetAbsOrigin(),false)
+	--	FindClearSpaceForUnit(caster,target:GetAbsOrigin(),false)
 		
 		targetEntities[ k ] = nil
 		return 0.05

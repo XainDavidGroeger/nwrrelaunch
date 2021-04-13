@@ -8,7 +8,7 @@
 "npc_dota_hero_lion" //gaara
 		{
 		  "override_hero"   "npc_dota_hero_lion"
-		  "Model" 			"models/gaara/gaara.vmdl"
+		  "Model" 			"models/gaara_new/gaara_base.vmdl"
 		  "Ability1"         "gaara_sabaku_kyuu"
 		  "Ability2"         "gaara_ryuusa_bakuryu" 
 		  "Ability3"         "gaara_suna_no_yoroi" 
@@ -29,7 +29,7 @@
 		   "Ability17"		"special_bonus_gaara_4"
 
 		   "ModelScale"		"0.42"
-		  "LoadoutScale"		"0.42" 
+		  "LoadoutScale"		"0.40" 
 		  "SpectatorLoadoutScale" "0.42" 
 		"VersusScale"			"0.42" 
 		  "Role"			"Disabler,Support,Nuker"

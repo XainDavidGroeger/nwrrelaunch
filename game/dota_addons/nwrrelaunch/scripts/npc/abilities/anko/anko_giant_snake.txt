@@ -21,7 +21,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"soundfile"			"soundevents/heroes/anko/anko_hand_cast.vsndevts"
+		"soundfile"			"soundevents/heroes/anko/anko_hand_impact.vsndevts"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"

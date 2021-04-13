@@ -10,8 +10,10 @@ end
 
 function sasuke_chidori_eiso:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_sasuke_3"):GetLevel() > 0 then
-		castrangebonus = 450
+	if self:GetCaster():FindAbilityByName("special_bonus_sasuke_3") ~= nil then
+		if self:GetCaster():FindAbilityByName("special_bonus_sasuke_3"):GetLevel() > 0 then
+			castrangebonus = 450
+		end
 	end
 	return self:GetSpecialValueFor("cast_range") + castrangebonus
 end

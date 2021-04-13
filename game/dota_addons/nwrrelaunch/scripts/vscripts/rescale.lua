@@ -13,7 +13,7 @@ function GameMode:RescaleUnit( unit )
 end
 
 function GameMode:kyuubi( unit )
-	unit:SetModelScale(3.6)
+	unit:SetModelScale(2.2)
 end
 
 function GameMode:rescaleCourier( unit )

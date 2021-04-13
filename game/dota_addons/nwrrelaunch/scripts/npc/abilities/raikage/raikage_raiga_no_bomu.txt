@@ -96,6 +96,13 @@
 			"Modifier1"		"raikage_raiga_no_bomu_dummy"
 			"Duration1"		"0.75"
 		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/raikage/raikage_raiga_no_bomu.lua"
+			"Function"		"startRaikageAnimation"
+		}
+					
 	}
 		
 	

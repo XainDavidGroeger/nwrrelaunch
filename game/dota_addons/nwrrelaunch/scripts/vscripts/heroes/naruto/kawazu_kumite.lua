@@ -32,10 +32,13 @@ function ConjureImage( event )
         if kage_bunshin_mastery_ability:GetLevel() > 0 then 
 
            outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
-           local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
-           if abilityS:IsTrained() then
-            outgoingDamage = outgoingDamage + 13
+           if caster:FindAbilityByName("special_bonus_naruto_5") ~= nil then
+               local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
+               if abilityS:IsTrained() then
+                  outgoingDamage = outgoingDamage + 13
+               end
            end
+        
            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
            
         else
@@ -125,10 +128,13 @@ function applyModifier( keys )
 	local applied_modifier = ability:ApplyDataDrivenModifier(caster, caster, naruto_modifier, {})
 
    --If naruto has buuf duration talent
-   local duration_bonus_talent = keys.caster:FindAbilityByName("special_bonus_naruto_4")
-   if duration_bonus_talent:IsTrained() then
-      duration = ability:GetLevelSpecialValueFor('duration_special', ability:GetLevel())
-      applied_modifier:SetDuration(duration, true)
+   if caster:FindAbilityByName("special_bonus_naruto_4") ~= nil then
+      local duration_bonus_talent = keys.caster:FindAbilityByName("special_bonus_naruto_4")
+      if duration_bonus_talent:IsTrained() then
+         duration = ability:GetLevelSpecialValueFor('duration_special', ability:GetLevel())
+         applied_modifier:SetDuration(duration, true)
+      end
    end
+  
    
 end

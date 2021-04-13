@@ -3,7 +3,7 @@
 
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun
 		//20: -2s Forest Emergence Cooldown / +160 Damage Fire Annihilation Explosion
-		//15: -9% Manacost/Manaloss Reduction ( * ) / +6 Armor
+		//15: +1.5s Deep Forest Duration  ( * ) / +6 Armor
 		//10: +12 Intelligence / +70 Susano’o Radius
 		"npc_dota_hero_ogre_magi" //madara
 		{

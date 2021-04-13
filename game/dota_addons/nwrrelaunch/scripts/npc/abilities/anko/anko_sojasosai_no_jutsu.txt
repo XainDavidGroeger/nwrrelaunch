@@ -27,6 +27,7 @@
 	"precache"
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		"soundfile" "soundevents/anko_sacrifice_cast.vsndevts"
 		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
 	}
 	
@@ -67,13 +68,8 @@
 		}
 		"FireSound"
 		{
-			"EffectName" 	"Hero_Terrorblade.Sunder.Cast"
+			"EffectName" 	"anko_sacrifice_cast"
 			"Target"	 	"CASTER"
-		}
-		"FireSound"
-		{
-			"EffectName" 	"Hero_Terrorblade.Sunder.Target"
-			"Target"	 	"TARGET"
 		}
 	}
 }

@@ -11,9 +11,15 @@ function ConjureImage( event )
 
  local illusion_max_hp_percentage = ability:GetLevelSpecialValueFor( "illusion_max_hp_percentage", ability:GetLevel()-1)
  local ability2 = caster:FindAbilityByName("special_bonus_kisame_2")
- if ability2:IsTrained() then
-	illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
+ if ability2 ~= nil then
+	if ability2:IsTrained() then
+		illusion_max_hp_percentage = illusion_max_hp_percentage + 10.0
+	 end
  end
+
+
+
+ caster:EmitSound("kisame_clone_cast")
 
  -- handle_UnitOwner needs to be nil, else it will crash the game.
  local illusion = CreateUnitByName("kisame_bunshin", origin, true, caster, nil, caster:GetTeamNumber())
@@ -26,6 +32,11 @@ function ConjureImage( event )
 	illusion:SetModelScale(0.65)
  end
 
+if caster:GetName() == 'npc_dota_hero_beastmaster' then
+	illusion:SetOriginalModel("models/kakashi_hd/kaka_hd_test.vmdl")
+	illusion:SetModelScale(1.03)
+end
+
  -- Set the unit as an illusion
  -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
 ability:ApplyDataDrivenModifier(caster, illusion, "modifier_water_bunshin",  {duration = duration})
@@ -34,7 +45,6 @@ ability:ApplyDataDrivenModifier(caster, illusion, "modifier_water_bunshin_bonus_
  
  GameMode:RemoveWearables( illusion )
 
-illusion:RemoveAbility(caster:GetAbilityByIndex(1):GetName())
 illusion:SetForwardVector(caster:GetForwardVector())
 
 -- add water prison (channeled hold) to bunshin
@@ -55,8 +65,6 @@ AbilityWater:SetLevel(event.ability:GetLevel())
 
 illusion:SetBaseDamageMin(caster:GetBaseDamageMin() / 100 * damage_percentage)
 illusion:SetBaseDamageMax(caster:GetBaseDamageMax() / 100 * damage_percentage)
-
-illusion:SetOriginalModel(caster:GetModelName())
 
 
 --local bonus_damage_preattack = caster:GetBonusDamageFromPrimaryStat() / 100 * damage_percentage
