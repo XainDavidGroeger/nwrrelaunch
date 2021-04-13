@@ -32,7 +32,7 @@ function GameMode:OnGameRulesStateChange(keys)
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 
 		DebugPrint("tst4")
-		Print("tst3")
+		print("tst3")
 
 		GameMode:SetShops()
 
@@ -40,9 +40,6 @@ function GameMode:OnGameRulesStateChange(keys)
 			SendToServerConsole('sm_gmode 1')
 			SendToServerConsole('dota_bot_populate')
 		end
-
-
-
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		--TODO LEAVRE SYSTEM
 		-- A timer running every second that starts immediately on the next frame, respects pauses
