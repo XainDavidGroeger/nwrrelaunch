@@ -1101,7 +1101,7 @@
 		"DOTA_Tooltip_ability_anko_giant_snake_lore"				"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"RANGE: "
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"DAMAGE: "
-		"DOTA_Tooltip_ability_anko_giant_snake_hook_cd_reduc"			"CD REDUC: "
+		"DOTA_Tooltip_ability_anko_giant_snake_cd_reduc"			"CD REDUC: "
 		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"Anko summons a Giant Snake that will grab the first target it encounters, dealing damage, then dragging the victim back to Anko."
 		
 		"DOTA_Tooltip_ability_anko_senei_jyashu"					"Striking Snakes"
