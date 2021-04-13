@@ -35,8 +35,8 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 		end
 	end
 
-
-
+	
+	self.cursor_position = self:GetCursorPosition()
 	self.damage_interval = self.ability:GetSpecialValueFor("thinker_interval")
 
 	self.ability_target_team	= self.ability:GetAbilityTargetTeam()
@@ -46,7 +46,7 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 	Timers:CreateTimer(0.3, function()
 		local caster = self:GetCaster()
 		local ability = self
-		local target_point = self:GetCursorPosition()
+		local target_point = self.cursor_position
 		local team_id = caster:GetTeamNumber()
 		-- Special Variables
 		local duration = self:GetLevelSpecialValueFor("duration", (self:GetLevel() - 1))

@@ -100,8 +100,7 @@
 	 		"ScriptFile"	"heroes/madara/wood_release.lua"
 			"Function"		"wood_sound"
 	 	}
-
-		 	"FireSound"
+		"FireSound"
 		{
 			"EffectName"		"madara_wood_release_cast"
 			"Target"			"CASTER"
@@ -116,10 +115,6 @@
 			"Function"		"wood_release"
 			"Target"		"POINT"
 		}
-
-	
-
-			
 	}
 
 	"Modifiers"
