@@ -30,7 +30,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"175 250 325"
+			"damage"				"150 225 300"
 			"LinkedSpecialBonus"	"special_bonus_hidan_2"
 		}
 	}

@@ -28,8 +28,8 @@
 		"MovementSpeed"				"305"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"23"
-		"AttackDamageMax"			"30"
+		"AttackDamageMin"			"34"
+		"AttackDamageMax"			"37"
 		"AttackRange"				"100"
 		"AttackRate"				"1.7"
 		"AttackAnimationPoint"		"0.4"
@@ -43,18 +43,18 @@
 		"ArmorPhysical"				"1"
 		"MagicalResistance"			"25"
 
-		"StatusHealth"				"145"
+		"StatusHealth"				"200"
 		"StatusHealthRegen"			"0.3"
 		"StatusManaRegen"			"0.9"
 		"StatusMana"				"75"
 
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength" "22" // Base strength
-		"AttributeStrengthGain" "2.9" // Strength bonus per level.
-		"AttributeBaseIntelligence" "17" // Base intelligence
-		"AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
-		"AttributeBaseAgility" "18" // Base agility
-		"AttributeAgilityGain" "2.0" // Agility bonus per level.
+		"AttributeStrengthGain" "3.0" // Strength bonus per level.
+		"AttributeBaseIntelligence" "19" // Base intelligence
+		"AttributeIntelligenceGain" "2.0" // Intelligence bonus per level.
+		"AttributeBaseAgility" "17" // Base agility
+		"AttributeAgilityGain" "1.8" // Agility bonus per level.
 
 		"Ability1"					"kakashi_doton"
 		"Ability2"					"kakashi_sharingan" 
