@@ -11,7 +11,7 @@ function suikodan_no_jutsu( keys )
 
 	-- Projectile variables
 	local wave_speed = ability:GetLevelSpecialValueFor("wave_speed", (ability:GetLevel() - 1))
-	local wave_width = ability:GetLevelSpecialValueFor("wave_width", (ability:GetLevel() - 1))
+	local wave_width = ability:GetLevelSpecialValueFor("wave_aoe", (ability:GetLevel() - 1))
 	local wave_range = ability:GetLevelSpecialValueFor("wave_range", (ability:GetLevel() - 1))
 	local wave_location = caster_location
 	local wave_particle = keys.wave_particle
