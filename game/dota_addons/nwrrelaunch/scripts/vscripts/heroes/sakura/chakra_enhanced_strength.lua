@@ -4,10 +4,12 @@ function chakra_enhanced_strength( keys )
 		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_name, {duration = 1})
 	end
 
-
 end
 
 function chakra_enhanced_strength_apply( keys )
+
+	print("bash")
+	print(keys)
 
 	if keys.caster:HasModifier("modifier_sakura_chakra_enhanced_strength") then
 		local ability5 = keys.caster:FindAbilityByName("special_bonus_sakura_5")
@@ -20,7 +22,7 @@ function chakra_enhanced_strength_apply( keys )
 	if keys.caster:IsRealHero() then
 
 		local vCaster = keys.caster:GetAbsOrigin()
-		local vTarget = keys.ability.enemy:GetAbsOrigin()
+		local vTarget = keys.target:GetAbsOrigin()
 
 		keys.caster:EmitSound("sakura_chakra_strength")
 
@@ -36,7 +38,7 @@ function chakra_enhanced_strength_apply( keys )
 			center_z = keys.caster:GetAbsOrigin().z
 		}
 
-		keys.ability.enemy:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
+		keys.target:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
 
 
 		local damage = keys.ability:GetLevelSpecialValueFor("bonus_damage", keys.ability:GetLevel() - 1 )
