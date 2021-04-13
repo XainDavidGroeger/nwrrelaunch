@@ -77,7 +77,7 @@ function anko_giant_snake:OnSpellStart()
 	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 5, Vector( 0, 0, 0 ) )
 	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 7, self:GetCaster(), PATTACH_CUSTOMORIGIN, nil, self:GetCaster():GetOrigin(), true )
 
-	EmitSoundOn( "Hero_Pudge.AttackHookExtend", self:GetCaster() )
+	EmitSoundOn( "anko_hand_cast", self:GetCaster() )
 
 	local info = {
 		Ability = self,
@@ -124,7 +124,7 @@ function anko_giant_snake:OnProjectileHit( hTarget, vLocation )
 
 		local bTargetPulled = false
 		if hTarget ~= nil then
-			EmitSoundOn( "Hero_Pudge.AttackHookImpact", hTarget )
+			EmitSoundOn( "anko_hand_impact", hTarget )
 
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_lua", nil )
 			

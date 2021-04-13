@@ -1,4 +1,4 @@
-"neji_byakugan_activate"
+"anko_hand_cast"
 {
     "operator_stacks"
     {
@@ -14,10 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/neji_byakugan_activate.vsnd"
+                              "value0"        "sounds/heroes/anko/anko_hand_cast.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "0.700000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

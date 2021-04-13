@@ -37,10 +37,10 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_enchantress",
     }
     for nameCount = 1, 18 do
-      local illusion = CreateUnitByName(names[nameCount], player:GetAbsOrigin(), true, player, nil, 2)
-      illusion:SetHealth(10000)
-      illusion:SetPlayerID(0)
-      illusion:SetControllableByPlayer(0, true);
+   --   local illusion = CreateUnitByName(names[nameCount], player:GetAbsOrigin(), true, player, nil, 2)
+  --    illusion:SetHealth(10000)
+  --    illusion:SetPlayerID(0)
+     -- illusion:SetControllableByPlayer(0, true);
     end      
 end 
 
