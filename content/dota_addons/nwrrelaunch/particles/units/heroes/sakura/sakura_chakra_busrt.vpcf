@@ -1,0 +1,70 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 64
+	m_flConstantRadius = 80.0
+	m_ConstantColor = [ 123, 160, 255, 100 ]
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_flash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_mist.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_ribbon.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_trail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_haste.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sakura/sakura_chakra_busrt_footprints.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}
