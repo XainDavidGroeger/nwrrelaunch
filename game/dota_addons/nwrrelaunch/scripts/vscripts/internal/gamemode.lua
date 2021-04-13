@@ -3,6 +3,7 @@
 function GameMode:_InitGameMode()
 	-- Setup rules
 	GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
+
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
 	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
 	GameRules:SetHeroSelectionTime( HERO_SELECTION_TIME )
@@ -12,11 +13,12 @@ function GameMode:_InitGameMode()
 	GameRules:SetUseCustomHeroXPValues ( USE_CUSTOM_XP_VALUES )
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
 	GameRules:SetGoldTickTime(GOLD_TICK_TIME)
-	GameRules:SetRuneSpawnTime(RUNE_SPAWN_TIME)
+	--GameRules:SetRuneSpawnTime(RUNE_SPAWN_TIME)
 	GameRules:SetUseBaseGoldBountyOnHeroes(USE_STANDARD_HERO_GOLD_BOUNTY)
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
+
 
 	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 
@@ -140,6 +142,10 @@ function GameMode:_CaptureGameMode()
 		mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
 		mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 
+
+		
+
+
 		mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )
 		mode:SetTowerBackdoorProtectionEnabled( ENABLE_TOWER_BACKDOOR_PROTECTION )
 
@@ -163,8 +169,10 @@ function GameMode:_CaptureGameMode()
 		mode:SetThink("OnThink", self, 1)
 
 		for rune, spawn in pairs(ENABLED_RUNES) do
-			mode:SetRuneEnabled(rune, spawn)
+		--	mode:SetRuneEnabled(rune, spawn)
 		end
+
+		mode:SetUseDefaultDOTARuneSpawnLogic(true)
 
 		self:OnFirstPlayerLoaded()
 	end 

@@ -29,11 +29,11 @@
 
 		  "Role"			"Support,Nuker,Disabler,Durable,Initiator"
 		"Rolelevels"	"2,2,2,1,1"
-	"AttackDamageMin"		"34"
+		"AttackDamageMin"		"34"
 		"AttackDamageMax"		"39"
 		"AttackRate"		"1.700000"
 		  "StatusHealth"    "200"
-  "StatusHealthRegen"   "1.600000"
+  		"StatusHealthRegen"   "1.600000"
 		  "AttackAnimationPoint"   "0.4"
 		  "ModelScale"		"0.9"
 			"LoadoutScale"		"0.78"

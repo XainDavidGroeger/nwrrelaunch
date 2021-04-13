@@ -111,6 +111,8 @@ end
 ]]
 function GameMode:OnGameInProgress()
 
+
+
 end
 
 -- This function initializes the game mode and is called before anyone loads into the game
@@ -121,7 +123,6 @@ function GameMode:InitGameMode()
 	-- This also sets up event hooks for all event handlers in events.lua
 	-- Check out internals/gamemode to see/modify the exact code
 	self:_InitGameMode()
-
 	-- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
 	Convars:RegisterCommand( "command_example", Dynamic_Wrap(self, 'ExampleConsoleCommand'), "A console command example", FCVAR_CHEAT )
 	ListenToGameEvent('player_chat', Dynamic_Wrap(self, 'OnPlayerChat'), self)
