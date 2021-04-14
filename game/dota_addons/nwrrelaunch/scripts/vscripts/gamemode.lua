@@ -32,6 +32,7 @@ require('internal/gamemode')
 require('internal/events')
 
 require('components/garbage_collector')
+require('components/voicelines/voicelines')
 
 -- settings.lua is where you can specify many different properties for your game mode and is one of the core barebones files.
 require('settings')
@@ -91,6 +92,8 @@ function GameMode:OnHeroInGame(hero)
 			player_id = hero:GetPlayerID(),
 			icon_path = hero:GetUnitName(),
 		})
+
+		VoiceResponses:RegisterUnit(hero:GetUnitName(), "scripts/vscripts/components/voicelines/keyvalues/"..string.gsub(hero:GetUnitName(), "npc_dota_hero_", "").."_responses.txt")
 	end
 end
 

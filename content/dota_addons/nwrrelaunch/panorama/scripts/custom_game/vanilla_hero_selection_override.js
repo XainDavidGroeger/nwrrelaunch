@@ -1,5 +1,5 @@
 var Parent = $.GetContextPanel().GetParent().GetParent().GetParent();
-var MovieContainer, TooltipHeroImage, TooltipHeroMovie, TooltipHeroName;
+var TooltipHeroMovie, TooltipHeroName, HeroCardTooltip;
 var fully_init = false;
 
 function SetSelectionImages(bSetWebms) {
@@ -17,15 +17,15 @@ function SetSelectionImages(bSetWebms) {
 			var button = child_container.GetChild(j);
 			var image = button.FindChildTraverse("HeroImage");
 
+			if (image)
+				image.SetImage('file://{images}/heroes/selection/npc_dota_hero_' + image.heroname + '.png');
+
 			if (bSetWebms && bSetWebms == true) {
 				if (button) {
 					(function (button, hero_name) {
 						SetWebmPanels(button, hero_name);
 					})(button, image.heroname);
 				}
-			} else {
-				if (image)
-					image.SetImage('file://{images}/heroes/selection/npc_dota_hero_' + image.heroname + '.png');
 			}
 		}
 	}
@@ -46,11 +46,20 @@ function OnUpdateHeroSelection() {
 }
 
 function UpdatePortrait(sHeroName) {
-	var hero_portrait = Parent.FindChildTraverse("HeroPortrait").GetChild(0);
+	var PortraitContainer = Parent.FindChildTraverse("HeroPortrait");
 
-	if (hero_portrait) {
-		hero_portrait.style.backgroundImage = 'url("file://{images}/heroes/selection/npc_dota_hero_' + sHeroName + '.png")';
-		hero_portrait.style.backgroundSize = "cover";
+	if (PortraitContainer) {
+		PortraitContainer.GetChild(0).style.backgroundImage = 'url("file://{images}/heroes/selection/npc_dota_hero_' + sHeroName + '.png")';
+		PortraitContainer.GetChild(0).style.backgroundSize = "cover";
+
+		if (Parent.FindChildTraverse("CustomHeroMoviePortrait"))
+			Parent.FindChildTraverse("CustomHeroMoviePortrait").DeleteAsync(0);
+
+		var MovieContainer = $.CreatePanel( "Panel", PortraitContainer, "CustomHeroMoviePortrait" )
+		MovieContainer.BLoadLayoutFromString( '<root><Panel><MoviePanel src="s2r://panorama/videos/heroes/npc_dota_hero_' + sHeroName + '.webm" repeat="true" autoplay="onload" /></Panel></root>', false, false )
+		MovieContainer.style.width = "160px";
+		MovieContainer.style.height = "203px";
+		MovieContainer.style.boxShadow = "#000000aa 0px 0px 16px 0px";
 	}
 }
 
@@ -77,45 +86,67 @@ function SetWebmPanels(button, hero_name) {
 	var offset_x = -90;
 	var offset_y = -90;
 
-	if (MovieContainer && TooltipHeroImage && fully_init == false) {
+	if (HeroCardTooltip && fully_init == false) {
 		button.SetPanelEvent("onmouseover", function() {
-			MovieContainer.SetHasClass("TooltipVisible", false);
+//			$.Msg("Hero Name: " + hero_name)
+			HeroCardTooltip.SetHasClass("TooltipVisible", false);
 			var position = button.GetPositionWithinWindow();
-			MovieContainer.style.transform = 'translateX( ' + (position["x"] + offset_x) + 'px ) translateY( ' + (position["y"] + offset_y) + 'px )';
-			MovieContainer.SetHasClass("TooltipVisible", true);
+			HeroCardTooltip.style.transform = 'translateX( ' + (position["x"] + offset_x) + 'px ) translateY( ' + (position["y"] + offset_y) + 'px )';
+			HeroCardTooltip.SetHasClass("TooltipVisible", true);
 
-			TooltipHeroImage.SetImage('file://{images}/heroes/selection/npc_dota_hero_' + hero_name + '.png');
-			TooltipHeroMovie.heroname = hero_name;
 			TooltipHeroName.text = $.Localize("npc_dota_hero_" + hero_name).toUpperCase();
+
+			var MovieContainer = $.CreatePanel( "Panel", Parent.FindChildTraverse("ImageContainer"), "CustomHeroMovie" )
+			MovieContainer.BLoadLayoutFromString( '<root><Panel><MoviePanel src="s2r://panorama/videos/heroes/npc_dota_hero_' + hero_name + '.webm" repeat="true" autoplay="onload" /></Panel></root>', false, false )
 
 			fully_init = true;
 		})
 
 		button.SetPanelEvent("onmousout", function() {
-			MovieContainer.SetHasClass("TooltipVisible", false);
+			HeroCardTooltip.SetHasClass("TooltipVisible", false);
+
+			if (Parent.FindChildTraverse("CustomHeroMovie"))
+				Parent.FindChildTraverse("CustomHeroMovie").DeleteAsync(0);
 		})
 	}
 }
 
+function SetStrategyHeroModel(data) {
+	var HeroModel = $.CreatePanel("Panel", Parent.FindChildTraverse("EconSetPreview2"), "");
+	HeroModel.style.width = "100%";
+	HeroModel.style.height = "100%";
+	HeroModel.BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width:100%; height:100%;" particleonly="false" unit="' + data.sHeroName + '"/></Panel></root>', false, false);
+//	HeroModel.style.opacityMask = 'url("s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex");'
+}
+
 function Init() {
 	if (fully_init == false && Parent.FindChildTraverse("HeroCardTooltip")) {
-		MovieContainer = Parent.FindChildTraverse("HeroCardTooltip");
-		TooltipHeroImage = MovieContainer.FindChildTraverse("HeroImage");
-		TooltipHeroMovie = MovieContainer.FindChildTraverse("HeroMovie");
-		TooltipHeroName = MovieContainer.FindChildTraverse("HeroName");
+		HeroCardTooltip = Parent.FindChildTraverse("HeroCardTooltip");
+		TooltipHeroName = HeroCardTooltip.FindChildTraverse("HeroName");
 
 		SetSelectionImages(true);
 	} else {
 		$.Schedule(0.03, Init);
 	}
+
+/*
+	if (Game.IsInToolsMode()) {
+		while (Parent.FindChildTraverse("CustomHeroMovie") != undefined) {
+			$.Msg(Parent.FindChildTraverse("CustomHeroMovie"));
+			if (Parent.FindChildTraverse("CustomHeroMovie"))
+				Parent.FindChildTraverse("CustomHeroMovie").DeleteAsync(0);
+		}
+	}
+*/
 }
 
 (function() {
 	GameEvents.Subscribe( "update_hero_selection_topbar", UpdateTopBar );
 	GameEvents.Subscribe( "dota_player_hero_selection_dirty", OnUpdateHeroSelection );
 //	GameEvents.Subscribe( "dota_player_update_hero_selection", OnUpdateHeroSelection );
-
+	GameEvents.Subscribe( "set_strategy_time_hero_model", SetStrategyHeroModel );
 
 	SetSelectionImages();
 	Init();
 })();
+

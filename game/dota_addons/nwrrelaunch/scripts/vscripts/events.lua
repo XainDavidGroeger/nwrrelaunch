@@ -29,8 +29,23 @@ function GameMode:OnGameRulesStateChange(keys)
 
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:ChangeBuildings()
+		VoiceResponses:Start()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		GameMode:SetShops()
+
+		for i = 0, PlayerResource:GetPlayerCount() - 1 do
+			if PlayerResource:IsValidPlayerID(i) then
+				if not PlayerResource:HasSelectedHero(i) then
+					PlayerResource:GetPlayer(i):MakeRandomHeroSelection()
+				end
+
+				local overriden_hero_name = GetKeyValueByHeroName(PlayerResource:GetSelectedHeroName(i), "BaseClass")
+
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(i), "set_strategy_time_hero_model", {
+					sHeroName = overriden_hero_name,
+				})
+			end
+		end
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 	end
 end
