@@ -815,6 +815,10 @@
 		//--------------------
 		"npc_dota_hero_beastmaster"  									"Kakashi"
 		"npc_dota_hero_beastmaster_lore"  								""
+
+		"npc_dota_hero_kakashi"  									"Kakashi"
+		"npc_dota_hero_kakashi_lore"  								""
+
 		// Doton
 		"DOTA_Tooltip_ability_kakashi_doton"							"Tracking Fang Technique"
 		"DOTA_Tooltip_ability_kakashi_doton_lore"						"Doton: Tsuiga No Jutsu"
