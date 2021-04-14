@@ -7,7 +7,7 @@
 			"Model"				"models/onuki/onoki_model.vmdl"
 			"Ability1"			"onoki_jinton"
 			"Ability2"			"onoki_stalagmite_armor"
-			"Ability3"			"onoki_turn_to_dust"
+			"Ability3"			"onoki_added_weight"
 			"Ability4"			"generic_hidden"
 			"Ability5"			"generic_hidden"
 			"Ability6"			"onoki_kajutan_no_jutsu"
