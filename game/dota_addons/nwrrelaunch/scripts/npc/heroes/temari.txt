@@ -1,0 +1,61 @@
+"DOTAAbilities"
+{
+
+    //25: 45/3% Sheer Wind per Stack / +3s Wind Scythe Lift Duration
+    //20: +200 Cast Range / +60 Blade Dance Tornado Damage
+    //15: +350 Health / -2s Dust Wind Cooldown
+    //10: +75 Dust Wind Damage / +30 Attack Damage
+    "npc_dota_hero_enchantress" //Temari
+{
+      "override_hero"   "npc_dota_hero_enchantress"
+      "Ability1"        "temari_fusajin_no_jutsu"
+      "Ability2"        "temari_kamaitachi_no_jutsu"
+      "Ability3"        "temari_sheer_wind" 
+      "Ability4"	  	  "generic_hidden"
+      "Ability5"		    "generic_hidden"
+      "Ability6"        "temari_kuchiyose_kirikiri_mai"
+
+      "Ability10"		"special_bonus_temari_1"
+      "Ability11"		"special_bonus_attack_damage_30"
+
+      "Ability12"		"special_bonus_hp_350"
+      "Ability13"		"special_bonus_temari_2"
+
+      "Ability14"		"special_bonus_cast_range_200"
+      "Ability15"		"special_bonus_temari_3"
+
+      "Ability16"		"special_bonus_temari_4"
+      "Ability17"		"special_bonus_temari_5"
+
+      "ModelScale"		"1.75"
+      "LoadoutScale"	"1.75" 
+      "SpectatorLoadoutScale" 	"1.75" 
+		  "VersusScale"					"1.75" 
+      "Model" 		"models/temari/temari.vmdl"
+      "ItemSlots"
+      { }
+        "StatusHealth"    "200"
+      "StatusHealthRegen"   "0.300000"
+      "ArmorPhysical"   "0.000000"
+        "AttackDamageMin"   "21"
+        "Role"      "Support,Carry,Nuker,Disabler"
+        "Rolelevels"  "1,1,3,1"
+        "AttackDamageMax"   "25"
+        "AttackRate"    "1.700000"
+      "AttackAnimationPoint"		"0.4"
+    // "AttackRate"				"1.0"
+      "AttackRange"				"625"
+      "MovementSpeed"			"290"
+      "AttributeBaseStrength" "20" // Base strength
+      "AttributeStrengthGain" "2.4" // Strength bonus per level.
+      "AttributeBaseIntelligence" "28" // Base intelligence
+      "AttributeIntelligenceGain" "3.8" // Intelligence bonus per level.
+      "AttributeBaseAgility" "19" // Base agility
+      "AttributeAgilityGain" "1.7" // Agility bonus per level.
+
+      "Village"			"kirigakure"
+      "Gender"      "female"  
+}	
+
+
+}

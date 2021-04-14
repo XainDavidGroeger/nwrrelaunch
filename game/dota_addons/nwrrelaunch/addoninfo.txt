@@ -1,0 +1,16 @@
+"AddonInfo"
+{
+  "TeamCount" "10"
+  "maps"      "dota turbo"
+  "IsPlayable"  "1"
+  "HeroGuidesSupported" "1"
+  
+  "dota"
+  {
+    "MaxPlayers"                    "10"
+  }
+  "turbo"
+  {
+    "MaxPlayers"                    "10"
+  }
+}

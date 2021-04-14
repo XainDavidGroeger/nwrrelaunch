@@ -1,0 +1,61 @@
+"DOTAAbilities"
+{
+
+	//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
+	//20: +70 Karasu Attack Speed / +350 Puppet Technique Health
+	//15: +50 Karasu Movement Speed / +20 Karasu Poison DPS
+	//10: +4.00 Karasu Mana Regen / +125 Kuroari Range
+	"npc_dota_hero_warlock" //kankuro
+{
+		"override_hero"   "npc_dota_hero_warlock"
+		"Model"           "models/kankuro/kankuro.vmdl"
+		"Ability1"        "kankuro_summon_kuroari"
+		"Ability2"        "kankuro_summon_karasu"
+		"Ability3"        "kankuro_kugusta_no_jutsu"
+		"Ability4"        "generic_hidden"
+		"Ability5"        "generic_hidden"
+		"Ability6"        "kankuro_summon_sanshouuo"  
+
+		"Ability10"		"special_bonus_kankuro_1"
+		"Ability11"		"special_bonus_kankuro_2"
+
+		"Ability12"		"special_bonus_kankuro_3"
+		"Ability13"		"special_bonus_kankuro_4"
+
+		"Ability14"		"special_bonus_kankuro_5"
+		"Ability15"		"special_bonus_kankuro_6"
+
+		"Ability16"		"special_bonus_cooldown_reduction_20"
+		"Ability17"		"special_bonus_kankuro_7"
+
+		"ModelScale"	"1.0"
+		"LoadoutScale"	"0.85"
+		"SpectatorLoadoutScale" "1.0"
+		"VersusScale"				"1.0"
+
+		
+		"ItemSlots"
+		{ }
+		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttributePrimary" 		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttackAnimationPoint"		"0.4"
+		"Role"      "Support,Jungler,Pusher"
+		"Rolelevels"  "2,1,3"
+		"AttackDamageMin"   "23"
+		"AttackDamageMax"   "31"
+		"AttackRate"    "1.700000"
+
+		"AttackRange"				"650"
+		"MovementSpeed"			"300"
+		"AttributeBaseStrength" "20" // Base strength
+		"AttributeStrengthGain" "2.1" // Strength bonus per level.
+		"AttributeBaseIntelligence" "21" // Base intelligence
+		"AttributeIntelligenceGain" "3.2" // Intelligence bonus per level.
+		"AttributeBaseAgility" "15" // Base agility
+		"AttributeAgilityGain" "1.25" // Agility bonus per level. 
+		"Gender"      "male"
+		"Village"	  "kirigakure"
+}	
+
+
+}

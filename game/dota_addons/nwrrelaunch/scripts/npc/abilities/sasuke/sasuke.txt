@@ -1,0 +1,5 @@
+#base "sasuke_chidori_eiso.txt"
+#base "sasuke_chidori_koken.txt"
+#base "sasuke_chidori_nagashi.txt"
+#base "sasuke_kirin.txt"
+#base "talents.txt"

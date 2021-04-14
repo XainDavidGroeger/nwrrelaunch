@@ -1,0 +1,5 @@
+#base "gaara_ryuusa_bakuryu.txt"
+#base "gaara_suna_no_yoroi.txt"
+#base "gaara_sabaku_taiso.txt"
+#base "gaara_sabaku_kyuu.txt"
+#base "talents.txt"

@@ -1,0 +1,63 @@
+"DOTAAbilities"
+{
+
+		//25: +4s Chakra Burst Duration / +20% Chakra Punch Chance
+		//20: -3s Earth Slam Cooldown / +15 Inner Sakura Armor
+		//15: +12 Strength / +70 Chakra Punch Damage
+		//10: +20 Attack Speed / +2.5 Mana Regen
+    	"npc_dota_hero_phantom_assassin" //sakura
+		{
+		  "override_hero"   "npc_dota_hero_phantom_assassin"
+		  "Model" 			"models/sakura_new/sakura.vmdl"
+		  "Ability1"        "sakura_earth_slam"
+		  "Ability2"        "sakura_chakra_burst" 
+		  "Ability3"        "sakura_chakra_enhanced_strength" 
+		  "Ability4"        "generic_hidden" 
+		  "Ability5"        "generic_hidden" 
+		  "Ability6"        "sakura_inner_sakura"
+		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+
+		   "Ability10"		"special_bonus_attack_speed_20"
+		   "Ability11"		"special_bonus_mp_regen_2"
+
+		   "Ability12"		"special_bonus_strength_12"
+		   "Ability13"		"special_bonus_sakura_1"
+
+		   "Ability14"		"special_bonus_sakura_2"
+		   "Ability15"		"special_bonus_sakura_3"
+
+		   "Ability16"		"special_bonus_sakura_4"
+		   "Ability17"		"special_bonus_sakura_5"
+
+		 "ArmorPhysical"		"1.000000"
+		"ModelScale"		"1.0"
+		"LoadoutScale"		"1.0" 
+		"SpectatorLoadoutScale" 	"1.0"
+		"VersusScale"			"1.0"
+		
+		"AttackDamageMin"		"38"
+		"Role"			"Carry,Disabler,Initiator,Durable"
+		"Rolelevels"	"1,2,2,1"
+		"AttackDamageMax"		"42"
+		"AttackRate"		"1.700000"
+		  "AttackAnimationPoint"   "0.4"
+		 // "AttackRate"				"0.7"
+		  "AttackRange"				"100"
+		    "StatusHealth"    "200"
+  "StatusHealthRegen"   "0.300000"
+		  "MovementSpeed"			"315"
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "3.2" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "16" // Base intelligence
+		  "AttributeIntelligenceGain" "1.5" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "20" // Base agility
+		  "AttributeAgilityGain" "1.7" // Agility bonus per level.
+	 	  "ItemSlots"
+	  	  { }
+	  	  "Village"			"konoha"
+
+	  	  "Gender"			"female"
+		}
+
+
+}

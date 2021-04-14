@@ -1,0 +1,5 @@
+#base "raikage_lariat.txt"
+#base "raikage_raiga_no_bomu.txt"
+#base "raikage_raigyaku_suihei.txt"
+#base "raikage_raiton_no_yoroi.txt"
+#base "talents.txt"

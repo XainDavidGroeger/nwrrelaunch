@@ -1,0 +1,1875 @@
+"lang"
+{
+
+	"Language"		"Russian"
+	"Tokens"
+	{		
+		"addon_game_name"			"Naruto Wars Reborn"
+		
+		//"DOTA_Basics"							"ABILITIES"
+		//"DOTA_Upgrades"							"ITEMS"
+		//"DOTA_Shop_Category_Basics"				"ABILITIES"
+		//"DOTA_Shop_Category_Upgrades"			"ITEMS"
+		
+
+
+			// *************** ERROR MESSAGES ****************
+
+		"error_must_target_owner_illusion"			"Must target own Illisions"
+
+		"npc_dota_roshan"								"Kurama"
+		//--------------------
+		//Heroes
+		//--------------------
+
+		//--------------------
+		//Zabuza
+		//--------------------
+		"npc_dota_hero_bloodseeker" 						"Zabuza"
+		"npc_dota_hero_bloodseeker_lore"  					""
+		// Weak Spot
+		"DOTA_Tooltip_ability_zabuza_weak_spot"						"Weak Spot"
+		"DOTA_Tooltip_ability_zabuza_weak_spot_description"			"После изучения защиты врага, Забуза наносит сокрушительный удар противнику. После перезарядки, следующая атака нанесет критический урон. При каждой успешной атаке, перезарядка этой способности уменьшается на 1 секунду."
+		"DOTA_Tooltip_ability_zabuza_weak_spot_crit_multiplier"		"%КРИТИЧЕСКИЙ УРОН: "
+		"DOTA_Tooltip_modifier_weak_spot"							"Weak Spot"
+		"DOTA_Tooltip_modifier_weak_spot_description"				"Следующая атака нанесет дополнительный урон."
+		// Stealth
+		"DOTA_Tooltip_ability_zabuza_stealth"						"Stealth"
+		"DOTA_Tooltip_ability_zabuza_stealth_cast_range"			"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_zabuza_stealth_description"			"Забуза известен как один из лучших наемных убийц, потому что он способен быть незамеченным на поле битвы, что делает его опасным шиноби. Может телепортироваться на короткое расстояние к вражескому или союзному юниту."
+		// Track
+		"DOTA_Tooltip_ability_zabuza_track"							"Track"
+		"DOTA_Tooltip_ability_zabuza_track_aura_radius"				"РАДИУС СКОРОСТИ: "
+		"DOTA_Tooltip_ability_zabuza_track_bonus_move_speed_pct"	"%ДОП. СКОРОСТЬ: "
+		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_radius"		"РАДИУС ПОЛУЧЕНИЯ ДОП. ЗОЛОТА: "
+		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_self"			"ДОП. ЗОЛОТО ЗА УБИЙСТВО: "
+		"DOTA_Tooltip_ability_zabuza_track_bonus_gold"				"ДОП. ЗОЛОТО ЗА ПОМОЩЬ: "
+		"DOTA_Tooltip_ability_zabuza_track_duration"				"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_zabuza_track_cast_range_tooltip"		"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_zabuza_track_description"				"As a world renowned assassin, Zabuza assures the fulfilmentt of his employer's contracts. After casting on an enemy hero, Zabuza and his allies gain vision of a target of the course of the duration and will move faster if they are close to them. If the target dies, Zabuza will receive bonus gold for the kill."
+		"DOTA_Tooltip_modifier_track_aura_datadriven"						"Track"
+		"DOTA_Tooltip_modifier_track_aura_datadriven_description"			"Этот юнит под слежкой. Защита уменьшена и виден вражеской команде."
+		// Ninpou: Kirigakure No Jutsu
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu"						"Hidden Mist Jutsu"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_lore"					"Ninpou: Kirigakure No Jutsu"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_radius"				"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_duration"				"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_miss_percentage"		"%ШАНС ПРОМАХА: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_cast_range"			"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_description"			"Забуза создает туман на определённой площади при помощи созданной им же воды. Вражеские юниты, находящиеся в тумане, будут промахиваться и находится под действием безмолвия."
+
+		//--------------------
+		//Jirobo
+		//--------------------
+		"npc_dota_hero_earthshaker" "Jiroubo"
+
+		//--------------------
+		//Hidan
+		//--------------------
+		"npc_dota_hero_doom_bringer" "Hidan"
+		"npc_dota_hero_doom_bringer_lore"  								"The only true immortal known in the shinobi world, Hidan is a ruthless worshipper of Jashin and a member of Akatsuki. Through experimenting with the various techniques of his religion, Hidan has gained the ability to survive any injury. Even if he is decapitated Hidan will still survive, although he cannot control the rest of his body. Despite being a religious man Hidan is known to be an extremely disrespectful shinobi. He constantly complains and swears to his allies, including his superiors. The only respect he ever gives is to his god whom he works to fulfil his commandments. His insistence on following his religion’s laws often brings him into conflict with his partner Kakuzu. Since he is unable to be killed by any attack, Hidan and Kakuzu were a perfect team as Kakuzu’s rage could never kill the immortal. His extreme durability and raw strength are what allowed him to become a valued member of Akatsuki."
+		// Cull the Weak
+		"DOTA_Tooltip_ability_hidan_cull_the_weak"						"Cull the Weak"
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_description"			"Хидан бросает свою косу в указанную точку, притягивая любые вражеские юниты в конусе прямо перед ним. Враги пораженные этой способностью получают мини оглушение, а также физический урон, как если бы они стояли прямо перед Хиданом. Урон по крипам удваивается. Эта способность стоит здоровья Хидану, если любой из вражеских юнитов был поражен, но он же не потеряет здоровья, если враги не поражены."
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_range"				"Дальность: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_hero_damage"			"Урон по Героям: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_creep_damage"			"Урон по Крипам: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_ms_slow_percentage"	"%Замедление: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_hp_percentage_cost"	"%Стоимость Здоровья: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_pull_radius_start" 	"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow"				"Cull the Weak"
+		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow_description" "Юнит замедляется"
+		// Taunt
+		"DOTA_Tooltip_ability_hidan_taunt"									"Taunt"
+		"DOTA_Tooltip_ability_hidan_taunt_description"						"Хидан оскорбляет своих оппонентов кучей профанаций, заставляя ближайших врагов атаковать его. Каждая базовая атака произведенная против Хидана во время дейтсвия способности будет добавлять ему дополнительные очки силы на ограниченное время."
+		"DOTA_Tooltip_ability_hidan_taunt_radius"							"Площадь поражения (АОЕ): "
+		"DOTA_Tooltip_ability_hidan_taunt_duration"							"Длительность: "
+		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"Сила от Атаки Героя: "
+		"DOTA_Tooltip_ability_hidan_taunt_str_gain_not_hero"				"Сила от Атаки Юнита: "
+		"DOTA_Tooltip_ability_hidan_taunt_str_duration"						"Длительность Увеличения Силы:: "
+		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str"						"Taunt"
+		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str_description"			"Этот юнит имеет повышенную Силу."
+		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven"				"Taunt"
+		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven_description"	"Этот юнит вынужден атаковать Хидана."
+		// Jashin's Blessing
+		"DOTA_Tooltip_ability_hidan_jashins_blessing"						"Jashin's Blessing"
+		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"После получения летального урона, Здоровье Хидана восстанавливается к определенному уровню максимума его очков здоровья."
+		"DOTA_Tooltip_ability_hidan_jashins_blessing_reset_hp_percentage"	"%ХП: "
+		"DOTA_Tooltip_modifier_modifier_jashins_blessing"					"Jashin's Blessing"
+		"DOTA_Tooltip_modifier_modifier_jashins_blessing_description"		"Хидан не умирает после летального урона"
+		// Death Possession Blood
+		"DOTA_Tooltip_ability_hidan_death_possession_blood"						"Death Possession Blood"
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_description"			"Пассивно дарует способность использовать кровь от последнего героя, которого атаковал Хидан. После активации, Хидан немедленно создает обширный символ на земле, сам жё принимает новое тёмное обличье. Пока он в этой форме, кровь вражеских героев, которую Хидан захватил, проклята. Проклятые вражеские герои будут получать тоже количество урона, которое получает Хидан, до тех пор пока Хидан остается на символе. Если Хидан двигается за пределы символа, урон будет тоже возвращаться врагам, но уже в пониженном виде. Также дает способность Хидану заниматься Садо-Мазохизмом."
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_radius"				"Круговая площадь поражения (АОЕ): "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_duration"			"Длительность: "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_outside_percentage"	"%Уров Внутри Круга: "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_inside_percentage"	"%Урон за Пределами Круга"
+		"DOTA_Tooltip_modifier_hidan_metamorphosis"							"Death Possession Blood"
+		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				""
+		// Self Pain
+		"DOTA_Tooltip_ability_hidan_self_pain"							"Self Pain"
+		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Хидан достает свое Копье Тьмы и протыкает себя в жизненно важной области тела, нанося Себе чистый урон. Хидан не может умереть от использования данной способности, вместо этого после использования способности, он будет оставаться жить хотя бы с 1 единицей здоровья."
+		"DOTA_Tooltip_modifier_hidan_ulti_debuff"						"Death Possession Blood"
+		"DOTA_Tooltip_modifier_hidan_ulti_debuff_description"			"This Unit is marked by Hidan and will receive the same damage as him if Hidan has his ultimate activated."
+		
+
+
+
+
+		//--------------------
+		//Kimimaro
+		//--------------------
+		"npc_dota_hero_ursa" "Kimimaro"
+		// Clematis Danc: Flower
+		"DOTA_Tooltip_ability_kimi_clematis_dance"						"Clematis Danc: Flower"
+		"DOTA_Tooltip_ability_kimi_clematis_dance_lore"					"Tessenka no Mai: Hana"
+		"DOTA_Tooltip_ability_kimi_clematis_dance_description"			"Kimimaro encases his forearm in a giant drill made of bone. the strength of the bone increases Kimimaros damage. Last for 8 seconds or 3 hits. Attack Speed is highly increased and the last blow will stun the target for 1 second."
+		"DOTA_Tooltip_ability_kimi_clematis_dance_bonus_dmg_percentage" "%INCREASED DAMAGE: "
+		"DOTA_Tooltip_modifier_kimi_clematis_dance_dmg"				"Clematis Danc: Flower"
+		"DOTA_Tooltip_modifier_kimi_clematis_dance_dmg_description" "This Unit has maximum attack speed and increased attack damage."
+		 // Dance of the Willow
+		"DOTA_Tooltip_ability_kimi_dance_of_the_willow"						"Dance of the Willow"
+		"DOTA_Tooltip_ability_kimi_dance_of_the_willow_lore"				"Yanagi no Mai"
+		"DOTA_Tooltip_ability_kimi_dance_of_the_willow_description"			"Kimimaro grows several long bone blades from his body to use as weapons. This dance form is incredibly acrobatic, using spins, charges, and long sweeping slashes to make the strikes more effective. Kimimaro has a 25% chance to activate this dance when he attacks, dealing damage based on his agility."
+		"DOTA_Tooltip_ability_kimi_dance_of_the_willow_agility_percent" 	"%AGILITY AS MAGIC DAMAGE: "
+		"DOTA_Tooltip_ability_kimi_dance_of_the_willow_chance" 				"%CHANCE: "
+		 // Cursed Seal
+		"DOTA_Tooltip_ability_kimi_cursed_seal"						"Cursed Seal"
+		"DOTA_Tooltip_ability_kimi_cursed_seal_lore"				""
+		"DOTA_Tooltip_ability_kimi_cursed_seal_description"			"Kimimaro unleashes his curse seal, which is stronger compared to the other cursed seals given by Orochimaru. While active grants +20 movement speed and increased agility with every hit."
+		"DOTA_Tooltip_ability_kimi_cursed_seal_duration" 			"DURATION: "
+		"DOTA_Tooltip_ability_kimi_cursed_seal_agility_gain" 		"AGILITY GAIN PER HIT: "
+		 // Sawarabi No Mai
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai"						"Dance of the seedling fern"
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_lore"				"Sawarabi No Mai"
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_description"			"By using his blood-line limit, Kimimaro sends a massive wave of bones across the battlefield, destroying everything in it's path. Creates a boneyard in a 350 AOE."
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_radius" 			"AOE: "
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_life_percentage_damage" 		"%CURRENT LIFE DAMAGE: "
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_ms_slow" 		"MS DEBUFF: "
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_damage" 		"DAMAGE: "
+		"DOTA_Tooltip_ability_kimi_sawarabi_no_mai_slow_duration" 	"MS DEBUFF DURATION: "
+
+
+
+
+
+
+		//--------------------
+		//Kidoumaru
+		//--------------------
+		"npc_dota_hero_windrunner"  "Kidoumaru"
+
+		//--------------------
+		//Madara
+		//--------------------
+		"npc_dota_hero_ogre_magi"  										"Madara"
+		"npc_dota_hero_ogre_magi_lore"  								"Widely considered to be the strongest Uchiha to have ever lived, Uchiha Madara is a legendary shinobi who was the leader of his clan before he became a co-founder of Konohagakure. Madara was the first of his clan to gain the Eternal Mangekyo Sharingan after inheriting his brother’s eyes. This newfound power elevated him to the top of the Uchiha hierarchy where he constantly waged war with their rival clan, the Senju. After being defeated in battle, Madara agreed to an alliance proposed by Hashirama to unite as a single ninja village. However, his rivalry with his lifelong rival Hashirama Senju did not end after their agreement to ally under Konoha and it soon led to a deathmatch between the two legendary shinobi at the Valley of the End. Although Madara had lost the battle for Konoha, he had survived and managed to acquire some of Hashirama’s DNA. Filled with new purpose, Madara began preparations for his Eye of the Moon plan which would set the entire ninja world under an eternal genjutsu."
+		// Fire Release: Great Fire Annihilation (Katon: Goka Mekkyaku)
+		"DOTA_Tooltip_ability_madara_fire_release"						"Great Fire Annihilation"
+		"DOTA_Tooltip_ability_madara_fire_release_description"			"Выпускает поток огня, направленный на точку, толкая всех на пути, нанося магический урон. По достижению максимальной дистанции, произойдет взрыв, который нанесет урон и оглушит всех в области действия. Любые деревья под действием этой способности будут сожжены, если способность Высвобождение дерева: Рождение девственного леса выучена."
+		"DOTA_Tooltip_ability_madara_fire_release_lore"					"Katon: Goka Mekkyaku"
+		"DOTA_Tooltip_ability_madara_fire_release_fire_range"			"ДАЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_madara_fire_release_wave_radius_start"	"ОБЛАСТЬ ДЕЙСТВИЯ ВОЛНЫ: "
+		"DOTA_Tooltip_ability_madara_fire_release_explosion_radius"		"ОБЛАСТЬ ДЕЙСТВИЯ ВЗРЫВА: "
+		"DOTA_Tooltip_ability_madara_fire_release_wave_damage"			"УРОН ВОЛНЫ: "
+		"DOTA_Tooltip_ability_madara_fire_release_explosion_damage"		"УРОН ВЗРЫВА: "
+		"DOTA_Tooltip_ability_madara_fire_release_explosion_stun_duration"		"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ: "
+
+		// Wood Release: Deep Forest Emergence (Mokuton: Jukai Kotan)
+		"DOTA_Tooltip_ability_madara_wood_release"						"Deep Forest Emergence"
+		"DOTA_Tooltip_ability_madara_wood_release_description"			"Пользователь создает большое количество деревьев вокруг цели за короткий период времени. Эта способность позволяет Мадаре поджигать деревья, другими способностями. Подожженные деревья не являются препятсвием, но наносят урон в секунду и замедляют врага. Эффект прекратится если враг покинет область горящих деревьев."
+		"DOTA_Tooltip_ability_madara_wood_release_lore"					"Mokuton: Jukai Kotan"
+		"DOTA_Tooltip_ability_madara_wood_release_tree_burn_duration"	"ДЛИТЕЛЬНОСТЬ ГОРЕНИЯ: "
+		"DOTA_Tooltip_ability_madara_wood_release_burn_damage"			"УРОН ОТ ГОРЕНИЯ: "
+		"DOTA_Tooltip_ability_madara_wood_release_burn_ms_slow_percentage"	"%ЗАМЕДЛЕНИЕ ОТ ГОРЕНИЯ: "
+		
+		"DOTA_Tooltip_ability_madara_wood_release_tree_duration"		"ДЛИТЕЛЬНОСТЬ: "
+		// Susano’o Ribcage
+		"DOTA_Tooltip_ability_madara_susano"							"Susano’o Ribcage"
+		"DOTA_Tooltip_ability_madara_susano_description"				"После активации, дает сопротивление магии и поджигает ближайших противников пока у пользователя есть мана. Повтороное использование выключает способность и расход маны останавливается. Деревья вокруг мадары будут гореть, если способность Высвобождение дерева: Рождение девственнго леса выучена. Если у Мадары нет маны, способность отключится."
+		"DOTA_Tooltip_ability_madara_susano_burn_radius"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_madara_susano_magic_resistance_percent"	"%СОПРОТИВЛЕНИЕ МАГИИ: "
+		"DOTA_Tooltip_ability_madara_susano_mana_cost_per_second"	"МАНЫ В СЕКУНДУ: "	
+		// Susano’o Ribcage activated
+		"DOTA_Tooltip_ability_madara_susano_active"							"Susano’o Ribcage"
+		"DOTA_Tooltip_ability_madara_susano_active_description"				"После активации, дает сопротивление магии и поджигает ближайших противников пока у пользователя есть мана. Повтороное использование выключает способность и расход маны останавливается. Деревья вокруг мадары будут гореть, если способность Высвобождение дерева: Рождение девственнго леса выучена. Если у Мадары нет маны, способность отключится."
+		"DOTA_Tooltip_ability_madara_susano_active_burn_radius"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_madara_susano_active_magic_resistance_percent"	"%СОПРОТИВЛЕНИЕ МАГИИ: "
+		"DOTA_Tooltip_ability_madara_susano_active_mana_cost_per_second"	"МАНЫ В СЕКУНДУ: "
+		"DOTA_Tooltip_modifier_madara_susano"							"Susano’o Ribcage"
+		"DOTA_Tooltip_modifier_madara_susano_description"				"Nearby Units will burn."
+		// Heaven Concealed (Tengai Shinsei)
+		"DOTA_Tooltip_ability_madara_meteor"							"Heaven Concealed"
+		"DOTA_Tooltip_ability_madara_meteor_lore"						"Tengai Shinsei"
+		"DOTA_Tooltip_ability_madara_meteor_description"				"Мадара формирует определенные печати. В следующее мгновенье в верхних слоях атмосферы появляется огромный метеорит, медленно падающий на землю. Во время использования появляется тень, которая видна обоим командам. Метеор наносит большой магический урон и оглушает вражеских юнитов. Любые деревья под действием этой способности будут сожжены, если способность Высвобождение дерева: Рождение девственного леса выучена. Если использование будет отменено, способность не нанесет урона."
+		"DOTA_Tooltip_ability_madara_meteor_radius"						"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_madara_meteor_stun_duration"				"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ: "
+		"DOTA_Tooltip_ability_madara_meteor_channel_duration"			"ВРЕМЯ ДО ПАДЕНИЯ: "
+		"DOTA_Tooltip_ability_madara_meteor_damage"						"УРОН: "
+
+		//--------------------
+		//Kisame
+		//--------------------
+		"npc_dota_hero_kunkka"  										"Kisame"
+		"npc_dota_hero_kunkka_lore"  									"Feared as the Monster of the Hidden Mist, Hoshigaki Kisame is a dangerous S-Rank missing nin and one of the Seven Ninja Swordsmen of the Mist. He loves to fight and is often aggressive towards anyone he meets. Despite this Kisame has shown to be very loyal to his allies unless they endanger the mission. He bears the great sword Samehada (Shark Skin) and uses it to shave his enemies and drain their chakra. Kisame has an abundance of chakra that is said to almost match a tailed beast. It is from this great source of power that he gets the title The Tailed Beast without a Tail. Regarded as one of the most powerful shinobi to ever come out of Kirigakure (Village of the Hidden Mist), he earned membership into Akatsuki through his own strength. "
+		"npc_dota_hero_kunkka_description"  							"Playing Kisame is about becoming inescapable as you slowly drown your enemies. This hero favors longer more drawn out confrontations meaning that survivability is of top priority. His abilities offer him great utility in almost any situation whether it be ganking, team fighting, or taking on an enemy one on one. Kisame is very mana dependant as his ultimate consumes mana over time. His passive somewhat remedies this problem as his attacks will drain mana from enemies while gaining the stolen mana. However, this mechanic can be deceptive to Kisame’s mana problems as a larger max mana pool requires more mana to sustain his ultimate. This means that his mana drain is more effective the smaller Kisame’s max mana pool is.  Kisame can easily dominate a team fight so long as he can stick onto various heroes. Through proper micro of his clones and intelligent maneuvering, Kisame is a walking pain train that forces the fight onto the enemy."
+		//Water Release: Water Shark Bullet Technique (Suiton: Suikodan no Jutsu)
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu"					"Water Shark Bullet"
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_lore"					"Suiton: Suikodan no Jutsu"
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_description"		"Превращая воду в форму огромной акулы, Кисаме посылает волну воды в указанном направлени. Водяная акула наносит магический урон, уменьшает броню, и замедляет врагов при контакте."
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_wave_range"		"Дальность: "
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_damage"			"Урон: "
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_wave_aoe"		"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_ms_slow_percentage"	"%Дебафф скорости передвижения: "
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_slow_duration"	"Длительность Дебаффа Скорости: "
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_cast_range"		"Дальность применения: "
+		//Water Release debuff
+		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff"				"Water Shark Bullet"
+		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff_description"	"Этот юнит имет пониженую скорость передвижения."		
+		//Water Clone Technique (Mizu Bunshin no Jutsu)					
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu"				"Water Clone Technique"
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_lore"		"Mizu Bunshin no Jutsu"
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_description"	"Кисаме создает клонов из воды, которыми командует в битве. Здоровье и урон этих Водных клонов базируются на проценте от схожих характеристик Кисаме. Водные клоны владеют техникой Водяной Тюрьмы также как своими собственными Самехадами. Способности клонов растут вместе с повышением уровня Техники Водяного Клона."
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_illusion_duration"	"Длительность: "
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_illusion_max_hp_percentage"	"%Здоровье: "
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_damage_percentage" "%Урон: "
+		//Samehada
+		"DOTA_Tooltip_ability_kisame_samehada"							"Samehada"
+		"DOTA_Tooltip_ability_kisame_samehada_description"				"Великий Меч Самехада сбривает с врагов чакру, когда контактирует. Кисаме следующая базовая атаква будет красть ману у цели, основыва на ее максимальном мана пуле."	
+		"DOTA_Tooltip_ability_kisame_samehada_manasteal_percentage"		"%Воровство Маны: "
+		"DOTA_Tooltip_modifier_samehada"								"Samehada"
+		"DOTA_Tooltip_modifier_samehada_description"					"Следующая атака Кисаме украдет ману."
+		//Water Prison
+		"DOTA_Tooltip_ability_kisame_water_prison"						"Water Prison"
+		"DOTA_Tooltip_ability_kisame_water_prison_radius"				"АОЕ: "
+		"DOTA_Tooltip_ability_kisame_water_prison_damage"				"Урон в Секунду: "
+		"DOTA_Tooltip_ability_kisame_water_prison_ms_slow_percentage"	"%Дебафф Скорости Передвижения: "
+		"DOTA_Tooltip_ability_kisame_water_prison_mana_cost_per_second_percentage"	"%Стоимость Маны в секунду: "
+		"DOTA_Tooltip_ability_kisame_water_prison_hp_reg_per_second_percentage"	"%Регенерация Очков Здоровья(ХП) в секунду: "
+		"DOTA_Tooltip_ability_kisame_water_prison_description"			"После слияния с Самехадой, Кисаме превращается в акулоподобную тварь, которая создает вокруг себя сферу из толщи воды. Кисаме действует, как центр этой водной сферы, которая следует за его перемещениями. Вражеские юнит оказавшиеся внутри сферы получают магический урон всё время, а также замедляются. Во время действия трансформации, Кисаме получает бонусную регенерацию очков здоровья. Если у Кисамы закончится чакра во время использования способности - трансформация завершится."
+		//Water Prison debuff
+		"Dota_Tooltip_modifer_water_prison_slow"						"Water Prison"
+		"Dota_Tooltip_modifer_water_prison_slow_description"			"Этот Юнит замедлен."
+		//Bunshin Water Prison
+		"DOTA_Tooltip_ability_kisame_bunshin_water_prison"						"Water Prison Technique"
+		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_description"			"Водяные клоны создают запирающую водную сферу,которая нейтрализует жертву. Эта способность длящаяся, то есть прерываемая, при смерти клона будет прервана."
+		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_channel_time"			"Длительность: "
+		"DOTA_Tooltip_modifier_bunshin_water_prison_hold"				"Water Prison Technique"
+		"DOTA_Tooltip_modifier_bunshin_water_prison_hold_description"	"This Unit is stunned."
+		//Bunshin Samehada
+		"DOTA_Tooltip_ability_kisame_samehada_bunshin"						"Samehada"
+		"DOTA_Tooltip_ability_kisame_samehada_bunshin_description"			"Великий Меч Самехада сбривает с врагов чакру, когда контактирует. Кисаме следующая базовая атаква будет красть ману у цели, основыва на ее максимальном мана пуле."
+		"DOTA_Tooltip_ability_kisame_samehada_bunshin_manasteal_percentage"	"%Воровство Маны: "
+
+
+			//--------------------
+		//Yondaime Minato
+		//--------------------
+		"npc_dota_hero_juggernaut"  									"Minato"
+		"npc_dota_hero_juggernaut_lore"  										""
+		// Marked Kunai
+		"DOTA_Tooltip_ability_yondaime_marked_kunai"					"Marked Kunai"
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_description"		"Throws a marked kunai at a target point dealing physical damage to any enemies it passess through. The kunai will then be placed at the target point but cannot be targeted by enemies. Grants the ability Body Flicker which allows Minato to teleport to the position the kunai on the ground as long as he is in range of it. Deals half damage to Heroes."
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_dagger_range"		"RANGE: "
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_creep_damage" "CREEP DAMAGE: "
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_hero_damage"	"HERO DAMAGE: "
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_dagger_duration"	"DURATION: "
+
+		"DOTA_Tooltip_modifier_marked_kunai_debuff"						"Marked Kunai"
+		"DOTA_Tooltip_modifier_marked_kunai_debuff_description"			"This Unit's Armor is reduced."
+
+		// Rasengan
+		"DOTA_Tooltip_ability_yondaime_rasengan"						"Rasengan"
+		"DOTA_Tooltip_ability_yondaime_rasengan_description"			"By amassing and rotating chakra in his hand, Minato creates a Rasengan to attack his foe. Causes Minato to gain bonus movement speed until next attack, which will deal bonus damage and knock the target back.  Enemies are stunned while being knocked back."
+		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_damage"			"%BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_yondaime_rasengan_base_bonus_damage"		"BASE DAMAGE: "
+		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_ms"				"%BONUS MOVEMENT SPEED: "
+		"DOTA_Tooltip_ability_yondaime_rasengan_distance"				"KNOCKBACK: "
+
+		"DOTA_Tooltip_modifier_rasengan"								"Rasengan"
+		"DOTA_Tooltip_modifier_rasengan_description"					"Minato's next attack will knockback an enemy.\n Minato has increased MS."
+
+
+		// The Yellow Flash
+		"DOTA_Tooltip_ability_yondaime_agile_speed"						"The Yellow Flash"
+		"DOTA_Tooltip_ability_yondaime_agile_speed_description"			"Minato’s amazing speed grants him an advantage in combat, granting him extra damage based upon his movement speed. This ability also passively gains Minato additional movement speed."
+		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_ms_percentage"	"%ADDITIONAL MOVEMENT SPEED: "
+		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_damage_ms_percent"	"%ADDITIONAL DAMAGE: "
+
+		"DOTA_Tooltip_modifier_agile_speed"								"The Yellow Flash"
+		"DOTA_Tooltip_modifier_agile_speed_description"					"Minato has increased MS and Attack Damage based on his MS."
+		
+
+
+		// Body Flicker
+		"DOTA_Tooltip_ability_yondaime_body_flicker"						"Body Flicker"
+		"DOTA_Tooltip_ability_yondaime_body_flicker_description"			"Causes Minato to teleport to target Marked Kunai."
+		"DOTA_Tooltip_ability_yondaime_body_flicker_range"					"RANGE: "
+
+		
+		// Flying Thunder God Technique
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump"						"Flying Thunder God Technique"
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_description"			"Allows Minato to dash towards a target Marked Kunai, dealing a percentage of his attack damage to all enemies hit between him and the target point. Minato is invulnerable while dashing and reduces the armor of all enemies damaged by this ability for a short duration."
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_lore"						"Hiraishin no Jutsu"
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_range"					"RANGE: "
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_damage"				"%PERCENTAGE OF DAMAGE: "
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_reduction"			"ARMOR REDUCTION: "
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_duration"			"ARMOR DEBUFF DURATION: "
+
+		"DOTA_Tooltip_modifier_hiraishin_armor_debuff"						"Flying Thunder God Technique"
+		"DOTA_Tooltip_modifier_hiraishin_armor_debuff_description"			"This Unit's Armor is reduced."
+
+
+		//--------------------
+		//Kankuro
+		//--------------------
+		"npc_dota_hero_warlock"  											"Kankuro"
+		"npc_dota_hero_warlock_lore"  										""
+		// Summon Kuroari
+		"DOTA_Tooltip_ability_kankuro_summon_kuroari"						"Summon Kuroari"
+		"DOTA_Tooltip_ability_kankuro_summon_kuroari_description"			"Канкуро вызывает Куроари, куклу-охотника, которая иммобилизует и наносит урон противнику. Наносит 50 урона в секунду."
+		"DOTA_Tooltip_ability_kankuro_summon_kuroari_hold_duration"			"Длительность оглушения:: "
+		"DOTA_Tooltip_ability_kankuro_summon_kuroari_damage_per_second"		"ДПС:: "
+		// Summon Karasu
+		"DOTA_Tooltip_ability_kankuro_summon_karasu"						"Summon Karasu"
+		"DOTA_Tooltip_ability_kankuro_summon_karasu_description"			"Канкуро вызывает Карасу, атакующую куклу, которая использует потайные оружия, такие кинжалы, иглы и отравленный газ, чтоб сражаться с врагом."
+		"DOTA_Tooltip_ability_kankuro_summon_karasu_puppet_duration"		"Длительность:: "
+		// Kugusta No Jutsu
+		"DOTA_Tooltip_ability_kankuro_kugusta_no_jutsu"						"Kugusta No Jutsu"
+		"DOTA_Tooltip_ability_kankuro_kugusta_no_jutsu_description"			"Канкуро учится улучшать контроль над своими куклами, раскрывая их полный потенциал."
+		"DOTA_Tooltip_ability_kankuro_kugusta_no_jutsu_extra_hp"			"Дополнительное ХП для кукол:: "
+		// Summon Sanshouuo
+		"DOTA_Tooltip_ability_kankuro_summon_sanshouuo"						"Summon Sanshouuo"
+		"DOTA_Tooltip_ability_kankuro_summon_sanshouuo_description"			"Канкуро вызвать Саншоу, куклу-защитника, которая защищает ближайших союзников. Кукла впитывает в себя весь урон, который Вы и Ваши союзники должны были получить."
+		"DOTA_Tooltip_ability_kankuro_summon_sanshouuo_duration"			"Длительность:: "
+		"DOTA_Tooltip_ability_kankuro_summon_sanshouuo_aura_radius"			"Область действия Ауры:: "
+		"DOTA_Tooltip_ability_kankuro_summon_sanshouuo_hp"					"Очки здоровья:: "
+
+		"npc_karasu"  											"Karasu"
+		"npc_karasu_lore"  										""
+		//  Karasu - Critical Strike
+		"DOTA_Tooltip_ability_karasu_critical_strike"						"Critical Strike"
+		"DOTA_Tooltip_ability_karasu_critical_strike_description"			"Critical Strike"
+		"DOTA_Tooltip_ability_karasu_critical_strike_crit_chance"		 	"%Шанс Критического удара:: "
+		"DOTA_Tooltip_ability_karasu_critical_strike_crit_bonus"		 	"%Урон Крита: "
+		//  Karasu - Poison Gas
+		"DOTA_Tooltip_ability_karasu_poison_gas"						"Poison Gas"
+		"DOTA_Tooltip_ability_karasu_poison_gas_description"			"Poison Gas"
+		"DOTA_Tooltip_ability_karasu_poison_gas_radius"		 		"Область Поражения:: "
+		"DOTA_Tooltip_ability_karasu_poison_gas_damage"		 		"Урон в Секунду:: "
+		"DOTA_Tooltip_ability_karasu_poison_gas_duration"		 	"Длительность:: "
+		//  Karasu - Daggers
+		"DOTA_Tooltip_ability_karasu_daggers"						"Daggers"
+		"DOTA_Tooltip_ability_karasu_daggers_description"			"Daggers"
+		"DOTA_Tooltip_ability_karasu_daggers_radius"		 		"AOE: "
+		"DOTA_Tooltip_ability_karasu_daggers_damage"		 		"Урон: "
+		//  Karasu - Dismantle Parts
+		"DOTA_Tooltip_ability_karasu_dismantle_parts"				"Dismantle Parts"
+		"DOTA_Tooltip_ability_karasu_dismantle_parts_description"	"Dismantle Parts"
+		"DOTA_Tooltip_ability_karasu_dismantle_parts_parts_duration"		 "Длительность: "
+
+		//  Dismantle Parts
+		"npc_dismantle_parts"  											"Dismantle Part"
+		"npc_dismantle_parts"  										""
+		//  Dismantle Part - Poison
+		"DOTA_Tooltip_ability_parts_poison"						"Poison"
+		"DOTA_Tooltip_ability_parts_poison_description"			"Poison"
+		"DOTA_Tooltip_ability_parts_poison_poison_duration"		 	"Длительность Дебаффа:: "
+		"DOTA_Tooltip_ability_parts_poison_poison_damage_per_second"	"Урон в Секунду:: "
+		"DOTA_Tooltip_ability_parts_poison_poison_ms_slow"			"%Дебафф скорости передвижения:: "
+		//  Dismantle Part - jutsu resistance
+		"DOTA_Tooltip_ability_parts_jutsu_resistance"						"Jutsu Resistance"
+		"DOTA_Tooltip_ability_parts_jutsu_resistance_description"			"Jutsu Resistance"
+		"DOTA_Tooltip_ability_parts_jutsu_resistance_magic_resist_bonus"	"Сопротивление Джутсу: "
+		//Kankuro Modifier
+		"DOTA_Tooltip_modifier_poison_dot"								"Poison"
+		"DOTA_Tooltip_modifier_poison_dot_description"					"Юнит замедлен, и теряет очки здоровья, всё время действия."
+		"DOTA_Tooltip_modifier_poison_gas"								"Poison Gas"
+		"DOTA_Tooltip_modifier_poison_gas_description"					"Юнит отравлен, и теряет очки здоровья, всё время действия."
+		"DOTA_Tooltip_modifier_parts_duration"								"Dismantle Part"
+		"DOTA_Tooltip_modifier_parts_duration_description"					""
+		"DOTA_Tooltip_modifier_sanshouuo_aura"								"Sanshouuo"
+		"DOTA_Tooltip_modifier_sanshouuo_aura_description"					"Юнит защищен куклой  - Саншоу."
+
+
+
+		//--------------------
+		//Gaara
+		//--------------------
+		"npc_dota_hero_lion"  											"Gaara"
+		"npc_dota_hero_lion_lore"  										""
+		// Sabaku Kyuu
+		"DOTA_Tooltip_ability_gaara_sabaku_kyuu"						"Sand Coffin"
+		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_description"			"Гаара окутывает свою жервту песком, обездвиживая ее и нанося ей урон. При использовании, цель обездвижевается и поднимается в воздух. Через 1.40 секунд, цель понесет магический урон и будет брошена на землю. Если использование способности продолжилось меньше 1.40 секунд, цель не понесет урона."
+		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_duration"				"ДЛИТЕЛЬНОСТЬ: "
+		// Ryuusa Bakuryu
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu"						"Sand Tsunami"
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"Гаара создаёт волну из песка и погребает противника под ней. Оглушает всех вражеских юнитов в радиусе способности и наносит им постепенный магический урон. Чем дольше противник находится в зоне действия способности тем больше урона он получает."
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_duration"			"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_stun_duration"		"ОГЛУШЕНИЕ: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_radius"				"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		// Suna no Yoroi
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi"						"Sand Armor"
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"Считается 'Абсолютной защитой', Гаара покрывает своё тело тонким слоем песка, обеспечивая дополнительную защиту. Когда способность активна, то щит из песка поглащает процент урона, используя ману Гаары."
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_absorption_tooltip"	"%СНИЖЕНИЕ УРОНА: "
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_damage_per_mana"		"УРОНА НА ЕДИНИЦУ МАНЫ: "
+
+		"DOTA_Tooltip_modifier_mana_shield_datadriven"					"Sand Armor"
+		"DOTA_Tooltip_modifier_mana_shield_datadriven_description"		""
+		// Sabaku Taiso
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso"						"Sand Burial"
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Гаара обрушивает всю свою мощь, погребая всех в зоне действия под большим количеством песка. После неольшой задержки, огромная волна песка обрушивается на область и сметает все на своем пути, постепенно увеличавая область действия. Вражеские юниты, которые оказались в зоне действия волны будут оглушены и получат магический урон."
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_stun_duration"			"Длительность Стана: "
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_start_radius"			"Начальное АОЕ: "
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"Финишное АОЕ: "
+
+
+
+		//--------------------
+		//Sakura
+		//--------------------
+		"npc_dota_hero_phantom_assassin"  								"Sakura"
+		"npc_dota_hero_phantom_assassin_lore"  							""
+		// Earth Slam
+		"DOTA_Tooltip_ability_sakura_earth_slam"						"Earth Slam"
+		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Сакура бьет по земле своими усиленными чакрой кулаками, проламывая землю под ней. Вражеские юниты вокруг будет поражены, оглушены и получат магический урон."
+		"DOTA_Tooltip_ability_sakura_earth_slam_radius"					"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_sakura_earth_slam_stun_duration"			"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ: "
+		"DOTA_Tooltip_ability_sakura_earth_slam_stomp_damage"			"УРОН: "
+		"DOTA_Tooltip_modifier_sakura_earth_slam"						"Earth Slam"
+		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"Этот юнит оглушен."
+		// Chakra Burst
+		"DOTA_Tooltip_ability_sakura_chakra_burst"						"Chakra Burst"
+		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"Собирая чакру внутри своих ног, Сакура способна увеличить свою скорость до новых высот. В момент активации, скорость передвижения Сакуры увеличиваетя до максимальной на короткий промежуток времени."
+		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"Длительность: "
+		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Chakra Burst"
+		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"Юнит имеет максимальную скорость передвижения."
+		// Chakra Enhanced Strength
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"Chakra Enhanced Strength"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"Используя свои превосходные навыки в контроле чакры, Сакура ощутимо увеличивает силу своих ударов. Пассивно дает шанс нанести экстра физический урон от нормальных атак, также отбрасывая при этом врага назад на короткую дистанцию."
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"Урон: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_distance"		"Дистанция отбрасывания: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_duration"		"Длительность Отбрасывания: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_chance"		"%Шанс в процентах: "
+
+		// Inner Sakura
+		"DOTA_Tooltip_ability_sakura_inner_sakura"						"Inner Sakura"
+		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Сакура освобождает своё внутреннее Я, выпуская ее истинную личность на свет. Находясь в этом состоянии, Воля и Сила Сакура сильно увеличены, делая ее почти непобедимой и неостановимой. Дает больший процент экстра урона для базовой атаки Сакуры, также увеличивая ее защиту."
+		"DOTA_Tooltip_ability_sakura_inner_sakura_gods_strength_damage"	"%Бонус Урон: "
+		"DOTA_Tooltip_ability_sakura_inner_sakura_bonus_armor"			"Бонус Защита: "
+		"DOTA_Tooltip_ability_sakura_inner_sakura_duration"				"Длительность: "
+		"DOTA_Tooltip_modifier_sakura_inner_sakura"						"Inner Sakura"
+		"DOTA_Tooltip_modifier_sakura_inner_sakura_description"			"Юнит имеет повышенную Скорость Атаки и Защиту."
+
+		//--------------------
+		//Haku
+		//--------------------
+		"npc_dota_hero_drow_ranger"  								"Haku"
+		"npc_dota_hero_drow_ranger_lore"  							"Born in a snowy village within the Land of Water, Haku was a child amongst a land that feared ninjas and their kekkei genkais. It was because of this fear that Haku’s mother decided to hide her secret bloodline ability called Ice Release. She lived a happy and peaceful life with her husband, until it was discovered that Haku possessed the kekkei genkai as well. After witnessing his child manipulate water, Haku’s father gathered a mob in order to kill his wife as well as his son. He succeeded in killing his spouse but was slain along with his peers when Haku unleashed his ability in self defense. Alone and an orphan, Haku wandered the streets as a beggar with few days left to live. It was during this time that the shinobi Momochi Zabuza of the Hidden Mist discovered the young boy and realized his capabilities. Pledging himself as a weapon for his master, Haku found purpose in life as a tool for Zabuza’s ambitions. Zabuza would proceed to raise Haku in order to develop his skills and create the ultimate weapon for himself."
+		// Crippling Senbon
+		"DOTA_Tooltip_ability_haku_crippling_senbon"					"Crippling Senbon"
+		"DOTA_Tooltip_ability_haku_crippling_senbon_lore"				""
+		"DOTA_Tooltip_ability_haku_crippling_senbon_description"			"Sends a senbon at the target’s weak point dealing magical damage while also applying a brief stun.  This ability will also add stacks of Endless Wounds if it is leveled."
+		"DOTA_Tooltip_ability_haku_crippling_senbon_magic_missile_speed"	"SENBON SPEED: "
+		"DOTA_Tooltip_ability_haku_crippling_senbon_stun_duration"			"STUN DURATION: "
+		"DOTA_Tooltip_ability_haku_crippling_senbon_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_haku_crippling_senbon_endless_wounds_stacks"		"ENDLESS WOUNDS STACKS: "
+		"DOTA_Tooltip_ability_haku_crippling_senbon_range"			"RANGE: "
+		"DOTA_Tooltip_modifier_haku_senbon_stun"						"Crippling Senbon"
+		"DOTA_Tooltip_modifier_haku_senbon_stun_description"			"This Unit is stunned."
+		
+		// Needles of Death
+		"DOTA_Tooltip_ability_haku_needles"					"Needles of Death"
+		"DOTA_Tooltip_ability_haku_needles_lore"				"Sensatsu Suisho"
+		"DOTA_Tooltip_ability_haku_needles_description"			"Summons a large number of senbons above a target area. A wave of senbons will fall onto the area dealing magic damage while briefly stunning them and adding stacks of Endless Wounds if it is leveled. A second wave will fall shortly after causing the same effect."
+		"DOTA_Tooltip_ability_haku_needles_radius"			"RADIUS: "
+		"DOTA_Tooltip_ability_haku_needles_wave_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_haku_needles_stun_duration"	"STUN DURATION: "
+		"DOTA_Tooltip_ability_haku_needles_endless_wounds_stacks"		"ENDLESS WOUNDS STACKS: "
+		"DOTA_Tooltip_ability_haku_needles_range"			"RANGE: "
+		"DOTA_Tooltip_ability_haku_needles_wave_interval"	"WAVE DELAY: "
+		
+		"DOTA_Tooltip_modifier_haku_needles_stun"						"Needles of Death"
+		"DOTA_Tooltip_modifier_haku_needles_stun_description"			"This Unit is stunned."
+		
+		// Endless Wounds 
+		"DOTA_Tooltip_ability_haku_endless_wounds"					"Endless Wounds"
+		"DOTA_Tooltip_ability_haku_endless_wounds_lore"				""
+		"DOTA_Tooltip_ability_haku_endless_wounds_description"			"Causes Haku’s attacks to inflict a movement speed slow on the target. The slow will stack upon itself to a certain threshold. Each ability will cause a distinct number of stacks to be added to enemies affected. Normal attacks from Haku will add 4 stacks."
+		"DOTA_Tooltip_ability_haku_endless_wounds_ms_slow_per_stack"			"%MS SLOW PER STACK: "
+		"DOTA_Tooltip_ability_haku_endless_wounds_threshold"			"STACK THRESHOLD: "
+		"DOTA_Tooltip_ability_haku_endless_wounds_duration"			"STACK DURATION: "		
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim"						"Endless Wounds"
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim_description"			"This Unit is slowed."
+		
+		// Demonic Ice Mirrors
+		"DOTA_Tooltip_ability_haku_ice_mirrors"					"Demonic Ice Mirrors"
+		"DOTA_Tooltip_ability_haku_ice_mirrors_lore"				"Makyo Hyosho"
+		"DOTA_Tooltip_ability_haku_ice_mirrors_description"			"Haku separates into a large number of ice mirrors that surround the area. The mirrors are impassable but can be destroyed through physical damage. Each mirror has a ranged attack that also inflicts a stack of Endless Wounds. If all mirrors are destroyed before the duration ends, Haku will be killed."
+		"DOTA_Tooltip_ability_haku_ice_mirrors_radius"				"RADIUS: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_threshold"			"STACK THRESHOLD: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_duration"			"DURATION: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_mirror_attack_range"	"MIRROR ATTACK RANGE: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_attack_damage"		"MIRROR ATTACK DAMAGE: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_endless_wounds_stacks" "ENDLESS WOUNDS STACKS: "
+		"DOTA_Tooltip_ability_haku_ice_mirrors_hp" 					"MIRROR HP: "
+				
+		// Chakra Burst
+		"DOTA_Tooltip_ability_sakura_chakra_burst"						"Chakra Burst"
+		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"By gathering chakra within her legs, Sakura is able push her speed to new heights. Once activated, Sakura's movement speed is increased to maximum for a short period of time."
+		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"DURATION: "
+		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Chakra Burst"
+		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has MAX Movement Speed."
+		// Chakra Enhanced Strength
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"Chakra Enhanced Strength"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"Utilizing her excellent skills in chakra control, Sakura drastically increases the power behind her punches. Passively grants a chance to deal extra physical damage from normal attacks, while also pushing the enemy unit back a short distance."
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_distance"		"PUSH BACK DISTANCE: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_duration"		"PUSH BACK DURATION: "
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_chance"		"%PROC CHANCE: "
+
+		// Inner Sakura
+		"DOTA_Tooltip_ability_sakura_inner_sakura"						"Inner Sakura"
+		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Sakura unleashes her inner self, bringing her true personality to light. While in this state, Sakura's will and strength are drastically increased, causing her to become nearly unstoppable. Grants a large percentage of extra damage to Sakura's normal attacks while also increasing her armor."
+		"DOTA_Tooltip_ability_sakura_inner_sakura_gods_strength_damage"	"%BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_sakura_inner_sakura_bonus_armor"			"BONUS ARMOR: "
+		"DOTA_Tooltip_ability_sakura_inner_sakura_duration"				"DURATION: "
+		"DOTA_Tooltip_modifier_sakura_inner_sakura"						"Inner Sakura"
+		"DOTA_Tooltip_modifier_sakura_inner_sakura_description"			"This Unit has increased Attack Damage and Armor."
+
+
+
+			//--------------------
+		//Tsunade
+		//--------------------
+		"npc_dota_hero_legion_commander"  								"Tsunade"
+		"npc_dota_hero_legion_commander_lore"  							""
+		"npc_katsuyu"  													"Katsuyu"
+		"npc_katsuyu_lore"  											""
+
+
+		"DOTA_Tooltip_ability_tsunade_heaven_spear_kick"					"Heaven Spear Kick"
+		"DOTA_Tooltip_ability_tsunade_heaven_spear_kick_description"		"Tsunade will dash into the selected point dealing damage to the 1st target she hits, stopping at the location."
+		"DOTA_Tooltip_ability_tsunade_heaven_spear_kick_cast_range" "CAST RANGE: "
+
+		"DOTA_Tooltip_ability_tsunade_heavenly_foot_of_pain"				"Heavenly Foot of Pain"
+		"DOTA_Tooltip_ability_tsunade_heavenly_foot_of_pain_description"	"Tsunade jumps into the selected area dealing damage, reducing the movement speed and attack speed of the affected enemies."
+		"DOTA_Tooltip_ability_tsunade_heavenly_foot_of_pain_duration" 	"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_tsunade_heavenly_foot_of_pain_slow" 	"%MS/AS SLOW DEBUFF: "
+		"DOTA_Tooltip_modifier_heavenly_foot_of_pain_debuff"		"Heavenly Foot of Pain"
+		"DOTA_Tooltip_modifier_heavenly_foot_of_pain_debuff_description"		"This unit has decreased movement speed and attack speed."
+		
+		"DOTA_Tooltip_ability_tsunade_summon_katsuyu"					"Summoning Technique: Katsuyu"
+		"DOTA_Tooltip_ability_tsunade_summon_katsuyu_lore"				"Kuchiyose no Jutsu: Katsuyu"
+		"DOTA_Tooltip_ability_tsunade_summon_katsuyu_description"		"Tsunade will summon a medium size slug, the slug is not able to attack. Katsuyu comes with a set of abilities that help her in the battlefield. She learns 1 new skill each time player levels the katsuyu skill up."
+		"DOTA_Tooltip_ability_tsunade_summon_katsuyu_duration" 			"DURATION: "
+
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing"			"Katsuyu: Immense Network Healing"
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing_description"		"Tsunade places a buff on her allies that heals an amount of the damage they take on that moment, it also restores an amount of the mana spent while the buff is in effect."
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing_manacost_per_second" "%MANA COST: "
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing_heal_from_damage_percentage" "%HEAL: "
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing_mana_restore_percentage" "%MANA RESTORE: "
+		"DOTA_Tooltip_ability_tsunade_immense_network_healing_duration" "DURATION: "
+		"DOTA_Tooltip_tsunade_immense_network_healing_buff"				"Immense Network Healing"
+		"DOTA_Tooltip_tsunade_immense_network_healing_buff_description"	"This unit will receive an heal if it receives damage and restores mana after casting an ability."
+		"DOTA_Tooltip_tsunade_immense_network_healing_buff_caster"				"Immense Network Healing"
+		"DOTA_Tooltip_tsunade_immense_network_healing_buff_caster_description"	"Tsunade loses mana while casting the Immense Network Healing Jutsu."
+
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid"					"Tongue Tooth Sticky Acid"
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid_lore"				""
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid_description"		"Katsuyu spit acid along her path, dealing damage per second and reducing the attack power of the enemies inside the acid range."
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid_damage_per_second" 			"DAMAGE PER SECOND: "
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid_radius" 						"RADIUS: "
+		"DOTA_Tooltip_ability_katsuyu_tongue_tooth_sticky_acid_damage_reduction_percentage" "%DAMAGE REDUCTION: "
+		"DOTA_Tooltip_katsuyu_poison_debuff"				"Tongue Tooth Sticky Acid"
+		"DOTA_Tooltip_katsuyu_poison_debuff_description"	"This unit receives damage per second and has decreased attack damage."
+
+		"DOTA_Tooltip_ability_katsuyu_kuchiyose_no_jutsu"					"Kuchiyose no Jutsu"
+		"DOTA_Tooltip_ability_katsuyu_kuchiyose_no_jutsu_lore"				""
+		"DOTA_Tooltip_ability_katsuyu_kuchiyose_no_jutsu_description"		"Katsuyu will be forced back to Tsunade's position when this skill is activated."
+
+		"DOTA_Tooltip_ability_katsuyu_physical_composition"					"Physical Composition"
+		"DOTA_Tooltip_ability_katsuyu_physical_composition_lore"			""
+		"DOTA_Tooltip_ability_katsuyu_physical_composition_description"		"Katsuyu will take reduced damage from enemies abilities and attacks."
+		"DOTA_Tooltip_ability_katsuyu_physical_composition_damage_reduction_percentage"			"%DAMAGE REDUCTION"
+
+		"DOTA_Tooltip_ability_katsuyu_slug_great_division"					"Slug Great Division"
+		"DOTA_Tooltip_ability_katsuyu_slug_great_division_lore"			""
+		"DOTA_Tooltip_ability_katsuyu_slug_great_division_description"		"Whenever Tsunade Katsuyu: Immense Network Healing is on the field, katsuyu will disappear increasing the healing and mana restore buff of the ability 'Immense Network Healing'."
+		"DOTA_Tooltip_ability_katsuyu_slug_great_division_tsunade_ulti_buff"			"%ULTIMATE BUFF"
+
+
+
+
+
+		//--------------------
+		//Naruto
+		//--------------------
+		"npc_dota_hero_dragon_knight"  									"Naruto"
+		"npc_dota_hero_dragon_knight_lore"  							""
+		// Kage Bunshin Rasengan
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan"					"Shadow Clone: Rasengan"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_lore"			"Kage Bunshin Rasengan"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_description"		"Комбинируя две его сигнатурные техники, Наруто создает теневого клона с Разенганом, который атакует целевого вражеского юнита. По достижении врага, цель замедляется и получается минорный магический урон."
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_slow_movement_percentage" "%Дебафф скорости передвижения: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_slow_duration" "Длительность Дебаффа скорости передвижения: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_illusion_duration" "Время жизни Теневого клона: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_range" 			"Дальность использования: "
+		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow"				"Kage Bunshin Rasengan"
+		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow_description"	"Юнит замедлен."
+		// Kawazu Kumite
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite"							"Frog Kata"
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_lore"					"Kawazu Kumite"
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_description"				"Ката лягушки это боевой стиль, который доступен только тем кто научился входить в режим Отшельника. Этот боевой стиль получает полное преимущкство чакры Седжуцу, которая увеличивает скорость,сили и выносливость Пользователя. После использования способности, Наруто увеливает свои силу и ловкость на короткий промежуток времени, также создавая своего клона."
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_strength_bonus"			"BONUS STR: "
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_agility_bonus"			"BONUS AGI: "
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_duration"				"BUFF DURATION: "
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_illusion_duration"		"BUNSHIN DURATION: "
+		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite"						"Kawazu Kumite"
+		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite_description"			"This Unit has increased Agility and Strength."
+		// Kage Bunshin Mastery
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery"					"Shadow Clone Mastery"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_lore"					"Kage Bunshin Mastery"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_description"		"После многих лет тернировки, Наруто отточкил свою Технику Теневых клонов и начал реалиовывать ее полный потенциал. Пассивно увеличивает сопротивление и урон его клонов, а также позволяет Наруто вселяться в выбранного клона в 600 Области действия."
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_max_clones"		"Максимум клонов: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_illusion_outgoing_damage_percent"		"%Исходящий урон: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_illusion_incoming_damage_percent"		"%Входящий урон: "
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_range"			"Дальность использования: "
+		// Futon: Rasenshuriken
+		"DOTA_Tooltip_ability_naruto_rasenshuriken"							"Wind Release: Rasenshuriken"
+		"DOTA_Tooltip_ability_naruto_rasenshuriken_lore"					"Fuuton: Rasenshuriken"
+		"DOTA_Tooltip_ability_naruto_rasenshuriken_description"				"С помонщью манипуляции чакрой ветра в технике Разенгана, Наруто способен сформировать свою чакру в форму гигантского сюрикена, который он может бросить в врагов. При контакте с врагом,Разеншурикен наносит магический урон цели, попутно оглушая его и другие вражеские юниты в небольшой области действия."
+		"DOTA_Tooltip_modifier_storm_bolt_datadriven"						"Rasenshuriken"
+		"DOTA_Tooltip_modifier_storm_bolt_datadriven_description"			"Юнит оглушен."
+		"DOTA_Tooltip_ability_naruto_rasenshuriken_rs_stun_duration"		"Действие оглушения: "
+		"DOTA_Tooltip_ability_naruto_rasenshuriken_range"					"Дальность использования: "
+
+		//--------------------
+		//Itachi
+		//--------------------
+		"npc_dota_hero_itachi"  										"Itachi"
+		"npc_dota_hero_itachi_lore"  									""
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"Dust Crow Genjutsu"
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"Используя гендзюцу, Итачи исчезает, оставляя стаю ворону сзади, и появляется заново в указанной локации."
+
+		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"Tsukiyomi"
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"Эта техника одна из самых мощных существующих гендзюцу в природе, создаваемая только мангекью шаринган. Итачи ввергает жертву в иллюзию, пытая её. Держит в ней одну секунду."
+
+		"DOTA_Tooltip_ability_itachi_sharingan"							"Sharingan"
+		"DOTA_Tooltip_ability_itachi_sharingan_description"				"Шаринган - это свойство крови Клана Учиха, и принадлежит только им, проявляется в глазах. Одна из важнейших особенностей Шарингана дарует обладателю невероятную скорость реации. Дает Итачи 25% шанс нанести 100% его базового урона дополнительно, в виде магического урона. Скорость передвижения врага также будет замедлена на короткое время."
+
+
+		"DOTA_Tooltip_ability_itachi_amateratsu"						"Amateratsu"
+		"DOTA_Tooltip_ability_itachi_amateratsu_description"			"Божественное пламя. Черный огонь Аматэрасу, по легенде являются огнём из ада, которые жарки так же, как и солнце. Выжигают всё в фокусе взора. Длятся 10 секунд"
+
+
+
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_percent"			"%Замедление скорости передвижения: "
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_duration"			"Длительность Дебаффа: "
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_stun_duration"			"Длительность Оглушения: "
+
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_blink_range"			"Дальность: "
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_illusion_duration"		"Длительность Действия Клона: "
+
+
+		"DOTA_Tooltip_ability_itachi_sharingan_chance"			"%Процентуальный Шанс: "
+		"DOTA_Tooltip_ability_itachi_sharingan_duration"		"Длительность Дебаффа: "
+		"DOTA_Tooltip_ability_itachi_sharingan_mr_reduction"	"Замедление скорости передвижения: "
+
+
+
+		"DOTA_Tooltip_ability_itachi_amateratsu_damage_factor"			"Фактор урона: "
+		"DOTA_Tooltip_ability_itachi_amateratsu_damage"					"Урон в секунду: "
+		"DOTA_Tooltip_ability_itachi_amateratsu_duration"				"Длительность: "
+		"DOTA_Tooltip_ability_itachi_amateratsu_spread_aoe"				"Область распространения: "
+
+		//--------------------
+		//Sasuke
+		//--------------------
+		"npc_dota_hero_storm_spirit"  									"Sasuke"
+		"npc_dota_hero_storm_spirit_lore"								""
+		//Chidori Nagashi
+		"DOTA_Tooltip_ability_sasuke_chidori_nagashi"					"Chidori Nagashi"
+		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_description"		"Используя природу чакры молнии в широкой области, Саске высвобождает силу Чидори во всех направлениях вокруг него. После использования способности, электричество разряжается вокруг Саске нанося магический урон всем вражеским юнитам вокруг него."
+		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_radius"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_aoe_damage"		"Урон: "
+		//Chidori Eiso
+		"DOTA_Tooltip_ability_sasuke_chidori_eiso"						"Chidori Eiso"
+		"DOTA_Tooltip_ability_sasuke_chidori_eiso_stun_duration"		"Длительность Оглушения: "
+		"DOTA_Tooltip_ability_sasuke_chidori_eiso_description"			"Используя Манипуляцию Формы чакры, чтобы изменить предназначение его Чидори, Саске изменяет диапазон его основной техники, чтобы дотянуться ею до врагов на расстоянии. Наносит магический урон и ошеломляет целевую вражескую единицу при достижении."
+		//Chidori Koken
+		"DOTA_Tooltip_ability_sasuke_chidori_koken"						"Chidori Koken"
+		"DOTA_Tooltip_ability_sasuke_chidori_koken_description"			"Основное выбранное оружие Саске позволяет выпустить его чакру молнии через меч. После использования техники, катана Саске заряжается электричеством, позволяя его следующей базовой атаке нанести дополнительные эффекты вокруг цели. Меч чидори наносит экстра магический урон, также снижая скорость атаки и передвижения цели на короткий период времени."
+		"DOTA_Tooltip_ability_sasuke_chidori_koken_aoe_radius"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_sasuke_chidori_koken_move_slow"			"%Дебафф скорости передвижения: "
+		"DOTA_Tooltip_ability_sasuke_chidori_koken_attack_slow"			"%Дебафф скорости атаки: "
+		"DOTA_Tooltip_ability_sasuke_chidori_koken_tooltip_duration"	"Длительность Дебаффа: "
+		"DOTA_Tooltip_modifier_chidori_koken_damage_datadriven"			"Chidori Koken"
+		"DOTA_Tooltip_modifier_chidori_koken_damage_datadriven_description"	"Саске наносит бонусный урон и позволяет замедлить скорость атаки/передвижения в его следующий удар."
+		//Kirin
+		"DOTA_Tooltip_ability_sasuke_kirin"								"Kirin"
+		"DOTA_Tooltip_ability_sasuke_kirin_radius"						"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_sasuke_kirin_cast_range"					"Дальность броска: "	
+		"DOTA_Tooltip_ability_sasuke_kirin_description"					"Используя мощь природы грозовых туч, Саске посылает вниз большую молнию в целевой пункт, появляясь немедленно в его местоположении. После короткой задержки, Саске телепортирует к целевому пункту, нанося магический ущерб всем врагам, пойманным в радиусе действия техники."
+
+		//--------------------
+		//Kakashi
+		//--------------------
+		"npc_dota_hero_beastmaster"  									"Kakashi"
+		"npc_dota_hero_beastmaster_lore"  								""
+		// Doton
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Tracking Fang Technique"
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_lore"						"Doton: Tsuiga No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_description"				"Призывает псов-ниндзя, которые выпрыгивают на цель из под земли и обездвиживают его, а тем временем Какаши телепортируется за спину цели и отталкивает ее ударом ноги."
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua"							"Doton: Tsuiga No Jutsu"
+                "DOTA_Tooltip_ability_kakashi_doton_new_lua_damage"				"Урон: "
+		"DOTA_Tooltip_ability_kakashi_doton_new_lua_root_duration"				"Длительность обездвиживания: "
+
+		// Sharingan
+		"DOTA_Tooltip_ability_kakashi_sharingan"						"Sharingan"
+		"DOTA_Tooltip_ability_kakashi_sharingan_description"			"Повсеместно известный как 'Копирующий Ниндзя', Какаши использует шаринган для копирования вражеских техник, в личное пользование. После использования на целевом юните, Какаши ворует одну из его способностей для собственного использования. Украденная способность будет всегда одна и та же для каждого героя. Вы можете ввести -sharingan чтобы увидеть сколько осталось времени для использования украденной способности."
+		"DOTA_Tooltip_ability_kakashi_sharingan_copy_timer"				"Длительность: "
+		
+
+		// Kage Bunshi No Jutsu
+		"DOTA_Tooltip_ability_kakashi_bunshin"							"Shadow Clone Technique"
+		"DOTA_Tooltip_ability_kakashi_bunshin_lore"						"Kage Bunshin No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_bunshin_description"				"Kakashi creates a shadow clone of himself, granting it a portion of his chakra in order to make it look like the original Kakashi. Upon use, Kakashi becomes invisible while summoning a clone of himself. The clone will take additional incoming damage and deal reduced outgoing damage."
+		"DOTA_Tooltip_ability_kakashi_bunshin_duration"					"Время Инвиза: "
+		"DOTA_Tooltip_ability_kakashi_bunshin_ms_debuff"				"%Дебафф передвижения: "
+		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_duration"		"Время жизни Клона: "
+		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_outgoing_damage_percent_tooltip"		"%Урон наносимый Клоном: "
+		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_incoming_damage_percent"		"%Урон получаемый Клоном: "
+		
+
+		// Chidori
+		"DOTA_Tooltip_ability_kakashi_chidori"							"Raikiri"
+		"DOTA_Tooltip_ability_kakashi_chidori_description"				"Какаши вызывает большое количество чакры молнии в его руки, так что чакра становится видна невооруженным глазом. Как только техника завершена, Какаши устремляется к своей цели и вонзает в неё урон, нанося магический урон."
+		"DOTA_Tooltip_ability_kakashi_chidori_range"					"Радиус поражения: "
+
+
+		//--------------------
+		//Guy
+		//--------------------
+		"npc_dota_hero_centaur"  										"Guy"
+		"npc_dota_hero_centaur_lore"  									""
+		// Dynamic Entry
+		"DOTA_Tooltip_ability_guy_dynamic_entry"						"Dynamic Entry"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"Сигнатурная техника Гая, Гай наносит удар ногой 'вертушкой' цели с разбега. При ударе, нансоит цели урон, и шанс промахнуться при атаке."
+		"DOTA_Tooltip_ability_guy_dynamic_entry_miss_chance"			"%Время дебаффа промаха: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"Длительность Дебаффа: "
+		"DOTA_Tooltip_modifier_guy_dynamic_entry_miss"					"Dynamic Entry"
+		"DOTA_Tooltip_modifier_guy_dynamic_entry_miss_description"		"Этот юнит имеет шанс промаха."
+		// Power of Youth
+		"DOTA_Tooltip_ability_guy_power_of_youth"						"Power of Youth"
+		"DOTA_Tooltip_ability_guy_power_of_youth_description"			"Наутра Гая горит силой юности, даруя ему мотивацию превозмогать свои возможнсти. С каждой успешной атакой по одной цели, скорость атаки Гая увеличивается до 4-х раз. Смена цели снизит скорость атаки вдвое."
+		"DOTA_Tooltip_ability_guy_power_of_youth_bonus_attack_speed"	"%Бонус за каждый удар: "
+		"DOTA_Tooltip_ability_guy_power_of_youth_max_stacks"			"Максимум бонусов: "
+		"DOTA_Tooltip_modifier_guy_power_of_youth_as_bonus"				"Power of Youth"
+		"DOTA_Tooltip_modifier_guy_power_of_youth_as_bonus_description" "Этот юнит имеет повышенную скорость атаки."
+		// Gouken Mastery
+		"DOTA_Tooltip_ability_guy_gouken_mastery"						"Gouken Mastery"
+		"DOTA_Tooltip_ability_guy_gouken_mastery_bonus_damage_percentage"	"%Критический урон: "
+		"DOTA_Tooltip_ability_guy_gouken_mastery_chance"				"%Шанс крита: "
+		"DOTA_Tooltip_ability_guy_gouken_mastery_description"			"Используемый Гаем и Ли боевый стиль 'Крепкий Кулак', сосредоточен на нанесении врагу экстремальных внешних повреждений, через нанесение точных и сильных ударов. Дарует Гаю шанс нанести критический урон при авто атаке."
+		// Hachimon Tonkou: Dairoku Keimon
+		"DOTA_Tooltip_ability_guy_open_gates"							"Sixth Celestial Gate: Open"
+		"DOTA_Tooltip_ability_guy_open_gates_lore"						"Dairoku Keimon"
+		"DOTA_Tooltip_ability_guy_open_gates_bonus_ms"					"Бонус передвижения: "
+		"DOTA_Tooltip_ability_guy_open_gates_base_attack_time"			"Базовая скорость Атаки: "
+		
+		"DOTA_Tooltip_ability_guy_open_gates_description"				"Открывает шестые врата чакры внутри тела Гая, даруя ему огромное повышение чакры и позволяя его телу, превозмогать любые ограничения. Дает дополительную скорость передвижения, и снижает задержку базовой атаки героя."
+		"DOTA_Tooltip_modifier_guy_open_gates"							"Sixth Celestial Gate: Open"
+		"DOTA_Tooltip_modifier_guy_open_gates_description"				"Юнит имеет пониженную задержку атаки, и увеличенную скорость передвижения."
+
+		//--------------------
+		//Onoki
+		//--------------------
+		"npc_dota_hero_sven"											"Onoki"
+		//Jinton
+		"DOTA_Tooltip_ability_onoki_jinton"								"Dust Release: Atomic Dismantling Technique"
+		"DOTA_Tooltip_ability_onoki_jinton_lore"						"Jinton: Genkai Hakuri no Jutsu"
+		"DOTA_Tooltip_ability_onoki_jinton_stun_duration"				"Длительность Оглушения: "
+		"DOTA_Tooltip_ability_onoki_jinton_stun_radius"					"Область Действия: "
+		"DOTA_Tooltip_ability_onoki_jinton_cast_range"					"Дальность Броска: "
+		"DOTA_Tooltip_ability_onoki_jinton_Description"					"Оноки держит вражеского юнита в кубе, оглушая и нанося магический урон, так как будто они были бы развеяны на молекулярном уровне. Вражеские юниты в области в радиусе цели также попадут под действие техники."
+		"DOTA_Tooltip_modifier_jinton_stun"								"Jinton: Genkai Hakuri no Jutsu"
+		"DOTA_Tooltip_modifier_jinton_stun_description"					"Юнит оглушен."
+		//Stalagmite Armor
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"Stalagmite Armor"
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_bonus_armor"		"Бонус Броня: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage_return_rate"	"Коэффициент возврата урона: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_duration"			"Время действия: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_cast_range"		"Дальность Броска: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"Оноки покрывает цель покрытием земли, даруя дополнительную защиту и способность возвращать урон нападющим врагам."
+		//Turn to Dust
+		"DOTA_Tooltip_ability_onoki_turn_to_dust"						"Turn to Dust"
+		"DOTA_Tooltip_ability_onoki_turn_to_dust_bonus_damage_percent"	"Уменьшение урона: "
+		"DOTA_Tooltip_ability_onoki_turn_to_dust_Description"			"Оноки превращает вражеское оружие в пыль, сильно понижая их способность отвечать. Уменьшает атакующий урон вражеских единиц в раидусе вокруг Оноки."
+		"DOTA_Tooltip_modifier_turn_to_dust_debuff"						"Turn to Dust"
+		"DOTA_Tooltip_modifier_turn_to_dust_debuff_description"			"Юнит имеет пониженный урон Атаки."
+		//Doton: Kajugan no Jutsu
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Earth Release: Added-Weight Rock Technique"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_lore"				"Doton: Kajugan no Jutsu"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Фактор урона: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_slow_bonus"		"%Дебафф скорости передвижения: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Время действия: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"Область Действия: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Граница немедленной смерти: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Оноки буквально заставляет окружающих врагов разрушаться вокруг него. Во время короткого периода, вражеские единицы рядом с Оноки замедляются и получают процент от их максимального здоровья в виде урона. Если юнит достигает определенного порога здоровья, он будет убит немедленно."
+		
+		//--------------------
+		//Neji
+		//--------------------
+		"npc_dota_hero_axe"  											"Neji"
+		//Kaiten
+		"DOTA_Tooltip_ability_neji_kaiten"								"Kaiten"
+		"DOTA_Tooltip_ability_neji_kaiten_Description"					"Неджи выпускает чакра из каналов чакры, и крутится в вихре, создавай защитную сферу из чакры вокруг него. Способность отталкивает всех вражеских юнитов вокруг него нанося магический урон им. Когда неджи крутится, он становится неуязвимым на 0.4 секунды."
+		"DOTA_Tooltip_ability_neji_kaiten_aoe_target"					"Область Действия: "
+		"DOTA_Tooltip_ability_neji_kaiten_stun_duration"				"Длительность Оглушения: "
+		//Hakke Kuuhekishou modifier_neji_internal_bleeding_ms_slow
+		"DOTA_Tooltip_ability_neji_internal_bleeding"					"Internal Bleeding"
+		"DOTA_Tooltip_ability_neji_internal_bleeding_lore"				"Jyuuken"
+		"DOTA_Tooltip_ability_neji_internal_bleeding_Description"		"Атаки в боевом стиле клана Хьюга Джуюкен заставляет сеть каналов чакры немедленно прекратить поток чакры. Вызывает дебафф вражеской цели, который также нансоит магический урон всё время действия."
+		"DOTA_Tooltip_ability_neji_internal_bleeding_cast_range"		"Дальность Броска: "
+		"DOTA_Tooltip_ability_neji_internal_bleeding_duration"			"Время действия: "
+		"DOTA_Tooltip_ability_neji_internal_bleeding_damage_per_tick"	"Урон каждые О.5 сек: "
+		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow_duration"	"Длительность Замедления: "		
+		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow"			"%Дебафф передвижения: "	
+		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow"			    "Internal Bleeding"	
+		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow_description"	"Скорость передвижения снижена."
+		//Byakugan
+		"DOTA_Tooltip_ability_neji_byakugan"							"Byakugan"
+		"DOTA_Tooltip_ability_neji_byakugan_Description"				"Семейная линия крови Хьюга позволяет тем видеть внутреннюю структуру тела врагов как их собственные ухлы чакры. Способность пассивно добавляет урон к базовой атаке. Включение данной способности дает Неджи повышенную дальность видения невидимых юнитов на короткое время."
+		"DOTA_Tooltip_ability_neji_byakugan_vision_aoe"					"Область действия Видения: "
+		"DOTA_Tooltip_ability_neji_byakugan_duration"					"Время Бьякуган: "
+		"DOTA_Tooltip_ability_neji_byakugan_bonus_damage_tooltip"				"Доп. Урон: "
+		//Hakke Hyaku Nijuuhachi Shou
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou"				"Eight Trigrams Sixty-Four Palms"
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_lore"			"Hakke Rokujuyon Sho"
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_Description"	"Неджи концентрируется на одиночном оппоненте, используя стиль Мягкой Ладони наносит 64 точных удара по по нервным точкам, блокируя всё точки чакры цели. Использование техники, обездвиживает противника на месте, обезоруживает, и накладывает запрет на применение способности, на 3 секунды. Враги в небольшом радиусе также получают запрет на использование магии."
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_duration"		"Длительность: "
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_damage"		"Урон: "
+		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_aoe_radius"	"Область Запрета Магии: "
+		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou"						"Eight Trigrams Sixty-Four Palms"
+		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou_description"			"Цель оглушена."
+
+		//--------------------
+		//Raikage
+		//--------------------
+		"npc_dota_hero_sand_king"  										"Raikage"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_lore"					"Raiga no Bomu"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu"					"Liger Bomb"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_reduce_armor"		"СНИЖЕНИЕ БРОНИ: "
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_target_aoe"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_armor_reduction_duration" "ДЛИТЕЛЬНОСТЬ СНИЖЕНИЯ БРОНИ: "
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_cast_range"			"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_Description"		"Тайдзюцу, при котором пользователь трамбует противника головой в пол. При ударе наносит магический урон и снижает броню цели, а также любых врагов в радиусе."
+		"DOTA_Tooltip_ability_raikage_lariat"							"Lariat"
+		"DOTA_Tooltip_ability_raikage_lariat_cast_range"				"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_raikage_lariat_radius"					"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_raikage_lariat_duration"					"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ: "
+		"DOTA_Tooltip_ability_raikage_lariat_Description"				"Стремительно нападает, используя свою поражающую технику. Движется с максимальной скоростью в точку назначения. Если противник попался на пути, то ему будет нанесен магический урон и ближайшие враги будут оглушены."
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei"					"Lightning Horizontal"
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_lore"				"Raigyaku Suihei"
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_str_ratio_damage"	"КОЭФФИЦИЕНТ СИЛЫ: "
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_damage_reduction"	"%УМЕНЬШЕНИЕ УРОНА: "
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_aoe"				"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_damage_reduction_duration"	"%ДЛИТЕЛЬНОСТЬ УМЕНЬШЕНИЯ УРОНА: "
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_Description"		"Наполняет свои руки чакрой молнии, для мощного удара по врагу. Следующая атака нанесет дополнительный урон на основе процента своей силы, также у противника будет уменьшен урон на короткое время."
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi"					"Lighting Release Armor"
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_lore"					"Raiton no Yoroi"		
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_Description"		"Пользователь создает вокруг себя защитную оболочку из чакры молнии. После использования уменьшается получаемый урон в течении некоторого времени. Действие способности прекратится, если будет получено определенное количество повреждений. Когда действие способности заканчивается, выпускает волну молний которая наносит урон и снимает положительные эффекты ненадолго."
+		"DOTA_Tooltip_raikage_knockup"									"Raiga no Bomu"
+		"DOTA_Tooltip_raikage_knockup_description"						"-7 Брони"
+		"DOTA_Tooltip_modifier_raigyaku_debuff"							"Raigyaku Suihei"
+		"DOTA_Tooltip_modifier_raigyaku_debuff_description"				"Уменьшенный Урон"
+		"DOTA_Tooltip_modifier_raigyaku"								"Raigyaku Suihei"
+		"DOTA_Tooltip_modifier_raigyaku_description"					"Следующая атака Райкаге нанесет магический урон на основе его силы в радиусе 250 и уменьшит урон цели."
+		"DOTA_Tooltip_modifier_raiton_no_yoroi_charge"					"Raiton no Yoroi"
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_physical_damage_reduce_percent"	"%УМЕНЬШЕНИЕ УРОНА: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_duration"			"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_charge_damage_amount"	"МАКС. ПОГЛОЩЕНИЕ УРОНА: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_aoe"		"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_ms_slow"	"%ЗАМЕДЛЕНИЕ: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_purge_duration"	"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ: "
+		"DOTA_Tooltip_modifier_raiton_no_yoroi_charge_description"		"Защитная оболочка молнии."
+		"DOTA_Tooltip_modifier_modifer_raikage_purge"					"Raiton no Yoroi"
+		"DOTA_Tooltip_modifier_modifer_raikage_purge_description"		"Замедление"
+
+
+		//--------------------
+		//Shikamaru
+		//--------------------
+		"npc_dota_hero_shadow_shaman"  								"Shikamaru"
+		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari"			"Kage Kubishibari"
+		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_channel_time"	"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_total_damage"	"УРОН: "
+		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_description"	"Техника теневого удушения. Секретное ниндзюцу клана Нара. Шикамару объединяет свою тень с тенью врага, тем самым обездвиживая его и удушая. Наносит 40 урона в секунду."
+
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai"			"Explosive Kunai"
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_raidus"		"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_movespeed_slow"		"%ЗАМЕДЛЕНИЕ: "
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_attackspeed_slow"		"%ЗАМЕДЛЕНИЕ АТАКИ: "
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_duration"		"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_description"	"Простой кунай со взрывной печатью. Печать взрывается при попадании в цель, наносит урон по области и замедляет противников."
+
+
+		"DOTA_Tooltip_ability_shikamaru_meditation"					"Meditation"
+		"DOTA_Tooltip_ability_shikamaru_meditation_radius"			"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_shikamaru_meditation_duration"		"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_shikamaru_meditation_armor"			"СНИЖЕНИЕ БРОНИ: "
+		"DOTA_Tooltip_ability_shikamaru_meditation_description"		"Шикамару медитирует, чтобы сосредоточиться и просчитать слабые и сильные стороны противника. Когда все это известно, то справится с врагом намного легче. Увеличивает у дружественных и уменьшает у вражеских героев броню радиусе 700 вокруг себя. Каждую секунду эффект снижается."
+
+		"DOTA_Tooltip_ability_shikamaru_kage_nui"					"Tentacles"
+		"DOTA_Tooltip_ability_shikamaru_kage_nui_ward_count"		"КОЛИЧЕСТВО: "
+		"DOTA_Tooltip_ability_shikamaru_kage_nui_damage_min"		"СИЛА АТАКИ: "
+		"DOTA_Tooltip_ability_shikamaru_kage_nui_duration"			"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_shikamaru_kage_nui_description"		"Теневые иглы. Пользователь разделяет свою тень на множество теней, с помощью которых он может атаковать и обезвредить противника. Вызывает 8 Теневых Игл, которые атакуют противника и имеют иммунитет к магии."
+
+		//--------------------
+		//Anko
+		//--------------------
+		"npc_dota_hero_medusa"  									"Anko"
+		"DOTA_Tooltip_ability_anko_giant_snake"						"Kuchiyose no Jutsu: Kyodaija"
+		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"ДАЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"УРОН: "
+		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"Техника призыва: Из тела пользователя появляется змея, которая кусает и притягивает жертву к Анко."
+		
+		"DOTA_Tooltip_ability_anko_senei_jyashu"					"Senei Jyashu"
+		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage"		"УРОН: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage_interval" "ПЕРЕЗАРЯДКА: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_jyashu_magic_resist"	"СОПРОТИВЛЕНИЕ МАГИИ: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_seek_radius"	"ОБЛАСТЬ ДЕЙСТВИЯ: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"Змеи скрытые в тени. Возможность использовать змей в оборонительных целях, вызывая их каждые 2 секунды, они атакуют любого врага в небольшом радиусе и дают Анко сопротивление магии."
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"Senei Ta Jashu"
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_duration"			"ДЛИТЕЛЬНОСТЬ: "
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_damage_per_tick"	"ПЕРИОДИЧЕСКИЙ УРОН: "
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_ms_slow"			"%ЗАМЕДЛЕНИЕ: "
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_cast_range"		"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Змеиные укусы. Техника, позволяющая пользователю выпускать змей из рукава. Эти змеи используются, чтобы поразить жертву на расстоянии и отравить ее. Отравление длится 3 секунды и накладывает эффект безмолвия."
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"Sojasosai no Jutsu"
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_damage_percent"	"%ЗДОРОВЬЯ ЗА УРОН: "
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_cast_range"	"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ: "
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_Description"	"Убийство двойной змеи. Это запретная техника, которая убивает как и пользователя, так и цель. Анко делает печать одной рукой с обоих сторон, вызывая двух змей из рукава, которые убивают и отравляют смертельным ядом обоих."
+	
+		//--------------------
+		//Temari
+		//--------------------
+		"npc_dota_hero_enchantress"  									"Temari"
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"Fusajin no Jutsu"
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"Dust Wind. Temari releases a vicious wind that rips apart trees and flesh."
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"Kamaitachi No Jutsu"
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"Wind Scythe Jutsu. Temari releases a powerful gust of wind, that can shred trees into pieces and pick up enemies in its path, suspending them helplessly in the air before plummeting them to the ground. Holds enemies in the air for 1.3 seconds."
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_base_damage"	"DAMAGE: "
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_travel_distance"	"RANGE: "
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lift_duration"	 "LIFT DURATION: "
+		"DOTA_Tooltip_ability_temari_sheer_wind"						"Sheer Wind"
+		"DOTA_Tooltip_ability_temari_sheer_wind_Description"			"Temari uses the slipstream of her jutsus to increase her attack and movement speed. Stacks with itself. Last for 7 seconds."
+		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_attack_speed_bonus"	"BONUS AS PER STACK: "
+		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_move_speed_bonus"	"%BONUS MS PER STACK: "
+		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_max_stacks"	"MAX STACKS: "
+
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai"				"Kuchiyose: Kirikiri Mai"
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_description"				"Spinning slashing dance. Temari summons Kamatari, a one-eyed sickle-holding weasel, by wiping blood on her Giant Folding Fan as payment for the contract and then swinging it. The fan whips up a tempest, slashing through everything it touches."
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_base_damage"	"DAMAGE PER TORNADO: "
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_cyclone_count_tooltips"	"CYCLONE COUNT: "
+		
+
+
+
+
+		//------------------------
+		// Items
+		//------------------------
+    	//Leather gloves -> handguards
+    	"DOTA_Tooltip_ability_item_handguards"										"Handguards"
+		"DOTA_Tooltip_ability_item_handguards_Lore"									"Это может быть формирование печатей, ношение оружия, или просто нанесение ударов руками. Перевязка своих рук, является одной из самых важнейших вещей, которую может сделать шиноби на поле битвы."
+    	"DOTA_Tooltip_ability_item_handguards_attackspeed"							"Скорость атаки: +"
+
+    	//Mask of Ne
+    	"DOTA_Tooltip_ability_item_mask_of_ne"										"Mask of Ne"
+		"DOTA_Tooltip_ability_item_mask_of_ne_Lore"									"Маска Не, или Маска Корня, это маска новичка, которая помогает скрывающемся за ней сосредоточиться на специализированных атаках."
+    	"DOTA_Tooltip_ability_item_mask_of_ne_bonus_lifesteal"						"Вампиризм: +"
+    	
+    	//Ring of regenration
+    	"DOTA_Tooltip_ability_item_ring_of_regeneration"							"Ring of Regeneration"
+		"DOTA_Tooltip_ability_item_ring_of_regeneration_Lore"						"Эти кольца полезны для ниндзя, придают больше выносливости на важных миссиях."
+    	"DOTA_Tooltip_ability_item_ring_of_regeneration_bonus_hp_reg_constant"		"Регенерация Здоровья: +"
+    	
+    	//ANBU Mask
+    	"DOTA_Tooltip_ability_item_anbu_mask"										"ANBU Mask"
+		"DOTA_Tooltip_ability_item_anbu_mask_Lore"									"Шиноби, которые достигли уровня Джонина получают эту уникальную маску. Их владельцы известны в своих способностях контроля чакры."
+    	"DOTA_Tooltip_ability_item_anbu_mask_bonus_mana_reg_percentage"				"%Регенерация Чакры: +"
+    	
+    	//Running Shoes
+    	"DOTA_Tooltip_ability_item_shinobi_sandals"									"Shinobi Sandals"
+		"DOTA_Tooltip_ability_item_shinobi_sandals_Lore"							"Стандартная обувь, созданная для Шиноби."
+    	"DOTA_Tooltip_ability_item_shinobi_sandals_bonus_movement_speed_constant"	"Скорость Передвижения: +"
+    	
+    	//Shinobi Cloak
+    	"DOTA_Tooltip_ability_item_shinobi_cloak"									"Shinobi Cloak"
+		"DOTA_Tooltip_ability_item_shinobi_cloak_Lore"								"Ниндзя весьма свойственно носить плащ путешественников во время их миссий, поскольку они предоставляют увеличенную защиту от природных элементов и вражеских техник."
+    	"DOTA_Tooltip_ability_item_shinobi_cloak_bonus_magic_resistance"			"%Сопротивление Техникам: +"
+    	
+    	//Gem of Truesight
+    	"DOTA_Tooltip_ability_item_byakugan_lens"									"Byakugan Lens"
+    	"DOTA_Tooltip_ability_item_byakugan_lens_description"						"Дает Истинный Взгляд"
+		"DOTA_Tooltip_ability_item_byakugan_lens_Lore"								"Сила Бьякугана позволяет видеть каналы чакры и любую жизнь, независимо от их скрытности"
+    	
+    	//Shinobi Claws
+    	"DOTA_Tooltip_ability_item_shinobi_claws"									"Shinobi Claws"
+		"DOTA_Tooltip_ability_item_shinobi_claws_Lore"								"Страшное оружие шиноби, используется чтобы кромсать своих врагов."
+    	"DOTA_Tooltip_ability_item_shinobi_claws_bonus_damage"						"Урон: +"
+
+    	//Broadsword
+    	"DOTA_Tooltip_ability_item_broadsword_datadriven"							"Broadsword"
+		"DOTA_Tooltip_ability_item_broadsword_datadriven_Lore"						"Обычный меч, позволяет пользователю увеличить урон. Комбинирование этого меча с другими предметами может открыть уникальную силу спрятанную в них."
+    	"DOTA_Tooltip_ability_item_broadsword_datadriven_bonus_damage"				"Урон: +"
+
+    	//Metal Gauntlets
+    	"DOTA_Tooltip_ability_item_metal_gauntlets"									"Metal Gauntlets"
+		"DOTA_Tooltip_ability_item_metal_gauntlets_Lore"							"Эта пара перчаток, помогает сдерживать атаки врага. Они могут выдержать серьезный урон."
+		"DOTA_Tooltip_ability_item_metal_gauntlets_bonus_damage"					"Урон: +"
+    	"DOTA_Tooltip_ability_item_metal_gauntlets_bonus_attackspeed"				"Скорость атаки: +"
+
+		//Tenten's Spear
+    	"DOTA_Tooltip_ability_item_tentens_spear"									"Tenten's Spear"
+		"DOTA_Tooltip_ability_item_tentens_spear_Lore"								"Используемое спецами по оружию, Копье Тентен призывается с помощью свитка призыва, и можент быть брошено во врагов, для нанесеня тяжелого ущерба."
+		"DOTA_Tooltip_ability_item_tentens_spear_bonus_damage"						"Урон: +"
+
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_iwagakure"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_iwagakure_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_iwagakure_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_kirigakure_scarred"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_kirigakure_scarred_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_kirigakure_scarred_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_kumogakure"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_kumogakure_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_kumogakure_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_konoha"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_konoha_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_konoha_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_konoha_scarred"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_konoha_scarred_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_konoha_scarred_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_otogakure"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_otogakure_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_otogakure_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_sunagakure"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_sunagakure_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_sunagakure_bonus_armor"					"Броня: +"
+		//Forehead Protector
+    	"DOTA_Tooltip_ability_item_forehead_protector_yugakure_scarred"								"Forehead Protector"
+		"DOTA_Tooltip_ability_item_forehead_protector_yugakure_scarred_Lore"							"Можно определить к какой деревне принадлежит тот или иной Ниндзя, так же используется для некоторой защиты носителя."
+		"DOTA_Tooltip_ability_item_forehead_protector_yugakure_scarred_bonus_armor"					"Броня: +"
+
+
+
+
+		//Shin Guards
+    	"DOTA_Tooltip_ability_item_shin_guards"										"Shin Guards"
+    	"DOTA_Tooltip_ability_item_shin_guards_description"							"Дает шанс заблокировать урон в зависимости от типа атаки вашего героя.Для Ближнего боя больше, Дальнего меньше."
+		"DOTA_Tooltip_ability_item_shin_guards_Lore"								"Эти щитки используются оперативниками спецназа АНБУ. Дают базовую защиту от атак врага, дешево и сердито."
+
+		//Javelin
+    	"DOTA_Tooltip_ability_item_javelin_datadriven"								"Javelin"
+    	"DOTA_Tooltip_ability_item_javelin_datadriven_Description"					"Пассивная: Проникающий урон — дает шанс нанести дополнительный урон при каждой атаке."
+		"DOTA_Tooltip_ability_item_javelin_datadriven_Lore"							"Основное оружие которое использовалось во Второй Войне Шиноби, позволяет шиноби наносить урон на дистанции."
+		"DOTA_Tooltip_ability_item_javelin_datadriven_bonus_damage"					"Урон: +"
+
+		//Mithril Hammer
+    	"DOTA_Tooltip_ability_item_mithril_hammer_datadriven"						"Mithril Hammer"
+		"DOTA_Tooltip_ability_item_mithril_hammer_datadriven_Lore"					"Для деревни Ишикагуре, эти молоты заменяли им кунай в Первой Войне Шиноби. Ветераны пользуются им по сей день, чтобы помнить дни былой славы."
+		"DOTA_Tooltip_ability_item_mithril_hammer_datadriven_bonus_damage"			"Урон: +"
+
+		//Shinobi Uniform
+    	"DOTA_Tooltip_ability_item_shinobi_uniform"									"Shinobi Uniform"
+		"DOTA_Tooltip_ability_item_shinobi_uniform_Lore"							"Стандартная униформа Шиноби, которой пользуются все ниндзя, от Генинов до Джонинов."
+		"DOTA_Tooltip_ability_item_shinobi_uniform_bonus_armor"						"Броня: +"
+
+		//Samurai Helm
+    	"DOTA_Tooltip_ability_item_samurai_helm"									"Samurai Helm"
+		"DOTA_Tooltip_ability_item_samurai_helm_Lore"								"Уникальный самурайский шлем, иногда его берут ниндзя, чтобы защитить свою голову."
+		"DOTA_Tooltip_ability_item_samurai_helm_bonus_armor"						"Броня: +"
+		"DOTA_Tooltip_ability_item_samurai_helm_bonus_hpreg"						"Регенерация Здоровья: +"
+
+		//Samurai Armor
+    	"DOTA_Tooltip_ability_item_samurai_armor"									"Samurai Armor"
+		"DOTA_Tooltip_ability_item_samurai_armor_Lore"								"Тяжелая броня самурая, редко используемая шиноби, но дает огромную защиту."
+		"DOTA_Tooltip_ability_item_samurai_armor_bonus_armor"						"Броня: +"
+
+		//Gloves of Strength
+    	"DOTA_Tooltip_ability_item_gloves_of_strength"								"Gloves of Strength"
+		"DOTA_Tooltip_ability_item_gloves_of_strength_Lore"							"Эти перчатки предназначены для рукопашного боя, придают мощи к каждому удару."
+		"DOTA_Tooltip_ability_item_gloves_of_strength_bonus_str"					"Сила: +"
+
+		//Idate's Boot - training_weights
+    	"DOTA_Tooltip_ability_item_training_weights"								"Training Weights"
+		"DOTA_Tooltip_ability_item_training_weights_Lore"							"Утяжелители нужны для тренировки скорости шиноби."
+		"DOTA_Tooltip_ability_item_training_weights_bonus_agi"						"Ловкость: +"
+
+		//Amulet of Anubis
+    	"DOTA_Tooltip_ability_item_amulet_of_anubis"								"Amulet of Anubis"
+		"DOTA_Tooltip_ability_item_amulet_of_anubis_Lore"							"Этот амулет принадлежал Анубису, могучий дух следит за тем кто держит этот артефакт."
+		"DOTA_Tooltip_ability_item_amulet_of_anubis_bonus_int"						"Интеллект: +"
+
+		//Leaf of Konoha
+    	"DOTA_Tooltip_ability_item_leaf_of_konoha"									"Leaf of Konoha"
+		"DOTA_Tooltip_ability_item_leaf_of_konoha_Lore"								"Лист из деревни Коноха. Этот листок помогает молодым ниндзя исполнить свои мечты."
+		"DOTA_Tooltip_ability_item_leaf_of_konoha_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_ability_item_leaf_of_konoha_bonus_agi"						"Ловкость: +"
+		"DOTA_Tooltip_ability_item_leaf_of_konoha_bonus_str"						"Сила: +"
+
+		//Sakuras Fighting Gloves
+    	"DOTA_Tooltip_ability_item_sakuras_fighting_gloves"							"Sakura's Fighting Gloves"
+		"DOTA_Tooltip_ability_item_sakuras_fighting_gloves_Lore"					"После тяжелых тренировок, эти перчатки позволяют Сакуре проявлять свою легендарную силу в бою."
+		"DOTA_Tooltip_ability_item_sakuras_fighting_gloves_bonus_str"				"Сила: +"
+		"DOTA_Tooltip_ability_item_sakuras_fighting_gloves_bonus_int"				"Интеллект: +"
+		"DOTA_Tooltip_ability_item_sakuras_fighting_gloves_bonus_agi"				"Ловкость: +"
+
+		//Sakuras Fighting Gloves Recipe
+    	"DOTA_Tooltip_ability_item_recipe_sakuras_fighting_gloves"					"Sakuras Fighting Gloves"
+		"DOTA_Tooltip_ability_item_recipe_sakuras_fighting_glovess_Lore"			"После тяжелых тренировок, эти перчатки позволяют Сакуре проявлять свою легендарную силу в бою."
+		"DOTA_Tooltip_ability_item_recipe_sakuras_fighting_gloves_bonus_str"		"Сила: +"
+		"DOTA_Tooltip_ability_item_recipe_sakuras_fighting_gloves_bonus_int"		"Интеллект: +"
+		"DOTA_Tooltip_ability_item_recipe_sakuras_fighting_gloves_bonus_agi"		"Ловкость: +"
+
+		//The Spark of Agility Recipe
+    	"DOTA_Tooltip_ability_item_recipe_the_spark_of_agility"						"The Spark of Agility"
+		"DOTA_Tooltip_ability_item_recipe_the_spark_of_agility_Lore"				"Искра, активирующая нейроны мозга, увеличивает рефлексы шиноби."
+		"DOTA_Tooltip_ability_item_recipe_the_spark_of_agility_bonus_str"			"Сила: +"
+		"DOTA_Tooltip_ability_item_recipe_the_spark_of_agility_bonus_int"			"Интеллект: +"
+		"DOTA_Tooltip_ability_item_recipe_the_spark_of_agility_bonus_agi"			"Ловкость: +"
+
+		//The Spark of Agility
+    	"DOTA_Tooltip_ability_item_the_spark_of_agility"							"The Spark of Agility"
+		"DOTA_Tooltip_ability_item_the_spark_of_agility_Lore"						"Искра, активирующая нейроны мозга, увеличивает рефлексы шиноби."
+		"DOTA_Tooltip_ability_item_the_spark_of_agility_bonus_str"					"Сила: +"
+		"DOTA_Tooltip_ability_item_the_spark_of_agility_bonus_int"					"Интеллект: +"
+		"DOTA_Tooltip_ability_item_the_spark_of_agility_bonus_agi"					"Ловкость: +"
+
+		//Celestrial Shield Recipe
+    	"DOTA_Tooltip_ability_item_recipe_celestrial_shield"						"Celestial Shield"
+		"DOTA_Tooltip_ability_item_recipe_celestrial_shield_Lore"					"Небесный Щит отражает настоящую сущность пользователя, придавая мудрость необходимую для битвы."
+		"DOTA_Tooltip_ability_item_recipe_celestrial_shield_bonus_str"				"Сила: +"
+		"DOTA_Tooltip_ability_item_recipe_celestrial_shield_bonus_int"				"Интеллект: +"
+		"DOTA_Tooltip_ability_item_recipe_celestrial_shield_bonus_agi"				"Ловкость: +"
+
+		//Celestrial Shield
+    	"DOTA_Tooltip_ability_item_celestrial_shield"								"Celestrial Shield"
+		"DOTA_Tooltip_ability_item_celestrial_shield_Lore"							"Небесный Щит отражает настоящую сущность пользователя, придавая мудрость необходимую для битвы."
+		"DOTA_Tooltip_ability_item_celestrial_shield_bonus_str"						"Сила: +"
+		"DOTA_Tooltip_ability_item_celestrial_shield_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_ability_item_celestrial_shield_bonus_agi"						"Ловкость: +"
+
+		//Shinobi Waist Pouch
+    	"DOTA_Tooltip_ability_item_shinobi_waist_pouch"								"Shinobi Waist Pouch"
+		"DOTA_Tooltip_ability_item_shinobi_waist_pouch_Lore"						"Стандартная разгрузка для хранения предметов шиноби."
+		"DOTA_Tooltip_ability_item_shinobi_waist_pouch_bonus_str"					"Сила: +"
+		"DOTA_Tooltip_ability_item_shinobi_waist_pouch_bonus_int"					"Интеллект: +"
+		"DOTA_Tooltip_ability_item_shinobi_waist_pouch_bonus_agi"					"Ловкость: +"
+
+		//Belt of Strength - Firm Nunchaku
+    	"DOTA_Tooltip_ability_item_firm_nunchaku"									"Firm Nunchaku"
+		"DOTA_Tooltip_ability_item_firm_nunchaku_Lore"								"Это странное оружие служит,как необычное оружие для тех, кто достаточно силен, чтобы нанести ими тяжелый ущерб."
+		"DOTA_Tooltip_ability_item_firm_nunchaku_bonus_str"							"Сила: +"
+
+		//Snake Skin
+    	"DOTA_Tooltip_ability_item_snake_skin"										"Snake Skin"
+		"DOTA_Tooltip_ability_item_snake_skin_Lore"									"Эта кожа придает гибкость пользователю и увеличивает его ловкость"
+		"DOTA_Tooltip_ability_item_snake_skin_bonus_agi"							"Ловкость: +"
+
+		//Anbu Cloak
+    	"DOTA_Tooltip_ability_item_anbu_cloak"										"Anbu Cloak"
+		"DOTA_Tooltip_ability_item_anbu_cloak_Lore"									"Обычный плащ, используемый АНБУ чтобы быть неопознанным."
+		"DOTA_Tooltip_ability_item_anbu_cloak_bonus_int"							"Интеллект: +"
+
+		//Axe of Strength - Vambraces 
+    	"DOTA_Tooltip_ability_item_vambraces"										"Vambraces"
+		"DOTA_Tooltip_ability_item_vambraces_Lore"									"Наручные щитки используются для тренировок, чтобы увеличить силу удара."
+		"DOTA_Tooltip_ability_item_vambraces_bonus_str"								"Сила: +"
+
+		//Blade of Agility - Swift Katana
+    	"DOTA_Tooltip_ability_item_swift_katana"									"Swift Katana"
+		"DOTA_Tooltip_ability_item_swift_katana_Lore"								"Эта катана одна из самых легких, ее материал позволяет наносить удары со смертельной скоростью."
+		"DOTA_Tooltip_ability_item_swift_katana_bonus_agi"							"Ловкость: +"
+
+		//Staff Of Faith
+    	"DOTA_Tooltip_ability_item_staff_of_faith"									"Staff Of Faith"
+		"DOTA_Tooltip_ability_item_staff_of_faith_Lore"								"Древний посох, ведший многих шиноби в тяжелые времена."
+		"DOTA_Tooltip_ability_item_staff_of_faith_bonus_int"						"Интеллект: +"
+
+		//Kage's Relic
+    	"DOTA_Tooltip_ability_item_kages_relic"										"Kage's Relic"
+		"DOTA_Tooltip_ability_item_kages_relic_Lore"								"Реликвия Каге это артефакт принадлежавший первому Каге каждой деревни. Реликвия предоставляет огромную власть и способности"
+		"DOTA_Tooltip_ability_item_kages_relic_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_kages_relic_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_kages_relic_bonus_agi"							"Ловкость: +"
+
+		//Yondaime Sealed Kunai
+    	"DOTA_Tooltip_ability_item_yondaime_sealed_kunai"							"Yondaime Sealed Kunai"
+		"DOTA_Tooltip_ability_item_yondaime_sealed_kunai_Lore"						"Этот кунай помогал Йондаиме из Конохи обрести прозвище 'Желтой Молнии'. Он позволяет оказаться в выбранном месте словно вспышка молнии на земле."
+
+		//Soldier Pill
+    	//"DOTA_Tooltip_ability_item_clarity"											"Soldier Pill"
+
+    	//Medicine
+    	"DOTA_Tooltip_ability_item_flask"											"Medicine"
+    	"DOTA_Tooltip_ability_item_flask_lore"										"Как не эффеективное как медицинское нин-джутсу, Медицина предоставляет первую помощь шиноби, жаждущим заботы медицинской ниндзи."
+
+    	//Food Supply
+    	"DOTA_Tooltip_ability_item_tango"											"Food Supply"
+    	"DOTA_Tooltip_ability_item_tango_lore"										"Достаточный пакет еды, необходимый ниндзя в долгих миссиях."
+
+
+    	//Hero's Water
+    	"DOTA_Tooltip_ability_item_bottle"											"Hero's Water"
+    	"DOTA_Tooltip_ability_item_bottle_description"								"Использование: Восстановление: Употребляет заряд для восстановления Здоровья и Чакры за время действия. Лечение прекращается, елси юнит атакован. Героическая Вода может быть заполнена снова на фонтане своей команды. Руны могу храниться в Воде Героев для дальнейшего использования, и автоматически активируются после 2-х минут. Если Водка Героя не заполнена до края и будет передана собаке-курьеру, то курьер будет двигаться на 30% медленнее. Используйте для Восстановления союзных героев. Хранящиеся руны не могут быт ьиспользованы на ком либо еще кроме владельца Бутылки Джин-Тоника."
+    	"DOTA_Tooltip_ability_item_bottle_Note0"									"Здоровья восстанавливается: 110 \nCВосстановление Чакры: 70\nДлительность: 3"
+
+		//Kunai
+    	"DOTA_Tooltip_ability_item_kunai"											"Kunai"
+    	"DOTA_Tooltip_ability_item_kunai_lore"										"Ниндзя обучают пользоваться этим простым оружием с момента начала их обучения,но даже самые сильные из шиноби продолжают их использовать."
+    	"DOTA_Tooltip_ability_item_kunai_description"								"Активно: Рубить - Уничтожает целове дерево или стража. Пассивно: Подавление - увеличивает атакующий урон против юнитво не-героев"
+    	"DOTA_Tooltip_ability_item_kunai_bonus_damage_melee"						"%Бонус к Атаке Героев ближнего боя: "
+		"DOTA_Tooltip_ability_item_kunai_bonus_damage_range"						"%Бонус к Атаке героев Дальнего Боя: "
+
+    	//Clarity
+    	"DOTA_Tooltip_ability_item_clarity"											"Clarity"
+    	"DOTA_Tooltip_ability_item_description"										"Использование: Восстанавливает чакру целевого юнита продолжительное время. Если юнит атакован, Эффект будет потерян. Зажмите Ctrl для использования на вражеском герое."
+
+
+    	//Sand Eyes
+    	"DOTA_Tooltip_ability_item_ward_observer"									"Third Eye"
+    	"DOTA_Tooltip_ability_item_ward_observer_lore"								"В невидимой войне лжи, обмана и секретных операций, разведка это ключ к победе."
+    	
+    	//Sand Eyes Improved
+    	"DOTA_Tooltip_ability_item_ward_sentry"										"Sentry Eyes"
+    	"DOTA_Tooltip_ability_item_ward_sentry_lore"								"Для многих ниндзя, обнаружение их присутствия, подобно смерти."
+
+
+    	//Dust of Appearance
+    	"DOTA_Tooltip_ability_item_dust"											"Dust of Appearance"
+
+    	//Animal Courier
+    	"DOTA_Tooltip_ability_item_courier"											"Pakkun"
+
+    	//Scroll of Town Portal
+    	"DOTA_Tooltip_ability_item_tpscroll"										"Summoning Scroll"
+
+    	//Shinobi Trends
+    	"DOTA_Tooltip_ability_item_shinobi_trends"									"Shinobi Trends"
+		"DOTA_Tooltip_ability_item_shinobi_trends_Lore"								"Эти искусственные ноги шиноби помогают тем кто потерял ногу или обе, восстановить их скорость на поле боя. Инженерия основанная на чакре, позволяет владельцу перенапралять чакру согласно его запросам на поле боя."
+		"DOTA_Tooltip_ability_item_shinobi_trends_movementspeed"					"Скорость передвижения:+."
+		"DOTA_Tooltip_ability_item_shinobi_trends_attackspeed"						"Скорость Атаки:+"
+
+    	//Shinobi Trends of Strength
+    	"DOTA_Tooltip_ability_item_shinobi_trends_str"								"Shinobi Trends of Strength"
+		"DOTA_Tooltip_ability_item_shinobi_trends_str_Lore"							"Эти искусственные ноги шиноби помогают тем кто потерял ногу или обе, восстановить их скорость на поле боя. Инженерия основанная на чакре, позволяет владельцу перенапралять чакру согласно его запросам на поле боя."
+		"DOTA_Tooltip_ability_item_shinobi_trends_str_movementspeed"				"Скорость передвижения:+."
+		"DOTA_Tooltip_ability_item_shinobi_trends_str_attackspeed"					"Скорость Атаки:+"
+		"DOTA_Tooltip_ability_item_shinobi_trends_str_bonus_str"					"Сила: +"
+
+		//Shinobi Trends of Agility
+    	"DOTA_Tooltip_ability_item_shinobi_trends_agi"								"Shinobi Trends of Agility"
+		"DOTA_Tooltip_ability_item_shinobi_trends_agi_Lore"							"Эти искусственные ноги шиноби помогают тем кто потерял ногу или обе, восстановить их скорость на поле боя. Инженерия основанная на чакре, позволяет владельцу перенапралять чакру согласно его запросам на поле боя."
+		"DOTA_Tooltip_ability_item_shinobi_trends_agi_movementspeed"				"Скорость передвижения:+."
+		"DOTA_Tooltip_ability_item_shinobi_trends_agi_attackspeed"					"Скорость Атаки:+"
+		"DOTA_Tooltip_ability_item_shinobi_trends_agi_bonus_agi"					"Ловкость: +"
+
+		//Shinobi Trends of Intelligence
+    	"DOTA_Tooltip_ability_item_shinobi_trends_int"								"Shinobi Trends of Intelligence"
+		"DOTA_Tooltip_ability_item_shinobi_trends_int_Lore"							"Эти искусственные ноги шиноби помогают тем кто потерял ногу или обе, восстановить их скорость на поле боя. Инженерия основанная на чакре, позволяет владельцу перенапралять чакру согласно его запросам на поле боя."
+		"DOTA_Tooltip_ability_item_shinobi_trends_int_movementspeed"				"Скорость передвижения:+."
+		"DOTA_Tooltip_ability_item_shinobi_trends_int_attackspeed"					"Скорость Атаки:+"
+		"DOTA_Tooltip_ability_item_shinobi_trends_int_bonus_int"					"Интеллект: +"
+
+		//Idate's Sandals
+    	"DOTA_Tooltip_ability_item_idates_sandals"									"Idate's Sandals"
+    	"DOTA_Tooltip_ability_item_idates_sandals_Description"						"Активно: Фазовый переход -Увеличивает скорость передвижения на определенный процент, и позволяет Вам проходить сквозь свои и вражеские единицы. Фазовый переход отменяется в случае использования ккаой либо другой способности или предмета."
+		"DOTA_Tooltip_ability_item_idates_sandals_Lore"								"Эти сандали некогда принадлежавшие Идате, известному, как одному из самых быстрых бегунов, из когда либо живших."
+		"DOTA_Tooltip_ability_item_idates_sandals_movementspeed"					"Скорость передвижения:+."
+		"DOTA_Tooltip_ability_item_idates_sandals_bonus_damage"						"Урон к Атаке:+"
+		"DOTA_Tooltip_idates_sandals_phase"											"Idate's Sandals"
+		"DOTA_Tooltip_idates_sandals_phase_description"								"Скорость передвижения увеличена на 10%%."
+
+		//The Fourth's Legcy
+    	"DOTA_Tooltip_ability_item_the_fourths_legacy"								"The Fourth's Legacy"
+    	"DOTA_Tooltip_ability_item_the_fourths_Description"							"Активно: Телепорт- Телепортирует Вас к союзному не-героическому юниту или зданию. Бонусы к скорости передвижения от разных пар ботинок не сочетаются."
+		"DOTA_Tooltip_ability_item_the_fourths_legacy_Lore"							"Четвертый Хокаге Йондаиме, также известный как 'Желтая Молния Конохи' остался в истории мира шиноби, за его легендарную скорость."
+		"DOTA_Tooltip_ability_item_the_fourths_legacy_movementspeed"				"Скорость передвижения:+."
+	
+		//Transmutation Gloves
+    	"DOTA_Tooltip_ability_item_transmutation_gloves"							"Transmutation Gloves"
+    	"DOTA_Tooltip_ability_item_transmutation_gloves_Description"				"Активно: Трансмутация - Убивает юнита не героя, давая взамен 190 золота и увеличенный в 2.5 раза опыт."
+		"DOTA_Tooltip_ability_item_transmutation_gloves_Lore"						"Эти спец. перчатки, усиленные алхимией,,были созданы чтобы стать улучшенной формой ручных протезов. При контакте со слабым врагом, враг может быть превращен в золото для личного пользования."
+		"DOTA_Tooltip_ability_item_transmutation_gloves_attackspeed"				"Скорость Атаки:+"
+	
+		//Gai's Fist Of Might
+    	"DOTA_Tooltip_ability_item_gais_fist_of_might"								"Gai's Fist Of Might"
+		"DOTA_Tooltip_ability_item_gais_fist_of_might_Lore"							"Величайший мастер тайдзюцу, которого только Коноха, когда либо видела, Гай использует свои специальные перчатки позволяющие ему с экстремальной скоростью атаки."
+		"DOTA_Tooltip_ability_item_gais_fist_of_might_attackspeed"					"Скорость Атаки:+"
+	
+		//Ring of Health
+    	"DOTA_Tooltip_ability_item_ring_of_health_datadriven"						"Ring Of Health"
+		"DOTA_Tooltip_ability_item_ring_of_health_datadriven_Lore"					"Много поколений назад, эти кольца были легендарными приспособления, восстановления здоровья во время войны, или после пьянки."
+		"DOTA_Tooltip_ability_item_ring_of_health_datadriven_bonus_hp_reg_constant"	"Регенерация Здоровья:+"
+	
+		//Silver Watch
+    	"DOTA_Tooltip_ability_item_silver_watch"									"Silver Watch"
+		"DOTA_Tooltip_ability_item_silver_watch_Lore"								"Это специальные серебряные часы, получаемые государственными алхимиками, прошедшими тест. Эти часы увеличивают силу их трансмутационных кругов... и подождите секундочку. Эй!Разве это не из Цельнометаллического Алхимика?"
+		"DOTA_Tooltip_ability_item_silver_watch_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+	
+		//Amplified Silver Watch
+    	"DOTA_Tooltip_ability_item_amplified_silver_watch"							 "Amplified Silver Watch"
+		"DOTA_Tooltip_ability_item_amplified_silver_watch_Lore"				 		 "Эти часы уже дают не только ману, но и также укрепляют общее самочувствие владельца."
+		"DOTA_Tooltip_ability_item_amplified_silver_watch_bonus_mana_reg_percentage" "%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_amplified_silver_watch_bonus_hp_reg_constant"	 "Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_amplified_silver_watch_bonus_damage"				 "Урон к Атаке:+"
+
+		//Essence of Agility
+    	"DOTA_Tooltip_ability_item_essence_of_agility"								"Essence Of Wind"
+		"DOTA_Tooltip_ability_item_essence_of_agility_Lore"							"Элемент природы ветра усиливает чакру ветра внутри носителя, усиливая его заложенную Творцом ловкость."
+		"DOTA_Tooltip_ability_item_essence_of_agility_bonus_agi"					"Ловкость: +"
+		
+		//Essence Of Nature
+    	"DOTA_Tooltip_ability_item_essence_of_nature"								"Essence Of Water"
+		"DOTA_Tooltip_ability_item_essence_of_nature_Lore"							"Природный естественный элемент, который увеличивает запас внутренний чакры обладателей, даруя им увеличение силы разума тем."
+		"DOTA_Tooltip_ability_item_essence_of_nature_bonus_int"						"Интеллект: +"
+	
+		//Essence of Brutality
+    	"DOTA_Tooltip_ability_item_essence_of_brutality"							"Essence of Earth"
+		"DOTA_Tooltip_ability_item_essence_of_brutality_Lore"						"Природный элемент, который усиливает чакру земли в носителе, даруя увеличение здоровья."
+		"DOTA_Tooltip_ability_item_essence_of_brutality_bonus_str"					"Сила: +"
+	
+		//Essence of Tranquility
+    	"DOTA_Tooltip_ability_item_essence_of_tranquility"							"Essence of Lighting"
+		"DOTA_Tooltip_ability_item_essence_of_tranquility_Lore"						"Природный элемент, который ускоряет течение чакры обладателя, даруя им увеличенный выход атакующего урона по врагам."
+		"DOTA_Tooltip_ability_item_essence_of_tranquility_bonus_damage"				"Урон к Атаке:+"
+	
+		//Red Sun
+    	"DOTA_Tooltip_ability_item_red_sun"											"Essence of Fire"
+		"DOTA_Tooltip_ability_item_red_sun_Lore"									"Позволяет обладателю получить благословенные силы Луны. Легенда говорит, что этот артефакт может быть использован для ковки одних из самых мощных вооружений мира шиноби."
+		"DOTA_Tooltip_ability_item_red_sun_bonus_damage"							"Урон к Атаке:+"
+	
+		//Blue Moon
+    	"DOTA_Tooltip_ability_item_blue_moon"										"Essence of Ice"
+		"DOTA_Tooltip_ability_item_blue_moon_Description"							"Пассивно: Ледяная Атака - Атака замедляет скорости передвижения и атаки цели. Голубая луна это уникальный модификатор Атаки, который не будет сочетаться с другими Уникальными Модификаторами Атаки. Однако Тёмно Синяя Луна будет сочетаться с модификаторами высасывающими жизненную энергию (вампирскими)."
+		"DOTA_Tooltip_ability_item_blue_moon_Lore"									"Позволяет обладателю получить благословенные силы Луны. Легенда говорит, что этот артефакт может быть использован для ковки одних из самых мощных вооружений мира шиноби."
+		"DOTA_Tooltip_ability_item_blue_moon_bonus_str"								"Сила: +"
+		"DOTA_Tooltip_ability_item_blue_moon_bonus_int"								"Интеллект: +"
+		"DOTA_Tooltip_ability_item_blue_moon_bonus_agi"								"Ловкость: +"
+		"DOTA_Tooltip_blue_moon_slow"												"Blue Moon"
+		"DOTA_Tooltip_blue_moon_slow_description"									"10%% скорости передвижения и -15%% скорости Атаки."
+		
+
+		//Point Booster
+    	"DOTA_Tooltip_ability_item_point_booster_datadriven"						"Point Booster"
+		"DOTA_Tooltip_ability_item_point_booster_datadriven_Lore"					"Широко известно, что комбинация трех усилителей, может создать чрезвычайно полезный артефакт."
+		"DOTA_Tooltip_ability_item_point_booster_datadriven_bonus_hp"				"Здоровье: +"
+		"DOTA_Tooltip_ability_item_point_booster_datadriven_bonus_mana"				"Чакра: +"
+
+		//Vitality Booster
+    	"DOTA_Tooltip_ability_item_vitality_booster_datadriven"						"Vitality Booster"
+		"DOTA_Tooltip_ability_item_vitality_booster_datadriven_Lore"				"Широко известно, что комбинация трех усилителей, может создать чрезвычайно полезный артефакт."
+		"DOTA_Tooltip_ability_item_vitality_booster_datadriven_bonus_hp"			"Здоровье: +"
+
+		//Energy Booster - Chakra Booster
+    	"DOTA_Tooltip_ability_item_chakra_booster"									"Chakra Booster"
+		"DOTA_Tooltip_ability_item_chakra_booster_Lore"								"Широко известно, что комбинация трех усилителей, может создать чрезвычайно полезный артефакт."
+		"DOTA_Tooltip_ability_item_chakra_booster_bonus_mana"						"Чакра: +"
+
+		//Jiraiyas sandals 															
+    	"DOTA_Tooltip_ability_item_jiraiyas_sandals"								"Jiraiyas Sandals"
+    	"DOTA_Tooltip_ability_item_jiraiyas_sandals_description"					"Активно: Мана - восстанавливает процент маны от Вашей собственной, а также тот же % маны окружающим союзникам, в определенном радиусе АОЕ."
+		"DOTA_Tooltip_ability_item_jiraiyas_sandals_Lore"							"Специальные сандали, ношенные самим легендарным Саннином. Эти сандали помогли Джираййе выбраться из многих опасных передряг."
+		"DOTA_Tooltip_ability_item_jiraiyas_sandals_bonus_mana"						"Чакра: +"
+		"DOTA_Tooltip_ability_item_jiraiyas_sandals_movementspeed"					"Скорость передвижения:+."
+
+		//Akatsuki Ring
+    	"DOTA_Tooltip_ability_item_akatsuki_ring"									"Akatsuki Ring"
+		"DOTA_Tooltip_ability_item_akatsuki_ring_Lore"								"Кольцо Акацки, это особые кольца,которые должны носить всё члены Акацки. До сих пор неизвестно, для чего они предназначались..."
+		"DOTA_Tooltip_ability_item_akatsuki_ring_bonus_damage"						"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_akatsuki_ring_description"						"Пассивно:Аура Акацки -дает регенерацию маны и броню в радиусе .Кольца Акацки не сочетаются друг с другом."
+		"DOTA_Tooltip_ability_item_akatsuki_ring_bonus_armor"						"Урон к Атаке:+"
+		"DOTA_Tooltip_akatsuki_ring_aura"											"Akatsuki Ring"
+		"DOTA_Tooltip_akatsuki_ring_aura_description"								"Добавляет + 3 Брони\n +65% к Регенерации Чакры."
+
+		//First Hokage's Necklace
+    	"DOTA_Tooltip_ability_item_first_hokages_necklace"							"First Hokage's Necklace"
+    	"DOTA_Tooltip_ability_item_first_hokages_necklace_Description"				"Активно : Восстановление - Лечит '№' очков здоровья и даает + '№' брони в области вокруг. Пассивно - Аура Восстановления - + 4.0  Очка Регенерации Здоровья в Области 900 АоЕ. Дополнительные Ожерелья Первого Хокаге не сочетаются вместе"
+		"DOTA_Tooltip_ability_item_first_hokages_necklace_Lore"						"Первый Хокаге был широко известен за свою силу почти Божественную Силу, и мощным целительским техникам. Ожерелье, которое он носил передавалось через поколения, помогая шиноби, десятилетия после его кончины."
+		"DOTA_Tooltip_ability_item_first_hokages_necklace_bonus_str"				"Сила: +"
+		"DOTA_Tooltip_ability_item_first_hokages_necklace_bonus_agi"				"Ловкость: +"
+		"DOTA_Tooltip_ability_item_first_hokages_necklace_bonus_int"				"Интеллект: +"
+		"DOTA_Tooltip_ability_item_first_hokages_necklace_bonus_armor"				"Armor: +"
+		"DOTA_Tooltip_modifier_item_mekansm_datadriven_heal_armor"					"First Hokage's Necklace"
+		"DOTA_Tooltip_modifier_item_mekansm_datadriven_heal_armor_description"		"+ 2 брони"		
+		"DOTA_Tooltip_modifier_item_mekansm_datadriven_aura"						"First Hokage's Necklace"
+		"DOTA_Tooltip_modifier_item_mekansm_datadriven_aura_description"			"+ 2 регенерации здоровья"
+
+
+		//Retractable Shield
+    	"DOTA_Tooltip_ability_item_retractable_shield"								"Retractable Shield"
+    	"DOTA_Tooltip_ability_item_retractable_shield_Description"					"Активно: Доп. Защита - Дает +2 к физической защите, всём союным единицам в области '№' АоЕ."
+		"DOTA_Tooltip_ability_item_retractable_shield_Lore"							"Этот Выдвигающийся щит, личное защитное приспособление рыцаря Темуджина. Когда закрыт, он похож на браслет. В раскрытом виде, это браслетт отразить всё типы обычных атак."
+		"DOTA_Tooltip_ability_item_retractable_shield_bonus_str"					"Сила: +"
+		"DOTA_Tooltip_ability_item_retractable_shield_bonus_agi"					"Ловкость: +"
+		"DOTA_Tooltip_ability_item_retractable_shield_bonus_int"					"Интеллект: +"
+		"DOTA_Tooltip_ability_item_retractable_shield_bonus_armor"					"Armor: +"
+		"Dota_Tooltip_modifier_item_buckler_datadriven_active"						"Retractable Shield"
+		"Dota_Tooltip_modifier_item_buckler_datadriven_active_description"			"+2 брони"
+
+		//Tobi's Mask
+    	"DOTA_Tooltip_ability_item_tobis_mask"										"Tobi's Mask"
+		"DOTA_Tooltip_ability_item_tobis_mask_Description"							"Пассивно : Аура - дарует  +15%% процентов к урону, + 0.8 чакры регенерации и + 16%% вампиризма(Ближний бой только) окружающим союзникам, в области '№' АоЕ."
+		"DOTA_Tooltip_ability_item_tobis_mask_Lore"									"Тоби хороший мальчик"
+		"DOTA_Tooltip_modifier_item_vladmir_datadriven_general_aura"				"Tobi's Mask - Aura"
+		"DOTA_Tooltip_modifier_item_vladmir_datadriven_general_aura_description"	" +15%% процентов к урону, + 0.8 чакры регенерации и + 16%% вампиризма(Ближний бой только)."
+
+		//Bingo Book
+    	"DOTA_Tooltip_ability_item_bingo_book"										"Bingo Book"
+		"DOTA_Tooltip_ability_item_bingo_book_description"							"Активно: Отслеживать Врагов (пингует на мини карте местонахождение врагов)"
+		"DOTA_Tooltip_ability_item_bingo_book_Lore"									"Книга Бинго широко распространенный источник информации о пропавших ниндзя и  преступниках, которые могу представлять угрозу любой из 5 деревень шиноби. Эта же книга Бинго в дальнейшем была улучшена для отслеживания местонахождения врагов, для последующего их убийства"
+		"DOTA_Tooltip_ability_item_bingo_book_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_bingo_book_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_bingo_book_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_bingo_book_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+
+		//Magatama Amulet
+    	"DOTA_Tooltip_ability_item_magatama_amulet"									"Magatama Amulet"
+		"DOTA_Tooltip_ability_item_magatama_amulet_Lore"							"Ключ необходимый для открытия искусственног огенератора весны."
+		"DOTA_Tooltip_ability_item_magatama_amulet_bonus_str"						"Сила: +"
+		"DOTA_Tooltip_ability_item_magatama_amulet_bonus_agi"						"Ловкость: +"
+		"DOTA_Tooltip_ability_item_magatama_amulet_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_ability_item_magatama_amulet_bonus_hp_reg_constant"			"Регенерация Здоровья:+"
+		"DOTA_Tooltip_magatama_amulet_aura"											"Magatama Amulet"
+		"DOTA_Tooltip_magatama_amulet_aura_description"								"Аура: регенерация +2 очков здоровья."
+
+		//Kongou Nyoi
+    	"DOTA_Tooltip_ability_item_kongou_nyoi"										"Kongou Nyoi"
+    	"DOTA_Tooltip_ability_item_kongou_nyoi_description"							"Пассивно:  30%% Шанс нанести 100 урона в Области 300 АОЕ. Активно: Отслеживать врагов ( пеленгует на миникарте вражеское местоположение)."
+		"DOTA_Tooltip_ability_item_kongou_nyoi_Lore"								"С этим оружием Старейшая обезьяна, способна драться на стороне владельца, или превращается в большой удлиняющийся посох. Этот посох тверд как адамантин, и способен рубить словно меч."
+		"DOTA_Tooltip_ability_item_kongou_nyoi_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_kongou_nyoi_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_kongou_nyoi_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_kongou_nyoi_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_kongou_nyoi_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+
+		//Flying Courier
+    	"DOTA_Tooltip_ability_item_flying_courier"									"Kongou Nyoi"
+		"DOTA_Tooltip_ability_item_flying_courier_Lore"								"Создает маленького летающего юнита, который может переносить твои вещи с и на базу. Если он погибает вещи падают на землю."
+
+		//Sage Scroll
+		"DOTA_Tooltip_ability_item_sage_scroll"										"Sage Scroll"
+    	"DOTA_Tooltip_ability_item_sage_scroll_Description"							"Активно: Колдовство -Превращает вражескую единицу в безобидную тварь на всё время действия способности. Уничтожает иллюзии.Негативирует всю защиту цели, сопротивление к магии, увороты, а также всё пассивные способности на всё время действия."
+		"DOTA_Tooltip_ability_item_sage_scroll_Note0"								"Немедленно уничтожает иллюзии."
+		"DOTA_Tooltip_ability_item_sage_scroll_Note1"								"Цель имеет базовую скорость передвижения 100, но бафф дарующий максимальную скорость передвижения, не будет развеян."
+		"DOTA_Tooltip_ability_item_sage_scroll_Lore"								"Просто прикосновением  пальца ко лбу легендарный Саннин Джирайя в состоянии превратить сврего противника в лягушку. Или по крайней мере, убеждает других, что он в состоянии сделать так!"
+		"DOTA_Tooltip_ability_item_sage_scroll_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_sage_scroll_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_sage_scroll_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_sage_scroll_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+
+		//Hoshikage's Star
+    	"DOTA_Tooltip_ability_item_hoshikages_star"									"Hoshikage's Star"
+		"DOTA_Tooltip_ability_item_hoshikages_star_Description"						"Активно: Громовой Удар - 350 Магического урона в области 250 Аое, Дебафф к Скорости Передвижения -40, и замедление скорости атаки на 3.5 секунды. 10 зарядов."
+		"DOTA_Tooltip_ability_item_hoshikages_star_Lore"							"Звезда, которая когда то упала в деревню, ее жители использовали чакру звезды для тренировки собственных тел. Эта Звездня чакра так могущественна, что способна сделать носителя в 8 раз сильнее, чем он был прежде."
+		"DOTA_Tooltip_ability_item_hoshikages_star_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_ability_item_hoshikages_star_bonus_mana_reg_percentage"		"%Регенерация Чакры:+"
+		"DOTA_Tooltip_hoshi_star_slow"												"Hosikage's Star"
+		"DOTA_Tooltip_hoshi_star_slow_description"									"-40%% скорости передвижения"
+
+		"DOTA_Tooltip_ability_item_recipe_hoshikages_star"                  		"Recipe Hoshikages Star"
+		"DOTA_Tooltip_ability_item_recipe_hoshikages_star_Description"              "Активно: Громовой Удар - 350 Магического урона в области 250 Аое, Дебафф к Скорости Передвижения -40, и замедление скорости атаки на 3.5 секунды."
+
+		//The Totsuka
+    	"DOTA_Tooltip_ability_item_the_totsuka"										"Sword of Totsuka"
+    	"DOTA_Tooltip_ability_item_the_totsuka_Description"							"Ожог души - Запрещает использовать способности целевой единице на время действия способности, а также увеличивает весь урон наносимый по цели, во время действия способности."
+		"DOTA_Tooltip_ability_item_the_totsuka_Lore"								"Легендарный меч носимый Сусанно Итачи, при контакте, он ввергает жертв в вечное гендзюцу."
+		"DOTA_Tooltip_ability_item_the_totsuka_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_the_totsuka_bonus_damage"						"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_the_totsuka_attackspeed"							"Скорость Атаки:+"
+		"DOTA_Tooltip_ability_item_the_totsuka_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+		"DOTA_Tooltip_modifier_totsuka_silence"										"Soul Burn"
+		"DOTA_Tooltip_modifier_totsuka_silence_description"							"Юнит лишен возможности использовать способности, и получает ущерб."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note1"								"Does not directly amplify damage as it is dealt, but rather saves all damage values and deals 30% of it 5 seconds after cast."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note2"								"This means that the damage can be avoided by becoming spell immune or invulnerable at the end of the duration."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note3"								"The damage is applied exactly 5 seconds after cast, but only if the target still has the debuff on."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note4"								"This means when the debuff gets dispeled prematurely, no damage is dealt."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note5"								"It also means when the debuff gets prolonged (by e.g re-casting it), the damage is not further delayed."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note6"								"This in return means that successive casts on the same target only refresh the silence duration. \nIn order to amplify damage again, the already existing debuff must disappear first."
+		"DOTA_Tooltip_ability_item_the_totsuka_Note7"								"Only considers magical, physical and pure damage (after all reductions). Other sources of health loss are ignored."
+
+
+		//Karites Touch
+    	"DOTA_Tooltip_ability_item_karites_touch"									"Karite's Touch"
+    	"DOTA_Tooltip_ability_item_karites_touch_description"						"Активно: Энергетический Взрыв - Немедленно наносит 400 (повреждение варьируется от уровня), Магического Урона  целевой вражеской единице. Этот предмет может быть модернизирован."
+		"DOTA_Tooltip_ability_item_karites_touch_Lore"								"Известный как Прикосновение Жнеца, сказано, что палец Шинигами был когда-то отрезан и упал в мир шиноби. Палец, как уверовано, в состоянии  посылать темные лучи энергии, которая в состоянии немедленно уничтожить более слабых противников."
+		"DOTA_Tooltip_ability_item_karites_touch_bonus_intellect"					"Интеллект: + "
+		"DOTA_Tooltip_ability_item_karites_touch_bonus_str"							"Сила: + "
+		"DOTA_Tooltip_ability_item_karites_touch_bonus_agi"							"Ловкость: + "
+		"DOTA_Tooltip_ability_item_karites_touch_bonus_damage"						"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_karites_touch_Note0"								"Прикосновение Карите повышает уровень до 4-х раз."
+		//Karites Touch 2
+    	"DOTA_Tooltip_ability_item_karites_touch_2"									"Karites Touch v2"
+    	"DOTA_Tooltip_ability_item_karites_touch_2_description"						"Активно: Энергетический Взрыв - Немедленно наносит 400 (повреждение варьируется от уровня), Магического Урона  целевой вражеской единице. Этот предмет может быть модернизирован."
+		"DOTA_Tooltip_ability_item_karites_touch_2_Lore"							"Известный как Прикосновение Жнеца, сказано, что палец Шинигами был когда-то отрезан и упал в мир шиноби. Палец, как уверовано, в состоянии  посылать темные лучи энергии, которая в состоянии немедленно уничтожить более слабых противников."
+		"DOTA_Tooltip_ability_item_karites_touch_2_bonus_intellect"					"Интеллект: + "
+		"DOTA_Tooltip_ability_item_karites_touch_2_bonus_str"				   		"Сила: + "
+		"DOTA_Tooltip_ability_item_karites_touch_2_bonus_agi"						"Ловкость: + "
+		"DOTA_Tooltip_ability_item_karites_touch_2_bonus_damage"					"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_karites_touch_2_Note0"								"Прикосновение Карите повышает уровень до 4-х раз."
+		//Karites Touch 3
+    	"DOTA_Tooltip_ability_item_karites_touch_3"									"Karites Touch v3"
+    	"DOTA_Tooltip_ability_item_karites_touch_3_description"						"Активно: Энергетический Взрыв - Немедленно наносит 400 (повреждение варьируется от уровня), Магического Урона  целевой вражеской единице. Этот предмет может быть модернизирован."
+		"DOTA_Tooltip_ability_item_karites_touch_3_Lore"							"Известный как Прикосновение Жнеца, сказано, что палец Шинигами был когда-то отрезан и упал в мир шиноби. Палец, как уверовано, в состоянии  посылать темные лучи энергии, которая в состоянии немедленно уничтожить более слабых противников."
+		"DOTA_Tooltip_ability_item_karites_touch_3_bonus_intellect"					"Интеллект: +"
+		"DOTA_Tooltip_ability_item_karites_touch_3_bonus_str"						"Сила: + "
+		"DOTA_Tooltip_ability_item_karites_touch_3_bonus_agi"						"Ловкость: + "
+		"DOTA_Tooltip_ability_item_karites_touch_3_bonus_damage"					"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_karites_touch_3_Note0"								"Прикосновение Карите повышает уровень до 4-х раз."
+		//Karites Touch 4 
+    	"DOTA_Tooltip_ability_item_karites_touch_4"									"Karites Touch v4"
+		"DOTA_Tooltip_ability_item_karites_touch_4_description"						"Активно: Энергетический Взрыв - Немедленно наносит 400 (повреждение варьируется от уровня), Магического Урона  целевой вражеской единице. Этот предмет может быть модернизирован."
+		"DOTA_Tooltip_ability_item_karites_touch_4_Lore"							"Известный как Прикосновение Жнеца, сказано, что палец Шинигами был когда-то отрезан и упал в мир шиноби. Палец, как уверовано, в состоянии  посылать темные лучи энергии, которая в состоянии немедленно уничтожить более слабых противников."
+		"DOTA_Tooltip_ability_item_karites_touch_4_bonus_intellect"					"Интеллект: + "
+		"DOTA_Tooltip_ability_item_karites_touch_4_bonus_str"						"Сила: + "
+		"DOTA_Tooltip_ability_item_karites_touch_4_bonus_agi"						"Ловкость: + "
+		"DOTA_Tooltip_ability_item_karites_touch_4_bonus_damage"					"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_karites_touch_4_Note0"								"Прикосновение Карите повышает уровень до 4-х раз."
+		//Hexagonal Crystal
+    	"DOTA_Tooltip_ability_item_hexagonal_crystal"								"Hexagonal Crystal"
+    	"DOTA_Tooltip_ability_item_hexagonal_crystal_Description"					"Активно: Обнулить счетчики  -Сбрасывает до нуля счетчики отсчета до повторного использования, всех Ваших вещей и способностей."
+		"DOTA_Tooltip_ability_item_hexagonal_crystal_Lore"							"Эта странно изогнутая вещица, была дана принцессе Коюку, как ключ, для того, чтобы превратить Землю Снега и Холода, В Земли Весны. Это от его предназначения, согласно верванию, давать новую жизнь ее обладателю."
+		"DOTA_Tooltip_ability_item_hexagonal_crystal_bonus_mana_reg_percentage"		"%Регенерация Чакры:+ "
+		"DOTA_Tooltip_ability_item_hexagonal_crystal_bonus_hp_reg_constant"			"Регенерация Здоровья:+ "
+		"DOTA_Tooltip_ability_item_hexagonal_crystal_bonus_damage"					"Урон к Атаке:+ "
+
+		//Rengeki - Bashosen
+    	"DOTA_Tooltip_ability_item_bashosen"										"Bashosen"
+    	"DOTA_Tooltip_ability_item_bashosen_Description"							"Активно: Громовой Удар - Наносит 200 Магического урона в области 250 Аое, Дебафф к Скорости Передвижения -30, и такое же замедление скорости атаки на 3.5 секунды. 10 зарядов."
+		"DOTA_Tooltip_ability_item_bashosen_Lore"									"Эта странно изогнутая вещица, была дана принцессе Коюку, как ключ, для того, чтобы превратить Землю Снега и Холода, В Земли Весны. Это от его предназначения, согласно верванию, давать новую жизнь ее обладателю."
+		"DOTA_Tooltip_ability_item_bashosen_bonus_mana_reg_percentage"				"%Регенерация Чакры:+ "
+		"DOTA_Tooltip_ability_item_bashosen_bonus_int"								"Интеллект: + "
+		"DOTA_Tooltip_ability_item_bashosen_ms_slow"                                "Замедление МС: "
+		"DOTA_Tooltip_ability_item_bashosen_attack_speed_slow"                      "Замедление АС:"
+		"DOTA_Tooltip_modifier_bashosen_slow"										"Bashosen"
+		"DOTA_Tooltip_modifier_bashosen_slow_Description" 							"-30%% скорости передвижения." 
+
+		//Giant Iron Fan
+    	"DOTA_Tooltip_ability_item_giant_iron_fan"									"Giant Iron Fan"
+		"DOTA_Tooltip_ability_item_giant_iron_fan_Lore"								"Целевая вражеская единица подхватывается циклоном, и становиться неуязвимой на 2.5 секунды. Также наности 50 урона врагу при приземлении на землю."
+		"DOTA_Tooltip_ability_item_giant_iron_fan_Description"						"Активно: Ветра- Целевая вражеская единица подхватывается циклоном, и становиться неуязвимой на 2.5 секунды. Также наности 50 урона врагу при приземлении на землю. Ветер может быть использован на самом себе."
+		"DOTA_Tooltip_ability_item_giant_iron_fan_bonus_mana_reg_percentage"		"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_giant_iron_fan_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_ability_item_giant_iron_fan_movementspeed_percentage"			"%Скорость передвижения:+."
+		"DOTA_Tooltip_modifier_storm_cyclone"										"Cyclone"
+		"DOTA_Tooltip_modifier_storm_cyclone_description"							"Единица выведена из строя."
+
+		//Onbu's Paw - The Will of Fire
+    	"DOTA_Tooltip_ability_item_the_will_of_fire"								"The Will of Fire"
+		"DOTA_Tooltip_ability_item_the_will_of_fire_Lore"							"Всё верят, что в сердце каждого шиноби Конохи обитает Воля Огня, жгучее стремление защищать родную деревню и ее жителей, во благо следующих поколений. "
+		"DOTA_Tooltip_ability_item_the_will_of_fire_bonus_str"						"Сила: +"
+		"DOTA_Tooltip_ability_item_the_will_of_fire_bonus_hp_reg_constant"			"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_the_will_of_fire_bonus_hp"						"Очки Здоровья:+"
+
+		//Demon Booster
+    	"DOTA_Tooltip_ability_item_demon_booster"									"Demon Booster"
+		"DOTA_Tooltip_ability_item_demon_booster_Lore"								"Заключенная в этом контейнере лежит сила хвостатых, может быть использована для немедленного получения огромного количества энергии."
+		"DOTA_Tooltip_ability_item_demon_booster_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_demon_booster_bonus_hp"							"Очки Здоровья:+"
+		"DOTA_Tooltip_ability_item_demon_booster_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_demon_booster_bonus_mana"						"Чакра: +"
+
+		//Reminisce
+    	"DOTA_Tooltip_ability_item_reminisce"										"Kyuubi Cloak"
+    	"DOTA_Tooltip_ability_item_reminisce_description"							"Пассивно: Блок - шанс заблокировать 40 урона, героя м ближнего боя, и 20 урона , героя дальнего боя."
+		"DOTA_Tooltip_ability_item_reminisce_Lore"									"Этот артефакт может вызвать прошлые воспоминания, чтобы выявить внутреннюю силу. Открытие внутренних источников силы, самоопределение и воля пользователя повышаются до совершенно нового уровня."
+		"DOTA_Tooltip_ability_item_reminisce_bonus_hp_reg_constant"					"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_reminisce_bonus_hp"								"Очки Здоровья:+"
+
+		//Kaguya Armor
+    	"DOTA_Tooltip_ability_item_kaguya_armor"									"Kaguya Armor"
+    	"DOTA_Tooltip_ability_item_kaguya_armor_Description"						"Активно - Возвращение урона - Возвращает любой урон, который Вы получаете, тому кто его Вам нанес. Действует ограниченное время."
+		"DOTA_Tooltip_ability_item_kaguya_armor_Lore"								"Броня Богини Кроликов, некоторые вещи лучше оставить в забвении."
+		"DOTA_Tooltip_ability_item_kaguya_armor_bonus_armor"						"Броня:+"
+    	"DOTA_Tooltip_ability_item_kaguya_armor_bonus_damage"						"Урон к Атаке:+"
+    	"DOTA_Tooltip_ability_item_kaguya_armor_bonus_int"							"Интеллект: +"
+    	"Dota_Tooltip_kaguya_armor_return"											"Kaguya Armor"
+    	"Dota_Tooltip_kaguya_armor_return_description"								"Возвращает любой получаемый урон, тому кто его Вам нанес"
+
+    	//Trinity Booster
+    	"DOTA_Tooltip_ability_item_trinity_booster"									"Trinity Booster"
+		"DOTA_Tooltip_ability_item_trinity_booster_Lore"							"При комбинации 3-х великих усилителей сил, могущественная реликвия, известная как 'Сила Трех'' рождается."
+		"DOTA_Tooltip_ability_item_trinity_booster_bonus_mana_reg_percentage"		"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_trinity_booster_bonus_hp"						"Очки Здоровья:+"
+		"DOTA_Tooltip_ability_item_reminisce_bonus_hp_reg_constant"					"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_trinity_booster_bonus_mana"						"Интеллект: +"
+
+		//Hokage Armor
+    	"DOTA_Tooltip_ability_item_hokage_armor"									"Hokage Armor"
+    	"DOTA_Tooltip_ability_item_hokage_armor_Description"						"Пассивно - Аура Нападения- Увеличивает скорость атаки на 20%% и физическую защиту +5, окружащим союзным юнитам, и уменьшает физическую защиту ближайших врагов на -5 брони, в общем радиусе 550 АОЕ. Несколько Аур Нападения не сочетаются."
+		"DOTA_Tooltip_ability_item_hokage_armor_Lore"								"Культовая броня Третьего Хокагe имеет поразительное сходство с внешним видом и защитным одеянием Самурая."
+		"DOTA_Tooltip_ability_item_hokage_armor_bonus_armor"						"Броня:+"
+    	"DOTA_Tooltip_ability_item_hokage_armor_attackspeed"						"Повышение Скорости Атаки:+."
+    	"DOTA_Tooltip_item_hokage_armor_aura_enemy"									"Hokage Armor"
+    	"DOTA_Tooltip_item_hokage_armor_aura_enemy_description"						"-5 брони."
+    	"DOTA_Tooltip_item_hokage_armor_aura"										"Hokage Armor"
+    	"DOTA_Tooltip_item_hokage_armor_aura_description"							" +5 Брони \n + 15%% к Скорости Атаки."
+
+    	//Gelel Stone
+    	"DOTA_Tooltip_ability_item_gelel_stone"										"Gelel Stone"
+    	"DOTA_Tooltip_ability_item_gelel_stone_Description"							"Активно - Аватар - дарует Иммунитет к вражеским заклинаниям, и 100%% магическое сопротивление к техникам, на всё время действия способности. Длительность '%'. Некоторые Ультимативные спсобности способности проникать через аватар."
+		"DOTA_Tooltip_ability_item_gelel_stone_Lore"								"Камень Гэлел, мощная реликвия способная подарить способности силы лежащие за пределами всёх самых безумных мечтаний человека."
+		"DOTA_Tooltip_ability_item_gelel_stone_bonus_str"							"Сила: +"
+    	"DOTA_Tooltip_ability_item_gelel_stone_bonus_damage"						"Урон к Атаке:+"
+    	"DOTA_Tooltip_modifier_item_black_king_bar_datadriven_active"				"Gelel Stone - Avatar"
+    	"DOTA_Tooltip_modifier_item_black_king_bar_datadriven_active_description"	"Этот юнит иммунен к магии, и имеет 100%% сопротивление к магическому урону."
+
+    	//Haku's Overcoat
+    	"DOTA_Tooltip_ability_item_hakus_overcoat"									"Haku's Overcoat"
+    	"DOTA_Tooltip_ability_item_hakus_overcoat_Description"						"Активно: Броня Льда - Создает щит вокруг Вас, который добавляет броню и замедляет атакующих юнитов. Это замедление включается, от любого типа урона."
+		"DOTA_Tooltip_ability_item_hakus_overcoat_Lore"								"Эта Шинель, был адаптирован  легендарным шиноби Хаку для его уникальных техник Реализации Льда, как предмет, который испускает ледянящую ауру его самого."
+		"DOTA_Tooltip_ability_item_hakus_overcoat_bonus_armor"						"Броня:+"
+    	"DOTA_Tooltip_ability_item_hakus_overcoat_bonus_int"						"Интеллект: +"
+    	"DOTA_Tooltip_hakus_overcoat_aura"											"Haku's Overcoat"
+    	"DOTA_Tooltip_hakus_overcoat_aura_description"								"-25 %% скорости Атаки."
+    	"DOTA_Tooltip_modifier_frost_armor_slow"									"Haku's Overcoat - Frost Armor"
+    	"DOTA_Tooltip_modifier_frost_armor_slow_description"						"-20 %% Скорости атаки \n - 30%% скорости передвижения"
+    	"DOTA_Tooltip_modifier_frost_armor"											"Haku's Overcoat - Frost Armor"
+    	"DOTA_Tooltip_modifier_frost_armor_description"								"+3 брони"
+
+    	//Chakra Armor
+    	"DOTA_Tooltip_ability_item_chakra_armor"									"Chakra Armor"
+		"DOTA_Tooltip_ability_item_chakra_armor_Lore"								"Доспехи Чакры уникальный тип защитного вооружения,который впитывает чакру от ниндзюцу и гэндзюцу, а также усиливает чакру носителя."
+		"DOTA_Tooltip_ability_item_chakra_armor_Description"						"Блок Заклинания- Пассивно блокирует большинство направленных техник каждые 17 секунд. Может быть использован на союзнику, для того чтобы временно передать бафф."
+		"DOTA_Tooltip_ability_item_chakra_armor_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_chakra_armor_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+
+		//Chakra Armor
+    	"DOTA_Tooltip_ability_item_chakra_armor_male"									"Chakra Armor"
+		"DOTA_Tooltip_ability_item_chakra_armor_male_Lore"								"Доспехи Чакры уникальный тип защитного вооружения,который впитывает чакру от ниндзюцу и гэндзюцу, а также усиливает чакру носителя."
+		"DOTA_Tooltip_ability_item_chakra_armor_male_Description"						"Блок Заклинания- Пассивно блокирует большинство направленных техник каждые 17 секунд. Может быть использован на союзнику, для того чтобы временно передать бафф."
+		"DOTA_Tooltip_ability_item_chakra_armor_male_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_male_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_male_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_male_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_chakra_armor_male_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+
+		//Chakra Armor
+    	"DOTA_Tooltip_ability_item_chakra_armor_female"									"Chakra Armor"
+		"DOTA_Tooltip_ability_item_chakra_armor_female_Lore"							"Доспехи Чакры уникальный тип защитного вооружения,который впитывает чакру от ниндзюцу и гэндзюцу, а также усиливает чакру носителя."
+		"DOTA_Tooltip_ability_item_chakra_armor_female_Description"						"Блок Заклинания- Пассивно блокирует большинство направленных техник каждые 17 секунд. Может быть использован на союзнику, для того чтобы временно передать бафф."
+		"DOTA_Tooltip_ability_item_chakra_armor_female_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_female_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_female_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_chakra_armor_female_bonus_mana_reg_percentage"			"%Регенерация Чакры:+"
+		"DOTA_Tooltip_ability_item_chakra_armor_female_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+
+		//Flak Jacket
+    	"DOTA_Tooltip_ability_item_flak_jacket"										"Flak Jacket"
+		"DOTA_Tooltip_ability_item_flak_jacket_Lore"								"Форма защитной одежды шиноби, разработанная специально для предоставления защиты от техник врага."
+		"DOTA_Tooltip_ability_item_flak_jacket_bonus_hp_reg_constant"				"Регенерация Здоровья:+"
+		"DOTA_Tooltip_ability_item_flak_jacket_magic_resis"							"%Сопротивления Техникам:+."
+
+		//Twin-Fangs Of Abyss
+    	"DOTA_Tooltip_ability_item_twin_fangs_of_abyss"								"Twin-Fangs Of Abyss"
+    	"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_Description"					"Пассивно: Большая травма - 24%% шанс замедлить вражескую скорости и передвижения , и  %% замедлить вражескую скорость атаки на время 'duration'."
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_Lore"						"Таинственное оружие созданное... комбинацией двух трех лезвийных мечей, в одиночное двух лезвийное оружие. Силы оставшихся лехвий, сочетаются в мощное оружие с норовистым характером."
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_bonus_damage"				"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_bonus_str"					"Сила: +"
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_bonus_agi"					"Ловкость: +"
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_attackspeed"					"Повышение Скорости Атаки:+."
+		"DOTA_Tooltip_ability_item_twin_fangs_of_abyss_movementspeed_percentage"	"Процент к скорости передвижения:+."
+
+		//Jashin's Amulet
+    	"DOTA_Tooltip_ability_item_jashins_amulet"									"Jashin's Amulet"
+    	"DOTA_Tooltip_ability_item_jashins_amulet_description"						"Активно: Нечестивая Ярость - Дарует 175%% вампиризма на 3.5 секунды."
+		"DOTA_Tooltip_ability_item_jashins_amulet_Lore"								"Амулет злого бога Джашина, его последователись надеются принести чудесную боль и смерть по всему миру."
+		"DOTA_Tooltip_ability_item_jashins_amulet_bonus_damage"						"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_jashins_amulet_bonus_str"						"Сила: +"
+		"DOTA_Tooltip_ability_item_jashins_amulet_bonus_armor"						"Броня:+"
+    	"DOTA_Tooltip_ability_item_jashins_amulet_bonus_lifesteal"					"Вампиризм:+."
+    	"DOTA_Tooltip_modifier_item_jashin_unholy_rage"								"Unholy Rage"
+    	"DOTA_Tooltip_modifier_item_jashin_unholy_rage_description"					"+150%% Вампиризма."
+
+		//Ikazuchi
+    	"DOTA_Tooltip_ability_item_ikazuchi"										"Ikazuchi"
+    	"DOTA_Tooltip_ability_item_ikazuchi_Description"							"Пассивно: Цепная молния- дает  '№' шанс вызвать цепную молнию при атаке, Цепня молния поражает '№' цели, нанося '№' урон. Иказучи это уникальный атакующий модификатор, который сочетается с другими уникальными атакующими модификаторами атаки, но будет перекрывать их в момент срабатывания цепной молнии."
+		"DOTA_Tooltip_ability_item_ikazuchi_Lore"									"Иказучи имя, данное двум меча Куросуки Райги, одного из 7 Мечников Тумана. Их сила позволяет обладателю использовать техники Выпуска Молнии."
+		"DOTA_Tooltip_ability_item_ikazuchi_bonus_damage"							"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_ikazuchi_attackspeed"							"Повышение Скорости Атаки:+."
+
+		//Lunar Sword
+    	"DOTA_Tooltip_ability_item_lunar_sword"										"Lunar Sword"
+		"DOTA_Tooltip_ability_item_lunar_sword_Description"							"Пассивно: Ледяная Атака - Атака замедляет скорости передвижения и атаки цели.Меч луны имеетуникальный модификатор Атаки, который не будет сочетаться с другими Уникальными Модификаторами Атаки. Однако Лунный Меч будет сочетаться с модификаторами высасывающими жизненную энергию (вампирскими)."
+		"DOTA_Tooltip_ability_item_lunar_sword_Lore"								"Выкованный с мощью Синёй Луны, этот меч способен заморозить всё к чему прикасается."
+		"DOTA_Tooltip_ability_item_lunar_sword_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_lunar_sword_bonus_int"							"Интеллект: +"
+		"DOTA_Tooltip_ability_item_lunar_sword_bonus_agi"							"Ловкость: +"
+		"DOTA_Tooltip_ability_item_lunar_sword_bonus_hp"							"Очки Здоровья:+"
+		"DOTA_Tooltip_ability_item_lunar_sword_bonus_mana"							"Чакра: +"
+		"DOTA_Tooltip_lunar_sword_slow"												"Lunar Sword"
+		"DOTA_Tooltip_lunar_sword_slow_description"									"-20 %% Скорости передвижения \n -25%% скорости Атаки."
+
+		//Tri-Blades
+    	"DOTA_Tooltip_ability_item_tri_blades"										"Tri-Blades"
+    	"DOTA_Tooltip_ability_item_tri_blades_Description"							"Пассивно. Калечить - '№' шанс  замедлить '№' скорость передвижения и '№' скорость атаки на '№' секунд."
+		"DOTA_Tooltip_ability_item_tri_blades_Lore"									"Оружие шиноби, который больше сосредоточен на силе удара, чем скорости, оно может разрубать и резать врагов для большого эффекта."
+		"DOTA_Tooltip_ability_item_tri_blades_bonus_str"							"Сила: +"
+		"DOTA_Tooltip_ability_item_tri_blades_bonus_damage"							"Урон к Атаке:+"
+
+		//Sarutobi's Helm
+    	"DOTA_Tooltip_ability_item_sarutobis_helm"									"Sarutobi's Helm"
+		"DOTA_Tooltip_ability_item_sarutobis_helm_Lore"								"Этот странный шлем был использован Третьим Хокаге Сарутоби Хирузено в его бесконечных сражениях. Это увеличение защиты может показаться странным для большинства шиноби, но это различие часто может быть разницей между жизнью и смертью."
+		"DOTA_Tooltip_ability_item_sarutobis_helm_bonus_damage"						"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_sarutobis_helm_bonus_armor"						"Броня:+"
+		"DOTA_Tooltip_ability_item_sarutobis_helm_lifesteal_bonus"					"Вампиризм:+."
+
+		//Poison Gauntlets
+    	"DOTA_Tooltip_ability_item_poison_gauntlets"								"Petrification Gauntlets"
+    	"DOTA_Tooltip_ability_item_poison_gauntlets_Description"					"Пассивно: Отравленная атака- Отравляет целю, нанося '№' урон в секунду и уменьшая '№' скорость передвижения на '№' время. Отравленные перчатки имеют Уникальный модификатор Атаки, и не сочетаются с другими уникальными модификаторами атаки. Отравленные перчатки могут сочетаться с модификаторами вампиризма."
+		"DOTA_Tooltip_ability_item_poison_gauntlets_Lore"							"Недавно, Киригакуре начал оснащать каждого нового шиноби парой этих специальных перчаток. ё кто использует эти перчатки в битве могут отравить своих врагов смертельным ядо, замедляя и нанося им урон определенное время."
+		"DOTA_Tooltip_ability_item_poison_gauntlets_bonus_damage"					"Урон к Атаке:+"
+		"DOTA_Tooltip_ability_item_poison_gauntlets_attackspeed"					"Повышение Скорости Атаки:+."
+		"DOTA_Tooltip_modifier_orb_of_venom_wc3_debuff"								"Poison Gauntlets"
+		"DOTA_Tooltip_modifier_orb_of_venom_wc3_debuff_description"					"-30%% Скорости передвижения\n 20 урона в секунду"
+
+
+		//Kusanagi
+    	"DOTA_Tooltip_ability_item_kusanagi"										"Kusanagi"
+		"DOTA_Tooltip_ability_item_kusanagi_Description"							"Пассивно: Тление - Ваши атаки будут снижать броню цели на 15 секунд. Кусанаги имеет уникальный атакующий модификатор, и не будет сочетаться с другими уникальным модификаторами атаки."
+		"DOTA_Tooltip_ability_item_kusanagi_Lore"									"Легендарный меч, которым Орочимару владеет в битвах, это мощное оружие известно, как острейшее из всех мечей."
+		"DOTA_Tooltip_ability_item_kusanagi_bonus_damage"							"Урон к Атаке:+"
+		"DOTA_Tooltip_kusanagi_corruption"											"Kusanagi"
+		"DOTA_Tooltip_kusanagi_corruption_description"								"-6 брони"
+
+		//Shuko
+    	"DOTA_Tooltip_ability_item_shuko"											"Shuko"
+		"DOTA_Tooltip_ability_item_shuko_Lore"										"Оружи для шиноби, которые больше концентрируются на скорости удара, чем его силе, оно может кромсать и нарезать врагов на высокой скорости."
+		"DOTA_Tooltip_ability_item_shuko_attackspeed"								"Повышение Скорости Атаки:+."
+		"DOTA_Tooltip_ability_item_shuko_bonus_agi"									"Ловкость: +"
+		"DOTA_Tooltip_ability_item_shuko_movementspeed_percentage"					"Процент скорости передвижения:+."
+		"DOTA_Tooltip_item_shuko_ms_modifier"										"Shuko"
+		"DOTA_Tooltip_item_shuko_ms_modifier_description"							"+10 % скорости передвижения"
+
+		//Raijin
+    	"DOTA_Tooltip_ability_item_raijin"											"Raijin"
+    	"DOTA_Tooltip_ability_item_raijin_Description"								"Пассивно: Цепная молния- дает  '№' шанс вызвать цепную молнию при атаке, Цепня молния поражает '№' цели, нанося '№' урон. Райджин - обладает уникальным атакующим модификатором, который сочетается с другими уникальными атакующими модификаторами атаки, но будет перекрывать их в момент срабатывания цепной молнии."
+		"DOTA_Tooltip_ability_item_raijin_Lore"										"Этот меч природы молнии принадлежал Тобираме Сенжу, Второму Хокаге. Его обладателя способен манипулировать молнией для нананесения разрушительных атак по своим врагам."
+		"DOTA_Tooltip_ability_item_raijin_attackspeed"								"Повышение Скорости Атаки: +"
+		"DOTA_Tooltip_ability_item_raijin_bonus_damage"								"Урон: +"
+
+		//Nidaime's Helm
+    	"DOTA_Tooltip_ability_item_nidaimes_helm"									"Nidaime's Helm"
+    	"DOTA_Tooltip_ability_item_nidaimes_helm_Description"						"Активно: Сумасшествие - дает '№' скорость атаки и '№' скорость передвижения. Действет '№' секунд. Пассивно: Вампиризм - Дарует 17% вампиризма при атаке. Шлём Нидайэ обладает уникальным модификатором Атаки, и не сочетается с другими уникальными модификаторами."
+		"DOTA_Tooltip_ability_item_nidaimes_helm_Lore"								"Второй Хокаге Тобирама Сенжу носил уникальный шлем в битве, деющий ему особый вид на поле боя. Просто ношение шлема, которым некогда обладал Хаширама, вдохновляет многих на великие дела во время битвы."
+		"DOTA_Tooltip_ability_item_nidaimes_helm_lifesteal_bonus"					"%Вампиризм: +"
+		"DOTA_Tooltip_custom_frenzy"												"Frenzy"
+		"DOTA_Tooltip_custom_frenzy_description"									" +100 %% Скорости атаки \n  15%% Скорости передвижения"
+
+		//Chakra Smasher
+    	"DOTA_Tooltip_ability_item_chakra_smasher"									"Chakra Smasher"
+		"DOTA_Tooltip_ability_item_chakra_smasher_Description"						"Активно: Очищение -Очищает целевую единицу, снимая всё бафы, и замедля ее. Немедленно убивает призванныых существ. Пассивно - Выжем маны- Выши атаки будут выжигать '№' чакры и наностить тоже самое количество в виде физического урона. Не сочетается с другими выюигающими ману способностями."
+		"DOTA_Tooltip_ability_item_chakra_smasher_Lore"								"Много лет назад, Райкаге Кумогакуре владел мощный боевым молотом, заряженным его личной необьятной чакрой. Оружие вскоре слишком мощным, что было принято решение запечатать его глубоко в горах."
+		"DOTA_Tooltip_ability_item_chakra_smasher_bonus_agi"						"Ловкость: +"
+		"DOTA_Tooltip_ability_item_chakra_smasher_bonus_int"						"Интеллект: +"
+		"DOTA_Tooltip_chakra_smasher_purge"											"Chakra Smasher"
+		"DOTA_Tooltip_chakra_smasher_purge_description"								"-50%% скорости передвижения."
+
+		//Amenonuhoko - Sword of Nunoboko
+    	"DOTA_Tooltip_ability_item_sword_of_nunoboko"								"Sword of Nunoboko"
+    	"DOTA_Tooltip_ability_item_sword_of_nunoboko_description"					"Теряется при смерти."
+		"DOTA_Tooltip_ability_item_sword_of_nunoboko_Lore"							"Легендарное оружие, по легенде использовалось Мудрецом 6 Путей, при создании им мира."
+		"DOTA_Tooltip_ability_item_sword_of_nunoboko_bonus_damage"					"Урон к Атаке:+ "
+
+		//Conch Shell Mace
+    	"DOTA_Tooltip_ability_item_conch_shell_mace"								"Conch Shell Mace"
+    	"DOTA_Tooltip_ability_item_conch_shell_mace_Description"					"Пассивно: Проникающий удар : Дарует 35%% шанс нанести 100 бонусного урона при атаке. Пассивно: Точный удар - Не дает Вашим атакам промазать. Точный удар не работает, когда Вы атакуете вражеские здания."
+		"DOTA_Tooltip_ability_item_conch_shell_mace_Lore"							"Характерная булава Котетсу пронизана острыми выступами по всей ее поверхности. Это дает оружию большое количество разрушительной силы, создавая воздействия, которая могут чувствуются ,даже после уклонения от главного удара."
+		"DOTA_Tooltip_ability_item_conch_shell_mace_bonus_damage"					"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_conch_shell_mace_attackspeed"					"Bonus Скорость Атаки:+ "
+
+		//Silver Hands
+    	"DOTA_Tooltip_ability_item_silver_hands"									"Silver Hands"
+    	"DOTA_Tooltip_ability_item_silver_hands_description"						"Пассивно: Клив - наносит 35%% урона от урона базовой атаки в области неподалеку от цели. Герои дальнего боя не могут использовать Клив."
+    	"DOTA_Tooltip_ability_item_silver_hands_Lore"								"Как только Серебряные руки были выплавлены в перчатки, Божественная сила пробудилась. Избранный, будет способен разгромить тем кому не посчастливится стать жертвой этой металлической перчатки."
+		"DOTA_Tooltip_ability_item_silver_hands_bonus_damage"						"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_silver_hands_bonus_hp_reg_constant"				"Регенерация Здоровья:+ "
+		"DOTA_Tooltip_ability_item_silver_hands_bonus_mana_regen_percentage"		"%Регенерация Чакры:+ "
+		
+		//Solar Blade
+    	"DOTA_Tooltip_ability_item_solar_blade"										"Solar Blade"
+    	"DOTA_Tooltip_ability_item_solar_blade_Description"							"Пассивно: Огонь- Наносит '№' урон в секунду и ослепляет врагов в радиусе '№'."	
+		"DOTA_Tooltip_ability_item_solar_blade_Lore"								"Выкованный с мощью Красного Солнца, этот меч может сжечь всё к чему прикоснется в пепел."
+		"DOTA_Tooltip_ability_item_solar_blade_bonus_damage"						"Урон к Атаке:+ "
+		"DOTA_Tooltip_solar_blade_aoe_dmg"											"Fire"
+		"DOTA_Tooltip_solar_blade_aoe_dmg_description"								"Вражеские единицы теряют 40 ХП в секунду, в области 500 АоЕ."
+
+		//Gale Blade
+    	"DOTA_Tooltip_ability_item_gale_blade"										"Gale Blade"
+		"DOTA_Tooltip_ability_item_gale_blade_Lore"									"Созданное из листьев Коноихи и металла Имагакуре, Лезвия Гейла - это спец. оружие и уникальная комбинация наследия 2-х наций."
+		"DOTA_Tooltip_ability_item_gale_blade_bonus_damage"							"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_gale_blade_crit_bonus"							"%Критический урон: "
+		"DOTA_Tooltip_ability_item_gale_blade_crit_chance"							"%Шанс критического урона: "
+
+		//Iron Crow
+    	"DOTA_Tooltip_ability_item_iron_crow"										"Iron Crow"
+    	"DOTA_Tooltip_ability_item_iron_crow_Description"							"Пассивно:Баш - Дает шанс %% оглушить противника на '№' секунд."
+		"DOTA_Tooltip_ability_item_iron_crow_Lore"									"Железный утюг - древнее оружие, которое было впервое использовано во Вторую Войну Шиноби. Его главное преимущество, было преодоление противника одним ударом, выводя из строя полностью цель."
+		"DOTA_Tooltip_ability_item_iron_crow_bonus_damage"							"Урон к Атаке:+ "
+		"DOTA_Tooltip_ability_item_iron_crow_bonus_str"								"Сила: + "
+		"DOTA_Tooltip_iron_crow_bash"												"Iron Crow"
+		"DOTA_Tooltip_iron_crow_bash_description"									"Юнит оглушен."
+
+		//Probagation
+    	"DOTA_Tooltip_ability_item_probagation"										"Scroll of Seals"
+    	"DOTA_Tooltip_ability_item_probagation_Description"							"Активно: Зеркальные Отражения - создает 3 иллюзии героя, которые существуют 20 секунд. Иллюзииближнего бося наносят '№'% урона и получают '№'%% урона, когда иллюзии дальнего боя наносят '№'%% и получают '№'%% урона"
+		"DOTA_Tooltip_ability_item_probagation_bonus_str"							"Сила: + "
+		"DOTA_Tooltip_ability_item_probagation_bonus_int"							"Интеллект: + "
+		"DOTA_Tooltip_ability_item_probagation_bonus_agi"							"Ловкость: + "
+		"DOTA_Tooltip_ability_item_probagation_movementspeed_percentage"			"%Скорость передвижения:+. "
+    	"DOTA_Tooltip_ability_item_probagation_attackspeed"							"Bonus Скорость Атаки:+ "
+
+    	//Assassin's Cloak
+    	"DOTA_Tooltip_ability_item_assassins_cloak"									"Akatsuki Cloak"
+		"DOTA_Tooltip_ability_item_assassins_cloak_Lore"							"В мире шиноби, использование невидимости , это разница между быть убийцей или убитым. В этом тёмном плаще, шиноби может ударить в безмолвии, обеспечивая решающий удар, в самый важный момент."
+    	"DOTA_Tooltip_ability_item_assassins_cloak_bonus_attack_speed"				"Bonus Скорость Атаки:+ "
+    	"DOTA_Tooltip_ability_item_assassins_cloak_bonus_damage"					"Урон к Атаке:+ "																		
+    	"DOTA_Tooltip_ability_item_assassins_cloak_Description"						"Active: Shadow Walk - Makes you invisible for %invis_duration% seconds or until you next attack or cast a spell. While invisible, you will have %invis_night_vision% extra night vision and can move %invis_ms%%% faster with the ability to walk through units and terrain. If attacking to break invisibility, you will gain %invis_damage% bonus damage on that attack. Upon taking hero-based damage, you will lose terrain ignoring capability for 2 seconds."
+		"DOTA_Tooltip_modifier_item_assassins_cloak_invis"							"Shadow Walk"
+		"DOTA_Tooltip_modifier_item_assassins_cloak_invis_Description"				"Невидимый, фазированный, получающий бонусное ночное видение, скорость передвижения, и бонусный урон от удара в спину."
+
+    	//Ragnorok - Kurosawa 
+    	"DOTA_Tooltip_ability_item_kurosawa"										"Kurosawa"
+		"DOTA_Tooltip_ability_item_kurosawa_Lore"									"Этим мечом владел самурай Мифунэ, один из когда-либо живших величайших воинов. Его способность найти и поразить слабое место очень не безразлично, особенно когда в умелых руках."
+    	"DOTA_Tooltip_ability_item_kurosawa_bonus_damage"							"Урон к Атаке:+ "
+    	"DOTA_Tooltip_ability_item_kurosawa_crit_bonus"								"%Урон: + "
+		"DOTA_Tooltip_ability_item_kurosawa_crit_chance"							"%Шанс крита: "
+    	
+    	//Good Guy's Suit
+    	"DOTA_Tooltip_ability_item_good_guys_suit"									"Good Guy's Sui"																	
+   		"DOTA_Tooltip_ability_item_good_guys_suit_description"						"Пассивно: Уклонение - Дает '№' шанс увернуться от входящей атаки"
+		"DOTA_Tooltip_ability_item_good_guys_suit_Lore"								"Это... сумасшедше выглядящая зеленая спортивка, доказала свою удивительную эффективность в бою. Несколько ее обладателей известны, как одни из самых сильных мастеров Тайдзюцу из всех либо живущих."
+    	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_damage"						"Урон к Атаке:+ "
+    	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_agi"						"Ловкость: + "
+    	"DOTA_Tooltip_ability_item_good_guys_suit_attackspeed"						"Bonus Скорость Атаки:+ "
+
+	}		
+}

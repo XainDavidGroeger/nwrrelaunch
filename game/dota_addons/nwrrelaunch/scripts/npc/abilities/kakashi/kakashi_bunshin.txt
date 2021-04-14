@@ -1,0 +1,268 @@
+	
+    "DOTAAbilities"
+{
+    
+"kakashi_bunshin"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"kakashi_bunshin"
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+	  "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf"
+	  "particle"	"particles/generic_hero_status/status_invisibility_start.vpcf"
+	  "particle"	"particles/items_fx/chain_lightning.vpcf"
+	  "particle"	"particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+	  "particle"	"particles/units/heroes/invis/lamp_flame_tintable.vpcf"
+	 }
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"22 19 16 13"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120 100 80 60"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"3 4 5 6"
+			"LinkedSpecialBonus"		"special_bonus_kakashi_1"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"illusion_duration"			"30"
+		}
+		"03"
+       {
+        "var_type"                               "FIELD_FLOAT"
+        "illusion_outgoing_damage_percent"       "-75"
+       }
+       "06"
+       {
+        "var_type"                               "FIELD_FLOAT"
+        "illusion_incoming_damage_percent"       "400"
+       }	
+       "07"
+       {
+        "var_type"                               "FIELD_FLOAT"
+        "lighting_charge_duration"       		"2"
+       }
+       "08"
+       {
+        "var_type"                               "FIELD_FLOAT"
+        "ms_debuff"       						"-20 -25 -30 -40"
+       }
+       "09"
+       {
+        "var_type"                               "FIELD_FLOAT"
+        "illusion_outgoing_damage_percent_tooltip"       "25"
+       }
+	   "10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration_special"			"5 7 9 11"
+		}
+
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cd_reduc"					"0 0 0 0"
+			"LinkedSpecialBonus"		"special_bonus_kakashi_3"
+		}
+		
+	}
+
+	"OnSpellStart"
+	{	
+		"ApplyModifier"
+		{
+			"Target"	"CASTER"
+			"ModifierName"	"modifier_invisible"
+		}		
+		"RunScript"
+		{
+			"ScriptFile"      "heroes/kakashi/bunshin.lua"
+			"Function"        "ConjureImage"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_wind_walk_datadriven"
+		{
+			"Duration"	"%duration"
+			"isBuff"	"1"
+
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"OnAbilityExecuted"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED" 
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+		}
+
+
+		"modifier_wind_walk_datadriven_special"
+		{
+			"Duration"	"%duration_special"
+			"isBuff"	"1"
+
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven_special"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"OnAbilityExecuted"
+			{
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_wind_walk_datadriven_special"
+				}
+				"RemoveModifier"
+				{
+					"Target"	"CASTER"
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_ENABLED" 
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Flags"	"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+					"ModifierName"	"modifier_invisible"
+				}
+			}
+
+		}
+
+		
+		"modifier_kakashi_bunshin_charge"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/kakashi/bunshin.lua"
+					"Function"		"lighting_charge"
+				}
+			}
+
+
+
+		}
+
+		"modifier_kakashi_lighting_charge"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_debuff" 
+			}
+
+
+			"OnCreated"
+			{
+                "AttachEffect"
+                {
+                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "TARGET"
+                    "ControlPointEntities"
+                   {
+                      "TARGET"    "attach_hitloc"
+                    }
+                }
+            
+			}
+		}
+
+	}
+}
+
+
+}

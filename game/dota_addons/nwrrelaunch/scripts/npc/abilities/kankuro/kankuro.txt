@@ -1,0 +1,11 @@
+#base "kankuro_kugusta_no_jutsu.txt"
+#base "kankuro_summon_kuroari.txt"
+#base "kankuro_summon_karasu.txt"
+#base "kankuro_summon_sanshouuo.txt"
+
+#base "talents.txt"
+
+#base "karasu/karasu.txt"
+#base "kuroari/kuroari.txt"
+#base "dismantle_parts/dismantle_parts.txt"
+

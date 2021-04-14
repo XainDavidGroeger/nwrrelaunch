@@ -1,0 +1,67 @@
+"DOTAAbilities"
+{
+
+"npc_dota_hero_axe" //neji
+
+		//10: +9 Strength / +20 Attack Speed
+		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
+		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
+		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+		{
+		  "override_hero"   "npc_dota_hero_axe"
+		  "Model" 			"models/neji_new/neji.vmdl"
+		  "Ability1"         "neji_kaiten"
+		  "Ability2"         "neji_internal_bleeding" 
+		  "Ability3"         "neji_byakugan" 
+		  "Ability4"		"generic_hidden"
+		  "Ability5"		"generic_hidden"
+		  "Ability6"         "neji_hyaku_nijuuhachi_shou"
+		   "Ability10"		"special_bonus_attack_speed_20"
+		   "Ability11"		"special_bonus_strength_9"
+		   "Ability12"		"special_bonus_movement_speed_30"
+		   "Ability13"		"special_bonus_neji_1"
+		   "Ability14"		"special_bonus_neji_2"
+		   "Ability15"		"special_bonus_mana_break_40"
+		   "Ability16"		"special_bonus_neji_3"
+		   "Ability17"		"special_bonus_neji_4"
+		   
+
+	
+		  "ArmorPhysical"		"3.000000"
+		"ModelScale"		"1"
+		"LoadoutScale"		"1" 
+		"SpectatorLoadoutScale" 	"1"
+		"VersusScale"			"1"
+
+		
+		"AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackAnimationPoint"   "0.4"
+		"StatusHealth"    "200"
+  		"StatusHealthRegen"   "0.300000"
+		"AttackDamageMin"		"28"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+
+		"Role"			"Initiator,Disabler,Carry"
+		"Rolelevels"	"3,3,1"
+
+		  "AttackRange"				"128"
+		  "MovementSpeed"			"310"
+		  "AttributeBaseStrength" "18" // Base strength
+		  "AttributeStrengthGain" "2.4" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "16" // Base intelligence
+		  "AttributeIntelligenceGain" "1.9" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "22" // Base agility
+		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
+		  
+	 	"DisableWearables" 			"1"
+
+		"ItemSlots"
+		{ }
+
+	  	  "Village"			"konoha"
+	  	  "Gender"			"male"
+		}
+
+
+}

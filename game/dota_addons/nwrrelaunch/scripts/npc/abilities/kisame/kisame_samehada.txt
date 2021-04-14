@@ -1,0 +1,103 @@
+	
+    "DOTAAbilities"
+{
+    
+
+"kisame_samehada"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"                 "ability_datadriven"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"        "kisame_samehada"
+
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "4"
+
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityDuration"               "0"
+
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "23 18 12 7"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+
+     "precache"
+    {
+
+      "particle"  "particles/generic_gameplay/generic_manaburn.vpcf"
+      "soundfile"   "soundevents/kisame_samehada_trigger.vsndevts"
+
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "manasteal_percentage" "8.0 12.0 16.0 20.0"
+			"LinkedSpecialBonus"	"special_bonus_kisame_3"
+        }
+    }
+
+
+    "Modifiers"
+    {
+        "modifier_samehada"
+        {
+            "Passive"                   "1"
+            "IsHidden"                  "0"
+            "IsPurgable"                "0"
+            
+            "OnCreated"
+            {
+                "FireEffect"
+                {
+                    //TODO find a fitting sound
+                    //"Target"            "CASTER" 
+                    //"EffectName"        "Hero_Kunkaa.Tidebringer"
+                }
+            
+                "AttachEffect"
+                {
+                   //TODO
+                }
+
+            }
+
+            "OnAttackLanded"
+            {
+               
+
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/kisame/samehada.lua"
+                    "Function"      "StealMana"
+                }
+                        
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/kisame/samehada.lua"
+                    "Function"      "SamehadaResetCooldown"
+                }
+            }
+            
+        }
+
+
+    }
+
+}
+
+}

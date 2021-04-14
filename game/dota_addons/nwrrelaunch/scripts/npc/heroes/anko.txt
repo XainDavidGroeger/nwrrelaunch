@@ -1,0 +1,69 @@
+"DOTAAbilities"
+{
+
+
+	//25: -1s Snake Hand Cooldown / -4s Giant Snake Cooldown
+	//20: +20 Strength / +80 Snake Hand Damage
+	//15: +250 Giant Snake Cast Range / +2s Striking Snakes Movement Speed Debuff Duration
+	//10: +2 Mana Regeneration / +100 Cast Range
+	"npc_dota_hero_medusa" //anko
+	{
+		"override_hero"   "npc_dota_hero_medusa"
+		"Model"           "models/anko_new/anko_base.vmdl"
+		"Ability1"        "anko_giant_snake"
+		"Ability2"        "anko_senei_jyashu"
+		"Ability3"        "anko_senei_ta_jashu"
+  		"Ability4"        "generic_hidden"
+		"Ability5"        "generic_hidden"
+		"Ability6"        "anko_sojasosai_no_jutsu"      
+
+		"Ability10"		"special_bonus_mp_regen_2"
+		"Ability11"		"special_bonus_cast_range_100"
+
+		"Ability12"		"special_bonus_anko_1"
+		"Ability13"		"special_bonus_anko_2"
+
+		"Ability14"		"special_bonus_strength_20"
+		"Ability15"		"special_bonus_anko_3"
+
+		"Ability16"		"special_bonus_anko_4"
+		"Ability17"		"special_bonus_anko_5"
+
+		"ModelScale"		"1.0"
+		"LoadoutScale"	"0.90" 
+		"SpectatorLoadoutScale" 	"1.0" 
+		"VersusScale"			"1.0" 
+
+
+		"ArmorPhysical"   "1.000000"
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackAnimationPoint"		"0.4"
+		"StatusHealth"    "200"
+		"StatusHealthRegen"   "0.300000"
+		"AttackDamageMin"   "39"
+		"AttackDamageMax"   "45"
+		"AttackRate"    "1.700000"
+		"Role"      "Disabler,Initiator,Durable,Nuker"
+		"Rolelevels"  "2,2,2,1"
+
+		"AttackRange"				"100"
+		"MovementSpeed"			"300"
+		"AttributeBaseStrength" "24" // Base strength
+		"AttributeStrengthGain" "3" // Strength bonus per level.
+		"AttributeBaseIntelligence" "17" // Base intelligence
+		"AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
+		"AttributeBaseAgility" "14" // Base agility
+		"AttributeAgilityGain" "1.4" // Agility bonus per level.
+
+		"DisableWearables" "1"
+		"ItemSlots" 
+		{
+		}
+
+		"Gender"      "female"
+		"Village"			"kirigakure"
+}	
+
+
+}

@@ -1,0 +1,216 @@
+	
+    "DOTAAbilities"
+{
+    
+  
+"naruto_kage_bunshin_rasengan"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"naruto_kage_bunshin_rasengan"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
+		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80 100 120 140"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_movement_percentage"	"-10 -20 -30 -40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"illusion_duration"			"20"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"speed"			"500"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"illusion_outgoing_damage_percent"			"-100 -70 -65 -60 -55"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"illusion_incoming_damage_percent"			"700 600 500 450 400"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"range"					"800"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"50 70 90 110"
+			"LinkedSpecialBonus"	"special_bonus_naruto_3"
+		}
+
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0 0 0 0"
+			"LinkedSpecialBonus"	"special_bonus_naruto_7"
+		}
+	}
+
+	 "OnCreated"
+	  {
+	    "RunScript"
+	    {
+	      "ScriptFile"  "heroes/naruto/kage_bunshin_rasengan.lua"
+	      "Function"    "initiateBunshinCount"
+	    }
+	  }
+
+	"OnSpellStart"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"		"modifier_epicenter_precast_datadriven"
+			"Target"			"CASTER"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/naruto/kage_bunshin_rasengan.lua"
+			"Function"				"ConjureImage"
+			"modifier_caster"		"modifier_imba_storm_bolt_caster"
+			"particle_bolt"			"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
+			"sound_cast"			"Hero_Sven.StormBolt"
+			"sound_impact"			"Hero_Sven.StormBoltImpact"
+			"particle_impact"		"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+
+			// Spell Blocking
+			"GenericFunction"		"GenericSpellFunction"
+			"doDamage"				"true"
+		}
+	}	
+
+	"Modifiers"
+	{
+		"modifier_naruto_bunshin_rasengan_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+	
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/naruto/kage_bunshin_rasengan.lua"
+					"Function"		"applyDamage"
+				}
+			}
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_movement_percentage" 
+			}
+		}
+
+		"modfiier_naruto_bunshin_reduce_count"
+	    {
+	      "IsBuff"    "0"
+	      "Passive"    "0"
+	      "IsHidden"    "1"
+
+	      "OnDestroy"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "heroes/naruto/kawazu_kumite.lua"
+	          "Function"    "reduceBunshinCount"
+	        }
+	      }
+	    }
+
+	    "modifier_imba_storm_bolt_caster"
+		{
+			"Passive"			"0"
+			"IsBuff"			"0"
+			"IsPurgable"		"0"
+			"OverrideAnimation" "ACT_DOTA_RUN"
+
+			"OnCreated"
+			{		   
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_right_hand"
+					}
+				}
+			}
+			
+		}
+
+		 "modifier_imba_storm_bolt_caster_hit"
+		{
+			"Passive"			"0"
+			"IsBuff"			"0"
+			"IsPurgable"		"0"
+			"OverrideAnimation" "ACT_DOTA_ATTACK2"
+
+			"OnCreated"
+			{		   
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_right_hand"
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+
+
+}

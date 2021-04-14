@@ -1,0 +1,63 @@
+"DOTAAbilities"
+{
+		//25: +40 Intelligence / -0.75s Kirin Cast Time
+		//20: +12% Spell Amplification / +225 Chidori Spear Range
+		//15: +14 Strength / +70 Chidori Nagashi Damage
+		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
+		"npc_dota_hero_storm_spirit" //sasuke
+		{
+		  "override_hero"   "npc_dota_hero_storm_spirit"
+		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
+		  "Ability1"        "sasuke_chidori_nagashi"
+		  "Ability2"        "sasuke_chidori_eiso" 
+		  "Ability3"        "sasuke_chidori_koken" 
+		  "Ability4"        "generic_hidden"
+		  "Ability5"        "generic_hidden"
+		  "Ability6"        "sasuke_kirin"
+
+		   "Ability10"		"special_bonus_mp_regen_250"
+		   "Ability11"		"special_bonus_sasuke_1"
+
+		   "Ability12"		"special_bonus_sasuke_2"
+		   "Ability13"		"special_bonus_strength_14"
+
+		   "Ability14"		"special_bonus_spell_amplify_12"
+		   "Ability15"		"special_bonus_sasuke_3"
+
+
+		   "Ability16"		"special_bonus_intelligence_35"
+		   "Ability17"		"special_bonus_sasuke_4"
+
+		 "ArmorPhysical"		"2.000000"
+		"AttackDamageMin"		"29"
+		"AttackDamageMax"		"34"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		  "StatusHealth"    "200"
+  		"StatusHealthRegen"   "0.300000"
+  		"Role"			"Carry,Escape,Nuker,Initiator,Disabler"
+		"Rolelevels"	"2,1,3,1,2"
+		"AttackRate"		"1.700000"		  
+		  "AttackAnimationPoint"   "0.4"
+		 // "AttackRate"				"0.7"
+		  "AttackRange"				"100"
+		  "MovementSpeed"			"310"
+
+		  "AttributeBaseStrength" "21" // Base strength
+		  "AttributeStrengthGain" "2.00" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "23" // Base intelligence
+		  "AttributeIntelligenceGain" "4.0" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "22" // Base agility
+		  "AttributeAgilityGain" "1.8" // Agility bonus per level.
+		  "ModelScale"		"0.90"
+		 "LoadoutScale"		"0.90" 
+		"SpectatorLoadoutScale" 	"0.90" 
+		"VersusScale"			"0.90" 
+		
+
+	 	  "ItemSlots"
+	  	  { }
+	  	  "Village"			"konoha_scarred"
+	  	  "Gender"			"male"
+		}
+
+}

@@ -1,0 +1,83 @@
+	
+    "DOTAAbilities"
+{
+    
+	"kankuro_summon_kuroari"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/kankuro/kankuro_summon_kuroari.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"kankuro_summon_kuroari"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_forge_spirit_ambient.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_forge_spirit_death.vpcf"
+			"particle"		"particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+			"model"			"models/kankuro/puppet1.vmdl"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 115 130 145"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"puppet_duration"			"1.5 2 2.5 3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hold_duration"				"1.5 2 2.5 3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_second"			"50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_second"			"50"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"600"
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,5 @@
+#base "itachi_amateratsu.txt"
+#base "itachi_dust_crow_genjustsu.txt"
+#base "itachi_sharingan.txt"
+#base "itachi_tsukiyomi.txt"
+#base "talents.txt"

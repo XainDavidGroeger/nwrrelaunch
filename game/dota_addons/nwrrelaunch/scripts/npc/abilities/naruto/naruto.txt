@@ -1,0 +1,5 @@
+#base "naruto_kage_bunshin_mastery.txt"
+#base "naruto_kage_bunshin_rasengan.txt"
+#base "naruto_kawazu_kumite.txt"
+#base "naruto_rasenshuriken.txt"
+#base "talents.txt"

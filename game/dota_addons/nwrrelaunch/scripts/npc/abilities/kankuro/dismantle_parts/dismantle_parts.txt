@@ -1,0 +1,2 @@
+#base "parts_jutsu_resistance.txt"
+#base "parts_poison.txt"

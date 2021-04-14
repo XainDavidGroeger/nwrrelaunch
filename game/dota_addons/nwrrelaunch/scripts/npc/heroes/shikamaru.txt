@@ -1,0 +1,63 @@
+"DOTAAbilities"
+{
+
+		//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
+		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
+		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
+		//10: +175 Health / +140 Shadow Bind Total Damage
+			"npc_dota_hero_shadow_shaman"  //Shikamaru
+		{
+		  "override_hero"   "npc_dota_hero_shadow_shaman" 
+		  "Model" 		"models/shikamaru_new/shika.vmdl"
+		  "Ability1"         "shikamaru_kage_kubishibari"
+		  "Ability2"         "shikamaru_explosive_kunai" 
+		  "Ability3"         "shikamaru_meditation" 
+  		  "Ability4"        "generic_hidden"
+		  "Ability5"        "generic_hidden"
+		  "Ability6"         "shikamaru_kage_nui"
+
+		   "Ability10"		"special_bonus_hp_175"
+		   "Ability11"		"special_bonus_shikamaru_1"
+
+		   "Ability12"		"special_bonus_shikamaru_2"
+		   "Ability13"		"special_bonus_cast_range_100"
+
+		   "Ability14"		"special_bonus_shikamaru_3"
+		   "Ability15"		"special_bonus_shikamaru_4"
+
+		   "Ability16"		"special_bonus_shikamaru_5"
+		   "Ability17"		"special_bonus_shikamaru_6"
+
+		  "ModelScale"		"0.60"
+		"LoadoutScale"		"0.53" 
+		"SpectatorLoadoutScale" 	"0.60" 
+		"VersusScale"				"0.60" 
+		"ArmorPhysical"		"0.000000"
+		"AttackDamageMin"		"20"
+		"AttackDamageMax"		"30"
+		"AttackRate"		"1.700000"		  
+		  "AttackAnimationPoint"   "0.4"
+		  	"Role"			"Support,Pusher,Disabler,Nuker,Initiator"
+		"Rolelevels"	"2,3,3,2,1"
+		 // "AttackRate"				"0.7"
+		  "AttackRange"				"600"
+		"AttackDamageMin"			"21"	// Damage range min.
+		"AttackDamageMax"			"31"	// Damage range max.
+		  "StatusHealth"    "200"
+  "StatusHealthRegen"   "0.300000"
+		  "MovementSpeed"			"290"
+		  "AttributeBaseStrength" "22" // Base strength
+		  "AttributeStrengthGain" "2.1" // Strength bonus per level.
+		  "AttributeBaseAgility" "16" // Base agility
+		  "AttributeAgilityGain" "1.8" // Agility bonus per level.
+		"AttributeBaseIntelligence" "25" // Base intelligence
+		  "AttributeIntelligenceGain" "3.5" // Intelligence bonus per level.
+		  
+	 	  "ItemSlots"
+	  	  { }
+
+	  	  "Village"			"konoha"
+		}
+
+
+}

@@ -1,0 +1,66 @@
+"DOTAAbilities"
+{
+
+		//25: +600 Sand Burial Range / +380 Sand Coffin Damage
+		//20: +225 Cast Range / +80 Sand Tsunami Radius
+		//15: +0.3 Sand Armor Damage per Mana / +70 Attack Damage
+		//10: +2 MP Regen / +6% Spell Amplification
+"npc_dota_hero_lion" //gaara
+		{
+		  "override_hero"   "npc_dota_hero_lion"
+		  "Model" 			"models/gaara_new/gaara_base.vmdl"
+		  "Ability1"         "gaara_sabaku_kyuu"
+		  "Ability2"         "gaara_ryuusa_bakuryu" 
+		  "Ability3"         "gaara_suna_no_yoroi" 
+		  "Ability4"		"generic_hidden"
+		  "Ability5"		"generic_hidden"
+		  "Ability6"         "gaara_sabaku_taiso"
+
+		   "Ability10"		"special_bonus_mp_regen_2"
+		   "Ability11"		"special_bonus_spell_amplify_6"
+
+		   "Ability12"		"special_bonus_gaara_1"
+		   "Ability13"		"special_bonus_attack_damage_70"
+
+		   "Ability14"		"special_bonus_cast_range_225"
+		   "Ability15"		"special_bonus_gaara_2"
+
+		   "Ability16"		"special_bonus_gaara_3"
+		   "Ability17"		"special_bonus_gaara_4"
+
+		   "ModelScale"		"0.42"
+		  "LoadoutScale"		"0.40" 
+		  "SpectatorLoadoutScale" "0.42" 
+		"VersusScale"			"0.42" 
+		  "Role"			"Disabler,Support,Nuker"
+		  "Rolelevels"	"2,3,2"
+		  "ArmorPhysical"		"1.000000"
+		  "AttackDamageMin"   "23"
+		  "AttackDamageMax"   "30"
+		  "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		  "AttackRate"    "1.700000"
+		  "StatusHealth"    "145"
+ 		  "StatusHealthRegen"   "0.300000"
+		  "AttackAnimationPoint"   "0.4"
+		  "AttackRange"				"600"
+		  "MovementSpeed"			"290"
+		  "AttributeBaseStrength" "18" // Base strength
+		  "AttributeStrengthGain" "2.0" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "24" // Base intelligence
+		  "AttributeIntelligenceGain" "3.4" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "14" // Base agility
+		  "AttributeAgilityGain" "1.5" // Agility bonus per level.
+		  
+	 	  "DisableWearables" "1"
+			"ItemSlots" 
+			{
+			}
+	  	  "Gender"			"male"
+	  	  "Village"			"sunagakure"
+
+
+
+		}
+
+
+}
