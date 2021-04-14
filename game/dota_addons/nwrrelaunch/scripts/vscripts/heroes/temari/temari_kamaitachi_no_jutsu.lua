@@ -19,16 +19,14 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 
 	tornado_travel_distance = keys.ability:GetLevelSpecialValueFor("travel_distance", ability:GetLevel() - 1)
 
-
 	tornado_lift_duration = keys.ability:GetLevelSpecialValueFor("lift_duration",  ability:GetLevel() - 1)
-	
-	local ability5 = keys.caster:FindAbilityByName("special_bonus_temari_5")
-	if abiltiy5 ~= nil then
-		if ability5:IsTrained() then
+
+	local ability5 = caster:FindAbilityByName("special_bonus_temari_5")
+	if ability5 ~= nil then
+		if ability5:GetLevel() > 0 then
 			tornado_lift_duration = tornado_lift_duration + 3.0
 		end
 	end
-
 
 	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.
 	--Its invoker_tornado_datadriven ability also applies the cyclone modifier to hit enemy units, since if Invoker uninvokes Tornado,
@@ -76,18 +74,6 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	projectile_information.vVelocity = point_difference_normalized * keys.TravelSpeed
 	
 	local tornado_projectile = ProjectileManager:CreateLinearProjectile(projectile_information)
-	
-	--When the projectile ID can be passed into a OnProjectileHitUnit block, an array like this can be used to store the stats associated with the projectile.
-	--[[
-	--Store the lift duration and bonus landing damage associated with the projectile, using the Quas/Exort levels from when Tornado was cast.
-	if keys.caster.tornado_projectile_information == nil then
-		keys.caster.tornado_projectile_information = {}
-	end
-	local tornado_projectile_information = {}
-	tornado_projectile_information["tornado_lift_duration"] = tornado_lift_duration
-	tornado_projectile_information[tornado_projectile])["tornado_landing_damage_bonus"] = tornado_landing_damage_bonus
-	keys.caster.tornado_projectile_information[tornado_projectile] = tornado_projectile_information
-	]]
 	
 	tornado_dummy_unit.temari_tornado_lift_duration = tornado_lift_duration
 	

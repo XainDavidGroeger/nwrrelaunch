@@ -47,3 +47,14 @@ function applyDamage( keys )
 		ApplyDamage(damage_table)
 	end
 end
+
+function reset_cooldown_if_talent_is_skilled( keys )
+	local caster = keys.caster
+	local ability7 = caster:FindAbilityByName("special_bonus_shikamaru_2")
+    if ability7 ~= nil then
+		if ability7:IsTrained() then
+    		keys.ability:EndCooldown()
+			keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2 )
+		end
+	end  
+end

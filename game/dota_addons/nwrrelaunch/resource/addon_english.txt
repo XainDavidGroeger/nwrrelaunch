@@ -1080,6 +1080,7 @@
 		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_movespeed_slow"		"%MS DEBUFF: "
 		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_attackspeed_slow"		"%AS DEBUFF: "
 		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_duration"		"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_cd_reduc"		"CD REDUCTION: "
 		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_description"	"This regular kunai is rigged with an explosive tag. The tag will detonate when the kunai hits its target, inflicting splash damage, and dazing anyone caught in the blast."
 
 
