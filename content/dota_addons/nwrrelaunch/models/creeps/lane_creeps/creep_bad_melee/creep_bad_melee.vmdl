@@ -221,8 +221,8 @@
 					m_flFps = 45.0
 					m_Loop = 
 					{
-						m_bLoop = true
-						m_bSmoothLoop = true
+						m_bLoop = false
+						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
 						m_StartLoop = 
@@ -267,8 +267,8 @@
 					m_flFps = 30.0
 					m_Loop = 
 					{
-						m_bLoop = false
-						m_bSmoothLoop = false
+						m_bLoop = true
+						m_bSmoothLoop = true
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
 						m_StartLoop = 
