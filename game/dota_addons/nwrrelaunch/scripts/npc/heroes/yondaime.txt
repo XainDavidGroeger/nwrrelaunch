@@ -18,6 +18,9 @@
 	//Picking Screen
 	"IsCustom"					"1"
 
+	"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
 	"AbilityLayout"	"5"
 	"Ability1"		"yondaime_marked_kunai"
 	"Ability2"		"yondaime_rasengan" 

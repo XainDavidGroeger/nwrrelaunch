@@ -29,6 +29,10 @@
 		    "Ability16"		"special_bonus_naruto_6"
 		    "Ability17"		"special_bonus_naruto_7"
 
+			
+			"SoundSet"					"Punch"
+			"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
+
 
 		  	"ArmorPhysical"		"1.000000"
 			"ModelScale"		"0.74"

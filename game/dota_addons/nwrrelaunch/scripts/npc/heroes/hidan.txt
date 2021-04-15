@@ -14,6 +14,9 @@
 		//Picking Screen
 		"IsCustom"					"1"
 
+		"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
 		"Model" 			"models/hidan/tesst.vmdl"
 	  	"Village"			"yugakure_scarred"
 	  	"Gender"			"male"

@@ -15,8 +15,9 @@
 	    "LoadoutScale"		"0.73"
 		"SpectatorLoadoutScale" 	"0.85"
 		"VersusScale"				"0.85"
-		"SoundSet"					"Itachi"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_itachi.vsndevts"
+	
+		"SoundSet"					"Punch"
+		"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
 		"particle_folder"			"particles/hero/sohei"  //for the future, i think
 		"GibType"					"default"
 

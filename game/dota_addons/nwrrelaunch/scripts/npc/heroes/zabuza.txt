@@ -7,6 +7,10 @@
 		//10: +175 Health / +20 Movement Speed
     	"npc_dota_hero_zabuza" //zabuza
 		{
+
+		"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
 			"HeroID"					"141"
 		  "BaseClass"   "npc_dota_hero_bloodseeker"
 		  "Ability1"        "zabuza_stealth"

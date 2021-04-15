@@ -28,6 +28,9 @@
 			"SpectatorLoadoutScale" 	"2.35"
 			"VersusScale"			"2.35"
 
+			"SoundSet"					"Punch"
+			"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
+
 			//Picking Screen
 			"IsCustom"					"1"
 

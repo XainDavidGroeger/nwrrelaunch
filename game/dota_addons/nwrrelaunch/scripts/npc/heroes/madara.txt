@@ -41,6 +41,10 @@
 		//Picking Screen
 		"IsCustom"					"1"
 
+		
+		"SoundSet"					"Punch"
+		"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
+
 		  "AttackAnimationPoint"   "0.4"
 		  "ModelScale"		"0.9"
 			"LoadoutScale"		"0.78"

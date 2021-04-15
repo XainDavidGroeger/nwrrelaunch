@@ -13,8 +13,9 @@
 		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
 		"ModelScale"				"0.85"
 		"LoadoutScale"				"0.85" 
-		"SoundSet"					"Kakashi"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kakashi.vsndevts"
+	
+		"SoundSet"					"Punch"
+		"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
 		"particle_folder"			"particles/hero/kakashi"
 		"GibType"					"default"
 

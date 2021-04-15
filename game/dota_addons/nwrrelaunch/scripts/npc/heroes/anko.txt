@@ -16,9 +16,10 @@
 		"LoadoutScale"	"0.0" 
 		"SpectatorLoadoutScale" 	"1.0" 
 		"VersusScale"			"1.0" 
-	
-		"SoundSet"					"Anko"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_anko.vsndevts"
+
+		"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+		
 		"particle_folder"			"particles/hero/anko"
 		"GibType"					"default"
 

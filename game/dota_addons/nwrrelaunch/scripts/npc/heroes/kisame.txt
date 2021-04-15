@@ -51,6 +51,9 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 
 
+		"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
 	 	"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
 		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
 
