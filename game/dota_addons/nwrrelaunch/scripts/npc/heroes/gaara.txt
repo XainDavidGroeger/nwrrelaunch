@@ -63,4 +63,99 @@
 		}
 
 
+
+		"npc_dota_hero_gaara"
+	{
+		"BaseClass"					"npc_dota_hero_lion"
+		"HeroID"					"124"
+		"Model" 			"models/gaara_new/gaara_base.vmdl"
+		"ModelScale"		"0.42"
+		"LoadoutScale"		"0.40" 
+		"SpectatorLoadoutScale" "0.42" 
+		"VersusScale"			"0.42" 
+	
+		"SoundSet"					"Gaara"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_gaara.vsndevts"
+		"particle_folder"			"particles/hero/gaara"
+		"GibType"					"default"
+
+		//Picking Screen
+		"IsCustom"					"1"
+
+		 "Role"			"Disabler,Support,Nuker"
+		  "Rolelevels"	"2,3,2"
+		"Complexity"	"2"
+
+
+// TODO gaara
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"MovementTurnRate"			"1.5"
+		"MovementSpeed"				"300"
+	
+	   "AttackDamageMin"   "23"
+		"AttackDamageMax"   "30"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRate"    "1.700000"
+
+		"AttackRange"				"100"
+		"AttackAnimationPoint"		"0.4"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
+		"ArmorPhysical"				"1"
+		"MagicalResistance"			"25"
+
+		"StatusHealth"    "200"
+		"StatusHealthRegen"   "0.300000"
+		"StatusManaRegen"			"0.9"
+		"StatusMana"				"75"
+
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength" "24" // Base strength
+		"AttributeStrengthGain" "3" // Strength bonus per level.
+		"AttributeBaseIntelligence" "17" // Base intelligence
+		"AttributeIntelligenceGain" "1.8" // Intelligence bonus per level.
+		"AttributeBaseAgility" "14" // Base agility
+		"AttributeAgilityGain" "1.4" // Agility bonus per level.
+
+		"Ability1"        "anko_giant_snake"
+		"Ability2"        "anko_senei_jyashu"
+		"Ability3"        "anko_senei_ta_jashu"
+  		"Ability4"        "generic_hidden"
+		"Ability5"        "generic_hidden"
+		"Ability6"        "anko_sojasosai_no_jutsu"      
+
+		"Ability10"		"special_bonus_mp_regen_2"
+		"Ability11"		"special_bonus_cast_range_100"
+
+		"Ability12"		"special_bonus_anko_1"
+		"Ability13"		"special_bonus_anko_2"
+
+		"Ability14"		"special_bonus_strength_20"
+		"Ability15"		"special_bonus_anko_3"
+
+		"Ability16"		"special_bonus_anko_4"
+		"Ability17"		"special_bonus_anko_5"
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		"HasInventory"				"1" // This KV is required for units file only
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		// Custom KV's
+	    "Gender"      "female"
+		"Village"			"kirigakure"
+	}
+
+
 }

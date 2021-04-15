@@ -10,9 +10,9 @@
 	"npc_dota_hero_doom_bringer" "1"  //hidan
 	"npc_dota_hero_kunkka" "1" //kisame
 	"npc_dota_hero_dragon_knight" "1" //naruto
-	"npc_dota_hero_medusa" "1" //anko
 	"npc_dota_hero_centaur" "1" // guy
-	"npc_dota_hero_beastmaster" "1" // kakashi
+	"npc_dota_hero_kakashi" "1"
+	"npc_dota_hero_anko" "1"
 	"npc_dota_hero_sven" "1"	// onoki
 
 
@@ -101,7 +101,7 @@
 	"npc_dota_hero_spectre" "0"
 	"npc_dota_hero_terrorblade" "0"
 	"npc_dota_hero_ursa" "0"
-	
+	"npc_dota_hero_beastmaster" "0"
 	// Agi Ranged
 	"npc_dota_hero_clinkz" "0"
 	"npc_dota_hero_gyrocopter" "0"
@@ -117,6 +117,7 @@
 	"npc_dota_hero_venomancer"  "0"
 	"npc_dota_hero_viper" "0"
 	"npc_dota_hero_weaver" "0"
+	"npc_dota_hero_medusa" "0" 
 	
 	// Int Melee
 	"npc_dota_hero_dark_seer" "0"
@@ -154,5 +155,5 @@
 	"npc_dota_hero_witch_doctor" "0"
 	"npc_dota_hero_zuus" "0"
 
-	"npc_dota_hero_kakashi" "1"
+
 }

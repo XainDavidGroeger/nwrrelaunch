@@ -1,8 +1,8 @@
 "itembuilds"
 {
 	"author"		"Valve"
-	"hero"			"npc_dota_hero_beastmaster"
-	"Title"			"Recommended items for Beastmaster"
+	"hero"			"npc_dota_hero_kakashi"
+	"Title"			"Recommended items for Kakashi"
 	
 	"Items"
 	{		

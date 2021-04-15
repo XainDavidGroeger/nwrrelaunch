@@ -19,7 +19,7 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_doom_bringer",  
         "npc_dota_hero_kunkka",
         "npc_dota_hero_dragon_knight",
-        "npc_dota_hero_medusa",
+        "npc_dota_hero_anko",
         "npc_dota_hero_centaur",
         "npc_dota_hero_kakashi",
         "npc_dota_hero_drow_ranger",	
@@ -200,7 +200,7 @@ function GameMode:Setup_Hero_Tables()
         GameRules.heroTable[15] = "npc_dota_hero_bloodseeker"
         GameRules.heroTable[16] = "npc_dota_hero_axe"
 		GameRules.heroTable[17] = "npc_dota_hero_shadow_shaman"
-        GameRules.heroTable[18] = "npc_dota_hero_medusa"
+        GameRules.heroTable[18] = "npc_dota_hero_anko"
     end
     if GameRules.nwrHeroTable == nil then
         GameRules.nwrHeroTable = {}

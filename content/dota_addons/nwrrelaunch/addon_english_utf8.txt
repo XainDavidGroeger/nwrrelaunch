@@ -339,7 +339,7 @@
 		//--------------------
 		//Anko
 		//--------------------
-		"npc_dota_hero_medusa"  									"Anko"
+		"npc_dota_hero_anko"  									"Anko"
 		"DOTA_Tooltip_ability_anko_giant_snake"						"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"Summoning Jutsu: Giant Snake. Anko summons a Giant Snake that will grab the first target it encounters, dealing damage, then dragging the victim back to Anko."
 		"DOTA_Tooltip_ability_anko_senei_jyashu"					"Senei Jyashu"
