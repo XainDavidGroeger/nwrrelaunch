@@ -53,8 +53,8 @@
 		//--------------------
 		//Zabuza
 		//--------------------
-		"npc_dota_hero_bloodseeker" 						"Zabuza"
-		"npc_dota_hero_bloodseeker_lore"  					""
+		"npc_dota_hero_zabuza" 						"Zabuza"
+		"npc_dota_hero_zabuza_lore"  					""
 		// Weak Spot
 		"DOTA_Tooltip_ability_zabuza_weak_spot"						"Weak Spot"
 		"DOTA_Tooltip_ability_zabuza_weak_spot_description"			"After studying an enemy's defense, Zabuza delivers a devestating strike upon his opponent. While off cooldown, Zabuza's next basic attack delivers an assured critical. After each succesful attack, the cooldown of this ability is reduced by 1 second."
@@ -96,7 +96,7 @@
 		//--------------------
 		//Kimimaro
 		//--------------------
-		"npc_dota_hero_ursa" "Kimimaro"
+		"npc_dota_hero_kimimaro" "Kimimaro"
 		// Clematis Danc: Flower
 		"DOTA_Tooltip_ability_kimi_clematis_dance"						"Clematis Danc: Flower"
 		"DOTA_Tooltip_ability_kimi_clematis_dance_lore"					"Tessenka no Mai: Hana"
@@ -178,8 +178,8 @@
 		//--------------------
 		//Hidan
 		//--------------------
-		"npc_dota_hero_doom_bringer" "Hidan"
-		"npc_dota_hero_doom_bringer_lore"  								"The only true immortal known in the shinobi world, Hidan is a ruthless worshipper of Jashin and a member of Akatsuki. Through experimenting with the various techniques of his religion, Hidan has gained the ability to survive any injury. Even if he is decapitated Hidan will still survive, although he cannot control the rest of his body. Despite being a religious man Hidan is known to be an extremely disrespectful shinobi. He constantly complains and swears to his allies, including his superiors. The only respect he ever gives is to his god whom he works to fulfil his commandments. His insistence on following his religion’s laws often brings him into conflict with his partner Kakuzu. Since he is unable to be killed by any attack, Hidan and Kakuzu were a perfect team as Kakuzu’s rage could never kill the immortal. His extreme durability and raw strength are what allowed him to become a valued member of Akatsuki."
+		"npc_dota_hero_hidan" "Hidan"
+		"npc_dota_hero_hidan_lore"  								"The only true immortal known in the shinobi world, Hidan is a ruthless worshipper of Jashin and a member of Akatsuki. Through experimenting with the various techniques of his religion, Hidan has gained the ability to survive any injury. Even if he is decapitated Hidan will still survive, although he cannot control the rest of his body. Despite being a religious man Hidan is known to be an extremely disrespectful shinobi. He constantly complains and swears to his allies, including his superiors. The only respect he ever gives is to his god whom he works to fulfil his commandments. His insistence on following his religion’s laws often brings him into conflict with his partner Kakuzu. Since he is unable to be killed by any attack, Hidan and Kakuzu were a perfect team as Kakuzu’s rage could never kill the immortal. His extreme durability and raw strength are what allowed him to become a valued member of Akatsuki."
 		// Cull the Weak
 		"DOTA_Tooltip_ability_hidan_cull_the_weak"						"Cull the Weak"
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_description"			"Hidan throws his scythe at the target point and then rips it back, pulling any enemy units within a cone directly in front of him.  Enemies hit by this ability are mini stunned and will take physical damage as they are pulled directly in front of Hidan. Damage done to creeps by this ability is doubled. Cull the Weak costs health from Hidan if any enemy units are hit, but will lose no health if enemies are not affected."
@@ -234,8 +234,8 @@
 		//--------------------
 		//Madara
 		//--------------------
-		"npc_dota_hero_ogre_magi"  										"Madara"
-		"npc_dota_hero_ogre_magi_lore"  								"Widely considered to be the strongest Uchiha to have ever lived, Uchiha Madara is a legendary shinobi who was the leader of his clan before he became a co-founder of Konohagakure. Madara was the first of his clan to gain the Eternal Mangekyo Sharingan after inheriting his brother’s eyes. This newfound power elevated him to the top of the Uchiha hierarchy where he constantly waged war with their rival clan, the Senju. After being defeated in battle, Madara agreed to an alliance proposed by Hashirama to unite as a single ninja village. However, his rivalry with his lifelong rival Hashirama Senju did not end after their agreement to ally under Konoha and it soon led to a deathmatch between the two legendary shinobi at the Valley of the End. Although Madara had lost the battle for Konoha, he had survived and managed to acquire some of Hashirama’s DNA. Filled with new purpose, Madara began preparations for his Eye of the Moon plan which would set the entire ninja world under an eternal genjutsu."
+		"npc_dota_hero_madara"  										"Madara"
+		"npc_dota_hero_madara_lore"  								"Widely considered to be the strongest Uchiha to have ever lived, Uchiha Madara is a legendary shinobi who was the leader of his clan before he became a co-founder of Konohagakure. Madara was the first of his clan to gain the Eternal Mangekyo Sharingan after inheriting his brother’s eyes. This newfound power elevated him to the top of the Uchiha hierarchy where he constantly waged war with their rival clan, the Senju. After being defeated in battle, Madara agreed to an alliance proposed by Hashirama to unite as a single ninja village. However, his rivalry with his lifelong rival Hashirama Senju did not end after their agreement to ally under Konoha and it soon led to a deathmatch between the two legendary shinobi at the Valley of the End. Although Madara had lost the battle for Konoha, he had survived and managed to acquire some of Hashirama’s DNA. Filled with new purpose, Madara began preparations for his Eye of the Moon plan which would set the entire ninja world under an eternal genjutsu."
 		// Fire Release: Great Fire Annihilation (Katon: Goka Mekkyaku)
 		"DOTA_Tooltip_ability_madara_fire_release"						"Great Fire Annihilation"
 		"DOTA_Tooltip_ability_madara_fire_release_description"			"Sends out a wave of fire that travels a target point pushing all enemies hit towards the target point while dealing magic damage. Upon reaching maximum distance, the fire wave will explode, dealing magic damage and stunning all enemy units within the area.  Any trees touched by this ability will burn if Wood Release: Deep Forest Emergence is leveled."
@@ -285,9 +285,9 @@
 		//--------------------
 		//Kisame
 		//--------------------
-		"npc_dota_hero_kunkka"  										"Kisame"
-		"npc_dota_hero_kunkka_lore"  									"Feared as the Monster of the Hidden Mist, Hoshigaki Kisame is a dangerous S-Rank missing nin and one of the Seven Ninja Swordsmen of the Mist. He loves to fight and is often aggressive towards anyone he meets. Despite this Kisame has shown to be very loyal to his allies unless they endanger the mission. He bears the great sword Samehada (Shark Skin) and uses it to shave his enemies and drain their chakra. Kisame has an abundance of chakra that is said to almost match a tailed beast. It is from this great source of power that he gets the title The Tailed Beast without a Tail. Regarded as one of the most powerful shinobi to ever come out of Kirigakure (Village of the Hidden Mist), he earned membership into Akatsuki through his own strength. "
-		"npc_dota_hero_kunkka_description"  							"Playing Kisame is about becoming inescapable as you slowly drown your enemies. This hero favors longer more drawn out confrontations meaning that survivability is of top priority. His abilities offer him great utility in almost any situation whether it be ganking, team fighting, or taking on an enemy one on one. Kisame is very mana dependant as his ultimate consumes mana over time. His passive somewhat remedies this problem as his attacks will drain mana from enemies while gaining the stolen mana. However, this mechanic can be deceptive to Kisame’s mana problems as a larger max mana pool requires more mana to sustain his ultimate. This means that his mana drain is more effective the smaller Kisame’s max mana pool is.  Kisame can easily dominate a team fight so long as he can stick onto various heroes. Through proper micro of his clones and intelligent maneuvering, Kisame is a walking pain train that forces the fight onto the enemy."
+		"npc_dota_hero_kisame"  										"Kisame"
+		"npc_dota_hero_kisame_lore"  									"Feared as the Monster of the Hidden Mist, Hoshigaki Kisame is a dangerous S-Rank missing nin and one of the Seven Ninja Swordsmen of the Mist. He loves to fight and is often aggressive towards anyone he meets. Despite this Kisame has shown to be very loyal to his allies unless they endanger the mission. He bears the great sword Samehada (Shark Skin) and uses it to shave his enemies and drain their chakra. Kisame has an abundance of chakra that is said to almost match a tailed beast. It is from this great source of power that he gets the title The Tailed Beast without a Tail. Regarded as one of the most powerful shinobi to ever come out of Kirigakure (Village of the Hidden Mist), he earned membership into Akatsuki through his own strength. "
+		"npc_dota_hero_kisame_description"  							"Playing Kisame is about becoming inescapable as you slowly drown your enemies. This hero favors longer more drawn out confrontations meaning that survivability is of top priority. His abilities offer him great utility in almost any situation whether it be ganking, team fighting, or taking on an enemy one on one. Kisame is very mana dependant as his ultimate consumes mana over time. His passive somewhat remedies this problem as his attacks will drain mana from enemies while gaining the stolen mana. However, this mechanic can be deceptive to Kisame’s mana problems as a larger max mana pool requires more mana to sustain his ultimate. This means that his mana drain is more effective the smaller Kisame’s max mana pool is.  Kisame can easily dominate a team fight so long as he can stick onto various heroes. Through proper micro of his clones and intelligent maneuvering, Kisame is a walking pain train that forces the fight onto the enemy."
 		//Water Release: Water Shark Bullet Technique (Suiton: Suikodan no Jutsu)
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu"					"Water Shark Bullet"
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_lore"					"Suiton: Suikodan no Jutsu"
@@ -340,8 +340,8 @@
 		//--------------------
 		//Gaara
 		//--------------------
-		"npc_dota_hero_lion"  											"Gaara"
-		"npc_dota_hero_lion_lore"  										""
+		"npc_dota_hero_gaara"  											"Gaara"
+		"npc_dota_hero_gaara_lore"  										""
 		// Sabaku Kyuu
 		"DOTA_Tooltip_ability_gaara_sabaku_kyuu"						"Sand Coffin"
 		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_lore"					"Sabaku Kyu"
@@ -376,8 +376,8 @@
 		//--------------------
 		//Yondaime Minato
 		//--------------------
-		"npc_dota_hero_juggernaut"  									"Minato"
-		"npc_dota_hero_juggernaut_lore"  										""
+		"npc_dota_hero_yondaime"  									"Minato"
+		"npc_dota_hero_yondaime_lore"  										""
 		// Marked Kunai
 		"DOTA_Tooltip_ability_yondaime_marked_kunai"					"Marked Kunai"
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_description"		"Throws a marked kunai at a target point dealing physical damage to any enemies it passess through. The kunai will then be placed at the target point but cannot be targeted by enemies. Grants the ability Body Flicker which allows Minato to teleport to the position the kunai on the ground as long as he is in range of it. Deals half damage to Heroes."
@@ -433,8 +433,8 @@
 		//--------------------
 		//Kankuro
 		//--------------------
-		"npc_dota_hero_warlock"  											"Kankuro"
-		"npc_dota_hero_warlock_lore"  										""
+		"npc_dota_hero_kankuro"  											"Kankuro"
+		"npc_dota_hero_kankuro_lore"  										""
 		// Summon Kuroari
 		"DOTA_Tooltip_ability_kankuro_summon_kuroari"						"Summon Kuroari"
 		"DOTA_Tooltip_ability_kankuro_summon_kuroari_description"			"Kankuro summons Kuroari, a capture-type puppet that immobilizes and damages the enemy target. Does 50 damage per second."
@@ -511,8 +511,8 @@
 		//--------------------
 		//Haku
 		//--------------------
-		"npc_dota_hero_drow_ranger"  								"Haku"
-		"npc_dota_hero_drow_ranger_lore"  							"Born in a snowy village within the Land of Water, Haku was a child amongst a land that feared ninjas and their kekkei genkais. It was because of this fear that Haku’s mother decided to hide her secret bloodline ability called Ice Release. She lived a happy and peaceful life with her husband, until it was discovered that Haku possessed the kekkei genkai as well. After witnessing his child manipulate water, Haku’s father gathered a mob in order to kill his wife as well as his son. He succeeded in killing his spouse but was slain along with his peers when Haku unleashed his ability in self defense. Alone and an orphan, Haku wandered the streets as a beggar with few days left to live. It was during this time that the shinobi Momochi Zabuza of the Hidden Mist discovered the young boy and realized his capabilities. Pledging himself as a weapon for his master, Haku found purpose in life as a tool for Zabuza’s ambitions. Zabuza would proceed to raise Haku in order to develop his skills and create the ultimate weapon for himself."
+		"npc_dota_hero_haku"  								"Haku"
+		"npc_dota_hero_haku_lore"  							"Born in a snowy village within the Land of Water, Haku was a child amongst a land that feared ninjas and their kekkei genkais. It was because of this fear that Haku’s mother decided to hide her secret bloodline ability called Ice Release. She lived a happy and peaceful life with her husband, until it was discovered that Haku possessed the kekkei genkai as well. After witnessing his child manipulate water, Haku’s father gathered a mob in order to kill his wife as well as his son. He succeeded in killing his spouse but was slain along with his peers when Haku unleashed his ability in self defense. Alone and an orphan, Haku wandered the streets as a beggar with few days left to live. It was during this time that the shinobi Momochi Zabuza of the Hidden Mist discovered the young boy and realized his capabilities. Pledging himself as a weapon for his master, Haku found purpose in life as a tool for Zabuza’s ambitions. Zabuza would proceed to raise Haku in order to develop his skills and create the ultimate weapon for himself."
 		// Crippling Senbon
 		"DOTA_Tooltip_ability_haku_crippling_senbon"					"Crippling Senbon"
 		"DOTA_Tooltip_ability_haku_crippling_senbon_lore"				""
@@ -593,8 +593,8 @@
 		//--------------------
 		//Sakura
 		//--------------------
-		"npc_dota_hero_phantom_assassin"  								"Sakura"
-		"npc_dota_hero_phantom_assassin_lore"  							""
+		"npc_dota_hero_sakura"  								"Sakura"
+		"npc_dota_hero_sakura_lore"  							""
 		// Earth Slam
 		"DOTA_Tooltip_ability_sakura_earth_slam"						"Earth Slam"
 		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Sakura slams the ground with her chakra enhanced fists, rupturing the earth beneath her. Enemy units within the area are stunned and dealt magic damage."
@@ -692,8 +692,8 @@
 		//--------------------
 		//Naruto
 		//--------------------
-		"npc_dota_hero_dragon_knight"  									"Naruto"
-		"npc_dota_hero_dragon_knight_lore"  							""
+		"npc_dota_hero_naruto"  									"Naruto"
+		"npc_dota_hero_naruto_lore"  							""
 		// Kage Bunshin Rasengan
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan"					"Shadow Clone: Rasengan"
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_lore"			"Kage Bunshin Rasengan"
@@ -739,8 +739,8 @@
 		//--------------------
 		//Itachi
 		//--------------------
-		"npc_dota_hero_antimage"  										"Itachi"
-		"npc_dota_hero_antimage_lore"  									""
+		"npc_dota_hero_itachi"  										"Itachi"
+		"npc_dota_hero_itachi_lore"  									""
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"Dust Crow Genjutsu"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_cd_reduc"		"CD REDUCTION: "
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"Using genjutsu, Itachi dissapears, leaving a flock of crows behind, and reappears at target location."
@@ -780,8 +780,8 @@
 		//--------------------
 		//Sasuke
 		//--------------------
-		"npc_dota_hero_storm_spirit"  									"Sasuke"
-		"npc_dota_hero_storm_spirit_lore"								""
+		"npc_dota_hero_sasuke"  									"Sasuke"
+		"npc_dota_hero_sasuke_lore"								""
 		//Chidori Nagashi
 		"DOTA_Tooltip_ability_sasuke_chidori_nagashi"					"Chidori Stream"
 		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_lore"					"Chidori Nagashi"
@@ -852,8 +852,8 @@
 		//--------------------
 		//Guy
 		//--------------------
-		"npc_dota_hero_centaur"  										"Gai"
-		"npc_dota_hero_centaur_lore"  									""
+		"npc_dota_hero_guy"  										"Gai"
+		"npc_dota_hero_guy_lore"  									""
 		// Dynamic Entry
 		"DOTA_Tooltip_ability_guy_dynamic_entry_new"						"Dynamic Entry"
 		"DOTA_Tooltip_ability_guy_dynamic_entry_new_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
@@ -931,7 +931,7 @@
 		//--------------------
 		//Onoki
 		//--------------------
-		"npc_dota_hero_sven"											"Onoki"
+		"npc_dota_hero_onoki"											"Onoki"
 		//Jinton
 		"DOTA_Tooltip_ability_onoki_jinton"								"Dust Release: Atomic Dismantling Technique"
 		"DOTA_Tooltip_ability_onoki_jinton_lore"						"Jinton: Genkai Hakuri no Jutsu"
@@ -984,7 +984,7 @@
 		//--------------------
 		//Neji
 		//--------------------
-		"npc_dota_hero_axe"  											"Neji"
+		"npc_dota_hero_neji"  											"Neji"
 		//Kaiten
 		"DOTA_Tooltip_ability_neji_kaiten"								"Kaiten"
 		"DOTA_Tooltip_ability_neji_kaiten_Description"					"Neji expels chakra from all of his chakra points and spins in circles, forming a protective sphere of chakra around him. This ability pushes back all enemy units around him while dealing magic damage to them. While spinning, Neji becomes invulnerable for 0.4 seconds."
@@ -1021,7 +1021,7 @@
 		//--------------------
 		//Raikage
 		//--------------------
-		"npc_dota_hero_sand_king"  										"Raikage"
+		"npc_dota_hero_raikage"  										"Raikage"
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_lore"					"Raiga no Bomu"
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu"					"Liger Bomb"
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_reduce_armor"		"ARMOR DEBUFF: "
@@ -1066,7 +1066,7 @@
 		//--------------------
 		//Shikamaru
 		//--------------------
-		"npc_dota_hero_shadow_shaman"  								"Shikamaru"
+		"npc_dota_hero_shikamarun"  								"Shikamaru"
 		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari"			"Shadow Neck Bind Technique"
 		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_lore"			"Kage Kubishibari"
 
@@ -1135,7 +1135,7 @@
 		//--------------------
 		//Temari
 		//--------------------
-		"npc_dota_hero_enchantress"  									"Temari"
+		"npc_dota_hero_temari"  									"Temari"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"Dust Wind Technique"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_lore"					"Fusajin no Jutsu"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"Temari releases a vicious wind that rips apart trees and flesh."

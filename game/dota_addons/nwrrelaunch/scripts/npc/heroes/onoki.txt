@@ -1,9 +1,10 @@
 "DOTAAbilities"
 {
 
-		"npc_dota_hero_sven" //onoki
+		"npc_dota_hero_onoki" //onoki
 {
-			"override_hero"		"npc_dota_hero_sven"
+			"HeroID"					"134"
+			"BaseClass"		"npc_dota_hero_sven"
 			"Model"				"models/onuki/onoki_model.vmdl"
 			"Ability1"			"onoki_jinton"
 			"Ability2"			"onoki_stalagmite_armor"

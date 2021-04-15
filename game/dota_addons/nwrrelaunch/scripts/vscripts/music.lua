@@ -72,17 +72,17 @@ function GameMode:PlayKillSound(killer, killed)
 	local killerName = killer:GetName()
 	local killedName = killed:GetName()
 
-	if killerName == "npc_dota_hero_dragon_knight" then 
-		if killedName == "npc_dota_hero_storm_spirit" then 
+	if killerName == "npc_dota_hero_naruto" then 
+		if killedName == "npc_dota_hero_sasuke" then 
 			EmitSoundOn("naruto_kills_sasuke", killer)
 		elseif killedName == "npc_dota_hero_kakashi" then 
 			print("naruto killed kakashi")
 		else                 
 		end
-	elseif killerName == "npc_dota_hero_storm_spirit" then 
-		if killedName == "npc_dota_hero_dragon_knight" then
+	elseif killerName == "npc_dota_hero_sasuke" then 
+		if killedName == "npc_dota_hero_naruto" then
 			EmitSoundOn("sasuke_kills_naruto", killer)
-		elseif killedName == "npc_dota_hero_lion" then
+		elseif killedName == "npc_dota_hero_gaara" then
 		 EmitSoundOn("sasuke_kills_gaara", killer)
 		elseif killedName == "npc_dota_hero_itachi" then
 			EmitSoundOn("sasuke_kills_itachi", killer)

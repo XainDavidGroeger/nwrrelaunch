@@ -1,0 +1,54 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_neji"
+	"Title"			"Recommended items for Neji"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_quelling_blade"
+			"item"		"item_enchanted_mango"
+			"item"		"item_branches"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+ 			"item"		"item_orb_of_corrosion"	
+			"item"		"item_boots"
+			"item"		"item_wraith_band"
+			"item"		"item_magic_wand"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_phase_boots"
+        		"item"		"item_blink"
+        		"item"		"item_manta"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"  	"item_black_king_bar"
+			"item"		"item_skadi"
+			"item"		"item_abyssal_blade"
+			"item"		"item_nullifier"
+			"item"		"item_buttefly"
+		}
+		
+		"DOTA_Item_Build_Other_Items"
+		{
+			"item"  	"item_mage_slayer"
+			"item"		"item_silver_edge"
+			"item"		"item_monkey_king_bar"
+			"item"		"item_gleipnir"
+			"item"		"item_heavens_halbred"
+			"item"		"item_kaya_and_sange"
+			"item"		"item_swift_blink"
+		}
+	}
+}

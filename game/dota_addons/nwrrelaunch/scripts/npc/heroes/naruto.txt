@@ -5,9 +5,10 @@
 		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 		//10: +5 All Stats / +200 Bunshin Swap Range
-    		"npc_dota_hero_dragon_knight" //naruto
+    		"npc_dota_hero_naruto" //naruto
 		{
-		  	"override_hero" "npc_dota_hero_dragon_knight"
+			"HeroID"					"132"
+		  	"BaseClass" "npc_dota_hero_dragon_knight"
 		  	"Model" 		"models\naruto_new_2/naruto_base.vmdl"
 		 	"Ability1"      "naruto_kage_bunshin_rasengan"
 		  	"Ability2"      "naruto_kawazu_kumite" 

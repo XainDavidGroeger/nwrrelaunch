@@ -5,9 +5,10 @@
 		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
 		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
 		//10: +175 Health / +140 Shadow Bind Total Damage
-			"npc_dota_hero_shadow_shaman"  //Shikamaru
+			"npc_dota_hero_shikamaru"  //Shikamaru
 		{
-		  "override_hero"   "npc_dota_hero_shadow_shaman" 
+			"HeroID"					"138"
+		  "BaseClass"   "npc_dota_hero_shadow_shaman" 
 		  "Model" 		"models/shikamaru_new/shika.vmdl"
 		  "Ability1"         "shikamaru_kage_kubishibari"
 		  "Ability2"         "shikamaru_explosive_kunai" 
@@ -37,6 +38,8 @@
 		"AttackDamageMax"		"30"
 		"AttackRate"		"1.700000"		  
 		  "AttackAnimationPoint"   "0.4"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+
 		  	"Role"			"Support,Pusher,Disabler,Nuker,Initiator"
 		"Rolelevels"	"2,3,3,2,1"
 		 // "AttackRate"				"0.7"

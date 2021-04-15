@@ -1,14 +1,15 @@
 "DOTAAbilities"
 {
 
-"npc_dota_hero_axe" //neji
+"npc_dota_hero_neji" //neji
 
 		//10: +9 Strength / +20 Attack Speed
 		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
 		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
 		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
 		{
-		  "override_hero"   "npc_dota_hero_axe"
+			"HeroID"					"133"
+		  "BaseClass"   "npc_dota_hero_axe"
 		  "Model" 			"models/neji_new/neji.vmdl"
 		  "Ability1"         "neji_kaiten"
 		  "Ability2"         "neji_internal_bleeding" 

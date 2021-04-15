@@ -5,9 +5,10 @@
 		//20: +100% Cleave / -3 Armor Track
 		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
 		//10: +175 Health / +20 Movement Speed
-    	"npc_dota_hero_bloodseeker" //zabuza
+    	"npc_dota_hero_zabuza" //zabuza
 		{
-		  "override_hero"   "npc_dota_hero_bloodseeker"
+			"HeroID"					"141"
+		  "BaseClass"   "npc_dota_hero_bloodseeker"
 		  "Ability1"        "zabuza_stealth"
 		  "Ability2"        "zabuza_kirigakure_no_jutsu"
 		  "Ability3"        "zabuza_weak_spot"

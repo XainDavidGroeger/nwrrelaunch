@@ -3,91 +3,6 @@
 	//=================================================================================================================
 	// HERO: Kakashi
 	//=================================================================================================================
-	"npc_dota_hero_beastmaster"
-	{
-		"override_hero"					"npc_dota_hero_beastmaster"
-		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
-
-		"ModelScale"				"0.90"
-		"LoadoutScale"				"0.80" 
-		"SpectatorLoadoutScale" 	"0.90" 
-		"VersusScale"				"0.90" 
-
-		"particle_folder"			"particles/hero/kakashi"
-		"GibType"					"default"
-
-		//Picking Screen
-		"IsCustom"					"1"
-
-		"Role"						"Carry,Support,Escape,Disabler,Initiator"
-		"Rolelevels"				"2,1,1,1,2"
-		"Complexity"				"2"
-   
-	    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementTurnRate"			"1.5"
-		"MovementSpeed"				"305"
-
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"34"
-		"AttackDamageMax"			"37"
-		"AttackRange"				"100"
-		"AttackRate"				"1.7"
-		"AttackAnimationPoint"		"0.4"
-		"AttackSpeedActivityModifiers"
-		{
-			"fast"		"170"
-			"faster"	"275"
-			"fastest"	"350"
-		}
-
-		"ArmorPhysical"				"1"
-		"MagicalResistance"			"25"
-
-		"StatusHealth"				"200"
-		"StatusHealthRegen"			"0.3"
-		"StatusManaRegen"			"0.9"
-		"StatusMana"				"75"
-
-		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength" "22" // Base strength
-		"AttributeStrengthGain" "3.0" // Strength bonus per level.
-		"AttributeBaseIntelligence" "19" // Base intelligence
-		"AttributeIntelligenceGain" "2.0" // Intelligence bonus per level.
-		"AttributeBaseAgility" "17" // Base agility
-		"AttributeAgilityGain" "1.8" // Agility bonus per level.
-
-		"Ability1"					"kakashi_doton"
-		"Ability2"					"kakashi_sharingan" 
-		"Ability3"					"kakashi_bunshin" 
-		"Ability4"					"kakashi_empty"
-		"Ability5"					"generic_hidden"
-		"Ability6"					"kakashi_chidori"
-
-  		"Ability10"		"special_bonus_mp_200"
-		"Ability11"		"special_bonus_attack_damage_30"
-
-		"Ability12"		"special_bonus_kakashi_1"
-		"Ability13"		"special_bonus_all_stats_6"
-
-		"Ability14"		"special_bonus_kakashi_2"
-		"Ability15"		"special_bonus_kakashi_3"
-
-		"Ability16"		"special_bonus_cooldown_reduction_25"
-		"Ability17"		"special_bonus_kakashi_4"
-
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
-		"HasInventory"				"1" // This KV is required for units file only
-
-		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
-		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
-
-		// Custom KV's
-		"Village"			"konoha"
-		"Gender"			"male"
-	}
-
 	//=================================================================================================================
 	// HERO: Kakashi
 	//=================================================================================================================
@@ -171,4 +86,19 @@
 		"Village"			"konoha"
 		"Gender"			"male"
 	}
+
+
+
+	"npc_dota_hero_beastmaster"
+	{
+		"override_hero"					"npc_dota_hero_beastmaster"
+		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
+
+		"ModelScale"				"0.90"
+		"LoadoutScale"				"0.80" 
+		"SpectatorLoadoutScale" 	"0.90" 
+		"VersusScale"				"0.90" 
+	}
+
+	
 }

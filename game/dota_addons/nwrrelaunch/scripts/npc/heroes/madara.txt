@@ -5,9 +5,12 @@
 		//20: -2s Forest Emergence Cooldown / +160 Damage Fire Annihilation Explosion
 		//15: +1.5s Deep Forest Duration  ( * ) / +6 Armor
 		//10: +12 Intelligence / +70 Susano’o Radius
-		"npc_dota_hero_ogre_magi" //madara
+		"npc_dota_hero_madara" //madara
 		{
-		  "override_hero"   "npc_dota_hero_ogre_magi"
+
+			
+		  "HeroID"					"131"
+		  "BaseClass"   "npc_dota_hero_ogre_magi"
 		  "Model" 			"models/madara/madara.vmdl"
 		  "Ability1"        "madara_fire_release"
 		  "Ability2"        "madara_wood_release" 

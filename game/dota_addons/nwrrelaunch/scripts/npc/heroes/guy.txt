@@ -5,9 +5,13 @@
 		//20: +40 Sixth Gate Movement Speed / +35% Gouken Critical Damage
 		//15: +35% Dynamic Entry Miss Chance/ +15% Lifesteal
 		//10: +15 Damage / +200 Health
-		"npc_dota_hero_centaur" //guy
+		"npc_dota_hero_guy" //guy
 		{
-		  "override_hero"   "npc_dota_hero_centaur"
+
+		"HeroID"					"125"
+
+
+		   "BaseClass"   "npc_dota_hero_centaur"
 		  "Model" 			"models/guy/gai.vmdl"
 		  "Ability1"        "guy_dynamic_entry_new"
 		  "Ability2"        "guy_leaf_strong_whirlwind" 

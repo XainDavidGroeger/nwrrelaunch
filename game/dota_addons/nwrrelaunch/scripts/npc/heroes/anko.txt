@@ -1,5 +1,9 @@
 "DOTAAbilities"
 {
+
+
+
+
 	//=================================================================================================================
 	// HERO: Anko
 	//=================================================================================================================
@@ -100,5 +104,17 @@
 		"Village"			"kirigakure"
 	}
 
+
+
+"npc_dota_hero_medusa" 
+		{
+		  	"override_hero"   "npc_dota_hero_medusa"
+			"Model"           "models/anko_new/anko_base.vmdl"
+			"ModelScale"		"1.0"
+			"LoadoutScale"	"0.90" 
+			"SpectatorLoadoutScale" 	"1.0" 
+			"VersusScale"			"1.0" 
+
+	}
 
 }

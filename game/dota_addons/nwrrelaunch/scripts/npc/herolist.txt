@@ -7,49 +7,97 @@
 {
 
 	// Str Melee
-	"npc_dota_hero_doom_bringer" "1"  //hidan
-	"npc_dota_hero_kunkka" "1" //kisame
-	"npc_dota_hero_dragon_knight" "1" //naruto
-	"npc_dota_hero_centaur" "1" // guy
+	"npc_dota_hero_hidan" "1"  //hidan
+	"npc_dota_hero_kisame" "1" //kisame
+	"npc_dota_hero_naruto" "1" //naruto
+	"npc_dota_hero_guy" "1" // guy
 	"npc_dota_hero_kakashi" "1"
 	"npc_dota_hero_anko" "1"
-	"npc_dota_hero_sven" "1"	// onoki
+	"npc_dota_hero_onoki" "1"	// onoki
 
 
-	"npc_dota_hero_sand_king" "1" // raikage
-	"npc_dota_hero_phantom_assassin" "1" // sakura
-	"npc_dota_hero_ogre_magi" "1"		// madara
+	"npc_dota_hero_raikage" "1" // raikage
+	"npc_dota_hero_sakura" "1" // sakura
+	"npc_dota_hero_madara" "1"		// madara
 
 
 
 	// Str Ranged
 	
 	// Agi Melee
-	"npc_dota_hero_bloodseeker" "1" //zabuza
-	"npc_dota_hero_axe" "1"  //neji
+	"npc_dota_hero_zabuza" "1" //zabuza
+	"npc_dota_hero_neji" "1"  //neji
 
 
 	// bugged currently removed until its fixed TODO
-	"npc_dota_hero_juggernaut" "1"  //minato
+	"npc_dota_hero_minato" "1"  //minato
 
 
-	"npc_dota_hero_antimage" "1" //itachi
+	"npc_dota_hero_itachi" "1" //itachi
 	
 	// Agi Ranged
 
 	// Int Melee
-	"npc_dota_hero_storm_spirit" "1" // sasuke
+	"npc_dota_hero_sasuke" "1" // sasuke
 
 
 	// Int Ranged
-	"npc_dota_hero_lion" "1" // gaara
-	"npc_dota_hero_warlock" "1"  // kankuro
-	"npc_dota_hero_shadow_shaman" "1"	// Nara Shikamaru
-	"npc_dota_hero_enchantress" "1" // temari
-	"npc_dota_hero_drow_ranger" "1" //haku
+	"npc_dota_hero_gaara" "1" // gaara
+	"npc_dota_hero_kankuro" "1"  // kankuro
+	"npc_dota_hero_shikamaru" "1"	// Nara Shikamaru
+	"npc_dota_hero_temari" "1" // temari
+	"npc_dota_hero_haku" "1" //haku
+
 
 
 	// Dota
+
+
+	// Str Melee
+	"npc_dota_hero_doom_bringer" "0"  //hidan
+	"npc_dota_hero_kunkka" "0" //kisame
+	"npc_dota_hero_dragon_knight" "0" //naruto
+	"npc_dota_hero_centaur" "0" // guy
+	"npc_dota_hero_kakashi" "0"
+	"npc_dota_hero_anko" "0"
+	"npc_dota_hero_sven" "0"	// onoki
+
+
+	"npc_dota_hero_sand_king" "0" // raikage
+	"npc_dota_hero_phantom_assassin" "0" // sakura
+	"npc_dota_hero_ogre_magi" "0"		// madara
+
+
+
+	// Str Ranged
+	
+	// Agi Melee
+	"npc_dota_hero_bloodseeker" "0" //zabuza
+	"npc_dota_hero_axe" "0"  //neji
+
+
+	// bugged currently removed until its fixed TODO
+	"npc_dota_hero_juggernaut" "0"  //minato
+
+
+	"npc_dota_hero_antimage" "0" //itachi
+	
+	// Agi Ranged
+
+	// Int Melee
+	"npc_dota_hero_storm_spirit" "0" // sasuke
+
+
+	// Int Ranged
+	"npc_dota_hero_lion" "0" // gaara
+	"npc_dota_hero_warlock" "0"  // kankuro
+	"npc_dota_hero_shadow_shaman" "0"	// Nara Shikamaru
+	"npc_dota_hero_enchantress" "0" // temari
+	"npc_dota_hero_drow_ranger" "0" //haku
+
+
+
+
     "npc_dota_hero_earthshaker" "0"		// Jirobo
 	"npc_dota_hero_ember_spirit" "0"	// Namikaze Minato
 	"npc_dota_hero_lone_druid" "0"		// Inuzuka Kiba

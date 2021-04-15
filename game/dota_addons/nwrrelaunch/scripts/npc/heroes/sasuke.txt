@@ -4,9 +4,10 @@
 		//20: +12% Spell Amplification / +225 Chidori Spear Range
 		//15: +14 Strength / +70 Chidori Nagashi Damage
 		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
-		"npc_dota_hero_storm_spirit" //sasuke
+		"npc_dota_hero_sasuke" //sasuke
 		{
-		  "override_hero"   "npc_dota_hero_storm_spirit"
+			"HeroID"					"137"
+		  "BaseClass"   "npc_dota_hero_storm_spirit"
 		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
 		  "Ability1"        "sasuke_chidori_nagashi"
 		  "Ability2"        "sasuke_chidori_eiso" 
@@ -41,6 +42,7 @@
 		 // "AttackRate"				"0.7"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"310"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
 		  "AttributeBaseStrength" "21" // Base strength
 		  "AttributeStrengthGain" "2.00" // Strength bonus per level.

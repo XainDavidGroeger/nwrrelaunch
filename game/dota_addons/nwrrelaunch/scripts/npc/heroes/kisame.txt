@@ -1,13 +1,13 @@
 "DOTAAbilities"
 {
-		// TODO fix -armor debuff on -5 Shark Bullet Armor - doenst work currently
 		//25: +20% Shark Dance Slow / -5 Shark Bullet Armor
 		//20: 10% Water Clone HP / +7% Samehada Mana Steal
 		//15: +90 Shark Bullet Damage / 10% Cooldown Reduction
 		//10: +20 Damage / +15 Movement Speed
-    		"npc_dota_hero_kunkka" //kisame
+    		"npc_dota_hero_kisame" //kisame
 		{
-		  "override_hero"   "npc_dota_hero_kunkka"
+		"HeroID"					"130"
+		  "BaseClass"   "npc_dota_hero_kunkka"
 		  "Model" 			"models/kisame_new/kisame.vmdl"
 		 	"Ability1"         "kisame_suikodan_no_jutsu"
 		  	"Ability2"         "kisame_mizu_bunshin_no_jutsu" 

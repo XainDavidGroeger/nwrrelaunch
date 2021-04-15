@@ -5,9 +5,12 @@
 //20: -2s Crippling Senbon Cooldown / +450 Crippling Senbon Range
 //15: +0.25% Endless Wounds Slow / +100 Attack Range
 //10: +1.75 Mana Regen / +5 Armor
-"npc_dota_hero_drow_ranger" //Haku
+"npc_dota_hero_haku" //Haku
 {
-  "override_hero"   "npc_dota_hero_drow_ranger"
+
+		"HeroID"					"126"
+
+  "BaseClass"   "npc_dota_hero_drow_ranger"
   "Ability1"        "haku_crippling_senbon"
   "Ability2"        "haku_needles"
   "Ability3"        "haku_endless_wounds" 

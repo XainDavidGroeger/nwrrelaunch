@@ -7,9 +7,10 @@
 //15: +50% Lightning Horizontal Strength Damage / +25 Movement Speed
 //10: +20 Damage / +6 Health Regen
 
-"npc_dota_hero_sand_king" //raikage
+"npc_dota_hero_raikage" //raikage
 		{
-		  "override_hero"   "npc_dota_hero_sand_king"
+			"HeroID"					"135"
+		  "BaseClass"   "npc_dota_hero_sand_king"
 		  "Model" 			"models/raikage_new/raikage_base.vmdl"
 		  "Ability1"        "raikage_raiton_no_yoroi"
 		  "Ability2"        "raikage_raigyaku_suihei" 
