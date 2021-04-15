@@ -26,6 +26,8 @@
 		  "ArmorPhysical"		"1.000000"
 			"ModelScale"		"1.1"
 			"LoadoutScale"		"0.94" 
+			//Picking Screen
+		"IsCustom"					"1"
 	"SpectatorLoadoutScale" 	"0.94" 
 		"VersusScale"				"0.94" 
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"
@@ -46,12 +48,35 @@
 		  "AttributeBaseAgility" "16" // Base agility
 		  "AttributeAgilityGain" "1.7" // Agility bonus per level.
 		  
-	 	  "ItemSlots"
-	  	  { }
+	 	"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
 
 
 	  	  "Village"			"kirigakure_scarred"
 	  	  "Gender"			"male"
 		}
+
+
+	"npc_dota_hero_kunkka" 
+	{
+		  	"override_hero"   "npc_dota_hero_kunkka"
+		   	 "Model" 			"models/kisame_new/kisame.vmdl"
+				"ModelScale"		"1.1"
+			"LoadoutScale"		"0.94" 
+		"SpectatorLoadoutScale" 	"0.94" 
+		"VersusScale"				"0.94" 
+	}
 
 }

@@ -31,6 +31,8 @@
 		  "Ability16"		"special_bonus_raikage_4"
 		  "Ability17"		"special_bonus_raikage_5"
 
+		//Picking Screen
+		"IsCustom"					"1"
 	
 		  "ArmorPhysical"		"1.000000"
 		"AttackDamageMin"		"34"
@@ -58,11 +60,32 @@
 		  "AttributeBaseAgility" "16" // Base agility
 		  "AttributeAgilityGain" "1.5" // Agility bonus per level.
 		  
-	 	  "ItemSlots"
-	  	  { }
+		  			"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+	 	 	"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
 
-	  	  "Gender"			"male"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
+	  	  "Gender"			"male"
+	}
+
+
+		"npc_dota_hero_sand_king" 
+	{
+			"override_hero"   "npc_dota_hero_sand_king"
+			"Model" 		 "models/raikage_new/raikage_base.vmdl"
+			"ModelScale"		"0.85"
+			"LoadoutScale"		"0.79" 
+			"SpectatorLoadoutScale" 	"0.85"
+			"VersusScale"			"0.85"
+	}
 	
 
 }

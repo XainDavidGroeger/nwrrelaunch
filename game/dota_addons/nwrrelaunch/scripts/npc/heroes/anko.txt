@@ -1,9 +1,5 @@
 "DOTAAbilities"
 {
-
-
-
-
 	//=================================================================================================================
 	// HERO: Anko
 	//=================================================================================================================
@@ -17,7 +13,7 @@
 		"HeroID"					"123"
 		"Model"           "models/anko_new/anko_base.vmdl"
 		"ModelScale"		"1.0"
-		"LoadoutScale"	"0.90" 
+		"LoadoutScale"	"0.0" 
 		"SpectatorLoadoutScale" 	"1.0" 
 		"VersusScale"			"1.0" 
 	
@@ -102,11 +98,11 @@
 		// Custom KV's
 	    "Gender"      "female"
 		"Village"			"kirigakure"
+
 	}
 
 
-
-"npc_dota_hero_medusa" 
+	"npc_dota_hero_medusa" 
 		{
 		  	"override_hero"   "npc_dota_hero_medusa"
 			"Model"           "models/anko_new/anko_base.vmdl"
@@ -114,7 +110,6 @@
 			"LoadoutScale"	"0.90" 
 			"SpectatorLoadoutScale" 	"1.0" 
 			"VersusScale"			"1.0" 
-
 	}
 
 }

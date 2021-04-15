@@ -44,6 +44,9 @@
 		  "MovementSpeed"			"310"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
+		//Picking Screen
+		"IsCustom"					"1"
+
 		  "AttributeBaseStrength" "21" // Base strength
 		  "AttributeStrengthGain" "2.00" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "23" // Base intelligence
@@ -55,11 +58,35 @@
 		"SpectatorLoadoutScale" 	"0.90" 
 		"VersusScale"			"0.90" 
 		
-
-	 	  "ItemSlots"
-	  	  { }
 	  	  "Village"			"konoha_scarred"
 	  	  "Gender"			"male"
+
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
+	}
+
+
+	"npc_dota_hero_storm_spirit" 
+	{
+			"override_hero"   "npc_dota_hero_storm_spirit"
+			"Model" 		 "models/heroes/zuus/zuozhu.vmdl"
+			  "ModelScale"		"0.90"
+		 "LoadoutScale"		"0.90" 
+		"SpectatorLoadoutScale" 	"0.90" 
+		"VersusScale"			"0.90" 
+	}	
 
 }

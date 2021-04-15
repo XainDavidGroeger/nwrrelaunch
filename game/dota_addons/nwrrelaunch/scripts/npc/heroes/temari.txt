@@ -37,6 +37,10 @@
       { }
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
+
+    //Picking Screen
+		"IsCustom"					"1"
+
         "StatusHealth"    "200"
       "StatusHealthRegen"   "0.300000"
       "ArmorPhysical"   "0.000000"
@@ -58,7 +62,31 @@
 
       "Village"			"kirigakure"
       "Gender"      "female"  
+      	"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
 }	
+
+"npc_dota_hero_enchantress" 
+	{
+			"override_hero"   "npc_dota_hero_enchantress"
+			"Model" 		"models/temari/temari.vmdl"
+		  "ModelScale"		"1.75"
+      "LoadoutScale"	"1.75" 
+      "SpectatorLoadoutScale" 	"1.75" 
+		  "VersusScale"					"1.75" 
+	}	
 
 
 }

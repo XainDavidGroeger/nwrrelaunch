@@ -89,6 +89,32 @@
 		// Custom KV's
 		"Village"			"konoha_scarred"
 		"Gender"			"male"
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
     }
+
+	  "npc_dota_hero_antimage" 
+	{
+		  	"override_hero"   "npc_dota_hero_antimage"
+		   	"Model"					"models/itachi_new/itachi.vmdl"
+			"ModelScale"		"0.85"
+	    	"LoadoutScale"		"0.73"
+			"SpectatorLoadoutScale" 	"0.85"
+			"VersusScale"				"0.85"
+	}
 
 }

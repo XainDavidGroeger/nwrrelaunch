@@ -37,6 +37,10 @@
 		"AttackRate"		"1.700000"
 		  "StatusHealth"    "200"
   		"StatusHealthRegen"   "1.600000"
+
+		//Picking Screen
+		"IsCustom"					"1"
+
 		  "AttackAnimationPoint"   "0.4"
 		  "ModelScale"		"0.9"
 			"LoadoutScale"		"0.78"
@@ -55,11 +59,35 @@
 
 		  "ArmorPhysical"		"3.000000"
                   "DisableWearables" "1"
-	 	  "ItemSlots"
-	  	  { }
+	 		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
 	  	  "Village"			"konoha"
 	  	  "Gender"			"male"
-		}
+	}
+
+
+	"npc_dota_hero_ogre_magi" 
+	{
+		"override_hero"   "npc_dota_hero_ogre_magi"
+		"Model" 		  "models/madara/madara.vmdl"
+		  "ModelScale"		"0.9"
+			"LoadoutScale"		"0.78"
+		  	"SpectatorLoadoutScale" 	"0.9"
+			"VersusScale"			"0.9"
+	}	
 
 
 }

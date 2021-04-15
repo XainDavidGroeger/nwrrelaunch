@@ -10,8 +10,10 @@
 
 		"HeroID"					"125"
 
+		//Picking Screen
+		"IsCustom"					"1"
 
-		   "BaseClass"   "npc_dota_hero_centaur"
+		"BaseClass"   "npc_dota_hero_centaur"
 		  "Model" 			"models/guy/gai.vmdl"
 		  "Ability1"        "guy_dynamic_entry_new"
 		  "Ability2"        "guy_leaf_strong_whirlwind" 
@@ -35,7 +37,7 @@
 		  "AttributePrimary" 		"DOTA_ATTRIBUTE_AGILITY"
 		"ModelScale"		"1.06"
 		"LoadoutScale"		"1.06" 
-	  "SpectatorLoadoutScale""1.06" 
+	 	"SpectatorLoadoutScale""1.06" 
 		"VersusScale"			"1.06" 
 
 
@@ -58,12 +60,35 @@
 		  "AttributeIntelligenceGain" "1.20" // Intelligence bonus per level.
 		  "AttributeBaseAgility" "21" // Base agility
 		  "AttributeAgilityGain" "3.3" // Agility bonus per level.
-	 	  "ItemSlots"
-	  	  { }
-	  	  "Village"			"konoha"
-	  	  "Gender"			"male"
+	 	  
+			"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
 
+	  	  "Village"			"konoha"
+	  	  "Gender"			"male"
+	}
 
+
+		"npc_dota_hero_centaur" 
+		{
+		  	"override_hero"   "npc_dota_hero_centaur"
+			"Model" 			"models/guy/gai.vmdl"
+			"ModelScale"		"1.06"
+			"LoadoutScale"		"1.06" 
+	  		"SpectatorLoadoutScale""1.06" 
+			"VersusScale"			"1.06" 
+		}
 
 }
