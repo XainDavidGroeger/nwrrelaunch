@@ -14,21 +14,17 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_attack_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_attack_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_attack_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_attack_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_attack_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_attack_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_attack_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_attack_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_attack_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_attack_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_attack_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_attack_12.vsnd"
-							"value12"		"sounds/vo/beastmaster/beas_attack_13.vsnd"
-							"value13"		"sounds/vo/beastmaster/beas_attack_14.vsnd"
-							"value14"		"sounds/vo/beastmaster/beas_attack_15.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_attack_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_attack_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_attack_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_attack_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_attack_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_attack_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunk_attack_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunk_attack_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunk_attack_09.vsnd"
+							"value9"		"sounds/vo/kunkka/kunk_attack_10.vsnd"
+							"value10"		"sounds/vo/kunkka/kunk_attack_11.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -60,24 +56,18 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_move_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_move_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_move_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_move_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_move_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_move_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_move_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_move_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_move_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_move_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_move_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_move_12.vsnd"
-							"value12"		"sounds/vo/beastmaster/beas_move_13.vsnd"
-							"value13"		"sounds/vo/beastmaster/beas_move_14.vsnd"
-							"value14"		"sounds/vo/beastmaster/beas_move_15.vsnd"
-							"value15"		"sounds/vo/beastmaster/beas_move_16.vsnd"
+							"value0"		"sounds/vo/kunkka/kunkka_move_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunkka_move_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunkka_move_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunkka_move_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunkka_move_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunkka_move_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunkka_move_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunkka_move_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunkka_move_09.vsnd"
+							"value9"		"sounds/vo/kunkka/kunkka_move_10.vsnd"
+							"value10"		"sounds/vo/kunkka/kunkka_move_11.vsnd"
 						}
-					}
 					"volume"			{"value"	"1.00000"}
 					"pitch_rand_min"	{"value"	"-0.05000"}
 					"pitch_rand_max"	{"value"	"0.050000"}
@@ -85,6 +75,7 @@
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
 					"event_type"		{"value"	"1.000000"}
+					}
 				}
 			}
 		}
@@ -107,21 +98,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_pain_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_pain_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_pain_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_pain_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_pain_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_pain_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_pain_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_pain_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_pain_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_pain_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_pain_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_pain_12.vsnd"
-							"value12"		"sounds/vo/beastmaster/beas_pain_13.vsnd"
-							"value13"		"sounds/vo/beastmaster/beas_pain_14.vsnd"
-							"value14"		"sounds/vo/beastmaster/beas_pain_15.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_pain_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_pain_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_pain_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_pain_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_pain_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_pain_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -153,20 +135,23 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_death_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_death_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_death_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_death_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_death_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_death_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_death_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_death_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_death_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_death_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_death_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_death_12.vsnd"
-							"value12"		"sounds/vo/beastmaster/beas_death_13.vsnd"
-							"value13"		"sounds/vo/beastmaster/beas_death_14.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_death_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_death_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_death_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_death_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_death_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_death_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunk_death_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunk_death_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunk_death_09.vsnd"
+							"value9"		"sounds/vo/kunkka/kunk_death_10.vsnd"
+							"value10"		"sounds/vo/kunkka/kunk_death_11.vsnd"
+							"value11"		"sounds/vo/kunkka/kunk_death_12.vsnd"
+							"value12"		"sounds/vo/kunkka/kunk_death_13.vsnd"
+							"value13"		"sounds/vo/kunkka/kunk_death_14.vsnd"
+							"value14"		"sounds/vo/kunkka/kunk_death_15.vsnd"
+							"value15"		"sounds/vo/kunkka/kunk_death_16.vsnd"
+							"value16"		"sounds/vo/kunkka/kunk_death_17.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -198,18 +183,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_respawn_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_respawn_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_respawn_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_respawn_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_respawn_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_respawn_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_respawn_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_respawn_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_respawn_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_respawn_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_respawn_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_respawn_12.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_respawn_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_respawn_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_respawn_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_respawn_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_respawn_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_respawn_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunk_respawn_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunk_respawn_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunk_respawn_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -241,12 +223,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_spawn_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_spawn_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_spawn_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_spawn_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_spawn_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_spawn_06.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_spawn_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_spawn_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_spawn_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_spawn_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_spawn_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_spawn_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -278,20 +260,19 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_kill_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_kill_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_kill_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_kill_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_kill_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_kill_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_kill_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_kill_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_kill_09.vsnd"
-							"value9"		"sounds/vo/beastmaster/beas_kill_10.vsnd"
-							"value10"		"sounds/vo/beastmaster/beas_kill_11.vsnd"
-							"value11"		"sounds/vo/beastmaster/beas_kill_12.vsnd"
-							"value12"		"sounds/vo/beastmaster/beas_kill_13.vsnd"
-							"value13"		"sounds/vo/beastmaster/beas_kill_14.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_kill_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_kill_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_kill_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_kill_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_kill_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_kill_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunk_kill_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunk_kill_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunk_kill_09.vsnd"
+							"value9"		"sounds/vo/kunkka/kunk_kill_10.vsnd"
+							"value10"		"sounds/vo/kunkka/kunk_kill_11.vsnd"
+							"value11"		"sounds/vo/kunkka/kunk_kill_12.vsnd"
+							"value12"		"sounds/vo/kunkka/kunk_kill_13.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -323,7 +304,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_firstblood_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -355,12 +336,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_lasthit_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_lasthit_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_lasthit_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_lasthit_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_lasthit_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_lasthit_06.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_lasthit_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_lasthit_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_lasthit_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_lasthit_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_lasthit_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_lasthit_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -392,15 +373,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_deny_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_deny_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_deny_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_deny_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_deny_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_deny_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_deny_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_deny_08.vsnd"
-							"value8"		"sounds/vo/beastmaster/beas_deny_09.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_deny_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_deny_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_deny_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_deny_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_deny_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_deny_06.vsnd"
+							"value6"		"sounds/vo/kunkka/kunk_deny_07.vsnd"
+							"value7"		"sounds/vo/kunkka/kunk_deny_08.vsnd"
+							"value8"		"sounds/vo/kunkka/kunk_deny_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -432,14 +413,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_level_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_level_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_level_03.vsnd"
-							"value3"		"sounds/vo/beastmaster/beas_level_04.vsnd"
-							"value4"		"sounds/vo/beastmaster/beas_level_05.vsnd"
-							"value5"		"sounds/vo/beastmaster/beas_level_06.vsnd"
-							"value6"		"sounds/vo/beastmaster/beas_level_07.vsnd"
-							"value7"		"sounds/vo/beastmaster/beas_level_08.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_level_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_level_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_level_03.vsnd"
+							"value3"		"sounds/vo/kunkka/kunk_level_04.vsnd"
+							"value4"		"sounds/vo/kunkka/kunk_level_05.vsnd"
+							"value5"		"sounds/vo/kunkka/kunk_level_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -471,9 +450,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_win_01.vsnd"
-							"value1"		"sounds/vo/beastmaster/beas_win_02.vsnd"
-							"value2"		"sounds/vo/beastmaster/beas_win_03.vsnd"
+							"value0"		"sounds/vo/kunkka/kunk_win_01.vsnd"
+							"value1"		"sounds/vo/kunkka/kunk_win_02.vsnd"
+							"value2"		"sounds/vo/kunkka/kunk_win_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

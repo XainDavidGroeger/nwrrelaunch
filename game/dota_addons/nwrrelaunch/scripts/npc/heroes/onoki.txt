@@ -53,6 +53,8 @@
 			"AttributeBaseAgility"			"13"
 			"AttributeAgilityGain"			"1.8"
 
+"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
 
 			"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
 		"VisionNighttimeRange"		"800"                             // Range of vision at night time.

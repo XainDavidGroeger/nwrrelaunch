@@ -58,6 +58,7 @@
 	"AttributeBaseIntelligence" "16" 	// Base intelligence
 	"AttributeIntelligenceGain" "1.7"	// Intelligence bonus per level.
 
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"Village"			"konoha"
 	"Gender"			"male"
 

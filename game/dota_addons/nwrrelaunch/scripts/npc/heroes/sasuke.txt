@@ -61,7 +61,6 @@
 	  	  "Village"			"konoha_scarred"
 	  	  "Gender"			"male"
 
-
 		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
 		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
 

@@ -40,6 +40,8 @@
 	 	"SpectatorLoadoutScale""1.06" 
 		"VersusScale"			"1.06" 
 
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
 
 		  "AttackAnimationPoint"   "0.4"
 			

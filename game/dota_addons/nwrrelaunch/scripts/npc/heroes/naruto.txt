@@ -51,6 +51,9 @@
 		  	"Role"			"Carry,Pusher,Durable,Disabler,Initiator"
 			"Rolelevels"	"2,3,2,2,1"
 
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+
 			"MovementSpeed"			"305"
 			"AttributeBaseStrength" "22" // Base strength
 			"AttributeStrengthGain" "3.4" // Strength bonus per level.

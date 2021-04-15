@@ -57,6 +57,10 @@
 		  "AttributeBaseAgility" "22" // Base agility
 		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
 		  
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+
 	 	"DisableWearables" 			"1"
 
 		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.

@@ -44,6 +44,9 @@
 		"Rolelevels"	"1,2,2,2,1"
 		"Complexity"	"2"
 
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+
 		"StatusHealth"    "200"
   		"StatusHealthRegen"   "0.300000"
 		 "AttackDamageMin"   "30"
