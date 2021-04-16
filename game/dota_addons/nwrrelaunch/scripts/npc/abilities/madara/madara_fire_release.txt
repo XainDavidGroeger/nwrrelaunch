@@ -27,6 +27,8 @@
 		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
 		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf"
 
+		"particle"			"particles/units/heroes/madara/fire_explosion_1.vpcf"
+
 		"soundfile"	"soundevents/madara_fire_cast.vsndevts"
 		"soundfile"	"soundevents/madara_fire_explosion.vsndevts"
 	}

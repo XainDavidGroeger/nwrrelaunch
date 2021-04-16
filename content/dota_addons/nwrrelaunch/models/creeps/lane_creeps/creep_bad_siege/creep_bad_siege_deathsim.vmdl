@@ -287,7 +287,7 @@
 					m_Filepath = "models/creeps/lane_creeps/creep_bad_siege/juubispear_anim.smd"
 					m_nStartframe = 146
 					m_nEndframe = 177
-					m_flFps = 30.0
+					m_flFps = 20.0
 					m_Loop = 
 					{
 						m_bLoop = false

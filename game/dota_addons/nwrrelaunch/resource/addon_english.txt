@@ -2305,6 +2305,31 @@
 		"DOTA_Tooltip_Ability_special_bonus_temari_4"						"45/3% Sheer Wind per Stack"
 		"DOTA_Tooltip_Ability_special_bonus_temari_5"						"+3s Wind Scythe Lift Duration"
 
+
+
+		// HERO SELECTION DESCRIPTIONS
+
+		"npc_dota_hero_anko_npedesc1"		"Snatches enemies with snakes and assassinates them."
+		"npc_dota_hero_naruto_npedesc1"		"Fights with clones to outsmart and overwhelm his enemies."
+		"npc_dota_hero_sakura_npedesc1"		"Heavy hitting powerhouse who moves fast and punches harder."
+		"npc_dota_hero_sasuke_npedesc1"		"Picks off and outmaneuvers foes with lightning enhanced precision."
+		"npc_dota_hero_kakashi_npedesc1"	"Versatile disabler who can copy other's techniques."
+		"npc_dota_hero_yondaime_npedesc1"	"Eliminates enemies in a flash through the use of Marked Kunais. "
+		"npc_dota_hero_itachi_npedesc1"		"Slippery hybrid damage dealer wielding the Mangekyo Sharingan."
+		"npc_dota_hero_guy_npedesc1"		"Brawls with opponents using powerful combo based Taijutsu."
+		"npc_dota_hero_onoki_npedesc1"		"Rock hard melee support that buffs allies while debuffing foes."
+		"npc_dota_hero_zabuza_npedesc1"		"Hunts down and eliminates targets with guaranteed critical strikes."
+		"npc_dota_hero_temari_npedesc1"		"Unleashes the power of wind to send enemies flying."
+		"npc_dota_hero_shikamaru_npedesc1"	"Cunning strategist adept at disabling enemies and supporting allies."
+		"npc_dota_hero_hidan_npedesc1"		"High health tank who shares pain with his victims."
+		"npc_dota_hero_kisame_npedesc1"		"Steals mana with Samehada to fuel his various Water Release techniques."
+		"npc_dota_hero_neji_npedesc1"		"Far-seeing initiator that is able to disrupt and lockdown foes."
+		"npc_dota_hero_madara_npedesc1"		"Powerful melee hero who burns down forests as well as creates them."
+		"npc_dota_hero_raikage_npedesc1"		"Durable initiator that cripples foes with his Lightning Release enhancements."
+		"npc_dota_hero_kankuro_npedesc1"		"Summons puppets to disable his foes and protect his allies."
+		"npc_dota_hero_gaara_npedesc1"		"Crushes enemies with waves of damage dealing sand attacks."
+		"npc_dota_hero_haku_npedesc1"		"Ranged support that cripples enemies with unrelenting hails of needles."
+
 	}		
 
 
