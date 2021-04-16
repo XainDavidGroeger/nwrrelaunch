@@ -29,9 +29,9 @@ function Launch(keys)
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 	local velocity = ability:GetLevelSpecialValueFor("speed", ability_level)
-	local sound_impact = keys.sound_impact
 	local particle_impact = keys.particle_impact
 
+	caster:EmitSound("kakashi_raikiri_loop")
 
 	caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2)
 	caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_1, 1)
@@ -71,11 +71,11 @@ function Launch(keys)
 			}
 			ApplyDamage( damageTable )
 
-			target:EmitSound(sound_impact)
-
-
+			
 
 			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
+			caster:StopSound("kakashi_raikiri_loop")
+			target:EmitSound("kakashi_raikiri_impact")
 			return nil
 		end
 		return 0.03

@@ -14,7 +14,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/attack_01.vsnd"
+							"value1"		"sounds/vo/sakura/attack_02.vsnd"
+							"value2"		"sounds/vo/sakura/attack_03.vsnd"
+							"value3"		"sounds/vo/sakura/attack_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +49,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/sakura/move_01.vsnd"
+							"value1"		"sounds/vo/sakura/move_02.vsnd"
+							"value2"		"sounds/vo/sakura/move_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +83,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/pain_01.vsnd"
+							"value1"		"sounds/vo/sakura/pain_02.vsnd"
+							"value2"		"sounds/vo/sakura/pain_03.vsnd"
+							"value3"		"sounds/vo/sakura/pain_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +118,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/death_01.vsnd"
+							"value1"		"sounds/vo/sakura/death_02.vsnd"
+							"value2"		"sounds/vo/sakura/death_03.vsnd"
+							"value3"		"sounds/vo/sakura/death_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +153,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/sakura/respawn_01.vsnd"
+							"value1"		"sounds/vo/sakura/respawn_02.vsnd"
+							"value2"		"sounds/vo/sakura/respawn_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +187,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/respawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +219,10 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/sakura/kill_01.vsnd"
+							"value1"		"sounds/vo/sakura/kill_02.vsnd"
+							"value2"		"sounds/vo/sakura/kill_03.vsnd"
+							"value3"		"sounds/vo/sakura/kill_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +254,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+							"value0"		"sounds/vo/sakura/kill_01.vsnd"
+							"value1"		"sounds/vo/sakura/kill_02.vsnd"
+							"value2"		"sounds/vo/sakura/kill_03.vsnd"
+							"value3"		"sounds/vo/sakura/kill_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -270,7 +289,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/thx.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -302,7 +321,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/sakura/lol.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -334,7 +353,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/sakura/thx.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -366,7 +385,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/sakura/thx.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
