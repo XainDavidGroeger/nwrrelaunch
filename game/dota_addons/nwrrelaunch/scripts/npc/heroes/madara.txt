@@ -40,7 +40,7 @@
 
 		//Picking Screen
 		"IsCustom"					"1"
-
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 		
 		"SoundSet"					"Punch"
 		"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
