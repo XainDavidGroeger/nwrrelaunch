@@ -214,7 +214,7 @@ function hiraishin_dashDO(gameEntity, keys)
 		end
 	)
 	
-	FindClearSpaceForUnit(caster,closest_seal:GetAbsOrigin(),false)
+	FindClearSpaceForUnit(caster,closest_seal:GetAbsOrigin(),true)
 
 	return nil
 end
