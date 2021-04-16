@@ -1,6 +1,11 @@
 "DOTAAbilities"
 {
 
+//		25: +100 Atomic Dismantling Damage and Pure / +4% Turn to Dust Kill Threshold
+//		20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
+//		15: 14% Cooldown Reduction / +225 Atomic Dismantling Range
+//		10: +25 Attack Damage / +12% Magic Resistance
+
 		"npc_dota_hero_onoki" //onoki
 {
 			"HeroID"					"134"
