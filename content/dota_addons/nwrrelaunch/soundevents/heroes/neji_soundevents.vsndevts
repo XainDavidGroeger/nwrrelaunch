@@ -14,7 +14,11 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/neji/attack_01.vsnd"
+							"value1"		"sounds/vo/neji/attack_02.vsnd"
+							"value2"		"sounds/vo/neji/attack_03.vsnd"
+							"value3"		"sounds/vo/neji/attack_04.vsnd"
+							"value4"		"sounds/vo/neji/attack_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +50,10 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/neji/move_01.vsnd"
+							"value1"		"sounds/vo/neji/move_02.vsnd"
+							"value2"		"sounds/vo/neji/move_03.vsnd"
+							"value3"		"sounds/vo/neji/move_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +85,8 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/neji/pain_01.vsnd"
+							"value1"		"sounds/vo/neji/pain_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +118,8 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/neji/death_01.vsnd"
+							"value1"		"sounds/vo/neji/death_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +151,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/neji/respawn_01.vsnd"
+							"value1"		"sounds/vo/neji/respawn_02.vsnd"
+							"value2"		"sounds/vo/neji/respawn_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +185,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/neji/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +217,12 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/neji/kill_01.vsnd"
+							"value1"		"sounds/vo/neji/kill_02.vsnd"
+							"value2"		"sounds/vo/neji/kill_03.vsnd"
+							"value3"		"sounds/vo/neji/kill_04.vsnd"
+							"value4"		"sounds/vo/neji/kill_05.vsnd"
+							"value5"		"sounds/vo/neji/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +254,6 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

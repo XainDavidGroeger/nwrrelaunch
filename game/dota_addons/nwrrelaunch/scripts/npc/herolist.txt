@@ -14,13 +14,9 @@
 	"npc_dota_hero_kakashi" "1"
 	"npc_dota_hero_anko" "1"
 	"npc_dota_hero_onoki" "1"	// onoki
-
-
 	"npc_dota_hero_raikage" "1" // raikage
 	"npc_dota_hero_sakura" "1" // sakura
 	"npc_dota_hero_madara" "1"		// madara
-
-
 
 	// Str Ranged
 	
@@ -30,9 +26,7 @@
 
 
 	// bugged currently removed until its fixed TODO
-	"npc_dota_hero_minato" "1"  //minato
-
-
+	"npc_dota_hero_yondaime" "1"  //minato
 	"npc_dota_hero_itachi" "1" //itachi
 	
 	// Agi Ranged
@@ -48,10 +42,7 @@
 	"npc_dota_hero_temari" "1" // temari
 	"npc_dota_hero_haku" "1" //haku
 
-
-
 	// Dota
-
 
 	// Str Melee
 	"npc_dota_hero_doom_bringer" "0"  //hidan

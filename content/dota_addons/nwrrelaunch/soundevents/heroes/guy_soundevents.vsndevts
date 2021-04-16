@@ -14,7 +14,15 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/attack_01.vsnd"
+							"value1"		"sounds/vo/guy/attack_02.vsnd"
+							"value2"		"sounds/vo/guy/attack_03.vsnd"
+							"value3"		"sounds/vo/guy/attack_04.vsnd"
+							"value4"		"sounds/vo/guy/attack_05.vsnd"
+							"value5"		"sounds/vo/guy/attack_06.vsnd"
+							"value6"		"sounds/vo/guy/attack_07.vsnd"
+							"value7"		"sounds/vo/guy/attack_08.vsnd"
+							"value8"		"sounds/vo/guy/attack_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +54,14 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/guy/move_01.vsnd"
+							"value1"		"sounds/vo/guy/move_02.vsnd"
+							"value2"		"sounds/vo/guy/move_03.vsnd"
+							"value3"		"sounds/vo/guy/move_04.vsnd"
+							"value4"		"sounds/vo/guy/move_05.vsnd"
+							"value5"		"sounds/vo/guy/move_06.vsnd"
+							"value6"		"sounds/vo/guy/move_07.vsnd"
+							"value7"		"sounds/vo/guy/move_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +93,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/pain_04.vsnd"
+							"value1"		"sounds/vo/guy/pain_05.vsnd"
+							"value2"		"sounds/vo/guy/pain_06.vsnd"
+							"value3"		"sounds/vo/guy/pain_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +128,12 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/death_01.vsnd"
+							"value1"		"sounds/vo/guy/death_02.vsnd"
+							"value2"		"sounds/vo/guy/death_03.vsnd"
+							"value3"		"sounds/vo/guy/death_05.vsnd"
+							"value4"		"sounds/vo/guy/death_06.vsnd"
+							"value5"		"sounds/vo/guy/death_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +165,10 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/guy/respawn_01.vsnd"
+							"value1"		"sounds/vo/guy/respawn_02.vsnd"
+							"value2"		"sounds/vo/guy/respawn_03.vsnd"
+							"value3"		"sounds/vo/guy/respawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +200,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +232,13 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/guy/kill_01.vsnd"
+							"value1"		"sounds/vo/guy/kill_02.vsnd"
+							"value2"		"sounds/vo/guy/kill_03.vsnd"
+							"value3"		"sounds/vo/guy/kill_04.vsnd"
+							"value4"		"sounds/vo/guy/kill_05.vsnd"
+							"value5"		"sounds/vo/guy/kill_06.vsnd"
+							"value6"		"sounds/vo/guy/kill_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +270,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+						
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -270,7 +302,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/nice.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -302,7 +334,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/guy/laugh.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -334,7 +366,11 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/guy/level_01.vsnd"
+							"value1"		"sounds/vo/guy/level_02.vsnd"
+							"value2"		"sounds/vo/guy/level_03.vsnd"
+							"value3"		"sounds/vo/guy/level_04.vsnd"
+							"value4"		"sounds/vo/guy/level_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -366,7 +402,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/guy/nice.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

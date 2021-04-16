@@ -14,7 +14,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/temari/attack_01.vsnd"
+							"value1"		"sounds/vo/temari/attack_02.vsnd"
+							"value2"		"sounds/vo/temari/attack_03.vsnd"
+							"value3"		"sounds/vo/temari/attack_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +49,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/temari/move_01.vsnd"
+							"value1"		"sounds/vo/temari/move_02.vsnd"
+							"value2"		"sounds/vo/temari/move_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +83,9 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/temari/pain_01.vsnd"
+							"value1"		"sounds/vo/temari/pain_02.vsnd"
+							"value2"		"sounds/vo/temari/pain_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +117,10 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/temari/death_01.vsnd"
+							"value1"		"sounds/vo/temari/death_02.vsnd"
+							"value2"		"sounds/vo/temari/death_03.vsnd"
+							"value3"		"sounds/vo/temari/death_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +152,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/temari/respawn_01.vsnd"
+							"value1"		"sounds/vo/temari/respawn_02.vsnd"
+							"value2"		"sounds/vo/temari/respawn_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +186,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/temari/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +218,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/temari/kill_01.vsnd"
+							"value1"		"sounds/vo/temari/kill_02.vsnd"
+							"value2"		"sounds/vo/temari/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +252,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+							"value0"		"sounds/vo/temari/kill_01.vsnd"
+							"value1"		"sounds/vo/temari/kill_02.vsnd"
+							"value2"		"sounds/vo/temari/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -270,7 +286,9 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/temari/kill_01.vsnd"
+							"value1"		"sounds/vo/temari/kill_02.vsnd"
+							"value2"		"sounds/vo/temari/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -302,7 +320,9 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/temari/kill_01.vsnd"
+							"value1"		"sounds/vo/temari/kill_02.vsnd"
+							"value2"		"sounds/vo/temari/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -334,7 +354,6 @@
 					{
 						"value"
 						{
-						
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -366,7 +385,6 @@
 					{
 						"value"
 						{
-							
 						}
 					}
 					"volume"			{"value"	"1.00000"}

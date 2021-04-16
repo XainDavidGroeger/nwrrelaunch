@@ -14,7 +14,9 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/attack_01.vsnd"
+							"value1"		"sounds/vo/yondaime/attack_02.vsnd"
+							"value2"		"sounds/vo/yondaime/attack_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +48,12 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/yondaime/move_01.vsnd"
+							"value1"		"sounds/vo/yondaime/move_02.vsnd"
+							"value2"		"sounds/vo/yondaime/move_03.vsnd"
+							"value3"		"sounds/vo/yondaime/move_04.vsnd"
+							"value4"		"sounds/vo/yondaime/move_05.vsnd"
+							"value5"		"sounds/vo/yondaime/move_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +85,11 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/pain_01.vsnd"
+							"value1"		"sounds/vo/yondaime/pain_02.vsnd"
+							"value2"		"sounds/vo/yondaime/pain_03.vsnd"
+							"value3"		"sounds/vo/yondaime/pain_04.vsnd"
+							"value4"		"sounds/vo/yondaime/pain_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +121,11 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/death_01.vsnd"
+							"value1"		"sounds/vo/yondaime/death_02.vsnd"
+							"value2"		"sounds/vo/yondaime/death_03.vsnd"
+							"value3"		"sounds/vo/yondaime/death_04.vsnd"
+							"value4"		"sounds/vo/yondaime/death_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +157,10 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/yondaime/respawn_01.vsnd"
+							"value1"		"sounds/vo/yondaime/respawn_02.vsnd"
+							"value2"		"sounds/vo/yondaime/respawn_03.vsnd"
+							"value3"		"sounds/vo/yondaime/respawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +192,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +224,12 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
+							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
+							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
+							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
+							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
+							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +261,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
+							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
+							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
+							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
+							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
+							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -270,7 +298,12 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
+							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
+							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
+							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
+							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
+							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -302,7 +335,12 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
+							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
+							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
+							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
+							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
+							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -334,7 +372,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/yondaime/nice.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -366,7 +404,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/yondaime/nice.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
