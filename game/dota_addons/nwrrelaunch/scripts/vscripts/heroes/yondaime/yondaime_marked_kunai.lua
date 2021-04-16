@@ -96,7 +96,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		dummy:SetOriginalModel("models/yondaime_new/yondakunai.vmdl")
 		dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 		dummy:SetModelScale(4.0)
-		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai", {duration = duration})
+		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai_bonus", {duration = duration})
 	
 		dummy:SetUnitName("npc_marked_kunai")
 	
