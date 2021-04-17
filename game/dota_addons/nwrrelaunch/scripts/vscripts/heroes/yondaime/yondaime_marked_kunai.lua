@@ -98,7 +98,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		dummy:SetModelScale(4.0)
 		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai_bonus", {duration = duration})
 	
-		dummy:SetUnitName("npc_marked_kunai")
+		-- dummy:SetUnitName("npc_marked_kunai")
 	
 		table.insert(self.caster.daggers, dummy)
 		ability.kunai = dummy
