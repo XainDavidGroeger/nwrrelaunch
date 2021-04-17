@@ -7,26 +7,26 @@
 	//10: +8 Agility / -1s Marked Kunai Cooldown
     "npc_dota_hero_yondaime" //yondaime
 	{
-		"HeroID"					"140"
-	"BaseClass"		"npc_dota_hero_juggernaut"
-	"Model"				"models/yondaime_new/yondaime_new.vmdl"
-	"ModelScale"		"0.95"
-	"LoadoutScale"	"0.85" 
+	"HeroID"					"140"
+	"BaseClass"					"npc_dota_hero_juggernaut"
+	"Model"						"models/yondaime_new/yondaime_new.vmdl"
+	"ModelScale"				"0.95"
+	"LoadoutScale"				"0.85" 
     "SpectatorLoadoutScale" 	"0.95"
-	"VersusScale"					"0.95"
+	"VersusScale"				"0.95"
 
 	//Picking Screen
 	"IsCustom"					"1"
 
 	"SoundSet"					"Kunai"
-		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+	"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
 
 	"AbilityLayout"	"5"
 	"Ability1"		"yondaime_marked_kunai"
 	"Ability2"		"yondaime_rasengan" 
 	"Ability3"		"yondaime_agile_speed" 
-	"Ability4"		"generic_hidden"
-	"Ability5"		"yondaime_body_flicker"
+	"Ability4"		"yondaime_body_flicker"
+	"Ability5"		"generic_hidden"
 	"Ability6"		"yondaime_hiraishin_jump"
 
 	"Ability10"		"special_bonus_agility_8"
