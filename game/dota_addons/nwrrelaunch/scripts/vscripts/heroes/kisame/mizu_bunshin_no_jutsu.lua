@@ -186,7 +186,11 @@ function draw( keys )
 end
 
 function RemoveBunshin( keys )
-  keys.target:Destroy()
+  keys.target:ForceKill(false)
+    
+    Timers:CreateTimer(0.1, function()
+        keys.target:Destroy()
+    end)
 end
 
 
