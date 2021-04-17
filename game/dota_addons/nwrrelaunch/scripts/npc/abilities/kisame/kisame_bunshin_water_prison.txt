@@ -48,7 +48,7 @@
 
 	"precache"
 	{
-		"particle"	"particles/units/heroes/kisame/shadowshaman_shackle.vpcf"
+		"particle"	"particles/units/heroes/kisame/bunshin_prison_new.vpcf"
 	 	"soundfile"  "soundevents/kisame_bunshin_water_prison.vsndevts"
 	}
 
@@ -112,21 +112,10 @@
 					"Function" 		"emitSoundOnTarget"
 				}
 				
-				"AttachEffect"
+				"RunScript"
 				{
-					"EffectName"			"particles/units/heroes/kisame/shadowshaman_shackle.vpcf"
-					"EffectAttachType"		"follow_origin"
-					"Target"				"TARGET"
-					"ControlPointEntities"
-					{
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"TARGET"	"attach_hitloc"
-						"CASTER"	"attach_hitloc" //Attach to the hands or any desired attach point of the hero
-						"CASTER"	"attach_hitloc"
-					}
+					"ScriptFile"	"heroes/kisame/bunshin_water_prison.lua"
+					"Function"		"applyEffect"
 				}
 			}
 
