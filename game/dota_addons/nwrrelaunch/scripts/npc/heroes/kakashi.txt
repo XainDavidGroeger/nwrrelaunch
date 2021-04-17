@@ -10,7 +10,7 @@
 	{
 		"BaseClass"					"npc_dota_hero_beastmaster"
 		"HeroID"					"122"
-		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
+		"Model"						"models/kakashi_very_new/kakashi_base.vmdl"
 		"ModelScale"				"0.85"
 		"LoadoutScale"				"0.85" 
 	
@@ -96,7 +96,7 @@
 	"npc_dota_hero_beastmaster"
 	{
 		"override_hero"					"npc_dota_hero_beastmaster"
-		"Model"						"models/kakashi_hd/kaka_hd_test.vmdl"
+		"Model"						"models/kakashi_very_new/kakashi_base.vmdl"
 
 		"ModelScale"				"0.90"
 		"LoadoutScale"				"0.80" 
