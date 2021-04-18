@@ -601,7 +601,7 @@
 		"DOTA_Tooltip_ability_sakura_earth_slam_radius"					"AOE: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stomp_damage"			"DAMAGE: "
-		"DOTA_Tooltip_ability_sakura_earth_slam_cd_reduc"			"CD REDUCTION: "
+		"DOTA_Tooltip_ability_sakura_earth_slam_cd_reduc"			    "CD REDUCTION: "
 		"DOTA_Tooltip_modifier_sakura_earth_slam"						"Earth Slam"
 		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"This Unit is stunned."
 		// Chakra Burst
@@ -749,7 +749,7 @@
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"Black moon ilusion. This move is one of the most powerful genjutsu in existence, created with the mangekyo sharingan. Itachi brings the victim under an illusion, torturing the victim. Holds for 1 second."
 
 		"DOTA_Tooltip_ability_itachi_sharingan"							"Sharingan"
-		"DOTA_Tooltip_ability_itachi_sharingan_description"				"The sharingan is the Uchiha blood-line ability that resides in the eyes. One of the Sharingan's most prominent ability grants the user an incredible clarity of perception. Gives Itachi a chance to deal 100% of his base damage additional as magical damage. All enemies around Itachi have reduced magic resistance."
+		"DOTA_Tooltip_ability_itachi_sharingan_description"				"The sharingan is the Uchiha blood-line ability that resides in the eyes. One of the Sharingan's most prominent ability grants the user an incredible clarity of perception. Gives Itachi a chance to deal 100% of his base damage additional as magical damage and reduce the target's magic resistance."
 
 
 		"DOTA_Tooltip_ability_itachi_amateratsu"						"Amateratsu"
@@ -1066,7 +1066,7 @@
 		//--------------------
 		//Shikamaru
 		//--------------------
-		"npc_dota_hero_shikamarun"  								"Shikamaru"
+		"npc_dota_hero_shikamaru"  								"Shikamaru"
 		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari"			"Shadow Neck Bind Technique"
 		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_lore"			"Kage Kubishibari"
 

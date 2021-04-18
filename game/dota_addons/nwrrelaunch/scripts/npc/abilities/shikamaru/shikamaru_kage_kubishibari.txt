@@ -50,12 +50,15 @@
 		{
 			"var_type"			"FIELD_FLOAT"
 			"total_damage"		"100 128 160 188"
+			"LinkedSpecialBonus" "special_bonus_shikamaru_1"
+			"LinkedSpecialBonusField"				"sum_damage"
 		}
 		"04"
 		{
 			"var_type"			"FIELD_FLOAT"
 			"damage_per_tick"	"4.0 4.0 4.0 4.0"
 			"LinkedSpecialBonus" "special_bonus_shikamaru_1"
+			"LinkedSpecialBonusField"				"tick_damage"
 		}
 		"05"
 		{
