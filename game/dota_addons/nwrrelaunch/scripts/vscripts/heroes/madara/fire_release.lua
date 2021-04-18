@@ -178,6 +178,11 @@ function fireExplosion(keys)
 	ParticleManager:SetParticleControl( pfx, 1, target_point )
 	ParticleManager:SetParticleControl( pfx, 2, Vector( 1.5, 0, 0 ) )
 	ParticleManager:SetParticleControl( pfx, 3, target_point )
+
+	Timers:CreateTimer( 1.5, function()
+		ParticleManager:DestroyParticle(pfx, true) 
+	end)
+	
 end
 
 

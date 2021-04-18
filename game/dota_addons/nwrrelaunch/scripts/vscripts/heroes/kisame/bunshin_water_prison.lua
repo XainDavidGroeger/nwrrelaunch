@@ -17,10 +17,12 @@ function kisame_bunshin_water_prison:GetChannelTime()
 return self:GetSpecialValueFor("channel_time")
 end
 
+
 function kisame_bunshin_water_prison:OnSpellStart()
     -- load data
     local duration = self:GetSpecialValueFor("channel_time")
 	self.target = self:GetCursorTarget()
+    self.caster = self:GetCaster()
 	
 	self:GetCursorTarget():AddNewModifier(
         self:GetCaster(), -- player source
@@ -32,6 +34,7 @@ function kisame_bunshin_water_prison:OnSpellStart()
     local sound_cast = "kisame_bunshin_water_prison"
     EmitSoundOn(sound_cast, self:GetCaster())
     
+    self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_7, 1)
     self:GetCursorTarget():StartGestureWithPlaybackRate(ACT_DOTA_DISABLED, 1)
     
     self.waterPrison_particle = ParticleManager:CreateParticle("particles/units/heroes/kisame/bunshin_prison_new.vpcf", PATTACH_ABSORIGIN, self:GetCursorTarget())
@@ -49,9 +52,15 @@ function kisame_bunshin_water_prison:OnChannelFinish(bInterrupted)
         target:RemoveModifierByName("modifier_stunned")
         
         local sound_cast = "kisame_bunshin_water_prison"
-        StopSoundOn(sound_cast, caster)
+        if caster ~= nil then
+            StopSoundOn(sound_cast, caster)
+        end
         
         target:RemoveGesture(ACT_DOTA_DISABLED)
+     
+        if caster ~= nil then
+            caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_7)
+        end
         
         ParticleManager:DestroyParticle(self.waterPrison_particle, true)
         ParticleManager:ReleaseParticleIndex(self.waterPrison_particle)
@@ -63,6 +72,9 @@ function kisame_bunshin_water_prison:OnChannelFinish(bInterrupted)
     StopSoundOn(sound_cast, caster)
     
     target:RemoveGesture(ACT_DOTA_DISABLED)
+    if caster ~= nil then
+        caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_7)
+    end
     
     ParticleManager:DestroyParticle(self.waterPrison_particle, true)
     ParticleManager:ReleaseParticleIndex(self.waterPrison_particle)
