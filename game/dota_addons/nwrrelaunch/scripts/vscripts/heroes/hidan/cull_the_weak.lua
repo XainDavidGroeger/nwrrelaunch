@@ -1,171 +1,137 @@
---[[Author: LearningDave
-	Date: November, 2th 2015.
-	Initiates the values needed for this ability.
-]]
-function initiateValues( keys )
-	keys.ability.hitTargets = {}
-	keys.ability.hasTargets = false
+-- --[[Author: DigitalG
+-- 	Date: April, 4th 2021.
+-- ]]
+
+hidan_cull_the_weak = class({})
+LinkLuaModifier( "modifier_generic_custom_indicator",
+				 "modifiers/modifier_generic_custom_indicator",
+				 LUA_MODIFIER_MOTION_BOTH )
+LinkLuaModifier( "modifier_hidan_cull_the_weak_ms_slow", 
+				 "heroes/hidan/modifier_hidan_cull_the_weak_ms_slow.lua", 
+				 LUA_MODIFIER_MOTION_NONE)
+
+function hidan_cull_the_weak:GetIntrinsicModifierName()
+	return "modifier_generic_custom_indicator"
 end
---[[Author: LearningDave
-	Date: November, 2th 2015.
-	Saves each target hit by the ability
-]]
-function gatherTargets( keys )
-	table.insert(keys.ability.hitTargets, keys.target)
 
-	
+function hidan_cull_the_weak:CreateCustomIndicator()
+	local particle_cast = "particles/ui_mouseactions/range_finder_cone.vpcf"
+	self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
 end
---[[Author: LearningDave
-	Date: November, 2th 2015.
-	Reduces Hidan's health on spell cast
-]]
-function health_cost( keys )
 
-	if keys.ability.hasTargets then
+function hidan_cull_the_weak:UpdateCustomIndicator( loc )
+	-- get data
+	local origin = self:GetCaster():GetAbsOrigin()
+	local cast_range = self:GetCastRange(loc, nil)
+	local width = self:GetSpecialValueFor("pull_width")
 
-		local caster = keys.caster
-		local ability = keys.ability
-		local hp_percentage_cost = ability:GetLevelSpecialValueFor( "hp_percentage_cost", ( ability:GetLevel() - 1 ) )
-		local reduce_hp = caster:GetMaxHealth() / 100 * hp_percentage_cost
-		local new_health = caster:GetHealth() - reduce_hp
-		local health = caster:GetHealth()
-		local override_damage = false
-		if (caster:GetHealth() - reduce_hp) > 0 then
-			caster:SetHealth(new_health)
-		else
-			caster:SetHealth(1)
-			override_damage = true
+	-- get direction
+	local direction = loc - origin
+	direction.z = 0
+	direction = direction:Normalized()
+
+	ParticleManager:SetParticleControl( self.effect_cast, 0, origin )
+	ParticleManager:SetParticleControl( self.effect_cast, 1, origin)
+	ParticleManager:SetParticleControl( self.effect_cast, 2, origin + direction*cast_range)
+	ParticleManager:SetParticleControl( self.effect_cast, 3, Vector(width, width, 0))
+	ParticleManager:SetParticleControl( self.effect_cast, 4, Vector(0, 255, 0)) --Color (green by default)
+	ParticleManager:SetParticleControl( self.effect_cast, 6, Vector(1,1,1)) --Enable color change
+end
+
+function hidan_cull_the_weak:DestroyCustomIndicator()
+	ParticleManager:DestroyParticle( self.effect_cast, false )
+	ParticleManager:ReleaseParticleIndex( self.effect_cast )
+end
+
+function hidan_cull_the_weak:CastFilterResultLocation(location)
+	if IsClient() then
+		if self.custom_indicator then
+			-- register cursor position
+			self.custom_indicator:Register( location )
 		end
-		PopupDamage(caster, tonumber(string.format("%." ..  0 .. "f", reduce_hp)))
-		local abilityDamageType = keys.ability:GetAbilityDamageType()
-		local ability_index = keys.caster:FindAbilityByName("hidan_death_possession_blood"):GetAbilityIndex()
-	    local death_possession_blood_ability = keys.caster:GetAbilityByIndex(ability_index)
-	    local death_possession_blood_ability_level = keys.caster:GetAbilityByIndex(ability_index):GetLevel()
-	    local returned_damage_outside_percentage = death_possession_blood_ability:GetLevelSpecialValueFor( "returned_damage_outside_percentage", ( death_possession_blood_ability:GetLevel() - 1 ) )
-
-
-	    if caster:HasModifier("modifier_hidan_metamorphosis") then 
-	    	if caster:HasModifier("modifier_hidan_in_circle") then 
-	    		if death_possession_blood_ability.bloodTarget ~= nil then
-	    			local damage = reduce_hp
-	    			if override_damage then
-	    				damage = -1 * (health - reduce_hp)
-	    			end
-
-	    			local displayDamage = tonumber(string.format("%." ..  0 .. "f", damage))
-					PopupDamage(death_possession_blood_ability.bloodTarget, displayDamage)
-
-					local damageTable = {
-						victim = death_possession_blood_ability.bloodTarget,
-						attacker = keys.caster,
-						damage = damage,
-						damage_type = abilityDamageType
-					}
-					ApplyDamage( damageTable )
-	    		end
-	    	else
-	    		if death_possession_blood_ability.bloodTarget ~= nil then 
-	    			local damage = reduce_hp / 100 * returned_damage_outside_percentage
-	    			if override_damage then
-	    				damage = (-1 * (health - reduce_hp)) / 100 * returned_damage_outside_percentage
-	    			end
-	    			local displayDamage = tonumber(string.format("%." ..  0 .. "f", damage))
-					PopupDamage(death_possession_blood_ability.bloodTarget, displayDamage)
-					local damageTable = {
-						victim = death_possession_blood_ability.bloodTarget,
-						attacker = keys.caster,
-						damage = damage,
-						damage_type = abilityDamageType
-					}
-					ApplyDamage( damageTable )
-	    		end
-	    	end
-	    end
-
 	end
+
+	return UF_SUCCESS
 end
---[[Author: LearningDave
-	Date: November, 2th 2015.
-	Pulls the targets to the caster and applies damage.
-]]
-function cull_the_weak( keys )
-	local duration = keys.ability:GetDuration()
-	local caster = keys.caster
-	local ability = keys.ability
-	local creep_damage = ability:GetLevelSpecialValueFor( "creep_damage", ( ability:GetLevel() - 1 ) )
-	local hero_damage = ability:GetLevelSpecialValueFor( "hero_damage", ( ability:GetLevel() - 1 ) )
 
-	for key,oneTarget in pairs(keys.ability.hitTargets) do 
-		keys.ability.hasTargets = true
-		keys.ability:ApplyDataDrivenModifier(keys.caster, oneTarget, keys.move_slow_modifier, {Duration = duration})
+function hidan_cull_the_weak:OnSpellStart()
+	local caster = self:GetCaster()
+	local ability = self
+	local target_point = self:GetCursorPosition()
 
-		local vCaster = keys.caster:GetAbsOrigin()
-		local vTarget = oneTarget:GetAbsOrigin()
-		local len = -1 * (( vTarget - vCaster ):Length2D()) + 150
-		local damage = 0
-		if oneTarget:IsHero() then
-			damage = hero_damage
-		else 
-			damage = creep_damage
-		end
-		local knockbackModifierTable =
-		{
-			should_stun = 0,
-			knockback_duration = 0.3,
-			duration = 0.3,
-			knockback_distance = len,
-			knockback_height = 0,
-			center_x = keys.caster:GetAbsOrigin().x,
-			center_y = keys.caster:GetAbsOrigin().y,
-			center_z = keys.caster:GetAbsOrigin().z
-		}
-		oneTarget:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
+	local origin = caster:GetAbsOrigin()
+	local direction = caster:GetForwardVector()
+	local cast_range = self:GetCastRange(target_point, nil)
+	local width = self:GetSpecialValueFor("pull_width")
+	local final_target = origin+direction*cast_range
+
+
+	targeted_units = FindUnitsInLine(caster:GetTeamNumber(),
+									 origin, 
+									 final_target, 
+									 nil, 
+									 width, 
+									 DOTA_UNIT_TARGET_TEAM_ENEMY, 
+									 DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+									 DOTA_UNIT_TARGET_FLAG_NONE)
+
+	if #targeted_units ~= 0 then
+
+		local hp_perc_cost = self:GetSpecialValueFor("hp_percentage_cost")
+		local self_damage = (caster:GetMaxHealth()*hp_perc_cost/100)
+		local non_lethal_self_damage_modifier = math.min((caster:GetHealth() - self_damage - 1), 0)
 
 		local damageTable = {
-				victim = oneTarget,
-				attacker = caster,
-				damage = damage,
-				damage_type = ability:GetAbilityDamageType()
-			}
+			victim = caster,
+			attacker = caster,
+			damage = self_damage + non_lethal_self_damage_modifier,
+			damage_type = DAMAGE_TYPE_PURE,
+		}
 		ApplyDamage( damageTable )
 
+		local hero_damage = self:GetSpecialValueFor("hero_damage")
+		local creep_damage = self:GetSpecialValueFor("creep_damage")
+		local duration = self:GetDuration()
 
+		for key,oneTarget in pairs(targeted_units) do 
+			-- keys.ability.hasTargets = true
+			oneTarget:AddNewModifier(caster, 
+									 self, 
+									 "modifier_hidan_cull_the_weak_ms_slow", 
+									 {Duration = duration})
+
+			local pull_length = -1 * (( final_target - origin ):Length2D()) + 150
+			local damage = 0
+			if oneTarget:IsHero() then
+				damage = hero_damage
+			else 
+				damage = creep_damage
+			end
+			local knockbackModifierTable =
+			{
+				should_stun = 0,
+				knockback_duration = 0.3,
+				duration = 0.3,
+				knockback_distance = pull_length,
+				knockback_height = 0,
+				center_x = origin.x,
+				center_y = origin.y,
+				center_z = origin.z
+			}
+			oneTarget:AddNewModifier( caster, nil, "modifier_knockback", knockbackModifierTable )
+
+			local damageTable = {
+					victim = oneTarget,
+					attacker = caster,
+					damage = damage,
+					damage_type = ability:GetAbilityDamageType()
+				}
+			ApplyDamage( damageTable )
+
+		end
 	end
-
 end
---[[Author: LearningDave
-	Date: November, 2th 2015.
-	Shoots the projectile of the ability.
-]]
-function release_pull( keys )
-	local target_point = keys.target_points[1]
-	local caster_location = keys.caster:GetAbsOrigin()
-	local range = keys.ability:GetLevelSpecialValueFor( "range", keys.ability:GetLevel() - 1)
-	local pull_radius_start = keys.ability:GetLevelSpecialValueFor( "pull_radius_start", keys.ability:GetLevel() - 1)
-	local pull_radius_end = keys.ability:GetLevelSpecialValueFor( "pull_radius_end", keys.ability:GetLevel() - 1)
-	local pull_speed = keys.ability:GetLevelSpecialValueFor( "pull_speed", keys.ability:GetLevel() - 1)
-	local ability = keys.ability
-	local point_difference_normalized = (target_point - caster_location):Normalized()
-	local velocity = point_difference_normalized * pull_speed
 
 
-	local info = 
-	{
-			Ability = keys.ability,
 
-        	vSpawnOrigin = keys.caster:GetAbsOrigin(),
-        	fDistance = range,
-        	fStartRadius = pull_radius_start,
-        	fEndRadius = pull_radius_end,
-        	Source = keys.caster,
-        	bHasFrontalCone = false,
-        	bReplaceExisting = false,
-        	iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-        	iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
-        	iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-			bDeleteOnHit = false,
-			vVelocity = velocity,
-			bProvidesVision = false
-	}
-	projectile = ProjectileManager:CreateLinearProjectile(info)
-end
+
