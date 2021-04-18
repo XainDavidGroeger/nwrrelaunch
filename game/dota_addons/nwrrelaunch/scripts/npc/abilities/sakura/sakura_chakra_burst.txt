@@ -44,6 +44,7 @@
 	"precache"
 	{
 		"particle"	"particles/units/heroes/sakura/sakura_chakra_busrt.vpcf"
+		"soundfile"	"soundevents/heroes/sakura/sakura_speed_cast.vsndevts"
 	}
 
 	"OnSpellStart"
@@ -52,6 +53,12 @@
 		{
 			"ScriptFile"    "heroes/sakura/chakra_burst.lua"
 			"Function"      "applyBurstModifier"
+		}
+
+		"FireSound"
+		{
+			"EffectName" 	"sakura_speed_cast"
+			"Target"		"CASTER"
 		}
 	}
 

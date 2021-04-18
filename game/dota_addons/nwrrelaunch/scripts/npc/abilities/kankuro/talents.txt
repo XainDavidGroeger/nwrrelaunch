@@ -8,7 +8,7 @@
 	//=================================================================================================================
 	// Kankuro Special Bonus
 	//=================================================================================================================	
-	//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
+	//25: -25% Cooldown Reduction / +150 Karasu Attack Damage
 	//20: +70 Karasu Attack Speed / +350 Puppet Technique Health
 	//15: +50 Karasu Movement Speed / +20 Karasu Poison DPS
 	//10: +4.00 Karasu Mana Regen / +125 Kuroari Range
@@ -185,7 +185,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"225"
+				"value"					"150"
 			}
 		}
 	}

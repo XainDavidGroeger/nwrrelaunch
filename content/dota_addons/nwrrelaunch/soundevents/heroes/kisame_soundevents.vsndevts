@@ -224,11 +224,6 @@
 						"value"
 						{
 							"value0"		"sounds/vo/kunkka/kunk_spawn_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_spawn_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_spawn_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_spawn_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_spawn_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_spawn_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

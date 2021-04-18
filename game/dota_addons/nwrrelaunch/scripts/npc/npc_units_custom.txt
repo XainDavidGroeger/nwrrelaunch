@@ -112,8 +112,8 @@
 	"SoundSet"					"Hero_Kunkka"					// Name of sound set.
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 	"Level"						"1"
-	"ModelScale"		"1.4"
-    "LoadoutScale"		"1.4" 
+	"ModelScale"		"1.25"
+    "LoadoutScale"		"1.0" 
 
 	// Precache
 	//----------------------------------------------------------------
@@ -121,6 +121,7 @@
 	{
 		"model"				"models/heroes/kisame/kisame.vmdl"
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"soundfile" "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts"
 	}
 
 	// Abilities

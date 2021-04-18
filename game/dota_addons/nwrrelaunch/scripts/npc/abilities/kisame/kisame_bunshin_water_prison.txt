@@ -54,7 +54,7 @@
 	"precache"
 	{
 		"particle"	"particles/units/heroes/kisame/bunshin_prison_new.vpcf"
-		"soundfile" "soundevents/kisame_bunshin_water_prison.vsndevts"
+		"soundfile" "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts"
 	}
 }
 

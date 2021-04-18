@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_bunshin_water_prison.vsnd"
+                              "value0"        "sounds/heroes/kisame/kisame_bunshin_water_prison.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

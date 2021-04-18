@@ -31,9 +31,8 @@ function kisame_bunshin_water_prison:OnSpellStart()
         { duration = duration } -- kv
     )
     
-    local sound_cast = "kisame_bunshin_water_prison"
-    EmitSoundOn(sound_cast, self:GetCaster())
-    
+    self.caster:EmitSound("kisame_bunshin_water_prison")
+
     self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_7, 1)
     self:GetCursorTarget():StartGestureWithPlaybackRate(ACT_DOTA_DISABLED, 1)
     

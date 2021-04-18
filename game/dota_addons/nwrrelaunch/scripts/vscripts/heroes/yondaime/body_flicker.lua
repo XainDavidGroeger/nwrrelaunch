@@ -9,6 +9,10 @@ function yondaime_body_flicker:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
 end
 
+function yondaime_body_flicker:OnAbilityPhaseStart( keys )
+	self:GetCaster():EmitSound("minato_flicker_start")
+	return true
+end
 
 function yondaime_body_flicker:OnSpellStart( event )
 
@@ -51,6 +55,8 @@ function yondaime_body_flicker:OnSpellStart( event )
 	local fxIndex = ParticleManager:CreateParticle( "particles/units/heroes/yondaime/blink_end_core.vpcf", PATTACH_CUSTOMORIGIN, caster )
 	ParticleManager:SetParticleControl( fxIndex, 0, caster:GetAbsOrigin() )
 	ParticleManager:SetParticleControl( fxIndex, 3, caster:GetAbsOrigin() )
+
+	self:GetCaster():EmitSound("minato_flicker_end")
 	
 	caster:AddNoDraw()
 	FindClearSpaceForUnit( caster, closest_seal:GetAbsOrigin(), true )

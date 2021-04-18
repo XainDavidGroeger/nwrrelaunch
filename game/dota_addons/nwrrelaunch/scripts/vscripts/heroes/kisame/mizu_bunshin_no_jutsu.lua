@@ -29,7 +29,7 @@ function ConjureImage( event )
  --if kisame has his ulti activated, his bunshin should turn into the shark model and have the water prison modifier
  if caster:HasModifier("modifier_kisame_metamorphosis") then 
     illusion:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
-	illusion:SetModelScale(0.65)
+	illusion:SetModelScale(1.0)
  end
 
 if caster:GetName() == 'npc_dota_hero_beastmaster' then

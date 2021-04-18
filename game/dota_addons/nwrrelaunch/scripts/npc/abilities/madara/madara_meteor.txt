@@ -112,6 +112,13 @@
 			"EndVisionDuration"							"%end_vision_duration"
 		}
 
+
+		"FireSound"
+		{
+			"EffectName"	"madara_meteor_cast"
+			"Target"		"CASTER"
+		}
+		
 	
 	}
 
@@ -128,13 +135,6 @@
 			"VisionDistance"							"%vision_distance"
 			"EndVisionDuration"							"%end_vision_duration"
 		}
-
-		"FireSound"
-		{
-			"EffectName"	"madara_meteor_cast"
-			"Target"		"CASTER"
-		}
-		
 
 		"DelayedAction"
 		{

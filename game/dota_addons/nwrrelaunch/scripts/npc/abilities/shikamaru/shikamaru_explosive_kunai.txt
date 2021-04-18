@@ -35,9 +35,11 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 		"particle"				"particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf"
 		"particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
+
+		"soundfile"				"soundevents/heroes/shikamaru/shikamaru_kunai_cast.vsndevts"
+		"soundfile"				"soundevents/heroes/shikamaru/shikamaru_kunai_explode.vsndevts"
 	}
 	
 	// Special
@@ -106,7 +108,7 @@
 		
 		"FireSound"
 		{
-			"EffectName"			"Hero_Crystal.CrystalNova"
+			"EffectName"			"shikamaru_kunai_cast"
 			"Target"				"CASTER"
 		}
 

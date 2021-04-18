@@ -36,16 +36,23 @@ function applyDamage( keys )
 	end
 	
 
-	for _, unit in pairs(targets) do
-		local damage_table = {}
-		damage_table.attacker = caster
-		damage_table.damage_type = DAMAGE_TYPE_MAGICAL
-		damage_table.ability = ability
-		damage_table.victim = unit
-		damage_table.damage = damage
+	Timers:CreateTimer( 0.2, function()
+		caster:EmitSound("shikamaru_kunai_explode")
 
-		ApplyDamage(damage_table)
-	end
+		for _, unit in pairs(targets) do
+			local damage_table = {}
+			damage_table.attacker = caster
+			damage_table.damage_type = DAMAGE_TYPE_MAGICAL
+			damage_table.ability = ability
+			damage_table.victim = unit
+			damage_table.damage = damage
+	
+			ApplyDamage(damage_table)
+		end
+
+		
+	end)
+
 end
 
 function reset_cooldown_if_talent_is_skilled( keys )
