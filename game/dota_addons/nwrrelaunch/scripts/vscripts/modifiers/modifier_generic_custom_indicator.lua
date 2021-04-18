@@ -14,7 +14,7 @@ modifier_generic_custom_indicator = class({})
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_generic_custom_indicator:IsHidden()
-	return false
+	return true
 end
 
 function modifier_generic_custom_indicator:IsPurgable()
