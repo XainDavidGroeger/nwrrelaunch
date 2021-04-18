@@ -8,18 +8,21 @@ function haku_endless_wounds:GetAbilityTextureName()
 	return "haku_endless_wounds"
 end
 
-function haku_endless_wounds:GetIntrinsicModifierName()
-	return "modifier_haku_endless_needles_caster"
-end
-
 function haku_endless_wounds:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_PASSIVE
+end
+
+function haku_endless_wounds:OnUpgrade()
+	if self:GetOwner() == self:GetCaster() then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_haku_endless_needles_caster", {})
+	end
 end
 
 
 modifier_haku_endless_needles_caster = modifier_haku_endless_needles_caster or class({})
 
-function modifier_haku_endless_needles_caster:IsHidden() return true end
+function modifier_haku_endless_needles_caster:IsHidden() return false end
+function modifier_haku_endless_needles_caster:IsPassive() return true end
 
 function modifier_haku_endless_needles_caster:DeclareFunctions()
 	return {
@@ -40,24 +43,27 @@ end
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 
 		local target = keys.target
-		local caster = keys.caster
+		local caster = keys.attacker
 
-		self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
-		self.duration = self:GetAbility():GetSpecialValueFor("duration")
-		self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
-		self.stack_modifier = "modifier_haku_endless_needles_victim"
-
-		if target:HasModifier(self.stack_modifier) then
-			local stacks = target:GetModifierStackCount("modifier_haku_endless_needles_victim", self:GetAbility())
-			if (stacks + self.stacks_per_attack) <= self.threshold then
-				target:SetModifierStackCount(self.stack_modifier,self.ability,stacks + self.stacks_per_attack)
-			else
-				target:SetModifierStackCount(self.stack_modifier,self.ability,self.threshold)
+		if caster == self.caster or keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger" then
+			self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
+			self.duration = self:GetAbility():GetSpecialValueFor("duration")
+			self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
+			self.stack_modifier = "modifier_haku_endless_needles_victim"
+	
+			if target:HasModifier(self.stack_modifier) then
+				local stacks = target:GetModifierStackCount("modifier_haku_endless_needles_victim", self:GetAbility())
+				if (stacks + self.stacks_per_attack) <= self.threshold then
+					target:SetModifierStackCount(self.stack_modifier,self.ability,stacks + self.stacks_per_attack)
+				else
+					target:SetModifierStackCount(self.stack_modifier,self.ability,self.threshold)
+				end
+			else 
+				modifier_debuff = target:AddNewModifier(self.caster, self.ability, "modifier_haku_endless_needles_victim", {duration = self.duration})
+				target:SetModifierStackCount(self.stack_modifier, self.ability, self.stacks_per_attack)
 			end
-		else 
-			modifier_debuff = target:AddNewModifier(self.caster, self.ability, "modifier_haku_endless_needles_victim", {duration = self.duration})
-			target:SetModifierStackCount(self.stack_modifier, self.ability, self.stacks_per_attack)
 		end
+	
 end
 
 modifier_haku_endless_needles_victim = modifier_haku_endless_needles_victim or class({})
