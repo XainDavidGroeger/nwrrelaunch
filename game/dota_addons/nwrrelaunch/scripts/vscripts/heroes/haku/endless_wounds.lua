@@ -45,7 +45,10 @@ function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 		local target = keys.target
 		local caster = keys.attacker
 
-		if caster == self.caster or keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger" then
+
+		
+
+		if caster == self.caster or (keys.attacker:GetOwner() ~= nil and keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger") then
 			self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
 			self.duration = self:GetAbility():GetSpecialValueFor("duration")
 			self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
