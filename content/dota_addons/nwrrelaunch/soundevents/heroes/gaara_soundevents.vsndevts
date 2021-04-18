@@ -14,20 +14,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value2"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value3"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value4"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value5"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value6"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value7"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value8"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value9"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value10"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value11"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value12"		"sounds/vo/lion/lion_attack_01.vsnd"
-							"value13"		"sounds/vo/lion/lion_attack_01.vsnd"
+							"value0"		"sounds/vo/gaara/attack_01.vsnd"
+							"value1"		"sounds/vo/gaara/attack_02.vsnd"
+							"value2"		"sounds/vo/gaara/attack_03.vsnd"
+							"value3"		"sounds/vo/gaara/attack_04.vsnd"
+							"value4"		"sounds/vo/gaara/attack_05.vsnd"
+							"value5"		"sounds/vo/gaara/attack_06.vsnd"
+							"value6"		"sounds/vo/gaara/attack_07.vsnd"
+							"value7"		"sounds/vo/gaara/attack_08.vsnd"
+							"value8"		"sounds/vo/gaara/attack_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -59,19 +54,14 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_move_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_move_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_move_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_move_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_move_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_move_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_move_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_move_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_move_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_move_10.vsnd"
-							"value10"		"sounds/vo/lion/lion_move_11.vsnd"
-							"value11"		"sounds/vo/lion/lion_move_12.vsnd"
-							"value12"		"sounds/vo/lion/lion_move_13.vsnd"
+							"value0"		"sounds/vo/gaara/move_01.vsnd"
+							"value1"		"sounds/vo/gaara/move_02.vsnd"
+							"value2"		"sounds/vo/gaara/move_03.vsnd"
+							"value3"		"sounds/vo/gaara/move_04.vsnd"
+							"value4"		"sounds/vo/gaara/move_05.vsnd"
+							"value5"		"sounds/vo/gaara/move_06.vsnd"
+							"value6"		"sounds/vo/gaara/move_07.vsnd"
+							"value7"		"sounds/vo/gaara/move_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -103,16 +93,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_pain_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_pain_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_pain_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_pain_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_pain_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_pain_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_pain_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_pain_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_pain_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_pain_10.vsnd"
+							"value0"		"sounds/vo/gaara/pain_01.vsnd"
+							"value1"		"sounds/vo/gaara/pain_02.vsnd"
+							"value2"		"sounds/vo/gaara/pain_03.vsnd"
+							"value3"		"sounds/vo/gaara/pain_04.vsnd"
+							"value4"		"sounds/vo/gaara/pain_05.vsnd"
+							"value5"		"sounds/vo/gaara/pain_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -144,16 +130,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_death_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_death_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_death_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_death_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_death_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_death_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_death_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_death_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_death_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_death_10.vsnd"
+							"value0"		"sounds/vo/gaara/death_01.vsnd"
+							"value1"		"sounds/vo/gaara/death_02.vsnd"
+							"value2"		"sounds/vo/gaara/death_03.vsnd"
+							"value3"		"sounds/vo/gaara/death_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -185,16 +165,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_respawn_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_respawn_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_respawn_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_respawn_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_respawn_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_respawn_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_respawn_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_respawn_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_respawn_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_respawn_10.vsnd"
+							"value0"		"sounds/vo/gaara/respawn_01.vsnd"
+							"value1"		"sounds/vo/gaara/respawn_02.vsnd"
+							"value2"		"sounds/vo/gaara/respawn_03.vsnd"
+							"value3"		"sounds/vo/gaara/respawn_04.vsnd"
+							"value4"		"sounds/vo/gaara/respawn_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -226,12 +201,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_spawn_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_spawn_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_spawn_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_spawn_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_spawn_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_spawn_06.vsnd"
+							"value0"		"sounds/vo/gaara/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -263,17 +233,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_kill_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_kill_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_kill_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_kill_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_kill_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_kill_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_kill_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_kill_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_kill_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_kill_10.vsnd"
-							"value10"		"sounds/vo/lion/lion_kill_11.vsnd"
+							"value0"		"sounds/vo/gaara/kill_01.vsnd"
+							"value1"		"sounds/vo/gaara/kill_02.vsnd"
+							"value2"		"sounds/vo/gaara/kill_03.vsnd"
+							"value3"		"sounds/vo/gaara/kill_04.vsnd"
+							"value4"		"sounds/vo/gaara/kill_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -305,6 +269,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/gaara/kill_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -336,15 +301,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_lasthit_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_lasthit_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_lasthit_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_lasthit_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_lasthit_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_lasthit_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_lasthit_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_lasthit_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_lasthit_09.vsnd"
+							"value0"		"sounds/vo/gaara/lasthit_01.vsnd"
+							"value1"		"sounds/vo/gaara/lasthit_02.vsnd"
+						
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -376,16 +335,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_deny_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_deny_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_deny_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_deny_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_deny_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_deny_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_deny_07.vsnd"
-							"value7"		"sounds/vo/lion/lion_deny_08.vsnd"
-							"value8"		"sounds/vo/lion/lion_deny_09.vsnd"
-							"value9"		"sounds/vo/lion/lion_deny_10.vsnd"
+							"value0"		"sounds/vo/gaara/deny_01.vsnd"
+							"value1"		"sounds/vo/gaara/deny_02.vsnd"
+							"value2"		"sounds/vo/gaara/deny_03.vsnd"
+							"value3"		"sounds/vo/gaara/deny_04.vsnd"
+							"value4"		"sounds/vo/gaara/deny_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -417,13 +371,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_level_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_level_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_level_03.vsnd"
-							"value3"		"sounds/vo/lion/lion_level_04.vsnd"
-							"value4"		"sounds/vo/lion/lion_level_05.vsnd"
-							"value5"		"sounds/vo/lion/lion_level_06.vsnd"
-							"value6"		"sounds/vo/lion/lion_level_07.vsnd"
+							"value0"		"sounds/vo/gaara/level_01.vsnd"
+							"value1"		"sounds/vo/gaara/level_02.vsnd"
+							"value2"		"sounds/vo/gaara/level_03.vsnd"
+							"value3"		"sounds/vo/gaara/level_04.vsnd"
+							"value4"		"sounds/vo/gaara/level_05.vsnd"
+							"value5"		"sounds/vo/gaara/level_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -455,9 +408,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/lion/lion_win_01.vsnd"
-							"value1"		"sounds/vo/lion/lion_win_02.vsnd"
-							"value2"		"sounds/vo/lion/lion_win_03.vsnd"
+							"value0"		"sounds/vo/gaara/laugh_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

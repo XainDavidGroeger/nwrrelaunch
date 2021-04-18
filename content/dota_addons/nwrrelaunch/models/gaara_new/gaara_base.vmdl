@@ -150,6 +150,32 @@
 							},
 						]
 					},
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Hand Left Ref"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_attack2"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Hand Right Ref"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},
@@ -261,7 +287,7 @@
 					m_Filepath = "models/gaara_new/gaara_anim.smd"
 					m_nStartframe = 11
 					m_nEndframe = 31
-					m_flFps = 30.0
+					m_flFps = 24.0
 					m_Loop = 
 					{
 						m_bLoop = true

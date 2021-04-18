@@ -18,6 +18,13 @@
 							"value1"		"sounds/vo/sakura/attack_02.vsnd"
 							"value2"		"sounds/vo/sakura/attack_03.vsnd"
 							"value3"		"sounds/vo/sakura/attack_04.vsnd"
+							"value4"		"sounds/vo/sakura/attack_05.vsnd"
+							"value5"		"sounds/vo/sakura/attack_06.vsnd"
+							"value6"		"sounds/vo/sakura/attack_07.vsnd"
+							"value7"		"sounds/vo/sakura/attack_08.vsnd"
+							"value8"		"sounds/vo/sakura/attack_09.vsnd"
+							"value9"		"sounds/vo/sakura/attack_10.vsnd"
+							"value10"		"sounds/vo/sakura/attack_11.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -52,6 +59,11 @@
 							"value0"		"sounds/vo/sakura/move_01.vsnd"
 							"value1"		"sounds/vo/sakura/move_02.vsnd"
 							"value2"		"sounds/vo/sakura/move_03.vsnd"
+							"value3"		"sounds/vo/sakura/move_04.vsnd"
+							"value4"		"sounds/vo/sakura/move_05.vsnd"
+							"value5"		"sounds/vo/sakura/move_06.vsnd"
+							"value6"		"sounds/vo/sakura/move_07.vsnd"
+							"value7"		"sounds/vo/sakura/move_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -87,6 +99,9 @@
 							"value1"		"sounds/vo/sakura/pain_02.vsnd"
 							"value2"		"sounds/vo/sakura/pain_03.vsnd"
 							"value3"		"sounds/vo/sakura/pain_04.vsnd"
+							"value4"		"sounds/vo/sakura/pain_05.vsnd"
+							"value5"		"sounds/vo/sakura/pain_06.vsnd"
+							"value6"		"sounds/vo/sakura/pain_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -156,6 +171,8 @@
 							"value0"		"sounds/vo/sakura/respawn_01.vsnd"
 							"value1"		"sounds/vo/sakura/respawn_02.vsnd"
 							"value2"		"sounds/vo/sakura/respawn_03.vsnd"
+							"value3"		"sounds/vo/sakura/respawn_04.vsnd"
+							"value4"		"sounds/vo/sakura/respawn_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -187,7 +204,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sakura/respawn_01.vsnd"
+							"value0"		"sounds/vo/sakura/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -289,7 +306,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sakura/thx.vsnd"
+							"value0"		"sounds/vo/sakura/thanks_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -321,7 +338,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sakura/lol.vsnd"
+							"value0"		"sounds/vo/sakura/deny_01.vsnd"
+							"value1"		"sounds/vo/sakura/deny_02.vsnd"
+							"value2"		"sounds/vo/sakura/deny_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -353,7 +372,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sakura/thx.vsnd"
+							"value0"		"sounds/vo/sakura/level_01.vsnd"
+							"value1"		"sounds/vo/sakura/level_02.vsnd"
+							"value2"		"sounds/vo/sakura/level_03.vsnd"
+							"value3"		"sounds/vo/sakura/level_04.vsnd"
+							"value4"		"sounds/vo/sakura/level_05.vsnd"
+							"value5"		"sounds/vo/sakura/level_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -385,7 +409,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sakura/thx.vsnd"
+							"value0"		"sounds/vo/sakura/thanks_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
