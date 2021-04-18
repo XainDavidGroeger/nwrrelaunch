@@ -9,7 +9,7 @@
 		"npc_dota_hero_hidan" //hidan
 		{
 		"BaseClass"   "npc_dota_hero_doom_bringer"
-		"HeroID"					"127"
+		"HeroID"					"204"
 
 		//Picking Screen
 		"IsCustom"					"1"

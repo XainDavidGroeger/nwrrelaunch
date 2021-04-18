@@ -8,10 +8,12 @@
     	"npc_dota_hero_zabuza" //zabuza
 		{
 
+
+		"HeroID"					"219"
+
 		"SoundSet"					"Kunai"
 		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
 
-			"HeroID"					"141"
 		  "BaseClass"   "npc_dota_hero_bloodseeker"
 		  "Ability1"        "zabuza_stealth"
 		  "Ability2"        "zabuza_kirigakure_no_jutsu"

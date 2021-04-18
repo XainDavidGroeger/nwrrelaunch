@@ -9,7 +9,7 @@
 		{
 
 			
-		  "HeroID"					"131"
+		  "HeroID"					"209"
 		  "BaseClass"   "npc_dota_hero_ogre_magi"
 		  "Model" 			"models/madara/madara.vmdl"
 		  "Ability1"        "madara_fire_release"

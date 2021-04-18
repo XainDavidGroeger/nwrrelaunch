@@ -8,7 +8,7 @@
 		"npc_dota_hero_guy" //guy
 		{
 
-		"HeroID"					"125"
+		"HeroID"					"202"
 
 		//Picking Screen
 		"IsCustom"					"1"

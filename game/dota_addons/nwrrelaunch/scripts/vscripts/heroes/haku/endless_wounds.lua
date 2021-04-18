@@ -40,7 +40,7 @@ end
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 
 		local target = keys.target
-		local caster = keys.target
+		local caster = keys.caster
 
 		self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
 		self.duration = self:GetAbility():GetSpecialValueFor("duration")

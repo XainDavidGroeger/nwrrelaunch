@@ -6,7 +6,7 @@
 		//10: +20 Damage / +15 Movement Speed
     		"npc_dota_hero_kisame" //kisame
 		{
-		"HeroID"					"130"
+		"HeroID"					"208"
 		  "BaseClass"   "npc_dota_hero_kunkka"
 		  "Model" 			"models/kisame_new/kisame.vmdl"
 		 	"Ability1"         "kisame_suikodan_no_jutsu"

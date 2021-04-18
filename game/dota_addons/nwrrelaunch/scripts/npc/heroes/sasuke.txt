@@ -6,7 +6,7 @@
 		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
 		"npc_dota_hero_sasuke" //sasuke
 		{
-			"HeroID"					"137"
+			"HeroID"					"215"
 		  "BaseClass"   "npc_dota_hero_storm_spirit"
 		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
 		  "Ability1"        "sasuke_chidori_nagashi"

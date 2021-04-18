@@ -8,7 +8,7 @@
 		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
 		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
 		{
-			"HeroID"					"133"
+			"HeroID"					"211"
 		  "BaseClass"   "npc_dota_hero_axe"
 		  "Model" 			"models/neji_new/neji.vmdl"
 		  "Ability1"         "neji_kaiten"

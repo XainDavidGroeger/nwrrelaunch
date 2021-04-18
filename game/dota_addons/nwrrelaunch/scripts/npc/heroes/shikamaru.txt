@@ -7,7 +7,7 @@
 		//10: +175 Health / +140 Shadow Bind Total Damage
 			"npc_dota_hero_shikamaru"  //Shikamaru
 		{
-			"HeroID"					"138"
+			"HeroID"					"216"
 		  "BaseClass"   "npc_dota_hero_shadow_shaman" 
 		  "Model" 		"models/shikamaru_new/shika.vmdl"
 		  "Ability1"         "shikamaru_kage_kubishibari"

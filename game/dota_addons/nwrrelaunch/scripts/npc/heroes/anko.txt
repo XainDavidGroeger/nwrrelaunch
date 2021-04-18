@@ -10,7 +10,7 @@
 	"npc_dota_hero_anko"
 	{
 		"BaseClass"					"npc_dota_hero_medusa"
-		"HeroID"					"123"
+		"HeroID"					"200"
 		"Model"           "models/anko_new/anko_base.vmdl"
 		"ModelScale"		"1.0"
 		"LoadoutScale"	"0.0" 

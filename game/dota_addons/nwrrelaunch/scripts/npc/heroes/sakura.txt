@@ -7,7 +7,7 @@
 		//10: +20 Attack Speed / +2.5 Mana Regen
     	"npc_dota_hero_sakura" //sakura
 		{
-			"HeroID"					"136"
+			"HeroID"					"214"
 		  "BaseClass"   "npc_dota_hero_phantom_assassin"
 		  "Model" 			"models/sakura_new/sakura.vmdl"
 		  "Ability1"        "sakura_earth_slam"

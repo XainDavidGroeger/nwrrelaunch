@@ -8,7 +8,7 @@
 
 		"npc_dota_hero_onoki" //onoki
 {
-			"HeroID"					"134"
+			"HeroID"					"212"
 			"BaseClass"		"npc_dota_hero_sven"
 			"Model"				"models/onuki/onoki_model.vmdl"
 			"Ability1"			"onoki_jinton"

@@ -9,7 +9,7 @@
 
 "npc_dota_hero_raikage" //raikage
 		{
-			"HeroID"					"135"
+			"HeroID"					"213"
 		  "BaseClass"   "npc_dota_hero_sand_king"
 		  "Model" 			"models/raikage_new/raikage_base.vmdl"
 		  "Ability1"        "raikage_raiton_no_yoroi"

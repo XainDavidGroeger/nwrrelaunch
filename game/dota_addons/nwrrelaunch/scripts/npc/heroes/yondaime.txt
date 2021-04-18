@@ -7,7 +7,7 @@
 	//10: +8 Agility / -1s Marked Kunai Cooldown
     "npc_dota_hero_yondaime" //yondaime
 	{
-	"HeroID"					"140"
+	"HeroID"					"218"
 	"BaseClass"					"npc_dota_hero_juggernaut"
 	"Model"						"models/yondaime_new/yondaime_new.vmdl"
 	"ModelScale"				"0.95"

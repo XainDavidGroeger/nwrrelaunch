@@ -8,7 +8,7 @@
 "npc_dota_hero_haku" //Haku
 {
 
-		"HeroID"					"126"
+		"HeroID"					"203"
 
 //Picking Screen
 		"IsCustom"					"1"

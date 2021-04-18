@@ -9,7 +9,7 @@
 		"#DOTA_Item_Build_Starting_Items"
 		{
 			"item"		"item_tango"
-			"item"		"item_tango"b
+			"item"		"item_tango"
 			"item"		"item_flask"
 			"item"		"item_enchanted_mango"
 			"item"		"item_clarity"
@@ -44,7 +44,7 @@
 		{
 			"item"  	"item_witch_blade"
 			"item"		"item_hurricane_pike"
-			"item"		"item_veil_of_discord
+			"item"		"item_veil_of_discord"
 			"item"		"item_lotus_orb"
 			"item"		"item_ghost"
 			"item"		"item_aeon_disk"
