@@ -129,43 +129,7 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 	else
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self.creep_damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	end
-
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
-
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
-
 end
-
-
-modifier_marked_kunai_debuff = class({})
-
---------------------------------------------------------------------------------
-
-function modifier_marked_kunai_debuff:IsDebuff()
-	return true
-end
-
---------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------
-
-function modifier_marked_kunai_debuff:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-    }
-    return funcs
-end
-
-
---[[ ============================================================================================================
-    Author: Dave
-    Date: October 24, 2015
-    -- adds a modifier which slows the target on x percent(depening on the 'neji_byakugan' level)
-================================================================================================================= ]]
-function modifier_marked_kunai_debuff:GetModifierPhysicalArmorBonus(keys)
-    return self:GetAbility():GetSpecialValueFor( "armor_reduction")
-end
-
 
 --------------------------------------------------------------------------------
 
