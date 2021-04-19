@@ -183,6 +183,7 @@
 
 "npc_marked_kunai"
   {
+
   "UnitLabel" "npc_marked_kunai"
    "BaseClass"                  "npc_dota_building"
     "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
