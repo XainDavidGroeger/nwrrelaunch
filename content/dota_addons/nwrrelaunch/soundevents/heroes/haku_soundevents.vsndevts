@@ -14,7 +14,12 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/haku/attack_01.vsnd"
+							"value1"		"sounds/vo/haku/attack_02.vsnd"
+							"value2"		"sounds/vo/haku/attack_03.vsnd"
+							"value3"		"sounds/vo/haku/attack_04.vsnd"
+							"value4"		"sounds/vo/haku/attack_05.vsnd"
+							"value5"		"sounds/vo/haku/attack_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -46,7 +51,11 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/haku/move_01.vsnd"
+							"value1"		"sounds/vo/haku/move_02.vsnd"
+							"value2"		"sounds/vo/haku/move_03.vsnd"
+							"value3"		"sounds/vo/haku/move_04.vsnd"
+							"value4"		"sounds/vo/haku/move_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -78,7 +87,9 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/haku/pain_01.vsnd"
+							"value1"		"sounds/vo/haku/pain_02.vsnd"
+							"value2"		"sounds/vo/haku/pain_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -110,7 +121,12 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/haku/death_01.vsnd"
+							"value1"		"sounds/vo/haku/death_02.vsnd"
+							"value2"		"sounds/vo/haku/death_03.vsnd"
+							"value3"		"sounds/vo/haku/death_04.vsnd"
+							"value4"		"sounds/vo/haku/death_05.vsnd"
+							"value5"		"sounds/vo/haku/death_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -142,7 +158,10 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/haku/respawn_01.vsnd"
+							"value1"		"sounds/vo/haku/respawn_02.vsnd"
+							"value2"		"sounds/vo/haku/respawn_03.vsnd"
+							"value3"		"sounds/vo/haku/respawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -174,7 +193,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/haku/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -206,7 +225,11 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/haku/kill_01.vsnd"
+							"value1"		"sounds/vo/haku/kill_02.vsnd"
+							"value2"		"sounds/vo/haku/kill_03.vsnd"
+							"value3"		"sounds/vo/haku/kill_04.vsnd"
+							"value4"		"sounds/vo/haku/kill_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -238,7 +261,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/beastmaster/beas_firstblood_01.vsnd"
+							"value0"		"sounds/vo/haku/kill_01.vsnd"
+							"value1"		"sounds/vo/haku/kill_02.vsnd"
+							"value2"		"sounds/vo/haku/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -270,7 +295,7 @@
 					{
 						"value"
 						{
-						
+							"value0"		"sounds/vo/haku/lol.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -302,7 +327,7 @@
 					{
 						"value"
 						{
-							
+							"value0"		"sounds/vo/haku/lol.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -334,7 +359,6 @@
 					{
 						"value"
 						{
-						
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -366,7 +390,6 @@
 					{
 						"value"
 						{
-							
 						}
 					}
 					"volume"			{"value"	"1.00000"}
