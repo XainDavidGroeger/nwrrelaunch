@@ -40,7 +40,7 @@ function haku_crippling_senbon:OnSpellStart()
 		Target 				= self.target,
 		Source 				= caster,
 		Ability 			= self,
-		EffectName 			= "particles/units/heroes/haku/senbon.vpcf",
+		EffectName 			= "particles/units/heroes/haku/haku_crippling_senbon.vpcf",
 		iMoveSpeed			= 2400,
 		vSpawnOrigin 		= caster:GetAbsOrigin(),
 		bDrawsOnMinimap 	= false,
