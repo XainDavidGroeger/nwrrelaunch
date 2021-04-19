@@ -355,24 +355,29 @@
 					m_Stops = [  ]
 				}
 			}
+			m_bDisableOperator = true
 		},
 	]
 	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_trail.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_dark_b.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_ice.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_smoke.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_dark.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_trail_b.vpcf"
@@ -385,15 +390,18 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_projectile.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_b.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_core_sparks.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_a.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_light.vpcf"
