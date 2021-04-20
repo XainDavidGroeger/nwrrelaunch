@@ -20,6 +20,8 @@
 							"value3"		"sounds/vo/haku/attack_04.vsnd"
 							"value4"		"sounds/vo/haku/attack_05.vsnd"
 							"value5"		"sounds/vo/haku/attack_06.vsnd"
+							"value6"		"sounds/vo/haku/attack_08.vsnd"
+							"value7"		"sounds/vo/haku/attack_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -56,6 +58,9 @@
 							"value2"		"sounds/vo/haku/move_03.vsnd"
 							"value3"		"sounds/vo/haku/move_04.vsnd"
 							"value4"		"sounds/vo/haku/move_05.vsnd"
+							"value5"		"sounds/vo/haku/move_06.vsnd"
+							"value6"		"sounds/vo/haku/move_07.vsnd"
+							"value7"		"sounds/vo/haku/move_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -90,6 +95,10 @@
 							"value0"		"sounds/vo/haku/pain_01.vsnd"
 							"value1"		"sounds/vo/haku/pain_02.vsnd"
 							"value2"		"sounds/vo/haku/pain_03.vsnd"
+							"value3"		"sounds/vo/haku/pain_04.vsnd"
+							"value4"		"sounds/vo/haku/pain_05.vsnd"
+							"value5"		"sounds/vo/haku/pain_06.vsnd"
+							"value6"		"sounds/vo/haku/pain_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -127,6 +136,8 @@
 							"value3"		"sounds/vo/haku/death_04.vsnd"
 							"value4"		"sounds/vo/haku/death_05.vsnd"
 							"value5"		"sounds/vo/haku/death_06.vsnd"
+							"value6"		"sounds/vo/haku/death_07.vsnd"
+							"value7"		"sounds/vo/haku/death_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -230,6 +241,7 @@
 							"value2"		"sounds/vo/haku/kill_03.vsnd"
 							"value3"		"sounds/vo/haku/kill_04.vsnd"
 							"value4"		"sounds/vo/haku/kill_05.vsnd"
+							"value5"		"sounds/vo/haku/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -295,7 +307,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/haku/lol.vsnd"
+							"value0"		"sounds/vo/haku/lasthit_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -327,7 +339,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/haku/lol.vsnd"
+							"value0"		"sounds/vo/haku/deny_01.vsnd"
+							"value1"		"sounds/vo/haku/deny_02.vsnd"
+							"value2"		"sounds/vo/haku/deny_03.vsnd"
+							"value3"		"sounds/vo/haku/deny_04.vsnd"
+							"value4"		"sounds/vo/haku/deny_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -359,6 +375,11 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/haku/level_01.vsnd"
+							"value1"		"sounds/vo/haku/level_02.vsnd"
+							"value2"		"sounds/vo/haku/level_03.vsnd"
+							"value3"		"sounds/vo/haku/level_04.vsnd"
+							"value4"		"sounds/vo/haku/level_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
