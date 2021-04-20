@@ -150,5 +150,12 @@ function SetMinimapBackground() {
 (function() {
 	GameEvents.Subscribe("override_hero_image", OverrideTopBarHeroImage);
 	GameEvents.Subscribe("override_hero_image", OverrideScoreboardHeroImage);
+
+	var lowhud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("lower_hud")
+	var agha = lowhud.FindChildTraverse("AghsStatusScepterContainer")
+	var agha2 = lowhud.FindChildTraverse("AghsStatusShard")
+	agha.style.width = "0px"
+	agha2.style.width = "0px"
+
 	SetCustomHUD();
 })();
