@@ -6,7 +6,7 @@
 	m_BoundingBoxMin = [ -10.0, -10.0, 0.0 ]
 	m_BoundingBoxMax = [ 10.0, 10.0, 0.0 ]
 	m_flConstantRadius = 1.5
-	m_nBehaviorVersion = 4
+	m_nBehaviorVersion = 11
 	m_controlPointConfigurations = 
 	[
 		{
