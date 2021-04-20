@@ -66,5 +66,5 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_hiraishin_armor_debuff:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
+	return PATTACH_OVERHEAD_FOLLOW
 end
