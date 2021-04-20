@@ -1,6 +1,102 @@
 "DOTAAbilities"
 {
 
+
+
+		"npc_dota_hero_gaara"
+	{
+		"BaseClass"					"npc_dota_hero_lion"
+		"HeroID"					"201"
+		"Model" 			"models/gaara_new/gaara_base.vmdl"
+		"ModelScale"		"0.42"
+		"LoadoutScale"		"0.40" 
+		"SpectatorLoadoutScale" "0.42" 
+		"VersusScale"			"0.42" 
+	
+		"SoundSet"					"Gaara"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_gaara.vsndevts"
+		"particle_folder"			"particles/hero/gaara"
+		"GibType"					"default"
+
+		//Picking Screen
+		"IsCustom"					"1"
+
+		 "Role"			"Disabler,Support,Nuker"
+		  "Rolelevels"	"2,3,2"
+		"Complexity"	"2"
+
+
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+
+		"MovementTurnRate"			"1.5"
+		"MovementSpeed"				"290"
+	
+	   "AttackDamageMin"   "23"
+		"AttackDamageMax"   "30"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRate"    "1.700000"
+
+		"AttackRange"				"600"
+		"AttackAnimationPoint"		"0.4"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
+		"ArmorPhysical"				"1"
+		"MagicalResistance"			"25"
+
+		"StatusHealth"    "145"
+ 		"StatusHealthRegen"   "0.300000"
+
+		"StatusManaRegen"			"0.9"
+		"StatusMana"				"75"
+
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength" "18" // Base strength
+		"AttributeStrengthGain" "2.0" // Strength bonus per level.
+		"AttributeBaseIntelligence" "24" // Base intelligence
+		"AttributeIntelligenceGain" "3.4" // Intelligence bonus per level.
+		"AttributeBaseAgility" "14" // Base agility
+		"AttributeAgilityGain" "1.5" // Agility bonus per level.
+
+		"Ability1"         "gaara_sabaku_kyuu"
+		"Ability2"         "gaara_ryuusa_bakuryu" 
+		"Ability3"         "gaara_suna_no_yoroi" 
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"         "gaara_sabaku_taiso"
+
+		"Ability10"		"special_bonus_mp_regen_2"
+		"Ability11"		"special_bonus_spell_amplify_6"
+
+		"Ability12"		"special_bonus_gaara_1"
+		"Ability13"		"special_bonus_attack_damage_70"
+
+		"Ability14"		"special_bonus_cast_range_225"
+		"Ability15"		"special_bonus_gaara_2"
+
+		"Ability16"		"special_bonus_gaara_3"
+		"Ability17"		"special_bonus_gaara_4"
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+		"HasInventory"				"1" // This KV is required for units file only
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		// Custom KV's
+	    "Gender"      "male"
+		"Village"	  "sunagakure"
+	}
+
+
 		//25: +600 Sand Burial Range / +380 Sand Coffin Damage
 		//20: +225 Cast Range / +80 Sand Tsunami Radius
 		//15: +0.3 Sand Armor Damage per Mana / +70 Attack Damage
@@ -52,15 +148,26 @@
 		  "AttributeAgilityGain" "1.5" // Agility bonus per level.
 		  
 	 	  "DisableWearables" "1"
-			"ItemSlots" 
-			{
-			}
+		
 	  	  "Gender"			"male"
 	  	  "Village"			"sunagakure"
 
+			"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
 
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
 
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
+
+	}
 
 
 }

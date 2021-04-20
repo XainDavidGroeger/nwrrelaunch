@@ -5,9 +5,10 @@
 		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 		//10: +5 All Stats / +200 Bunshin Swap Range
-    		"npc_dota_hero_dragon_knight" //naruto
+    		"npc_dota_hero_naruto" //naruto
 		{
-		  	"override_hero" "npc_dota_hero_dragon_knight"
+			"HeroID"					"210"
+		  	"BaseClass" "npc_dota_hero_dragon_knight"
 		  	"Model" 		"models\naruto_new_2/naruto_base.vmdl"
 		 	"Ability1"      "naruto_kage_bunshin_rasengan"
 		  	"Ability2"      "naruto_kawazu_kumite" 
@@ -28,10 +29,17 @@
 		    "Ability16"		"special_bonus_naruto_6"
 		    "Ability17"		"special_bonus_naruto_7"
 
+			
+			"SoundSet"					"Punch"
+			"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
+
 
 		  	"ArmorPhysical"		"1.000000"
 			"ModelScale"		"0.74"
 			"LoadoutScale"		"0.64" 
+
+			//Picking Screen
+			"IsCustom"					"1"
 
 			"SpectatorLoadoutScale" 	"0.64" 
 			"VersusScale"			"0.64" 
@@ -47,6 +55,9 @@
 		  	"Role"			"Carry,Pusher,Durable,Disabler,Initiator"
 			"Rolelevels"	"2,3,2,2,1"
 
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+
 			"MovementSpeed"			"305"
 			"AttributeBaseStrength" "22" // Base strength
 			"AttributeStrengthGain" "3.4" // Strength bonus per level.
@@ -54,11 +65,35 @@
 			"AttributeIntelligenceGain" "1.2" // Intelligence bonus per level.
 			"AttributeBaseAgility" "18" // Base agility
 			"AttributeAgilityGain" "1.4" // Agility bonus per level.
-			"ItemSlots"
-			{ }
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
 			"Village"			"konoha"
 			"Gender"			"male"
 		}
+
+
+	"npc_dota_hero_dragon_knight" 
+	{
+			"override_hero"   "npc_dota_hero_dragon_knight"
+			"Model" 		 "models\naruto_new_2/naruto_base.vmdl"
+			"ModelScale"		"0.74"
+			"LoadoutScale"		"0.64" 
+			"SpectatorLoadoutScale" 	"0.64" 
+			"VersusScale"			"0.64" 
+	}
 
 
 }

@@ -1,26 +1,24 @@
 <root> 
 <Panel class="AddonLoadingRoot"> 
-			<Image src="file://{images}/heroes/npc_dota_hero_antimage.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_doom_bringer.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_drow_ranger.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_beastmaster.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_kunkka.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_dragon_knight.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_medusa.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_centaur.png" />
 			<Image src="file://{images}/heroes/npc_dota_hero_kakashi.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_sven.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_sand_king.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_phantom_assassin.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_ogre_magi.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_bloodseeker.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_axe.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_juggernaut.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_storm_spirit.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_lion.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_warlock.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_shadow_shaman.png" />
-			<Image src="file://{images}/heroes/npc_dota_hero_enchantress.png" />
+			<Image src="file://{images}/heroes/npc_dota_hero_anko.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_itachi.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_hidan.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_kisame.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_naruto.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_guy.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_onoki.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_raikage.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_sakura.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_madara.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_zabuza.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_neji.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_yondaime.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_sasuke.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_gaara.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_kankuro.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_shikamaru.png" />
+			<Image  src="file://{images}/heroes/npc_dota_hero_temari.png" />
 </Panel> 
 
 </root>

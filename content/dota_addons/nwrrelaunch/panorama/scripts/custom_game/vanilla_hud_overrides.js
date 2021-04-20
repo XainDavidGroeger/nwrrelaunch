@@ -150,19 +150,5 @@ function SetMinimapBackground() {
 (function() {
 	GameEvents.Subscribe("override_hero_image", OverrideTopBarHeroImage);
 	GameEvents.Subscribe("override_hero_image", OverrideScoreboardHeroImage);
-
-	// test
-/*
-	OverrideTopBarHeroImage({
-		player_id: 0,
-		icon_path: "npc_dota_hero_kakashi",
-	})
-
-	OverrideScoreboardHeroImage({
-		player_id: 0,
-		icon_path: "npc_dota_hero_kakashi",
-	})
-*/
-
 	SetCustomHUD();
 })();

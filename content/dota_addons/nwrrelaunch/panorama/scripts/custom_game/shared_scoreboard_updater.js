@@ -470,6 +470,5 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
 	{
 		teamsList.sort( stableCompareFunc );		
 	}
-	
 	return teamsList;
 }

@@ -21,6 +21,11 @@ end
 
 
 function startEffect( keys )
+
+	if keys.ability.dotParticle ~= nil then
+		ParticleManager:DestroyParticle(keys.ability.dotParticle, true) 
+	end
+
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/neji/neji_w_debuff_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.target)
 	ParticleManager:SetParticleControl(particle, 0, keys.target:GetAbsOrigin()) -- Origin
 	ParticleManager:SetParticleControlEnt(particle, 3, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)

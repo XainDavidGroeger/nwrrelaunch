@@ -22,6 +22,8 @@ function ModelSwapStart( keys )
 	keys.ability.dome = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(keys.ability.dome, 0, caster:GetAbsOrigin()) -- Origin
 	
+	keys.ability.dome_sharks = ParticleManager:CreateParticle("particles/units/heroes/kisame/water_dome2_sharks.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(keys.ability.dome_sharks, 1, caster:GetAbsOrigin()) -- Origin
 end
 --[[Author LearningDave
 	Date october, 9th 2015
@@ -33,6 +35,7 @@ function ModelSwapEnd( keys )
 	caster:SetOriginalModel(caster.caster_model)
 	caster:SetModelScale(1)
 	ParticleManager:DestroyParticle( keys.ability.dome, true )
+	ParticleManager:DestroyParticle(keys.ability.dome_sharks, true)
 end
 --[[
 	Author LearningDave

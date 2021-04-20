@@ -930,7 +930,7 @@
 		//--------------------
 		//Anko
 		//--------------------
-		"npc_dota_hero_medusa"  									"Anko"
+		"npc_dota_hero_anko"  									"Anko"
 		"DOTA_Tooltip_ability_anko_giant_snake"						"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"ДАЛЬНОСТЬ: "
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"УРОН: "

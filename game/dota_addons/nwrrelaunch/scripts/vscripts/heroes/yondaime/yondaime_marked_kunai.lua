@@ -96,9 +96,9 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		dummy:SetOriginalModel("models/yondaime_new/yondakunai.vmdl")
 		dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 		dummy:SetModelScale(4.0)
-		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai", {duration = duration})
+		dummy:AddNewModifier(caster, ability, "modifier_marked_kunai_bonus", {duration = duration})
 	
-		dummy:SetUnitName("npc_marked_kunai")
+		-- dummy:SetUnitName("npc_marked_kunai")
 	
 		table.insert(self.caster.daggers, dummy)
 		ability.kunai = dummy
@@ -129,45 +129,8 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 	else
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self.creep_damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	end
-
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
-
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
-
 end
 
-
-modifier_marked_kunai_debuff = class({})
-
---------------------------------------------------------------------------------
-
-function modifier_marked_kunai_debuff:IsDebuff()
-	return true
-end
-
---------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------
-
-function modifier_marked_kunai_debuff:DeclareFunctions()
-    local funcs = {
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-    }
-    return funcs
-end
-
-
---[[ ============================================================================================================
-    Author: Dave
-    Date: October 24, 2015
-    -- adds a modifier which slows the target on x percent(depening on the 'neji_byakugan' level)
-================================================================================================================= ]]
-function modifier_marked_kunai_debuff:GetModifierPhysicalArmorBonus(keys)
-    return self:GetAbility():GetSpecialValueFor( "armor_reduction")
-end
-
-
---------------------------------------------------------------------------------
 
 modifier_marked_kunai = class({})
 
@@ -220,4 +183,8 @@ function modifier_marked_kunai_bonus:CheckState()
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 	}
+end
+
+function modifier_marked_kunai_bonus:GetModifierProvidesFOWVision()
+	return 1
 end

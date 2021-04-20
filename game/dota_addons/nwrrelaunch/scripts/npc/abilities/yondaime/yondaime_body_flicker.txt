@@ -15,7 +15,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"			"1300"
+	"AbilityCastRange"			"1400"
 	"AbilityCastPoint"			"0.4 0.4 0.4 0.4"
 	
 	// Time		
@@ -32,6 +32,9 @@
 	{
 		"particle"					"particles/units/heroes/yondaime/blink_core_alt.vpcf"
 		"particle"					"particles/units/heroes/yondaime/blink_end_core.vpcf"
+
+		"soundfile" "soundevents/heroes/yondaime/minato_flicker_start.vsndevts"
+		"soundfile" "soundevents/heroes/yondaime/minato_flicker_end.vsndevts"
 	}
 	
 	// Special	

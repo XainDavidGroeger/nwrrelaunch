@@ -5,6 +5,8 @@ function GameMode:RescaleUnit( unit )
 		GameMode:rescaleCourier(unit)
 	elseif  unit:GetModelName() == "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl" then 
 		unit:SetModelScale(2.2)
+	elseif  unit:GetModelName() == "models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee.vmdl" then 
+		unit:SetModelScale(0.74)	
 	elseif  unit:GetModelName() == "models/heroes/clinkz/clinkz_arrow.vmdl" then 
 		unit:SetModelScale(0.6)
 	else                 

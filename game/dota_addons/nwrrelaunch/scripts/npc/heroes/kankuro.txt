@@ -5,9 +5,10 @@
 	//20: +70 Karasu Attack Speed / +350 Puppet Technique Health
 	//15: +50 Karasu Movement Speed / +20 Karasu Poison DPS
 	//10: +4.00 Karasu Mana Regen / +125 Kuroari Range
-	"npc_dota_hero_warlock" //kankuro
+	"npc_dota_hero_kankuro" //kankuro
 {
-		"override_hero"   "npc_dota_hero_warlock"
+		"HeroID"		"207"
+		"BaseClass"   	"npc_dota_hero_warlock"
 		"Model"           "models/kankuro/kankuro.vmdl"
 		"Ability1"        "kankuro_summon_kuroari"
 		"Ability2"        "kankuro_summon_karasu"
@@ -33,7 +34,9 @@
 		"SpectatorLoadoutScale" "1.0"
 		"VersusScale"				"1.0"
 
-		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+		//Picking Screen
+		"IsCustom"					"1"
 		"ItemSlots"
 		{ }
 		"AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -55,7 +58,33 @@
 		"AttributeAgilityGain" "1.25" // Agility bonus per level. 
 		"Gender"      "male"
 		"Village"	  "kirigakure"
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
 }	
+
+	  "npc_dota_hero_warlock" 
+	{
+		  	"override_hero"   "npc_dota_hero_warlock"
+		   	"Model"           "models/kankuro/kankuro.vmdl"
+			"ModelScale"	"1.0"
+			"LoadoutScale"	"0.85"
+			"SpectatorLoadoutScale" "1.0"
+			"VersusScale"				"1.0"
+	}
 
 
 }

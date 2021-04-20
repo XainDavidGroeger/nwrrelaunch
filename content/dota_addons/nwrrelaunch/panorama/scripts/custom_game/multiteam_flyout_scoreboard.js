@@ -34,6 +34,7 @@ function OnKillEvent( event )
 		panel.text = parseInt(panel.text) + 1;
 	}
 	
+	$.Msg("KILL EVENT");
 
 
 	var containerPanel = $( "#TeamsContainer" );
@@ -54,6 +55,7 @@ function OnKillEvent( event )
 function OnLastHitEvent( event )
 {
 
+	$.Msg("LH EVENT");
 	var containerPanel = $( "#TeamsContainer" );
 	var teamId = event.team_id
 	var teamPanelName = "_dynamic_team_" + teamId;

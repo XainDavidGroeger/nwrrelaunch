@@ -10,8 +10,10 @@ end
 
 function kakashi_doton:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_kakashi_2"):GetLevel() > 0 then
-		castrangebonus = 325
+	if self:GetCaster():FindAbilityByName("special_bonus_kakashi_2") ~= nil then
+		if self:GetCaster():FindAbilityByName("special_bonus_kakashi_2"):GetLevel() > 0 then
+			castrangebonus = 325
+		end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
 end

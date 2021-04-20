@@ -29,6 +29,8 @@ function shikamaru_kage_kubishibari:OnSpellStart()
 		duration =  duration + 2
 	end
 
+	caster:EmitSound("shikamaru_hold_cast")
+
     target:AddNewModifier(caster, ability, "modifier_kubishibari", {duration = duration})
     
 end
