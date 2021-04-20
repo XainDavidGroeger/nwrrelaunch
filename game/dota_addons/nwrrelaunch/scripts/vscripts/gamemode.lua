@@ -83,22 +83,16 @@ end
 	The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-	Timers:CreateTimer( 10, function()
-		print("test clock")
-		for i=0, 4 do
-			local player = PlayerResource:GetPlayer(i)
-			if player then
-				EmitSoundOnEntityForPlayer("akat_start", player:GetAssignedHero(), i)
-			end
-		end
-		for i=5, 9 do
-			local player = PlayerResource:GetPlayer(i)
-			if player then
-				EmitSoundOnEntityForPlayer("akat_start", player:GetAssignedHero(), i)
-			end
+	
+	Timers:CreateTimer(10, function()
+		local playerId = hero:GetPlayerOwnerID()
+		if playerId > 4 then
+			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
+		else
+			EmitSoundOnEntityForPlayer("shinobi_start", hero, playerId)
 		end
 	end
-)
+	)
 
 	GameMode:RemoveWearables( hero )
 
