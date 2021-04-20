@@ -32,7 +32,6 @@ function GameMode:OnGameRulesStateChange(keys)
 		VoiceResponses:Start()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		GameMode:SetShops()
-
 		for i = 0, PlayerResource:GetPlayerCount() - 1 do
 			if PlayerResource:IsValidPlayerID(i) then
 				if not PlayerResource:HasSelectedHero(i) then
