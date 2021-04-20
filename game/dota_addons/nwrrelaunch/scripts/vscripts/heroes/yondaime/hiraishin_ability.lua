@@ -61,16 +61,34 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 	local closest_seal = self:GetClosestSeal(target_point)
 	local range = self:GetSpecialValueFor("radius")
 
-
-	if closest_seal ~= nil then
-		if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
-			return UF_SUCCESS
-		else
-			return UF_FAIL_CUSTOM
-		end
-	else
+	if closest_seal == nil then
 		return UF_FAIL_CUSTOM
 	end
+
+	local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+
+	
+	local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
+										   caster:GetAbsOrigin() - direction*200,
+										   closest_seal:GetAbsOrigin() + direction*200,
+										   nil,
+										   ability:GetSpecialValueFor("search_width"),
+										   DOTA_UNIT_TARGET_TEAM_ENEMY,
+										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
+										   DOTA_UNIT_TARGET_FLAG_NONE)
+
+	print(target_entities)
+
+	if #target_entities == 0 then
+		return UF_FAIL_CUSTOM
+	end
+
+	if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
+		return UF_SUCCESS
+	end
+	
+	return UF_FAIL_CUSTOM
+
 end
 
 
@@ -87,22 +105,36 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 
 end
 
+function yondaime_hiraishin_jump:GetCustomCastErrorLocation(target_point)
 
-function yondaime_hiraishin_jump:CastFilterResultTarget( target )
 	local ability = self
 	local caster = ability:GetCaster()
+	local closest_seal = self:GetClosestSeal(target_point)
+	local range = self:GetSpecialValueFor("radius")
 
-	if target:GetUnitName() == "npc_marked_kunai" then 
-		return UF_SUCCESS
-	else
-		return UF_FAIL_CUSTOM
+	if closest_seal == nil then
+		return "#error_no_kunai_nearby"
+	end 
+
+	local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+
+	
+	local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
+										   caster:GetAbsOrigin() - direction*200,
+										   closest_seal:GetAbsOrigin() + direction*200,
+										   nil,
+										   ability:GetSpecialValueFor("search_width"),
+										   DOTA_UNIT_TARGET_TEAM_ENEMY,
+										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
+										   DOTA_UNIT_TARGET_FLAG_NONE)
+
+
+
+	if #target_entities == 0 then
+		return "#error_no_enemies_in_range"
 	end
-	return ""
-end
 
-function yondaime_hiraishin_jump:GetCustomCastError()
-
-	return "NO KUNAI NEARBY"
+	return "#error_no_kunai_nearby"
 end
 
 
