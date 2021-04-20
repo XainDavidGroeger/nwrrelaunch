@@ -84,12 +84,12 @@ end
 ]]
 function GameMode:OnHeroInGame(hero)
 	
-	Timers:CreateTimer(120, function()
+	Timers:CreateTimer(80, function()
 		local playerId = hero:GetPlayerOwnerID()
-		if playerId > 4 then
-			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
-		else
+		if hero:GetTeamNumber() == 2 then
 			EmitSoundOnEntityForPlayer("shinobi_start", hero, playerId)
+		else
+			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
 		end
 	end
 	)
