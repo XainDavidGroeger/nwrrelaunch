@@ -72,28 +72,11 @@ function haku_crippling_senbon:OnProjectileHit_ExtraData(target, location, Extra
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage = ExtraData.damage, damage_type = self:GetAbilityDamageType()})
 		target:AddNewModifier(caster, self, "modifier_stunned", {duration = ExtraData.stun_duration * (1 - target:GetStatusResistance())})
 
+		local woudns_ability = caster:FindAbilityByName("haku_endless_wounds")
+		if woudns_ability:GetLevel() > 0 then 
 
-		if caster:FindAbilityByName("haku_endless_wounds"):GetLevel() > 0 then 
-
-			local endless_wounds = caster:FindAbilityByName("haku_endless_wounds")
-
-			local threshold = endless_wounds:GetSpecialValueFor("threshold")
-			local duration = endless_wounds:GetSpecialValueFor("duration")
 			local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
-
-			local stack_modifier = "modifier_haku_endless_needles_victim"
-
-			if target:HasModifier(stack_modifier) then
-				local stacks = target:GetModifierStackCount(stack_modifier, endless_wounds)
-				if (stacks + endless_wounds_stacks) <= threshold then
-					target:SetModifierStackCount(stack_modifier,endless_wounds, stacks + endless_wounds_stacks)
-				else
-					target:SetModifierStackCount(stack_modifier,endless_wounds, threshold)
-				end
-			else 
-				modifier_debuff = target:AddNewModifier(caster, endless_wounds, stack_modifier, {duration = duration})
-				target:SetModifierStackCount(stack_modifier, endless_wounds, endless_wounds_stacks)
-			end
+			woudns_ability:ApplyStacks(target, endless_wounds_stacks)
 
 		end
 
