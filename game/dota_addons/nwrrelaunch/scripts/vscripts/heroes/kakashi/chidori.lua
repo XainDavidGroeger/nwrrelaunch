@@ -36,7 +36,6 @@ function Launch(keys)
 	caster:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
 	caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_4, 1)
 
-	caster:EmitSound(keys.sound_cast)
 	AddPhysics(caster)
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_raikiri_stunned", {})
 	-- Movement
@@ -83,13 +82,13 @@ function Launch(keys)
 end
 
 function ChannelChidori( keys )
-	keys.caster:EmitSound(keys.sound_cast)
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_caster, {})
 	keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_4, 0.3)
 end
 
 function RemoveChannelChidori(keys)
-	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
+	keys.caster:StopSound("kakashi_raikiri_cast")
+	keys.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
 	keys.caster:RemoveModifierByName(keys.modifier_caster)
 end
 

@@ -84,7 +84,7 @@ end
 ]]
 function GameMode:OnHeroInGame(hero)
 	
-	Timers:CreateTimer(10, function()
+	Timers:CreateTimer(120, function()
 		local playerId = hero:GetPlayerOwnerID()
 		if playerId > 4 then
 			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
