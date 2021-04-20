@@ -131,7 +131,6 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 	end
 end
 
---------------------------------------------------------------------------------
 
 modifier_marked_kunai = class({})
 
@@ -184,4 +183,8 @@ function modifier_marked_kunai_bonus:CheckState()
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 	}
+end
+
+function modifier_marked_kunai_bonus:GetModifierProvidesFOWVision()
+	return 1
 end

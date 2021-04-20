@@ -43,6 +43,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_end_embers.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/haku/haku_crippling_senbon_end_sphere.vpcf"
