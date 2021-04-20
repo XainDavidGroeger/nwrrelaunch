@@ -130,9 +130,9 @@ function yondaime_marked_kunai:OnProjectileHit(hTarget, vLocation)
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self.creep_damage, damage_type = DAMAGE_TYPE_MAGICAL })
 	end
 
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
+	-- hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
 
-	hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
+	-- hTarget:AddNewModifier(self.caster, self.ability, "modifier_marked_kunai_debuff", {duration = self.buff_duration})
 
 end
 
@@ -220,4 +220,8 @@ function modifier_marked_kunai_bonus:CheckState()
 		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 	}
+end
+
+function modifier_marked_kunai_bonus:GetModifierProvidesFOWVision()
+	return 1
 end
