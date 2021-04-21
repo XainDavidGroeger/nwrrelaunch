@@ -27,7 +27,7 @@ function modifier_onoki_added_weight_enemy:OnCreated( kv )
 	self.speed_penalty_perc = self:GetAbility():GetSpecialValueFor( "speed_penalty_perc" )
 	
 	if abilityS:GetLevel() > 0 then
-    	self.speed_penalty_perc = self.speed_penalty_perc - 7
+    	self.speed_penalty_perc = self.speed_penalty_perc + 7
 	end
 
 	if not IsServer() then return end
