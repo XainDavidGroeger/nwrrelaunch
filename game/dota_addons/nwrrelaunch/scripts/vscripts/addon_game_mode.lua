@@ -59,7 +59,9 @@ function Precache( context )
   PrecacheResource("soundfile", "soundevents/heroes/anko_soundevents.vsndevts", context)       
   PrecacheResource("soundfile", "soundevents/heroes/itachi_soundevents.vsndevts", context)        
   PrecacheResource("soundfile", "soundevents/global/akat_start.vsndevts", context)        
-  PrecacheResource("soundfile", "soundevents/global/shinobi_start.vsndevts", context)        
+  PrecacheResource("soundfile", "soundevents/global/shinobi_start.vsndevts", context)      
+  PrecacheResource("soundfile", "soundevents/global/malulubul.vsndevts", context)      
+    
 
   -- Entire items can be precached by name
   -- Abilities can also be precached in this way despite the name

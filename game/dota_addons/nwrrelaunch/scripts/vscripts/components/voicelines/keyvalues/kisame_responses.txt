@@ -6,7 +6,7 @@
 
 		"Sounds"
 		{
-			"anko_move"          "1"
+			"kisame_move"          "1"
 		}
 	}
 
@@ -16,7 +16,7 @@
 
 		"Sounds"
 		{
-			"anko_attack"    "1"
+			"kisame_attack"    "1"
 		}
 	}
 
@@ -27,7 +27,7 @@
 
 		"Sounds"
 		{
-			"anko_hurt"  "1"
+			"kisame_hurt"  "1"
 		}
 	}
 
@@ -37,7 +37,7 @@
 		"AllChat"   "1"
 		"Sounds"
 		{
-			"anko_death" "1"
+			"kisame_death" "1"
 		}
 	}
 	"OnBuyback"
@@ -48,7 +48,7 @@
 		"Cooldown"  "6"
 		"Sounds"
 		{
-			"anko_buyback"      "1"
+			"kisame_buyback"      "1"
 		}
 	}
 	"OnSpawn"
@@ -59,7 +59,7 @@
 		"Cooldown"  "6"
 		"Sounds"
 		{
-			"anko_respawn"      "1"
+			"kisame_respawn"      "1"
 		}
 	}
 	"OnFirstSpawn"
@@ -69,7 +69,7 @@
 		"Delay"     "1.5"
 		"Sounds"
 		{
-			"anko_spawn"      "1"
+			"kisame_spawn"      "1"
 		}
 	}
 
@@ -82,7 +82,7 @@
 
 		"Sounds"
 		{
-			"anko_hero_kill"      "1"
+			"kisame_hero_kill"      "1"
 		}
 	}
 
@@ -95,7 +95,7 @@
 
 		"Sounds"
 		{
-			"anko_firstblood"      "1"
+			"kisame_firstblood"      "1"
 		}
 	}
 
@@ -107,7 +107,7 @@
 
 		"Sounds"
 		{
-			"anko_creep_kill"      "1"
+			"kisame_creep_kill"      "1"
 		}
 	}
 
@@ -119,47 +119,47 @@
 
 		"Sounds"
 		{
-			"anko_creep_deny"      "1"
+			"kisame_creep_deny"      "1"
 		}
 	}
 
 	// Ability casts
 	"OnAbilityCast"
 	{
-		"anko_doton"
+		"kisame_doton"
 		{
 			"Priority"  "1"
 			"AllChat" "1"
 			"Sounds"
 			{
-				"anko_doton"      "1"
+				"kisame_doton"      "1"
 			}
 		}
-		"anko_sharingan"
+		"kisame_sharingan"
 		{
 			"Priority"  "1"
 			"AllChat" "1"
 			"Sounds"
 			{
-				"anko_sharingan"      "1"
+				"kisame_sharingan"      "1"
 			}
 		}
-		"anko_bunshin"
+		"kisame_bunshin"
 		{
 			"Priority"  "1"
 			"AllChat" "1"
 			"Sounds"
 			{
-				"anko_bunshin"      "1"
+				"kisame_bunshin"      "1"
 			}
 		}
-		"anko_chidori"
+		"kisame_chidori"
 		{
 			"Priority"  "2"
 			"AllChat" "1"
 			"Sounds"
 			{
-				"anko_chidori"      "1"
+				"kisame_chidori"      "1"
 			}
 		}
 	}
@@ -173,7 +173,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_aegis"      "1"
+				"kisame_items_aegis"      "1"
 			}
 		}
 		"item_cheese"
@@ -183,7 +183,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_cheese"      "1"
+				"kisame_items_cheese"      "1"
 			}
 		}
 	}
@@ -196,7 +196,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_blink"      "1"
+				"kisame_items_blink"      "1"
 			}
 		}
 
@@ -205,7 +205,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_heart"      "1"
+				"kisame_items_heart"      "1"
 			}
 		}
 
@@ -214,7 +214,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_radiance"      "1"
+				"kisame_items_radiance"      "1"
 			}
 		}
 
@@ -223,7 +223,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_sheep"      "1"
+				"kisame_items_sheep"      "1"
 			}
 		}
 
@@ -232,7 +232,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_aghs"      "1"
+				"kisame_items_aghs"      "1"
 			}
 		}
 
@@ -241,7 +241,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_vanguard"      "1"
+				"kisame_items_vanguard"      "1"
 			}
 		}
 
@@ -250,7 +250,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_ward"      "1"
+				"kisame_items_ward"      "1"
 			}
 		}
 
@@ -259,7 +259,7 @@
 			"Delay"     "1"
 			"Sounds"
 			{
-				"anko_items_ward"      "1"
+				"kisame_items_ward"      "1"
 			}
 		}
 	}
@@ -270,7 +270,7 @@
 		"Delay" "10"
 		"Sounds"
 		{
-			"anko_victory"      "1"
+			"kisame_victory"      "1"
 		}
 	}
 
@@ -280,7 +280,7 @@
 		"Delay" "10"
 		"Sounds"
 		{
-			"anko_defeat"      "1"
+			"kisame_defeat"      "1"
 		}
 	}
 
@@ -291,7 +291,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_double"      "1"
+			"kisame_rune_double"      "1"
 		}
 	}
 
@@ -302,7 +302,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_haste"      "1"
+			"kisame_rune_haste"      "1"
 		}
 	}
 
@@ -313,7 +313,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_illusion"      "1"
+			"kisame_rune_illusion"      "1"
 		}
 	}
 
@@ -324,7 +324,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_invis"      "1"
+			"kisame_rune_invis"      "1"
 		}
 	}
 
@@ -335,7 +335,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_regen"      "1"
+			"kisame_rune_regen"      "1"
 		}
 	}
 
@@ -346,7 +346,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_bounty"      "1"
+			"kisame_rune_bounty"      "1"
 		}
 	}
 	
@@ -357,7 +357,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_rune_arcane"      "1"
+			"kisame_rune_arcane"      "1"
 		}
 	}
 
@@ -368,7 +368,7 @@
 		"Delay" "0.5"
 		"Sounds"
 		{
-			"anko_levelup"      "1"
+			"kisame_levelup"      "1"
 		}
 	}
 }

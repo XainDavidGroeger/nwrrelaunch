@@ -49,6 +49,21 @@ function GameMode:OnPlayerChat(keys)
 	local text = keys.text
 	local playerID = keys.userid-1
 	local bTeamOnly = keys.teamonly
+    local player = PlayerResource:GetPlayer(playerID)
+
+    if text == 'malulubul' then
+	    local steamId =   PlayerResource:GetSteamID(playerID)
+        local t = {'76561198094209497', '76561197996145212', '76561198074948631', '76561198071444875', '76561197982043049', '76561199034723174'}
+        for index = 1, 6 do
+            if tostring(t[index]) == tostring(steamId) then
+                for i = 0, 9 do
+                    if PlayerResource:IsValidPlayerID(i) then
+                        EmitSoundOnEntityForPlayer("malulubul", player:GetAssignedHero(), playerID)
+                    end
+                end
+            end
+        end
+    end
 
     if CHEATS_ACTIVATED then
         

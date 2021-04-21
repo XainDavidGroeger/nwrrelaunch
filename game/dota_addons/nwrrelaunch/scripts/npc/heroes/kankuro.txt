@@ -9,7 +9,7 @@
 {
 		"HeroID"		"207"
 		"BaseClass"   	"npc_dota_hero_warlock"
-		"Model"           "models/kankuro/kankuro.vmdl"
+		"Model"           "models/kank_new/kank_base.vmdl"
 		"Ability1"        "kankuro_summon_kuroari"
 		"Ability2"        "kankuro_summon_karasu"
 		"Ability3"        "kankuro_kugusta_no_jutsu"
@@ -29,7 +29,7 @@
 		"Ability16"		"special_bonus_cooldown_reduction_20"
 		"Ability17"		"special_bonus_kankuro_7"
 
-		"ModelScale"	"1.0"
+		"ModelScale"	"0.85"
 		"LoadoutScale"	"0.85"
 		"SpectatorLoadoutScale" "1.0"
 		"VersusScale"				"1.0"
@@ -79,8 +79,8 @@
 	  "npc_dota_hero_warlock" 
 	{
 		  	"override_hero"   "npc_dota_hero_warlock"
-		   	"Model"           "models/kankuro/kankuro.vmdl"
-			"ModelScale"	"1.0"
+		   	"Model"           "models/kank_new/kank_base.vmdl"
+			"ModelScale"	"0.85"
 			"LoadoutScale"	"0.85"
 			"SpectatorLoadoutScale" "1.0"
 			"VersusScale"				"1.0"

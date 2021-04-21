@@ -83,13 +83,13 @@ end
 	The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-	
-	Timers:CreateTimer(120, function()
+	local playerId = hero:GetPlayerOwnerID()
+	Timers:CreateTimer(80, function()
 		local playerId = hero:GetPlayerOwnerID()
-		if playerId > 4 then
-			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
-		else
+		if hero:GetTeamNumber() == 2 then
 			EmitSoundOnEntityForPlayer("shinobi_start", hero, playerId)
+		else
+			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
 		end
 	end
 	)
@@ -111,9 +111,93 @@ function GameMode:OnNewHeroSelected(event)
 
 end
 
+
 function GameMode:OnNewHeroChosen(event)
 
 
+end
+
+function GameMode:OnEntityHurt(event)
+
+
+	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
+	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
+
+	if not hTarget:IsRealHero() and not hAttacker:IsRealHero() then
+		return nil
+	end
+
+	CustomGameEventManager:Send_ServerToAllClients("damage", {
+		attacker = hAttacker,
+		target = hTarget,
+		victim_team_id = hTarget:GetTeamNumber(),
+		victim_id = hTarget:GetPlayerID(),
+		attacker_team_id = hAttacker:GetTeamNumber(),
+		attacker_id = hAttacker:GetPlayerID(),
+		damage = event.damage
+	})
+
+	return nil
+
+end
+
+function GameMode:OnEntityKilled(event)
+
+	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
+	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
+
+	if not hAttacker:IsRealHero() then
+		return nil
+	end
+
+	if hTarget ~= nil
+	and hTarget:IsRealHero()
+		and not hTarget:IsClone()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("hero_killed", {
+				attacker = hAttacker,
+				target = hTarget,
+				victim_team_id = hTarget:GetTeamNumber(),
+				victim_id = hTarget:GetPlayerID(),
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
+
+	if hTarget ~= nil
+		and hTarget:IsCreep()
+		and hAttacker:IsRealHero()
+		and hTarget:GetTeamNumber() ~= hAttacker:GetTeamNumber()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("lasthit", {
+				attacker = hAttacker,
+				target = hTarget,
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
+
+	if hTarget ~= nil
+		and hTarget:IsCreep()
+		and hAttacker:IsRealHero()
+		and hTarget:GetTeamNumber() == hAttacker:GetTeamNumber()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("deny", {
+				attacker = hAttacker,
+				target = hTarget,
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
 end
 
 --[[

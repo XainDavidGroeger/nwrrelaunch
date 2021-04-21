@@ -204,7 +204,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/kankuro/karasu.vmdl"	// Model.
-		"ModelScale"				"0.8"
+		"ModelScale"				"1.2"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -267,7 +267,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/kankuro/kuroari.vmdl"	// Model.
-		"ModelScale"				"0.8"
+		"ModelScale"				"1.2"
 		
 		// Abilities
 		//----------------------------------------------------------------
