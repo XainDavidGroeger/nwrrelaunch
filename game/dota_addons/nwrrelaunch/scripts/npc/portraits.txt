@@ -521,7 +521,7 @@
 	}
 
 
-"models/kankuro/kankuro.vmdl"
+"models/kank_new/kank_base.vmdl"
 	{
 		"PortraitLightPosition"		"276.429993 -18.010000 333.350006"
 		"PortraitLightAngles"		"33.889999 183.929993 0.000000"
@@ -552,9 +552,9 @@
 		{
 			"default"
 			{
-				"PortraitPosition"		"550.000000 -48.000000 130.000000"
+				"PortraitPosition"		"480.000000 -48.000000 140.000000"
 				"PortraitAngles"		"357.600006 175.899994 0.000000"
-				"PortraitFOV"		"4.300000"
+				"PortraitFOV"		"5.600000"
 				"PortraitFar"		"1000.000000"
 			}
 		}
