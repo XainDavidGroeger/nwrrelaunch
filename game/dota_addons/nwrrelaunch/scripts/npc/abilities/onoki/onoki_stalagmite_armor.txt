@@ -1,61 +1,65 @@
-"onoki_stalagmite_armor"
-	{
-	
-		"BaseClass"			 			"ability_lua"
-		"ScriptFile"                    "heroes/onoki/onoki_stalagmite_armor.lua"
-		"AbilityTextureName"			"onoki_stalagmite_armor"
-		"MaxLevel" 						"4"
-	
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	
-		"AbilityCastRange"				"700"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	
-		"AbilityCooldown"				"25 20 15 10"
-		"AbilityManaCost"				"50"
-	
-		"AbilitySpecial"
+
+   "DOTAAbilities"
+    {
+	"onoki_stalagmite_armor"
 		{
-			"01"
+		
+			"BaseClass"			 			"ability_lua"
+			"ScriptFile"                    "heroes/onoki/onoki_stalagmite_armor.lua"
+			"AbilityTextureName"			"onoki_stalagmite_armor"
+			"MaxLevel" 						"4"
+		
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+			"AbilityCastRange"				"700"
+			"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		
+			"AbilityCooldown"				"25 20 15 10"
+			"AbilityManaCost"				"50"
+		
+			"AbilitySpecial"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"3 5 7 9"
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_armor"			"3 5 7 9"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"20 30 40 50"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage_chance"			"10 15 20 25"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"4 6 8 10"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"cast_range"			"700"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"stun_duration"			"0.6 1.2 1.8 2.4"
+				}
 			}
-			"02"
+		
+			"precache"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"20 30 40 50"
+				"particle"  "particles/units/heroes/onoki/onoki_rocks.vpcf"
+				"particle"  "particles/units/heroes/onoki/onoki_rocks_sand.vpcf"
+				"particle"  "particles/units/heroes/onoki/onoki_rocks_shield.vpcf"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_chance"			"10 15 20 25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4 6 8 10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"700"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.6 1.2 1.8 2.4"
-			}
-		}
-	
-		"precache"
-		{
-			"particle"  "particles/units/heroes/onoki/onoki_rocks.vpcf"
-			"particle"  "particles/units/heroes/onoki/onoki_rocks_sand.vpcf"
-			"particle"  "particles/units/heroes/onoki/onoki_rocks_shield.vpcf"
 		}
 	}

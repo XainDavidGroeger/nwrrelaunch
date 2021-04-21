@@ -84,17 +84,6 @@ end
 ]]
 function GameMode:OnHeroInGame(hero)
 	local playerId = hero:GetPlayerOwnerID()
-	local steamId =   PlayerResource:GetSteamID(playerId)
-	local t = {'76561198094209497', '76561197996145212', '76561198074948631', '76561198071444875', '76561197982043049', '76561199034723174'}
-
-	for index = 1, 6 do
-		if tostring(t[index]) == tostring(steamId) then
-			Timers:CreateTimer(10, function()
-				EmitSoundOnEntityForPlayer("malulubul", hero, playerId)
-			end
-			)
-		end
-	end
 	
 	Timers:CreateTimer(80, function()
 		local playerId = hero:GetPlayerOwnerID()
