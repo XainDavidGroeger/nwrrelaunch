@@ -1,10 +1,8 @@
-"DOTAAbilities"{
-
-    "onoki_added_weight"{
+"onoki_added_weight"{
 
         "BaseClass"						"ability_lua"
         "ScriptFile"					"heroes/onoki/onoki_added_weight.lua"
-        "AbilityTextureName"			"dark_seer_surge"
+        "AbilityTextureName"			"onoki_turn_to_dust"
         "FightRecapLevel"				"1"
         "MaxLevel"						"4"
 
@@ -46,4 +44,3 @@
             }
         }
     }
-}

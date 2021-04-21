@@ -22,7 +22,13 @@ end
 -- Initializations
 function modifier_onoki_added_weight_allies:OnCreated( kv )
 	-- references
+	self.caster = self:GetCaster()
+	local abilityS = self.caster:FindAbilityByName("special_bonus_onoki_4")
 	self.speed_bonus_perc = self:GetAbility():GetSpecialValueFor( "speed_bonus_perc" )
+	
+    if abilityS:GetLevel() > 0 then
+    	self.speed_bonus_perc = self.speed_bonus_perc + 7
+	end
 
 	if not IsServer() then return end
 
@@ -66,8 +72,20 @@ end
 
 --------------------------------------------------------------------------------
 -- Graphics & Animations
+function modifier_onoki_added_weight_allies:GetStatusEffectName()
+    return "particles/units/heroes/onoki/onoki_speed_buff_status2.vpcf"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_onoki_added_weight_allies:StatusEffectPriority()
+    return 1000
+end
+
+--------------------------------------------------------------------------------
+
 function modifier_onoki_added_weight_allies:GetEffectName()
-	return "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+    return "particles/units/heroes/onoki/onoki_speed_buff.vpcf"
 end
 
 function modifier_onoki_added_weight_allies:GetEffectAttachType()
