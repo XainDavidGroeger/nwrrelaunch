@@ -9,12 +9,21 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
+	"BaseClass"					"ability_lua"
+	"ScriptFile"				"heroes/kankuro/karasu_daggers"
 	"MaxLevel"					"1"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"	
-	"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"karasu_daggers"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"		"karasu_daggers"
+
+	// Ability General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 	"precache"
 	{
@@ -26,14 +35,17 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastPoint"				"0.3"
 	"AOERadius"						"%radius"
+	"AbilityCastRange"				"550"
+
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"3"
 
-	// Cost
+	// Ability Resource
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"35"
+	"AbilityCooldown"				"3"
+
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -55,24 +67,24 @@
 			"projectile_speed"			"1250"
 		}
 	}
-	"OnSpellStart"
-	{
+	// "OnSpellStart"
+	// {
 	
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/kankuro/karasu_daggers"
-			"Function"				"karasu_daggers"
-			//--TODO: Change projectile to daggers
-			"daggers_projectile"	"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
-		}	
-		"FireSound"
-		{
-			"EffectName"		"Hero_Bristleback.QuillSpray.Cast"
-			"Target"			"CASTER"
-		}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"			"heroes/kankuro/karasu_daggers"
+	// 		"Function"				"karasu_daggers"
+	// 		//--TODO: Change projectile to daggers
+	// 		"daggers_projectile"	"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+	// 	}	
+	// 	"FireSound"
+	// 	{
+	// 		"EffectName"		"Hero_Bristleback.QuillSpray.Cast"
+	// 		"Target"			"CASTER"
+	// 	}
 
 
-	}
+	// }
 }
 
 
