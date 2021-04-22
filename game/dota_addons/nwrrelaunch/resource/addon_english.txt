@@ -963,17 +963,15 @@
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Reducing weight"
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The unit has increased movement speed."
 		
-		//Doton: Chō Kajūgan no Jutsu
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Super Heavy Rock Technique"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_lore"				"Doton: Chō Kajūgan no Jutsu"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Damage factor: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_speed_penalty_perc"		"%MS debuff: "
+		//Turn to dust
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Turn to dust"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Damage max. hp factor per sec: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Duration: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"AOE: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Instant Death Threshold: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Oonoki strikes the ground below with increased force, thereby slowing enemy units nearby. After a short delay, the shockwave deals a percentage of maximum health damage to all enemies around it. If an enemy reaches a certain health threshold, it is killed instantly."
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Onoki starts turning enemies around into dust, dealing maximum health damage every second. If an enemy reaches a certain health threshold, it is killed instantly."
 		
-		//25: +100 Atomic Dismantling Damage and Pure / +4% Super Heavy Rock Technique Kill Threshold
+		//25: +100 Atomic Dismantling Damage and Pure / +4% Turn to dust Kill Threshold
 	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
 	    //15: 14% Cooldown Reduction  / +225 Atomic Dismantling Range
 	    //10: +25 Attack Damage / +12% Magic Resistance
@@ -982,7 +980,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Stalagmite Extra Armor"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_4"						"+7%/-7% Weighted Rock Effect"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Atomic Dismantling Damage and Pure Damage"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Super Heavy Rock Technique Kill Threshold"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Turn to dust Kill Threshold"
 		
 		//--------------------
 		//Neji

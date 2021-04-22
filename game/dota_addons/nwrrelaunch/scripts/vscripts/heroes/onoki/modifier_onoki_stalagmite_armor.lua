@@ -104,6 +104,8 @@ function modifier_onoki_stalagmite_armor:PlayEffects(target)
 	local attackerRocks_particle = ParticleManager:CreateParticle("particles/units/heroes/onoki/onoki_rocks_attacker.vpcf", PATTACH_ABSORIGIN, parent)
 	ParticleManager:SetParticleControl(attackerRocks_particle, 0, parent:GetAbsOrigin())
 	ParticleManager:SetParticleControlOrientation(attackerRocks_particle, 0, -attackerForward, parent:GetRightVector(), parent:GetUpVector())
+	
+	EmitSoundOn("onoki_armor_proc", parent)
 end
 
 function modifier_onoki_stalagmite_armor:GetEffectName()

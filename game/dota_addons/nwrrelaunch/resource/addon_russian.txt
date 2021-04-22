@@ -787,7 +787,7 @@
 		//--------------------
 		"npc_dota_hero_sven"											"Onoki"
 		//Jinton
-		"DOTA_Tooltip_ability_onoki_jinton"								"Атомное расщепление"
+		"DOTA_Tooltip_ability_onoki_jinton"								"Atomic Dismantling"
 		"DOTA_Tooltip_ability_onoki_jinton_lore"						"Jinton: Genkai Hakuri no Jutsu"
 		"DOTA_Tooltip_ability_onoki_jinton_damage"					    "Урон: "
 		"DOTA_Tooltip_ability_onoki_jinton_root_duration"				"Длительность обездвиживания: "
@@ -796,7 +796,7 @@
 		"DOTA_Tooltip_ability_onoki_jinton_Description"					"Оoноки формирует куб, в который захватывает цель и обездвиживает её. Всё, что попало внутрь куба, расщепляется в пыль - цель оглушается и получается чистый урон. Вражеские юниты рядом с целью также попадут под действие техники."
 		
 		//Stalagmite Armor
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"Сталагмитовая броня"
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"Stalagmite Armor"
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_bonus_armor"		"Доп. броня: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage_chance"	    "Шанс вернуться урон: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage"	        "Коэффициент возврата урона: "
@@ -817,26 +817,24 @@
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Уменьшение веса"
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"Юнит имеет повышенную скорость передвижения."
 		
-		//Doton: Kajugan no Jutsu
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Техника супер тяжелой скалы"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_lore"				"Doton: Chō Kajūgan no Jutsu"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Урон от макс. здоровья: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_speed_penalty_perc"		"%Снижение скорости: "
+		//Turn to dust
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Turn to dust"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Урон в секунду от макс. здоровья: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Длительность: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"Радиус: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Порог здоровья: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Ооноки бьет по земле под собой с увеличенной силой, тем самым замедляя вражеских юнитов вблизи. После небольшой задержки ударная волна наносит в процентном соотношении максимальный урон от здоровья всем врагам вокруг. Если враг достигает определенного порога здоровья, он погибает мгновенно."
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Ооноки начинает превращать врагов вокруг в пыль, нанося урон от максимального здоровья каждую секунду. Если враг достигает определенного порога здоровья, он погибает мгновенно."
 		
 		//25: +100 Atomic Dismantling Damage and Pure / +4% Super Heavy Rock Technique Kill Threshold
 	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
 	    //15: 14% Cooldown Reduction  / +225 Atomic Dismantling Range
 	    //10: +25 Attack Damage / +12% Magic Resistance
-		"DOTA_Tooltip_Ability_special_bonus_onoki_1"						"+225 Радиус Атомного расщепления"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_1"						"+225 Радиус Atomic Dismantling"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_2"						"14% Снижение перезарядки"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Доп. брони Сталагмитовой брони"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Доп. брони Stalagmite Armor"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_4"						"+7%/-7% Скорости Техники увеличения/уменьшения веса"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Урона Атомного расщепления и Чистый урон"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Порог здоровья мгновенного убийства Техники супер тяжелой скалы"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Урона Atomic Dismantling и Чистый урон"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Порог здоровья мгновенного убийства Turn to dust"
 		
 		//--------------------
 		//Neji

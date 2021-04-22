@@ -40,63 +40,50 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
     	threshold_factor = threshold_factor + 0.04
     end
 	
-	local enemies = FindUnitsInRadius(
-		caster:GetTeamNumber(),	-- int, your team number
-		casterOrigin,	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
-	)
-	
-	for _,enemy in pairs(enemies) do
-		-- initial damage (deprecated)
-		if not enemy:IsMagicImmune() then
-		    enemy:AddNewModifier(
-                caster, -- player source
-                self, -- ability source
-                "modifier_onoki_added_weight_enemy", -- modifier name
-                { duration = duration } -- kv
-            )
-		end
-	end
-	
-	self:PlayEffects()
-	
-	Timers:CreateTimer(damage_delay, function ()
-	    local enemiesDelayd = FindUnitsInRadius(
-	    	caster:GetTeamNumber(),	-- int, your team number
-	    	casterOrigin,	-- point, center point
-	    	nil,	-- handle, cacheUnit. (not known)
-	    	radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-	    	DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-	    	DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-	    	DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
-	    	0,	-- int, order filter
-	    	false	-- bool, can grow cache
-	    )
-		
-		self:PlayDelaydEffects()
-	
-		for _,enemyDelayd in pairs(enemiesDelayd) do
-		    local max_life = enemyDelayd:GetMaxHealth() 
-	        local threshold = max_life * threshold_factor
-	        local current_life = enemyDelayd:GetHealth()
-	        local damage = threshold -- assume the target is below threshold (use threshold instead of max_life to prevent bugs)
-	        local damage_type = self:GetAbilityDamageType()
+	local timerDur = 0
+	Timers:CreateTimer(0.0, function ()
+	    if timerDur < duration then
+	        timerDur = timerDur + 1
+	        local enemiesDelayd = FindUnitsInRadius(
+	        	caster:GetTeamNumber(),	-- int, your team number
+	        	casterOrigin,	-- point, center point
+	        	nil,	-- handle, cacheUnit. (not known)
+	        	radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+	        	DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+	        	DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+	        	DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
+	        	0,	-- int, order filter
+	        	false	-- bool, can grow cache
+	        )
 		    
-	        if current_life > threshold then
-	        	damage = enemyDelayd:GetMaxHealth() * damage_factor
-	        end
-	        local currenthppercent = enemyDelayd:GetHealth() / (enemyDelayd:GetMaxHealth() / 100)
-	        print(currenthppercent)
-            
-	        --ParticleManager:CreateParticle("particles/blood_impact/blood_advisor_pierce_spray.vpcf", PATTACH_POINT, target)
-	        ApplyDamage({ victim = enemyDelayd, attacker = caster, damage = damage, damage_type = damage_type })
+			self:PlayEffects()
+	        
+		    for _,enemyDelayd in pairs(enemiesDelayd) do
+		        local max_life = enemyDelayd:GetMaxHealth() 
+	            local threshold = max_life * threshold_factor
+	            local current_life = enemyDelayd:GetHealth()
+	            local damage = max_life * damage_factor --maybe can bugs, but I don't think so
+	            local damage_type = self:GetAbilityDamageType()
+		        
+	            if current_life <= threshold then
+	            	damage = enemyDelayd:GetMaxHealth() * threshold_factor
+					print("threshold")
+	            end
+	            local currenthppercent = enemyDelayd:GetHealth() / (enemyDelayd:GetMaxHealth() / 100)
+	            print(currenthppercent)
+                
+	            --ParticleManager:CreateParticle("particles/blood_impact/blood_advisor_pierce_spray.vpcf", PATTACH_POINT, target)
+	            ApplyDamage({ victim = enemyDelayd, attacker = caster, damage = damage, damage_type = damage_type })
+		    end
+			
+			if timerDur == 5 then
+		        if RollPercentage(20) then
+				    self:PlayEndSound()
+				end
+			end
 		end
+		
+		return damage_delay
 	end)
 end
 
@@ -105,19 +92,17 @@ function onoki_kajutan_no_jutsu:PlayEffects()
     local echoes_particle = ParticleManager:CreateParticle("particles/units/heroes/onoki/onoki_kajutan_no_jutsu.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControl(echoes_particle, 0, caster:GetAbsOrigin())
 	
-	EmitSoundOn("Hero_ElderTitan.EchoStomp", self:GetCaster())
+	--EmitSoundOn("Hero_ElderTitan.EchoStomp", self:GetCaster())
+	EmitSoundOn("ParticleDriven.Rocket.Explode", self:GetCaster())
 	
-	Timers:CreateTimer(2, function ()
+	Timers:CreateTimer(0.86, function ()
 	    ParticleManager:DestroyParticle(echoes_particle, true)
 		ParticleManager:ReleaseParticleIndex(echoes_particle)
 	end)
 end
 
-function onoki_kajutan_no_jutsu:PlayDelaydEffects()
+function onoki_kajutan_no_jutsu:PlayEndSound()
     local caster = self:GetCaster()
-    --local echoes_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_elder_titan/elder_titan_echo_stomp.vpcf", PATTACH_POINT, caster)
-	--ParticleManager:SetParticleControl(echoes_particle, 0, caster:GetAbsOrigin())
-	
-	EmitSoundOn("ParticleDriven.Rocket.Explode", self:GetCaster())
+    
 	EmitSoundOn("onoki_ult_end", self:GetCaster())
 end

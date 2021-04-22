@@ -156,14 +156,13 @@
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_cracks.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_shok.vpcf"
-			m_flDelay = 1.3
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_blast.vpcf"
-			m_flDelay = 1.3
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_debris_large.vpcf"
@@ -173,18 +172,15 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_shok_wave.vpcf"
-			m_flDelay = 1.3
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_warp.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_shok_wave_small.vpcf"
-			m_flDelay = 1.3
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/onoki/onoki_kajutan_no_jutsu_shok_blast.vpcf"
-			m_flDelay = 1.3
 		},
 	]
 }

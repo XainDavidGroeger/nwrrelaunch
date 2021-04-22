@@ -3,8 +3,12 @@ LinkLuaModifier( "modifier_onoki_added_weight_allies", "heroes/onoki/modifier_on
 LinkLuaModifier( "modifier_onoki_added_weight_enemy", "heroes/onoki/modifier_onoki_added_weight_enemy", LUA_MODIFIER_MOTION_NONE )
 
 function onoki_added_weight:Precache( context )
-	-- PrecacheResource( "soundfile", "xx.vsndevts", context )
-	-- PrecacheResource( "particle", "xx.vpcf", context )
+	PrecacheResource( "soundfile", "soundevents/onoki_speedbuff_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/onoki_debuff_cast.vsndevts", context )
+	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_turn_to_stone.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_speed_debuff.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_speed_buff_status2.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_speed_buff.vpcf", context )
 end
 
 function onoki_added_weight:GetBehavior()
@@ -41,6 +45,9 @@ function onoki_added_weight:OnSpellStart()
             "modifier_onoki_added_weight_allies", -- modifier name
             { duration = duration } -- kv
         )
+		
+		local sound_cast = "onoki_speedbuff_cast"
+	    EmitSoundOn(sound_cast, target)
     else
 		target:AddNewModifier(
             caster, -- player source
@@ -48,6 +55,9 @@ function onoki_added_weight:OnSpellStart()
             "modifier_onoki_added_weight_enemy", -- modifier name
             { duration = duration } -- kv
         )
+		
+		local sound_cast = "onoki_debuff_cast"
+	    EmitSoundOn(sound_cast, target)
     end
 
 end

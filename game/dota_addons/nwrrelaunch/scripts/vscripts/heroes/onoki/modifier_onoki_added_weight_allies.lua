@@ -29,12 +29,6 @@ function modifier_onoki_added_weight_allies:OnCreated( kv )
     if abilityS:GetLevel() > 0 then
     	self.speed_bonus_perc = self.speed_bonus_perc + 7
 	end
-
-	if not IsServer() then return end
-
-	-- play effects
-	local sound_cast = "Hero_Dark_Seer.Surge"
-	EmitSoundOn( sound_cast, self:GetParent() )
 end
 
 function modifier_onoki_added_weight_allies:OnRefresh( kv )
