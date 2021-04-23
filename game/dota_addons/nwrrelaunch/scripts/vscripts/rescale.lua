@@ -79,13 +79,9 @@ function GameMode:ChangeBuildings( keys)
 	statue_1:SetModelScale(2.0)
 	local statue_1 = Entities:FindByModel(statue_1, "models/props_structures/radiant_statue001.vmdl")
 	statue_1:SetModelScale(2.0)
-	local statue_1 = Entities:FindByModel(statue_1, "models/props_structures/radiant_statue001.vmdl")
-	statue_1:SetModelScale(2.0)
 
 	--akat statue
 	local statue_1 = Entities:FindByModel(nil, "models/props_structures/dire_column001.vmdl")
-	statue_1:SetModelScale(1.5)
-	local statue_1 = Entities:FindByModel(statue_1, "models/props_structures/dire_column001.vmdl")
 	statue_1:SetModelScale(1.5)
 	local statue_1 = Entities:FindByModel(statue_1, "models/props_structures/dire_column001.vmdl")
 	statue_1:SetModelScale(1.5)
