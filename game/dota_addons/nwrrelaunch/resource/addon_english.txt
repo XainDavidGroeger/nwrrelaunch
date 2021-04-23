@@ -2330,6 +2330,20 @@
 		"npc_dota_hero_kankuro_npedesc1"		"Summons puppets to disable his foes and protect his allies."
 		"npc_dota_hero_gaara_npedesc1"		"Crushes enemies with waves of damage dealing sand attacks."
 		"npc_dota_hero_haku_npedesc1"		"Ranged support that cripples enemies with unrelenting hails of needles."
+		
+		//Custom Buildings
+		"npc_dota_goodguys_fort"                                                    "Hokage Building"
+		"npc_dota_badguys_fort"                                                     "Gedo Mazo"
+		
+		"npc_dota_custom_tower_good4"                                               "Alliance Tower"
+		"npc_dota_custom_tower_good23"                                              "Alliance Tower"
+		"npc_dota_custom_tower_good1"                                               "Alliance Tower"
+		"npc_dota_custom_tower_good1_turbo"                                         "Alliance Tower"
+		
+		"npc_dota_custom_tower_bad4"                                                "Akatsuki Tower"
+		"npc_dota_custom_tower_bad23"                                               "Akatsuki Tower"
+		"npc_dota_custom_tower_bad1"                                                "Akatsuki Tower"
+		"npc_dota_custom_tower_bad1_turbo"                                          "Akatsuki Tower"
 
 	}		
 

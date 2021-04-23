@@ -1888,6 +1888,20 @@
     	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_damage"						"Урон к Атаке:+ "
     	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_agi"						"Ловкость: + "
     	"DOTA_Tooltip_ability_item_good_guys_suit_attackspeed"						"Bonus Скорость Атаки:+ "
+		
+		//Custom Buildings
+		"npc_dota_goodguys_fort"                                                    "Здание Хокаге"
+		"npc_dota_badguys_fort"                                                     "Гедо Мазо"
+		
+		"npc_dota_custom_tower_good4"                                               "Башня Альянса"
+		"npc_dota_custom_tower_good23"                                              "Башня Альянса"
+		"npc_dota_custom_tower_good1"                                               "Башня Альянса"
+		"npc_dota_custom_tower_good1_turbo"                                         "Башня Альянса"
+		
+		"npc_dota_custom_tower_bad4"                                                "Башня Акацуки"
+		"npc_dota_custom_tower_bad23"                                               "Башня Акацуки"
+		"npc_dota_custom_tower_bad1"                                                "Башня Акацуки"
+		"npc_dota_custom_tower_bad1_turbo"                                          "Башня Акацуки"
 
 	}		
 }
