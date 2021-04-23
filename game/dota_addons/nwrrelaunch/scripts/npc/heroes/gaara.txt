@@ -64,6 +64,9 @@
 		"AttributeBaseAgility" "14" // Base agility
 		"AttributeAgilityGain" "1.5" // Agility bonus per level.
 
+		"ProjectileModel"   "particles/units/heroes/gaara/attack/gaara_base_attack.vpcf"
+  		"ProjectileSpeed"  "1200"
+
 		"Ability1"         "gaara_sabaku_kyuu"
 		"Ability2"         "gaara_ryuusa_bakuryu" 
 		"Ability3"         "gaara_suna_no_yoroi" 
