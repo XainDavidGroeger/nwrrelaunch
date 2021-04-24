@@ -30,6 +30,9 @@ function LariatHit(keys,target)
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 
+	ParticleManager:DestroyParticle(keys.pfx, false)
+	caster:RemoveModifierByName("modifier_lariat_energy_shield")
+
 	caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_3)
 	caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_3_END, 2)
 
@@ -47,6 +50,8 @@ function LariatHit(keys,target)
 		)
 		
 	ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
+
+
 
 	local particle_impact = keys.particle_impact
 	
@@ -97,8 +102,10 @@ function LariatPeriodic(gameEntity, keys)
 			Timers:CreateTimer(timer_tbl)
 		else
 			remove_physics(caster)
+			caster:RemoveModifierByName("modifier_lariat_energy_shield")
+			ParticleManager:DestroyParticle(l_keys.pfx, false)
 		end
-		
+	
 		return nil
 	end
 
@@ -117,6 +124,8 @@ function Lariat(keys)
 	caster:FadeGesture(ACT_DOTA_IDLE)
 	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 
+	keys.pfx = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(keys.pfx, 0, Vector(1, 0, 0))
 
 	add_physics(caster)
 
