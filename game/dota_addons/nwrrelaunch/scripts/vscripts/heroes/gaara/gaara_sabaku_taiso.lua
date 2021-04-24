@@ -22,6 +22,7 @@ function gaara_sabaku_taiso:OnAbilityPhaseStart()
 	print("tesdasdsadsd")
 
 	self:GetCaster():EmitSound("gaara_burial_cast")
+	self:GetCaster():EmitSound("gaara_burial_talking")
 
 	local direction = self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()
 	direction = direction / direction:Length2D()
@@ -40,6 +41,7 @@ function gaara_sabaku_taiso:OnSpellStart()
 	Timers:CreateTimer( 0.15, function()
 		ParticleManager:DestroyParticle( self.build_up_particle, true )
 	end)
+
 
 	local caster = self:GetCaster()
 	self.caster = self:GetCaster()
@@ -81,6 +83,8 @@ function gaara_sabaku_taiso:OnSpellStart()
 	--	iVisionRadius		= ,
 	--	iVisionTeamNumber	= caster:GetTeamNumber(),
 	} )
+
+	self:GetCaster():EmitSound("gaara_burial_projectile")
 
 end
 

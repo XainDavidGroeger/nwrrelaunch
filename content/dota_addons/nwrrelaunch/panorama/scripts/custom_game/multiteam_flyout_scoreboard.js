@@ -86,38 +86,6 @@ function OnDenyEvent( event )
 	}
 }
 
-function OnDamageEvent( event )
-{
-
-	var containerPanel = $( "#TeamsContainer" );
-	var teamId = event.victim_team_id
-	var teamPanelName = "_dynamic_team_" + teamId;
-	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
-	var playerPanelName = "_dynamic_player_" + event.victim_id;
-	var playerPanel = playersContainer.FindChild( playerPanelName );
-
-	if (playerPanel != null){
-		var childPanel = playerPanel.FindChildInLayoutFile( "DamageTakenContainer" );
-		var panel = childPanel.FindChildInLayoutFile( "DamageTaken" );
-		panel.text = Math.round(parseInt(panel.text) + event.damage);
-	}
-
-
-	var containerPanel = $( "#TeamsContainer" );
-	var teamId = event.attacker_team_id
-	var teamPanelName = "_dynamic_team_" + teamId;
-	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
-	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
-	var playerPanelName = "_dynamic_player_" + event.attacker_id;
-	var playerPanel = playersContainer.FindChild( playerPanelName );
-	if (playerPanel != null){
-		var childPanel = playerPanel.FindChildInLayoutFile( "DamageDealtContainer" );
-		var panel = childPanel.FindChildInLayoutFile( "DamageDealt" );
-		panel.text = Math.round(parseInt(panel.text) + event.damage);
-	}
-}
 
 function OnHeroInGame( event )
 {
@@ -173,7 +141,4 @@ function OnHeroInGame( event )
 	GameEvents.Subscribe( "lasthit", OnLastHitEvent );
 	GameEvents.Subscribe( "deny", OnDenyEvent );
 	GameEvents.Subscribe( "initiate", OnHeroInGame );
-
-	GameEvents.Subscribe( "damage", OnDamageEvent );
-	
 })();

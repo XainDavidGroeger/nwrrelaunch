@@ -61,6 +61,7 @@ function yondaime_body_flicker:OnSpellStart( event )
 	caster:AddNoDraw()
 	FindClearSpaceForUnit( caster, closest_seal:GetAbsOrigin(), true )
 	caster:Stop()
+	caster:StartGesture(ACT_DOTA_CAST_ABILITY_4_END)
 	caster:RemoveNoDraw()
 
 end

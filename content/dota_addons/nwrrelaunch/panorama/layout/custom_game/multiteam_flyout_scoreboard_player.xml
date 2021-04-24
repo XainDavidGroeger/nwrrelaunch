@@ -57,13 +57,6 @@
 				<Label id="Denies" text="0"/>
 			</Panel>
 
-			<Panel class="ScoreCol_Assists ScoreboardPanel" id="DamageDealtContainer">
-				<Label id="DamageDealt" text="0"/>
-			</Panel>
-
-			<Panel class="ScoreCol_Assists ScoreboardPanel" id="DamageTakenContainer">
-				<Label id="DamageTaken" text="0"/>
-			</Panel>
 		</Panel>
 
 		<Panel class="UltimateIndicatorShared" id="UltimateIndicatorBG"/>

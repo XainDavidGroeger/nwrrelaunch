@@ -117,30 +117,6 @@ function GameMode:OnNewHeroChosen(event)
 
 end
 
-function GameMode:OnEntityHurt(event)
-
-
-	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
-	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
-
-	if not hTarget:IsRealHero() and not hAttacker:IsRealHero() then
-		return nil
-	end
-
-	CustomGameEventManager:Send_ServerToAllClients("damage", {
-		attacker = hAttacker,
-		target = hTarget,
-		victim_team_id = hTarget:GetTeamNumber(),
-		victim_id = hTarget:GetPlayerID(),
-		attacker_team_id = hAttacker:GetTeamNumber(),
-		attacker_id = hAttacker:GetPlayerID(),
-		damage = event.damage
-	})
-
-	return nil
-
-end
-
 function GameMode:OnEntityKilled(event)
 
 	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil

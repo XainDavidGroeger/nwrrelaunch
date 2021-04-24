@@ -41,5 +41,6 @@ end
 
 
 function fireSound(keys)
+	keys.caster:EmitSound("gaara_prison_talking")
 	keys.caster:EmitSound("gaara_prison_cast")
 end
