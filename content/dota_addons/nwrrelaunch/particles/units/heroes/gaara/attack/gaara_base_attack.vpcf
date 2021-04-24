@@ -365,8 +365,5 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/gaara/attack/gaara_smoke.vpcf"
 		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/gaara/attack/gaara_base_attack_stones.vpcf"
-		},
 	]
 }
