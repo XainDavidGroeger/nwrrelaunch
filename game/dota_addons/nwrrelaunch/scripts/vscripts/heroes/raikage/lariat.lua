@@ -128,8 +128,6 @@ function Lariat(keys)
 	ParticleManager:SetParticleControl(keys.pfx, 0, Vector(1, 0, 0))
 
 	add_physics(caster)
-
-	
 	
 	local timer_tbl =
 		{
@@ -141,4 +139,26 @@ function Lariat(keys)
 	
 	--Movement
 	Timers:CreateTimer(timer_tbl)
+end
+
+function fireGroundEffect( keys )
+
+	local target_point = keys.target_points[1]
+	local caster = keys.caster
+
+
+	local origin = caster:GetAbsOrigin()
+	local between = origin:Lerp(target_point, 0.5)
+
+
+	local ground = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_ground_parent.vpcf", PATTACH_ABSORIGIN, caster)
+	ParticleManager:SetParticleControl(ground, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 1, between)
+	ParticleManager:SetParticleControl(ground, 2, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 3, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 4, Vector(0, 0, 0))
+	ParticleManager:SetParticleControl(ground, 5, target_point)
+	ParticleManager:SetParticleControl(ground, 6, between)
+
+
 end

@@ -17,7 +17,29 @@ function gaara_sabaku_taiso:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
 
+
+function gaara_sabaku_taiso:OnAbilityPhaseStart()
+	print("tesdasdsadsd")
+
+	self:GetCaster():EmitSound("gaara_burial_cast")
+
+	local direction = self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()
+	direction = direction / direction:Length2D()
+
+	self.build_up_particle = ParticleManager:CreateParticle( "particles/units/heroes/gaara/ulti/ulti_casting.vpcf", PATTACH_ABSORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( self.build_up_particle, 0, self:GetCaster():GetAbsOrigin() )
+	ParticleManager:SetParticleControl( self.build_up_particle, 1, direction )
+	ParticleManager:SetParticleControl( self.build_up_particle, 3, Vector(0,0,0) )
+	ParticleManager:SetParticleControl( self.build_up_particle, 10, Vector(0,0,0) )
+
+	return true
+end
+
 function gaara_sabaku_taiso:OnSpellStart()
+	
+	Timers:CreateTimer( 0.15, function()
+		ParticleManager:DestroyParticle( self.build_up_particle, true )
+	end)
 
 	local caster = self:GetCaster()
 	self.caster = self:GetCaster()
@@ -38,12 +60,14 @@ function gaara_sabaku_taiso:OnSpellStart()
 		distance = distance + 600
 	end
 
+	local particleName = "particles/units/heroes/gaara/ulti/ulti_core.vpcf"
+
 	ProjectileManager:CreateLinearProjectile( {
 		Ability				= ability,
-	--	EffectName			= "",
+		EffectName			= particleName,
 		vSpawnOrigin		= casterOrigin,
 		fDistance			= distance,
-		fStartRadius		= start_radius,
+		fStartRadius		= end_radius,
 		fEndRadius			= end_radius,
 		Source				= caster,
 		bHasFrontalCone		= true,
@@ -58,19 +82,6 @@ function gaara_sabaku_taiso:OnSpellStart()
 	--	iVisionTeamNumber	= caster:GetTeamNumber(),
 	} )
 
-	local particleName = "particles/units/heroes/gaara/new_ulti/wave.vpcf"
---	local particleName = "particles/units/heroes/gaara/wave.vpcf"
-	local pfx = ParticleManager:CreateParticle( particleName, PATTACH_ABSORIGIN, caster )
-	ParticleManager:SetParticleControl( pfx, 0, casterOrigin )
-	ParticleManager:SetParticleControl( pfx, 1, direction * speed * 1.333 )
-	ParticleManager:SetParticleControl( pfx, 3, Vector(0,0,0) )
-	ParticleManager:SetParticleControl( pfx, 9, casterOrigin )
-
-	caster:SetContextThink( DoUniqueString( "destroy_particle" ), function ()
-		ParticleManager:DestroyParticle( pfx, false )
-	end, distance / speed )
-
-
 end
 
 
@@ -82,41 +93,23 @@ function gaara_sabaku_taiso:OnProjectileHit(hTarget, vLocation)
 			return
 		end
 	
-		local knockbackModifierTable =
+		-- Knockback enemies up and towards the target point
+		local knockbackProperties =
 		{
-			should_stun = 1,
-			knockback_duration = 1.0,
-			duration = 1.0,
-			knockback_distance = 0,
-			knockback_height = 0,
 			center_x = hTarget:GetAbsOrigin().x,
 			center_y = hTarget:GetAbsOrigin().y,
-			center_z = hTarget:GetAbsOrigin().z + 300
+			center_z = hTarget:GetAbsOrigin().z,
+			duration = 0.3,
+			knockback_duration = 0.3,
+			knockback_distance = 0,
+			knockback_height = 150
 		}
-		hTarget:AddNewModifier( self.caster, nil, "modifier_knockback", knockbackModifierTable )
-		
-		hTarget:EmitSound("Hero_Brewmaster.ThunderClap")
-		
-		hTarget:EmitSound("Hero_PhantomAssassin.Dagger.Target")
+
+		hTarget:AddNewModifier(hTarget, nil, "modifier_knockback", knockbackProperties)
 	
 		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL })
 	
 		hTarget:AddNewModifier(self.caster, self.ability, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
-	
-		if hTarget:IsAlive() then
-	
-			local target_point = hTarget:GetAbsOrigin()
-			-- Special Variables
-			local duration = 1
-			-- Dummy
-			local dummy = CreateUnitByName("npc_dummy_unit", target_point, false, self.caster, self.caster, self.caster:GetTeam())
-	
-			dummy:AddNewModifier(self.caster, nil, "modifier_phased", {})
-			dummy:AddNewModifier(self.caster, self.ability,"modifier_gaara_cyclone",{target = hTarget})
-	
-			-- Timer to remove the dummy
-			Timers:CreateTimer(duration, function() dummy:RemoveSelf() end)
-		end
 
 	end
 

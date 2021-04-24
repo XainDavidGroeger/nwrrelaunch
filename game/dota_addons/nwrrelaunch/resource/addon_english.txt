@@ -366,10 +366,9 @@
 		// Sabaku Taiso
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso"						"Great Sand Burial"
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_lore"					"Sabaku Taiso"
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Gaara unleashes his power on a grand scale, releasing a huge torrent of sand which overwhelms his opponents. After a short delay, a large wave of sand is released towards a target point that will grow in radius overtime. Enemy units that come into contact with the wave will become stunned while taking magic damage."
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Gaara unleashes his power on a grand scale, releasing a huge torrent of sand which overwhelms his opponents. After a short delay, a large wave of sand is released towards a target point. Enemy units that come into contact with the wave will become stunned while taking magic damage."
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_stun_duration"			"STUN DURATION: "
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_start_radius"			"INITIAL AOE: "
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"END AOE: "
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"AOE: "
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_range"					"DISTANCE: "
 
 

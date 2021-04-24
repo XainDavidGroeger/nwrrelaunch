@@ -23,6 +23,8 @@
 				"particle"	"particles/units/heroes/gaara/sand_explosion.vpcf"
 				"particle"	"particles/econ/events/coal/coal_projectile_explosion.vpcf"
 				"particle"	"particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf"
+				"soundfile"	"soundevents/heroes/gaara/gaara_prison_cast.vsndevts"
+				"soundfile"	"soundevents/heroes/gaara/gaara_prison_impact.vsndevts"
 	}	
 
 	// Casting
@@ -84,9 +86,10 @@
 			"Duration1"		"%duration"
 		}
 		
-		"FireSound"
+		"RunScript"
 		{
-				
+			"ScriptFile"	"heroes/gaara/sabaku_kyuu.lua"
+			"Function"		"fireSound"
 		}
 		
 	}

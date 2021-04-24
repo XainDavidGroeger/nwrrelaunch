@@ -33,6 +33,7 @@
 
 		"particle"					"particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
 		"particle"                  "particles/units/heroes/raikage/lariat_aura.vpcf"
+        "particle"                  "particles/units/heroes/raikage/lariat_ground_parent.vpcf"
 	}
 	
 	// Casting
@@ -88,6 +89,13 @@
 			
 			"Target"		"POINT"
 			"particle_impact"       "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+		}
+
+        "RunScript"
+		{
+			"ScriptFile"            "heroes/raikage/lariat.lua"
+			"Function"              "fireGroundEffect"
+            "Target"		"POINT"
 		}
 
 		   "ApplyModifier"
