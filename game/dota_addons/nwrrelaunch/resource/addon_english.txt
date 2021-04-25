@@ -2334,14 +2334,16 @@
 		"npc_dota_goodguys_fort"                                                    "Hokage Building"
 		"npc_dota_badguys_fort"                                                     "Gedo Mazo"
 		
-		"npc_dota_custom_tower_good4"                                               "Alliance Tower"
-		"npc_dota_custom_tower_good23"                                              "Alliance Tower"
-		"npc_dota_custom_tower_good1"                                               "Alliance Tower"
+		"npc_dota_custom_tower_good"                                               "Alliance Tower"
+		"npc_dota_custom_tower_good_level_2"                                         "Alliance Tower"
+		"npc_dota_custom_tower_good_level_3"                                         "Alliance Tower"
+		"npc_dota_custom_tower_good_level_4"                                         "Alliance Tower"
 		"npc_dota_custom_tower_good1_turbo"                                         "Alliance Tower"
 		
-		"npc_dota_custom_tower_bad4"                                                "Akatsuki Tower"
-		"npc_dota_custom_tower_bad23"                                               "Akatsuki Tower"
-		"npc_dota_custom_tower_bad1"                                                "Akatsuki Tower"
+		"npc_dota_custom_tower_bad"                                                "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_2"                                        "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_3"                                        "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_4"                                          "Akatsuki Tower"
 		"npc_dota_custom_tower_bad1_turbo"                                          "Akatsuki Tower"
 
 	}		

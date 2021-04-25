@@ -956,103 +956,12 @@
 		"VisionNighttimeRange"		"800"		// В ночное время
 	}
 	
-			"npc_dota_custom_tower_bad1"                   // имя нашего юнита
+		"npc_dota_custom_tower_bad"                   // имя нашего юнита
 	{
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "6"
-		"SoundSet"					"Tower.Water"					// Название набора эффектов
-		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
-		"MinimapIconSize"			"320"
-		"Level"						"1"
- 
-		// Abilities
-		//----------------------------------------------------------------
- 
-		"Ability1"					""			// 1 способность
-		"Ability2"					""			// 2 способность
-		"Ability3"					""			// 3 способность
-		"Ability4"					""			// 4 способность
-		"Ability5"					""			// 5 способность
-		"Ability6"					""			// 6 способность (Экстра)
-		"Ability7"					""			// 7 способность (Экстра)
-		"Ability8"					""			// 8 способность (Экстра)
- 
-		// Защита
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"19"		// физическая защита
-		"MagicalResistance"				"0"			// Магическая защита
- 
-		// Атака
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
-		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
-		"AttackAcquisitionRange"	"700"		// 
-		"AttackRange"				"700"		// Дальность атаки
-		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
-		"ProjectileSpeed"			"750"		// скорость снаряда
- 
-		// Характеристики(атрибуты, статы как вам угодно)
-		//----------------------------------------------------------------
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
-		"AttributeBaseStrength"		"0"			// Базовое значение силы
-		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
-		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
-		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
-		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
-		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
- 
-		// Точно не знаю как работает параметр, но возможно =>
-		//----------------------------------------------------------------
-		"BountyXP"					"0"		// "опыт за убийство юнита"
-		"BountyGoldMin"				"0"		// минимальное золото 
-		"BountyGoldMax"				"0"		// максимальное золото
- 
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
-		"ProjectileCollisionSize"	"50"
-		"RingRadius"				"130"
-		"HealthBarOffset"			"260"
- 
-		// Передвижение
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
-		"MovementSpeed"				"0"			// скорость передвижения
-		"MovementTurnRate"			"1.0"			// Turning rate.
- 
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		        // Базовое здоровье
-		"StatusHealthRegen"			"0"			// Регенерация в сек.
-		"StatusMana"				"0"			// Базовая мана
-		"StatusManaRegen"			"0"			// Регенерация в сек.
- 
-		// Команда
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Имя команды
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
- 
-		// Дальность обзора
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1900"		// В дневное время
-		"VisionNighttimeRange"		"800"		// В ночное время
-	}
-	
-		"npc_dota_custom_tower_good1"                   // имя нашего юнита
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_tower"	// Класс юнита
-		"Model"						"models/props_structures/radiant_tower002.vmdl"// Модель
 		"ModelScale"                "3.5"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
@@ -1073,16 +982,16 @@
  
 		// Защита
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"19"		// физическая защита
+		"ArmorPhysical"				"12"		// физическая защита
 		"MagicalResistance"				"0"			// Магическая защита
  
 		// Атака
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
+		"AttackDamageMin"			"88"		// Минимальный урон
+		"AttackDamageMax"			"92"		// Максимальный урон
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
+		"AttackRate"				"0.82"			// Скорость атаки
 		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
 		"AttackAcquisitionRange"	"700"		// 
 		"AttackRange"				"700"		// Дальность атаки
@@ -1120,7 +1029,7 @@
  
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1600"		        // Базовое здоровье
+		"StatusHealth"				"1800"		        // Базовое здоровье
 		"StatusHealthRegen"			"0"			// Регенерация в сек.
 		"StatusMana"				"0"			// Базовая мана
 		"StatusManaRegen"			"0"			// Регенерация в сек.
@@ -1137,109 +1046,18 @@
 		"VisionDaytimeRange"		"1900"		// В дневное время
 		"VisionNighttimeRange"		"800"		// В ночное время
 	}
-	
-			"npc_dota_custom_tower_bad23"                   // имя нашего юнита
+
+		"npc_dota_custom_tower_bad_level_2"                   // имя нашего юнита
 	{
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "6"
-		"SoundSet"					"Tower.Water"					// Название набора эффектов
-		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
-		"MinimapIconSize"			"320"
-		"Level"						"1"
- 
-		// Abilities
-		//----------------------------------------------------------------
- 
-		"Ability1"					""			// 1 способность
-		"Ability2"					""			// 2 способность
-		"Ability3"					""			// 3 способность
-		"Ability4"					""			// 4 способность
-		"Ability5"					""			// 5 способность
-		"Ability6"					""			// 6 способность (Экстра)
-		"Ability7"					""			// 7 способность (Экстра)
-		"Ability8"					""			// 8 способность (Экстра)
- 
-		// Защита
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"14"		// физическая защита
-		"MagicalResistance"				"0"			// Магическая защита
- 
-		// Атака
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
-		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
-		"AttackAcquisitionRange"	"700"		// 
-		"AttackRange"				"700"		// Дальность атаки
-		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
-		"ProjectileSpeed"			"750"		// скорость снаряда
- 
-		// Характеристики(атрибуты, статы как вам угодно)
-		//----------------------------------------------------------------
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
-		"AttributeBaseStrength"		"0"			// Базовое значение силы
-		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
-		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
-		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
-		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
-		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
- 
-		// Точно не знаю как работает параметр, но возможно =>
-		//----------------------------------------------------------------
-		"BountyXP"					"0"		// "опыт за убийство юнита"
-		"BountyGoldMin"				"0"		// минимальное золото 
-		"BountyGoldMax"				"0"		// максимальное золото
- 
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
-		"ProjectileCollisionSize"	"50"
-		"RingRadius"				"130"
-		"HealthBarOffset"			"260"
- 
-		// Передвижение
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
-		"MovementSpeed"				"0"			// скорость передвижения
-		"MovementTurnRate"			"1.0"			// Turning rate.
- 
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		        // Базовое здоровье
-		"StatusHealthRegen"			"0"			// Регенерация в сек.
-		"StatusMana"				"0"			// Базовая мана
-		"StatusManaRegen"			"0"			// Регенерация в сек.
- 
-		// Команда
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Имя команды
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
- 
-		// Дальность обзора
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1900"		// В дневное время
-		"VisionNighttimeRange"		"800"		// В ночное время
-	}
-	
-		"npc_dota_custom_tower_good23"                   // имя нашего юнита
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_tower"	// Класс юнита
-		"Model"						"models/props_structures/radiant_tower002.vmdl"// Модель
 		"ModelScale"                "3.5"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"
-		"Level"						"1"
+		"Level"						"2"
  
 		// Abilities
 		//----------------------------------------------------------------
@@ -1255,16 +1073,16 @@
  
 		// Защита
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"14"		// физическая защита
+		"ArmorPhysical"				"16"		// физическая защита
 		"MagicalResistance"				"0"			// Магическая защита
  
 		// Атака
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
+		"AttackRate"				"0.82"			// Скорость атаки
 		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
 		"AttackAcquisitionRange"	"700"		// 
 		"AttackRange"				"700"		// Дальность атаки
@@ -1302,7 +1120,7 @@
  
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		        // Базовое здоровье
+		"StatusHealth"				"2500"		        // Базовое здоровье
 		"StatusHealthRegen"			"0"			// Регенерация в сек.
 		"StatusMana"				"0"			// Базовая мана
 		"StatusManaRegen"			"0"			// Регенерация в сек.
@@ -1319,18 +1137,110 @@
 		"VisionDaytimeRange"		"1900"		// В дневное время
 		"VisionNighttimeRange"		"800"		// В ночное время
 	}
-	
-			"npc_dota_custom_tower_bad4"                   // имя нашего юнита
+
+
+	"npc_dota_custom_tower_bad_level_3"                   // имя нашего юнита
 	{
 		// General
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "6"
+		"ModelScale"                "3.5"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"
-		"Level"						"1"
+		"Level"						"3"
+ 
+		// Abilities
+		//----------------------------------------------------------------
+ 
+		"Ability1"					""			// 1 способность
+		"Ability2"					""			// 2 способность
+		"Ability3"					""			// 3 способность
+		"Ability4"					""			// 4 способность
+		"Ability5"					""			// 5 способность
+		"Ability6"					""			// 6 способность (Экстра)
+		"Ability7"					""			// 7 способность (Экстра)
+		"Ability8"					""			// 8 способность (Экстра)
+ 
+		// Защита
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"16"		// физическая защита
+		"MagicalResistance"				"0"			// Магическая защита
+ 
+		// Атака
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
+		"AttackRate"				"0.82"			// Скорость атаки
+		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
+		"AttackAcquisitionRange"	"700"		// 
+		"AttackRange"				"700"		// Дальность атаки
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
+		"ProjectileSpeed"			"750"		// скорость снаряда
+ 
+		// Характеристики(атрибуты, статы как вам угодно)
+		//----------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
+		"AttributeBaseStrength"		"0"			// Базовое значение силы
+		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
+		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
+		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
+		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
+		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
+ 
+		// Точно не знаю как работает параметр, но возможно =>
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// "опыт за убийство юнита"
+		"BountyGoldMin"				"0"		// минимальное золото 
+		"BountyGoldMax"				"0"		// максимальное золото
+ 
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+ 
+		// Передвижение
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
+		"MovementSpeed"				"0"			// скорость передвижения
+		"MovementTurnRate"			"1.0"			// Turning rate.
+ 
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2500"		        // Базовое здоровье
+		"StatusHealthRegen"			"0"			// Регенерация в сек.
+		"StatusMana"				"0"			// Базовая мана
+		"StatusManaRegen"			"0"			// Регенерация в сек.
+ 
+		// Команда
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Имя команды
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+ 
+		// Дальность обзора
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// В дневное время
+		"VisionNighttimeRange"		"800"		// В ночное время
+	}
+
+	"npc_dota_custom_tower_bad_level_4"                   // имя нашего юнита
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_tower"	// Класс юнита
+		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
+		"ModelScale"                "3.5"
+		"SoundSet"					"Tower.Water"					// Название набора эффектов
+		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
+		"MinimapIconSize"			"320"
+		"Level"						"4"
  
 		// Abilities
 		//----------------------------------------------------------------
@@ -1347,15 +1257,15 @@
 		// Защита
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"21"		// физическая защита
-		"MagicalResistance"				"0"			// Магическая защита
+		"MagicalResistance"			"0"			// Магическая защита
  
 		// Атака
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
+		"AttackRate"				"0.82"			// Скорость атаки
 		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
 		"AttackAcquisitionRange"	"700"		// 
 		"AttackRange"				"700"		// Дальность атаки
@@ -1393,14 +1303,14 @@
  
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		        // Базовое здоровье
+		"StatusHealth"				"2600"		        // Базовое здоровье
 		"StatusHealthRegen"			"0"			// Регенерация в сек.
 		"StatusMana"				"0"			// Базовая мана
 		"StatusManaRegen"			"0"			// Регенерация в сек.
  
 		// Команда
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Имя команды
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Имя команды
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
@@ -1411,7 +1321,7 @@
 		"VisionNighttimeRange"		"800"		// В ночное время
 	}
 	
-		"npc_dota_custom_tower_good4"                   // имя нашего юнита
+		"npc_dota_custom_tower_good"                   // имя нашего юнита
 	{
 		// General
 		//
@@ -1437,16 +1347,16 @@
  
 		// Защита
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"21"		// физическая защита
+		"ArmorPhysical"				"12"		// физическая защита
 		"MagicalResistance"				"0"			// Магическая защита
  
 		// Атака
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Минимальный урон
-		"AttackDamageMax"			"120"		// Максимальный урон
+		"AttackDamageMin"			"88"		// Минимальный урон
+		"AttackDamageMax"			"92"		// Максимальный урон
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
-		"AttackRate"				"1"			// Скорость атаки
+		"AttackRate"				"0.82"			// Скорость атаки
 		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
 		"AttackAcquisitionRange"	"700"		// 
 		"AttackRange"				"700"		// Дальность атаки
@@ -1484,7 +1394,7 @@
  
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		        // Базовое здоровье
+		"StatusHealth"				"1800"		        // Базовое здоровье
 		"StatusHealthRegen"			"0"			// Регенерация в сек.
 		"StatusMana"				"0"			// Базовая мана
 		"StatusManaRegen"			"0"			// Регенерация в сек.
@@ -1501,6 +1411,282 @@
 		"VisionDaytimeRange"		"1900"		// В дневное время
 		"VisionNighttimeRange"		"800"		// В ночное время
 	}
+	
+		"npc_dota_custom_tower_good_level_2"                   // имя нашего юнита
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_tower"	// Класс юнита
+		"Model"						"models/props_structures/radiant_tower002.vmdl"// Модель
+		"ModelScale"                "3.5"
+		"SoundSet"					"Tower.Water"					// Название набора эффектов
+		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
+		"MinimapIconSize"			"320"
+		"Level"						"2"
+ 
+		// Abilities
+		//----------------------------------------------------------------
+ 
+		"Ability1"					""			// 1 способность
+		"Ability2"					""			// 2 способность
+		"Ability3"					""			// 3 способность
+		"Ability4"					""			// 4 способность
+		"Ability5"					""			// 5 способность
+		"Ability6"					""			// 6 способность (Экстра)
+		"Ability7"					""			// 7 способность (Экстра)
+		"Ability8"					""			// 8 способность (Экстра)
+ 
+		// Защита
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"16"		// физическая защита
+		"MagicalResistance"				"0"			// Магическая защита
+ 
+		// Атака
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
+		"AttackRate"				"0.82"			// Скорость атаки
+		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
+		"AttackAcquisitionRange"	"700"		// 
+		"AttackRange"				"700"		// Дальность атаки
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
+		"ProjectileSpeed"			"750"		// скорость снаряда
+ 
+		// Характеристики(атрибуты, статы как вам угодно)
+		//----------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
+		"AttributeBaseStrength"		"0"			// Базовое значение силы
+		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
+		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
+		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
+		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
+		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
+ 
+		// Точно не знаю как работает параметр, но возможно =>
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// "опыт за убийство юнита"
+		"BountyGoldMin"				"0"		// минимальное золото 
+		"BountyGoldMax"				"0"		// максимальное золото
+ 
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+ 
+		// Передвижение
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
+		"MovementSpeed"				"0"			// скорость передвижения
+		"MovementTurnRate"			"1.0"			// Turning rate.
+ 
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2500"		        // Базовое здоровье
+		"StatusHealthRegen"			"0"			// Регенерация в сек.
+		"StatusMana"				"0"			// Базовая мана
+		"StatusManaRegen"			"0"			// Регенерация в сек.
+ 
+		// Команда
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Имя команды
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+ 
+		// Дальность обзора
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// В дневное время
+		"VisionNighttimeRange"		"800"		// В ночное время
+	}
+
+
+	"npc_dota_custom_tower_good_level_3"                   // имя нашего юнита
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_tower"	// Класс юнита
+		"Model"						"models/props_structures/radiant_tower002.vmdl"// Модель
+		"ModelScale"                "3.5"
+		"SoundSet"					"Tower.Water"					// Название набора эффектов
+		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
+		"MinimapIconSize"			"320"
+		"Level"						"3"
+ 
+		// Abilities
+		//----------------------------------------------------------------
+ 
+		"Ability1"					""			// 1 способность
+		"Ability2"					""			// 2 способность
+		"Ability3"					""			// 3 способность
+		"Ability4"					""			// 4 способность
+		"Ability5"					""			// 5 способность
+		"Ability6"					""			// 6 способность (Экстра)
+		"Ability7"					""			// 7 способность (Экстра)
+		"Ability8"					""			// 8 способность (Экстра)
+ 
+		// Защита
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"16"		// физическая защита
+		"MagicalResistance"				"0"			// Магическая защита
+ 
+		// Атака
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
+		"AttackRate"				"0.82"			// Скорость атаки
+		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
+		"AttackAcquisitionRange"	"700"		// 
+		"AttackRange"				"700"		// Дальность атаки
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
+		"ProjectileSpeed"			"750"		// скорость снаряда
+ 
+		// Характеристики(атрибуты, статы как вам угодно)
+		//----------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
+		"AttributeBaseStrength"		"0"			// Базовое значение силы
+		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
+		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
+		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
+		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
+		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
+ 
+		// Точно не знаю как работает параметр, но возможно =>
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// "опыт за убийство юнита"
+		"BountyGoldMin"				"0"		// минимальное золото 
+		"BountyGoldMax"				"0"		// максимальное золото
+ 
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+ 
+		// Передвижение
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
+		"MovementSpeed"				"0"			// скорость передвижения
+		"MovementTurnRate"			"1.0"			// Turning rate.
+ 
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2500"		        // Базовое здоровье
+		"StatusHealthRegen"			"0"			// Регенерация в сек.
+		"StatusMana"				"0"			// Базовая мана
+		"StatusManaRegen"			"0"			// Регенерация в сек.
+ 
+		// Команда
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Имя команды
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+ 
+		// Дальность обзора
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// В дневное время
+		"VisionNighttimeRange"		"800"		// В ночное время
+	}
+
+	"npc_dota_custom_tower_good_level_4"                   // имя нашего юнита
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_tower"	// Класс юнита
+		"Model"						"models/props_structures/radiant_tower002.vmdl"// Модель
+		"ModelScale"                "3.5"
+		"SoundSet"					"Tower.Water"					// Название набора эффектов
+		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
+		"MinimapIconSize"			"320"
+		"Level"						"4"
+ 
+		// Abilities
+		//----------------------------------------------------------------
+ 
+		"Ability1"					""			// 1 способность
+		"Ability2"					""			// 2 способность
+		"Ability3"					""			// 3 способность
+		"Ability4"					""			// 4 способность
+		"Ability5"					""			// 5 способность
+		"Ability6"					""			// 6 способность (Экстра)
+		"Ability7"					""			// 7 способность (Экстра)
+		"Ability8"					""			// 8 способность (Экстра)
+ 
+		// Защита
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"21"		// физическая защита
+		"MagicalResistance"			"0"			// Магическая защита
+ 
+		// Атака
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"170"		// Минимальный урон
+		"AttackDamageMax"			"174"		// Максимальный урон
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"  // Тип наносимого урона урона(в данном случае физический)
+		"AttackRate"				"0.82"			// Скорость атаки
+		"AttackAnimationPoint"		"0.6"		// Нормальное время анимации между атаками
+		"AttackAcquisitionRange"	"700"		// 
+		"AttackRange"				"700"		// Дальность атаки
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Используемый эффект снаряда(атаки)
+		"ProjectileSpeed"			"750"		// скорость снаряда
+ 
+		// Характеристики(атрибуты, статы как вам угодно)
+		//----------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"   //Основная характеристика
+		"AttributeBaseStrength"		"0"			// Базовое значение силы
+		"AttributeStrengthGain"		"0"			// Бонус силы за каждый лвл
+		"AttributeBaseIntelligence"	"0"			// Базовое значение интеллекта
+		"AttributeIntelligenceGain"	"0"			// Бонус интеллекта за каждый лвл
+		"AttributeBaseAgility"		"0"			// Базовое значение ловкости
+		"AttributeAgilityGain"		"0"			// Бонус ловкости за каждый лвл
+ 
+		// Точно не знаю как работает параметр, но возможно =>
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// "опыт за убийство юнита"
+		"BountyGoldMin"				"0"		// минимальное золото 
+		"BountyGoldMax"				"0"		// максимальное золото
+ 
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+ 
+		// Передвижение
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Тип юнита (наземный или воздушный)
+		"MovementSpeed"				"0"			// скорость передвижения
+		"MovementTurnRate"			"1.0"			// Turning rate.
+ 
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2600"		        // Базовое здоровье
+		"StatusHealthRegen"			"0"			// Регенерация в сек.
+		"StatusMana"				"0"			// Базовая мана
+		"StatusManaRegen"			"0"			// Регенерация в сек.
+ 
+		// Команда
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Имя команды
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+ 
+		// Дальность обзора
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1900"		// В дневное время
+		"VisionNighttimeRange"		"800"		// В ночное время
+	}
+	
+	
 	
 		"npc_dota_goodguys_fort"
 	{
