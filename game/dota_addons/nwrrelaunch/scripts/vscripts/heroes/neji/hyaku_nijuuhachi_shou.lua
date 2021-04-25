@@ -13,7 +13,7 @@ function hyaku_nijuuhachi_shou_invis_check( keys )
 end
 
 function createParticle( keys )
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/neji/baguam.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/bagum_projected.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
 	ParticleManager:SetParticleControl(particle, 0, keys.caster:GetAbsOrigin()) -- Origin
 	keys.ability.ultiParticle = particle
 end
