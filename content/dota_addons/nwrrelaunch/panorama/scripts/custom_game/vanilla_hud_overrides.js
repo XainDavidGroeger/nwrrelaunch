@@ -8,7 +8,7 @@ function OverrideImage(hParent, sHeroName) {
 	newheroimage.style.backgroundSize = "cover";
 }
 
-function OverrideTopBarHeroImage(args) {
+function OverrideTopBarHeroImage() {
 	var team = "Radiant"
 
 	for (var i = 0;i<10;i++) {
@@ -159,6 +159,7 @@ function SetMinimapBackground() {
 	container2.style.backgroundSize = "100% 100%";
 }
 
+
 (function() {
 	GameEvents.Subscribe("override_hero_image", OverrideTopBarHeroImage);
 	GameEvents.Subscribe("override_hero_image", OverrideScoreboardHeroImage);
@@ -166,6 +167,7 @@ function SetMinimapBackground() {
 	var lowhud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("lower_hud")
 	var agha = lowhud.FindChildTraverse("AghsStatusContainer")
 	agha.style.width = "0px"
+
 
 	SetCustomHUD();
 })();

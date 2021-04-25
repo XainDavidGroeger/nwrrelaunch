@@ -1,7 +1,7 @@
 onoki_kajutan_no_jutsu = class({})
 
 function onoki_kajutan_no_jutsu:Precache( context )
-    PrecacheResource( "soundfile", "sounds/ambient/newyear/rocket_explode01.vsnd", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/onoki/onoki_ultimate_pulse.vsndevts", context )
     PrecacheResource( "soundfile", "sounds/weapons/hero/elder_titan/echo_stomp_cast.vsnd", context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/onoki_ult_end.vsndevts", context )
@@ -92,8 +92,7 @@ function onoki_kajutan_no_jutsu:PlayEffects()
     local echoes_particle = ParticleManager:CreateParticle("particles/units/heroes/onoki/onoki_kajutan_no_jutsu.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControl(echoes_particle, 0, caster:GetAbsOrigin())
 	
-	--EmitSoundOn("Hero_ElderTitan.EchoStomp", self:GetCaster())
-	EmitSoundOn("ParticleDriven.Rocket.Explode", self:GetCaster())
+	self:GetCaster():EmitSound("onoki_ultimate_pulse")
 	
 	Timers:CreateTimer(0.86, function ()
 	    ParticleManager:DestroyParticle(echoes_particle, true)
