@@ -2,7 +2,6 @@
 {
 
 
-
 		"npc_dota_hero_gaara"
 	{
 		"BaseClass"					"npc_dota_hero_lion"

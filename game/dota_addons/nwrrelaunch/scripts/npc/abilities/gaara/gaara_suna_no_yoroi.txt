@@ -15,10 +15,10 @@
 	"precache"
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mana_shield_cast.vpcf"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mana_shield_end.vpcf"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mana_shield_impact.vpcf"
+		"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield.vpcf"
+		"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_cast.vpcf"
+		"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_end.vpcf"
+		"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_impact.vpcf"
 	}
 	
 	// Casting
@@ -52,7 +52,7 @@
 
 		"FireEffect"
 		{
-			"EffectName"        "particles/units/heroes/hero_medusa/medusa_mana_shield_cast.vpcf"
+			"EffectName"        "particles/units/heroes/gaara/armor/gaara_mana_shield_cast.vpcf"
 			"EffectAttachType"  "follow_origin"
 			"Target"            "CASTER"
 		}
@@ -74,7 +74,7 @@
 
 		"FireEffect"
 		{
-			"EffectName"        "particles/units/heroes/hero_medusa/medusa_mana_shield_end.vpcf"
+			"EffectName"        "particles/units/heroes/gaara/armor/gaara_mana_shield_end.vpcf"
 			"EffectAttachType"  "follow_origin"
 			"Target"            "CASTER"
 		}
@@ -98,7 +98,7 @@
 			"IsHidden"			"0"
 			"IsDebuff"			"0"
 	
-			"EffectName"		"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf"
+			"EffectName"		"particles/units/heroes/gaara/armor/gaara_mana_shield.vpcf"
 			"EffectAttachType"	"follow_origin"
 	
 			"OnTakeDamage"
