@@ -18,6 +18,7 @@ function GameMode:_InitGameMode()
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
+	GameRules:SetShowcaseTime(0)
 
 
 	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
