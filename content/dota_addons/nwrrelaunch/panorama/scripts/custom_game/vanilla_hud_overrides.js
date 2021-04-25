@@ -9,16 +9,28 @@ function OverrideImage(hParent, sHeroName) {
 }
 
 function OverrideTopBarHeroImage(args) {
-//	$.Msg("OverrideTopBarHeroImage")
 	var team = "Radiant"
 
-	if (Players.GetTeam(args.player_id) == 3) {
-		team = "Dire"
+	for (var i = 0;i<10;i++) {
+		
+		var playerInfo = Game.GetPlayerInfo( i );
+		if (playerInfo) {
+			var container = Parent.FindChildTraverse("RadiantPlayer" + i);
+
+			if (container) {
+				var player_panel = container.FindChildTraverse("HeroImage");
+				OverrideImage(player_panel, playerInfo.player_selected_hero);
+			} else {
+				container = Parent.FindChildTraverse("DirePlayer" + i);
+				if (container) {
+					var player_panel = container.FindChildTraverse("HeroImage");
+					OverrideImage(player_panel, playerInfo.player_selected_hero);
+				}
+			}
+		}
+
 	}
-
-	var container = Parent.FindChildTraverse(team + "Player" + args.player_id).FindChildTraverse("HeroImage");
-
-	OverrideImage(container, args.icon_path);
+	
 }
 
 function OverrideScoreboardHeroImage(args) {

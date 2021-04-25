@@ -1,6 +1,11 @@
 var Parent = $.GetContextPanel().GetParent().GetParent().GetParent();
 var TooltipHeroMovie, TooltipHeroName, HeroCardTooltip;
 var fully_init = false;
+var player_slot_mapping = [];
+
+function mapPlayerSlot() {
+
+}
 
 function SetSelectionImages(bSetWebms) {
 	var Container = Parent.FindChildTraverse("GridCategories");
@@ -66,19 +71,34 @@ function UpdatePortrait(sHeroName) {
 function UpdateTopBar(data) {
 	var team = "Radiant";
 
-	if (data.iTeamNumber && data.iTeamNumber == 3)
+	var loopstart = 0;
+	var loopend = 5;
+	var playerInfo = Game.GetPlayerInfo( data.iPlayerID );
+
+	if (data.iTeamNumber && data.iTeamNumber == 3) {
 		team = "Dire";
+		loopend = 10;
+		loopstart = 5;
+	}
 
-	var hero_topbar = Parent.FindChildTraverse(team + "TeamPlayers").FindChildrenWithClassTraverse("Slot" + data.iPlayerID)[0];
+	var hero_topbar_team = Parent.FindChildTraverse(team + "TeamPlayers");
 
-	if (hero_topbar) {
-		var hero_image = hero_topbar.FindChildTraverse("HeroImage");
+	for (var i = loopstart;i<loopend;i++) {
+		var slot_panel = hero_topbar_team.FindChildrenWithClassTraverse("Slot" + i)[0]
+		var name_container = slot_panel.FindChildTraverse("NameContainer");
+		var player_name_panel = name_container.FindChildTraverse("PlayerNameContainer");
+		var player_name = player_name_panel.FindChildTraverse("PlayerName");
 
-		if (hero_image) {
-			hero_image.SetImage('file://{images}/heroes/npc_dota_hero_' + data.sHeroName + '.png');
-			hero_image.style.backgroundImage = 'url("file://{images}/heroes/npc_dota_hero_' + data.sHeroName + '.png")';
-			hero_image.style.backgroundSize = "100% 100%";
+		if (player_name.text === playerInfo.player_name) {
+			var hero_image = slot_panel.FindChildTraverse("HeroImage");
+
+			if (hero_image) {
+				hero_image.SetImage('file://{images}/heroes/npc_dota_hero_' + data.sHeroName + '.png');
+				hero_image.style.backgroundImage = 'url("file://{images}/heroes/npc_dota_hero_' + data.sHeroName + '.png")';
+				hero_image.style.backgroundSize = "100% 100%";
+			}
 		}
+
 	}
 }
 
