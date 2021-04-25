@@ -2,7 +2,6 @@
 {
 
 
-
 		"npc_dota_hero_gaara"
 	{
 		"BaseClass"					"npc_dota_hero_lion"
@@ -63,6 +62,9 @@
 		"AttributeIntelligenceGain" "3.4" // Intelligence bonus per level.
 		"AttributeBaseAgility" "14" // Base agility
 		"AttributeAgilityGain" "1.5" // Agility bonus per level.
+
+		"ProjectileModel"   "particles/units/heroes/gaara/attack/gaara_base_attack.vpcf"
+  		"ProjectileSpeed"  "1200"
 
 		"Ability1"         "gaara_sabaku_kyuu"
 		"Ability2"         "gaara_ryuusa_bakuryu" 

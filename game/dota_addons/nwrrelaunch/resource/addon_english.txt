@@ -366,10 +366,9 @@
 		// Sabaku Taiso
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso"						"Great Sand Burial"
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_lore"					"Sabaku Taiso"
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Gaara unleashes his power on a grand scale, releasing a huge torrent of sand which overwhelms his opponents. After a short delay, a large wave of sand is released towards a target point that will grow in radius overtime. Enemy units that come into contact with the wave will become stunned while taking magic damage."
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Gaara unleashes his power on a grand scale, releasing a huge torrent of sand which overwhelms his opponents. After a short delay, a large wave of sand is released towards a target point. Enemy units that come into contact with the wave will become stunned while taking magic damage."
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_stun_duration"			"STUN DURATION: "
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_start_radius"			"INITIAL AOE: "
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"END AOE: "
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"AOE: "
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_range"					"DISTANCE: "
 
 
@@ -963,17 +962,15 @@
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Reducing weight"
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The unit has increased movement speed."
 		
-		//Doton: Chō Kajūgan no Jutsu
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Super Heavy Rock Technique"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_lore"				"Doton: Chō Kajūgan no Jutsu"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Damage factor: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_speed_penalty_perc"		"%MS debuff: "
+		//Turn to dust
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Turn to dust"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Damage max. hp factor per sec: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Duration: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"AOE: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Instant Death Threshold: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Oonoki strikes the ground below with increased force, thereby slowing enemy units nearby. After a short delay, the shockwave deals a percentage of maximum health damage to all enemies around it. If an enemy reaches a certain health threshold, it is killed instantly."
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Onoki starts turning enemies around into dust, dealing maximum health damage every second. If an enemy reaches a certain health threshold, it is killed instantly."
 		
-		//25: +100 Atomic Dismantling Damage and Pure / +4% Super Heavy Rock Technique Kill Threshold
+		//25: +100 Atomic Dismantling Damage and Pure / +4% Turn to dust Kill Threshold
 	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
 	    //15: 14% Cooldown Reduction  / +225 Atomic Dismantling Range
 	    //10: +25 Attack Damage / +12% Magic Resistance
@@ -982,7 +979,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Stalagmite Extra Armor"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_4"						"+7%/-7% Weighted Rock Effect"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Atomic Dismantling Damage and Pure Damage"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Super Heavy Rock Technique Kill Threshold"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Turn to dust Kill Threshold"
 		
 		//--------------------
 		//Neji
@@ -2332,6 +2329,22 @@
 		"npc_dota_hero_kankuro_npedesc1"		"Summons puppets to disable his foes and protect his allies."
 		"npc_dota_hero_gaara_npedesc1"		"Crushes enemies with waves of damage dealing sand attacks."
 		"npc_dota_hero_haku_npedesc1"		"Ranged support that cripples enemies with unrelenting hails of needles."
+		
+		//Custom Buildings
+		"npc_dota_goodguys_fort"                                                    "Hokage Building"
+		"npc_dota_badguys_fort"                                                     "Gedo Mazo"
+		
+		"npc_dota_custom_tower_good"                                               "Alliance Tower"
+		"npc_dota_custom_tower_good_level_2"                                         "Alliance Tower"
+		"npc_dota_custom_tower_good_level_3"                                         "Alliance Tower"
+		"npc_dota_custom_tower_good_level_4"                                         "Alliance Tower"
+		"npc_dota_custom_tower_good1_turbo"                                         "Alliance Tower"
+		
+		"npc_dota_custom_tower_bad"                                                "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_2"                                        "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_3"                                        "Akatsuki Tower"
+		"npc_dota_custom_tower_bad_level_4"                                          "Akatsuki Tower"
+		"npc_dota_custom_tower_bad1_turbo"                                          "Akatsuki Tower"
 
 	}		
 

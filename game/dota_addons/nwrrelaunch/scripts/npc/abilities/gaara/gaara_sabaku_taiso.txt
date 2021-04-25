@@ -74,11 +74,15 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_cast.vsndevts"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_talking.vsndevts"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_projectile.vsndevts"
 		"particle"					"particles/units/heroes/gaara/new_ulti/wave.vpcf"
 		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf"
 		"particle"					"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
 		"particle"					"particles/items_fx/cyclone.vpcf"
+		"particle"					"particles/units/heroes/gaara/ulti/ulti_core.vpcf"
+		"particle"					"particles/units/heroes/gaara/ulti/ulti_building_wave.vpcf"
 	}
 
   }

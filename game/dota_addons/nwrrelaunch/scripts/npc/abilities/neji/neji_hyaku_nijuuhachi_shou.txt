@@ -23,7 +23,8 @@
 		"precache"
 		{
 			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-			"particle"	"particles/units/heroes/neji/baguam.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/bagum_projected.vpcf"
+			"soundfile"	"soundevents/heroes/neji/neji_64_cast.vsndevts"
 		}	
 
 		// Casting
@@ -81,7 +82,8 @@
 		{
 			"FireSound"
 			{
-					
+				"EffectName"  "neji_64_cast"
+              	"Target"    "CASTER"
 			}
 			
 			"RunScript"

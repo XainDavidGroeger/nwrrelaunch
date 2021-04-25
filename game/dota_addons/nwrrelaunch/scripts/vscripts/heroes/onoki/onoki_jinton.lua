@@ -72,6 +72,7 @@ function onoki_jinton:OnSpellStart()
 	end
 	
 	EmitSoundOn("onoki_jinton", caster)
+	caster:EmitSound("onoki_particle_talking")
 	EmitSoundOn("onoki_atomic_root", target)
 	
 	Timers:CreateTimer(root_duration - 0.25, function ()

@@ -235,19 +235,6 @@
 	height: 100%;
 }
 
-#DamageDealtContainer
-{
-	margin-left:9px;
-	color:black;
-	width:50px;
-	height: 100%;
-}
-
-#DamageDealtContainer Label
-{
-	font-size: 18px;
-}
-
 #DamageTakenContainer Label
 {
 	font-size: 18px;

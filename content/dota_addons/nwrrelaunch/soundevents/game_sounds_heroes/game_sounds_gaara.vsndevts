@@ -1,0 +1,42 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+  Gaara.Attack = {
+    type = "dota_update_default"
+    vsnd_files =
+    [
+        "sounds/heroes/gaara/base_attack/gaara_attack_01.vsnd",
+			  "sounds/heroes/gaara/base_attack/gaara_attack_02.vsnd",
+			  "sounds/heroes/gaara/base_attack/gaara_attack_03.vsnd",
+    ]
+    mixgroup = "BaseAttacks"
+    spread_radius = "150.000000"
+    volume = "1.000000"
+		pitch_rand_min = "-0.050000"
+		pitch_rand_max = "0.050000"
+		pitch = "1.000000"
+		soundlevel = "100.000000"
+		distance_max = "1600.000000"
+		event_type = "1.000000"
+		vsnd_duration = 0.400000
+  }
+
+
+  Gaara.Attack.Impact = {
+    type = "dota_update_default"
+		vsnd_files =
+		[
+       "sounds/heroes/gaara/base_attack/gaara_attack_impact.vsnd",
+		]
+		mixgroup = "BaseAttacks"
+    spread_radius = "150.000000"
+    volume = "1.000000"
+		pitch_rand_min = "-0.050000"
+		pitch_rand_max = "0.050000"
+		pitch = "1.000000"
+		soundlevel = "100.000000"
+		distance_max = "1600.000000"
+		event_type = "1.000000"
+		vsnd_duration = 0.400000
+  }
+
+}

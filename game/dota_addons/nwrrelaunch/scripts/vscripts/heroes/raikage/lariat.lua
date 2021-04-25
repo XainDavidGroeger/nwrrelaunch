@@ -30,6 +30,9 @@ function LariatHit(keys,target)
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 
+	ParticleManager:DestroyParticle(keys.pfx, false)
+	caster:RemoveModifierByName("modifier_lariat_energy_shield")
+
 	caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_3)
 	caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_3_END, 2)
 
@@ -47,6 +50,8 @@ function LariatHit(keys,target)
 		)
 		
 	ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
+
+
 
 	local particle_impact = keys.particle_impact
 	
@@ -97,8 +102,10 @@ function LariatPeriodic(gameEntity, keys)
 			Timers:CreateTimer(timer_tbl)
 		else
 			remove_physics(caster)
+			caster:RemoveModifierByName("modifier_lariat_energy_shield")
+			ParticleManager:DestroyParticle(l_keys.pfx, false)
 		end
-		
+	
 		return nil
 	end
 
@@ -117,10 +124,10 @@ function Lariat(keys)
 	caster:FadeGesture(ACT_DOTA_IDLE)
 	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 
+	keys.pfx = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:SetParticleControl(keys.pfx, 0, Vector(1, 0, 0))
 
 	add_physics(caster)
-
-	
 	
 	local timer_tbl =
 		{
@@ -132,4 +139,26 @@ function Lariat(keys)
 	
 	--Movement
 	Timers:CreateTimer(timer_tbl)
+end
+
+function fireGroundEffect( keys )
+
+	local target_point = keys.target_points[1]
+	local caster = keys.caster
+
+
+	local origin = caster:GetAbsOrigin()
+	local between = origin:Lerp(target_point, 0.5)
+
+
+	local ground = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_ground_parent.vpcf", PATTACH_ABSORIGIN, caster)
+	ParticleManager:SetParticleControl(ground, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 1, between)
+	ParticleManager:SetParticleControl(ground, 2, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 3, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(ground, 4, Vector(0, 0, 0))
+	ParticleManager:SetParticleControl(ground, 5, target_point)
+	ParticleManager:SetParticleControl(ground, 6, between)
+
+
 end

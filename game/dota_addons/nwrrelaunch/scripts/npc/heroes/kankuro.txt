@@ -48,6 +48,10 @@
 		"AttackDamageMax"   "31"
 		"AttackRate"    "1.700000"
 
+
+	"ProjectileModel"   "particles/units/heroes/kank/attack/kank_base_attack_main.vpcf"
+  		"ProjectileSpeed"  "1200"
+
 		"AttackRange"				"650"
 		"MovementSpeed"			"300"
 		"AttributeBaseStrength" "20" // Base strength

@@ -24,6 +24,15 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.ability = self
 
+	self.caster:EmitSound("gaara_tsunami_cast")
+	--self.caster:EmitSound("sounds/weapons/hero/sand_king/sand_king_sandstorm_loop.vsnd")
+
+
+	Timers:CreateTimer(2.0, function()
+		--self.caster:StopSound("sounds/weapons/hero/sand_king/sand_king_sandstorm_loop.vsnd")
+	end)
+
+
 	-- Ability specials
 	self.damage = self.ability:GetSpecialValueFor("thinker_damage")
 	self.stun_duration = self.ability:GetSpecialValueFor("stun_duration")
@@ -42,6 +51,7 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 	self.ability_target_team	= self.ability:GetAbilityTargetTeam()
 	self.ability_target_type	= self.ability:GetAbilityTargetType()
 	self.ability_target_flags	= self.ability:GetAbilityTargetFlags()
+
 
 	Timers:CreateTimer(0.3, function()
 		local caster = self:GetCaster()

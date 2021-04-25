@@ -97,13 +97,22 @@ function GameMode:OnHeroInGame(hero)
 	GameMode:RemoveWearables( hero )
 
 	if hero:IsCustomHero() then
-		CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
-			player_id = hero:GetPlayerID(),
-			icon_path = hero:GetUnitName(),
-		})
+		sendOverrideHeroImage(hero)
 
 		VoiceResponses:RegisterUnit(hero:GetUnitName(), "scripts/vscripts/components/voicelines/keyvalues/"..string.gsub(hero:GetUnitName(), "npc_dota_hero_", "").."_responses.txt")
 	end
+end
+
+
+function sendOverrideHeroImage(hero)
+	CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
+		player_id = hero:GetPlayerID(),
+		icon_path = hero:GetUnitName(),
+	})
+
+	Timers:CreateTimer( 5, function()
+		sendOverrideHeroImage(hero)
+	end)
 end
 
 function GameMode:OnNewHeroSelected(event)
@@ -114,30 +123,6 @@ end
 
 function GameMode:OnNewHeroChosen(event)
 
-
-end
-
-function GameMode:OnEntityHurt(event)
-
-
-	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
-	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
-
-	if not hTarget:IsRealHero() and not hAttacker:IsRealHero() then
-		return nil
-	end
-
-	CustomGameEventManager:Send_ServerToAllClients("damage", {
-		attacker = hAttacker,
-		target = hTarget,
-		victim_team_id = hTarget:GetTeamNumber(),
-		victim_id = hTarget:GetPlayerID(),
-		attacker_team_id = hAttacker:GetTeamNumber(),
-		attacker_id = hAttacker:GetPlayerID(),
-		damage = event.damage
-	})
-
-	return nil
 
 end
 

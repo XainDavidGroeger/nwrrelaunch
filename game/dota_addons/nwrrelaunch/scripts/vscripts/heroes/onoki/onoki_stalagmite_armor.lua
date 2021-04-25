@@ -2,7 +2,8 @@ onoki_stalagmite_armor = class({})
 LinkLuaModifier( "modifier_onoki_stalagmite_armor", "heroes/onoki/modifier_onoki_stalagmite_armor", LUA_MODIFIER_MOTION_NONE )
 
 function onoki_stalagmite_armor:Precache( context )
-	-- PrecacheResource( "soundfile", "xx.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/onoki_armor_proc.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/onoki_armor_cast.vsndevts", context )
 	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_rocks.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_rocks_sand.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_rocks_shield.vpcf", context )
@@ -48,6 +49,9 @@ function onoki_stalagmite_armor:OnSpellStart()
         "modifier_onoki_stalagmite_armor", -- modifier name
         { duration = duration } -- kv
     )
+	
+	local sound_cast = "onoki_armor_cast" 
+	EmitSoundOn(sound_cast, target)
 
     Timers:CreateTimer(duration, function ()
 	    ParticleManager:DestroyParticle(rocks_particle, true)

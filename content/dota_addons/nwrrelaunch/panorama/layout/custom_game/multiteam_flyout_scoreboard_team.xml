@@ -29,9 +29,6 @@
 
 				<Label class="ScoreCol_Denies LegendPanel "  id="ScoreCol_Denies" text="#scoreboard_denies"/>
 
-				<Label class="ScoreCol_DmgDealt LegendPanel " id="ScoreCol_DmgDealt" text="#scoreboard_damage_dealt"/>
-
-				<Label class="ScoreCol_DmgTaken LegendPanel " id="ScoreCol_DmgTaken" text="#scoreboard_damage_taken"/>
 			</Panel>
 
 			<Panel id="PlayersContainer"/>
