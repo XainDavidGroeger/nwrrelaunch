@@ -40,7 +40,7 @@ function anko_senei_jyashu(params)
 		local origin = caster:GetAbsOrigin()
 		local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
 		local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-		local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
+		local iFlag = DOTA_UNIT_TARGET_FLAG_NO_INVIS
 		local iOrder = FIND_ANY_ORDER
 
 		--Sounds
