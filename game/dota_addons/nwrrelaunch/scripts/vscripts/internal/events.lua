@@ -13,18 +13,6 @@ function GameMode:_OnGameRulesStateChange(keys)
 			et = .01
 		end
 
-		--print("HERO SELECTION STARTS")
-	--	local player0 = PlayerResource:GetPlayer(0)
-	--	player0:Get
-		print(player0)
-
-		--CustomGameEventManager:Send_ServerToAllClients("lasthit", {
-		--	attacker = hAttacker,
-	--		target = hTarget,
-		--	team_id = hAttacker:GetTeamNumber(),
-	--		killer_id = hAttacker:GetPlayerID()
-	--	})
-
 		Timers:CreateTimer("alljointimer", {
 			useGameTime = true,
 			endTime = et,

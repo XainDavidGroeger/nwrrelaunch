@@ -99,7 +99,6 @@ if GetMapName() == "dota" then
 	CUSTOM_TEAM_PLAYER_COUNT = {}           -- If we're not automatically setting the number of players per team, use this table
 	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 5
 	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 5              -- How many potential teams can be in this game mode?
-	HERO_SELECTION_TIME = 900   
 elseif GetMapName() == "ranked" then
 	USE_AUTOMATIC_PLAYERS_PER_TEAM = false  -- Should we set the number of players to 10 / MAX_NUMBER_OF_TEAMS?
 	CUSTOM_TEAM_PLAYER_COUNT = {}           -- If we're not automatically setting the number of players per team, use this table

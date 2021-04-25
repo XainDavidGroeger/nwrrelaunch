@@ -1,11 +1,6 @@
 var Parent = $.GetContextPanel().GetParent().GetParent().GetParent();
 var TooltipHeroMovie, TooltipHeroName, HeroCardTooltip;
 var fully_init = false;
-var player_slot_mapping = [];
-
-function mapPlayerSlot() {
-
-}
 
 function SetSelectionImages(bSetWebms) {
 	var Container = Parent.FindChildTraverse("GridCategories");
