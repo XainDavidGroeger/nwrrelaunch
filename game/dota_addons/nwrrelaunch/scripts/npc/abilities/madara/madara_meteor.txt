@@ -121,9 +121,6 @@
 			"Target"		"CASTER"
 		}
 
-	
-		
-	
 	}
 
 	"OnChannelSucceeded"
