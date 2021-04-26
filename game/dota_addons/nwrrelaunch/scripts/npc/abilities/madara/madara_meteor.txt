@@ -32,6 +32,8 @@
 				"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
 				"soundfile"	"soundevents/madara_meteor_cast.vsndevts"
 				"soundfile"	"soundevents/madara_meteor_impact.vsndevts"
+				"soundfile"	"soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts"
+				"soundfile"	"soundevents/heroes/madara/madara_ulti_impact_talk.vsndevts"
 	}	
 
 	// Casting
@@ -118,6 +120,12 @@
 			"EffectName"	"madara_meteor_cast"
 			"Target"		"CASTER"
 		}
+
+		"FireSound"
+		{
+			"EffectName"	"madara_ulti_cast_talk"
+			"Target"		"CASTER"
+		}
 		
 	
 	}
@@ -145,6 +153,12 @@
 				"FireSound"
 				{
 					"EffectName"	"madara_meteor_impact"
+					"Target"		"CASTER"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"madara_ulti_impact_talk"
 					"Target"		"CASTER"
 				}
 
