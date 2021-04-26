@@ -114,13 +114,18 @@
 			"EndVisionDuration"							"%end_vision_duration"
 		}
 
-
 		"FireSound"
+		{
+			"EffectName"	"madara_ulti_cast_talk"
+			"Target"		"CASTER"
+		}
+
+			"FireSound"
 		{
 			"EffectName"	"madara_meteor_cast"
 			"Target"		"CASTER"
 		}
-
+	
 	}
 
 	"OnChannelSucceeded"
@@ -137,12 +142,14 @@
 			"EndVisionDuration"							"%end_vision_duration"
 		}
 
+
 		"FireSound"
 		{
-			"EffectName"	"madara_ulti_cast_talk"
+			"EffectName"	"madara_ulti_impact_talk"
 			"Target"		"CASTER"
 		}
 
+		
 		"DelayedAction"
 		{
 			"Delay"     "%delay_to_dmg"
@@ -155,11 +162,7 @@
 					"Target"		"CASTER"
 				}
 
-				"FireSound"
-				{
-					"EffectName"	"madara_ulti_impact_talk"
-					"Target"		"CASTER"
-				}
+				
 
 				"RunScript"
 				{
