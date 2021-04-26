@@ -121,11 +121,7 @@
 			"Target"		"CASTER"
 		}
 
-		"FireSound"
-		{
-			"EffectName"	"madara_ulti_cast_talk"
-			"Target"		"CASTER"
-		}
+	
 		
 	
 	}
@@ -142,6 +138,12 @@
 			"TravelSpeed"								"%travel_speed"
 			"VisionDistance"							"%vision_distance"
 			"EndVisionDuration"							"%end_vision_duration"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"madara_ulti_cast_talk"
+			"Target"		"CASTER"
 		}
 
 		"DelayedAction"
