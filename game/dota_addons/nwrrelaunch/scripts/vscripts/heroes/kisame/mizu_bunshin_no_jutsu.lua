@@ -26,7 +26,7 @@ function ConjureImage( event )
  --if kisame has his ulti activated, his bunshin should turn into the shark model and have the water prison modifier
  if caster:HasModifier("modifier_kisame_metamorphosis") then 
     illusion:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
-	illusion:SetModelScale(0.65)
+	illusion:SetModelScale(1.0)
  end
 
  -- Set the unit as an illusion
@@ -40,14 +40,14 @@ ability:ApplyDataDrivenModifier(caster, illusion, "modifier_water_bunshin_bonus_
 illusion:SetForwardVector(caster:GetForwardVector())
 
 -- add water prison (channeled hold) to bunshin
-AbilityWater = illusion:FindAbilityByName("kisame_bunshin_water_prison")
-AbilityWater:SetAbilityIndex(0)
-AbilityWater:SetLevel(event.ability:GetLevel())
+local ability_water = illusion:FindAbilityByName("kisame_bunshin_water_prison")
+ability_water:SetAbilityIndex(0)
+ability_water:SetLevel(event.ability:GetLevel())
 
--- add water prison (channeled hold) to bunshin
-AbilityWater = illusion:FindAbilityByName("kisame_samehada_bunshin")
-AbilityWater:SetAbilityIndex(1)
-AbilityWater:SetLevel(event.ability:GetLevel())
+-- add samehada passive to bunshin
+local ability_samehada = illusion:FindAbilityByName("kisame_samehada_bunshin")
+ability_samehada:SetAbilityIndex(1)
+ability_samehada:SetLevel(event.ability:GetLevel())
 
 
  illusion:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
@@ -178,7 +178,11 @@ function draw( keys )
 end
 
 function RemoveBunshin( keys )
-  keys.target:Destroy()
+  keys.target:ForceKill(false)
+    
+    Timers:CreateTimer(0.1, function()
+        keys.target:Destroy()
+    end)
 end
 
 

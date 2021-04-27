@@ -1,136 +1,63 @@
-	
-    "DOTAAbilities"
-{
-  
-"onoki_jinton"
-{
 
-	"BaseClass"			 			"ability_datadriven"
-	"AbilityTextureName"			"onoki_jinton"
-	"MaxLevel" 						"4"
-
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-
-	"AbilityCastRange"				"500"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-
-	"AbilityCooldown"				"25 22 19 16"
-	"AbilityManaCost"				"75 100 125 150"
-	"AbilityDamage"					"120 170 220 270"
-
-	"AbilitySpecial"
-	{
-		"01"
+   "DOTAAbilities"
+    {
+		"onoki_jinton"
 		{
-			"var_type"			"FIELD_FLOAT"
-			"stun_duration"			"1.75"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"stun_radius"		"200 225 250 275"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"cast_range"		"500"
-		}
-	}
-
-	"precache"
-	{
-		"particle"	"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror_recipient.vpcf"
-		"particle"  "particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff_parent.vpcf"
-		"particle"  "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
-		"particle"  "particles/units/heroes/hero_sven/sven_warcry_armor_buff_model.vpcf"
-		"particle"	"particles/econ/items/sven/sven_warcry_ti5/sven_warcry_buff_ti_5.vpcf"
-		"particle"	"particles/units/heroes/hero_sven/sven_warcry_buff_ti_5.vpcf"
-		"particle"  "particles/onoki_cube1.vpcf"
-	}
-
-	"OnSpellStart"
-	{
-
-		"TrackingProjectile"
-		{
-		    "Target"           "TARGET"
-		    "EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff_parent.vpcf"
-		    "Dodgeable"        "0"
-		    "ProvidesVision"   "1"
-		    "VisionRadius"     "100"
-		    "MoveSpeed"        "1500"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"Hero_QueenOfPain.ShadowStrike"
-			"Target" 		"TARGET"
-		}
-
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"  "modifier_jinton_stun"
-			"Target"
+			"BaseClass"			 			"ability_lua"
+			"ScriptFile"                    "heroes/onoki/onoki_jinton.lua"
+			"AbilityTextureName"			"onoki_jinton"
+			"MaxLevel" 						"4"
+			
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			
+			"AbilityCastRange"				"500"
+			"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+			
+			"AbilityCooldown"				"14 12 10 8"
+			"AbilityManaCost"				"110"
+			"AbilityDamage"					"85 105 200 275"
+			
+			"AbilitySpecial"
 			{
-				"Center"  "TARGET"
-				"Radius"  "%stun_radius"
-				"Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-			"Duration"	"%stun_duration"
-		}
-		"Damage"
-		{
-			"Target"
-			{
-				"Center"  "TARGET"
-				"Radius"  "%stun_radius"
-				"Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
-			"Type"    "DAMAGE_TYPE_PHYSICAL"
-			"Damage"  "%AbilityDamage"
-		}
-    }
-
-	"Modifiers"
-	{
-		"modifier_jinton_stun"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%stun_duration"
-	
-			"OnCreated"
-			{			
-				"AttachEffect"
+				"01"
 				{
-					"Target"			"TARGET"
-					"EffectName"		"particles/onoki_cube1.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"ControlPointEntities"
-					{
-						"TARGET"	"follow_origin"
-					}
+					"var_type"			"FIELD_FLOAT"
+					"root_duration"			"1.75"
+				}
+				"02"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"stun_duration"			"0.5 0.75 1 1.25"
+				}
+				"03"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"radius"		    "200 225 250 275"
+				}
+				"04"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"cast_range"		"500"
+				}
+				"05"
+				{
+					"var_type"			"FIELD_FLOAT"
+					"damage"		    "85 105 200 275"
 				}
 			}
-	
-			"States"
+			
+			"precache"
 			{
-				"MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+				"soundfile"	"soundevents/onoki_jinton.vsndevts"
+				"soundfile"	"soundevents/heroes/onoki/onoki_particle_talking.vsndevts"
+				"soundfile" "soundevents/onoki_atomic_root.vsndevts"
+				"soundfile" "soundevents/onoki_atomic_explosion.vsndevts"
+				"particle"  "particles/units/heroes/onoki/onoki_cube1.vpcf"
 			}
 		}
+
+
 	}
-
-}
-
-
-}

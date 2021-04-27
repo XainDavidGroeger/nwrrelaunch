@@ -1,27 +1,38 @@
 yondaime_hiraishin_jump = class({})
-LinkLuaModifier( "modifier_hiraishin_armor_debuff", "heroes/yondaime/modifiers/modifier_hiraishin_armor_debuff.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_hiraishin_armor_debuff",
+                "heroes/yondaime/modifiers/modifier_hiraishin_armor_debuff.lua", 
+				LUA_MODIFIER_MOTION_NONE )
 
-
-function yondaime_hiraishin_jump:OnSpellStart( keys )
-
-	local ability = self
-	local caster = ability:GetCaster()
-	local target = ability:GetCursorPosition()
-	caster.ulti = ability
-
-	PrintTable(caster.daggers)
+function yondaime_hiraishin_jump:GetClosestSeal(target_point)
 	--Find the closest seal	
-	local placed_seals = caster.daggers
-	
+	local placed_seals = self:GetCaster().daggers
+
 	local closest_seal = nil
-	local min_dist = 1000 --Maximum allowed distance
+	local min_dist = self:GetSpecialValueFor("radius") --Maximum allowed distance
+
+	-- units_in_radius = FindUnitsInRadius(caster:GetTeamNumber(),
+	-- 			      target_point,
+	-- 				  nil, 
+	-- 				  min_dist, 
+	-- 				  DOTA_UNIT_TARGET_TEAM_BOTH, 
+	-- 				  DOTA_UNIT_TARGET_ALL, 
+	-- 				  0, 
+	-- 				  FIND_CLOSEST, 
+	-- 				  false)
+
+	-- closest_kunai = Entities:FindByNameNearest("npc_marked_kunai", target_point, 0)
+	-- print("kunai ------")
+	-- print(closest_kunai)
+	-- PrintTable(units_in_radius)
+
+	-- DebugDrawCircle(target_point, Vector(255, 0, 0), 1, min_dist, false, 3)
 	
+	local dist = 0
+
 	for k,v in pairs(placed_seals) do
-		print("yo")
 		if not v:IsNull() then
-			if(	(target - v:GetAbsOrigin()):Length2D() < 1000 )then
-					
-				local dist = target - v:GetAbsOrigin()
+			dist = target_point - v:GetAbsOrigin()
+			if(	dist:Length2D() < self:GetSpecialValueFor("radius") )then
 				
 				if dist:Length2D() < min_dist then
 					min_dist = dist:Length2D()
@@ -32,138 +43,156 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 		end
 	end
 	
-	print("closest_seal",closest_seal)
-	
-	if ( not closest_seal ) then
-		ability:EndCooldown()
-		caster:SetMana(caster:GetMana() + ability:GetManaCost(ability:GetLevel()))
-		return
-	end
-
-
-
-	local hiraishinFacs = hiraishin_getFacs( caster , closest_seal , ability )
-
-	hiraishin_dash(caster,closest_seal,ability, hiraishinFacs)
-
+	return closest_seal
 end
 
+function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 
-function yondaime_hiraishin_jump:CastFilterResultTarget( target )
+	if IsClient() then
+		if self.custom_indicator then
+			-- register cursor position
+			self.custom_indicator:Register( vLoc )
+		end
+	end
+
+	print("Trying to cast")
 	local ability = self
 	local caster = ability:GetCaster()
+	local closest_seal = self:GetClosestSeal(target_point)
+	local range = self:GetSpecialValueFor("radius")
 
-
-	print(target:GetUnitName())
-
-
-
-	if target:GetUnitName() == "npc_marked_kunai" then 
-		return UF_SUCCESS
-	else
+	if closest_seal == nil then
 		return UF_FAIL_CUSTOM
 	end
-	return ""
+
+	local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+
+	
+	local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
+										   caster:GetAbsOrigin() - direction*200,
+										   closest_seal:GetAbsOrigin() + direction*200,
+										   nil,
+										   ability:GetSpecialValueFor("search_width"),
+										   DOTA_UNIT_TARGET_TEAM_ENEMY,
+										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
+										   DOTA_UNIT_TARGET_FLAG_NONE)
+
+	print(target_entities)
+
+	if #target_entities == 0 then
+		return UF_FAIL_CUSTOM
+	end
+
+	if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
+		return UF_SUCCESS
+	end
+	
+	return UF_FAIL_CUSTOM
+
 end
-  
-function yondaime_hiraishin_jump:GetCustomCastErrorTarget( target )
+
+
+function yondaime_hiraishin_jump:OnSpellStart( keys )
+
 	local ability = self
 	local caster = ability:GetCaster()
+	local target = ability:GetCursorPosition()
+	caster.ulti = ability
+
+	local closest_seal = self:GetClosestSeal(target)
+
+	hiraishin_dash(caster, closest_seal, ability)
+
+end
+
+function yondaime_hiraishin_jump:GetCustomCastErrorLocation(target_point)
+
+	local ability = self
+	local caster = ability:GetCaster()
+	local closest_seal = self:GetClosestSeal(target_point)
+	local range = self:GetSpecialValueFor("radius")
+
+	if closest_seal == nil then
+		return "#error_no_kunai_nearby"
+	end 
+
+	local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+
+	
+	local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
+										   caster:GetAbsOrigin() - direction*200,
+										   closest_seal:GetAbsOrigin() + direction*200,
+										   nil,
+										   ability:GetSpecialValueFor("search_width"),
+										   DOTA_UNIT_TARGET_TEAM_ENEMY,
+										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
+										   DOTA_UNIT_TARGET_FLAG_NONE)
 
 
-	if target:GetUnitName() == "npc_marked_kunai" then 
-		return ""
-	else
-		return "#error_must_target_owner_illusion"
+
+	if #target_entities == 0 then
+		return "#error_no_enemies_in_range"
 	end
-	return ""
+
+	return "#error_no_kunai_nearby"
 end
 
 
-function hiraishin_dash( caster, closest_seal, ability, hiraishinFacs )
+function hiraishin_dash( caster, closest_seal, ability )
+
+	local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+
 	
-	local mid = ( caster:GetAbsOrigin() + closest_seal:GetAbsOrigin() ) / 2
-	local radius = ( caster:GetAbsOrigin() - closest_seal:GetAbsOrigin() ):Length2D() + 20
-	
-	local targetEntities = FindUnitsInRadius(caster:GetTeamNumber(), mid, nil,
-		radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	
-	hiraishin_filter(targetEntities,hiraishinFacs)
-	
-	targetEntities = hiraishin_order(targetEntities,caster)
+	local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
+										   caster:GetAbsOrigin() - direction*200,
+										   closest_seal:GetAbsOrigin() + direction*200,
+										   nil,
+										   ability:GetSpecialValueFor("search_width"),
+										   DOTA_UNIT_TARGET_TEAM_ENEMY,
+										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
+										   DOTA_UNIT_TARGET_FLAG_NONE)
+
 	
 	local timer_tbl =
-		{
-			callback = hiraishin_dashDO,
-			caster = caster,
-			closest_seal = closest_seal,
-			targetEntities = targetEntities,
-			ability = ability
-		}
-	
-	--Movement
-	Timers:CreateTimer(timer_tbl)
-end
-
-function hiraishin_getFacs( caster, target, ability )
-	local origin = caster:GetAbsOrigin()
-	local destination = target:GetAbsOrigin()
-	
-	local vector = destination - origin
-	vector = vector:Normalized()
-	
-	local normal = Vector(-vector.y,vector.x,0)
-	normal = normal:Normalized()
-	
-	return {
-		origin = origin,
-		normal = normal
+	{
+		callback = hiraishin_dash_timer,
+		caster = caster,
+		closest_seal = closest_seal,
+		target_entities = target_entities,
+		ability = ability
 	}
+	
+	-- --Movement
+	Timers:CreateTimer(timer_tbl)
+
+	hiraishin_dash_timer(caster, ability, closest_seal, target_entities)
 end
 
+function hiraishin_dash_timer(game_entity, keys)
 
-function spairs(t, order)
-    -- collect the keys
-    local keys = {}
-    for k in pairs(t) do keys[#keys+1] = k end
-
-    -- if order function given, sort by it by passing the table and keys a, b,
-    -- otherwise just sort the keys 
-    if order then
-        table.sort(keys, function(a,b) return order(t, a, b) end)
-    else
-        table.sort(keys)
-    end
-
-    -- return the iterator function
-    local i = 0
-    return function()
-        i = i + 1
-        if keys[i] then
-            return keys[i], t[keys[i]]
-        end
-    end
-end
-
-function hiraishin_dashDO(gameEntity, keys)
-
-	local targetEntities = keys.targetEntities
+	local target_entities = keys.target_entities
 	local caster=keys.caster
+	local ability = keys.ability
+	local closest_seal = keys.closest_seal
+
+	local particle_slash_name = "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+	local particle_trail_name = "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+	local slash_sound = "Hero_Juggernaut.OmniSlash.Damage"
+
+	if target_entities == nil then
+		return nil
+	end
+
 	
-	local particleSlashName = "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
-	local particleTrailName = "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
-	local slashSound = "Hero_Juggernaut.OmniSlash.Damage"
+	for k,target in pairs(target_entities) do
 	
-	for k,target in spairs(targetEntities) do
-		print(k)
-	
-		local trailFxIndex = ParticleManager:CreateParticle( particleTrailName, PATTACH_CUSTOMORIGIN, caster )
-		ParticleManager:SetParticleControl( trailFxIndex, 0, target:GetAbsOrigin() )
-		ParticleManager:SetParticleControl( trailFxIndex, 1, caster:GetAbsOrigin() )
+		local trail_effect_index = ParticleManager:CreateParticle( particle_trail_name, PATTACH_CUSTOMORIGIN, caster )
+		ParticleManager:SetParticleControl( trail_effect_index, 0, target:GetAbsOrigin() )
+		ParticleManager:SetParticleControl( trail_effect_index, 1, caster:GetAbsOrigin() )
 		
 		Timers:CreateTimer( 0.1, function()
-				ParticleManager:DestroyParticle( trailFxIndex, false )
-				ParticleManager:ReleaseParticleIndex( trailFxIndex )
+				ParticleManager:DestroyParticle( trail_effect_index, false )
+				ParticleManager:ReleaseParticleIndex( trail_effect_index )
 				return nil
 			end
 		)
@@ -173,79 +202,47 @@ function hiraishin_dashDO(gameEntity, keys)
 		
 		
 		local damage = caster:GetAverageTrueAttackDamage(caster)
-		print(damage)
 		local extra_damage = caster.ulti:GetSpecialValueFor( "damage")
-		print(extra_damage)
 		local damage = damage / 100 * extra_damage
-		print(damage)
 
 
-		ApplyDamage({attacker = caster, victim = target, ability = keys.ability, damage = damage, damage_type = keys.ability:GetAbilityDamageType()})
+		ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
 		--caster:PerformAttack(target, true, false, true, false)
 		
 		-- Slash particles
-		local slashFxIndex = ParticleManager:CreateParticle( particleSlashName, PATTACH_ABSORIGIN_FOLLOW, target )
-		StartSoundEvent( slashSound , caster )
+		local slash_effect_index = ParticleManager:CreateParticle( particle_slash_name, PATTACH_ABSORIGIN_FOLLOW, target )
+		StartSoundEvent( slash_sound , caster )
 
 		Timers:CreateTimer( 0.1, function()
-				ParticleManager:DestroyParticle( slashFxIndex, false )
-				ParticleManager:ReleaseParticleIndex( slashFxIndex )
-				StopSoundEvent( slashSound, caster )
+				ParticleManager:DestroyParticle( slash_effect_index, false )
+				ParticleManager:ReleaseParticleIndex( slash_effect_index )
+				StopSoundEvent( slash_sound, caster )
 				return nil
 			end
 		)	
 	
-	--	FindClearSpaceForUnit(caster,target:GetAbsOrigin(),false)
+		FindClearSpaceForUnit(caster,target:GetAbsOrigin(),false)
 		
-		targetEntities[ k ] = nil
+		target_entities[ k ] = nil
+
 		return 0.05
 	end
 	
-	local closest_seal = keys.closest_seal
+	-- local closest_seal = closest_seal
 	
-	local trailFxIndex = ParticleManager:CreateParticle( particleTrailName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( trailFxIndex, 0, closest_seal:GetAbsOrigin() )
-	ParticleManager:SetParticleControl( trailFxIndex, 1, caster:GetAbsOrigin() )
+	local trail_effect_index = ParticleManager:CreateParticle( particle_trail_name, PATTACH_CUSTOMORIGIN, caster )
+	ParticleManager:SetParticleControl( trail_effect_index, 0, closest_seal:GetAbsOrigin() )
+	ParticleManager:SetParticleControl( trail_effect_index, 1, caster:GetAbsOrigin() )
+
+	FindClearSpaceForUnit(caster, closest_seal:GetAbsOrigin(), false)
+
 	
 	Timers:CreateTimer( 0.1, function()
-			ParticleManager:DestroyParticle( trailFxIndex, false )
-			ParticleManager:ReleaseParticleIndex( trailFxIndex )
+			ParticleManager:DestroyParticle( trail_effect_index, false )
+			ParticleManager:ReleaseParticleIndex( trail_effect_index )
 			return nil
 		end
 	)
 	
-	FindClearSpaceForUnit(caster,closest_seal:GetAbsOrigin(),false)
-
 	return nil
-end
-
-function hiraishin_filter(targetEntities,hiraishinFacs)
-	local normal = hiraishinFacs.normal
-	local origin = hiraishinFacs.origin
-
-	local pos = 0
-	local dist = 0
-	
-	for k,target in pairs(targetEntities) do
-		pos = target:GetAbsOrigin()
-			
-		dist = normal:Dot((pos - origin))
-		
-		if( dist> 100 ) then
-			targetEntities[ k ] = nil
-		end
-	end
-end
-
-function hiraishin_order(targetEntities,caster)
-	local ordered = {}
-	local origin = caster:GetAbsOrigin()
-	
-	for k,target in pairs(targetEntities) do
-		local dist = (target:GetAbsOrigin() - origin):Length2D()
-		
-		ordered[ dist ] = target
-	end
-	
-	return ordered
 end

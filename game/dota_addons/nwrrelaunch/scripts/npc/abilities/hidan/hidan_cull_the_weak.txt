@@ -1,6 +1,4 @@
-
-	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
     
 "hidan_cull_the_weak"
@@ -8,8 +6,9 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/hidan/cull_the_weak.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
@@ -36,7 +35,6 @@
 	"AbilityDuration"				"4"
 
 
-
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0"
@@ -48,7 +46,7 @@
 		"01"
 		{
 			"var_type"			 "FIELD_FLOAT"
-			"pull_radius_start" "110.0"
+			"pull_width"		 "110.0"
 		}
 		"02"
 		{
@@ -68,7 +66,7 @@
 		"05"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"ms_slow_percentage"		"-15 -20 -25 -30"
+			"ms_slow_percentage"		"15 20 25 30"
 		}
 		"06"
 		{
@@ -93,85 +91,6 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
-	}
-
-	"OnSpellStart"
-	{
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hidan/cull_the_weak.lua"
-			"Function"				"initiateValues"
-			"Target"				"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hidan/cull_the_weak.lua"
-			"Function"				"release_pull"
-			"pullRange"				"AbilityCastRange"
-			"Target"				"POINT"
-		}
-
-
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"		"0"
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/hidan/cull_the_weak.lua"
-			"Function"		"gatherTargets"
-			"Target"		"TARGET"
-		}
-	}
-
-
-	"OnProjectileFinish"
-	{
-
-		"DelayedAction"
-		{
-			"Delay"     "0.3"
-			"Action"    
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"heroes/hidan/cull_the_weak.lua"
-					"Function"				"health_cost"
-				}
-			}
-		}
-		
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/hidan/cull_the_weak.lua"
-			"Function"				"cull_the_weak"
-			"Target"				"POINT"
-			"move_slow_modifier"	"modifier_hidan_cull_the_weak_ms_slow"	
-		}
-
-	}
-
-
-	"Modifiers"
-	{
-		"modifier_hidan_cull_the_weak_ms_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-	
-			//"EffectName"		"particle_name"
-			//"EffectAttachType"	"follow_origin"
-	
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_percentage" 
-			}
-		}
 	}
 }
 

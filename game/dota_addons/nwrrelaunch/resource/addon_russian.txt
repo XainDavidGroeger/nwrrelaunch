@@ -787,36 +787,54 @@
 		//--------------------
 		"npc_dota_hero_sven"											"Onoki"
 		//Jinton
-		"DOTA_Tooltip_ability_onoki_jinton"								"Dust Release: Atomic Dismantling Technique"
+		"DOTA_Tooltip_ability_onoki_jinton"								"Atomic Dismantling"
 		"DOTA_Tooltip_ability_onoki_jinton_lore"						"Jinton: Genkai Hakuri no Jutsu"
-		"DOTA_Tooltip_ability_onoki_jinton_stun_duration"				"Длительность Оглушения: "
-		"DOTA_Tooltip_ability_onoki_jinton_stun_radius"					"Область Действия: "
-		"DOTA_Tooltip_ability_onoki_jinton_cast_range"					"Дальность Броска: "
-		"DOTA_Tooltip_ability_onoki_jinton_Description"					"Оноки держит вражеского юнита в кубе, оглушая и нанося магический урон, так как будто они были бы развеяны на молекулярном уровне. Вражеские юниты в области в радиусе цели также попадут под действие техники."
-		"DOTA_Tooltip_modifier_jinton_stun"								"Jinton: Genkai Hakuri no Jutsu"
-		"DOTA_Tooltip_modifier_jinton_stun_description"					"Юнит оглушен."
+		"DOTA_Tooltip_ability_onoki_jinton_damage"					    "Урон: "
+		"DOTA_Tooltip_ability_onoki_jinton_root_duration"				"Длительность обездвиживания: "
+		"DOTA_Tooltip_ability_onoki_jinton_stun_duration"				"Длительность оглушения: "
+		"DOTA_Tooltip_ability_onoki_jinton_stun_radius"					"Радиус: "
+		"DOTA_Tooltip_ability_onoki_jinton_Description"					"Оoноки формирует куб, в который захватывает цель и обездвиживает её. Всё, что попало внутрь куба, расщепляется в пыль - цель оглушается и получается чистый урон. Вражеские юниты рядом с целью также попадут под действие техники."
+		
 		//Stalagmite Armor
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"Stalagmite Armor"
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_bonus_armor"		"Бонус Броня: "
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage_return_rate"	"Коэффициент возврата урона: "
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_duration"			"Время действия: "
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_cast_range"		"Дальность Броска: "
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"Оноки покрывает цель покрытием земли, даруя дополнительную защиту и способность возвращать урон нападющим врагам."
-		//Turn to Dust
-		"DOTA_Tooltip_ability_onoki_turn_to_dust"						"Turn to Dust"
-		"DOTA_Tooltip_ability_onoki_turn_to_dust_bonus_damage_percent"	"Уменьшение урона: "
-		"DOTA_Tooltip_ability_onoki_turn_to_dust_Description"			"Оноки превращает вражеское оружие в пыль, сильно понижая их способность отвечать. Уменьшает атакующий урон вражеских единиц в раидусе вокруг Оноки."
-		"DOTA_Tooltip_modifier_turn_to_dust_debuff"						"Turn to Dust"
-		"DOTA_Tooltip_modifier_turn_to_dust_debuff_description"			"Юнит имеет пониженный урон Атаки."
-		//Doton: Kajugan no Jutsu
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Earth Release: Added-Weight Rock Technique"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_lore"				"Doton: Kajugan no Jutsu"
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Фактор урона: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_slow_bonus"		"%Дебафф скорости передвижения: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Время действия: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"Область Действия: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Граница немедленной смерти: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Оноки буквально заставляет окружающих врагов разрушаться вокруг него. Во время короткого периода, вражеские единицы рядом с Оноки замедляются и получают процент от их максимального здоровья в виде урона. Если юнит достигает определенного порога здоровья, он будет убит немедленно."
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_bonus_armor"		"Доп. броня: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage_chance"	    "Шанс вернуться урон: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage"	        "Коэффициент возврата урона: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_duration"			"Длительность: "
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"Оoноки защищает цель слоем камней, даруя дополнительную защиту и способность возвращать урон нападающим врагам."
+		"DOTA_Tooltip_modifier_onoki_stalagmite_armor"						"Сталагмитовая броня"
+		"DOTA_Tooltip_modifier_onoki_stalagmite_armor_description"			"Юнит защищен камнями Ооноки."
+		
+		//
+		"DOTA_Tooltip_ability_onoki_added_weight"						"Техника увеличения/уменьшения веса"
+		"DOTA_Tooltip_ability_onoki_added_weight_lore"				"Doton: Kajūgan no Jutsu | Doton: Keijūgan no Jutsu"
+		"DOTA_Tooltip_ability_onoki_added_weight_speed_bonus_perc"	"%Доп. скорость: "
+		"DOTA_Tooltip_ability_onoki_added_weight_speed_penalty_perc"	"%Снижение скорости: "
+		"DOTA_Tooltip_ability_onoki_added_weight_duration"			"Длительность: "
+		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"Если Ооноки использует умение на союзника, то вес союзника уменьшится и его скорость передвижения увеличится. \n Если Ооноки использует это умение на врага, то его вес увеличится и уменьшится скорость передвижения."
+		"DOTA_Tooltip_modifier_onoki_added_weight_enemy"						"Увеличение веса"
+		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"Юнит имеет пониженную скорость передвижения."
+		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Уменьшение веса"
+		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"Юнит имеет повышенную скорость передвижения."
+		
+		//Turn to dust
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Turn to dust"
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Урон в секунду от макс. здоровья: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Длительность: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"Радиус: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Порог здоровья: "
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Ооноки начинает превращать врагов вокруг в пыль, нанося урон от максимального здоровья каждую секунду. Если враг достигает определенного порога здоровья, он погибает мгновенно."
+		
+		//25: +100 Atomic Dismantling Damage and Pure / +4% Super Heavy Rock Technique Kill Threshold
+	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
+	    //15: 14% Cooldown Reduction  / +225 Atomic Dismantling Range
+	    //10: +25 Attack Damage / +12% Magic Resistance
+		"DOTA_Tooltip_Ability_special_bonus_onoki_1"						"+225 Радиус Atomic Dismantling"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_2"						"14% Снижение перезарядки"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Доп. брони Stalagmite Armor"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_4"						"+7%/-7% Скорости Техники увеличения/уменьшения веса"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Урона Atomic Dismantling и Чистый урон"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Порог здоровья мгновенного убийства Turn to dust"
 		
 		//--------------------
 		//Neji
@@ -930,7 +948,7 @@
 		//--------------------
 		//Anko
 		//--------------------
-		"npc_dota_hero_medusa"  									"Anko"
+		"npc_dota_hero_anko"  									"Anko"
 		"DOTA_Tooltip_ability_anko_giant_snake"						"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"ДАЛЬНОСТЬ: "
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"УРОН: "
@@ -1870,6 +1888,20 @@
     	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_damage"						"Урон к Атаке:+ "
     	"DOTA_Tooltip_ability_item_good_guys_suit_bonus_agi"						"Ловкость: + "
     	"DOTA_Tooltip_ability_item_good_guys_suit_attackspeed"						"Bonus Скорость Атаки:+ "
+		
+		//Custom Buildings
+		"npc_dota_goodguys_fort"                                                    "Здание Хокаге"
+		"npc_dota_badguys_fort"                                                     "Гедо Мазо"
+		
+		"npc_dota_custom_tower_good4"                                               "Башня Альянса"
+		"npc_dota_custom_tower_good23"                                              "Башня Альянса"
+		"npc_dota_custom_tower_good1"                                               "Башня Альянса"
+		"npc_dota_custom_tower_good1_turbo"                                         "Башня Альянса"
+		
+		"npc_dota_custom_tower_bad4"                                                "Башня Акацуки"
+		"npc_dota_custom_tower_bad23"                                               "Башня Акацуки"
+		"npc_dota_custom_tower_bad1"                                                "Башня Акацуки"
+		"npc_dota_custom_tower_bad1_turbo"                                          "Башня Акацуки"
 
 	}		
 }

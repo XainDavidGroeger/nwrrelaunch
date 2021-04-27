@@ -29,46 +29,30 @@ function GameMode:OnGameRulesStateChange(keys)
 
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:ChangeBuildings()
+		VoiceResponses:Start()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-
-		DebugPrint("tst4")
-		Print("tst3")
-
 		GameMode:SetShops()
-
-		if IsInToolsMode() then
-			SendToServerConsole('sm_gmode 1')
-			SendToServerConsole('dota_bot_populate')
-		end
-
-
-
-	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-		--TODO LEAVRE SYSTEM
-		-- A timer running every second that starts immediately on the next frame, respects pauses
---[[
-		Timers:CreateTimer(function()
-			for _,hero in pairs(HeroList:GetAllHeroes()) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-					if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 then
-						GameRules:SendCustomMessage(hero:GetName() .." has 2 minutes to reconnect.", 0, 0)
-						GameMode:ModifyGoldGainDC(hero)
-					elseif not hero:HasOwnerAbandoned() then
-						hero.isDC = false
-					end
+		for i = 0, PlayerResource:GetPlayerCount() - 1 do
+			if PlayerResource:IsValidPlayerID(i) then
+				if not PlayerResource:HasSelectedHero(i) then
+					PlayerResource:GetPlayer(i):MakeRandomHeroSelection()
 				end
-			end
 
-			return 1.0
-		end)
---]]
+				local overriden_hero_name = GetKeyValueByHeroName(PlayerResource:GetSelectedHeroName(i), "BaseClass")
+
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(i), "set_strategy_time_hero_model", {
+					sHeroName = overriden_hero_name,
+				})
+			end
+		end
+	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 	end
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-
+	
 	if not npc or npc:GetClassname() == "npc_dota_thinker" or npc:IsPhantom() then
          return
         end
@@ -95,16 +79,16 @@ function GameMode:OnItemPurchased( keys )
 	if not plyID then return end
 
 	-- The name of the item purchased
-	local itemName = keys.itemname
-
+	local itemName = keys.itemname 
+	
 	-- The cost of the item purchased
 	local itemcost = keys.itemcost
-
+	
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 
 	if itemName == "item_forehead_protector" then
 		GameMode:ForeheadProtectorOnItemPickedUp(player, itemName)
-	end
+	end 
 
 	if itemName == "item_flying_courier" then
 		Timers:CreateTimer( 0.5, function()
@@ -112,7 +96,7 @@ function GameMode:OnItemPurchased( keys )
 			flying_courier:SetModelScale(1.2)
 			return nil
 		end)
-	end
+	end 
 
 	if itemName == "courier_radiant_flying" then
 		Timers:CreateTimer( 0.5, function()
@@ -120,7 +104,7 @@ function GameMode:OnItemPurchased( keys )
 			flying_courier:SetModelScale(1.2)
 			return nil
 		end)
-	end
+	end 
 end
 
 -- A player picked a hero
@@ -151,8 +135,8 @@ function GameMode:OnPlayerPickHero(keys)
 
 			-- modifies the name/label of a player
 			GameMode:setPlayerHealthLabel(player)
-		end
-	end
+		end  
+	end 
 end
 
 -- An entity died
@@ -186,11 +170,11 @@ function GameMode:OnConnectFull(keys)
 	DebugPrintTable(keys)
 
 	GameMode:_OnConnectFull(keys)
-
+	
 	local entIndex = keys.index+1
 	-- The Player entity of the joining user
 	local ply = EntIndexToHScript(entIndex)
-
+	
 	-- The Player ID of the joining player
 	local playerID = ply:GetPlayerID()
 end
@@ -206,8 +190,8 @@ function GameMode:OnItemCombined(keys)
 	local player = PlayerResource:GetPlayer(plyID)
 
 	-- The name of the item purchased
-	local itemName = keys.itemname
-
+	local itemName = keys.itemname 
+	
 	-- The cost of the item purchased
 	local itemcost = keys.itemcost
 
@@ -380,11 +364,11 @@ end
 -- state as necessary
 function GameMode:OnPlayerReconnect(keys)
 	DebugPrint( '[BAREBONES] OnPlayerReconnect' )
-	DebugPrintTable(keys)
+	DebugPrintTable(keys) 
 
 end
 
--- This function is called 1 to 2 times as the player connects initially but before they
+-- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected
 function GameMode:PlayerConnect(keys)
 	DebugPrint('[BAREBONES] PlayerConnect')
@@ -416,7 +400,7 @@ function GameMode:OnTowerKill(keys)
 	local team = keys.teamnumber
 end
 
--- This function is called whenever a player changes there custom team selection during Game Setup
+-- This function is called whenever a player changes there custom team selection during Game Setup 
 function GameMode:OnPlayerSelectedCustomTeam(keys)
 
 	local player = PlayerResource:GetPlayer(keys.player_id)

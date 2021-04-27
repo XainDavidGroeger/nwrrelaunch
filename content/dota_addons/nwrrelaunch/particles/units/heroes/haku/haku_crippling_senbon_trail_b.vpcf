@@ -1,0 +1,134 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_flConstantRadius = 64.0
+	m_nBehaviorVersion = 11
+	m_nFirstMultipleOverride_BackwardCompat = 5
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 16.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.0
+			m_fLifetimeMax = 1.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 180.0
+			m_flRadiusMin = 120.0
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_INIT_CreationNoise"
+			m_flOutputMax = 0.5
+			m_flNoiseScale = 0.1235
+			m_flNoiseScaleLoc = 0.125
+			m_nFieldOutput = 7
+			m_flOutputMin = 0.25
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 148, 0, 211 ]
+			m_ColorMax = [ 147, 112, 219 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 4
+			m_bActiveRange = true
+			m_nFieldOutput = 7
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.75
+			m_flStartScale = 2.0
+			m_flEndScale = 0.0
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.125
+		},
+		{
+			_class = "C_OP_RemapParticleCountOnScalarEndCap"
+			m_bBackwards = true
+			m_nInputMax = 5
+			m_nFieldOutput = 16
+		},
+		{
+			_class = "C_OP_VectorNoise"
+			m_nFieldOutput = 0
+			m_vecOutputMin = [ -1.0, -1.0, 0.0 ]
+			m_vecOutputMax = [ 1.0, 1.0, 0.0 ]
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_ColorInterpolateRandom"
+			m_ColorFadeMin = [ 20, 20, 163 ]
+			m_ColorFadeMax = [ 49, 23, 155 ]
+			m_flFadeEndTime = 0.3
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_flOverbrightFactor = 10.0
+			m_flAddSelfAmount = 2.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_flRadiusScale = 0.5
+			m_flTextureVWorldSize = 398.089172
+			m_flTextureVScrollRate = -146.894897
+			m_nMaxTesselation = 6
+			m_nMinTesselation = 6
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/beam_blue_energy_01.vtex"
+					m_TextureControls = 
+					{
+						m_flFinalTextureScaleU = 
+						{
+							m_nType = "PF_TYPE_LITERAL"
+							m_flLiteralValue = -1.0
+						}
+					}
+				},
+			]
+		},
+	]
+}

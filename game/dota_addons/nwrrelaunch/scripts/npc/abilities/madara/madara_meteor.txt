@@ -28,6 +28,10 @@
 				"particle"	"particles/units/heroes/madara/shadow_2.vpcf"
 				"particle"	"particles/units/heroes/madara/burning_tree.vpcf"
 				"particle"	"particles/units/heroes/deidara/c4_explo_base.vpcf"
+
+				"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+				"soundfile"	"soundevents/madara_meteor_cast.vsndevts"
+				"soundfile"	"soundevents/madara_meteor_impact.vsndevts"
 	}	
 
 	// Casting
@@ -61,7 +65,7 @@
 		"09"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"delay_to_dmg"					"1.3"
+			"delay_to_dmg"					"1.0"
 		}
 		"08"
 		{
@@ -107,6 +111,15 @@
 			"VisionDistance"							"%vision_distance"
 			"EndVisionDuration"							"%end_vision_duration"
 		}
+
+
+		"FireSound"
+		{
+			"EffectName"	"madara_meteor_cast"
+			"Target"		"CASTER"
+		}
+		
+	
 	}
 
 	"OnChannelSucceeded"
@@ -128,6 +141,13 @@
 			"Delay"     "%delay_to_dmg"
 			"Action"    
 			{
+
+				"FireSound"
+				{
+					"EffectName"	"madara_meteor_impact"
+					"Target"		"CASTER"
+				}
+
 				"RunScript"
 				{
 					"ScriptFile"	"heroes/madara/meteor.lua"

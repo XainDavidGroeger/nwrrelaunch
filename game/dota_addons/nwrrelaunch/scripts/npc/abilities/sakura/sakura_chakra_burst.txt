@@ -43,16 +43,23 @@
 
 	"precache"
 	{
-		"particle"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_buff.vpcf"
+		"particle"	"particles/units/heroes/sakura/sakura_chakra_busrt.vpcf"
+		"soundfile"	"soundevents/heroes/sakura/sakura_speed_cast.vsndevts"
 	}
 
 	"OnSpellStart"
 	{
-			"RunScript"
-			{
-				"ScriptFile"    "heroes/sakura/chakra_burst.lua"
-                "Function"      "applyBurstModifier"
-			}
+		"RunScript"
+		{
+			"ScriptFile"    "heroes/sakura/chakra_burst.lua"
+			"Function"      "applyBurstModifier"
+		}
+
+		"FireSound"
+		{
+			"EffectName" 	"sakura_speed_cast"
+			"Target"		"CASTER"
+		}
 	}
 
 
@@ -72,25 +79,10 @@
 			{
 				"AttachEffect"
                 {
-                    "EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
+                    "EffectName" "particles/units/heroes/sakura/sakura_chakra_busrt.vpcf"
                     "EffectAttachType" "follow_origin"
 
                     "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_left_foot"
-                    }
-                }
-						   "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/sakura/wyvern_winters_curse_buff.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_right_foot"
-                    }
                 }
 			}		
 		}

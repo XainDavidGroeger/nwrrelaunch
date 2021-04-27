@@ -1,0 +1,374 @@
+"RaikageResponses"
+{
+	"OnMoveOrder"
+	{
+		"Cooldown"    "6"
+
+		"Sounds"
+		{
+			"raikage_move"          "1"
+		}
+	}
+
+	"OnAttackOrder"
+	{
+		"Cooldown"    "6"
+
+		"Sounds"
+		{
+			"raikage_attack"    "1"
+		}
+	}
+
+	"OnTakeDamage"
+	{
+		"Priority"  "1"
+		"Cooldown"  "2"
+
+		"Sounds"
+		{
+			"raikage_hurt"  "1"
+		}
+	}
+
+	"OnDeath"
+	{
+		"Priority"  "2"
+		"AllChat"   "1"
+		"Sounds"
+		{
+			"raikage_death" "1"
+		}
+	}
+	"OnBuyback"
+	{
+		"Priority"  "2"
+		"AllChat"   "1"
+		"Delay"     "1"
+		"Cooldown"  "6"
+		"Sounds"
+		{
+			"raikage_buyback"      "1"
+		}
+	}
+	"OnSpawn"
+	{
+		"Priority"  "2"
+		"AllChat"   "0"
+		"Delay"     "1.5"
+		"Cooldown"  "6"
+		"Sounds"
+		{
+			"raikage_respawn"      "1"
+		}
+	}
+	"OnFirstSpawn"
+	{
+		"Priority"  "2"
+		"AllChat"   "0"
+		"Delay"     "1.5"
+		"Sounds"
+		{
+			"raikage_spawn"      "1"
+		}
+	}
+
+	"OnHeroKill"
+	{
+		"Priority"  "2"
+		"Cooldown"  "5"
+		"AllChat"   "1"
+		"Delay"     "1"
+
+		"Sounds"
+		{
+			"raikage_hero_kill"      "1"
+		}
+	}
+
+	"OnFirstBlood"
+	{
+		"Priority"  "2"
+		"Allchat"   "1"
+		"Global"    "1"
+		"Delay"     "1"
+
+		"Sounds"
+		{
+			"raikage_firstblood"      "1"
+		}
+	}
+
+	"OnCreepKill"
+	{
+		"Priority"  "1"
+		"Delay"     "0.5"
+		"Cooldown"  "10"
+
+		"Sounds"
+		{
+			"raikage_creep_kill"      "1"
+		}
+	}
+
+	"OnCreepDeny"
+	{
+		"Priority"  "1"
+		"Cooldown"  "20"
+		"Allchat"   "1"
+
+		"Sounds"
+		{
+			"raikage_creep_deny"      "1"
+		}
+	}
+
+	// Ability casts
+	"OnAbilityCast"
+	{
+		"raikage_doton"
+		{
+			"Priority"  "1"
+			"AllChat" "1"
+			"Sounds"
+			{
+				"raikage_doton"      "1"
+			}
+		}
+		"raikage_sharingan"
+		{
+			"Priority"  "1"
+			"AllChat" "1"
+			"Sounds"
+			{
+				"raikage_sharingan"      "1"
+			}
+		}
+		"raikage_bunshin"
+		{
+			"Priority"  "1"
+			"AllChat" "1"
+			"Sounds"
+			{
+				"raikage_bunshin"      "1"
+			}
+		}
+		"raikage_chidori"
+		{
+			"Priority"  "2"
+			"AllChat" "1"
+			"Sounds"
+			{
+				"raikage_chidori"      "1"
+			}
+		}
+	}
+
+	// Item pickup
+	"OnItemPickup"
+	{
+		"item_aegis"
+		{
+			"Priority"  "2"
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_aegis"      "1"
+			}
+		}
+		"item_cheese"
+		{
+			"Priority"  "2"
+			"Cooldown"  "300"
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_cheese"      "1"
+			}
+		}
+	}
+
+	// Item purchases
+	"OnItemPurchased"
+	{
+		"item_blink"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_blink"      "1"
+			}
+		}
+
+		"item_heart"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_heart"      "1"
+			}
+		}
+
+		"item_radiance"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_radiance"      "1"
+			}
+		}
+
+		"item_sheepstick"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_sheep"      "1"
+			}
+		}
+
+		"item_ultimate_scepter"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_aghs"      "1"
+			}
+		}
+
+		"item_vanguard"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_vanguard"      "1"
+			}
+		}
+
+		"item_ward_observer"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_ward"      "1"
+			}
+		}
+
+		"item_ward_sentry"
+		{
+			"Delay"     "1"
+			"Sounds"
+			{
+				"raikage_items_ward"      "1"
+			}
+		}
+	}
+
+	"OnVictory"
+	{
+		"Priority"  "2"
+		"Delay" "10"
+		"Sounds"
+		{
+			"raikage_victory"      "1"
+		}
+	}
+
+	"OnDefeat"
+	{
+		"Priority"  "2"
+		"Delay" "10"
+		"Sounds"
+		{
+			"raikage_defeat"      "1"
+		}
+	}
+
+	"OnDoubleDamageRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_double"      "1"
+		}
+	}
+
+	"OnHasteRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_haste"      "1"
+		}
+	}
+
+	"OnIllusionRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_illusion"      "1"
+		}
+	}
+
+	"OnInvisibilityRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_invis"      "1"
+		}
+	}
+
+	"OnRegenRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_regen"      "1"
+		}
+	}
+
+	"OnBountyRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_bounty"      "1"
+		}
+	}
+	
+	"OnArcaneRune"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_rune_arcane"      "1"
+		}
+	}
+
+	"OnLevelUp"
+	{
+		"Priority"  "2"
+		"AllChat" "1"
+		"Delay" "0.5"
+		"Sounds"
+		{
+			"raikage_levelup"      "1"
+		}
+	}
+}

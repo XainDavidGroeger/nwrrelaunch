@@ -1,0 +1,50 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_naruto"
+	"Title"			"Recommended items for Naruto"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_enchanted_mango"
+			"item"		"item_branches"
+			"item"		"item_branches"
+			"item"		"item_quelling_blade"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+ 			"item"		"item_bracer"	
+			"item"		"item_boots"
+			"item"		"item_magic_wand"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_power_treads"
+        		"item"		"item_sange_and_yasha"
+        		"item"		"item_black_king_bar"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"  	"item_heart"
+			"item"		"item_abyssal_blade"
+			"item"		"item_assault"
+			"item"		"item_skadi"
+			"item"		"item_radiance"
+		}
+		
+		"DOTA_Item_Build_Other_Items"
+		{
+			"item"  	"item_monkey_king_bar"
+			"item"		"item_nullifier"
+			"item"		"item_heavens_halbred"
+			"item"		"item_overwhelming_blink"
+		}
+	}
+}

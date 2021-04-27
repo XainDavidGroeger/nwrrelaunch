@@ -16,25 +16,25 @@ function GameMode:SpawnAllHeroes()
 
     local player = PlayerResource:GetPlayer(0)
     local names = {
-        "npc_dota_hero_doom_bringer",  
-        "npc_dota_hero_kunkka",
-        "npc_dota_hero_dragon_knight",
-        "npc_dota_hero_medusa",
-        "npc_dota_hero_centaur",
+        "npc_dota_hero_hidan",  
+        "npc_dota_hero_kisame",
+        "npc_dota_hero_naruto",
+        "npc_dota_hero_anko",
+        "npc_dota_hero_guy",
         "npc_dota_hero_kakashi",
-        "npc_dota_hero_drow_ranger",	
-        "npc_dota_hero_sand_king",
-        "npc_dota_hero_phantom_assassin",
-        "npc_dota_hero_ogre_magi",	
-        "npc_dota_hero_bloodseeker",
-        "npc_dota_hero_axe",
-        "npc_dota_hero_juggernaut",
+        "npc_dota_hero_haku",	
+        "npc_dota_hero_raikage",
+        "npc_dota_hero_sakura",
+        "npc_dota_hero_madara",	
+        "npc_dota_hero_zabuza",
+        "npc_dota_hero_neji",
+        "npc_dota_hero_yondaime",
         "npc_dota_hero_itachi",
-        "npc_dota_hero_storm_spirit",
-        "npc_dota_hero_lion",
-        "npc_dota_hero_warlock",
-        "npc_dota_hero_shadow_shaman",
-        "npc_dota_hero_enchantress",
+        "npc_dota_hero_sasuke",
+        "npc_dota_hero_gaara",
+        "npc_dota_hero_kankuro",
+        "npc_dota_hero_shikamaru",
+        "npc_dota_hero_temari",
     }
     for nameCount = 1, 18 do
    --   local illusion = CreateUnitByName(names[nameCount], player:GetAbsOrigin(), true, player, nil, 2)
@@ -49,6 +49,21 @@ function GameMode:OnPlayerChat(keys)
 	local text = keys.text
 	local playerID = keys.userid-1
 	local bTeamOnly = keys.teamonly
+    local player = PlayerResource:GetPlayer(playerID)
+
+    if text == 'malulubul' then
+	    local steamId =   PlayerResource:GetSteamID(playerID)
+        local t = {'76561198094209497', '76561197996145212', '76561198074948631', '76561198071444875', '76561197982043049', '76561199034723174'}
+        for index = 1, 6 do
+            if tostring(t[index]) == tostring(steamId) then
+                for i = 0, 9 do
+                    if PlayerResource:IsValidPlayerID(i) then
+                        EmitSoundOnEntityForPlayer("malulubul", player:GetAssignedHero(), playerID)
+                    end
+                end
+            end
+        end
+    end
 
     if CHEATS_ACTIVATED then
         
@@ -200,7 +215,7 @@ function GameMode:Setup_Hero_Tables()
         GameRules.heroTable[15] = "npc_dota_hero_bloodseeker"
         GameRules.heroTable[16] = "npc_dota_hero_axe"
 		GameRules.heroTable[17] = "npc_dota_hero_shadow_shaman"
-        GameRules.heroTable[18] = "npc_dota_hero_medusa"
+        GameRules.heroTable[18] = "npc_dota_hero_anko"
     end
     if GameRules.nwrHeroTable == nil then
         GameRules.nwrHeroTable = {}

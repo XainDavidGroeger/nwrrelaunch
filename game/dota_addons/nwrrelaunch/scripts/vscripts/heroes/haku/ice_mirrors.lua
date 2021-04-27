@@ -1,13 +1,12 @@
 function create( keys )
 
 	local attack_min = keys.ability:GetLevelSpecialValueFor("attack_min", keys.ability:GetLevel() - 1)
-
 	local attack_max = keys.ability:GetLevelSpecialValueFor("attack_max", keys.ability:GetLevel() - 1)
 
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_haku_5")
 	if abilityS:IsTrained() then
 		attack_min = attack_min + 18
-		attack_max = attack_min + 18
+		attack_max = attack_min + 1
 	end
 
 	local hp = keys.ability:GetLevelSpecialValueFor("hp", keys.ability:GetLevel() - 1)

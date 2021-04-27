@@ -6,7 +6,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/gaara/gaara_sabaku_taiso.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -73,118 +74,16 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
-		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_ice.vpcf"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_cast.vsndevts"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_talking.vsndevts"
+		"soundfile"					"soundevents/heroes/gaara/gaara_burial_projectile.vsndevts"
+		"particle"					"particles/units/heroes/gaara/new_ulti/wave.vpcf"
 		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf"
 		"particle"					"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
 		"particle"					"particles/items_fx/cyclone.vpcf"
+		"particle"					"particles/units/heroes/gaara/ulti/ulti_core.vpcf"
+		"particle"					"particles/units/heroes/gaara/ulti/ulti_building_wave.vpcf"
 	}
-	
-	"OnSpellStart"
-	{
-		
 
-		"RunScript"
-		{
-			"Target"			"POINT"
-			"ScriptFile"		"heroes/gaara/sabaku_taiso.lua"
-			"Function"			"launch_earthquake"
-			
-			"distance"			"%range"
-			"start_radius"		"%start_radius"
-			"end_radius"		"%end_radius"
-			"speed"				"%speed"
-		}
-		
-
-	}
-	
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"		"0"
-
-		"Knockback"
-		{
-			"Target"            "TARGET"
-			"Center" 	        "CASTER"
-			"Distance"	        "0"
-			"Duration"	        "1"
-			"Height"	        "300"
-			"IsFixedDistance"	"1"
-			"ShouldStun"        "1"	
-		}
-
-		 "FireSound"
-	    {
-	      "EffectName"  "Hero_Brewmaster.ThunderClap"
-	      "Target"    "CASTER"
-	    }
-
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%AbilityDamage"
-		}
-
-		"Stun"
-		{
-			"Duration"   "%stun_duration"
-			"Target" 	 "TARGET"
-		}
-
-		"RunScript"
-		{
-					"ScriptFile"		"heroes/gaara/sabaku_taiso.lua"
-					"Function"			"launchCyclone"
-					"Target"			"TARGET"
-					"dummy_aura"		"modifier_gaara_cyclone"
-		}	
-	}
-	
-	"Modifiers"
-	{
-		"modifier_gaara_cyclone"
-			{
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"	"particles/items_fx/cyclone.vpcf"
-						"EffectAttachType"	"attach_origin"
-						"Target"		"TARGET"
-
-						"ControlPoints"
-						{
-							"01"	"50 50 0"
-						}
-					}
-
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
-						"EffectAttachType"	"attach_origin"
-						"Target"		"TARGET"
-
-						"ControlPoints"
-						{
-							"01"	"50 50 0"
-						}
-					}
-
-					
-
-				}
-				"States"
-				{
-					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
-					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-	}
-}
-
+  }
 }

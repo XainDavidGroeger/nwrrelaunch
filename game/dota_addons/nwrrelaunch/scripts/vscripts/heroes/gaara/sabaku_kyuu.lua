@@ -10,6 +10,8 @@ function applyDamage( keys )
 
 			local ability = keys.ability
 
+			keys.target:EmitSound("gaara_prison_impact")
+
 			local damage = ability:GetLevelSpecialValueFor("dmg", ability:GetLevel() - 1 )
 			local abilityS = keys.caster:FindAbilityByName("special_bonus_gaara_4")
 			if abilityS:IsTrained() then
@@ -35,4 +37,10 @@ function applyDamage( keys )
 	end
 	)
 	
+end
+
+
+function fireSound(keys)
+	keys.caster:EmitSound("gaara_prison_talking")
+	keys.caster:EmitSound("gaara_prison_cast")
 end

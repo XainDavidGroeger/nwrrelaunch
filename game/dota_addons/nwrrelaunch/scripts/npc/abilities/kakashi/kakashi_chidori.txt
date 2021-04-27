@@ -21,7 +21,10 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_cast.vsndevts"
+		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_loop.vsndevts"
+		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_impact.vsndevts"
+
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/hero/sven/sven_ult_storm_bolt.vpcf"
 		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
@@ -79,7 +82,12 @@
 			"ScriptFile"		"heroes/kakashi/chidori.lua"
 			"Function"			"ChannelChidori"
 			"modifier_caster"	"modifier_imba_storm_bolt_caster"
-			"sound_cast"		"Hero_Sven.StormBolt"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"kakashi_raikiri_cast"
+			"Target"	"CASTER"
 		}
 	}
 	
@@ -105,15 +113,13 @@
 			"ModifierName"		"modifier_epicenter_precast_datadriven"
 			"Target"			"CASTER"
 		}
-	
+
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/kakashi/chidori.lua"
 			"Function"				"Launch"
 			"modifier_caster"		"modifier_imba_storm_bolt_caster"
 			"particle_bolt"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-			"sound_cast"			"Hero_Sven.StormBolt"
-			"sound_impact"			"Hero_Sven.StormBoltImpact"
 			"particle_impact"		"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 		}
 	}

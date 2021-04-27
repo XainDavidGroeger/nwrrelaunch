@@ -1,0 +1,420 @@
+"hidan_attack"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/attack_01.vsnd"
+							"value1"		"sounds/vo/hidan/attack_02.vsnd"
+							"value2"		"sounds/vo/hidan/attack_03.vsnd"
+							"value3"		"sounds/vo/hidan/attack_04.vsnd"
+							"value4"		"sounds/vo/hidan/attack_05.vsnd"
+							"value5"		"sounds/vo/hidan/attack_06.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_move"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/move_01.vsnd"
+							"value1"		"sounds/vo/hidan/move_02.vsnd"
+							"value2"		"sounds/vo/hidan/move_03.vsnd"
+							"value3"		"sounds/vo/hidan/move_04.vsnd"
+							"value4"		"sounds/vo/hidan/move_05.vsnd"
+							"value5"		"sounds/vo/hidan/move_06.vsnd"
+							"value6"		"sounds/vo/hidan/move_07.vsnd"
+							"value7"		"sounds/vo/hidan/move_08.vsnd"
+							"value8"		"sounds/vo/hidan/move_09.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_hurt"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/pain_01.vsnd"
+							"value1"		"sounds/vo/hidan/pain_02.vsnd"
+							"value2"		"sounds/vo/hidan/pain_03.vsnd"
+							"value3"		"sounds/vo/hidan/pain_04.vsnd"
+							"value4"		"sounds/vo/hidan/pain_05.vsnd"
+							"value5"		"sounds/vo/hidan/pain_06.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_death"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/death_01.vsnd"
+							"value1"		"sounds/vo/hidan/death_02.vsnd"
+							"value2"		"sounds/vo/hidan/death_03.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_respawn"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/respawn_01.vsnd"
+							"value1"		"sounds/vo/hidan/respawn_02.vsnd"
+							"value2"		"sounds/vo/hidan/respawn_03.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_spawn"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/spawn_01.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_hero_kill"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/kill_01.vsnd"
+							"value1"		"sounds/vo/hidan/kill_02.vsnd"
+							"value2"		"sounds/vo/hidan/kill_03.vsnd"
+							"value3"		"sounds/vo/hidan/kill_04.vsnd"
+							"value4"		"sounds/vo/hidan/kill_05.vsnd"
+							"value5"		"sounds/vo/hidan/kill_06.vsnd"
+							"value6"		"sounds/vo/hidan/kill_07.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_firstblood"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/kill_01.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_creep_kill"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/lasthit_01.vsnd"
+							"value1"		"sounds/vo/hidan/lasthit_02.vsnd"
+							"value2"		"sounds/vo/hidan/lasthit_03.vsnd"
+						
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_creep_deny"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/deny_01.vsnd"
+							"value1"		"sounds/vo/hidan/deny_02.vsnd"
+							"value2"		"sounds/vo/hidan/deny_04.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_levelup"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/level_01.vsnd"
+							"value1"		"sounds/vo/hidan/level_02.vsnd"
+							"value2"		"sounds/vo/hidan/level_03.vsnd"
+							"value3"		"sounds/vo/hidan/level_04.vsnd"
+							"value4"		"sounds/vo/hidan/level_05.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}
+
+"hidan_win"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/vo/hidan/laugh_01.vsnd"
+						}
+					}
+					"volume"			{"value"	"1.00000"}
+					"pitch_rand_min"	{"value"	"-0.05000"}
+					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch"				{"value"	"1.000000"}
+					"soundlevel"		{"value"	"100.00000"}
+					"distance_max"		{"value"	"1600.000"}
+					"event_type"		{"value"	"1.000000"}
+				}
+			}
+		}
+	}
+}

@@ -12,5 +12,11 @@
    "item_magic_stick"      "REMOVE"
   "item_recipe_magic_wand"  "REMOVE"
   "item_magic_wand"         "REMOVE"
+  "item_ultimate_scepter"         "REMOVE"
+  "item_ultimate_scepter_2"         "REMOVE"
+  "item_aghanims_shard"         "REMOVE"
+  "item_magic_wand"         "REMOVE"
+  "item_sphere"    "REMOVE"
+
 
 }

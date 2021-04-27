@@ -1,0 +1,52 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_onoki"
+	"Title"			"Recommended items for Onoki"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_tango"
+			"item"		"item_flask"
+			"item"		"item_enchanted_mango"
+			"item"		"item_branches"
+			"item"		"item_orb_of_venom"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{
+ 			"item"		"item_orb_of_corrosion"	
+			"item"		"item_boots"
+			"item"		"item_magic_wand"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"
+		{
+			"item"		"item_phase_boots"
+        		"item"		"item_ancient_janggo"
+        		"item"		"item_blade_mail"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"  	"item_solar_crest"
+			"item"		"item_lotus_orb"
+			"item"		"item_pipe"
+			"item"		"item_black_king_bar"
+			"item"		"item_shivas"
+		}
+		
+		"DOTA_Item_Build_Other_Items"
+		{
+			"item"  	"item_mekansm"
+			"item"		"item_guardian_greaves"
+			"item"		"item_spirit_vessel"
+			"item"		"item_crimson_guard"
+			"item"		"item_heavens_halbred"
+			"item"		"item_rod_of_atos"
+			"item"		"item_blink"
+		}
+	}
+}
