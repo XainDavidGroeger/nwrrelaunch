@@ -26,9 +26,6 @@
 		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
 		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf"
-
-		"soundfile"	"soundevents/madara_fire_cast.vsndevts"
-		"soundfile"	"soundevents/madara_fire_explosion.vsndevts"
 	}
 	
 	// Casting
@@ -130,12 +127,6 @@
 	"OnSpellStart"
 	{
 
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_cast"
-			"Target"				"CASTER"
-		}
-
 		"RunScript"
 		{
 			"ScriptFile"			"heroes/madara/fire_release.lua"
@@ -177,13 +168,6 @@
 
 	"OnProjectileFinish"
 	{
-
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_explosion"
-			"Target"				"CASTER"
-		}
-
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/madara/fire_release.lua"

@@ -2,6 +2,9 @@
     "DOTAAbilities"
 {
     
+
+
+
 "madara_wood_release"
 {
 	// General
@@ -45,7 +48,6 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"tree_duration"				"2.5 3.0 3.5 4.0"
-			"LinkedSpecialBonus"		"special_bonus_madara_2"
 		}
 		"02"
 		{
@@ -88,7 +90,6 @@
 	{
 		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		"soundfile"						"soundevents/madara_trees.vsndevts"
-		"soundfile"						"soundevents/heroes/madara/madara_wood_release_cast.vsndevts"
 		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
 		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
 	}
@@ -100,11 +101,6 @@
 	 		"ScriptFile"	"heroes/madara/wood_release.lua"
 			"Function"		"wood_sound"
 	 	}
-		"FireSound"
-		{
-			"EffectName"		"madara_wood_release_cast"
-			"Target"			"CASTER"
-		}
 	 } 
 	
 	"OnSpellStart"
@@ -115,6 +111,7 @@
 			"Function"		"wood_release"
 			"Target"		"POINT"
 		}
+			
 	}
 
 	"Modifiers"

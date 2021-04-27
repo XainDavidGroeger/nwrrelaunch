@@ -53,7 +53,7 @@
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
 		"soundfile"	"soundevents/sakura_slam.vsndevts"
-		"particle"	"particles/units/heroes/sakura/sakura_earth_slam.vpcf"
+		"particle"	"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
 	}
 
@@ -70,7 +70,7 @@
 	{
 		"FireEffect"
 		{
-			"EffectName"		"particles/units/heroes/sakura/sakura_earth_slam.vpcf"
+			"EffectName"		"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 			"EffectAttachType" 	"follow_origin"
 			"EffectRadius"		"%radius"
 			"Target" 			"CASTER"

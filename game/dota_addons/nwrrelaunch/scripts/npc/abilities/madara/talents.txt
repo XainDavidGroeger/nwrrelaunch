@@ -47,7 +47,11 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"madara_wood_release"
+			"01" 	"madara_fire_release"
+			"02" 	"madara_wood_release"
+			"03" 	"madara_susano"
+			"04" 	"madara_meteor"
+
 		}
 
 		// Special
@@ -57,7 +61,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"1.5"
+				"value"					"-0.72"
 			}
 		}
 	}

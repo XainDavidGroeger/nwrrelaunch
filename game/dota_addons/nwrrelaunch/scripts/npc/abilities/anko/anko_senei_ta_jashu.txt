@@ -24,7 +24,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/heroes/anko/anko_striking_cast.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
 		"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf"
 		"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
 	}
@@ -99,13 +99,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/anko/anko_senei_ta_jashu.lua"
-			"Function"		"apply_slow_modifier"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"anko_striking_cast"
-			"Target"		"CASTER"
+			"Function"		"anko_senei_ta_jashu"
 		}
 		
 	}
@@ -160,7 +154,15 @@
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow"
 			}
 			
-		
+			"OnCreated"
+			{
+				"FireSound"
+				{
+				  "EffectName"  "Hero_Brewmaster.ThunderClap.Target"
+				  "Target"    "TARGET"
+				}     
+
+			}
 		}
 		
 		
