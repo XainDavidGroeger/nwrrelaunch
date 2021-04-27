@@ -5,9 +5,16 @@
 		//20: +100% Cleave / -3 Armor Track
 		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
 		//10: +175 Health / +20 Movement Speed
-    	"npc_dota_hero_bloodseeker" //zabuza
+    	"npc_dota_hero_zabuza" //zabuza
 		{
-		  "override_hero"   "npc_dota_hero_bloodseeker"
+
+
+		"HeroID"					"219"
+
+		"SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
+		  "BaseClass"   "npc_dota_hero_bloodseeker"
 		  "Ability1"        "zabuza_stealth"
 		  "Ability2"        "zabuza_kirigakure_no_jutsu"
 		  "Ability3"        "zabuza_weak_spot"
@@ -31,6 +38,10 @@
 		"SpectatorLoadoutScale" "1"
 		"VersusScale"			"1"
 		  "Model" 			"models/zabuza/zabuza.vmdl"
+
+		//Picking Screen
+		"IsCustom"					"1"
+
 	 	 "ItemSlots"
 	  	  { }
 	  	    "StatusHealth"    "200"
@@ -55,6 +66,35 @@
 
 	  	  "Village"			"kirigakure"
 	  	  "Gender"			"male"
+
+				"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
+	}
+
+
+		"npc_dota_hero_bloodseeker" 
+	{
+			"override_hero"   "npc_dota_hero_bloodseeker"
+			"Model" 		"models/zabuza/zabuza.vmdl"
+			"ModelScale"		"1"
+			"LoadoutScale"		"1" 
+			"SpectatorLoadoutScale" "1"
+			"VersusScale"			"1"
+	}	
 
 }

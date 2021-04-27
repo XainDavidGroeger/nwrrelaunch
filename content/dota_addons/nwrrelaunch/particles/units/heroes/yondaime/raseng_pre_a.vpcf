@@ -1,51 +1,18 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_Operators = 
+	m_flConstantLifespan = 1.2
+	m_nBehaviorVersion = 5
+	m_controlPointConfigurations = 
 	[
 		{
-			_class = "C_OP_BasicMovement"
-		},
-		{
-			_class = "C_OP_FadeAndKill"
-		},
-	]
-	m_Renderers = 
-	[
-		{
-			_class = "C_OP_RenderSprites"
-			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
-		},
-	]
-	m_Initializers = 
-	[
-		{
-			_class = "C_INIT_CreateWithinSphere"
-			m_fSpeedMin = -100.000000
-			m_fSpeedMax = 1.000000
-			m_fRadiusMin = 100.000000
-			m_fRadiusMax = 100.000000
-		},
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 9.000000
-			m_flRadiusMax = 9.000000
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = 
+			m_name = "preview"
+			m_drivers = 
 			[
-				0,
-				255,
-				255,
-				255,
-			]
-			m_ColorMax = 
-			[
-				0,
-				170,
-				255,
-				255,
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
 			]
 		},
 	]
@@ -55,5 +22,51 @@
 			_class = "C_OP_InstantaneousEmitter"
 		},
 	]
-	m_flConstantLifespan = 1.200000
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fSpeedMin = -100.0
+			m_fSpeedMax = 1.0
+			m_fRadiusMin = 100.0
+			m_fRadiusMax = 100.0
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 9.0
+			m_flRadiusMax = 9.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 0, 255, 255 ]
+			m_ColorMax = [ 0, 170, 255 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_FadeAndKill"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
+				},
+			]
+			m_OutlineColor = [ 255, 255, 255 ]
+		},
+	]
 }

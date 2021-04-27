@@ -1,24 +1,30 @@
 "DOTAAbilities"
 {
 
-		"npc_dota_hero_sven" //onoki
+//		25: +100 Atomic Dismantling Damage and Pure / +4% Turn to Dust Kill Threshold
+//		20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
+//		15: 14% Cooldown Reduction / +225 Atomic Dismantling Range
+//		10: +25 Attack Damage / +12% Magic Resistance
+
+		"npc_dota_hero_onoki" //onoki
 {
-			"override_hero"		"npc_dota_hero_sven"
+			"HeroID"					"212"
+			"BaseClass"		"npc_dota_hero_sven"
 			"Model"				"models/onuki/onoki_model.vmdl"
 			"Ability1"			"onoki_jinton"
 			"Ability2"			"onoki_stalagmite_armor"
-			"Ability3"			"onoki_turn_to_dust"
+			"Ability3"			"onoki_added_weight"
 			"Ability4"			"generic_hidden"
 			"Ability5"			"generic_hidden"
 			"Ability6"			"onoki_kajutan_no_jutsu"
-			"Ability10"		"special_bonus_spell_amplify_8"
-		   "Ability11"		"special_bonus_hp_175"
-		   "Ability12"		"special_bonus_attack_damage_70"
-		   "Ability13"		"special_bonus_mp_regen_4"
-		   "Ability14"		"special_bonus_armor_8"
-		   "Ability15"		"special_bonus_cast_range_225"
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_cooldown_reduction_25"
+			"Ability10"		"special_bonus_magic_resistance_12"
+		   "Ability11"		"special_bonus_attack_damage_25"
+		   "Ability12"		"special_bonus_onoki_1"
+		   "Ability13"		"special_bonus_onoki_2"
+		   "Ability14"		"special_bonus_onoki_3"
+		   "Ability15"		"special_bonus_onoki_4"
+		   "Ability16"		"special_bonus_onoki_5"
+		   "Ability17"		"special_bonus_onoki_6"
 			"StatusHealth"    "145"
 			"StatusHealthRegen"   "0.300000"
 
@@ -27,7 +33,11 @@
 			"SpectatorLoadoutScale" 	"2.35"
 			"VersusScale"			"2.35"
 
+			"SoundSet"					"Punch"
+			"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
 
+			//Picking Screen
+			"IsCustom"					"1"
 
 			"Role"			"Support,Nuker,Disabler,Durable,Initiator"
 			"Rolelevels"	"2,2,2,1,1"
@@ -51,11 +61,36 @@
 			"AttributeBaseAgility"			"13"
 			"AttributeAgilityGain"			"1.8"
 
+"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+
+
+			"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
                         "DisableWearables" "1"
-			"ItemSlots"	{ }
+			"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
 			"Village"			"iwagakure"
 			"Gender"			"male"
 }
+
+	"npc_dota_hero_sven" 
+	{
+			"override_hero"   "npc_dota_hero_sven"
+			"Model" 		 "models/onuki/onoki_model.vmdl"
+		"ModelScale"		"2.35"
+			"LoadoutScale"		"2.0" 
+			"SpectatorLoadoutScale" 	"2.35"
+			"VersusScale"			"2.35"
+	}
 
 
 }

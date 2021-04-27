@@ -2,9 +2,6 @@
 "DOTAAbilities"
 {
     
-
-
-
 "haku_endless_wounds"
 {
 	// General

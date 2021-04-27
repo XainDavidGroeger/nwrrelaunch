@@ -31,7 +31,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"5.0"
+				"tick_damage"					"5.0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sum_damage"					"150 162.50 200 237.50"
 			}
 		}
 	}

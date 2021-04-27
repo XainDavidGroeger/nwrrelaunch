@@ -69,7 +69,7 @@
 
     "OnSpellStart"
     {
-           "RunScript"
+        "RunScript"
         {
             "ScriptFile"    "heroes/neji/kaiten.lua"
             "Function"      "knockBack"
@@ -87,10 +87,21 @@
 		    "Target"		"CASTER"
         }
 
+        "FireEffect"
+        {
+            "EffectName"		"particles/units/heroes/neji/neji_kaiten_main.vpcf"
+            "EffectAttachType"		"follow_origin"
+            "Target"		"CASTER"
+            "ControlPoints"
+            {
+                "01"	"%aoe_target 100 100"  //radius, smoke thickness, smoke speed
+            }
+        }
+
         "Damage"
         {
             "Target"
-             {
+            {
                 "Center"            "CASTER"
                 "Radius"            "%aoe_target"
                 "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -114,23 +125,23 @@
         "modifier_neji_kaiten_untouchable"
         {
 
-            "OnCreated"
-            {
-                 "RunScript"
-                {
-                    "ScriptFile"    "heroes/neji/kaiten.lua"
-                    "Function"      "createParticle"
-                }
-            }
+            // "OnCreated"
+            // {
+            //      "RunScript"
+            //     {
+            //         "ScriptFile"    "heroes/neji/kaiten.lua"
+            //         "Function"      "createParticle"
+            //     }
+            // }
 
-            "OnDestroy"
-            {
-                 "RunScript"
-                {
-                    "ScriptFile"    "heroes/neji/kaiten.lua"
-                    "Function"      "removeParticle"
-                }
-            }
+            // "OnDestroy"
+            // {
+            //      "RunScript"
+            //     {
+            //         "ScriptFile"    "heroes/neji/kaiten.lua"
+            //         "Function"      "removeParticle"
+            //     }
+            // }
 
             "Duration"  "0.4"
             "States"

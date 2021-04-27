@@ -24,23 +24,22 @@ function OnKillEvent( event )
 	var teamId = event.victim_team_id
 	var teamPanelName = "_dynamic_team_" + teamId;
 	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
 	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
+
 	var playerPanelName = "_dynamic_player_" + event.victim_id;
+
 	var playerPanel = playersContainer.FindChild( playerPanelName );
-	if (playerPanelName != null){
+
+	if (playerPanelName !== null){
 		var childPanel = playerPanel.FindChildInLayoutFile( "DeathsContainer" );
 		var panel = childPanel.FindChildInLayoutFile( "Deaths" );
 		panel.text = parseInt(panel.text) + 1;
 	}
 	
-
-
 	var containerPanel = $( "#TeamsContainer" );
 	var teamId = event.team_id
 	var teamPanelName = "_dynamic_team_" + teamId;
 	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
 	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
 	var playerPanelName = "_dynamic_player_" + event.killer_id;
 	if (playerPanelName != null){
@@ -67,13 +66,11 @@ function OnLastHitEvent( event )
 		var panel = childPanel.FindChildInLayoutFile( "LastHits" );
 		panel.text = parseInt(panel.text) + 1;
 	}
-	
 
 }
 
 function OnDenyEvent( event )
 {
-
 	var containerPanel = $( "#TeamsContainer" );
 	var teamId = event.team_id
 	var teamPanelName = "_dynamic_team_" + teamId;
@@ -87,47 +84,8 @@ function OnDenyEvent( event )
 		var panel = childPanel.FindChildInLayoutFile( "Denies" );
 		panel.text = parseInt(panel.text) + 1;
 	}
-	
-
 }
 
-function OnDamageEvent( event )
-{
-
-
-
-	var containerPanel = $( "#TeamsContainer" );
-	var teamId = event.victim_team_id
-	var teamPanelName = "_dynamic_team_" + teamId;
-	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
-	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
-	var playerPanelName = "_dynamic_player_" + event.victim_id;
-	var playerPanel = playersContainer.FindChild( playerPanelName );
-
-	if (playerPanel != null){
-		var childPanel = playerPanel.FindChildInLayoutFile( "DamageTakenContainer" );
-		var panel = childPanel.FindChildInLayoutFile( "DamageTaken" );
-		panel.text = Math.round(parseInt(panel.text) + event.damage);
-	}
-
-
-
-
-	var containerPanel = $( "#TeamsContainer" );
-	var teamId = event.attacker_team_id
-	var teamPanelName = "_dynamic_team_" + teamId;
-	var teamPanel = containerPanel.FindChild( teamPanelName );
-	var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
-	var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
-	var playerPanelName = "_dynamic_player_" + event.attacker_id;
-	var playerPanel = playersContainer.FindChild( playerPanelName );
-	if (playerPanel != null){
-		var childPanel = playerPanel.FindChildInLayoutFile( "DamageDealtContainer" );
-		var panel = childPanel.FindChildInLayoutFile( "DamageDealt" );
-		panel.text = Math.round(parseInt(panel.text) + event.damage);
-	}
-}
 
 function OnHeroInGame( event )
 {
@@ -162,6 +120,8 @@ function OnHeroInGame( event )
 }
 
 
+
+
 (function()
 {
 	if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
@@ -174,12 +134,11 @@ function OnHeroInGame( event )
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#TeamsContainer" ) );
 	
 	SetFlyoutScoreboardVisible( false );
-	
+
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
-	GameEvents.Subscribe( "kill_event", OnKillEvent );
-	GameEvents.Subscribe( "damage_event", OnDamageEvent );
-	GameEvents.Subscribe( "lasthit_event", OnLastHitEvent );
-	GameEvents.Subscribe( "deny_event", OnDenyEvent );
+
+	GameEvents.Subscribe( "hero_killed", OnKillEvent );
+	GameEvents.Subscribe( "lasthit", OnLastHitEvent );
+	GameEvents.Subscribe( "deny", OnDenyEvent );
 	GameEvents.Subscribe( "initiate", OnHeroInGame );
-	
 })();

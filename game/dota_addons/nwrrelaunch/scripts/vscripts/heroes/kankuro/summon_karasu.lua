@@ -66,8 +66,8 @@ function summon_karasu( keys )
 	local ability7 = keys.caster:FindAbilityByName("special_bonus_kankuro_7")
 	if ability7 ~= nil then
 		if ability7:IsTrained() then
-			karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 225)
-			karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 225)
+			karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 150)
+			karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 150)
 		end
 	end
 	

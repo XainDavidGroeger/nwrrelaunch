@@ -35,7 +35,6 @@ function GameMode:OnGameRulesStateChange(keys)
 		print("tst3")
 
 		GameMode:SetShops()
-
 		for i = 0, PlayerResource:GetPlayerCount() - 1 do
 			if PlayerResource:IsValidPlayerID(i) then
 				if not PlayerResource:HasSelectedHero(i) then

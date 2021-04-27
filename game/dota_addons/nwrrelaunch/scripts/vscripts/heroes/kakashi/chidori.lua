@@ -19,8 +19,8 @@ function FinishChidori(keys)
 	RemovePhysics(keys.caster)
 	keys.caster:RemoveModifierByName(keys.modifier_caster)
 	keys.caster:RemoveModifierByName("modifier_raikiri_stunned")
-	keys.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_2)
-	keys.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_1)
+	keys.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_5) --maybe it's not needed...
+	keys.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_4)
 end
 
 function Launch(keys)	
@@ -29,14 +29,13 @@ function Launch(keys)
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 	local velocity = ability:GetLevelSpecialValueFor("speed", ability_level)
-	local sound_impact = keys.sound_impact
 	local particle_impact = keys.particle_impact
 
+	caster:EmitSound("kakashi_raikiri_loop")
 
-	caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2)
-	caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_1, 1)
+	caster:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
+	caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_4, 1)
 
-	caster:EmitSound(keys.sound_cast)
 	AddPhysics(caster)
 	ability:ApplyDataDrivenModifier(caster, caster, "modifier_raikiri_stunned", {})
 	-- Movement
@@ -71,11 +70,11 @@ function Launch(keys)
 			}
 			ApplyDamage( damageTable )
 
-			target:EmitSound(sound_impact)
-
-
+			
 
 			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
+			caster:StopSound("kakashi_raikiri_loop")
+			target:EmitSound("kakashi_raikiri_impact")
 			return nil
 		end
 		return 0.03
@@ -83,13 +82,13 @@ function Launch(keys)
 end
 
 function ChannelChidori( keys )
-	keys.caster:EmitSound(keys.sound_cast)
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_caster, {})
-	keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_2, 0.3)
+	keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_4, 0.3)
 end
 
 function RemoveChannelChidori(keys)
-	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_2)
+	keys.caster:StopSound("kakashi_raikiri_cast")
+	keys.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
 	keys.caster:RemoveModifierByName(keys.modifier_caster)
 end
 

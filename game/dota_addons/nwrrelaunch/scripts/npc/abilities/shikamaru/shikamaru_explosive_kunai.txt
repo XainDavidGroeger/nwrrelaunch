@@ -35,9 +35,11 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 		"particle"				"particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf"
 		"particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
+
+		"soundfile"				"soundevents/heroes/shikamaru/shikamaru_kunai_cast.vsndevts"
+		"soundfile"				"soundevents/heroes/shikamaru/shikamaru_kunai_explode.vsndevts"
 	}
 	
 	// Special
@@ -82,6 +84,13 @@
 			"damage"			"70 130 190 250"
 			"LinkedSpecialBonus"	"special_bonus_shikamaru_5"
 		}
+
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cd_reduc"				"0"
+			"LinkedSpecialBonus"	"special_bonus_shikamaru_2"
+		}
 	}
 	
 	"OnSpellStart"
@@ -99,7 +108,7 @@
 		
 		"FireSound"
 		{
-			"EffectName"			"Hero_Crystal.CrystalNova"
+			"EffectName"			"shikamaru_kunai_cast"
 			"Target"				"CASTER"
 		}
 
@@ -115,6 +124,12 @@
 			"ScriptFile"		"heroes/shikamaru/explosive_kunai.lua"
 			"Function"			"explosive_kunai_post_vision"
 			"Target"			"POINT"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/shikamaru/explosive_kunai.lua"
+			"Function"			"reset_cooldown_if_talent_is_skilled"
 		}
 	}
 	

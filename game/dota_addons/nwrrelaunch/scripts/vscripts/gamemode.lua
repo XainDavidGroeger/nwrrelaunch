@@ -83,18 +83,36 @@ end
 	The hero parameter is the hero entity that just spawned in
 ]]
 function GameMode:OnHeroInGame(hero)
-	DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
+	local playerId = hero:GetPlayerOwnerID()
+	Timers:CreateTimer(80, function()
+		local playerId = hero:GetPlayerOwnerID()
+		if hero:GetTeamNumber() == 2 then
+			EmitSoundOnEntityForPlayer("shinobi_start", hero, playerId)
+		else
+			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
+		end
+	end
+	)
 
 	GameMode:RemoveWearables( hero )
 
 	if hero:IsCustomHero() then
-		CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
-			player_id = hero:GetPlayerID(),
-			icon_path = hero:GetUnitName(),
-		})
+		sendOverrideHeroImage(hero)
 
 		VoiceResponses:RegisterUnit(hero:GetUnitName(), "scripts/vscripts/components/voicelines/keyvalues/"..string.gsub(hero:GetUnitName(), "npc_dota_hero_", "").."_responses.txt")
 	end
+end
+
+
+function sendOverrideHeroImage(hero)
+	CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
+		player_id = hero:GetPlayerID(),
+		icon_path = hero:GetUnitName(),
+	})
+
+	Timers:CreateTimer( 5, function()
+		sendOverrideHeroImage(hero)
+	end)
 end
 
 function GameMode:OnNewHeroSelected(event)
@@ -106,6 +124,7 @@ function GameMode:OnNewHeroSelected(event)
 
 end
 
+
 function GameMode:OnNewHeroChosen(event)
 
 
@@ -113,6 +132,65 @@ function GameMode:OnNewHeroChosen(event)
 	DebugPrintTable(event)
 
 
+end
+
+function GameMode:OnEntityKilled(event)
+
+	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
+	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
+
+	if not hAttacker:IsRealHero() then
+		return nil
+	end
+
+	if hTarget ~= nil
+	and hTarget:IsRealHero()
+		and not hTarget:IsClone()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("hero_killed", {
+				attacker = hAttacker,
+				target = hTarget,
+				victim_team_id = hTarget:GetTeamNumber(),
+				victim_id = hTarget:GetPlayerID(),
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
+
+	if hTarget ~= nil
+		and hTarget:IsCreep()
+		and hAttacker:IsRealHero()
+		and hTarget:GetTeamNumber() ~= hAttacker:GetTeamNumber()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("lasthit", {
+				attacker = hAttacker,
+				target = hTarget,
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
+
+	if hTarget ~= nil
+		and hTarget:IsCreep()
+		and hAttacker:IsRealHero()
+		and hTarget:GetTeamNumber() == hAttacker:GetTeamNumber()
+		and not hTarget:IsTempestDouble()
+		and not hTarget:IsReincarnating()
+		then
+			CustomGameEventManager:Send_ServerToAllClients("deny", {
+				attacker = hAttacker,
+				target = hTarget,
+				team_id = hAttacker:GetTeamNumber(),
+				killer_id = hAttacker:GetPlayerID()
+			})
+			return nil
+	end
 end
 
 --[[
@@ -123,6 +201,7 @@ end
 function GameMode:OnGameInProgress()
 
 end
+
 
 -- This function initializes the game mode and is called before anyone loads into the game
 -- It can be used to pre-initialize any values/tables that will be needed later

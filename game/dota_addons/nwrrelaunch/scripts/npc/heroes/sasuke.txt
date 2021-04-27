@@ -4,9 +4,10 @@
 		//20: +12% Spell Amplification / +225 Chidori Spear Range
 		//15: +14 Strength / +70 Chidori Nagashi Damage
 		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
-		"npc_dota_hero_storm_spirit" //sasuke
+		"npc_dota_hero_sasuke" //sasuke
 		{
-		  "override_hero"   "npc_dota_hero_storm_spirit"
+			"HeroID"					"215"
+		  "BaseClass"   "npc_dota_hero_storm_spirit"
 		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
 		  "Ability1"        "sasuke_chidori_nagashi"
 		  "Ability2"        "sasuke_chidori_eiso" 
@@ -28,6 +29,9 @@
 		   "Ability16"		"special_bonus_intelligence_35"
 		   "Ability17"		"special_bonus_sasuke_4"
 
+		  "SoundSet"					"Kunai"
+		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
+
 		 "ArmorPhysical"		"2.000000"
 		"AttackDamageMin"		"29"
 		"AttackDamageMax"		"34"
@@ -41,6 +45,10 @@
 		 // "AttackRate"				"0.7"
 		  "AttackRange"				"100"
 		  "MovementSpeed"			"310"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+
+		//Picking Screen
+		"IsCustom"					"1"
 
 		  "AttributeBaseStrength" "21" // Base strength
 		  "AttributeStrengthGain" "2.00" // Strength bonus per level.
@@ -53,11 +61,34 @@
 		"SpectatorLoadoutScale" 	"0.90" 
 		"VersusScale"			"0.90" 
 		
-
-	 	  "ItemSlots"
-	  	  { }
 	  	  "Village"			"konoha_scarred"
 	  	  "Gender"			"male"
+
+		"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
 		}
+	}
+
+
+	"npc_dota_hero_storm_spirit" 
+	{
+			"override_hero"   "npc_dota_hero_storm_spirit"
+			"Model" 		 "models/heroes/zuus/zuozhu.vmdl"
+			  "ModelScale"		"0.90"
+		 "LoadoutScale"		"0.90" 
+		"SpectatorLoadoutScale" 	"0.90" 
+		"VersusScale"			"0.90" 
+	}	
 
 }

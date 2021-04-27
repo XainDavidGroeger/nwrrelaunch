@@ -15,7 +15,7 @@ function chakra_enhanced_strength_apply( keys )
 		local ability5 = keys.caster:FindAbilityByName("special_bonus_sakura_5")
 		if ability5:IsTrained() then
 			keys.caster:RemoveModifierByName("modifier_sakura_chakra_enhanced_strength")
-			keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
+			keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
 		end
 	end
 

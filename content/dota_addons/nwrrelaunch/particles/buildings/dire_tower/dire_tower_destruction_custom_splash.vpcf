@@ -1,0 +1,37 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 11
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/buildings/dire_tower/dire_tower_destruction_custom_splash_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/buildings/dire_tower/dire_tower_destruction_custom_splash_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/buildings/dire_tower/dire_tower_destruction_custom_splash_fire.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/buildings/dire_tower/dire_tower_destruction_custom_splash_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/buildings/dire_tower/dire_tower_destruction_custom_splash_drops.vpcf"
+		},
+	]
+}
