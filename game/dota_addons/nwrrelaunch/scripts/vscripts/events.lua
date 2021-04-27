@@ -31,6 +31,9 @@ function GameMode:OnGameRulesStateChange(keys)
 		GameMode:ChangeBuildings()
 		VoiceResponses:Start()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+		DebugPrint("tst4")
+		print("tst3")
+
 		GameMode:SetShops()
 		for i = 0, PlayerResource:GetPlayerCount() - 1 do
 			if PlayerResource:IsValidPlayerID(i) then
@@ -45,6 +48,14 @@ function GameMode:OnGameRulesStateChange(keys)
 				})
 			end
 		end
+
+--[[
+		if IsInToolsMode() then
+			SendToServerConsole('sm_gmode 1')
+			SendToServerConsole('dota_bot_populate')
+		end
+--]]
+
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
 	end
 end
