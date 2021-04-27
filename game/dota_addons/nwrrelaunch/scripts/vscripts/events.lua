@@ -31,9 +31,8 @@ function GameMode:OnGameRulesStateChange(keys)
 		GameMode:ChangeBuildings()
 		VoiceResponses:Start()
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-
 		DebugPrint("tst4")
-		Print("tst3")
+		print("tst3")
 
 		GameMode:SetShops()
 
