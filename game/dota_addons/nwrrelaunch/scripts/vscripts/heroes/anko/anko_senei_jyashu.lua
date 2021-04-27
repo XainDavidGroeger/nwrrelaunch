@@ -1,104 +1,116 @@
-anko_senei_jyashu = class({})
-
 --[[Author: Zenicus
 	Modified from Bristleback's bristleback ability
-	Date: 11.05.2015.]]
+	Date: 11.05.2015.
+	Converted from datadriven to lua by EarthSalamander
+	Date: 27.04.2021
+]]
 --------------------------------------------------------------------------------
-function anko_senei_jyashu(params)
-	if params.caster:IsRealHero() then
 
-		local abilityS2 = params.caster:FindAbilityByName("special_bonus_anko_4")
-		if abilityS2 ~= nil then
-			if abilityS2:IsTrained() == false and params.special == 1 then
-				return false
-			end
-			if abilityS2:IsTrained() and params.special == 0 then
-				return false
-			end
-		end
+anko_senei_jyashu = anko_senei_jyashu or class({})
 
-		local parent = params.target
-		local ability = params.ability
-		local radius = ability:GetSpecialValueFor("seek_radius")
-		local duration =  ability:GetSpecialValueFor("snake_damage_interval")
+LinkLuaModifier("modifier_senei_jyashu", "scripts/vscripts/heroes/anko/anko_senei_jyashu.lua", LUA_MODIFIER_MOTION_NONE)
 
-		local final_damage = ability:GetLevelSpecialValueFor("snake_damage", params.ability:GetLevel() - 1 )
-
-
-		local abilityS = params.caster:FindAbilityByName("special_bonus_anko_3")
-		if ability5 ~= nil then
-			if abilityS:IsTrained() then
-				final_damage = final_damage + 80
-			end
-		end
-
-		local caster = params.caster
-
-		local team = caster:GetTeamNumber()
-		local caster_location = caster:GetAbsOrigin()
-		local target_location = parent:GetAbsOrigin()
-		local origin = caster:GetAbsOrigin()
-		local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
-		local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-		local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
-		local iOrder = FIND_ANY_ORDER
-
-		--Sounds
-		local sound_enemy = params.sound_enemy
-
-		--Animations
-		local projectile_speed = ability:GetSpecialValueFor( "projectile_speed" )
-		local mystic_snake_projectile = params.mystic_snake_projectile
-
-		-- Search for Targets based on range
-		local full_enemies = FindUnitsInRadius(team, origin, nil, radius, iTeam, iType, iFlag, iOrder, false)
-
-		if (#full_enemies  < 1) then
-			return
-		end
-		
-		--local target_enemy
-		local rnd = RandomInt(1, #full_enemies)
-		local target_enemy = full_enemies[rnd]
-
-		if not target_enemy then
-			return
-		end
-
-		-- Create the projectile
-		local projectile_info = 
-		{
-			EffectName = mystic_snake_projectile,
-			Ability = ability,
-			vSpawnOrigin = target_location,
-			Target = target_enemy,
-			Source = parent,
-			bHasFrontalCone = false,
-			iMoveSpeed = projectile_speed,
-			bReplaceExisting = true,
-			bProvidesVision = true,
-			iVisionTeamNumber = caster:GetTeamNumber()
-		}
-
-		ProjectileManager:CreateTrackingProjectile( projectile_info )
-
-		-- Play the sound and particle of the spell
-		EmitSoundOn(sound_enemy, target_enemy)
-
-		-- Apply Damage
-		-- The table containing the information needed for ApplyDamage.
-		local damage_table = {}
-
-		damage_table.attacker = caster
-		damage_table.damage_type = DAMAGE_TYPE_PHYSICAL
-		damage_table.ability = ability
-		damage_table.victim = target_enemy
-
-		damage_table.damage = final_damage
-
-		ApplyDamage(damage_table)
-
-	end
-
+function anko_senei_jyashu:GetIntrinsicModifierName()
+	return "modifier_senei_jyashu"
 end
 
+function anko_senei_jyashu:OnProjectileHit(hTarget, vLocation)
+	if not IsServer() then return end
+
+	if hTarget then
+		local damage = self:GetSpecialValueFor("snake_damage") + self:GetCaster():FindTalentValue("special_bonus_anko_3")
+
+		ApplyDamage({
+			attacker = self:GetCaster(),
+			damage_type = self:GetAbilityDamageType(),
+			ability = self,
+			victim = hTarget,
+			damage = damage,
+		})
+
+		hTarget:EmitSound("Hero_Medusa.MysticSnake.Target")
+	end
+end
+
+modifier_senei_jyashu = modifier_senei_jyashu or class({})
+
+function modifier_senei_jyashu:IsHidden() return true end
+
+function modifier_senei_jyashu:DeclareFunctions() return {
+	MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+} end
+
+function modifier_senei_jyashu:OnCreated()
+	if not IsServer() then return end
+
+	self.interval_upgraded = false
+	self.interval = self:GetAbility():GetSpecialValueFor("snake_damage_interval") + self:GetCaster():FindTalentValue("special_bonus_anko_4")
+
+	self:StartIntervalThink(self.interval)
+end
+
+function modifier_senei_jyashu:OnIntervalThink()
+	if not self:GetParent():IsRealHero() then return end
+
+	if self.interval_upgraded == false and self:GetParent():HasTalent("special_bonus_anko_4") then
+		self.interval_upgraded = true
+		self.interval = self:GetAbility():GetSpecialValueFor("snake_damage_interval") + self:GetParent():FindTalentValue("special_bonus_anko_4")
+
+		self:StartIntervalThink(self.interval)
+		self:OnIntervalThink()
+
+		return
+	end
+
+	local ability = self:GetAbility()
+	local origin = self:GetParent():GetAbsOrigin()
+	local radius = ability:GetSpecialValueFor("seek_radius")
+
+	-- Search for Targets based on range
+	local full_enemies = FindUnitsInRadius(
+		self:GetParent():GetTeamNumber(),
+		origin,
+		nil,
+		radius,
+		ability:GetAbilityTargetTeam(),
+		ability:GetAbilityTargetType(),
+		ability:GetAbilityTargetFlags(),
+		FIND_ANY_ORDER,
+		false
+	)
+
+	if (#full_enemies < 1) then
+		return
+	end
+
+	--local target_enemy
+	local rnd = RandomInt(1, #full_enemies)
+	local target_enemy = full_enemies[rnd]
+
+	if not target_enemy then
+		return
+	end
+
+	-- Create the projectile
+	local projectile_info = 
+	{
+		EffectName = "particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf",
+		Ability = ability,
+		vSpawnOrigin = origin,
+		Target = target_enemy,
+		Source = self:GetParent(),
+		bHasFrontalCone = false,
+		iMoveSpeed = ability:GetSpecialValueFor("projectile_speed"),
+		bReplaceExisting = true,
+		bProvidesVision = true,
+		iVisionTeamNumber = self:GetParent():GetTeamNumber()
+	}
+
+	ProjectileManager:CreateTrackingProjectile(projectile_info)
+
+	target_enemy:EmitSound("Hero_Medusa.MysticSnake.Cast")
+end
+
+function modifier_senei_jyashu:GetModifierMagicalResistanceBonus()
+	return self:GetAbility():GetSpecialValueFor("senei_jyashu_magic_resist")
+end
