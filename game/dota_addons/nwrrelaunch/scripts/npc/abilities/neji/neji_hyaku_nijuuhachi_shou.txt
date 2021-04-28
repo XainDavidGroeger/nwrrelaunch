@@ -25,6 +25,12 @@
 			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
 			"particle"	"particles/units/heroes/neji/ulti/bagum_projected.vpcf"
 			"soundfile"	"soundevents/heroes/neji/neji_64_cast.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_channel.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_cast_talking.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_finish_talking.vsndevts"
+
+			"particle"	"particles/units/heroes/neji/ulti/ulti_images.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/2_ulti_images.vpcf"
 		}	
 
 		// Casting
@@ -34,7 +40,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"3.0 3.0 3.0"
+		"AbilityChannelTime"			"4.0 4.0 4.0"
 		"AbilityCooldown"				"120.0 100.0 80.0"
 
 		// Cost
@@ -53,7 +59,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"3.0 3.0 3.0"
+				"duration"						"4.0 4.0 4.0"
 			}
 			"03"
 			{
@@ -85,6 +91,18 @@
 				"EffectName"  "neji_64_cast"
               	"Target"    "CASTER"
 			}
+
+			"FireSound"
+			{
+				"EffectName"  "neji_64_channel"
+              	"Target"    "CASTER"
+			}
+
+				"FireSound"
+			{
+				"EffectName"  "neji_64_cast_talking"
+              	"Target"    "CASTER"
+			}
 			
 			"RunScript"
 			{
@@ -98,6 +116,12 @@
 				"PierceMagicImmune"	"true"
 			}
 
+			"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"addParticle"
+				}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_hyaku_nijuuhachi_shou_caster"
@@ -109,6 +133,11 @@
 
 		"OnChannelInterrupted"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+				"Function"		"cancelSpell"
+			}
 		}
 
 		"OnChannelFinish"
@@ -122,6 +151,18 @@
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 			}
+
+				"FireSound"
+			{
+				"EffectName"  "neji_64_finish_talking"
+              	"Target"    "CASTER"
+			}
+
+			"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"cancelSpell"
+				}
 
 			"RemoveModifier"
 			{

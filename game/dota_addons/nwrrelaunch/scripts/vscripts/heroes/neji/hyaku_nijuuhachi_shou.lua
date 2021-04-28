@@ -34,3 +34,26 @@ function removeModifiers( keys )
 	keys.ability.target:RemoveModifierByName("modifier_hyaku_nijuuhachi_shou")
 	keys.ability.target:RemoveModifierByName("modifier_fiend_grip_invis_datadriven")
 end
+
+function cancelSpell ( keys )
+	keys.caster:StopSound( "neji_64_channel" )
+	keys.caster:StopSound( "neji_64_cast_talking" )
+--	ParticleManager:DestroyParticle(keys.particle, false)
+end
+
+function addParticle( keys )
+	
+	local caster = keys.caster
+	local target = keys.target
+
+	local distance = target:GetAbsOrigin() - caster:GetAbsOrigin()
+
+		
+	keys.particle = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/2_ulti_images.vpcf", PATTACH_ABSORIGIN, caster)
+	ParticleManager:SetParticleControl(keys.particle, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(keys.particle, 1, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(keys.particle, 3, target:GetAbsOrigin())
+	ParticleManager:SetParticleControl(keys.particle, 4, caster:GetForwardVector() * distance:Length2D() )
+	--ParticleManager:SetParticleControlEnt(particle, 2, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", caster:GetAbsOrigin() + caster:GetForwardVector() * Vector(1,1,1) , true)
+
+end
