@@ -14,7 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/madara_katon.vsnd"
+                              "value0"        "sounds/heroes/madara/fire_01.vsnd"
+                              "value1"        "sounds/heroes/madara/fire_02.vsnd"
+                              "value2"        "sounds/heroes/madara/fire_03.vsnd"
+                              "value3"        "sounds/heroes/madara/fire_04.vsnd"
                         }
                     }
                     "volume"            {   "value"     "2.50000"  }

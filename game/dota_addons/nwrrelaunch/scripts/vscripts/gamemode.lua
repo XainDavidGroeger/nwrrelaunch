@@ -110,8 +110,11 @@ function sendOverrideHeroImage(hero)
 		icon_path = hero:GetUnitName(),
 	})
 
-	Timers:CreateTimer( 5, function()
-		sendOverrideHeroImage(hero)
+	Timers:CreateTimer( 120, function()
+		CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
+			player_id = hero:GetPlayerID(),
+			icon_path = hero:GetUnitName(),
+		})
 	end)
 end
 

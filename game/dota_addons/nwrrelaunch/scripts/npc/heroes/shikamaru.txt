@@ -40,6 +40,8 @@
 		  "AttackAnimationPoint"   "0.4"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
+		"ProjectileModel"   "particles/units/heroes/shikamaru/base_attack/shikamaru_base_attack.vpcf"
+		"ProjectileSpeed"  "1200"
 
 		//Picking Screen
 		"IsCustom"					"1"

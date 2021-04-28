@@ -42,7 +42,7 @@ function sharingan( keys )
 	local ability_level = ability:GetLevel()
 	local copy_timer =  ability:GetLevelSpecialValueFor("copy_timer", (ability:GetLevel() - 1))
 	
-	if (target == caster) or (target:GetPlayerID() == caster:GetPlayerID()) then
+	if (target == caster) or (target:GetPlayerID() == caster:GetPlayerID()) or (target:IsIllusion() and target:GetOwner() == caster) then
 		ability:EndCooldown()
 		return
 	end

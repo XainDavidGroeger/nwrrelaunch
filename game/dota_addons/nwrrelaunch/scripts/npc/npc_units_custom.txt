@@ -962,7 +962,7 @@
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "3.5"
+		"ModelScale"                "6"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"
@@ -1053,7 +1053,7 @@
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "3.5"
+		"ModelScale"                "6"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"
@@ -1145,7 +1145,7 @@
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "3.5"
+		"ModelScale"                "6"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"
@@ -1236,7 +1236,7 @@
 		//
 		"BaseClass"					"npc_dota_tower"	// Класс юнита
 		"Model"						"models/props_structures/dire_tower002.vmdl"// Модель
-		"ModelScale"                "3.5"
+		"ModelScale"                "6"
 		"SoundSet"					"Tower.Water"					// Название набора эффектов
 		"MinimapIcon"				""                              // Иконка на мини-карте (по желанию)
 		"MinimapIconSize"			"320"

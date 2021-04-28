@@ -1,46 +1,98 @@
 --[[Author: LearningDave
 	Date: 04.11.2015
 	Applies damage to target and fires a impact effect after x sec delay
+	- Converted from datadriven to lua by EarthSalamander
+	- Date: 27.04.2021
 ]]
-function applyDamage( keys )
-	local delay_to_damage = keys.ability:GetLevelSpecialValueFor("delay_to_dmg",  keys.ability:GetLevel() - 1)
-	Timers:CreateTimer( delay_to_damage, function()
-		if keys.target:HasModifier("modifier_gaara_sabaku_kyuu") then
-			local abilityDamageType = keys.ability:GetAbilityDamageType()
 
-			local ability = keys.ability
+LinkLuaModifier("modifier_gaara_sabaku_kyuu", "scripts/vscripts/heroes/gaara/sabaku_kyuu.lua", LUA_MODIFIER_MOTION_NONE)
 
-			keys.target:EmitSound("gaara_prison_impact")
+gaara_sabaku_kyuu = gaara_sabaku_kyuu or class({})
 
-			local damage = ability:GetLevelSpecialValueFor("dmg", ability:GetLevel() - 1 )
-			local abilityS = keys.caster:FindAbilityByName("special_bonus_gaara_4")
-			if abilityS:IsTrained() then
-				damage = damage + 380
-			end
+function gaara_sabaku_kyuu:OnSpellStart()
+	if not IsServer() then return end
 
-			PopupDamage(keys.target, damage)
-			local damageTable = {
-						victim = keys.target,
-						attacker = keys.caster,
-						damage = damage,
-						damage_type = abilityDamageType
-					}
-			ApplyDamage( damageTable )
+	self.target = self:GetCursorTarget()
 
-			local particle_impact = keys.particle_impact
-			local enemy_loc = keys.target:GetAbsOrigin()
-			local enemy = keys.target
-			local impact_pfx = ParticleManager:CreateParticle(particle_impact, PATTACH_ABSORIGIN, enemy)
-			ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
-			ParticleManager:SetParticleControlEnt(impact_pfx, 3, enemy, PATTACH_ABSORIGIN, "attach_origin", enemy_loc, true)
-		end 
+	if self.target:TriggerSpellAbsorb(self) then
+		return
 	end
-	)
-	
+
+	if self.target and self.target:IsAlive() and not self.target:IsOutOfGame() then
+		self.target:AddNewModifier(self:GetCaster(), self, "modifier_gaara_sabaku_kyuu", {duration = self:GetSpecialValueFor("duration")})
+	end
 end
 
+function gaara_sabaku_kyuu:OnChannelFinish(bInterrupted)
+	if not IsServer() then return end
 
-function fireSound(keys)
-	keys.caster:EmitSound("gaara_prison_talking")
-	keys.caster:EmitSound("gaara_prison_cast")
+	if bInterrupted == true then
+		if self.target and self.target:IsAlive() and not self.target:IsOutOfGame() then
+			self.target:RemoveModifierByNameAndCaster("modifier_gaara_sabaku_kyuu", self:GetCaster())
+		end
+	end
+end
+
+modifier_gaara_sabaku_kyuu = modifier_gaara_sabaku_kyuu or class({})
+
+function modifier_gaara_sabaku_kyuu:IsHidden() return true end
+function modifier_gaara_sabaku_kyuu:GetEffectName() return "particles/generic_gameplay/generic_stunned.vpcf" end
+function modifier_gaara_sabaku_kyuu:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
+function modifier_gaara_sabaku_kyuu:GetOverrideAnimation() return ACT_DOTA_DISABLED end
+
+function modifier_gaara_sabaku_kyuu:OnCreated()
+	if not IsServer() then return end
+
+	local knockback_param = {
+		should_stun = 1,
+		knockback_duration = self:GetAbility():GetSpecialValueFor("duration"),
+		duration = self:GetAbility():GetSpecialValueFor("duration"),
+		knockback_distance = 0,
+		knockback_height = 200,
+		center_x = self:GetParent().x,
+		center_y = self:GetParent().y,
+		center_z = self:GetParent().z,
+	}
+
+	self:GetParent():RemoveModifierByName("modifier_knockback")
+	self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_knockback", knockback_param)
+
+	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/gaara/sandsturm.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	ParticleManager:SetParticleControl(self.pfx, 1, Vector(200, 200, 0))
+
+	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("delay_to_dmg"))
+end
+
+function modifier_gaara_sabaku_kyuu:OnIntervalThink()
+	if self:GetParent():HasModifier("modifier_gaara_sabaku_kyuu") then
+		local damage = self:GetAbility():GetSpecialValueFor("dmg") + self:GetCaster():FindTalentValue("special_bonus_gaara_4")
+
+		PopupDamage(self:GetParent(), damage)
+
+		ApplyDamage({
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = damage,
+			damage_type = self:GetAbility():GetAbilityDamageType()
+		})
+
+		local enemy_loc = self:GetParent():GetAbsOrigin()
+
+		local impact_pfx = ParticleManager:CreateParticle("particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+		ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
+		ParticleManager:SetParticleControlEnt(impact_pfx, 3, self:GetParent(), PATTACH_ABSORIGIN, "attach_origin", enemy_loc, true)
+	end
+
+	self:StartIntervalThink(-1)
+end
+
+function modifier_gaara_sabaku_kyuu:OnDestroy()
+	if not IsServer() then return end
+
+	if self.pfx then
+		ParticleManager:DestroyParticle(self.pfx, false)
+		ParticleManager:ReleaseParticleIndex(self.pfx)
+	end
+
+	self:GetParent():RemoveModifierByNameAndCaster("modifier_knockback", self:GetCaster())
 end

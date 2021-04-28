@@ -1,4 +1,4 @@
-"madara_meteor_cast"
+"madara_meteor_impact"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/madara_meteor_cast.vsnd"
+                              "value0"        "sounds/madara_meteor_impact.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

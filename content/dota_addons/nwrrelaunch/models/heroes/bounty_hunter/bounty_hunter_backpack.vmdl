@@ -1,0 +1,84 @@
+PermModelData_t
+{
+	CResourceString m_name = "models/heroes/bounty_hunter/bounty_hunter_backpack.vmdl"
+	Struct m_modelInfo = PermModelInfo_t
+	{
+		uint32 m_nFlags = 0x00000000
+		Vector m_vHullMin = (0.000000, 0.000000, 0.000000)
+		Vector m_vHullMax = (0.000000, 0.000000, 0.000000)
+		Vector m_vViewMin = (0.000000, 0.000000, 0.000000)
+		Vector m_vViewMax = (0.000000, 0.000000, 0.000000)
+		float32 m_flMass = 0.000000
+		Vector m_vEyePosition = (0.000000, 0.000000, 0.000000)
+		float32 m_flMaxEyeDeflection = 0.000000
+		CResourceString m_sSurfaceProperty = ""
+		CResourceString m_keyValueText = ""
+	}
+	Struct m_ExtParts[0] =
+	[
+	]
+	ExternalReference m_refMeshes[0] =
+	[
+	]
+	uint64 m_refMeshGroupMasks[0] =
+	[
+	]
+	uint64 m_refPhysGroupMasks[0] =
+	[
+	]
+	uint8[0] m_refLODGroupMasks =
+	[
+	]
+	float32 m_lodGroupSwitchDistances[0] =
+	[
+	]
+	ExternalReference m_refPhysicsData[0] =
+	[
+	]
+	ExternalReference m_refPhysicsHitboxData[0] =
+	[
+	]
+	ExternalReference m_refAnimGroups[0] =
+	[
+	]
+	ExternalReference m_refSequenceGroups[0] =
+	[
+	]
+	CResourceString m_meshGroups[0] =
+	[
+	]
+	Struct m_materialGroups[0] =
+	[
+	]
+	uint64 m_nDefaultMeshGroupMask = 0xFFFFFFFFFFFFFFFF
+	Struct m_modelSkeleton = ModelSkeletonData_t
+	{
+		CResourceString m_boneName[0] =
+		[
+		]
+		int16 m_nParent[0] =
+		[
+		]
+		float32 m_boneSphere[0] =
+		[
+		]
+		uint32 m_nFlag[0] =
+		[
+		]
+		Vector m_bonePosParent[0] =
+		[
+		]
+		Quaternion m_boneRotParent[0] =
+		[
+		]
+	}
+	int16 m_remappingTable[0] =
+	[
+	]
+	uint16 m_remappingTableStarts[0] =
+	[
+	]
+	Struct m_boneFlexDrivers[0] =
+	[
+	]
+}
