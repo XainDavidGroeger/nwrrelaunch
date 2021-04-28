@@ -16,10 +16,6 @@
                         {
                               "value0"        "sounds/heroes/neji/64_cast_01.vsnd"
                               "value1"        "sounds/heroes/neji/64_cast_02.vsnd"
-                              "value2"        "sounds/heroes/neji/64_cast_03.vsnd"
-                              "value3"        "sounds/heroes/neji/64_cast_04.vsnd"
-                              "value4"        "sounds/heroes/neji/64_cast_05.vsnd"
-                              "value5"        "sounds/heroes/neji/64_cast_06.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

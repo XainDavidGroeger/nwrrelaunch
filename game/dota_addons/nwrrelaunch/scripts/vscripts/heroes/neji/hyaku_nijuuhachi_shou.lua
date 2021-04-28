@@ -54,6 +54,38 @@ function addParticle( keys )
 	ParticleManager:SetParticleControl(keys.particle, 1, caster:GetAbsOrigin())
 	ParticleManager:SetParticleControl(keys.particle, 3, target:GetAbsOrigin())
 	ParticleManager:SetParticleControl(keys.particle, 4, caster:GetForwardVector() * distance:Length2D() )
+
+
+
+	Timers:CreateTimer(1.33, function()
+		keys.number_32 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_32.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
+		ParticleManager:SetParticleControl(keys.number_32, 1, Vector(0, 1, 0))
+		ParticleManager:SetParticleControl(keys.number_32, 2, Vector(0, 6, 0))
+
+		Timers:CreateTimer(1.33, function()
+			ParticleManager:DestroyParticle(keys.number_32, false)
+			keys.number_64 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_64.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
+			ParticleManager:SetParticleControl(keys.number_64, 1, Vector(0, 3, 0))
+			ParticleManager:SetParticleControl(keys.number_64, 2, Vector(0, 2, 0))
+	
+			Timers:CreateTimer(1.33, function()
+				ParticleManager:DestroyParticle(keys.number_64, false)
+				keys.number_128 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_128.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
+				ParticleManager:SetParticleControl(keys.number_128, 1, Vector(0, 6, 0))
+				ParticleManager:SetParticleControl(keys.number_128, 2, Vector(0, 4, 0))
+				--ParticleManager:SetParticleControl(keys.number_128, 3, Vector(0, 8, 0))
+			end)
+		end)
+	end)
+
+	Timers:CreateTimer(5.0, function()
+		ParticleManager:DestroyParticle(keys.number_32, false)
+		ParticleManager:DestroyParticle(keys.number_64, false)
+		ParticleManager:DestroyParticle(keys.number_128, false)
+	end)
+	
+
+
 	--ParticleManager:SetParticleControlEnt(particle, 2, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", caster:GetAbsOrigin() + caster:GetForwardVector() * Vector(1,1,1) , true)
 
 end

@@ -31,11 +31,14 @@
 
 			"particle"	"particles/units/heroes/neji/ulti/ulti_images.vpcf"
 			"particle"	"particles/units/heroes/neji/ulti/2_ulti_images.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_32.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_64.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_128.vpcf"
 		}	
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"270"
 		"AbilityCastPoint"				"0.5 0.5 0.5"
 
 		// Time		

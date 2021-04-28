@@ -54,9 +54,10 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndTime = 0.15
-			m_flStartScale = 0.1
+			m_flEndTime = 4.0
+			m_flStartScale = 0.55
 			m_flBias = 0.75
+			m_flEndScale = 2.2
 		},
 		{
 			_class = "C_OP_DistanceToCP"
@@ -74,6 +75,11 @@
 		{
 			_class = "C_OP_RadiusDecay"
 			m_flMinRadius = 0.0001
+		},
+		{
+			_class = "C_OP_SpinYaw"
+			m_nSpinRateDegrees = 30
+			m_fSpinRateStopTime = 4.0
 		},
 	]
 	m_Renderers = 
