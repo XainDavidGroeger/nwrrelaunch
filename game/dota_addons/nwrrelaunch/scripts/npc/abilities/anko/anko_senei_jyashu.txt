@@ -1,115 +1,65 @@
-	
-    "DOTAAbilities"
-{
-    
-  
 // Anko's Senei Jyashu Ability Modified from Bristleback Ability
 // Author: Zenicus
 // Date: 11.11.2015.
 // Game version: 6.84
-"anko_senei_jyashu"
+	
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"anko_senei_jyashu"
-	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
+	"anko_senei_jyashu"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf"
-		"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/anko/anko_senei_jyashu.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+		"AbilityTextureName"			"anko_senei_jyashu"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"300"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"seek_radius"		"300"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"snake_damage"		"80 100 120 140" 
+				"LinkedSpecialBonus" "special_bonus_anko_3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"snake_damage_interval"		"2" 
+				"LinkedSpecialBonus"	"special_bonus_anko_4"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"senei_jyashu_magic_resist"		"4 8 12 16"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"		"1250"
+			}
+		}
 	}
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"300"
-
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"seek_radius"		"300"		// If you change this, also change the AbilityCastRange above
-		}
-		"02"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"snake_damage"		"80 100 120 140" 
-			"LinkedSpecialBonus" "special_bonus_anko_3"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"snake_damage_interval"		"2" 
-			"LinkedSpecialBonus"	"special_bonus_anko_4"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"senei_jyashu_magic_resist"		"4 8 12 16"
-		}
-		"05"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"projectile_speed"		"1250"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_senei_jyashu"
-		{
-			"Passive"		"1"
-			"IsHidden"		"1"
-			
-			"ThinkInterval" "2"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/anko/anko_senei_jyashu.lua"
-					"Function"		"anko_senei_jyashu"
-					"sound_enemy"		"Hero_Medusa.MysticSnake.Target"
-					"special"		"0"
-					"mystic_snake_projectile"	"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
-				}
-			}
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%senei_jyashu_magic_resist"
-			}
-		}
-
-		"modifier_senei_jyashu_special"
-		{
-			"Passive"		"1"
-			"IsHidden"		"1"
-			
-			"ThinkInterval" "1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/anko/anko_senei_jyashu.lua"
-					"Function"		"anko_senei_jyashu"
-					"sound_enemy"		"Hero_Medusa.MysticSnake.Target"
-					"special"		"1"
-					"mystic_snake_projectile"	"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
-				}
-			}
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%senei_jyashu_magic_resist"
-			}
-		}
-		
-	
-	}
-}
-
-
 }

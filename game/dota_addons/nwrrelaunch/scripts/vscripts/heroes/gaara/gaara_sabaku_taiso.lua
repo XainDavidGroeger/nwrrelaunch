@@ -88,13 +88,6 @@ function gaara_sabaku_taiso:OnSpellStart()
 
 end
 
-function gaara_sabaku_taiso:OnAbilityPhaseInterrupted()
-	ParticleManager:DestroyParticle( self.build_up_particle, true )
-	self:GetCaster():StopSound("gaara_burial_cast")
-	self:GetCaster():StopSound("gaara_burial_talking")
-	return true
-end
-
 
 function gaara_sabaku_taiso:OnProjectileHit(hTarget, vLocation)
 

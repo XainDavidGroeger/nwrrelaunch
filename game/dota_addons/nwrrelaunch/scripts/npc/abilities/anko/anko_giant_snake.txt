@@ -21,8 +21,9 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/heroes/anko/anko_hand_cast.vsndevts"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
 		"soundfile"			"soundevents/heroes/anko/anko_hand_impact.vsndevts"
+		"soundfile"			"soundevents/heroes/anko/anko_hand_cast.vsndevts"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
 		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
@@ -31,18 +32,17 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1300"
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"550 700 850 1000"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"18 16 14 12"
-
+	"AbilityCooldown"				"17 15 13 11"
 
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"125 130 135 140"
+	"AbilityManaCost"				"110 120 130 140"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hook_distance"		"1300"
+			"hook_distance"		"500 700 850 1000"
 			"LinkedSpecialBonus"	"special_bonus_anko_1"
 		}
 		"04"
@@ -82,7 +82,7 @@
 		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hook_damage"		"150 220 290 360"
+			"hook_damage"		"90 180 270 360"
 		}
 		"08"
 		{
