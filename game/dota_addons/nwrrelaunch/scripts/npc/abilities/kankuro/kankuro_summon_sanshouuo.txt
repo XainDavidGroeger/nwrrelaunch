@@ -8,9 +8,10 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/kankuro/summon_sanshouuo"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"	
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"kankuro_summon_sanshouuo"
@@ -50,12 +51,12 @@
 		"01"
 		{
 			"var_type"		"FIELD_FLOAT"
-			"duration"		"5 7 9"
+			"puppet_duration"		"5 7 9"
 		}
 		"02"
 		{
 			"var_type"		"FIELD_FLOAT"
-			"hp"			"800 1200 1600"
+			"puppet_health"			"800 1200 1600"
 		}
 		"03"
 		{
@@ -64,106 +65,106 @@
 		}
 	}
 	
-	"OnSpellStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Invoker.ForgeSpirit"
-			"Target" 		"CASTER"
-		}
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/kankuro/summon_sanshouuo.lua"
-			"Function"		"summon_sanshouuo"
+	// "OnSpellStart"
+	// {
+	// 	"FireSound"
+	// 	{
+	// 		"EffectName"	"Hero_Invoker.ForgeSpirit"
+	// 		"Target" 		"CASTER"
+	// 	}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"	"heroes/kankuro/summon_sanshouuo.lua"
+	// 		"Function"		"summon_sanshouuo"
 			
-			"Health"		"%hp"
-			"Duration"		"%duration"
-			"Puppet"		"sanshouuo_datadriven"
-			"Modifier"		"modifier_sanshouuo"
-		}
-	}
+	// 		"Health"		"%hp"
+	// 		"Duration"		"%duration"
+	// 		"Puppet"		"sanshouuo_datadriven"
+	// 		"Modifier"		"modifier_sanshouuo"
+	// 	}
+	// }
 	
-	"Modifiers"
-	{		
-		"modifier_sanshouuo"
-		{
-			"Duration"	"%duration"
+	// "Modifiers"
+	// {		
+	// 	"modifier_sanshouuo"
+	// 	{
+	// 		"Duration"	"%duration"
 
-			"Aura" 			"modifier_sanshouuo_aura"
-			"Aura_Radius" 	"%aura_radius"
-			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO"
-			"Aura_ApplyToCaster"	"1"
+	// 		"Aura" 			"modifier_sanshouuo_aura"
+	// 		"Aura_Radius" 	"%aura_radius"
+	// 		"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	// 		"Aura_Types" 	"DOTA_UNIT_TARGET_HERO"
+	// 		"Aura_ApplyToCaster"	"1"
 			
-			"States"
-			{
-				"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_DISARMED"						"MODIFIER_STATE_VALUE_ENABLED"
-			}
+	// 		"States"
+	// 		{
+	// 			"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+	// 			"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+	// 			"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+	// 			"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+	// 			"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+	// 			"MODIFIER_STATE_DISARMED"						"MODIFIER_STATE_VALUE_ENABLED"
+	// 		}
 			
 			
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"EffectName"        "particles/units/heroes/kank/lotus_orb_shield.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "CASTER"
-				}
+	// 		"OnCreated"
+	// 		{
+	// 			"AttachEffect"
+	// 			{
+	// 				"EffectName"        "particles/units/heroes/kank/lotus_orb_shield.vpcf"
+	// 				"EffectAttachType"  "follow_origin"
+	// 				"Target"            "CASTER"
+	// 			}
 
 
-				"ActOnTargets"
-				{
-					"Target"
-					{
-						"Center"  	"CASTER"
-						"Radius" 	"%aura_radius"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO"
-					}
+	// 			"ActOnTargets"
+	// 			{
+	// 				"Target"
+	// 				{
+	// 					"Center"  	"CASTER"
+	// 					"Radius" 	"%aura_radius"
+	// 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	// 					"Types" 	"DOTA_UNIT_TARGET_HERO"
+	// 				}
 				
-					"Action"    
-					{
-						"AttachEffect"
-						{
-							"EffectName"        "particles/units/heroes/kank/lotus_orb_shield.vpcf"
-							"EffectAttachType"  "follow_origin"
-							"Target"            "CASTER"
-						}
-					}
-				}
-			}
+	// 				"Action"    
+	// 				{
+	// 					"AttachEffect"
+	// 					{
+	// 						"EffectName"        "particles/units/heroes/kank/lotus_orb_shield.vpcf"
+	// 						"EffectAttachType"  "follow_origin"
+	// 						"Target"            "CASTER"
+	// 					}
+	// 				}
+	// 			}
+	// 		}
 
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"  	"heroes/kankuro/summon_sanshouuo.lua"
-					"Function"    	"end_summon"
-				}
-			}
-		}
+	// 		"OnDestroy"
+	// 		{
+	// 			"RunScript"
+	// 			{
+	// 				"ScriptFile"  	"heroes/kankuro/summon_sanshouuo.lua"
+	// 				"Function"    	"end_summon"
+	// 			}
+	// 		}
+	// 	}
 		
-		"modifier_sanshouuo_aura"
-		{
-			"IsHidden"  "0"
+	// 	"modifier_sanshouuo_aura"
+	// 	{
+	// 		"IsHidden"  "0"
 			
-			"OnTakeDamage"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/kankuro/summon_sanshouuo.lua"
-					"Function"		"takeDamage"
+	// 		"OnTakeDamage"
+	// 		{
+	// 			"RunScript"
+	// 			{
+	// 				"ScriptFile"	"heroes/kankuro/summon_sanshouuo.lua"
+	// 				"Function"		"takeDamage"
 					
-					"Damage"		"%attack_damage"
-				}
-			}
-		}
-	}
+	// 				"Damage"		"%attack_damage"
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 
 
