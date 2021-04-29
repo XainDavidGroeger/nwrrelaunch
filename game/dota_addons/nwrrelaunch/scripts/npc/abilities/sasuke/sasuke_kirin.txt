@@ -17,7 +17,7 @@
     "precache"
     {
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
-        "particle"  "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+        "particle"  "particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf"
         "particle"  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
     }
 

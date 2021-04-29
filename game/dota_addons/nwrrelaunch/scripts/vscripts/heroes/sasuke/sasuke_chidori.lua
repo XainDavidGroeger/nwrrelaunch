@@ -8,6 +8,18 @@ function sasuke_chidori:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
 
+function sasuke_chidori:GetCooldown(iLevel)
+	return self.BaseClass.GetCooldown(self, iLevel)
+end
+
+function sasuke_chidori:GetCastRange(location, target)
+	local ability3 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_3")
+	if ability3:GetLevel() > 0 then
+		return self:GetSpecialValueFor("range") + 275
+	else
+		return self:GetSpecialValueFor("range")
+	end
+end
 
 function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 
@@ -20,18 +32,21 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 	local caster = self:GetCaster()
 	local ability = self
 	local root_duration = ability:GetSpecialValueFor("root_duration")
-	local crit_damage = ability:GetSpecialValueFor("bonus_damage")
+	local crit_damage = ability:GetSpecialValueFor("bonus_damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_4")
 	local base_damage = ability:GetSpecialValueFor("base_damage")
-	local bonus_damage = caster:GetAverageTrueAttackDamage(nil)
+	local bonus_damage = caster:GetAverageTrueAttackDamage(nil) * (crit_damage / 100)
 	local damage = bonus_damage + base_damage
 
+	local max_distance = self:GetSpecialValueFor("max_distance") + self:GetCaster():FindTalentValue("special_bonus_sasuke_3")
+
 	caster:EmitSound("sasuke_chidori_cast")
+	caster:EmitSound("sasuke_chidori_cast_talking")
 
 	local original_position	= self:GetCaster():GetAbsOrigin()
 	
 	local final_position = self:GetCaster():GetAbsOrigin() + ((self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized() 
 	* math.max(math.min(((self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()) 
-	* Vector(1, 1, 0)):Length2D(), self:GetSpecialValueFor("max_distance") + self:GetCaster():GetCastRangeBonus()), self:GetSpecialValueFor("min_distance")))
+	* Vector(1, 1, 0)):Length2D(), max_distance + self:GetCaster():GetCastRangeBonus()), self:GetSpecialValueFor("min_distance")))
 	
 	if recastVector then
 		final_position	= self:GetCaster():GetAbsOrigin() + recastVector
@@ -41,7 +56,7 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 		final_position	= GetGroundPosition(self:GetCaster():GetAbsOrigin() + warpVector, nil)
 	end
 
-	self.original_vector	= (final_position - self:GetCaster():GetAbsOrigin()):Normalized() * (self:GetSpecialValueFor("max_distance") + self:GetCaster():GetCastRangeBonus())
+	self.original_vector	= (final_position - self:GetCaster():GetAbsOrigin()):Normalized() * (max_distance + self:GetCaster():GetCastRangeBonus())
 
 	self:GetCaster():SetForwardVector(self.original_vector:Normalized())
 	

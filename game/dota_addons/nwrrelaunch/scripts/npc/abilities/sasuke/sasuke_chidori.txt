@@ -25,6 +25,7 @@
     {
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
         "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast_talking.vsndevts"
         "particle"  "particles/units/heroes/sasuke/chidori/step.vpcf"
         "particle"  "particles/units/heroes/sasuke/chidori/impact.vpcf"
     }
@@ -33,7 +34,7 @@
     "MaxLevel"               "4"
     "AbilityCastPoint"       "0.2 0.2 0.2 0.2"
     "AbilityCooldown"        "11 9 7 5"
-    "AbilityManaCost"        "100 110 120 130"
+    "AbilityManaCost"        "70"
     "AbilityCastRange"       "650 700 750 800"
     "AbilityDamage"          "25 40 55 70"
 
@@ -53,6 +54,7 @@
         {
              "var_type"     "FIELD_INTEGER"
             "max_distance"   "650 700 750 800"
+            "LinkedSpecialBonus"    "special_bonus_sasuke_3"
         }
         "04"
         {
@@ -68,7 +70,16 @@
         {
             "var_type"  "FIELD_FLOAT"
             "bonus_damage"    "100"
+            "LinkedSpecialBonus"    "special_bonus_sasuke_4"
         }
+
+          "07"
+        {
+            "var_type"  "FIELD_FLOAT"
+            "range"    "650 700 750 800"
+            "LinkedSpecialBonus"    "special_bonus_sasuke_3"
+        }
+
     }
 }
 

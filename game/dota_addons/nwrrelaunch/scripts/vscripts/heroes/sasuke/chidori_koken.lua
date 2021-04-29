@@ -50,10 +50,6 @@ if keys.target:GetTeamNumber() ~= keys.caster:GetTeamNumber() then
 		
 		if targetEntities then
 			for _,target in pairs(targetEntities) do
-				print(abilityDamageType)
-				print(damage)
-				print(target)
-				print(caster)
 				local damageTable = {
 						victim = target,
 						attacker = caster,

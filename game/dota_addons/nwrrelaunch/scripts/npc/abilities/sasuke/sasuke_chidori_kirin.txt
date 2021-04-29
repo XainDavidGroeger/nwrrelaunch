@@ -1,0 +1,57 @@
+	
+    "DOTAAbilities"
+{
+    
+"sasuke_chidori_kirin"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              		"ability_lua"
+	"ScriptFile"			 		"heroes/sasuke/sasuke_chidori_kirin.lua"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"     		"sasuke_chidori_kirin"
+
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_cast_talking.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_impact_talking.vsndevts"
+        "particle"  "particles/units/heroes/sasuke/kirin/storm_core.vpcf"
+        "particle"  "particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf"
+    }
+
+    "MaxLevel"               "3"
+    "AbilityCastPoint"       "0"
+    "AbilityCooldown"        "90"
+    "AbilityManaCost"        "175 250 325"
+    "AbilityCastRange"       "700 850 1000"
+    "AbilityDamage"          "150 250 350"
+
+    "AbilitySpecial"
+    {
+        "01"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "duration" "6"
+        }
+        "02"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "base_damage" "250 325 400"
+        }
+		 "03"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "lost_health_bonus_damage" "60 75 90"
+        }
+    }
+
+}
+
+}

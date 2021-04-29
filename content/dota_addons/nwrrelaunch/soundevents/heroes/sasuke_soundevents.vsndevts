@@ -14,16 +14,14 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_attack_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_attack_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_attack_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_attack_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_attack_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_attack_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_attack_07.vsnd"
-							"value7"		"sounds/vo/stormspirit/ss_attack_08.vsnd"
-							"value8"		"sounds/vo/stormspirit/ss_attack_09.vsnd"
-							"value9"		"sounds/vo/stormspirit/ss_attack_10.vsnd"
+							"value0"		"sounds/vo/sasuke/attack_01.vsnd"
+							"value1"		"sounds/vo/sasuke/attack_02.vsnd"
+							"value2"		"sounds/vo/sasuke/attack_03.vsnd"
+							"value3"		"sounds/vo/sasuke/attack_04.vsnd"
+							"value4"		"sounds/vo/sasuke/attack_05.vsnd"
+							"value5"		"sounds/vo/sasuke/attack_06.vsnd"
+							"value6"		"sounds/vo/sasuke/attack_07.vsnd"
+							"value7"		"sounds/vo/sasuke/attack_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -55,20 +53,16 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_move_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_move_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_move_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_move_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_move_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_move_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_move_07.vsnd"
-							"value7"		"sounds/vo/stormspirit/ss_move_08.vsnd"
-							"value8"		"sounds/vo/stormspirit/ss_move_09.vsnd"
-							"value9"		"sounds/vo/stormspirit/ss_move_10.vsnd"
-							"value10"		"sounds/vo/stormspirit/ss_move_11.vsnd"
-							"value11"		"sounds/vo/stormspirit/ss_move_12.vsnd"
-							"value12"		"sounds/vo/stormspirit/ss_move_13.vsnd"
-							"value13"		"sounds/vo/stormspirit/ss_move_14.vsnd"
+							"value0"		"sounds/vo/sasuke/move_01.vsnd"
+							"value1"		"sounds/vo/sasuke/move_02.vsnd"
+							"value2"		"sounds/vo/sasuke/move_03.vsnd"
+							"value3"		"sounds/vo/sasuke/move_04.vsnd"
+							"value4"		"sounds/vo/sasuke/move_05.vsnd"
+							"value5"		"sounds/vo/sasuke/move_06.vsnd"
+							"value6"		"sounds/vo/sasuke/move_07.vsnd"
+							"value7"		"sounds/vo/sasuke/move_08.vsnd"
+							"value8"		"sounds/vo/sasuke/move_09.vsnd"
+							"value9"		"sounds/vo/sasuke/move_10.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -100,13 +94,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_pain_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_pain_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_pain_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_pain_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_pain_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_pain_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_pain_07.vsnd"
+							"value0"		"sounds/vo/sasuke/pain_01.vsnd"
+							"value1"		"sounds/vo/sasuke/pain_02.vsnd"
+							"value2"		"sounds/vo/sasuke/pain_03.vsnd"
+							"value3"		"sounds/vo/sasuke/pain_04.vsnd"
+							"value4"		"sounds/vo/sasuke/pain_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -138,15 +130,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_death_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_death_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_death_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_death_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_death_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_death_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_death_07.vsnd"
-							"value7"		"sounds/vo/stormspirit/ss_death_08.vsnd"
-							"value8"		"sounds/vo/stormspirit/ss_death_09.vsnd"
+							"value0"		"sounds/vo/sasuke/death_01.vsnd"
+							"value1"		"sounds/vo/sasuke/death_02.vsnd"
+							"value2"		"sounds/vo/sasuke/death_03.vsnd"
+							"value3"		"sounds/vo/sasuke/death_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -178,13 +165,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_respawn_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_respawn_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_respawn_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_respawn_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_respawn_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_respawn_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_respawn_07.vsnd"
+							"value0"		"sounds/vo/sasuke/respawn_01.vsnd"
+							"value1"		"sounds/vo/sasuke/respawn_02.vsnd"
+							"value2"		"sounds/vo/sasuke/respawn_03.vsnd"
+							"value3"		"sounds/vo/sasuke/respawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -216,12 +200,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_spawn_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_spawn_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_spawn_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_spawn_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_spawn_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_spawn_06.vsnd"
+							"value0"		"sounds/vo/sasuke/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -253,12 +232,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_kill_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_kill_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_kill_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_kill_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_kill_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_kill_06.vsnd"
+							"value0"		"sounds/vo/sasuke/kill_01.vsnd"
+							"value1"		"sounds/vo/sasuke/kill_02.vsnd"
+							"value2"		"sounds/vo/sasuke/kill_03.vsnd"
+							"value3"		"sounds/vo/sasuke/kill_04.vsnd"
+							"value4"		"sounds/vo/sasuke/kill_05.vsnd"
+							"value5"		"sounds/vo/sasuke/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -321,12 +300,8 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_lasthit_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_lasthit_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_lasthit_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_lasthit_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_lasthit_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_lasthit_06.vsnd"
+							"value0"		"sounds/vo/sasuke/lasthit_01.vsnd"
+							"value1"		"sounds/vo/sasuke/lasthit_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -358,13 +333,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_deny_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_deny_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/ss_deny_03.vsnd"
-							"value3"		"sounds/vo/stormspirit/ss_deny_04.vsnd"
-							"value4"		"sounds/vo/stormspirit/ss_deny_05.vsnd"
-							"value5"		"sounds/vo/stormspirit/ss_deny_06.vsnd"
-							"value6"		"sounds/vo/stormspirit/ss_deny_07.vsnd"
+							"value0"		"sounds/vo/sasuke/deny_01.vsnd"
+							"value1"		"sounds/vo/sasuke/deny_02.vsnd"
+							"value2"		"sounds/vo/sasuke/deny_03.vsnd"
+							"value3"		"sounds/vo/sasuke/deny_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -396,6 +368,12 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/sasuke/level_01.vsnd"
+							"value1"		"sounds/vo/sasuke/level_02.vsnd"
+							"value2"		"sounds/vo/sasuke/level_03.vsnd"
+							"value3"		"sounds/vo/sasuke/level_04.vsnd"
+							"value4"		"sounds/vo/sasuke/level_05.vsnd"
+							"value5"		"sounds/vo/sasuke/level_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -427,9 +405,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/stormspirit/ss_win_01.vsnd"
-							"value1"		"sounds/vo/stormspirit/ss_win_02.vsnd"
-							"value2"		"sounds/vo/stormspirit/sswin_03.vsnd"
+							"value0"		"sounds/vo/sasuke/lol.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

@@ -14,6 +14,7 @@
         "precache"
         {
             "particle"  "particles/units/heroes/sasuke/stream/stream.vpcf"
+            "soundfile" "soundevents/heroes/sasuke/sasuke_stream_talking.vsndevts"
         }
 
         "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
@@ -29,6 +30,7 @@
             { 
                 "var_type"  "FIELD_INTEGER"
                 "radius" "425"
+                "LinkedSpecialBonus"    "special_bonus_sasuke_5"
             }
             "02"
             { 
