@@ -73,18 +73,20 @@ end
 
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 
-		local target = keys.target
-		local caster = keys.attacker
+	local target = keys.target
+	local caster = keys.attacker
 
-		if caster == self.caster or (keys.attacker:GetOwner() ~= nil and keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger") then
-			self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
-			self.duration = self:GetAbility():GetSpecialValueFor("duration")
-			self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
-			self.stack_modifier = "modifier_haku_endless_needles_victim_counter"
+	print("attack landed")
 
-			self:GetAbility():ApplyStacks(target, self.stacks_per_attack)
-				
-		end
+	if caster == self.caster or (keys.attacker:GetOwner() ~= nil and keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger") then
+		self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
+		self.duration = self:GetAbility():GetSpecialValueFor("duration")
+		self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
+		self.stack_modifier = "modifier_haku_endless_needles_victim_counter"
+
+		self:GetAbility():ApplyStacks(target, self.stacks_per_attack)
+			
+	end
 	
 end
 
