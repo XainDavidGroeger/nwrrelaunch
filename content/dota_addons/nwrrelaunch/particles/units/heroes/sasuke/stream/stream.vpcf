@@ -108,10 +108,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_static_field_b.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/sasuke/stream/field.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/sasuke/chidori_nagashi_c.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/sasuke/stream/lightings.vpcf"
 		},
 	]
 }

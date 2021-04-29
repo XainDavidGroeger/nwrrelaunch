@@ -1,0 +1,75 @@
+	
+    "DOTAAbilities"
+{
+    
+
+
+"sasuke_chidori"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"             	 	"ability_lua"
+    "ScriptFile"             	 	"heroes/sasuke/sasuke_chidori.lua"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "AbilityTextureName"     		"sasuke_chidori"
+
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
+
+    "AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
+
+    "precache"
+    {
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts"
+        "particle"  "particles/units/heroes/sasuke/chidori/step.vpcf"
+        "particle"  "particles/units/heroes/sasuke/chidori/impact.vpcf"
+    }
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "4"
+    "AbilityCastPoint"       "0.2 0.2 0.2 0.2"
+    "AbilityCooldown"        "11 9 7 5"
+    "AbilityManaCost"        "100 110 120 130"
+    "AbilityCastRange"       "650 700 750 800"
+    "AbilityDamage"          "25 40 55 70"
+
+    "AbilitySpecial"
+    {
+        "01"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "root_duration" "0.1 0.2 0.3 0.4"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "min_distance"   "200"
+        }
+        "03"
+        {
+             "var_type"     "FIELD_INTEGER"
+            "max_distance"   "650 700 750 800"
+        }
+        "04"
+        {
+             "var_type"     "FIELD_INTEGER"
+            "path_width"   "170"
+        }
+		  "05"
+        {
+            "var_type"  "FIELD_INTEGER"
+            "base_damage"    "25 40 55 70"
+        }
+          "06"
+        {
+            "var_type"  "FIELD_FLOAT"
+            "bonus_damage"    "100"
+        }
+    }
+}
+
+}

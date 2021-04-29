@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 4
-	m_nBehaviorVersion = 4
+	m_nBehaviorVersion = 11
 	m_nFirstMultipleOverride_BackwardCompat = 7
 	m_controlPointConfigurations = 
 	[
@@ -17,11 +17,6 @@
 				},
 				{
 					m_iControlPoint = 1
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_entityName = "self"
-				},
-				{
-					m_iControlPoint = 62
 					m_iAttachType = "PATTACH_WORLDORIGIN"
 					m_entityName = "self"
 				},
@@ -74,7 +69,7 @@
 			{
 				m_nType = "PF_TYPE_LITERAL"
 				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 40.0
+				m_flLiteralValue = 30.0
 				m_nControlPoint = 0
 				m_nScalarAttribute = 3
 				m_nVectorAttribute = 6
@@ -145,6 +140,7 @@
 		},
 		{
 			_class = "C_OP_SetPerChildControlPoint"
+			m_nFirstControlPoint = 1
 			m_nNumControlPoints = 3
 		},
 	]
@@ -162,41 +158,6 @@
 			]
 			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
 			m_OutlineColor = [ 255, 255, 255 ]
-		},
-	]
-	m_Children = 
-	[
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_arc_lightning_e.vpcf"
-			m_bDisableChild = true
 		},
 	]
 }

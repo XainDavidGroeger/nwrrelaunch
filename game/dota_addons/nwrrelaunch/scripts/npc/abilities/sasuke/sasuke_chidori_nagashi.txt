@@ -2,9 +2,6 @@
     "DOTAAbilities"
 {
     
-
-
-
 "sasuke_chidori_nagashi"
 {
     // General  

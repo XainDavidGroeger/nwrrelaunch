@@ -1,0 +1,65 @@
+	
+    "DOTAAbilities"
+{
+    
+	"sasuke_chidori_light_sword"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/sasuke/sasuke_chidori_light_sword.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"sasuke_chidori_light_sword"
+		"AbilityDuration"				"0.6 0.6 0.6 0.6"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"	"40"
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"			"particles/units/heroes/hero_stormspirit/stormspirit_overload_ambient.vpcf"
+			"particle"  		"particles/econ/items/spirit_breaker/spirit_breaker_thundering_flail/spirit_breaker_thundering_flail.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aoe_radius"				"275"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_slow"					"-80"
+			}
+			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_slow"				"-80"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"			"0.6 0.6 0.6 0.6"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"40 60 80 100"
+				"LinkedSpecialBonus" "special_bonus_sasuke_1"
+			}
+		}
+
+	}
+
+
+}
