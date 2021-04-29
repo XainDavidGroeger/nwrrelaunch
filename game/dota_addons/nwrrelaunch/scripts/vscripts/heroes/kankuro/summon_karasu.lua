@@ -1,157 +1,150 @@
---[[Author: Zenicus
-	Date: December 5, 2015
+--[[Author: DigitalG
+	Date: April 29, 2021
 	Creates a puppet that grows in level and has 4 different skills]]
-function summon_karasu( keys )
 
-	local caster = keys.caster
-	local caster_location = caster:GetAbsOrigin() 
-	local player = caster:GetPlayerOwnerID()
-	local ability = keys.ability
-	local hp_gain = ability:GetSpecialValueFor("hp_gain")
-	local mana_gain = ability:GetSpecialValueFor("mana_gain")
-	local damage_gain = ability:GetSpecialValueFor("damage_gain")
 
-    local kugusta_ability = keys.caster:FindAbilityByName("kankuro_kugusta_no_jutsu")
-    local bonus_hp = 0
+kankuro_summon_karasu = class({})
 
-	if kugusta_ability ~= nil then
-		if kugusta_ability:GetLevel() > 0 then
-			bonus_hp = kugusta_ability:GetLevelSpecialValueFor("extra_hp", kugusta_ability:GetLevel() - 1)
-			local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
-			if abilityspecial ~= nil then
-				if abilityspecial:IsTrained() then
-					bonus_hp = bonus_hp + 350
-				end
-			end
-		end
-	end
-    
-	-- Ability variables
-	local puppet_duration = ability:GetSpecialValueFor("puppet_duration") 
+LinkLuaModifier("modifier_karasu_talent_attack_speed_bonus", "heroes/kankuro/summon_karasu", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_karasu_base_mana", "heroes/kankuro/summon_karasu", LUA_MODIFIER_MOTION_NONE)
 
-	-- Clear any previous Karasu in case of WTF Mode
-	if IsValidEntity(ability.karasu) then 
-		ability.karasu:ForceKill(false)
+function kankuro_summon_karasu:OnSpellStart()
+
+	--Kill old Karasu if present
+	if self.karasu ~= nil then
+		self.karasu:ForceKill(false)
 	end
 
+	local caster = self:GetCaster()
+	local caster_origin = caster:GetAbsOrigin()
+	local duration = self:GetSpecialValueFor("puppet_duration")
 	--Creates the Puppet next to the Caster
-	local karasu_unit  = CreateUnitByName("npc_karasu", caster_location + RandomVector(100), true, caster, caster, caster:GetTeamNumber())
-	
-	--Stores the unit for tracking
-	ability.karasu = karasu_unit
-	karasu_unit:AddNewModifier(caster, ability, "modifier_phased", {duration = 0.03})
+	local karasu_unit  = CreateUnitByName("npc_karasu", caster_origin + RandomVector(100), true, caster, caster, caster:GetTeamNumber())
 
-	-- set movement speed
-	local karasu_ms = ability:GetLevelSpecialValueFor("ms", ability:GetLevel() - 1)
-	local ability3 = keys.caster:FindAbilityByName("special_bonus_kankuro_3")
-	if ability3 ~= nil then
-		if ability3:IsTrained() then
-			karasu_ms = karasu_ms + 50
-		end
-	end
+	--Save pointer
+	self.karasu = karasu_unit
+	self.karasu:SetControllableByPlayer(caster:GetPlayerOwnerID(), false)
+	self.karasu:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
 
-	karasu_unit:SetBaseMoveSpeed(karasu_ms)
-
-	-- set bonus attack speed
-	local karasu_as = ability:GetLevelSpecialValueFor("as_buff", ability:GetLevel() - 1)
-	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if ability5 ~= nil then
-		if ability5:IsTrained() then
-			karasu_as = karasu_as + 50
-		end
-	end
-
-
-	-- set bonus attack damage
-	local ability7 = keys.caster:FindAbilityByName("special_bonus_kankuro_7")
-	if ability7 ~= nil then
-		if ability7:IsTrained() then
-			karasu_unit:SetBaseDamageMin(karasu_unit:GetBaseDamageMin() + 150)
-			karasu_unit:SetBaseDamageMax(karasu_unit:GetBaseDamageMax() + 150)
-		end
+	--Health
+	local health = self:GetSpecialValueFor("total_health")
+	local puppet_master_ability = caster:FindAbilityByName("kankuro_kugusta_no_jutsu")
+	if puppet_master_ability:IsTrained() then
+		health = health + puppet_master_ability:GetSpecialValueFor("hp_bonus")
 	end
 	
-	local ability5 = keys.caster:FindAbilityByName("special_bonus_kankuro_5")
-	if ability5 ~= nil then
-		if ability5:IsTrained() then
-			keys.ability:ApplyDataDrivenModifier(
-				caster,
-				karasu_unit,
-				"modifier_karasu_special_bonus_as",
-				{}
-			)
-		end
-	end
+	self.karasu:SetBaseMaxHealth(health)
+	self.karasu:ModifyHealth(health, nil, false, 0)
+
+	--Mana
+	local mana = self:GetSpecialValueFor("total_mana")
+	self.karasu:AddNewModifier(caster, self, "modifier_karasu_base_mana", {duration = duration})
+	self.karasu:SetMana(mana)
 	
 
-	--Sets the stats gain per level
-	karasu_unit:SetHPGain(hp_gain)
-
-
-	local mp_reg = ability:GetSpecialValueFor("mp_reg")
-	local ability1 = keys.caster:FindAbilityByName("special_bonus_kankuro_1")
-	if ability1 ~= nil then
-		if ability1:IsTrained() then
-			mp_reg = mp_reg + 4.0
-		end
+	--Attack Damage
+	local min_damage = self:GetSpecialValueFor("base_damage_min")
+	local max_damage = self:GetSpecialValueFor("base_damage_max")
+	local bonus_damage_talent = caster:FindAbilityByName("special_bonus_kankuro_7")
+	if bonus_damage_talent:IsTrained() then
+		local bonus_damage = self:GetSpecialValueFor("talent_bonus_damage")
+		min_damage = min_damage + bonus_damage
+		max_damage = max_damage + bonus_damage
 	end
 
+	self.karasu:SetBaseDamageMin(min_damage)
+	self.karasu:SetBaseDamageMax(max_damage)
 
-	local ability4 = keys.caster:FindAbilityByName("special_bonus_kankuro_4")
-	if ability4 ~= nil then 
-		if ability4:IsTrained() then
-			karasu_unit:AddAbility("special_bonus_kankuro_4")
-			local abilityUnit4 = karasu_unit:FindAbilityByName("special_bonus_kankuro_4")
-			abilityUnit4:SetLevel(1)
-		end
+	--Move speed
+	local move_speed = self:GetSpecialValueFor("move_speed")
+	local talent_bonus_movespeed = caster:FindAbilityByName("special_bonus_kankuro_3")
+	if talent_bonus_movespeed:IsTrained() then
+		move_speed = move_speed + talent_bonus_movespeed:GetSpecialValueFor("value")
 	end
-	
 
-	karasu_unit:SetBaseManaRegen(mp_reg)
+	self.karasu:SetBaseMoveSpeed(move_speed)
 
-	karasu_unit:SetManaGain(mana_gain)
+	--Attack speed
+	local attack_speed_talent_ability = caster:FindAbilityByName("special_bonus_kankuro_5")
+	if attack_speed_talent_ability:IsTrained() then
+		self.karasu:AddNewModifier(caster, self, "modifier_karasu_talent_attack_speed_bonus", {})
+	end
 
-	karasu_unit:SetDamageGain(damage_gain)
+	--Mana regen
+	local base_mana_regen = self:GetSpecialValueFor("mana_regeneration")
+	local mana_regen_bonus_talent_ability = caster:FindAbilityByName("special_bonus_kankuro_1")
+	if mana_regen_bonus_talent_ability:IsTrained() then
+		base_mana_regen = base_mana_regen + mana_regen_bonus_talent_ability:GetSpecialValueFor("value")
+	end
 
-	DebugPrint(bonus_hp)
-	DebugPrint(karasu_unit:GetBaseMaxHealth())
-	karasu_unit:SetBaseMaxHealth(karasu_unit:GetBaseMaxHealth() + bonus_hp)
-	DebugPrint(karasu_unit:GetBaseMaxHealth())
+	self.karasu:SetBaseManaRegen(base_mana_regen)
+
 
 	--Determine Karasu's Skills
-	if (ability:GetLevel() == 1) then
-		karasu_unit:CreatureLevelUp(1)
-		karasu_unit:FindAbilityByName("karasu_daggers"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_poison_gas"):SetLevel(0)
-		karasu_unit:FindAbilityByName("karasu_critical_strike"):SetLevel(0)
-		karasu_unit:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
-	elseif (ability:GetLevel() == 2) then
-		karasu_unit:CreatureLevelUp(2)
-		karasu_unit:FindAbilityByName("karasu_daggers"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_poison_gas"):SetLevel(0)
-		karasu_unit:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
-	elseif (ability:GetLevel() == 3) then
-		karasu_unit:CreatureLevelUp(3)
-		karasu_unit:FindAbilityByName("karasu_daggers"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_poison_gas"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
-	elseif (ability:GetLevel() == 4) then
-		karasu_unit:CreatureLevelUp(4)
-		karasu_unit:FindAbilityByName("karasu_daggers"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_poison_gas"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
-		karasu_unit:FindAbilityByName("karasu_dismantle_parts"):SetLevel(1)
+	if (self:GetLevel() == 1) then
+		self.karasu:CreatureLevelUp(1)
+		self.karasu:FindAbilityByName("karasu_daggers"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_poison_gas"):SetLevel(0)
+		self.karasu:FindAbilityByName("karasu_critical_strike"):SetLevel(0)
+		self.karasu:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
+	elseif (self:GetLevel() == 2) then
+		self.karasu:CreatureLevelUp(2)
+		self.karasu:FindAbilityByName("karasu_daggers"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_poison_gas"):SetLevel(0)
+		self.karasu:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
+	elseif (self:GetLevel() == 3) then
+		self.karasu:CreatureLevelUp(3)
+		self.karasu:FindAbilityByName("karasu_daggers"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_poison_gas"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_dismantle_parts"):SetLevel(0)
+	elseif (self:GetLevel() == 4) then
+		self.karasu:CreatureLevelUp(4)
+		self.karasu:FindAbilityByName("karasu_daggers"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_poison_gas"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_critical_strike"):SetLevel(1)
+		self.karasu:FindAbilityByName("karasu_dismantle_parts"):SetLevel(1)
 	end
 
-	karasu_unit:SetControllableByPlayer(player, true)
-
-	--Kills Puppet after timer
-	Timers:CreateTimer(puppet_duration,function()
-		if karasu_unit ~= nil and karasu_unit:IsAlive() then
-			karasu_unit:ForceKill(false)
-		end
-	end)
 end
 
+modifier_karasu_talent_attack_speed_bonus = class({})
+
+function modifier_karasu_talent_attack_speed_bonus:OnCreated()
+	self.as_bonus = self:GetAbility():GetSpecialValueFor("attack_speed_buff")
+end
+
+function modifier_karasu_talent_attack_speed_bonus:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+end
+
+function modifier_karasu_talent_attack_speed_bonus:GetModifierAttackSpeedBonus_Constant()
+	return self.as_bonus
+end
+
+modifier_karasu_base_mana = class({})
+
+function modifier_karasu_base_mana:IsPurgable() return false end
+function modifier_karasu_base_mana:IsHidden() return true end
+
+
+function modifier_karasu_base_mana:OnCreated()
+	self.mana_bonus = self:GetAbility():GetSpecialValueFor("total_mana") - 1 
+end
+
+function modifier_karasu_base_mana:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MANA_BONUS 
+	}
+end
+
+function modifier_karasu_base_mana:GetModifierManaBonus()
+	return self.mana_bonus
+end
+
+function modifier_karasu_base_mana:OnRemoved()
+	self:GetAbility().karasu = nil
+end
