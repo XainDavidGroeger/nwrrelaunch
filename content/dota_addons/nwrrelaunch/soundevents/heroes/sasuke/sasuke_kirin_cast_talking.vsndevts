@@ -14,12 +14,9 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/sasuke/chidori_01.vsnd"
-                              "value1"        "sounds/heroes/sasuke/chidori_02.vsnd"
-                              "value2"        "sounds/heroes/sasuke/chidori_03.vsnd"
-                              "value3"        "sounds/heroes/sasuke/chidori_04.vsnd"
-                              "value4"        "sounds/heroes/sasuke/chidori_05.vsnd"
-                              "value5"        "sounds/heroes/sasuke/chidori_06.vsnd"
+                              "value0"        "sounds/heroes/sasuke/kirin_cast_01.vsnd"
+                              "value1"        "sounds/heroes/sasuke/kirin_cast_02.vsnd"
+                              "value2"        "sounds/heroes/sasuke/kirin_cast_03.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }

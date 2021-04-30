@@ -100,8 +100,6 @@ function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
 		local caster = keys.attacker
 		local damage = self.ability:GetSpecialValueFor("damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_1")
 
-		caster:EmitSound("sasuke_chidori_light_sword_talking")
-
 		--apply damage
 		local damageTable = {
 			victim = target,
