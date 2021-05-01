@@ -227,9 +227,6 @@
 					"Function"		"lighting_charge"
 				}
 			}
-
-
-
 		}
 
 		"modifier_kakashi_lighting_charge"

@@ -10,7 +10,6 @@ if GameMode == nil then
 	_G.GameMode = class({})
 end
 
---TODO find a way to get position of the shops by name/entityname
 --base shop position team 1 
 SHOP_TEAM_1 = Vector(-832, 768, 128) 
 --base shop position team 2
@@ -134,6 +133,14 @@ function GameMode:OnEntityKilled(event)
 	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
 	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
 
+	if hTarget:GetOwner() ~= nil then
+		print(hTarget:GetOwner():GetName())
+		print("asdasd")
+	--	if hTarget:GetOwner():GetName() == 'npc_dota_hero_kunkka' then
+		--	hTarget:EmitSound("clone_pop")
+	--	end
+	end
+
 	if not hAttacker:IsRealHero() then
 		return nil
 	end
@@ -197,6 +204,13 @@ function GameMode:OnGameInProgress()
 
 
 
+end
+
+function GameMode:OnEntityHurt( event )
+	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
+	if hTarget:IsIllusion() and hTarget:IsAlive() == false then
+		hTarget:EmitSound("clone_pop")
+	end
 end
 
 
