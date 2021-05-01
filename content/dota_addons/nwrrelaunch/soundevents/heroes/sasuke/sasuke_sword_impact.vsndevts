@@ -1,4 +1,4 @@
-"sasuke_stream_cast"
+"sasuke_sword_impact"
 {
     "operator_stacks"
     {
@@ -14,10 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/sasuke/sasuke_nagashi_cast.vsnd"
+                              "value0"        "sounds/heroes/sasuke/sasuke_sword_impact.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
+                    "volume"            {   "value"     "2.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

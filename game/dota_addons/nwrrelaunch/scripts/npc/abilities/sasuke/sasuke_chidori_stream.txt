@@ -15,6 +15,7 @@
         {
             "particle"  "particles/units/heroes/sasuke/stream/stream.vpcf"
             "soundfile" "soundevents/heroes/sasuke/sasuke_stream_talking.vsndevts"
+            "soundfile" "soundevents/heroes/sasuke/sasuke_stream_cast.vsndevts"
         }
 
         "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"

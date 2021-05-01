@@ -18,7 +18,7 @@ function modifier_responses:DeclareFunctions() return {
 	MODIFIER_EVENT_ON_ORDER,
 	MODIFIER_EVENT_ON_DEATH,
 	MODIFIER_EVENT_ON_TAKEDAMAGE,
-	MODIFIER_EVENT_ON_ABILITY_EXECUTED
+	MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 } end
 
 function modifier_responses:OnOrder(event) self.FireOutput('OnOrder', event) end

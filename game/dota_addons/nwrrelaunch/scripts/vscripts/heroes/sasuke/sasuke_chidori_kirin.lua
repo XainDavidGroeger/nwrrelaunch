@@ -16,6 +16,7 @@ end
 
 function sasuke_chidori_kirin:OnSpellStart()
 	self:GetCaster():EmitSound("sasuke_kirin_cast_talking")
+	self:GetCursorTarget():EmitSound("sasuke_kirin_cast")
 	self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_chidori_kirin_mark", {duration = self:GetSpecialValueFor("duration")})
 end
 
@@ -56,6 +57,8 @@ function modifier_chidori_kirin_mark:OnDestroy()
 	ParticleManager:ReleaseParticleIndex(self.storm)
 
 	self:GetCaster():EmitSound("sasuke_kirin_impact_talking")
+	self:GetParent():EmitSound("sasuke_kirin_impact")
+
 
 	self.lighting_bolt = ParticleManager:CreateParticle("particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
     ParticleManager:SetParticleControl(self.lighting_bolt, 0, self:GetParent():GetAbsOrigin())

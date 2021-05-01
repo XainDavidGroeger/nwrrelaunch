@@ -100,6 +100,8 @@ function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
 		local caster = keys.attacker
 		local damage = self.ability:GetSpecialValueFor("damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_1")
 
+		target:EmitSound("sasuke_sword_impact")
+
 		--apply damage
 		local damageTable = {
 			victim = target,
@@ -115,7 +117,7 @@ function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
 			duration = self.ability:GetSpecialValueFor("duration")
 		})
 
-		EmitSoundOn("Hero_StormSpirit.Overload", target)
+		
 
 		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", PATTACH_ABSORIGIN, target) 
 		ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN, "attach_hitloc", target:GetAbsOrigin(), true)

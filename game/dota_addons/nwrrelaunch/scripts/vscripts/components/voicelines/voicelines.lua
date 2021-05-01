@@ -49,6 +49,7 @@ function VoiceResponses:Start()
 
 	-- Listen for unit spawns
 	ListenToGameEvent("npc_spawned", function(context, event) self:FireOutput('OnUnitSpawn', event) end, self)
+	ListenToGameEvent("dota_player_gained_level", function(context, event) self:FireOutput('OnHeroLevelUp', event) end, self)
 	ListenToGameEvent("dota_rune_activated_server", function(context, event) self:FireOutput('OnRunePickup', event) end, self)
 	ListenToGameEvent("dota_item_purchased", function(context, event) self:FireOutput('OnItemPurchased', event) end, self)
 	ListenToGameEvent("dota_item_picked_up", function(context, event) self:FireOutput('OnItemPickup', event) end, self)
@@ -153,7 +154,6 @@ function VoiceResponses:TriggerSoundSpecial(triggerName, special, unit, response
 end
 
 function VoiceResponses:PlaySound(soundName, unit, allChat, global)
-	--print("Playing sound", soundName, allChat, global, unit)
 	if not IsServer() then return end
 
 	print(soundName)
@@ -250,6 +250,16 @@ function VoiceResponses:OnTakeDamage(event)
 				self:TriggerSound("OnTakeDamage", event.unit, unitResponses)
 			end
 		end
+	end
+end
+
+function VoiceResponses:OnHeroLevelUp(event)
+
+	local unit = EntIndexToHScript(event.hero_entindex)
+	local unitResponses = VoiceResponses.responses[unit:GetUnitName()]
+
+	if unitResponses ~= nil and not unit:IsIllusion() then
+		self:TriggerSound("OnLevelUp", unit, unitResponses)
 	end
 end
 

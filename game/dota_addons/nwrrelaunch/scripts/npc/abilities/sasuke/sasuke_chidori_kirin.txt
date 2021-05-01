@@ -20,6 +20,8 @@
     "precache"
     {
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_cast.vsndevts"
+        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_impact.vsndevts"
         "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_cast_talking.vsndevts"
         "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_impact_talking.vsndevts"
         "particle"  "particles/units/heroes/sasuke/kirin/storm_core.vpcf"

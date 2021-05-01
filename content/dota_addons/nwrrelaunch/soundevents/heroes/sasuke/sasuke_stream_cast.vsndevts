@@ -1,4 +1,4 @@
-"sasuke_stream_cast"
+"sasuke_chidori_cast"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/sasuke/sasuke_nagashi_cast.vsnd"
+                              "value0"        "sounds/heroes/sasuke/sasuke_chidori_cast.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
