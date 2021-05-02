@@ -5,7 +5,7 @@
 --- Initialize ability variables
 function initialize(event)
 	local duration = event.ability:GetLevelSpecialValueFor("duration", event.ability:GetLevel() - 1)
-	EmitSoundOn("itachi_amateratsu", event.caster)
+	EmitSoundOn("itachi_amaterasu_cast_talking", event.caster)
 	event.ability.saved_damage = 0
 	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_itachi_amateratsu", {duration = duration})
 	event.ability:ApplyDataDrivenModifier(event.caster, event.target, "modifier_itachi_amateratsu_spread_fire_cd", {Duration = 55})
