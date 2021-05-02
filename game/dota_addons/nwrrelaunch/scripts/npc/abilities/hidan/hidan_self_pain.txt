@@ -45,23 +45,8 @@
 	"precache"
 	{
 		"particle" "particles/units/heroes/hidan/self_pain.vpcf"
+		"soundfile"	"soundevents/heroes/hidan/hidan_self_pain_talking.vsndevts"
 	}
-
-	// "OnSpellStart"
-	// {
-	// 	"FireEffect"
-	// 	{
-	// 		"EffectName"		"particles/units/heroes/hidan/self_pain.vpcf"
-	// 		"EffectAttachType"		"follow_origin"
-	// 		"Target"		"CASTER"
-	// 	}
-
-	// 	"RunScript"
-	// 	{
-	// 		"ScriptFile"	"heroes/hidan/self_pain.lua"
-	// 		"Function"		"self_pain"
-	// 	}      
-	// }
 }
 
 }

@@ -3,8 +3,6 @@
 {
     
 
-
-
 "raikage_raiga_no_bomu"
 {
 	// General

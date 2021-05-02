@@ -86,6 +86,8 @@ function hidan_self_pain:OnSpellStart( event )
 	local damage = self:GetSpecialValueFor("damage")
 	local talent_ability = caster:FindAbilityByName("special_bonus_hidan_2")
 
+	caster:EmitSound("hidan_self_pain_talking")
+
 	if talent_ability:IsTrained() then
 		local damage = damage + talent_ability:GetSpecialValueFor("value")
 	end
@@ -103,4 +105,5 @@ function hidan_self_pain:OnSpellStart( event )
 	}
 
 	ApplyDamage(damage_table)
+
 end
