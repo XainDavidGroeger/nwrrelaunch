@@ -80,7 +80,7 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 	print(target_entities)
 
 	if #target_entities == 0 then
-		return UF_FAIL_CUSTOM
+		return UF_SUCCESS
 	end
 
 	if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
@@ -130,9 +130,9 @@ function yondaime_hiraishin_jump:GetCustomCastErrorLocation(target_point)
 
 
 
-	if #target_entities == 0 then
+	--[[if #target_entities == 0 then
 		return "#error_no_enemies_in_range"
-	end
+	end]]
 
 	return "#error_no_kunai_nearby"
 end
