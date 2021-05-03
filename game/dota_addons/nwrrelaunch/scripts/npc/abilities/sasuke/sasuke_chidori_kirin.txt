@@ -47,10 +47,15 @@
             "var_type"  "FIELD_INTEGER"
             "base_damage" "250 325 400"
         }
-		 "03"
+		"03"
         { 
             "var_type"  "FIELD_INTEGER"
             "lost_health_bonus_damage" "60 75 90"
+        }
+		"04"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "cast_range" "700 850 1000"
         }
     }
 
