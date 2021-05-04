@@ -235,6 +235,9 @@
 							"value4"		"sounds/vo/hidan/kill_05.vsnd"
 							"value5"		"sounds/vo/hidan/kill_06.vsnd"
 							"value6"		"sounds/vo/hidan/kill_07.vsnd"
+							"value6"		"sounds/vo/hidan/kill_08.vsnd"
+							"value6"		"sounds/vo/hidan/kill_09.vsnd"
+							"value6"		"sounds/vo/hidan/kill_10.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
