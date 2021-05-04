@@ -202,7 +202,7 @@
 					m_Filepath = "models/creeps/lane_creeps/creep_radiant_ranged/konohafemalewithkunai_anim.smd"
 					m_nStartframe = 20
 					m_nEndframe = 82
-					m_flFps = 30.0
+					m_flFps = 7.0
 					m_Loop = 
 					{
 						m_bLoop = true
