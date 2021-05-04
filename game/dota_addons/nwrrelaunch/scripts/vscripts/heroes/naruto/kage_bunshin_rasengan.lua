@@ -168,7 +168,6 @@ function Launch(keys, illusion)
   local sound_impact = keys.sound_impact
   local particle_impact = keys.particle_impact
   ability:ApplyDataDrivenModifier(keys.caster, illusion, "modifier_imba_storm_bolt_caster", {})
-  illusion:EmitSound(keys.sound_cast)
   AddPhysics(illusion)
 
   -- Movement

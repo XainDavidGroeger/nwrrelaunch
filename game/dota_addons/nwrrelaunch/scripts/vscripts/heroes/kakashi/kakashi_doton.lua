@@ -25,6 +25,7 @@ function kakashi_doton:OnSpellStart()
 	local target = self.target --for global variables and don't change all "target" to "self.target"
     self.ability = self
     self.target:EmitSound("kakashi_dog_cast")
+	self.caster:EmitSound("kakashi_doton_cast_talking")
 	local damage = self.ability:GetSpecialValueFor("damage")
 	local rootDuration = self.ability:GetSpecialValueFor("stun_duration")
 	
