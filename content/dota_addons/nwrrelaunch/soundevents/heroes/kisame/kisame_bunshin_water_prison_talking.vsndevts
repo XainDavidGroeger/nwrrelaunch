@@ -1,4 +1,4 @@
-"kisame_shark_cast"
+"kisame_bunshin_water_prison_talking"
 {
     "operator_stacks"
     {
@@ -14,11 +14,13 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/kisame_shark_cast.vsnd"
+                              "value0"        "sounds/heroes/kisame/sharkdance_01.vsnd"
+                              "value1"        "sounds/heroes/kisame/sharkdance_02.vsnd"
+                              "value2"        "sounds/heroes/kisame/sharkdance_03.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "2.50000"  }
-                                 "pitch_rand_min"    {   "value"     "-0.05000"  }
+                    "volume"            {   "value"     "1.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }

@@ -1,4 +1,4 @@
-"sakura_slam"
+"sakura_ulti_cast_talking"
 {
     "operator_stacks"
     {
@@ -14,10 +14,13 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/sakura_slam.vsnd"
+                              "value0"        "sounds/heroes/sakura/inner_sakura_01.vsnd"
+                              "value0"        "sounds/heroes/sakura/inner_sakura_02.vsnd"
+                              "value0"        "sounds/heroes/sakura/inner_sakura_03.vsnd"
+                              "value0"        "sounds/heroes/sakura/inner_sakura_04.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "2.50000"  }
+                    "volume"            {   "value"     "1.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

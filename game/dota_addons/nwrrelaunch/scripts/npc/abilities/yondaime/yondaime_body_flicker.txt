@@ -35,6 +35,7 @@
 
 		"soundfile" "soundevents/heroes/yondaime/minato_flicker_start.vsndevts"
 		"soundfile" "soundevents/heroes/yondaime/minato_flicker_end.vsndevts"
+		"soundfile" "soundevents/heroes/yondaime/minato_flicker_cast_real.vsndevts"
 	}
 	
 	// Special	

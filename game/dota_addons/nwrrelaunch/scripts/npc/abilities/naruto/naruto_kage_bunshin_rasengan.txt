@@ -121,7 +121,7 @@
 			"Function"				"ConjureImage"
 			"modifier_caster"		"modifier_imba_storm_bolt_caster"
 			"particle_bolt"			"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
-			"sound_cast"			""
+			"sound_cast"			"Hero_Sven.StormBolt"
 			"sound_impact"			"Hero_Sven.StormBoltImpact"
 			"particle_impact"		"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 

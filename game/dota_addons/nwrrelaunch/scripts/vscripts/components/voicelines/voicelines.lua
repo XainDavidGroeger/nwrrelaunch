@@ -231,6 +231,7 @@ function VoiceResponses:OnUnitSpawn(event)
 
 	if 						unit:GetName() == "npc_dota_hero_dragon_knight" 
 						or  unit:GetName() == "npc_dota_hero_beastmaster" 
+						or  unit:GetName() == "npc_dota_hero_antimage"
 	then
 		return nil
 	end
