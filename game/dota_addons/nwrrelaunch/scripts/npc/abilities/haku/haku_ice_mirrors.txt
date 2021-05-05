@@ -1,142 +1,86 @@
+"DOTAAbilities"
+{
+	"haku_ice_mirrors"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/haku/ice_mirrors"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"haku_ice_mirrors"
 	
-    "DOTAAbilities"
-{
-    
+		"precache"
 
-
-"haku_ice_mirrors"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"haku_ice_mirrors"
-
-	"precache"
-	{
-		"particle"					"particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf"
-		"particle"					"particles/units/heroes/haku/mirror_destroy.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
-		"soundfile"					"soundevents/haku_mirrors_cast.vsndevts"
-	}
-
-
-	"AbilityCastPoint"				"0.25 0.25 0.25"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"90"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"180 240 320"		
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"radius"					"425"
+			"particle"					"particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf"
+			"particle"					"particles/units/heroes/haku/mirror_destroy.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
+			"soundfile"					"soundevents/haku_mirrors_cast.vsndevts"
+			"soundfile"					"soundevents/heroes/haku/haku_ulti_talking.vsndevts"
 		}
-		"02"
+	
+		"AbilityCastPoint"				"0.25 0.25 0.25"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"180 240 320"		
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"8 9 10"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"count"					"12"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"endless_wound_stack"			"1"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"attack_min"						"11 18 25"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"attack_max"					"12 19 26"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"hp"			"160 240 320"
-		}
-		"08"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"mirror_attack_range"			"600"
-		}
-	}
-
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/ice_mirrors.lua"
-			"Function"		"playSound"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/ice_mirrors.lua"
-			"Function"		"create"
-		}
-
-	}
-
-	"Modifiers"
-	{		
-		"modifier_haku_mirror_caster"
-		{
-			"States"
+			"01"
 			{
-				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"425"
 			}
-		}
-
-		"modifier_haku_mirror_mirror"
-		{
-			"IsHidden"	"1"
-			
-			"OnDeath"
+			"02"
 			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/haku/ice_mirrors.lua"
-					"Function"		"checkIfDeath"
-				}
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"8 9 10"
 			}
-
-			"States"
+			"03"
 			{
-				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"var_type"						"FIELD_FLOAT"
+				"count"							"12"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"endless_wound_stack"			"1"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"attack_min"					"11 18 25"
+				"LinkedSpecialBonus"			"special_bonus_haku_5"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"attack_max"					"12 19 26"
+				"LinkedSpecialBonus"			"special_bonus_haku_5"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp"							"160 240 320"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mirror_attack_range"			"600"
 			}
 		}
 	}
-}
-
-
 }

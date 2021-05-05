@@ -27,7 +27,6 @@ end
 function ManaCost( keys )
 	-- Variables
 	local ability_level = keys.ability:GetLevel()
-	print("test")
 	local caster = keys.caster
 	local ability = keys.ability
 
@@ -40,7 +39,6 @@ function ManaCost( keys )
 	local current_mana = caster:GetMana()
 	local new_mana = current_mana - manacost_per_second
 	print(new_mana)
-	--local particle = keys.ability.particle
 	if (current_mana - manacost_per_second) <= 0 then
 		caster:SetMana(1)
 		caster:RemoveAbility("madara_susano_active")
@@ -159,4 +157,15 @@ function BurnTrees( keys )
 				end
 	end
 
+end
+
+
+function spawnCage (keys)
+	keys.caster.cage = ParticleManager:CreateParticle("particles/units/heroes/madara/susano/susano.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+	ParticleManager:SetParticleControl(keys.caster.cage, 0, keys.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(keys.caster.cage, 1, keys.caster:GetAbsOrigin() + Vector(0,0,40))
+end
+
+function removeCage (keys)
+	ParticleManager:DestroyParticle(keys.caster.cage, true)
 end

@@ -7,7 +7,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/hidan/self_pain"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	"AbilityTextureName"			"hidan_self_pain"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -33,27 +34,18 @@
 			"damage"				"150 225 300"
 			"LinkedSpecialBonus"	"special_bonus_hidan_2"
 		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"150 225 300"
+			"LinkedSpecialBonus"	"special_bonus_hidan_2"
+		}
 	}
 
 	"precache"
 	{
-		"particle" "particles/units/heroes/hidan/hidan_passive_a.vpcf"
-	}
-
-	"OnSpellStart"
-	{
-		"FireEffect"
-		{
-			"EffectName"		"particles/units/heroes/hidan/self_pain.vpcf"
-			"EffectAttachType"		"follow_origin"
-			"Target"		"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/hidan/self_pain.lua"
-			"Function"		"self_pain"
-		}      
+		"particle" "particles/units/heroes/hidan/self_pain.vpcf"
+		"soundfile"	"soundevents/heroes/hidan/hidan_self_pain_talking.vsndevts"
 	}
 }
 

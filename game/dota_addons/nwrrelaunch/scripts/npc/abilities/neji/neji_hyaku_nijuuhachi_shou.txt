@@ -25,16 +25,26 @@
 			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
 			"particle"	"particles/units/heroes/neji/ulti/bagum_projected.vpcf"
 			"soundfile"	"soundevents/heroes/neji/neji_64_cast.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_channel.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_cast_talking.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_finish_talking.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_finish_sound.vsndevts"
+			
+			"particle"	"particles/units/heroes/neji/ulti/ulti_images.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/2_ulti_images.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_32.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_64.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_128.vpcf"
 		}	
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"270"
 		"AbilityCastPoint"				"0.5 0.5 0.5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"3.0 3.0 3.0"
+		"AbilityChannelTime"			"4.0 4.0 4.0"
 		"AbilityCooldown"				"120.0 100.0 80.0"
 
 		// Cost
@@ -53,7 +63,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"3.0 3.0 3.0"
+				"duration"						"4.0 4.0 4.0"
 			}
 			"03"
 			{
@@ -73,9 +83,10 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"silence_duration"			    "0 0 0"
-				"LinkedSpecialBonus" 	"special_bonus_neji_4"
+				"silence_duration"			    "3 4 5"
+				"LinkedSpecialBonus" 			"special_bonus_neji_4"
 			}
+	
 		}
 
 		"OnSpellStart"
@@ -83,6 +94,18 @@
 			"FireSound"
 			{
 				"EffectName"  "neji_64_cast"
+              	"Target"    "CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"  "neji_64_channel"
+              	"Target"    "CASTER"
+			}
+
+				"FireSound"
+			{
+				"EffectName"  "neji_64_cast_talking"
               	"Target"    "CASTER"
 			}
 			
@@ -98,6 +121,12 @@
 				"PierceMagicImmune"	"true"
 			}
 
+			"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"addParticle"
+				}
+
 			"ApplyModifier"
 			{
 				"ModifierName"	"modifier_hyaku_nijuuhachi_shou_caster"
@@ -109,6 +138,20 @@
 
 		"OnChannelInterrupted"
 		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+				"Function"		"cancelSpell"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"applySilence"
+				}
 		}
 
 		"OnChannelFinish"
@@ -122,6 +165,18 @@
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 			}
+
+				"FireSound"
+			{
+				"EffectName"  "neji_64_finish_talking"
+              	"Target"    "CASTER"
+			}
+
+			"RunScript"
+				{
+					"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
+					"Function"		"cancelSpell"
+				}
 
 			"RemoveModifier"
 			{
@@ -167,18 +222,6 @@
 						"Damage"	"%damage_per_interval"
 					}
 
-					"ApplyModifier"
-					{
-						"ModifierName"  "modifier_hyaku_nijuuhachi_shou_silence"
-						"Duration"    "0.1"
-						"Target"
-						{
-									"Center"  "TARGET"
-									"Radius"  "%aoe_radius"
-									"Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
-									"Types"   "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-						}
-					}
 				}			
 				
 				"States"
@@ -208,12 +251,6 @@
 						"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
 						"Function"		"removeParticle"
 					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/neji/hyaku_nijuuhachi_shou.lua"
-						"Function"		"silenceTarget"
-					}
 				}
 
 				"States"
@@ -225,7 +262,7 @@
 			"modifier_hyaku_nijuuhachi_shou_silence"
 			{
 				"IsDebuff"	"1"
-				"Duration"	"0.1"
+				"Duration"	"%silence_duration_normal"
 				"IsPurgable"	"1"
 				"EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
 				"EffectAttachType"	"follow_overhead"			

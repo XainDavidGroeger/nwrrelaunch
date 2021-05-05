@@ -39,6 +39,8 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
     if abilitySpec:IsTrained() then
     	threshold_factor = threshold_factor + 0.04
     end
+
+	caster:EmitSound("onoki_ulti_talking")
 	
 	local timerDur = 0
 	Timers:CreateTimer(0.0, function ()

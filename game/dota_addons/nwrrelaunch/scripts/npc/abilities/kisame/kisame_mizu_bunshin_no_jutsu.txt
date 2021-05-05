@@ -18,6 +18,7 @@
 	"precache"
 	{
     "soundfile"         "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+    "soundfile"         "soundevents/heroes/kisame/bunshin_death.vsndevts"
     "particle"          "particles/units/heroes/hero_siren/naga_siren_mirror_image.vpcf"
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
 		"particle"			"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror_recipient.vpcf"
@@ -111,6 +112,7 @@
             "ScriptFile"      "heroes/kisame/mizu_bunshin_no_jutsu.lua"
             "Function"        "RemoveBunshin"
           }
+        
         }
       }
 

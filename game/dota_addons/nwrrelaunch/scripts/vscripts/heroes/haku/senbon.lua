@@ -33,7 +33,8 @@ function haku_crippling_senbon:OnSpellStart()
 
 
 	-- Play sound
-		caster:EmitSound("haku_senbon_cast")
+	caster:EmitSound("haku_senbon_cast")
+	caster:EmitSound("haku_senbon")
 	
 	local projectile =
 	{

@@ -209,8 +209,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"karasu_daggers"			// Ability 1.
-		"Ability2"					"karasu_poison_gas"			// Ability 2.
-		"Ability3"					"karasu_critical_strike"	// Ability 3.
+		"Ability2"					"karasu_critical_strike"	// Ability 2.
+		"Ability3"					"karasu_poison_gas"			// Ability 3.
 		"Ability4"					"karasu_dismantle_parts"	// Ability 4.
 		
 		// Armor
@@ -245,9 +245,9 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
+		"StatusHealth"				"1"		// Base health.
 		"StatusHealthRegen"			"1"		// Health regeneration rate.
-		"StatusMana"				"150"		// Base mana.
+		"StatusMana"				"1"		// Base mana.
 		"StatusManaRegen"			"1"		// Mana regeneration rate.
 
 		
@@ -379,7 +379,6 @@
 	//----------------------------------------------------------------
 	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
 	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		
 	// Vision

@@ -23,8 +23,9 @@
 	"precache"
 	{
 		"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
-		"soundfile"	"soundevents/itachi_amateratsu.vsndevts"
 		"soundfile"	"soundevents/itachi_amateratsu_burning.vsndevts"
+		"soundfile"  "soundevents/heroes/itachi/itachi_amaterasu_cast_talking.vsndevts"
+
 	}
 	
 	// Special
@@ -64,6 +65,7 @@
             "filePath"      "heroes/itachi/amateratsu"
             "functionName"  "initialize"
         }
+
 	}
 
 	"Modifiers"

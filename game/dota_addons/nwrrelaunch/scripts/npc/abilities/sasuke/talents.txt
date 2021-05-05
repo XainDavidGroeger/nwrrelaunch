@@ -22,7 +22,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"sasuke_chidori_koken"
+			"01" 	"sasuke_chidori_light_sword"
 		}
 
 		// Special
@@ -47,7 +47,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"sasuke_chidori_nagashi"
+			"01" 	"sasuke_chidori_stream"
 		}
 
 		// Special
@@ -57,7 +57,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"70"
+				"value"					"75"
 			}
 		}
 	}
@@ -72,7 +72,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"sasuke_chidori_eiso"
+			"01" 	"sasuke_chidori"
 		}
 
 		// Special
@@ -82,7 +82,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"1000"
+				"value"					"275"
 			}
 		}
 	
@@ -98,7 +98,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"sasuke_kirin"
+			"01" 	"sasuke_chidori"
 		}
 
 		// Special
@@ -108,31 +108,34 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"-0.75"
+				"value"					"100"
 			}
 		}
 	}
 
-	"special_bonus_intelligence_35"
+	"special_bonus_sasuke_5"	
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"6248"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
+
+		"LinkedAbility"
+		{
+			"01" 	"sasuke_chidori_stream"
+		}
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"225"
 			}
 		}
-
-		
 	}
 
 }

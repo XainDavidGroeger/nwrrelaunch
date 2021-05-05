@@ -16,7 +16,7 @@
 		"SoundSet"					"Punch"
 		"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"
 
-		"BaseClass"   "npc_dota_hero_centaur"
+		"BaseClass"   		"npc_dota_hero_centaur"
 		  "Model" 			"models/guy/gai.vmdl"
 		  "Ability1"        "guy_dynamic_entry_new"
 		  "Ability2"        "guy_leaf_strong_whirlwind" 

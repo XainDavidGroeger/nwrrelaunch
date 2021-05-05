@@ -19,7 +19,6 @@ end
 
 
 function gaara_sabaku_taiso:OnAbilityPhaseStart()
-	print("tesdasdsadsd")
 
 	self:GetCaster():EmitSound("gaara_burial_cast")
 	self:GetCaster():EmitSound("gaara_burial_talking")

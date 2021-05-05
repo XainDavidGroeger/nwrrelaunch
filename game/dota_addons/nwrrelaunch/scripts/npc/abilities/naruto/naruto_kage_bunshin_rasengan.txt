@@ -20,6 +20,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
+		"soundfile"			"soundevents/heroes/naruto/naruto_bunshin_rasengan_cast.vsndevts"
 		"particle"			"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 	}
@@ -106,6 +107,12 @@
 		{
 			"ModifierName"		"modifier_epicenter_precast_datadriven"
 			"Target"			"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"naruto_bunshin_rasengan_cast"
+			"Target"		"CASTER"
 		}
 	
 		"RunScript"

@@ -24,6 +24,8 @@
 		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_cast.vsndevts"
 		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_loop.vsndevts"
 		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_impact.vsndevts"
+		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_cast_talking.vsndevts"
+		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_impact_talking.vsndevts"
 
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/hero/sven/sven_ult_storm_bolt.vpcf"
@@ -82,6 +84,12 @@
 			"ScriptFile"		"heroes/kakashi/chidori.lua"
 			"Function"			"ChannelChidori"
 			"modifier_caster"	"modifier_imba_storm_bolt_caster"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"kakashi_raikiri_cast_talking"
+			"Target"	"CASTER"
 		}
 
 		"FireSound"

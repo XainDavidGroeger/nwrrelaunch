@@ -1,111 +1,104 @@
---[[
-	Author: Noya
-	Date: 25.01.2015.
-	Creates a dummy unit to apply the Blizzard thinker modifier which does the waves
-]]
+LinkLuaModifier("modifier_haku_needles_thinker", "heroes/haku/needles", LUA_MODIFIER_MOTION_NONE)
 
-function BlizzardStartPoint( event )
-	local caster = event.caster
-	local point = event.target_points[1]
+haku_needles = haku_needles or class({})
 
-	caster.blizzard_dummy_point = CreateUnitByName("dummy_unit_vulnerable", point, false, caster, caster, caster:GetTeam())
-
-	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
-	if abilityS ~= nil then
-		if abilityS:IsTrained() then
-			event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave_special", nil)	
-		else 
-			event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)		
-		end
-	else
-		event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_wave", nil)
-	end
-
-
-end
-
-
---[[function BlizzardWaveStart( event )
-	local caster = event.caster
-	event.ability:ApplyDataDrivenModifier(caster, caster.blizzard_dummy_point, "modifier_blizzard_thinker", nil)
-end]]
-
--- -- Create the particles with small delays between each other
-function BlizzardWave( event )
-	local caster = event.caster
-
-	local target_position = event.target:GetAbsOrigin() --event.target_points[1]
-    local particleName = "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
-    local distance = 100
-
-    -- Center explosion
-    local particle1 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( particle1, 0, target_position )
-
-	local fv = caster:GetForwardVector()
-    local distance = 100
-
-    Timers:CreateTimer(0.05,function()
-    local particle2 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( particle2, 0, target_position+RandomVector(100) ) end)
-
-    Timers:CreateTimer(0.1,function()
-	local particle3 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( particle3, 0, target_position-RandomVector(100) ) end)
-
-    Timers:CreateTimer(0.15,function()
-	local particle4 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( particle4, 0, target_position+RandomVector(RandomInt(50,100)) ) end)
-
-    Timers:CreateTimer(0.2,function()
-	local particle5 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControl( particle5, 0, target_position-RandomVector(RandomInt(50,100)) ) end)
-end
-
-function BlizzardEnd( event )
-	local caster = event.caster
-
-	local abilityS = caster:FindAbilityByName("special_bonus_haku_4")
-	if abilityS ~= nil then
-		if abilityS:IsTrained() then
-			caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave_special")
-		else 
-			caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")	
-		end
-	else
-		caster.blizzard_dummy_point:RemoveModifierByName("modifier_blizzard_wave")	
-	end
-	
-	
-	caster:RemoveModifierByName("modifier_blizzard_channelling")
-
-	local blizzard_dummy_point_pointer = caster.blizzard_dummy_point
-	Timers:CreateTimer(0.4,function() blizzard_dummy_point_pointer:RemoveSelf() end)
-end
-
-function playSound( keys )
+function haku_needles:OnAbilityPhaseStart()
+	local sound_name = "haku_needles"
 	local random = math.random(1, 2)
-	if random == 1 then
-		EmitSoundOn("haku_needles",keys.caster)
-	elseif random == 2 then
-		EmitSoundOn("haku_needles_2",keys.caster)
+
+	if random == 2 then
+		sound_name = "haku_needles_2"
 	end
+
+	self:GetCaster():EmitSound(sound_name)
+
+	return true
 end
 
+function haku_needles:OnSpellStart()
+	if not IsServer() then return end
 
-function applyEndlessWounds( keys )
+	local target_point = self:GetCursorPosition()
+	local duration = (self:GetSpecialValueFor("wave_interval") * self:GetSpecialValueFor("wave_count")) + self:GetSpecialValueFor("delay") + 0.1
 
-	local caster = keys.caster
-	local target = keys.target
-	local ability = caster:FindAbilityByName("haku_needles")
+	local thinker = CreateModifierThinker(self:GetCaster(), self, "modifier_haku_needles_thinker", {duration = duration}, target_point, self:GetCaster():GetTeamNumber(), false)
 
-	local woudns_ability = caster:FindAbilityByName("haku_endless_wounds")
-	if woudns_ability:GetLevel() > 0 then  
+	-- Creates flying vision area
+	self:CreateVisibilityNode(target_point, self:GetSpecialValueFor("radius"), duration)
+end
 
-		local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
-		woudns_ability:ApplyStacks(target, endless_wounds_stacks)
+modifier_haku_needles_thinker = modifier_haku_needles_thinker or class({})
 
+function modifier_haku_needles_thinker:OnCreated()
+	if not IsServer() then return end
+
+	self.wave_count = self:GetAbility():GetSpecialValueFor("wave_count")
+	self.damage = self:GetAbility():GetSpecialValueFor("wave_damage") + self:GetCaster():FindTalentValue("special_bonus_haku_4")
+
+	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("wave_interval"))
+end
+
+function modifier_haku_needles_thinker:OnIntervalThink()
+	-- shouldn't be cast more than wave_count with dynamic duration, just a fail-safe
+	if self.wave_count == 0 then
+		self:StartIntervalThink(-1)
+
+		return
 	end
 
+	self.wave_count = self.wave_count - 1
 
+	local particleName = "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
+	local distance = 100
+
+	-- Center explosion
+	local particle1 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( particle1, 0, self:GetParent():GetAbsOrigin() )
+
+	local fv = self:GetCaster():GetForwardVector()
+	local distance = 100
+
+	Timers:CreateTimer(0.05,function()
+	local particle2 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( particle2, 0, self:GetParent():GetAbsOrigin() + RandomVector(100) ) end)
+
+	Timers:CreateTimer(0.1,function()
+	local particle3 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( particle3, 0, self:GetParent():GetAbsOrigin() - RandomVector(100) ) end)
+
+	Timers:CreateTimer(0.15,function()
+	local particle4 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( particle4, 0, self:GetParent():GetAbsOrigin() + RandomVector(RandomInt(50,100)) ) end)
+
+	Timers:CreateTimer(0.2,function()
+	local particle5 = ParticleManager:CreateParticle( particleName, PATTACH_CUSTOMORIGIN, self:GetCaster() )
+	ParticleManager:SetParticleControl( particle5, 0, self:GetParent():GetAbsOrigin() - RandomVector(RandomInt(50,100)) ) end)
+
+	self:GetParent():SetContextThink(DoUniqueString("haku_needles_wave_delay"), function()
+		local units = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), 0, 0, false)
+
+		for k, v in pairs(units) do
+			ApplyDamage({
+				victim =  v,
+				attacker = self:GetCaster(),
+				damage = self.damage,
+				damage_type = self:GetAbility():GetAbilityDamageType(),
+				ability = self:GetAbility(),
+			})
+
+			local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
+
+			if woudns_ability:GetLevel() > 0 then  
+				woudns_ability:ApplyStacks(v, self:GetAbility():GetSpecialValueFor("endless_wounds_stacks"))
+			end
+		end
+
+		EmitSoundOnLocationWithCaster(self:GetParent():GetAbsOrigin(), "hero_Crystal.freezingField.explosion", self:GetCaster())
+	end, self:GetAbility():GetSpecialValueFor("delay"))
+end
+
+function modifier_haku_needles_thinker:OnRemoved()
+	if not IsServer() then return end
+
+	self:GetParent():RemoveSelf()
 end

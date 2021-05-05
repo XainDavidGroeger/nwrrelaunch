@@ -6,6 +6,7 @@ CHEAT_CODES = {
     ["repick"] = function(arg) GameMode:Repick(arg) end,              -- "Changes the Hero of the player"    
     ["lvlup"] = function(arg) GameMode:LvlUp(arg) end,                -- "The player lvlups x levels"        
     ["riseandshine"] = function() GameMode:RiseAndShine() end,        -- "Set time of day to dawn" 
+    ["illu"] = function() GameMode:SpawnIllusionRune() end,        -- "Set time of day to dawn" 
     ["lightsout"] = function() GameMode:LightsOut() end,              -- "Set time of day to dusk"          
     ["reset"] = function() GameMode:ResetGameTime() end,              -- "Set time of day to dusk"          
     ["testmodus"] = function() GameMode:SpawnAllHeroes() end            -- "Set time of day to dusk"          
@@ -80,6 +81,9 @@ function GameMode:OnPlayerChat(keys)
         end  
     end
       
+end
+function GameMode:SpawnIllusionRune(value)
+    CreateRune(Vector(0,0,0), DOTA_RUNE_ILLUSION)
 end
 --[[Author: LearningDave
   Date: october, 30th 2015.

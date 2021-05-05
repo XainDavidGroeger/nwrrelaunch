@@ -41,6 +41,7 @@
       "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
       "particle"  "particles/generic_gameplay/generic_purge.vpcf"
       "particle"   "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf"
+      "particle"  "particles/units/heroes/madara/susano/susano.vpcf"
     }
 
     "AbilitySpecial"
@@ -103,7 +104,6 @@
             "sub_ability_name"  "madara_susano"
         }
 
-
         "RemoveModifier"
         {
             "ModifierName"    "modifier_madara_susano"
@@ -116,9 +116,6 @@
         }
     }
 
-
-
-
     "Modifiers"
     {
             "modifier_madara_susano"
@@ -126,8 +123,6 @@
             "Passive"     "1"
             "IsHidden"      "0"
             "IsBuff"      "1"
-            "EffectName"        "particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-            "EffectAttachType"  "follow_origin"
 
             "AllowsIllusionDuplicate"   "1"
 
@@ -136,25 +131,24 @@
                 "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%magic_resistance_percent"
               } 
 
+            
             "OnCreated"
             {
-                "RunScript"
+                	"RunScript"
                 {
                     "ScriptFile"            "heroes/madara/susano.lua"
-                    "Function"              "SusanoStart"
-                    "projectile_model"      "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-                }
-
-                
-
-                "AttachEffect"
-                {
-                    //"EffectName"      "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
-                    //"EffectAttachType"    "follow_origin"
-                    //"Target"          "TARGET"
+                    "Function"              "spawnCage"
                 }
             }
 
+            "OnDestroy"
+            {
+                	"RunScript"
+                {
+                    "ScriptFile"            "heroes/madara/susano.lua"
+                    "Function"              "removeCage"
+                }
+            }
             
             "ThinkInterval" "1"
             "OnIntervalThink"

@@ -220,7 +220,7 @@
 					m_Filepath = "models/creeps/lane_creeps/creep_bad_melee/zetsu3_anim.smd"
 					m_nStartframe = 20
 					m_nEndframe = 81
-					m_flFps = 30.0
+					m_flFps = 7.0
 					m_Loop = 
 					{
 						m_bLoop = true

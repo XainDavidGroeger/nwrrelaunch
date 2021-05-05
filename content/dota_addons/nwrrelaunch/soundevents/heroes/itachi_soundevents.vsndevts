@@ -14,16 +14,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_attack_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_attack_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_attack_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_attack_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_attack_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_attack_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_attack_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_attack_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_attack_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_attack_10.vsnd"
+							"value0"		"sounds/vo/itachi/attack_01.vsnd"
+							"value1"		"sounds/vo/itachi/attack_02.vsnd"
+							"value2"		"sounds/vo/itachi/attack_03.vsnd"
+							"value3"		"sounds/vo/itachi/attack_04.vsnd"
+							"value4"		"sounds/vo/itachi/attack_05.vsnd"
+							"value5"		"sounds/vo/itachi/attack_06.vsnd"
+							"value6"		"sounds/vo/itachi/attack_07.vsnd"
+							"value7"		"sounds/vo/itachi/attack_08.vsnd"
+							"value8"		"sounds/vo/itachi/attack_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -55,19 +54,17 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_move_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_move_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_move_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_move_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_move_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_move_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_move_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_move_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_move_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_move_10.vsnd"
-							"value10"		"sounds/vo/antimage/anti_move_11.vsnd"
-							"value11"		"sounds/vo/antimage/anti_move_12.vsnd"
-							"value12"		"sounds/vo/antimage/anti_move_13.vsnd"
+							"value0"		"sounds/vo/itachi/move_01.vsnd"
+							"value1"		"sounds/vo/itachi/move_02.vsnd"
+							"value2"		"sounds/vo/itachi/move_03.vsnd"
+							"value3"		"sounds/vo/itachi/move_04.vsnd"
+							"value4"		"sounds/vo/itachi/move_05.vsnd"
+							"value5"		"sounds/vo/itachi/move_06.vsnd"
+							"value6"		"sounds/vo/itachi/move_07.vsnd"
+							"value7"		"sounds/vo/itachi/move_08.vsnd"
+							"value8"		"sounds/vo/itachi/move_09.vsnd"
+							"value9"		"sounds/vo/itachi/move_10.vsnd"
+							"value10"		"sounds/vo/itachi/move_11.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -99,12 +96,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_pain_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_pain_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_pain_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_pain_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_pain_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_pain_06.vsnd"
+							"value0"		"sounds/vo/itachi/pain_01.vsnd"
+							"value1"		"sounds/vo/itachi/pain_02.vsnd"
+							"value2"		"sounds/vo/itachi/pain_03.vsnd"
+							"value3"		"sounds/vo/itachi/pain_04.vsnd"
+							"value4"		"sounds/vo/itachi/pain_05.vsnd"
+							"value5"		"sounds/vo/itachi/pain_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -136,20 +133,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_death_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_death_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_death_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_death_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_death_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_death_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_death_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_death_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_death_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_death_10.vsnd"
-							"value10"		"sounds/vo/antimage/anti_death_11.vsnd"
-							"value11"		"sounds/vo/antimage/anti_death_12.vsnd"
-							"value12"		"sounds/vo/antimage/anti_death_13.vsnd"
-							"value13"		"sounds/vo/antimage/anti_death_14.vsnd"
+							"value0"		"sounds/vo/itachi/death_01.vsnd"
+							"value1"		"sounds/vo/itachi/death_02.vsnd"
+							"value2"		"sounds/vo/itachi/death_03.vsnd"
+							"value3"		"sounds/vo/itachi/death_04.vsnd"
+							"value4"		"sounds/vo/itachi/death_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -181,16 +169,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_respawn_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_respawn_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_respawn_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_respawn_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_respawn_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_respawn_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_respawn_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_respawn_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_respawn_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_respawn_10.vsnd"
+							"value0"		"sounds/vo/itachi/respawn_01.vsnd"
+							"value1"		"sounds/vo/itachi/respawn_02.vsnd"
+							"value2"		"sounds/vo/itachi/respawn_03.vsnd"
+							"value3"		"sounds/vo/itachi/respawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -222,10 +204,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_spawn_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_spawn_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_spawn_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_spawn_04.vsnd"
+							"value0"		"sounds/vo/itachi/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -257,6 +236,16 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/itachi/kill_01.vsnd"
+							"value1"		"sounds/vo/itachi/kill_02.vsnd"
+							"value2"		"sounds/vo/itachi/kill_03.vsnd"
+							"value3"		"sounds/vo/itachi/kill_04.vsnd"
+							"value4"		"sounds/vo/itachi/kill_05.vsnd"
+							"value5"		"sounds/vo/itachi/kill_06.vsnd"
+							"value6"		"sounds/vo/itachi/kill_07.vsnd"
+							"value7"		"sounds/vo/itachi/kill_08.vsnd"
+							"value8"		"sounds/vo/itachi/kill_09.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -288,6 +277,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/itachi/kill_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -319,16 +309,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_lasthit_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_lasthit_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_lasthit_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_lasthit_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_lasthit_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_lasthit_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_lasthit_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_lasthit_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_lasthit_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_lasthit_10.vsnd"
+							"value0"		"sounds/vo/itachi/lasthit_01.vsnd"
+							"value1"		"sounds/vo/itachi/lasthit_02.vsnd"
+							"value2"		"sounds/vo/itachi/lasthit_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -360,20 +343,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_deny_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_deny_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_deny_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_deny_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_deny_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_deny_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_deny_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_deny_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_deny_09.vsnd"
-							"value9"		"sounds/vo/antimage/anti_deny_10.vsnd"
-							"value10"		"sounds/vo/antimage/anti_deny_11.vsnd"
-							"value11"		"sounds/vo/antimage/anti_deny_12.vsnd"
-							"value12"		"sounds/vo/antimage/anti_deny_13.vsnd"
-							"value13"		"sounds/vo/antimage/anti_deny_14.vsnd"
+							"value0"		"sounds/vo/itachi/deny_01.vsnd"
+							"value1"		"sounds/vo/itachi/deny_02.vsnd"
+							"value2"		"sounds/vo/itachi/deny_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -405,15 +377,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_level_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_level_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_level_03.vsnd"
-							"value3"		"sounds/vo/antimage/anti_level_04.vsnd"
-							"value4"		"sounds/vo/antimage/anti_level_05.vsnd"
-							"value5"		"sounds/vo/antimage/anti_level_06.vsnd"
-							"value6"		"sounds/vo/antimage/anti_level_07.vsnd"
-							"value7"		"sounds/vo/antimage/anti_level_08.vsnd"
-							"value8"		"sounds/vo/antimage/anti_level_09.vsnd"
+							"value0"		"sounds/vo/itachi/level_01.vsnd"
+							"value1"		"sounds/vo/itachi/level_02.vsnd"
+							"value2"		"sounds/vo/itachi/level_03.vsnd"
+							"value3"		"sounds/vo/itachi/level_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -445,9 +412,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/antimage/anti_win_01.vsnd"
-							"value1"		"sounds/vo/antimage/anti_win_02.vsnd"
-							"value2"		"sounds/vo/antimage/anti_win_03.vsnd"
+							"value0"		"sounds/vo/itachi/laugh_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

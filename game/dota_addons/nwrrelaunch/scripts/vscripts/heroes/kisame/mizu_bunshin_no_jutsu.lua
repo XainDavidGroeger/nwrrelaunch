@@ -187,6 +187,8 @@ end
 
 function RemoveBunshin( keys )
   keys.target:ForceKill(false)
+
+  keys.target:EmitSound("bunshin_death")
     
     Timers:CreateTimer(0.1, function()
         keys.target:Destroy()
