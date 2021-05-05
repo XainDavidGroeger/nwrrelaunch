@@ -83,6 +83,7 @@
 		"particle"					"particles/items_fx/cyclone.vpcf"
 		"particle"					"particles/units/heroes/gaara/ulti/ulti_core.vpcf"
 		"particle"					"particles/units/heroes/gaara/ulti/ulti_building_wave.vpcf"
+		"particle"					"particles/units/heroes/gaara/ulti/range_finder_ulti.vpcf"	
 	}
 
   }

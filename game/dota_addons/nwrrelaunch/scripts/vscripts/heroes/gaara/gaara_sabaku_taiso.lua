@@ -2,8 +2,15 @@
 gaara_sabaku_taiso = gaara_sabaku_taiso or class({})
 LinkLuaModifier( "modifier_gaara_cyclone", "heroes/gaara/gaara_sabaku_taiso.lua" ,LUA_MODIFIER_MOTION_NONE )
 
+LinkLuaModifier( "modifier_generic_custom_indicator",
+				 "modifiers/modifier_generic_custom_indicator",
+				 LUA_MODIFIER_MOTION_BOTH )
 
 
+
+function gaara_sabaku_taiso:GetIntrinsicModifierName()
+	return "modifier_generic_custom_indicator"
+end
 
 function gaara_sabaku_taiso:GetAbilityTextureName()
 	return "gaara_sabaku_taiso"
@@ -15,6 +22,47 @@ function gaara_sabaku_taiso:GetCastRange(location, target)
 		castrangebonus = 600
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
+end
+
+
+function gaara_sabaku_taiso:CreateCustomIndicator()
+	local particle_cast = "particles/units/heroes/gaara/ulti/range_finder_ulti.vpcf"
+	self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+end
+
+function gaara_sabaku_taiso:UpdateCustomIndicator( loc )
+	-- get data
+	local origin = self:GetCaster():GetAbsOrigin()
+	local cast_range = self:GetCastRange(loc, nil)
+	local width = self:GetSpecialValueFor("end_radius")
+
+	-- get direction
+	local direction = loc - origin
+	direction.z = 0
+	direction = direction:Normalized()
+
+	ParticleManager:SetParticleControl( self.effect_cast, 0, origin )
+	ParticleManager:SetParticleControl( self.effect_cast, 1, origin)
+	ParticleManager:SetParticleControl( self.effect_cast, 2, origin + direction*cast_range)
+	ParticleManager:SetParticleControl( self.effect_cast, 3, Vector(width, width, 0))
+	ParticleManager:SetParticleControl( self.effect_cast, 4, Vector(0, 255, 0)) --Color (green by default)
+	ParticleManager:SetParticleControl( self.effect_cast, 6, Vector(1,1,1)) --Enable color change
+end
+
+function gaara_sabaku_taiso:DestroyCustomIndicator()
+	ParticleManager:DestroyParticle( self.effect_cast, false )
+	ParticleManager:ReleaseParticleIndex( self.effect_cast )
+end
+
+function gaara_sabaku_taiso:CastFilterResultLocation(location)
+	if IsClient() then
+		if self.custom_indicator then
+			-- register cursor position
+			self.custom_indicator:Register( location )
+		end
+	end
+
+	return UF_SUCCESS
 end
 
 
