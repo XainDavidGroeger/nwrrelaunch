@@ -1,11 +1,11 @@
 "DOTAAbilities"
 {
+	//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE
+	//20: +20 Agility / -3s Crow Genjutsu Cooldown
+	//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
+	//10: +20 Movement Speed / +1.75 Mana Regen
 
-//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE
-//20: +20 Agility / -3s Crow Genjutsu Cooldown
-//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
-//10: +20 Movement Speed / +1.75 Mana Regen
-"npc_dota_hero_itachi" 
+	"npc_dota_hero_itachi" 
     {
 		"HeroID"					"205"
 

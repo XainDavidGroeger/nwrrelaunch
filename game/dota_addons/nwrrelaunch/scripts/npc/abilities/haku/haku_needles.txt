@@ -1,321 +1,72 @@
-	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
-    
-
-"haku_needles"
-{
-	"BaseClass"             		"ability_datadriven"
-	"AbilityTextureName"			"haku_needles"
-
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-
-
-	"AbilityCastRange"				"700"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCooldown"				"12.0"
-	"AbilityManaCost"				"120 125 130 135"
-
-	"AOERadius"     				"%radius"
-	
-	"AbilitySpecial"
+	"haku_needles"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"275"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"wave_duration"			"2.8"
-		}		
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wave_count"			"2"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wave_damage"			"70 95 120 145"
-			"LinkedSpecialBonus"	"special_bonus_haku_4"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"wave_interval"			"1.2"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun_duration"			"0.4"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"endless_wounds_stacks"			"10"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"wave_damage_special"			"240 266 290 315"
-		}
-	}
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"heroes/haku/needles"
+		"AbilityTextureName"			"haku_needles"
 
-	"precache"
-	{
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-		"soundfile"	"soundevents/haku_needles.vsndevts"
-		"soundfile"	"soundevents/haku_needles_2.vsndevts"
-		"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
-		"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
-		"particle"	"particles/generic_gameplay/generic_slowed_cold.vpcf"
-		"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
-	}
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/needles.lua"
-			"Function"		"playSound"
-		}
-	}
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"120 125 130 135"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/needles.lua"
-			"Function"		"BlizzardStartPoint"
-			"Target"		"POINT"
-		}
-	}
+		"AOERadius"     				"%radius"
 
-	"Modifiers"
-    {
-		
-		"modifier_blizzard_wave"
+		"AbilitySpecial"
 		{
-			"OnCreated"
+			"01"
 			{
-				"ApplyModifier"
-         		{
-					"ModifierName"	"modifier_blizzard_thinker"
-         			"Target" 		"TARGET"
-				}
-
-				"DelayedAction"
-				{
-					"Delay"     "%wave_interval"
-					"Action"    
-					{	
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_blizzard_thinker"
-							"Target" 		"TARGET"
-						}
-					}
-				}
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"275"
 			}
-			
-		}
-
-		"modifier_blizzard_wave_special"
-		{
-			"OnCreated"
+			"02"
 			{
-				"ApplyModifier"
-         		{
-					"ModifierName"	"modifier_blizzard_thinker_special"
-         			"Target" 		"TARGET"
-				}
-
-				"DelayedAction"
-				{
-					"Delay"     "%wave_interval"
-					"Action"    
-					{	
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_blizzard_thinker_special"
-							"Target" 		"TARGET"
-						}
-					}
-				}
+				"var_type"				"FIELD_INTEGER"
+				"wave_count"			"2"
 			}
-			
-		}
-		
-		"modifier_blizzard_thinker"
-		{
-			"OnCreated"
+			"03"
 			{
-				"DelayedAction"
-				{
-					"Delay"     "0.3"
-					"Action"    
-					{						
-						"Damage"
-						{
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-							"Type"			"DAMAGE_TYPE_MAGICAL"
-							"Damage"		"%wave_damage"
-						}
-
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_haku_needles_stun"
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-							"Duration"		"%duration"
-						}
-
-						"FireSound"
-						{
-							"EffectName"	"hero_Crystal.freezingField.explosion"
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-						}
-						
-						"RemoveModifier"
-						{
-							"ModifierName"	"modifier_blizzard_thinker"
-							"Target" 		"TARGET"
-						}
-
-							"ActOnTargets"
-					{
-						"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-					
-						"Action"    
-						{
-							"RunScript"
-							{
-								"ScriptFile"	"heroes/haku/needles.lua"
-								"Function"		"applyEndlessWounds"
-								"Target" 		"TARGET"
-							}
-						}
-					}
-				}
-					}
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/haku/needles.lua"
-					"Function"		"BlizzardWave"
-				}
-			}			
+				"var_type"				"FIELD_INTEGER"
+				"wave_damage"			"70 95 120 145"
+				"LinkedSpecialBonus"	"special_bonus_haku_4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wave_interval"			"1.2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"endless_wounds_stacks"	"10"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"0.3"
+			}
 		}
 
-		"modifier_blizzard_thinker_special"
+		"precache"
 		{
-			"OnCreated"
-			{
-				"DelayedAction"
-				{
-					"Delay"     "0.3"
-					"Action"    
-					{						
-						"Damage"
-						{
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-							"Type"			"DAMAGE_TYPE_MAGICAL"
-							"Damage"		"%wave_damage_special"
-						}
-
-						"ApplyModifier"
-						{
-							"ModifierName"	"modifier_haku_needles_stun"
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-							"Duration"		"%duration"
-						}
-
-						"FireSound"
-						{
-							"EffectName"	"hero_Crystal.freezingField.explosion"
-							"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-						}
-						
-						"RemoveModifier"
-						{
-							"ModifierName"	"modifier_blizzard_thinker_special"
-							"Target" 		"TARGET"
-						}
-
-							"ActOnTargets"
-					{
-						"Target"
-							{
-								"Center"  	"TARGET"
-								"Radius" 	"%radius"
-								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-							}
-					
-						"Action"    
-						{
-							"RunScript"
-							{
-								"ScriptFile"	"heroes/haku/endless_wounds.lua"
-								"Function"		"applyModifierFromAbility"
-							}
-						}
-					}
-				}
-					}
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/haku/needles.lua"
-					"Function"		"BlizzardWave"
-				}
-			}			
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile"	"soundevents/haku_needles.vsndevts"
+			"soundfile"	"soundevents/haku_needles_2.vsndevts"
+			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
+			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
+			"particle"	"particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
 		}
 
 		"modifier_haku_needles_stun"
@@ -331,7 +82,4 @@
 			"EffectAttachType"	"follow_overhead"
 		}
 	}
-	
-}
-
 }

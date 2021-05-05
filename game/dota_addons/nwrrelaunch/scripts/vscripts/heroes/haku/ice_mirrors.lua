@@ -1,129 +1,148 @@
-function create( keys )
+LinkLuaModifier("modifier_haku_mirror_caster", "heroes/haku/ice_mirrors", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_haku_mirror_mirror", "heroes/haku/ice_mirrors", LUA_MODIFIER_MOTION_NONE)
 
-	local attack_min = keys.ability:GetLevelSpecialValueFor("attack_min", keys.ability:GetLevel() - 1)
-	local attack_max = keys.ability:GetLevelSpecialValueFor("attack_max", keys.ability:GetLevel() - 1)
+haku_ice_mirrors = haku_ice_mirrors or class({})
 
-	local abilityS = keys.caster:FindAbilityByName("special_bonus_haku_5")
-	if abilityS:IsTrained() then
-		attack_min = attack_min + 18
-		attack_max = attack_min + 1
-	end
+function haku_ice_mirrors:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("haku_mirrors_cast")
 
-	local hp = keys.ability:GetLevelSpecialValueFor("hp", keys.ability:GetLevel() - 1)
-	local radius = keys.ability:GetLevelSpecialValueFor("radius", keys.ability:GetLevel() - 1)
-	local duration = keys.ability:GetLevelSpecialValueFor("duration", keys.ability:GetLevel() - 1)
-	local target_point = keys.caster:GetAbsOrigin()
-	local tree_count = keys.ability:GetLevelSpecialValueFor("count", keys.ability:GetLevel() - 1)
-	local scope = math.pi * radius
-	local posX = 0
-	local posY = 0
-	keys.caster:AddNoDraw()
-	keys.ability:ApplyDataDrivenModifier(keys.caster,keys.caster,"modifier_haku_mirror_caster",{duration = duration})
+	return true
+end
+
+function haku_ice_mirrors:OnSpellStart()
+	if not IsServer() then return end
+
+	local attack_min = self:GetSpecialValueFor("attack_min") + self:GetCaster():FindTalentValue("special_bonus_haku_5")	
+	local attack_max = self:GetSpecialValueFor("attack_max") + self:GetCaster():FindTalentValue("special_bonus_haku_5")
+	local health = self:GetSpecialValueFor("hp")
+	local radius = self:GetSpecialValueFor("radius")
+	local duration = self:GetSpecialValueFor("duration")
+	local count = self:GetSpecialValueFor("count")
+	self.mirrors = {}
+
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_haku_mirror_caster", {duration = duration})
+	self:GetCaster():EmitSound("Hero_Ancient_Apparition.IceVortex")
+
 	local r = radius / 2
-	for i = 1,tree_count do
-			posX = target_point.x + r * math.cos((math.pi*2/tree_count) * i)
-			posY = target_point.y + r * math.sin((math.pi*2/tree_count) * i)
-			local mirror = CreateUnitByName("npc_haku_mirror",Vector( posX, posY, 0.0 ),true,keys.caster,keys.caster,keys.caster:GetTeamNumber())
 
+	GridNav:DestroyTreesAroundPoint(self:GetCaster():GetAbsOrigin(), radius, true)
+
+	for i = 1, count do
+		local posX = self:GetCaster():GetAbsOrigin().x + r * math.cos((math.pi * 2 / count) * i)
+		local posY = self:GetCaster():GetAbsOrigin().y + r * math.sin((math.pi * 2 / count) * i)
+		local mirror_position = Vector(posX, posY, 0)
+
+		local mirror = CreateUnitByName("npc_haku_mirror", mirror_position, true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber())
+
+		if mirror then
 			mirror:SetHullRadius(48)
-			FindClearSpaceForUnit(mirror, Vector( posX, posY, 0.0 ), false)
-			if keys.ability:GetLevel() == 2 then
-				mirror:CreatureLevelUp(1)
-			end
-			if keys.ability:GetLevel() == 3 then
-				mirror:CreatureLevelUp(2)
-			end
+			FindClearSpaceForUnit(mirror, mirror_position, false)
 			mirror:SetBaseDamageMin(attack_min)
 			mirror:SetBaseDamageMax(attack_max)
-			mirror:SetMaxHealth(hp)
-			mirror:SetHealth(hp)
+			mirror:SetMaxHealth(health)
+			mirror:SetHealth(health)
+			mirror:SetOwner(self:GetCaster())
+			mirror:SetControllableByPlayer(self:GetCaster():GetPlayerID(), true)
 
-			keys.ability:ApplyDataDrivenModifier(keys.caster,mirror,"modifier_haku_mirror_mirror",{})
+			mirror:AddNewModifier(mirror, self, "modifier_haku_mirror_mirror", {duration = duration})
+			mirror:AddNewModifier(mirror, self, "modifier_kill", {duration = duration})
 
-			mirror:SetControllableByPlayer(keys.caster:GetPlayerID(), true)
-			if keys.caster.mirrors  == nil then
-				keys.caster.mirrors = {}
+			if self:GetLevel() == 2 then
+				mirror:CreatureLevelUp(1)
 			end
-			table.insert(keys.caster.mirrors, mirror)
 
-			EmitSoundOn("Hero_Ancient_Apparition.IceVortex",mirror)
+			if self:GetLevel() == 3 then
+				mirror:CreatureLevelUp(2)
+			end
 
-			local endless_wounds_ability = keys.caster:FindAbilityByName("haku_endless_wounds")
+			local endless_wounds_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
+
 			if endless_wounds_ability:GetLevel() > 0 then
-				mirror:AddNewModifier(keys.caster,endless_wounds_ability,"modifier_haku_endless_needles_caster",{})
+				mirror:AddNewModifier(self:GetCaster(), endless_wounds_ability, "modifier_haku_endless_needles_caster",{})
 			end
-			local embrace = ParticleManager:CreateParticle("particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", PATTACH_ABSORIGIN, mirror)
-			ParticleManager:SetParticleControl(embrace, 0, mirror:GetAbsOrigin())
-			ParticleManager:SetParticleControl(embrace, 1, mirror:GetAbsOrigin())
-			ParticleManager:SetParticleControl(embrace, 2, mirror:GetAbsOrigin())
 
-			Timers:CreateTimer( duration, function()
-				if not mirror:IsNull() then
-					mirror:RemoveSelf()
-				end
-				return nil
-			end
-			)
-	end
-	
-	Timers:CreateTimer( duration, function()
-		if not keys.caster:IsNull() then
-			keys.caster:RemoveNoDraw()
-		end
-		return nil
-	end
-	)
-end
-
-
-function checkIfDeath( keys )
-	local isDeath = true
-	if keys.caster.mirrors then
-		for _,mirror in pairs(keys.caster.mirrors) do
-			if not mirror:IsNull() then
-				if mirror:IsAlive() then
-					isDeath = false
-				else					
-					--Dummy for mirror explosion particle
-					local dummy = CreateUnitByName("npc_dummy_unit", mirror:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeam())
-					dummy:AddNewModifier(keys.caster, nil, "modifier_phased", {})
-					keys.ability:ApplyDataDrivenModifier(keys.caster, dummy, "modifier_haku_mirror_caster",nil)					
-					--Create particle
-					local explosion = ParticleManager:CreateParticle("particles/units/heroes/haku/mirror_destroy.vpcf", PATTACH_ABSORIGIN, dummy)
-					ParticleManager:SetParticleControl(explosion, 0, dummy:GetAbsOrigin())
-					--Destroy mirror
-					mirror:Destroy()				
-					--Timer to destroy dummy
-					Timers:CreateTimer({
-						endTime = 0.25,
-						callback = function()
-							if not dummy:IsNull() then
-								dummy:Destroy()
-							end
-						return nil
-					end
-					})					
-				end
-			end
+			table.insert(self.mirrors, mirror)
 		end
 	end
-	if isDeath then
-		trackEnemy(keys)
-		keys.caster:Kill(keys.ability, keys.ability.lastAttacker)
-		keys.caster:RemoveNoDraw()
+end
+
+modifier_haku_mirror_caster = modifier_haku_mirror_caster or class({})
+
+function modifier_haku_mirror_caster:IsHidden() return true end
+
+function modifier_haku_mirror_caster:CheckState() return {
+	[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+	[MODIFIER_STATE_STUNNED] = true,
+	[MODIFIER_STATE_INVULNERABLE] = true,
+	[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+	[MODIFIER_STATE_OUT_OF_GAME] = true,
+	[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+} end
+
+function modifier_haku_mirror_caster:OnCreated()
+	if not IsServer() then return end
+
+	self:GetParent():AddNoDraw()
+end
+
+function modifier_haku_mirror_caster:OnRemoved()
+	if not IsServer() then return end
+
+	self:GetParent():RemoveNoDraw()
+end
+
+modifier_haku_mirror_mirror = modifier_haku_mirror_mirror or class({})
+
+function modifier_haku_mirror_mirror:IsHidden() return true end
+
+function modifier_haku_mirror_mirror:DeclareFunctions() return {
+	MODIFIER_EVENT_ON_DEATH,
+} end
+
+function modifier_haku_mirror_mirror:CheckState() return {
+	[MODIFIER_STATE_MAGIC_IMMUNE] = true,
+} end
+
+function modifier_haku_mirror_mirror:OnCreated()
+	if not IsServer() then return end
+
+	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+	ParticleManager:SetParticleControl(self.pfx, 0, self:GetParent():GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.pfx, 1, self:GetParent():GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.pfx, 2, self:GetParent():GetAbsOrigin())
+end
+
+function modifier_haku_mirror_mirror:OnDeath(keys)
+	if not IsServer() then return end
+	if keys.unit ~= self:GetParent() then return end
+
+	if self.pfx then
+		ParticleManager:DestroyParticle(self.pfx, false)
+		ParticleManager:ReleaseParticleIndex(self.pfx)
 	end
-end
 
-function trackEnemy( keys )	
-	if keys.ability.lastAttacker == nil then
-		keys.ability.lastAttacker = keys.attacker
-	else
-		if keys.attacker:IsHero() then
-			keys.ability.lastAttacker = keys.attacker
-		end		
-	end	
-end
+	local explosion = ParticleManager:CreateParticle("particles/units/heroes/haku/mirror_destroy.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+	ParticleManager:SetParticleControl(explosion, 0, self:GetParent():GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(explosion)
 
-function playSound( keys )
-	EmitSoundOn("haku_mirrors_cast",keys.caster)
+	self:GetParent():Destroy()
+
+	if self:GetRemainingTime() <= 0 then
+		return
+	end
+
+	local should_die = true
+
+	for k, v in pairs(self:GetAbility().mirrors) do
+		if not v:IsNull() then
+			if v:IsAlive() then
+				should_die = false
+				break
+			end
+		end
+	end
+
+	if should_die and keys.attacker then
+		self:GetAbility():GetCaster():Kill(nil, keys.attacker)
+	end
 end
