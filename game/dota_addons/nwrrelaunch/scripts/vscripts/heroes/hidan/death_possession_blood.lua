@@ -168,7 +168,7 @@ function hidan_death_possession_blood:OnSpellStart()
 	caster:AddNewModifier(caster, self, "modifier_death_possession_blood_caster_buff", {duration = duration})
 
 	-- Sounds
-	caster:EmitSound("hidan_ulti")
+	caster:EmitSound("hidan_ulti_cast_talking")
 end
 
 function hidan_death_possession_blood:GetIntrinsicModifierName()

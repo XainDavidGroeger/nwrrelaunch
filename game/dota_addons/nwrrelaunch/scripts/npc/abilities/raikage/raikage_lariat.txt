@@ -26,6 +26,7 @@
 	"precache"
 	{
 		"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"soundfile"                 "soundevents/heroes/raikage/raikage_lariat_talking.vsndevts"
 		"particle"                  "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 		"particle"                  "particles/hero/sven/sven_ult_storm_bolt.vpcf"
 		"particle"                  "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
@@ -102,6 +103,12 @@
         {
             "ModifierName"          "modifier_lariat_energy_shield"
             "Target"                "CASTER"
+        }
+
+        "FireSound"
+        {
+            "EffectName"	"raikage_lariat_talking"
+            "Target"		"CASTER"
         }
 
 		

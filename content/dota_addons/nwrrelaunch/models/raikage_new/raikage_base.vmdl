@@ -809,13 +809,7 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_FLAIL"
-							m_nWeight = 1
-						},
-					]
+					m_Activities = [  ]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]

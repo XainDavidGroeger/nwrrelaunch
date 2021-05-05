@@ -70,7 +70,6 @@ function GameMode:OnNPCSpawned(keys)
 end
 
 function GameMode:OnTakeDamage( keys )
-	print("asdasd")
 end
 
 -- An item was purchased by a player

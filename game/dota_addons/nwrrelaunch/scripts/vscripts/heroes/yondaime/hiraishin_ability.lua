@@ -55,7 +55,6 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 		end
 	end
 
-	print("Trying to cast")
 	local ability = self
 	local caster = ability:GetCaster()
 	local closest_seal = self:GetClosestSeal(target_point)
@@ -77,10 +76,8 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
 										   DOTA_UNIT_TARGET_FLAG_NONE)
 
-	print(target_entities)
-
 	if #target_entities == 0 then
-		return UF_FAIL_CUSTOM
+		return UF_SUCCESS
 	end
 
 	if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
@@ -98,6 +95,8 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 	local caster = ability:GetCaster()
 	local target = ability:GetCursorPosition()
 	caster.ulti = ability
+
+	caster:EmitSound("minato_raijin_talking")
 
 	local closest_seal = self:GetClosestSeal(target)
 
@@ -130,9 +129,9 @@ function yondaime_hiraishin_jump:GetCustomCastErrorLocation(target_point)
 
 
 
-	if #target_entities == 0 then
+	--[[if #target_entities == 0 then
 		return "#error_no_enemies_in_range"
-	end
+	end]]
 
 	return "#error_no_kunai_nearby"
 end
@@ -205,6 +204,7 @@ function hiraishin_dash_timer(game_entity, keys)
 		local extra_damage = caster.ulti:GetSpecialValueFor( "damage")
 		local damage = damage / 100 * extra_damage
 
+		target:EmitSound("minato_raijin_impact")
 
 		ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
 		--caster:PerformAttack(target, true, false, true, false)

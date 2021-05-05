@@ -229,6 +229,13 @@ function VoiceResponses:OnUnitSpawn(event)
 	local unit = EntIndexToHScript(event.entindex)
 	local unitResponses = VoiceResponses.responses[unit:GetUnitName()]
 
+	if 						unit:GetName() == "npc_dota_hero_dragon_knight" 
+						or  unit:GetName() == "npc_dota_hero_beastmaster" 
+						or  unit:GetName() == "npc_dota_hero_antimage"
+	then
+		return nil
+	end
+
 	if unitResponses ~= nil and not unit:IsIllusion() then
 		-- Check first spawn or not
 		if unit._responseFirstSpawn then

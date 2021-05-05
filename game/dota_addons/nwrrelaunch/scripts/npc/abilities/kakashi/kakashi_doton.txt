@@ -55,7 +55,9 @@
 		"particle"  "particles/bloody_particle.vpcf.vpcf"
 		"particle"  "particles/units/heroes/kakashi/doton_dog_summon.vpcf"
 		"soundfile" "soundevents/kakashi_dog_cast.vsndevts"
+		"soundfile" "soundevents/heroes/kakashi/kakashi_doton_cast_talking.vsndevts"
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+		
 	}
 }
 

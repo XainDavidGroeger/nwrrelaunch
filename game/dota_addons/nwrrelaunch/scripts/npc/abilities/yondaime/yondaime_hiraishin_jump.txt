@@ -1,84 +1,81 @@
 	
     "DOTAAbilities"
 {
-    
   
-"yondaime_hiraishin_jump"
-{
-    // General  
-    // ----------------------------------------------------------------------------------------
-	"BaseClass"					"ability_lua"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityTextureName"		"yondaime_hiraishin"
-	"ScriptFile"				"heroes/yondaime/hiraishin_ability.lua"
-	"AbilityType" 				"DOTA_ABILITY_TYPE_ULTIMATE"
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"			"1500"
-	"AbilityCastPoint"			"0.0 0.0 0.0"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"			"80 60 40"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"			"100 140 180"
-	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
+	"yondaime_hiraishin_jump"
 	{
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
-		"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
-		"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+		// General  
+		// ----------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"		"yondaime_hiraishin"
+		"ScriptFile"				"heroes/yondaime/hiraishin_ability.lua"
+		"AbilityType" 				"DOTA_ABILITY_TYPE_ULTIMATE"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"			"1500"
+		"AbilityCastPoint"			"0.0 0.0 0.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"			"80 60 40"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"			"100 140 180"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"soundfile"	"soundevents/heroes/yondaime/minato_raijin_impact.vsndevts"
+			"soundfile"	"soundevents/heroes/yondaime/minato_raijin_talking.vsndevts"
+			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"140 180 220"
+			}
+			"02"
+			{
+				"var_type"  			"FIELD_INTEGER"
+				"armor_reduction" 			"-4 -5 -6"
+				"LinkedSpecialBonus" 		"special_bonus_yondaime_4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_duration"			"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"search_width"					"500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_offset_distance"					"200"
+			}
+
+		}
 	}
-	
-	// Special	
-	//-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-    	"01"
-        {
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"140 180 220"
-		}
-		"02"
-        {
-            "var_type"  			"FIELD_INTEGER"
-            "armor_reduction" 			"-4 -5 -6"
-            "LinkedSpecialBonus" 		"special_bonus_yondaime_4"
-        }
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"armor_duration"			"5"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"					"1000"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"search_width"					"500"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_offset_distance"					"200"
-		}
-
-    }
-
-	
-}
-
-
 
 }

@@ -34,6 +34,7 @@
      "precache"
     {
         "soundfile" "soundevents/minato_rasengan.vsndevts"
+        "soundfile" "soundevents/heroes/yondaime/minato_rasengan_talking.vsndevts"
         "soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
         "particle"  "particles/units/heroes/yondaime/raseng_model.vpcf"
         "particle"  "particles/units/heroes/yondaime/raseng_impact.vpcf"
@@ -96,6 +97,12 @@
         "FireSound"
         {
             "EffectName"  "minato_rasengan_loop.loop"
+            "Target"    "CASTER"
+        }
+
+          "FireSound"
+        {
+            "EffectName"  "minato_rasengan_talking"
             "Target"    "CASTER"
         }
 

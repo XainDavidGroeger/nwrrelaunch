@@ -11,7 +11,7 @@ function sasuke_chidori_kirin:GetCooldown(iLevel)
 end
 
 function sasuke_chidori_kirin:GetCastRange(location, target)
-	return self:GetSpecialValueFor("radius")
+	return self:GetSpecialValueFor("cast_range")
 end
 
 function sasuke_chidori_kirin:OnSpellStart()

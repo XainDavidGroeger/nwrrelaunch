@@ -14,6 +14,8 @@ function changeAbilities( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 
+	caster:EmitSound("guy_open_gates_talking")
+
 	ability0_level = caster:GetAbilityByIndex(0):GetLevel()
 	ability0_cooldown = caster:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	caster:AddAbility("guy_dynamic_entry_new_ult")

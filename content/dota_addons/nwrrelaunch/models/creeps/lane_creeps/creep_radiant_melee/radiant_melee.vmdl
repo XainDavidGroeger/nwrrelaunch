@@ -325,7 +325,7 @@
 					m_Filepath = "models/creeps/newanbu/anbu - stand.FBX"
 					m_nStartframe = 0
 					m_nEndframe = 21
-					m_flFps = 30.0
+					m_flFps = 7.0
 					m_Loop = 
 					{
 						m_bLoop = true

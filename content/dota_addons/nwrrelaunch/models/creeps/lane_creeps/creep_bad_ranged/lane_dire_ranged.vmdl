@@ -162,7 +162,7 @@
 					m_Filepath = "models/creeps/lane_creeps/creep_bad_ranged/zetsu2_anim.smd"
 					m_nStartframe = 27
 					m_nEndframe = 82
-					m_flFps = 30.0
+					m_flFps = 7.0
 					m_Loop = 
 					{
 						m_bLoop = true

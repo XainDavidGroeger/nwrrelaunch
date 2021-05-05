@@ -10,7 +10,7 @@ function yondaime_body_flicker:GetCooldown(iLevel)
 end
 
 function yondaime_body_flicker:OnAbilityPhaseStart( keys )
-	self:GetCaster():EmitSound("minato_flicker_start")
+	self:GetCaster():EmitSound("minato_flicker_cast_real")
 	return true
 end
 
@@ -20,6 +20,7 @@ function yondaime_body_flicker:OnSpellStart( event )
 	local caster = ability:GetCaster()
 	local target = ability:GetCursorPosition()
 	local hero_position = caster:GetAbsOrigin()
+
 
 	local placed_seals = caster.daggers
 	
