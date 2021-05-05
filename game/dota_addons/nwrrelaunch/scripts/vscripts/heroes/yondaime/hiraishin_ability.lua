@@ -96,6 +96,8 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 	local target = ability:GetCursorPosition()
 	caster.ulti = ability
 
+	caster:EmitSound("minato_raijin_talking")
+
 	local closest_seal = self:GetClosestSeal(target)
 
 	hiraishin_dash(caster, closest_seal, ability)

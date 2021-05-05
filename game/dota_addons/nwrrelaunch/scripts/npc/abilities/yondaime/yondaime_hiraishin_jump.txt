@@ -34,6 +34,7 @@
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 			"soundfile"	"soundevents/heroes/yondaime/minato_raijin_impact.vsndevts"
+			"soundfile"	"soundevents/heroes/yondaime/minato_raijin_talking.vsndevts"
 			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
 			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
 		}

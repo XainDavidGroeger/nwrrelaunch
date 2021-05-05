@@ -17,6 +17,11 @@
 							"value0"		"sounds/vo/yondaime/attack_01.vsnd"
 							"value1"		"sounds/vo/yondaime/attack_02.vsnd"
 							"value2"		"sounds/vo/yondaime/attack_03.vsnd"
+							"value3"		"sounds/vo/yondaime/attack_04.vsnd"
+							"value4"		"sounds/vo/yondaime/attack_05.vsnd"
+							"value5"		"sounds/vo/yondaime/attack_06.vsnd"
+							"value6"		"sounds/vo/yondaime/attack_07.vsnd"
+							"value7"		"sounds/vo/yondaime/attack_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -54,6 +59,14 @@
 							"value3"		"sounds/vo/yondaime/move_04.vsnd"
 							"value4"		"sounds/vo/yondaime/move_05.vsnd"
 							"value5"		"sounds/vo/yondaime/move_06.vsnd"
+							"value6"		"sounds/vo/yondaime/move_07.vsnd"
+							"value7"		"sounds/vo/yondaime/move_08.vsnd"
+							"value8"		"sounds/vo/yondaime/move_09.vsnd"
+							"value9"		"sounds/vo/yondaime/move_10.vsnd"
+							"value10"		"sounds/vo/yondaime/move_11.vsnd"
+							"value11"		"sounds/vo/yondaime/move_12.vsnd"
+							"value12"		"sounds/vo/yondaime/move_13.vsnd"
+							"value13"		"sounds/vo/yondaime/move_14.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -89,7 +102,6 @@
 							"value1"		"sounds/vo/yondaime/pain_02.vsnd"
 							"value2"		"sounds/vo/yondaime/pain_03.vsnd"
 							"value3"		"sounds/vo/yondaime/pain_04.vsnd"
-							"value4"		"sounds/vo/yondaime/pain_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -161,6 +173,10 @@
 							"value1"		"sounds/vo/yondaime/respawn_02.vsnd"
 							"value2"		"sounds/vo/yondaime/respawn_03.vsnd"
 							"value3"		"sounds/vo/yondaime/respawn_04.vsnd"
+							"value4"		"sounds/vo/yondaime/respawn_05.vsnd"
+							"value5"		"sounds/vo/yondaime/respawn_06.vsnd"
+							"value6"		"sounds/vo/yondaime/respawn_07.vsnd"
+							"value7"		"sounds/vo/yondaime/respawn_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -229,7 +245,6 @@
 							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
 							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
 							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
-							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -262,11 +277,6 @@
 						"value"
 						{
 							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
-							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
-							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
-							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
-							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
-							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -298,12 +308,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
-							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
-							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
-							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
-							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
-							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
+							"value0"		"sounds/vo/yondaime/lasthit_01.vsnd"
+							"value1"		"sounds/vo/yondaime/lasthit_02.vsnd"
+							"value2"		"sounds/vo/yondaime/lasthit_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -335,12 +342,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/yondaime/kill_01.vsnd"
-							"value1"		"sounds/vo/yondaime/kill_02.vsnd"
-							"value2"		"sounds/vo/yondaime/kill_03.vsnd"
-							"value3"		"sounds/vo/yondaime/kill_04.vsnd"
-							"value4"		"sounds/vo/yondaime/kill_05.vsnd"
-							"value5"		"sounds/vo/yondaime/kill_06.vsnd"
+							"value0"		"sounds/vo/yondaime/deny_01.vsnd"
+							"value1"		"sounds/vo/yondaime/deny_02.vsnd"
+							"value2"		"sounds/vo/yondaime/deny_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -372,7 +376,13 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/yondaime/nice.vsnd"
+							"value0"		"sounds/vo/yondaime/level_01.vsnd"
+							"value1"		"sounds/vo/yondaime/level_02.vsnd"
+							"value2"		"sounds/vo/yondaime/level_03.vsnd"
+							"value3"		"sounds/vo/yondaime/level_04.vsnd"
+							"value4"		"sounds/vo/yondaime/level_05.vsnd"
+							"value5"		"sounds/vo/yondaime/level_06.vsnd"
+							"value6"		"sounds/vo/yondaime/level_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -404,7 +414,6 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/yondaime/nice.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

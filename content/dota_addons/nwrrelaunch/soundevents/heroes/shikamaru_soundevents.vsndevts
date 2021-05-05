@@ -14,16 +14,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_attack_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_attack_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_attack_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_attack_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_attack_05.vsnd"
-							"value5"		"sounds/vo/shadowshaman/shad_attack_06.vsnd"
-							"value6"		"sounds/vo/shadowshaman/shad_attack_07.vsnd"
-							"value7"		"sounds/vo/shadowshaman/shad_attack_08.vsnd"
-							"value8"		"sounds/vo/shadowshaman/shad_attack_09.vsnd"
-							"value9"		"sounds/vo/shadowshaman/shad_attack_10.vsnd"
+							"value0"		"sounds/vo/shikamaru/attack_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/attack_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/attack_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/attack_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/attack_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/attack_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/attack_07.vsnd"
+							"value7"		"sounds/vo/shikamaru/attack_08.vsnd"
+							"value8"		"sounds/vo/shikamaru/attack_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -55,22 +54,22 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_move_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_move_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_move_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_move_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_move_05.vsnd"
-							"value5"		"sounds/vo/shadowshaman/shad_move_06.vsnd"
-							"value6"		"sounds/vo/shadowshaman/shad_move_07.vsnd"
-							"value7"		"sounds/vo/shadowshaman/shad_move_08.vsnd"
-							"value8"		"sounds/vo/shadowshaman/shad_move_09.vsnd"
-							"value9"		"sounds/vo/shadowshaman/shad_move_10.vsnd"
-							"value10"		"sounds/vo/shadowshaman/shad_move_11.vsnd"
-							"value11"		"sounds/vo/shadowshaman/shad_move_12.vsnd"
-							"value12"		"sounds/vo/shadowshaman/shad_move_13.vsnd"
-							"value13"		"sounds/vo/shadowshaman/shad_move_14.vsnd"
-							"value14"		"sounds/vo/shadowshaman/shad_move_15.vsnd"
-							"value15"		"sounds/vo/shadowshaman/shad_move_16.vsnd"
+							"value0"		"sounds/vo/shikamaru/move_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/move_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/move_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/move_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/move_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/move_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/move_07.vsnd"
+							"value7"		"sounds/vo/shikamaru/move_08.vsnd"
+							"value8"		"sounds/vo/shikamaru/move_09.vsnd"
+							"value9"		"sounds/vo/shikamaru/move_10.vsnd"
+							"value10"		"sounds/vo/shikamaru/move_11.vsnd"
+							"value11"		"sounds/vo/shikamaru/move_12.vsnd"
+							"value12"		"sounds/vo/shikamaru/move_13.vsnd"
+							"value13"		"sounds/vo/shikamaru/move_14.vsnd"
+							"value14"		"sounds/vo/shikamaru/move_15.vsnd"
+							"value15"		"sounds/vo/shikamaru/move_16.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -102,6 +101,18 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/pain_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/pain_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/pain_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/pain_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/pain_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/pain_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/pain_07.vsnd"
+							"value7"		"sounds/vo/shikamaru/pain_08.vsnd"
+							"value8"		"sounds/vo/shikamaru/pain_09.vsnd"
+							"value9"		"sounds/vo/shikamaru/pain_10.vsnd"
+							"value10"		"sounds/vo/shikamaru/pain_11.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -133,20 +144,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_death_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_death_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_death_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_death_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_death_05.vsnd"
-							"value5"		"sounds/vo/shadowshaman/shad_death_06.vsnd"
-							"value6"		"sounds/vo/shadowshaman/shad_death_07.vsnd"
-							"value7"		"sounds/vo/shadowshaman/shad_death_08.vsnd"
-							"value8"		"sounds/vo/shadowshaman/shad_death_09.vsnd"
-							"value9"		"sounds/vo/shadowshaman/shad_death_10.vsnd"
-							"value10"		"sounds/vo/shadowshaman/shad_death_11.vsnd"
-							"value11"		"sounds/vo/shadowshaman/shad_death_12.vsnd"
-							"value12"		"sounds/vo/shadowshaman/shad_death_13.vsnd"
-							"value13"		"sounds/vo/shadowshaman/shad_death_14.vsnd"
+							"value0"		"sounds/vo/shikamaru/death_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/death_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/death_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/death_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/death_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/death_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/death_07.vsnd"
+							"value7"		"sounds/vo/shikamaru/death_08.vsnd"
+							"value8"		"sounds/vo/shikamaru/death_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -178,16 +184,13 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_respawn_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_respawn_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_respawn_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_respawn_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_respawn_05.vsnd"
-							"value5"		"sounds/vo/shadowshaman/shad_respawn_06.vsnd"
-							"value6"		"sounds/vo/shadowshaman/shad_respawn_07.vsnd"
-							"value7"		"sounds/vo/shadowshaman/shad_respawn_08.vsnd"
-							"value8"		"sounds/vo/shadowshaman/shad_respawn_09.vsnd"
-							"value9"		"sounds/vo/shadowshaman/shad_respawn_10.vsnd"
+							"value0"		"sounds/vo/shikamaru/respawn_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/respawn_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/respawn_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/respawn_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/respawn_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/respawn_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/respawn_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -219,11 +222,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_spawn_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_spawn_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_spawn_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_spawn_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_spawn_05.vsnd"
+							"value0"		"sounds/vo/shikamaru/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -255,19 +254,14 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/shadowshaman/shad_kill_01.vsnd"
-							"value1"		"sounds/vo/shadowshaman/shad_kill_02.vsnd"
-							"value2"		"sounds/vo/shadowshaman/shad_kill_03.vsnd"
-							"value3"		"sounds/vo/shadowshaman/shad_kill_04.vsnd"
-							"value4"		"sounds/vo/shadowshaman/shad_kill_05.vsnd"
-							"value5"		"sounds/vo/shadowshaman/shad_kill_06.vsnd"
-							"value6"		"sounds/vo/shadowshaman/shad_kill_07.vsnd"
-							"value7"		"sounds/vo/shadowshaman/shad_kill_08.vsnd"
-							"value8"		"sounds/vo/shadowshaman/shad_kill_09.vsnd"
-							"value9"		"sounds/vo/shadowshaman/shad_kill_10.vsnd"
-							"value10"		"sounds/vo/shadowshaman/shad_kill_11.vsnd"
-							"value11"		"sounds/vo/shadowshaman/shad_kill_12.vsnd"
-							"value12"		"sounds/vo/shadowshaman/shad_kill_13.vsnd"
+							"value0"		"sounds/vo/shikamaru/kill_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/kill_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/kill_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/kill_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/kill_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/kill_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/kill_07.vsnd"
+							"value7"		"sounds/vo/shikamaru/kill_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -299,6 +293,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/kill_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -330,6 +325,11 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/lasthit_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/lasthit_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/lasthit_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/lasthit_04.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -361,6 +361,10 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/deny_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/deny_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/deny_03.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -392,6 +396,13 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/level_01.vsnd"
+							"value1"		"sounds/vo/shikamaru/level_02.vsnd"
+							"value2"		"sounds/vo/shikamaru/level_03.vsnd"
+							"value3"		"sounds/vo/shikamaru/level_04.vsnd"
+							"value4"		"sounds/vo/shikamaru/level_05.vsnd"
+							"value5"		"sounds/vo/shikamaru/level_06.vsnd"
+							"value6"		"sounds/vo/shikamaru/level_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -423,6 +434,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/shikamaru/thanks_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
