@@ -79,6 +79,8 @@ end
 function dynamic_entry_start(keys)	
 	local caster = keys.caster
 	local target = keys.target
+
+	
 	
 	add_physics(caster)
 	keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_dynamic_entry_stunned", {duration = 3})
@@ -96,5 +98,6 @@ function dynamic_entry_start(keys)
 end
 
 function playSound( keys )
-	EmitSoundOn("guy_entry",keys.caster)
+	keys.caster:EmitSound("guy_dynamic_entry_talking")
+	keys.caster:EmitSound("guy_dynamic_entry_cast")
 end

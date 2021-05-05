@@ -6,7 +6,7 @@
 		//10: +9 Strength / +20 Attack Speed
 		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
 		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
-		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+		//25: +30s Byakugan Duration / ( * ) +5s 64 Palms Silence Duration
 		{
 			"HeroID"					"211"
 		  "BaseClass"   "npc_dota_hero_axe"

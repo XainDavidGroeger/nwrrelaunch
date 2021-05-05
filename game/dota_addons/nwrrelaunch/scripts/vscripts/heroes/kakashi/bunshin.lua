@@ -97,6 +97,7 @@ function lighting_charge( keys )
 		EmitSoundOn("Hero_Zuus.ArcLightning.Target",target)
 		ParticleManager:SetParticleControl(lightningChain,1,Vector(keys.attacker:GetAbsOrigin().x,keys.attacker:GetAbsOrigin().y,keys.attacker:GetAbsOrigin().z + keys.attacker:GetBoundingMaxs().z ))
 		dummy:RemoveSelf()
+		keys.caster.bunshin:EmitSound("clone_pop")
 		keys.caster.bunshin:Destroy()
 
 	end

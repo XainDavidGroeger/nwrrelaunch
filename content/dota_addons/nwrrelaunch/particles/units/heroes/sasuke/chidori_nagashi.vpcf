@@ -1,22 +1,75 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 32
-	m_Renderers =
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
 	[
 		{
-			_class = "C_OP_RenderSprites"
-			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_flStartFadeSize = 0.800000
-			m_flEndFadeSize = 1.000000
-			m_flMaxSize = 0.400000
-			m_bDisableZBuffering = true
-			m_hTexture = resource:"materials/particle/particle_glow_04.vtex"
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 62
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
 		},
 	]
-	m_Operators =
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 16.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 3
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.5
+			m_fLifetimeMin = 0.25
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 78.0
+			m_flRadiusMin = 50.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 16
+			m_nAlphaMax = 32
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_vecDirectionBias = [ 0.0, 0.0, 0.1 ]
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 140, 140, 231 ]
+			m_ColorMin = [ 52, 75, 248 ]
+			m_TintMin = [ 0, 0, 0 ]
+			m_TintMax = [ 255, 255, 255 ]
+		},
+	]
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -34,65 +87,25 @@
 			_class = "C_OP_SetChildControlPoints"
 		},
 	]
-	m_Initializers =
+	m_Renderers = 
 	[
 		{
-			_class = "C_INIT_RandomRotation"
-		},
-		{
-			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 3
-		},
-		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.500000
-			m_fLifetimeMin = 0.250000
-		},
-		{
-			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 78.000000
-			m_flRadiusMin = 50.000000
-		},
-		{
-			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMin = 16
-			m_nAlphaMax = 32
-		},
-		{
-			_class = "C_INIT_CreateOnModel"
-			m_vecDirectionBias =
+			_class = "C_OP_RenderSprites"
+			m_flStartFadeSize = 0.8
+			m_flEndFadeSize = 1.0
+			m_flMaxSize = 0.4
+			m_bDisableZBuffering = true
+			m_vecTexturesInput = 
 			[
-				0.000000,
-				0.000000,
-				0.100000,
+				{
+					m_hTexture = resource:"materials/particle/particle_glow_04.vtex"
+				},
 			]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax =
-			[
-				140,
-				140,
-				231,
-				255,
-			]
-			m_ColorMin =
-			[
-				52,
-				75,
-				248,
-				255,
-			]
+			m_nOutputBlendMode = "PARTICLE_OUTPUT_BLEND_MODE_ADD"
+			m_OutlineColor = [ 255, 255, 255 ]
 		},
 	]
-	m_Emitters =
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 16
-		},
-	]
-	m_Children =
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_zuus/zuus_static_field_b.vpcf"

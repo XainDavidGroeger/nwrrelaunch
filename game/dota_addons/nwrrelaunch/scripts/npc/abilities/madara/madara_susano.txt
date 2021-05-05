@@ -68,28 +68,13 @@
 	"precache"
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
-		"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+		"particle"  "particles/units/heroes/madara/susano/susano.vpcf"
 		"particle"	"particles/dire_fx/fire_barracks_glow_b.vpcf"
 	}
 
 	"OnSpellStart"
 	{
-		"FireSound"
-		{
-			"EffectName"		"Hero_Terrorblade.Metamorphosis"
-			"Target"			"CASTER"
-		}
-		"FireEffect"
-		{
-			"EffectName"		"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
-			"EffectAttachType"	"follow_origin"
-			"Target"			"CASTER"
-		}
-
+	
 	        "FireSound"
 	        {
 	            //TODO

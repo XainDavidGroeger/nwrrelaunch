@@ -69,6 +69,9 @@ function GameMode:OnNPCSpawned(keys)
 	end
 end
 
+function GameMode:OnTakeDamage( keys )
+end
+
 -- An item was purchased by a player
 function GameMode:OnItemPurchased( keys )
 	DebugPrint( '[BAREBONES] OnItemPurchased' )

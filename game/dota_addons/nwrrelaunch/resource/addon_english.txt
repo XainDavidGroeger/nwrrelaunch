@@ -781,33 +781,49 @@
 		//--------------------
 		"npc_dota_hero_sasuke"  									"Sasuke"
 		"npc_dota_hero_sasuke_lore"								""
-		//Chidori Nagashi
-		"DOTA_Tooltip_ability_sasuke_chidori_nagashi"					"Chidori Stream"
-		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_lore"					"Chidori Nagashi"
-		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_description"		"By utilizing his lightning nature chakra on a large scale, Sasuke unleashes the power of Chidori in every direction around him. After casting this ability, an electrical current is discharged around Sasuke dealing magic damage to all enemies in area around him."
-		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_radius"			"AOE: "
-		"DOTA_Tooltip_ability_sasuke_chidori_nagashi_aoe_damage"		"DAMAGE: "
-		//Chidori Eiso
-		"DOTA_Tooltip_ability_sasuke_chidori_eiso"						"Chidori Sharp Spear"
-		"DOTA_Tooltip_ability_sasuke_chidori_eiso_lore"						"Chidori Eiso"
-		"DOTA_Tooltip_ability_sasuke_chidori_eiso_stun_duration"		"STUN DURATION: "
-		"DOTA_Tooltip_ability_sasuke_chidori_eiso_description"			"Using Shape Manipulation to alter his Chidori's reach, Sasuke extends the range of his signature technique in order to pierce enemies at a distance. Deals magical damage and stuns a target enemy unit on cast."
-		//Chidori Koken
-		"DOTA_Tooltip_ability_sasuke_chidori_koken"						"Chidori Light Sword"
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_lore"						"Chidori Koken"
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_description"			"Sasuke's main weapon of choice allows him to channel his lightning release chakra throughout the blade. After casting a technique, Sasuke's katana is charged with electrical energy, causing his next basic attack to inflict additional effects in an area around the target. Chidori Sword deals extra magic damage while reducing the target's attack speed and movement speed for a short duration."
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_damage"			    "DAMAGE: "
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_aoe_radius"			"AOE: "
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_move_slow"			"%MS DEBUFF: "
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_attack_slow"			"%AS DEBUFF: "
-		"DOTA_Tooltip_ability_sasuke_chidori_koken_tooltip_duration"	"DEBUFF DURATION: "
-		"DOTA_Tooltip_modifier_chidori_koken_damage_datadriven"			"Chidori Koken"
-		"DOTA_Tooltip_modifier_chidori_koken_damage_datadriven_description"	"Sasuke deals bonus damage and applies a move/attack speed slow on his next hit"
+
+
+
+		// Chidori 
+		"DOTA_Tooltip_ability_sasuke_chidori"					"Chidori"
+		"DOTA_Tooltip_ability_sasuke_chidori_description"		"Sasuke dashes towards a target point at instant speed, dealing magic damage to all enemies caught in his path and briefly rooting them."
+
+		"DOTA_Tooltip_ability_sasuke_chidori_root_duration"					"ROOT DURATION: "
+		"DOTA_Tooltip_ability_sasuke_chidori_min_distance"					"MIN DISTANCE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_max_distance"					"MAX DISTANCE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_path_width"					"PATH WIDTH: "
+		"DOTA_Tooltip_ability_sasuke_chidori_base_damage"					"BASE DAMAGE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_bonus_damage"					"%BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_bonus_damage"					"%BONUS DAMAGE: "
+
+
+		//Chidori Stream
+		"DOTA_Tooltip_ability_sasuke_chidori_stream"					"Chidori Stream"
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_lore"					"Chidori Nagashi"
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_description"		"After casting this ability, an electrical current is discharged around Sasuke dealing magic damage and briefly stunning all enemies in an area around him."
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_radius"			"RADIUS: "
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_aoe_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_stun_duration"			"STUN DURATION: "
+		
+
+		// Chidori Light Sword
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword"					"Chidori Light Sword"
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_lore"					""
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_description"				"After casting a technique, Sasuke’s katana is charged with electrical energy, causing his next basic attack to inflict additional damage and decrease attack speed and movement speed to enemies within the area."
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_aoe_radius"					"RADIUS: "
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_move_slow"			"%MS SLOW: "
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_attack_slow"			"AS SLOW: "
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_duration"			"DURATION: "
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_damage"			"DAMAGE: "
+	
 		//Kirin
-		"DOTA_Tooltip_ability_sasuke_kirin"								"Kirin"
-		"DOTA_Tooltip_ability_sasuke_kirin_radius"						"AOE: "
-		"DOTA_Tooltip_ability_sasuke_kirin_cast_range"					"CAST RANGE: "	
-		"DOTA_Tooltip_ability_sasuke_kirin_description"					"Harnessing the power of natural thunderclouds, Sasuke sends down a large bolt of lightning at a target point while appearing instantly at its location. After a short delay, Sasuke teleports to the target point while dealing magical damage to all enemies caught in the radius."
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin"								"Kirin"
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin_description"					"Marks the target unit with Kirin, granting True Sight and vision of the target unit for a duration of time. After the duration expires, the target is struck with a massive bolt of lightning, dealing magic damage. Additional magic damage is dealt to the target based on how much health they have lost due to Sasuke during the effect’s duration."
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin_lore"						""
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin_duration"						"DURATION: "
+		"DOTA_Tooltip_ability_sasuke_chidori_base_damage"						"BASE DAMAGE: "
+		"DOTA_Tooltip_ability_sasuke_chidori_lost_health_bonus_damage"			"%Lost Health Bonus Damage: "
+	
 
 		//--------------------
 		//Kakashi
@@ -2118,9 +2134,10 @@
 		//15: +14 Strength / +70 Chidori Nagashi Damage
 		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_1"						"+25 Chidori Sword Damage"
-		"DOTA_Tooltip_Ability_special_bonus_sasuke_2"						"+70 Chidori Nagashi Damage"
-		"DOTA_Tooltip_Ability_special_bonus_sasuke_3"						"+225 Chidori Spear Range"
-		"DOTA_Tooltip_Ability_special_bonus_sasuke_4"						"-0.75s Kirin Cast Time"
+		"DOTA_Tooltip_Ability_special_bonus_sasuke_2"						"+75 Chidori Stream Damage"
+		"DOTA_Tooltip_Ability_special_bonus_sasuke_3"						"+275 Chidori Max Range"
+		"DOTA_Tooltip_Ability_special_bonus_sasuke_4"						"200% Chidori Attack Damage"
+		"DOTA_Tooltip_Ability_special_bonus_sasuke_5"						"+225 Chidori Stream Radius"
 
 
 		//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE

@@ -17,7 +17,7 @@
                               "value0"        "sounds/kakashi_dog_cast.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.50000"  }
+                    "volume"            {   "value"     "0.60000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

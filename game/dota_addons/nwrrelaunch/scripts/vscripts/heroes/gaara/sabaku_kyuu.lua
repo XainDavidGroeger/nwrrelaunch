@@ -14,6 +14,9 @@ function gaara_sabaku_kyuu:OnSpellStart()
 
 	self.target = self:GetCursorTarget()
 
+	self.target:EmitSound("gaara_prison_cast")
+	self:GetCaster():EmitSound("gaara_prison_talking")
+
 	if self.target:TriggerSpellAbsorb(self) then
 		return
 	end
@@ -75,6 +78,8 @@ function modifier_gaara_sabaku_kyuu:OnIntervalThink()
 			damage = damage,
 			damage_type = self:GetAbility():GetAbilityDamageType()
 		})
+
+		self:GetParent():EmitSound("gaara_prison_impact")
 
 		local enemy_loc = self:GetParent():GetAbsOrigin()
 

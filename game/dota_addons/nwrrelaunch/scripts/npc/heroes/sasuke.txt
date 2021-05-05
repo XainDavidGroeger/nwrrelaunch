@@ -1,33 +1,36 @@
 "DOTAAbilities"
 {
-		//25: +40 Intelligence / -0.75s Kirin Cast Time
-		//20: +12% Spell Amplification / +225 Chidori Spear Range
-		//15: +14 Strength / +70 Chidori Nagashi Damage
-		//10: +25 Chidori Sword Damage/ +2.5 Mana Regen
+		//25: 200% Chidori Attack Damage / +225 Chidori Stream Radius
+		//20: +275 Chidori Max Range / +12% Spell Amplification
+		//15: +14 Strength / +75 Chidori Stream Damage
+		//10: +25 Chidori Sword Damage / +2.5 Mana Regen
+
 		"npc_dota_hero_sasuke" //sasuke
 		{
 			"HeroID"					"215"
 		  "BaseClass"   "npc_dota_hero_storm_spirit"
 		  "Model" 			"models/heroes/zuus/zuozhu.vmdl"
-		  "Ability1"        "sasuke_chidori_nagashi"
-		  "Ability2"        "sasuke_chidori_eiso" 
-		  "Ability3"        "sasuke_chidori_koken" 
+		//  "Ability1"        "sasuke_chidori_nagashi"
+		  "Ability1"        "sasuke_chidori"
+		//  "Ability2"        "sasuke_chidori_eiso" 
+		  "Ability2"        "sasuke_chidori_stream" 
+		  "Ability3"        "sasuke_chidori_light_sword" 
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
-		  "Ability6"        "sasuke_kirin"
 
-		   "Ability10"		"special_bonus_mp_regen_250"
-		   "Ability11"		"special_bonus_sasuke_1"
+		  "Ability6"        "sasuke_chidori_kirin"
 
-		   "Ability12"		"special_bonus_sasuke_2"
-		   "Ability13"		"special_bonus_strength_14"
+		   "Ability10"		"special_bonus_sasuke_1"
+		   "Ability11"		"special_bonus_mp_regen_250"
 
-		   "Ability14"		"special_bonus_spell_amplify_12"
-		   "Ability15"		"special_bonus_sasuke_3"
+		   "Ability12"		"special_bonus_strength_14"
+		   "Ability13"		"special_bonus_sasuke_2"
 
+		   "Ability14"		"special_bonus_sasuke_3"
+		   "Ability15"		"special_bonus_spell_amplify_12"
 
-		   "Ability16"		"special_bonus_intelligence_35"
-		   "Ability17"		"special_bonus_sasuke_4"
+		   "Ability16"		"special_bonus_sasuke_4"
+		   "Ability17"		"special_bonus_sasuke_5"
 
 		  "SoundSet"					"Kunai"
 		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"

@@ -86,6 +86,7 @@
 		{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		"soundfile"			"soundevents/guy_ulti_new.vsndevts"
+		"soundfile"			"soundevents/heroes/guy/guy_open_gates_talking.vsndevts"
 			"soundfile"			"soundevents/guy_ultimate.vsndevts"
 			"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
 			"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
@@ -105,6 +106,7 @@
 		"OnSpellStart"
 		{
 	
+
 			"FireSound"
 			{
 				"EffectName"	"Hero_Sven.GodsStrength"
@@ -275,6 +277,7 @@
 	     "precache"
 	    {
 	     "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+	     "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
 	    }
 	
 	    "AbilitySpecial"
@@ -321,6 +324,12 @@
 	                   "ScriptFile"    "heroes/guy/strong_fist.lua"
 	                    "Function"      "resetCooldownOnHit"
 	                }
+
+					"FireSound"
+					{
+						"EffectName"	"guy_gouken_talking"
+						"Target"		"CASTER"
+					}
 	            }
 	        }
 	
@@ -383,6 +392,8 @@
 			        "particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
 			        "particle"  "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"
 			        "soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+			        "soundfile" "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts"
+			        "soundfile" "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts"
 			        "soundfile" "soundevents/guy_entry.vsndevts"
 	
 			        "particle"  "particles/econ/items/brewmaster/brewmaster_offhand_elixir/brewmaster_thunder_clap_elixir.vpcf"
@@ -536,7 +547,9 @@
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
-			"soundfile"	"soundevents/sakura_slam.vsndevts"
+			"soundfile"	"soundevents/heroes/guy/guy_senpu_cast.vsndevts"
+			"soundfile"	"soundevents/heroes/guy/guy_senpu_gates_cast.vsndevts"
+			"soundfile"	"soundevents/heroes/sakura/sakura_slam.vsndevts"
 			"soundfile"	"soundevents/sakura_slam_2.vsndevts"
 			"particle"	"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 			"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
@@ -550,6 +563,12 @@
 			{
 				"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
 				"Function"		"playSound"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"guy_senpu_cast"
+				"Target"		"CASTER"
 			}
 	
 		}
@@ -639,6 +658,8 @@
 			        "particle"  "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"
 			        "soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
 			        "soundfile" "soundevents/guy_entry.vsndevts"
+					"soundfile" "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts"
+			        "soundfile" "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts"
 	
 			        "particle"  "particles/econ/items/brewmaster/brewmaster_offhand_elixir/brewmaster_thunder_clap_elixir.vpcf"
 			        
@@ -790,6 +811,7 @@
 	
 		"precache"
 		{
+			"soundfile"	"soundevents/heroes/guy/guy_senpu_gates_cast.vsndevts"
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
 			"soundfile"	"soundevents/sakura_slam.vsndevts"
 			"soundfile"	"soundevents/sakura_slam_2.vsndevts"
@@ -806,6 +828,12 @@
 				"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
 				"Function"		"playSound"
 			}
+
+			"FireSound"
+			{
+				"EffectName"	"guy_senpu_gates_cast"
+				"Target"		"CASTER"
+			}
 	
 		}
 
@@ -820,6 +848,7 @@
 			}
 	
 		
+			
 	
 			"FireSound"
 			{
@@ -899,6 +928,7 @@
 	     "precache"
 	    {
 	        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+			"soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
 	    }
 	
 	    "AbilitySpecial"
@@ -942,6 +972,12 @@
 	                    "Function"      "resetCooldownOnHit"
 	                }
 	            }
+
+				"FireSound"
+				{
+					"EffectName"	"guy_gouken_talking"
+					"Target"		"CASTER"
+				}
 	        }
 	
 	        "modifier_guy_strong_fist"

@@ -7,7 +7,11 @@ function sharingan( keys )
 		local duration 	 = keys.ability:GetLevelSpecialValueFor("duration", keys.ability:GetLevel() - 1)
 		local damage 	 = keys.caster:GetBaseDamageMax()
 
-		caster:EmitSound("itachi_sharingan_proc")
+
+
+		if caster:IsRealHero() and caster:IsIllusion() == false then
+			caster:EmitSound("itachi_sharingan_proc")
+		end
 		
 		keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_itachi_sharingan_mr_reduce", {duration = duration})
 		ApplyDamage({victim = target, attacker = keys.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})

@@ -11,12 +11,31 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
+
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"12.0"
 		"AbilityManaCost"				"120 125 130 135"
-
 		"AOERadius"     				"%radius"
+
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/haku/needles.lua"
+			"Function"		"BlizzardStartPoint"
+			"Target"		"POINT"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"haku_deathneedle"
+			"Target"		"CASTER"
+		}
+
+	}
+
 
 		"AbilitySpecial"
 		{

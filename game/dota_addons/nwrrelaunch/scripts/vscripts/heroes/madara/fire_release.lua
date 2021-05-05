@@ -172,16 +172,7 @@ end
 function fireExplosion(keys)
 	local target_point = keys.target_points[1]
 
-	local particleName = "particles/units/heroes/madara/fire_explosion_1.vpcf"
-	local pfx = ParticleManager:CreateParticle( particleName, PATTACH_ABSORIGIN, keys.caster )
-	ParticleManager:SetParticleControl( pfx, 0, target_point )
-	ParticleManager:SetParticleControl( pfx, 1, target_point )
-	ParticleManager:SetParticleControl( pfx, 2, Vector( 1.5, 0, 0 ) )
-	ParticleManager:SetParticleControl( pfx, 3, target_point )
-
-	Timers:CreateTimer( 1.5, function()
-		ParticleManager:DestroyParticle(pfx, true) 
-	end)
+	-- todo
 	
 end
 

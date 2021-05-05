@@ -75,6 +75,7 @@ function Launch(keys)
 			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 			caster:StopSound("kakashi_raikiri_loop")
 			target:EmitSound("kakashi_raikiri_impact")
+			caster:EmitSound("kakashi_raikiri_impact_talking")
 			return nil
 		end
 		return 0.03
