@@ -33,10 +33,10 @@
 
 		   "Ability16"		"special_bonus_zabuza_4"
 		   "Ability17"		"special_bonus_zabuza_5"
-		  "ModelScale"		"0.9"
+		  "ModelScale"		"0.96"
 		  "LoadoutScale"		"0.9"
-		"SpectatorLoadoutScale" "0.9"
-		"VersusScale"			"0.9"
+		"SpectatorLoadoutScale" "0.96"
+		"VersusScale"			"0.96"
 		  "Model" 			"models/zabuza_new/zabuza_base.vmdl"
 
 		//Picking Screen
