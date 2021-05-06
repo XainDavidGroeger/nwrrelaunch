@@ -39,6 +39,7 @@ function haku_ice_mirrors:OnSpellStart()
 			FindClearSpaceForUnit(mirror, mirror_position, false)
 			mirror:SetBaseDamageMin(attack_min)
 			mirror:SetBaseDamageMax(attack_max)
+			mirror:SetBaseMaxHealth(health)
 			mirror:SetMaxHealth(health)
 			mirror:SetHealth(health)
 			mirror:SetOwner(self:GetCaster())
@@ -97,6 +98,9 @@ function modifier_haku_mirror_mirror:IsHidden() return true end
 
 function modifier_haku_mirror_mirror:DeclareFunctions() return {
 	MODIFIER_EVENT_ON_DEATH,
+	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+	MODIFIER_EVENT_ON_ATTACK_LANDED,
+	MODIFIER_EVENT_ON_TAKEDAMAGE,
 } end
 
 function modifier_haku_mirror_mirror:CheckState() return {
@@ -144,5 +148,41 @@ function modifier_haku_mirror_mirror:OnDeath(keys)
 
 	if should_die and keys.attacker then
 		self:GetAbility():GetCaster():Kill(nil, keys.attacker)
+	end
+end
+
+function modifier_haku_mirror_mirror:GetModifierIncomingDamage_Percentage()
+	return -100
+end
+
+function modifier_haku_mirror_mirror:OnTakeDamage(params)
+	if not IsServer() then return end
+
+	if params.attacker == self:GetParent() then
+		if params.damage > 0 then
+			local damageTable = {
+				victim = params.unit,
+				damage = 1,
+				damage_type = DAMAGE_TYPE_PURE,
+				attacker = self:GetCaster(),
+				ability = self:GetAbility()
+			}
+
+			ApplyDamage(damageTable)
+		end
+	end
+end
+
+function modifier_haku_mirror_mirror:OnAttackLanded(params) -- health handling
+	if not IsServer() then return end
+
+	if params.target == self:GetParent() then
+		local damage = 1
+
+		if self:GetParent():GetHealth() > damage then
+			self:GetParent():SetHealth( self:GetParent():GetHealth() - damage)
+		else
+			self:GetParent():Kill(nil, params.attacker)
+		end
 	end
 end

@@ -1,3 +1,6 @@
+-- clientside KV loading
+require('addon_init')
+
 -- This is the primary barebones gamemode script and should be used to assist in initializing your game mode
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by barebones
@@ -83,15 +86,18 @@ end
 ]]
 function GameMode:OnHeroInGame(hero)
 	local playerId = hero:GetPlayerOwnerID()
+
 	Timers:CreateTimer(80, function()
 		local playerId = hero:GetPlayerOwnerID()
+
 		if hero:GetTeamNumber() == 2 then
 			EmitSoundOnEntityForPlayer("shinobi_start", hero, playerId)
 		else
 			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
 		end
-	end
-	)
+	end)
+
+	hero:AddNewModifier(hero, nil, "modifier_custom_mechanics", {})
 
 	GameMode:RemoveWearables( hero )
 
