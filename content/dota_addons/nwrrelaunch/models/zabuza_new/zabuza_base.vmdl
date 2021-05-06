@@ -247,7 +247,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_ATTACK2"
+							m_Name = "ACT_DOTA_ATTACK_EVENT"
 							m_nWeight = 1
 						},
 					]
