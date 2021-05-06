@@ -1,0 +1,2 @@
+-- todo: once every single heroes are luafied, move their abilities scripts into a single lua file named by the hero's name
+-- reason: auto-talents generate system needs this format to work properly

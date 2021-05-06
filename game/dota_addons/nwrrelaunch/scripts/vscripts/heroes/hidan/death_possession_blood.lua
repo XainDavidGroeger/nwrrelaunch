@@ -192,9 +192,25 @@ function modifier_death_possession_blood_caster_on_attack:OnCreated()
 	self.ability = self:GetAbility()
 	self.stacks = 0
 
-	-- todo fix
-	-- self:GetCaster():SetRangedProjectileName("particles/units/heroes/haku/haku_base_attack_wounds_active.vpcf")
+	if not IsServer() then return end
+	self:SetHasCustomTransmitterData( true )
+
 end
+
+function modifier_death_possession_blood_caster_on_attack:AddCustomTransmitterData()
+	-- on server
+	local data = {
+		current_blood_target_name = self.current_blood_target_name
+	}
+
+	return data
+end
+
+function modifier_death_possession_blood_caster_on_attack:HandleCustomTransmitterData( data )
+	-- on client
+	self.current_blood_target_name = data.current_blood_target_name
+end
+
 
 function modifier_death_possession_blood_caster_on_attack:OnAttackLanded( attack_event )
 
@@ -212,7 +228,10 @@ function modifier_death_possession_blood_caster_on_attack:OnAttackLanded( attack
 	if attack_event.target:IsHero() and attack_event.fail_type == DOTA_ATTACK_RECORD_FAIL_NO then
 		-- Set modifier to the target
 		ability.current_blood_target = attack_event.target
-		print(ability.current_blood_target)
+		self.current_blood_target_name = attack_event.target:GetUnitName()
+		if IsClient() then
+			print(ability.current_blood_target_name)
+		end
 		attack_event.target:AddNewModifier(caster, 
 											ability, 
 											"modifier_death_possession_blood_target", 
@@ -223,7 +242,11 @@ function modifier_death_possession_blood_caster_on_attack:OnAttackLanded( attack
 														ability, 
 														"modifier_death_possession_blood_caster_status", 
 														{duration = mark_duration})
-		status_modifier.texture = attack_event.target:GetUnitName()
+		-- status_modifier.texture = attack_event.target:GetUnitName()
+		-- status_modifier.GetTexture = function () return attack_event.target:GetUnitName() end
+		-- print()
+		-- print(status_modifiers)
+		-- print(status_modifier.GetTexture)
 	end
 
 	return nil
@@ -245,39 +268,35 @@ function modifier_death_possession_blood_target:IsPurgable()
 	return false
 end
 
--- function modifier_death_possession_blood_target:GetEffectName()
--- 	return "particles/units/heroes/hidan/ritual_debuff_core.vpcf"
--- end
 
--- function modifier_death_possession_blood_target:GetEffectAttachType()
--- 	return PATTACH_ABSORIGIN_FOLLOW 
--- end
-
-function modifier_death_possession_blood_target:OnCreated()
-	self.target_vfx = ParticleManager:CreateParticle("particles/units/heroes/hidan/ritual_debuff_core.vpcf",  
-													 PATTACH_CUSTOMORIGIN_FOLLOW, 
-													 self:GetAbility():GetCaster())
-	ParticleManager:SetParticleControlEnt(self.target_vfx, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(self.target_vfx, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetOrigin(), true)
+function modifier_death_possession_blood_target:OnCreated(event)
+	if IsServer() then
+		self.target_vfx = ParticleManager:CreateParticle("particles/units/heroes/hidan/ritual_debuff_core.vpcf",  
+														PATTACH_CUSTOMORIGIN_FOLLOW, 
+														self:GetAbility():GetCaster())
+		ParticleManager:SetParticleControlEnt(self.target_vfx, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(self.target_vfx, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetOrigin(), true)
+	end
 end
 
 function modifier_death_possession_blood_target:OnRefresh()
-	if self.target_vfx ~= nil then
-		ParticleManager:SetParticleControlEnt(self.target_vfx, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)
-		ParticleManager:SetParticleControlEnt(self.target_vfx, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetOrigin(), true)	
+	if IsServer() then
+		if self.target_vfx ~= nil then
+			ParticleManager:SetParticleControlEnt(self.target_vfx, 0, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(self.target_vfx, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_origin", self:GetParent():GetOrigin(), true)	
+		end
 	end
 end
 
 function modifier_death_possession_blood_target:OnRemoved()
-	print(self:GetAbility():GetCaster())
 	self:GetAbility().current_blood_target = nil
 	local caster = self:GetAbility():GetCaster()
 	if IsServer() and caster:HasModifier("modifier_death_possession_blood_caster_status") then
 		caster:RemoveModifierByName("modifier_death_possession_blood_caster_status")
-	end
 
-	ParticleManager:DestroyParticle(self.target_vfx, false)
-	ParticleManager:ReleaseParticleIndex(self.target_vfx)
+		ParticleManager:DestroyParticle(self.target_vfx, false)
+		ParticleManager:ReleaseParticleIndex(self.target_vfx)
+	end
 end
 
 
@@ -295,12 +314,13 @@ function modifier_death_possession_blood_caster_status:IsPurgable()
 	return false
 end
 
+function modifier_death_possession_blood_caster_status:OnCreated()
+
+end
+
 function modifier_death_possession_blood_caster_status:GetTexture()
-	if self.texture ~= nil then
-		return self.texture
-	else
-		return "hidan_death_possession_blood"
-	end
+
+	return self.texture
 end
 
 
@@ -436,9 +456,7 @@ function modifier_death_possession_blood_caster_buff:OnTakeDamage(attack_event)
 
 		local ability = self:GetAbility()
 		local caster = ability:GetCaster()
-
-		print(ability.current_blood_target)
-		print(attack_event)
+	
 
 	if ability.current_blood_target ~= nil then
 

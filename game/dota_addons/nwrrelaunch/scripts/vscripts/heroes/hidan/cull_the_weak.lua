@@ -128,8 +128,22 @@ function hidan_cull_the_weak:OnSpellStart()
 				}
 			ApplyDamage( damageTable )
 
+			local impact_vfx = ParticleManager:CreateParticle("particles/units copy/heroes/hidan/cult_impact.vpcf", PATTACH_ABSORIGIN, oneTarget)
+			ParticleManager:SetParticleControl(impact_vfx, 0, oneTarget:GetAbsOrigin())
+			
 		end
 	end
+
+	--Particles
+	local cull_vfx = ParticleManager:CreateParticle("particles/units/heroes/hidan/hidan_cull_the_weak.vpcf", PATTACH_ABSORIGIN, caster)
+	local diff = (final_target - caster:GetAbsOrigin()):Normalized()
+	ParticleManager:SetParticleControl(cull_vfx, 0, final_target)
+	ParticleManager:SetParticleControl(cull_vfx, 1, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(cull_vfx, 2, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(cull_vfx, 4, Vector(-direction.y, direction.x, direction.z)*width/2) --rotating direction vector to get offset
+	ParticleManager:SetParticleControl(cull_vfx, 5, Vector(direction.y, -direction.x, direction.z)*width/2)
+	ParticleManager:SetParticleControl(cull_vfx, 7, Vector(diff.x*3000, diff.y*3000, diff.z))
+
 end
 
 
