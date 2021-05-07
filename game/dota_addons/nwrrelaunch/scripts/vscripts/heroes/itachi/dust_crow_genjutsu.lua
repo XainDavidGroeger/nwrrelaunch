@@ -4,7 +4,6 @@ LinkLuaModifier("modifier_itachi_crow_bunshin_dummy", "heroes/itachi/dust_crow_g
 itachi_dust_crow_genjustsu = itachi_dust_crow_genjustsu or class({})
 
 function itachi_dust_crow_genjustsu:GetCooldown(level)
-	print(self.BaseClass.GetCooldown(self, level), self:GetCaster():FindTalentValue("special_bonus_itachi_2"), self.BaseClass.GetCooldown(self, level) + self:GetCaster():FindTalentValue("special_bonus_itachi_2"))
 	return self.BaseClass.GetCooldown(self, level) + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
 end
 
