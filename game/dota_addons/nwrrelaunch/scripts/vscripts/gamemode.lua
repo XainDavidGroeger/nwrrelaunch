@@ -33,6 +33,7 @@ require('utilities')
 require('internal/gamemode')
 require('internal/events')
 
+require('components/demo/init')
 require('components/garbage_collector')
 require('components/voicelines/voicelines')
 

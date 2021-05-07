@@ -43,14 +43,5 @@
 				"illusion_duration"		"4"
 			}
 		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"scripts/vscripts/heroes/itachi/dust_crow_genjutsu.lua"
-				"Function"		"createBunshin"
-			}
-		}
 	}
 }

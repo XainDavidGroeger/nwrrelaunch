@@ -48,15 +48,11 @@ end
 
 function CreateEmptyTalents(hero)
 	for i = 1, 8 do
-		local ability_name = "special_bonus_"..hero.."_"..i
-		local modifier_name = "modifier_"..ability_name
-		print(ability_name, modifier_name)
+		local modifier_name = "modifier_special_bonus_"..hero.."_"..i
 
-		LinkLuaModifier(modifier_name, "heroes/"..hero.."/talents_init", LUA_MODIFIER_MOTION_NONE)  
-		local class = modifier_name.." = class({IsHidden = function(self) return false end, RemoveOnDeath = function(self) return false end, AllowIllusionDuplicate = function(self) return true end, GetTexture = function(self) return 'naga_siren_mirror_image' end})"  
+		LinkLuaModifier(modifier_name, "modifiers/modifier_custom_mechanics", LUA_MODIFIER_MOTION_NONE)  
+
+		local class = modifier_name.." = class({IsHidden = function(self) return true end, RemoveOnDeath = function(self) return false end, AllowIllusionDuplicate = function(self) return true end, GetTexture = function(self) return 'naga_siren_mirror_image' end})"  
 		load(class)()
-
-		local class2 = ability_name.." = class({GetIntrinsicModifierName = function(self) return 'modifier_special_bonus_"..hero.."_"..i.."' end})"
-		load (class2)()
 	end
 end

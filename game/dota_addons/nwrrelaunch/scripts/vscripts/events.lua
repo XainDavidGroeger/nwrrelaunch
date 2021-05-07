@@ -226,7 +226,7 @@ function GameMode:OnNonPlayerUsedAbility(keys)
 	DebugPrint('[BAREBONES] OnNonPlayerUsedAbility')
 	DebugPrintTable(keys)
 
-	local abilityname=  keys.abilityname
+	local abilityname = keys.abilityname
 end
 
 -- A player changed their name
@@ -246,6 +246,11 @@ function GameMode:OnPlayerLearnedAbility( keys)
 	local player = EntIndexToHScript(keys.player)
 	local hero = player:GetAssignedHero()
 	local abilityname = keys.abilityname
+
+	-- add auto-generated modifier related to talent for client-side actions
+	if string.find(abilityname, "special_bonus_") then
+		hero:AddNewModifier(hero, nil, "modifier_"..abilityname, {})
+	end
 end
 
 -- A channelled ability finished by either completing or being interrupted

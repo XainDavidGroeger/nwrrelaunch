@@ -13,7 +13,11 @@
 	<Panel>
 		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/vanilla_hero_selection_override.xml" />
 		<CustomUIElement type="FlyoutScoreboard" layoutfile="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/precache.xml" />
+
+		<!-- precache.xml file must be disabled for live version, useless to run it everytime, also increase player's load time into loading screen -->
+<!--		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/precache.xml" /> -->
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/vanilla_hud_overrides.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud_hero_demo.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" /> 
 	</Panel>
 </root>
