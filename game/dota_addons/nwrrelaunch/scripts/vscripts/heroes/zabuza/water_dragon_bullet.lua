@@ -11,7 +11,14 @@ function releaseDragon( keys )
 	local forwardVec = (target_point - caster_location):Normalized()
 
 	-- Projectile variables
+
 	local wave_speed = ability:GetLevelSpecialValueFor("dragon_speed", (ability:GetLevel() - 1))
+
+	local ability1 = caster:FindAbilityByName("special_bonus_zabuza_1")
+	if ability1:IsTrained() then
+		wave_speed = wave_speed + 300
+	end
+
 	local wave_width = 450
 	local wave_range = (target_point - caster_location):Length2D()
 	local wave_location = caster_location

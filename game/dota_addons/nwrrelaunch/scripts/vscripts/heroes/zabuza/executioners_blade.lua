@@ -8,3 +8,11 @@ function execute( keys )
 		end
 	end
 end
+
+function resetCooldown ( keys )
+	local ability2 = keys.caster:FindAbilityByName("special_bonus_zabuza_2")
+	if ability2:IsTrained() then
+		keys.ability:EndCooldown()
+		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+	end
+end

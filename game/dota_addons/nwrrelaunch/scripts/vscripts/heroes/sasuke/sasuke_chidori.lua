@@ -8,10 +8,6 @@ function sasuke_chidori:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
 
-function sasuke_chidori:GetCooldown(iLevel)
-	return self.BaseClass.GetCooldown(self, iLevel)
-end
-
 function sasuke_chidori:GetCastRange(location, target)
 	local ability3 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_3")
 	if ability3:GetLevel() > 0 then

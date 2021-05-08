@@ -13,7 +13,7 @@
 		"SoundSet"					"Kunai"
 		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
 
-		  "BaseClass"   "npc_dota_hero_bloodseeker"
+		  "BaseClass"   	"npc_dota_hero_bloodseeker"
 		  "Ability1"        "zabuza_water_dragon_bullet"
 		  "Ability2"        "zabuza_kirigakure_no_jutsu_new"
 		  "Ability3"        "zabuza_executioners_blade"
