@@ -55,39 +55,46 @@
 		//--------------------
 		"npc_dota_hero_zabuza" 						"Zabuza"
 		"npc_dota_hero_zabuza_lore"  					""
-		// Weak Spot
-		"DOTA_Tooltip_ability_zabuza_weak_spot"						"Weak Spot"
-		"DOTA_Tooltip_ability_zabuza_weak_spot_description"			"After studying an enemy's defense, Zabuza delivers a devestating strike upon his opponent. While off cooldown, Zabuza's next basic attack delivers an assured critical. After each succesful attack, the cooldown of this ability is reduced by 1 second."
-		"DOTA_Tooltip_ability_zabuza_weak_spot_crit_multiplier"		"%CRIT: "
-		"DOTA_Tooltip_ability_zabuza_weak_spot_cd_reduc"			"CD REDUCTION: "
-		"DOTA_Tooltip_modifier_weak_spot"							"Weak Spot"
-		"DOTA_Tooltip_modifier_weak_spot_description"				"The next attack will deal extra damage."
-		// Stealth
-		"DOTA_Tooltip_ability_zabuza_stealth"						"Stealth"
-		"DOTA_Tooltip_ability_zabuza_stealth_cast_range"			"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_stealth_description"			"Widely known as one of the greatest silent killers, Zabuza's ability to go in and out of battle undetected makes him a terrifying shinobi to face. Allows Zabuza to blink to a target unit."
-		// Track
-		"DOTA_Tooltip_ability_zabuza_track"							"Track"
-		"DOTA_Tooltip_ability_zabuza_track_aura_radius"				"MS BUFF AOE: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_move_speed_pct"	"%MS BUFF: "
-		"DOTA_Tooltip_ability_zabuza_track_armor_debuff"			"ARMOR DEBUFF: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_radius"		"BONUS GOLD AOE: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_self"			"BONUS GOLD KILL: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold"				"BONUS GOLD ASSIST: "
-		"DOTA_Tooltip_ability_zabuza_track_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_zabuza_track_cast_range_tooltip"		"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_track_description"				"As a world renowned assassin, Zabuza assures the fulfilmentt of his employer's contracts. After casting on an enemy hero, Zabuza and his allies gain vision of a target of the course of the duration and will move faster if they are close to them. If the target dies, Zabuza will receive bonus gold for the kill."
-		"DOTA_Tooltip_modifier_track_aura_datadriven"						"Track"
-		"DOTA_Tooltip_modifier_track_aura_datadriven_description"			"This Unit is tracked. It has reduced armor and gives vision to the enemy team."
-		// Ninpou: Kirigakure No Jutsu
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu"						"Hidden Mist Jutsu"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_lore"					"Ninpou: Kirigakure No Jutsu"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_radius"				"AOE: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_miss_percentage"		"%MISS CHANCE DEBUFF"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_cast_range"			"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_description"			"Zabuza fills the air with his chakra, creating a heavy mist within an area. Enemy units within the mist are silenced and are given a chance to miss."
+		
+		// Water Dragon Bullet
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet"						"Water Dragon Bullet"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_lore"						"Suiton: Suiryudan no Jutsu"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_description"			"Sends out a large water dragon to land on a target area. The area of impact will be visible for both allies and enemies until the projectile has landed. Upon being hit, all enemy units within the area take magical damage and are slowed for a duration. Strength of the movement speed slow is based upon the amount of distance that the water dragon travelled."
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_damage"				"DAMAGE: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_radius"				"RADIUS: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow"				"%MS DEBUFF MIN: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow_per_distance"	"%MS DEBUFF FOR 150 DISCTANCE : "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_range"					"RANGE: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_duration"				"MS DEBUFF DURATION: "
+		"DOTA_Tooltip_modifier_dragon_bullet_slow"								"Water Dragon Bullet"
+		"DOTA_Tooltip_modifier_dragon_bullet_slow_description"					"This Unit has x%% decreased movement speed."
 
+		// Ninpou: Kirigakure No Jutsu
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new"						"Hidden Mist Technique"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_lore"					"Ninpou: Kirigakure No Jutsu"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_radius"				"AOE: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_duration"				"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_bonus_movespeed"		"%MS BUFF"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_fade_delay"			"INVIS FADE TIME: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"Creates a dense mist in the target area. Friendly units within the mist will become invisible after a short fade duration. While in the mist, Zabuza gains increased movement speed and can pass through terrain. The effect is cancelled if Zabuza is killed."
+
+		// Executioner’s Blade
+		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"Executioner’s Blade"
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"Zabuza’s attacks deal critical damage to enemies below a certain health threshold. Critical strikes will also be dealt to enemies marked by Demon of the Hidden Mist."
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_multiplier"		"%CRIT: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_health_threshold"		"%HEALTH THRESHOLD: "
+
+		// Demon of the Hidden Mist
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist"					"Demon of the Hidden Mist"
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"Marks a target enemy hero for death over a short duration causing Zabuza’s Executioner Blade to critically strike for every attack he makes. While the mark is active, all incoming damage will be significantly reduced and dealt to him only after the mark fades. The effect will also fade if the marked hero moves a certain distance away from Zabuza."
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_duration"			"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_range"			"RANGE: "
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_marked_break_distance"		"MARKED BREAK DISTANCE : "
+		"DOTA_Tooltip_modifier_demon_unkillable"							"Demon of the Hidden Mist"
+		"DOTA_Tooltip_modifier_demon_unkillable_description"				"This Unit cannot die."
+
+		"DOTA_Tooltip_modifier_demon_mark"							"Demon of the Hidden Mist"
+		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will always trigger a critical strike on this Unit."
 		//--------------------
 		//Jirobo
 		//--------------------

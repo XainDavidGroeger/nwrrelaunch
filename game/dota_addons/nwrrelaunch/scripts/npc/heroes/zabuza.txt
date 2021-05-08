@@ -8,19 +8,18 @@
     	"npc_dota_hero_zabuza" //zabuza
 		{
 
-
 		"HeroID"					"219"
 
 		"SoundSet"					"Kunai"
 		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
 
 		  "BaseClass"   "npc_dota_hero_bloodseeker"
-		  "Ability1"        "zabuza_stealth"
-		  "Ability2"        "zabuza_kirigakure_no_jutsu"
-		  "Ability3"        "zabuza_weak_spot"
+		  "Ability1"        "zabuza_water_dragon_bullet"
+		  "Ability2"        "zabuza_kirigakure_no_jutsu_new"
+		  "Ability3"        "zabuza_executioners_blade"
 		      "Ability4"		"generic_hidden"
 		  "Ability5"		"generic_hidden"
-		  "Ability6"        "zabuza_track" 
+		  "Ability6"        "zabuza_demon_of_the_hidden_mist" 
 
 		    "Ability10"		"special_bonus_hp_175"
 		   "Ability11"		"special_bonus_movement_speed_20"
@@ -33,6 +32,7 @@
 
 		   "Ability16"		"special_bonus_zabuza_4"
 		   "Ability17"		"special_bonus_zabuza_5"
+
 		  "ModelScale"		"0.96"
 		  "LoadoutScale"		"0.9"
 		"SpectatorLoadoutScale" "0.96"
@@ -45,7 +45,7 @@
 	 	 "ItemSlots"
 	  	  { }
 	  	    "StatusHealth"    "200"
-  "StatusHealthRegen"   "0.300000"
+ 		 "StatusHealthRegen"   "0.300000"
 		"AttackDamageMin"		"25"
 		"AttackDamageMax"		"28"
 		"Role"			"Carry"
