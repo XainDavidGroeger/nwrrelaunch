@@ -28,6 +28,9 @@
 	
 	"precache"
 	{
+
+		"soundfile"			"soundevents/heroes/temari/temari_w_talking.vsndevts"
+
 		"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_tornado_child.vpcf"
 	}
@@ -92,6 +95,12 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"temari_w_talking"
+			"Target"		"CASTER"
+		}
 
 		"RunScript"
 		{
