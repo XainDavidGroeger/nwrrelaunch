@@ -27,6 +27,7 @@ end
 function ManaCost( keys )
 	-- Variables
 	local ability_level = keys.ability:GetLevel()
+	print("test")
 	local caster = keys.caster
 	local ability = keys.ability
 
@@ -39,11 +40,13 @@ function ManaCost( keys )
 	local current_mana = caster:GetMana()
 	local new_mana = current_mana - manacost_per_second
 	print(new_mana)
+	--local particle = keys.ability.particle
 	if (current_mana - manacost_per_second) <= 0 then
 		caster:SetMana(1)
 		caster:RemoveAbility("madara_susano_active")
 		caster:RemoveModifierByName("modifier_madara_susano")
 		caster:RemoveModifierByName("modifier_madara_susano_burn_trees")
+		caster:RemoveModifierByName("modifier_madara_susano_rotate")
 		Ability = caster:AddAbility("madara_susano")
 		Ability:SetAbilityIndex(1)
 		Ability:SetLevel(ability_level)
@@ -159,13 +162,16 @@ function BurnTrees( keys )
 
 end
 
-
 function spawnCage (keys)
-	keys.caster.cage = ParticleManager:CreateParticle("particles/units/heroes/madara/susano/susano.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
-	ParticleManager:SetParticleControl(keys.caster.cage, 0, keys.caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(keys.caster.cage, 1, keys.caster:GetAbsOrigin() + Vector(0,0,40))
+	keys.caster.cage = ParticleManager:CreateParticle("particles/units/heroes/madara/susano/susano_bones.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+	ParticleManager:SetParticleControlEnt(keys.caster.cage, 0, keys.caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", keys.caster:GetAbsOrigin(), false)
+end
+
+function rotateCage (keys)
+    ParticleManager:SetParticleControlOrientation(keys.caster.cage, 1, keys.caster:GetForwardVector(), keys.caster:GetForwardVector(), keys.caster:GetUpVector())
 end
 
 function removeCage (keys)
 	ParticleManager:DestroyParticle(keys.caster.cage, true)
+	ParticleManager:ReleaseParticleIndex(keys.caster.cage)
 end
