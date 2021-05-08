@@ -1,9 +1,5 @@
-	
     "DOTAAbilities"
 {
-    
-
-
 
 "madara_susano_active"
 {
@@ -114,6 +110,11 @@
             "ModifierName"    "modifier_madara_susano_burn_trees"
             "Target"         "CASTER"
         }
+		"RemoveModifier"
+        {
+            "ModifierName"    "modifier_madara_susano_rotate"
+            "Target"         "CASTER"
+        }
     }
 
     "Modifiers"
@@ -165,10 +166,7 @@
                     "ScriptFile"    "heroes/madara/susano.lua"
                    "Function"      "BurnEnemies"
                }
-            }
-
-          
-
+            } 
         }
 
         "modifier_madara_susano_burn_trees"
@@ -184,6 +182,21 @@
                     "Function"              "BurnTrees"
                 }
 
+            }
+        }
+		
+		"modifier_madara_susano_rotate"
+        {
+            "Passive"     "1"
+            "IsHidden"      "1"
+            "ThinkInterval" "0.1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"            "heroes/madara/susano.lua"
+                    "Function"              "rotateCage"
+                }
             }
         }
     }
