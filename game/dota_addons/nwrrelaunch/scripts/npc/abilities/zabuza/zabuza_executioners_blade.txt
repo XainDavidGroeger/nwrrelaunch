@@ -29,12 +29,13 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"crit_multiplier"		"180"
+			"crit_multiplier"		"170"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"health_threshold"		"10 15 20 25"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
 		}
 		"03"
 		{
@@ -44,7 +45,8 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"cd_reduction"		"2"
+			"cd_reduction"		"0"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_2"
 		}
 	}
 

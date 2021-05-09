@@ -20,6 +20,13 @@
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 		"soundfile"			"soundevents/zabuza_dragon.vsndevts"
+
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_talking.vsndevts"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_cast.vsndevts"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_fly.vsndevts"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_impact.vsndevts"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_precast.vsndevts"
+
 		"particle"			"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
 		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
 		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf"
@@ -31,8 +38,8 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	"AbilityCastRange"				"1300"
+	"AbilityCastPoint"				"0.6 0.6 0.6 0.6"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +47,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80 95 110 125"
+	"AbilityManaCost"				"90 100 110 120"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -50,7 +57,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"		"90 160 230 300"
+			"damage"		"80 160 240 320"
 		}
 		
 		"02"
@@ -74,7 +81,7 @@
 		"05"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"range"				"900"
+			"range"				"1300"
 		}
 
 		"06"
@@ -86,7 +93,8 @@
 		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"dragon_speed"		"1400"
+			"dragon_speed"		"1200"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_1"
 		}
 
 		"08"
@@ -99,11 +107,17 @@
 
 	"OnAbilityPhaseStart"
 	 {
-	 		"RunScript"
-	 		{
-	 			"ScriptFile"	"heroes/zabuza/water_dragon_bullet.lua"
-	 			"Function"		"playSound"
-	 		}
+			 "FireSound"
+			 {
+				 "EffectName"	"zabuza_dragon_talking"
+				 "Target"		"CASTER"
+			 }
+
+			 "FireSound"
+			 {
+				 "EffectName"	"zabuza_dragon_precast"
+				 "Target"		"CASTER"
+			 }
 	 } 
 
 	"OnSpellStart"
@@ -116,20 +130,19 @@
 			"Target"				"POINT"
 		}
 
-		"DelayedAction"
-		{
-			"Delay"     "0.3"
-			"Action"    
+		"FireSound"
 			{
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/zabuza/water_dragon_bullet.lua"
-						"Function"				"releaseDragon"
-						"Target"				"POINT"
-						"dragon_particle"		"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-					}	
+				"EffectName"	"zabuza_dragon_cast"
+				"Target"		"CASTER"
 			}
-		}
+
+		"RunScript"
+			{
+				"ScriptFile"			"heroes/zabuza/water_dragon_bullet.lua"
+				"Function"				"releaseDragon"
+				"Target"				"POINT"
+				"dragon_particle"		"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
+			}	
 
 		
 	}

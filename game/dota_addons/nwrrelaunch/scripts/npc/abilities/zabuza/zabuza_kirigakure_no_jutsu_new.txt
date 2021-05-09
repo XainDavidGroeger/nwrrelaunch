@@ -15,9 +15,9 @@
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.4"
 	"AbilityCooldown"				"24 23 22 21"
-	"AbilityManaCost"				"100"
+	"AbilityManaCost"				"70"
 
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
@@ -25,6 +25,7 @@
 	{
 		"particle"			"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
 		"particle"			"particles/units/heroes/hero_broodmother/broodmother_spin_web_cast.vpcf"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_mist_talking.vsndevts"
 	}
 		
 	// Special
@@ -60,6 +61,7 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"fade_delay"			"1.4 1.2 1.0 0.8"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_4"
 		}
 		"07"
 		{
@@ -98,6 +100,12 @@
 			"var_type"				"FIELD_FLOAT"
 			"duration"				"6 7 8 9"
 		}
+		"14"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"special_bonus_5_damage"	"0"	
+			"LinkedSpecialBonus"	"special_bonus_zabuza_5"
+		}
 	}
 
 	
@@ -112,6 +120,13 @@
 			"Target"				"POINT"			
 			"stack_modifier"		"modifier_web_stack_counter_datadriven"
 			"dummy_modifier"		"modifier_web_dummy_aura_datadriven"
+		}
+
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/zabuza/kirigakure_no_jutsu.lua"
+			"Function"		"playSoundOnPlayer"
 		}
 	}
 
@@ -206,11 +221,6 @@
 				}
 			}
 
-
-			"States"
-			{
-				"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
-			}
 		}
 
 		"modifier_web_pathing_fade_datadriven"
@@ -235,6 +245,18 @@
 					"Target"		"TARGET"	
 				}
 			}
+		}
+
+		"modifier_special_bonus_attack_damage"
+		{
+			"IsHidden"	"1"
+			"Duration"	"0.1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%special_bonus_5_damage"
+			}
+			
 		}
 
 		// The modifier which gets applied by the aura
@@ -301,19 +323,21 @@
 
 			"OnAttack"
 			{
-				"ApplyModifier"
+				"RunScript"
 				{
-					"ModifierName"	"modifier_web_invis_fade_datadriven"
-					"Target"		"ATTACKER"
+					"ScriptFile"	"heroes/zabuza/kirigakure_no_jutsu.lua"
+					"Function"		"applyInvisModifier"
+					"makeinvis"		"ATTACKER"
 				}
 			}
 
 			"OnAbilityExecuted"
 			{
-				"ApplyModifier"
+				"RunScript"
 				{
-					"ModifierName"	"modifier_web_invis_fade_datadriven"
-					"Target"		"UNIT"
+					"ScriptFile"	"heroes/zabuza/kirigakure_no_jutsu.lua"
+					"Function"		"applyInvisModifier"
+					"makeinvis"		"UNIT"
 				}
 			}
 
@@ -343,24 +367,25 @@
 
 		"modifier_web_invis_fade_datadriven"
 		{
-			"Duration"	"%fade_delay"
 			"IsHidden"	"1"
 
 			"OnAttack"
 			{
-				"ApplyModifier"
+				"RunScript"
 				{
-					"ModifierName"	"modifier_web_invis_fade_datadriven"
-					"Target"		"ATTACKER"
+					"ScriptFile"	"heroes/zabuza/kirigakure_no_jutsu.lua"
+					"Function"		"applyInvisModifier"
+					"makeinvis"		"ATTACKER"
 				}
 			}
 
 			"OnAbilityExecuted"
 			{
-				"ApplyModifier"
+				"RunScript"
 				{
-					"ModifierName"	"modifier_web_invis_fade_datadriven"
-					"Target"		"UNIT"
+					"ScriptFile"	"heroes/zabuza/kirigakure_no_jutsu.lua"
+					"Function"		"applyInvisModifier"
+					"makeinvis"		"UNIT"
 				}
 			}
 

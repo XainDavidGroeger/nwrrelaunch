@@ -46,6 +46,9 @@ function releaseDragon( keys )
 	projectile_id = ProjectileManager:CreateLinearProjectile( projectileTable )
 
 
+	caster:EmitSound("zabuza_dragon_fly")
+
+
 
 end
 
@@ -63,7 +66,6 @@ function releaseDragonPreWater( keys )
 	dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 	ability:ApplyDataDrivenModifier(caster, dummy, "modifier_dragon_dummy", {duration = duration})
 
-	EmitSoundOn("Ability.pre.Torrent",dummy)
 	
 	local fxIndex = ParticleManager:CreateParticle( particleName, PATTACH_ABSORIGIN, dummy)
 	ParticleManager:SetParticleControl( fxIndex, 0, dummy:GetAbsOrigin() )
@@ -80,12 +82,12 @@ function fireAbility( keys )
 	local slow_base_per_distance = keys.ability:GetLevelSpecialValueFor( "ms_slow_per_distance", keys.ability:GetLevel() - 1 )
 	local distance_stack_count = keys.ability.dragonRange / 150
 	local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), keys.ability.water:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, FIND_ANY_ORDER, false)
-	print(slow_base)
-	print(slow_base_per_distance)
-	print(distance_stack_count)
+	local caster = keys.caster
+
+	caster:StopSound("zabuza_dragon_fly")
+
 	local stackcount = slow_base + (distance_stack_count * slow_base_per_distance)
 	stackcount = stackcount * -1
-	print(stackcount)
 	if targetEntities then
 		for _,target in pairs(targetEntities) do
 			keys.ability:ApplyDataDrivenModifier(keys.caster, target, keys.slow_modifier, {duration = duration})
@@ -93,10 +95,7 @@ function fireAbility( keys )
 		end
 	end
 
-	EmitSoundOn( "Ability.Torrent", keys.ability.water )
+	EmitSoundOn( "zabuza_dragon_impact", keys.ability.water )
 	keys.ability.water:Destroy()
 end
 
-function playSound( keys )
-	EmitSoundOn("zabuza_dragon",keys.caster)
-end

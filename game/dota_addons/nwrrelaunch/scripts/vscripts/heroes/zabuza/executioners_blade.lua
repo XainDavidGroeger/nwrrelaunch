@@ -1,8 +1,17 @@
 function execute( keys )
 	local target = keys.target
 	local caster = keys.caster
+	local ability = keys.ability
 	local target_hp_percent = target:GetHealth() / (target:GetMaxHealth() / 100) 
-	if target_hp_percent <= 35 or target:HasModifier("modifier_demon_mark") then
+
+	local health_threshold = ability:GetLevelSpecialValueFor( "health_threshold", ( ability:GetLevel() - 1 ) )
+
+	local ability3 = keys.caster:FindAbilityByName("special_bonus_zabuza_3")
+	if ability3:IsTrained() then
+		health_threshold = health_threshold + 7
+	end
+
+	if target_hp_percent <= health_threshold or target:HasModifier("modifier_demon_mark") then
 		if not target:IsBuilding() and keys.caster:GetTeamNumber() ~= keys.target:GetTeamNumber() then
 			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_executioners_blade_crit", {duration = 0.3})
 		end

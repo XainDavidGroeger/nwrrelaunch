@@ -66,6 +66,8 @@
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow_per_distance"	"%MS DEBUFF FOR 150 DISCTANCE : "
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_range"					"RANGE: "
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_duration"				"MS DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_dragon_speed"			"DRAGON SPEED: "
+		
 		"DOTA_Tooltip_modifier_dragon_bullet_slow"								"Water Dragon Bullet"
 		"DOTA_Tooltip_modifier_dragon_bullet_slow_description"					"This Unit has x%% decreased movement speed."
 
@@ -76,6 +78,8 @@
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_duration"				"DURATION: "
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_bonus_movespeed"		"%MS BUFF"
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_fade_delay"			"INVIS FADE TIME: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_special_bonus_5_damage" "EXTRA DAMAGE: "
+
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"Creates a dense mist in the target area. Friendly units within the mist will become invisible after a short fade duration. While in the mist, Zabuza gains increased movement speed and can pass through terrain. The effect is cancelled if Zabuza is killed."
 
 		// Executioner’s Blade
@@ -83,8 +87,8 @@
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"Zabuza’s attacks deal critical damage to enemies below a certain health threshold. This ability can also be activated to give Zabuza guaranteed critical strikes for a short duration."
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_multiplier"		"%CRIT: "
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_health_threshold"		"%HEALTH THRESHOLD: "
-		"DOTA_Tooltip_ability_zabuza_executioners_crit_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_zabuza_executioners_bladecrit_duration"			"CD REDUCTION: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_duration"				"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_cd_reduction"					"CD REDUCTION: "
 		
 
 		// Demon of the Hidden Mist
@@ -2190,13 +2194,13 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
 
 		//25: +60 Damage Inside Hidden Mist / +100% Cleave
-		//20: +7% Executioner Health Threshold / Removes Hidden Mist Fade Delay
+		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay 
 		//15: -2s Executioner Cooldown / +275 Health
 		//10: +20 Attack Speed / +300 Water Dragon Projectile Speed
 		"DOTA_Tooltip_Ability_special_bonus_zabuza_1"						"+300 Water Dragon Projectile Speed"
 		"DOTA_Tooltip_Ability_special_bonus_zabuza_2"						"-2s Executioner Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_zabuza_3"						"+7% Executioner Health Threshold"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"Removes Hidden Mist Fade Delay"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"-0.8s Hidden Mist Fade Delay "
 		"DOTA_Tooltip_Ability_special_bonus_zabuza_5"						"+60 Damage Inside Hidden Mist"
 
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun

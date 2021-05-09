@@ -81,6 +81,8 @@ function spin_web_aura( keys )
 	local invis_modifier = keys.invis_modifier
 	local invis_fade_modifier = keys.invis_fade_modifier
 
+	local fade_delay = ability:GetLevelSpecialValueFor( "fade_delay", ( ability:GetLevel() - 1 ) )
+
 
 	if keys.target:IsRealHero() then
 
@@ -92,10 +94,18 @@ function spin_web_aura( keys )
 			ability:ApplyDataDrivenModifier(caster, target, pathing_modifier, {}) 
 		end
 
-				-- If it doesnt have the fade invis modifier or the invis modifier then apply it
+		-- If it doesnt have the fade invis modifier or the invis modifier then apply it
 		if not target:HasModifier(invis_modifier) and not target:HasModifier(invis_fade_modifier) then
-	--		ability:ApplyDataDrivenModifier(caster, target, invis_fade_modifier, {})
+			ability:ApplyDataDrivenModifier(caster, target, invis_fade_modifier, {duration = fade_delay})
 		end
+
+		local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
+		if ability5:IsTrained() then
+			if not target:HasModifier("modifier_special_bonus_attack_damage") then
+				ability:ApplyDataDrivenModifier(caster, target, "modifier_special_bonus_attack_damage", {})
+			end
+		end
+
 	end
 end
 
@@ -111,4 +121,52 @@ function appylMsBoost( keys )
 	if caster_owner == target_owner then
 		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, keys.ms_modifier, {})
 	end
+end
+
+function applyInvisModifier( keys )
+	local ability = keys.ability
+	local fade_delay = ability:GetLevelSpecialValueFor( "fade_delay", ( ability:GetLevel() - 1 ) )
+
+	local target = nil
+
+	if keys.makeinvis == 'ATTACKER' then
+		target = keys.attacker
+	end
+
+	if keys.makeinvis == 'UNIT' then
+		target = keys.unit
+	end
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_zabuza_4")
+	if ability1:IsTrained() then
+		fade_delay = fade_delay - 0.8
+	end
+
+	keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_web_invis_fade_datadriven", {duration = fade_delay})
+end
+
+
+function applyDamageModifier( keys )
+	local ability = keys.ability
+	local fade_delay = ability:GetLevelSpecialValueFor( "fade_delay", ( ability:GetLevel() - 1 ) )
+
+	local target = nil
+
+	if keys.makeinvis == 'ATTACKER' then
+		target = keys.attacker
+	end
+
+	if keys.makeinvis == 'UNIT' then
+		target = keys.unit
+	end
+
+	local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
+	if ability5:IsTrained() then
+		keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_special_bonus_attack_damage", {duration = fade_delay})
+	end
+
+end
+
+function playSoundOnPlayer ( keys )
+	EmitSoundOnEntityForPlayer("zabuza_mist_talking", keys.caster, keys.caster:GetPlayerOwnerID())
 end

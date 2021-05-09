@@ -9,7 +9,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 	"AbilityTextureName"			"zabuza_demon_of_the_hidden_mist"
@@ -20,6 +20,7 @@
 	{
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+		"soundfile"		"soundevents/heroes/zabuza/zabuza_demon_talking.vsndevts"
 		"soundfile"		"soundevents/zabuza_ult.vsndevts"
 		"soundfile"		"soundevents/zabuza_ult_2.vsndevts"	
 		"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track.vpcf"
@@ -37,7 +38,7 @@
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"900"
-	"AbilityCastPoint"				"0.3 0.3 0.3"
+	"AbilityCastPoint"				"0.0"
 	"AbilityCooldown"				"90 75 60"
 	"AbilityManaCost"				"100 125 150"
 		
@@ -67,17 +68,21 @@
 		}
 	}
 
-	"OnAbilityPhaseStart"
-	{
+	"OnSpellStart"
+	{	
+
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/zabuza/demon_of_the_hidden_mist.lua"
 			"Function"		"playSound"
 		}
-	}
 
-	"OnSpellStart"
-	{	
+		"FireSound"
+		{
+			"EffectName"	"zabuza_demon_talking"
+			"Target"		"CASTER"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/zabuza/demon_of_the_hidden_mist.lua"

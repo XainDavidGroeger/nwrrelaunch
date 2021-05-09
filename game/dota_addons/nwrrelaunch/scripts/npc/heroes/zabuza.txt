@@ -56,7 +56,7 @@
 		  "AttackAnimationPoint"		"0.4"
 		 // "AttackRate"				"1.0"
 		  "AttackRange"				"100"
-		  "MovementSpeed"			"310"
+		  "MovementSpeed"			"300"
 		  "AttributeBaseStrength" "17" // Base strength
 		  "AttributeStrengthGain" "2" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "15" // Base intelligence
