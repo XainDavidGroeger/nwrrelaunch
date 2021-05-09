@@ -10,7 +10,7 @@ function yondaime_body_flicker:GetCooldown(iLevel)
 end
 
 function yondaime_body_flicker:OnAbilityPhaseStart( keys )
-	self:GetCaster():EmitSound("minato_flicker_cast_real")
+	self:GetCaster():EmitSound("minato_flicker_start")
 	return true
 end
 
@@ -21,23 +21,27 @@ function yondaime_body_flicker:OnSpellStart( event )
 	local target = ability:GetCursorPosition()
 	local hero_position = caster:GetAbsOrigin()
 
-
 	local placed_seals = caster.daggers
 	
 	local closest_seal = nil
-	local min_dist = 1000 --Maximum allowed distance
+	local min_dist = 1300
+	local max_dist = ability:GetSpecialValueFor("range") --Maximum allowed distance
 	
 	for k,v in pairs(placed_seals) do
 		if not v:IsNull() then
-			if(	(target - v:GetAbsOrigin()):Length2D() < 1000 )then
-					
-				local dist = target - v:GetAbsOrigin()
-				
-				if dist:Length2D() < min_dist then
-					min_dist = dist:Length2D()
-					closest_seal = v
-				end
+			local dist = target - v:GetAbsOrigin()
 			
+			if dist:Length2D() < min_dist then
+			    if(	(caster:GetAbsOrigin() - v:GetAbsOrigin()):Length2D() < max_dist) then
+			    	min_dist = dist:Length2D()
+				    closest_seal = v
+				else
+				    local distClose = caster:GetAbsOrigin() - v:GetAbsOrigin()
+					
+					if distClose:Length2D() < max_dist then
+					    closest_seal = v
+					end
+			    end
 			end
 		end
 	end
