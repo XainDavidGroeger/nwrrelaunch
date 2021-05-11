@@ -37,7 +37,7 @@
       { }
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
-    	"ProjectileModel"   "particles/units/heroes/temari/temari_base_attack_core.vpcf"
+    	"ProjectileModel"   "particles/units/heroes/temari/temari_base_attack_new.vpcf"
   		"ProjectileSpeed"  "1200"
 
     //Picking Screen

@@ -12,7 +12,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/temari/temari_sheer_wind.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"temari_sheer_wind"
 	
@@ -57,42 +58,46 @@
 		}
 	}
 
-	"Modifiers"
-	{
-		"modifier_sheer_wind_buff_stack"
-		{
-			"Duration"	"%AbilityDuration"
-			"IsBuff"	"1"
-		}
+	// "Modifiers"
+	// {
+	// 	"modifier_sheer_wind_buff_stack"
+	// 	{
+	// 		"Duration"	"%AbilityDuration"
+	// 		"IsBuff"	"1"
 
-		"modifier_sheer_wind_buff"
-		{
-			"IsHidden"		"1"
-			"Duration"		"%AbilityDuration"
+	// 		"EffectName"		"particles/units/heroes/temari/temari_sheer_wind_buff.vpcf"
+	// 		"EffectAttachType"	"attach_origin"
 
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	// 	}
 
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus"
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus"
-			}
-		}
+	// 	"modifier_sheer_wind_buff"
+	// 	{
+	// 		"IsHidden"		"1"
+	// 		"Duration"		"%AbilityDuration"
 
-		"modifier_sheer_wind_buff_special"
-		{
-			"IsHidden"		"1"
-			"Duration"		"%AbilityDuration"
+	// 		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	// 		"Properties"
+	// 		{
+	// 			"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus"
+	// 			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus"
+	// 		}
+	// 	}
 
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus_special"
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus_special"
-			}
-		}
-	}
+	// 	"modifier_sheer_wind_buff_special"
+	// 	{
+	// 		"IsHidden"		"1"
+	// 		"Duration"		"%AbilityDuration"
+
+	// 		"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+	// 		"Properties"
+	// 		{
+	// 			"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%sheer_wind_attack_speed_bonus_special"
+	// 			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%sheer_wind_move_speed_bonus_special"
+	// 		}
+	// 	}
+	// }
 }
 
 
