@@ -26,7 +26,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"particle"			"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+		"particle"			"particles/units/heroes/temari/temari_dust_wind.vpcf"
 	}
 	
 	// Casting
@@ -49,7 +49,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"magic_missile_speed"	"700"
+			"magic_missile_speed"	"800"
 		}
 
 		"02"
@@ -84,7 +84,7 @@
 		"TrackingProjectile"
 		{
 			"Target"           	"TARGET"
-			"EffectName"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+			"EffectName"		"particles/units/heroes/temari/temari_wind_dust.vpcf"
 			"Dodgeable"			"0"
 			"ProvidesVision"	"0"
 			"MoveSpeed"        	"%magic_missile_speed"

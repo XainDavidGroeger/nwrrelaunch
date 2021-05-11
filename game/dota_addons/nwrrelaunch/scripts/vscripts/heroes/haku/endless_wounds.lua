@@ -116,7 +116,7 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 
 end
 
-function modifier_haku_endless_needles_victim_counter:Onremoved()
+function modifier_haku_endless_needles_victim_counter:OnRemoved()
 	ParticleManager:DestroyParticle(self.slow_vfx, false)
 	ParticleManager:ReleaseParticleIndex(self.slow_vfx)
 end

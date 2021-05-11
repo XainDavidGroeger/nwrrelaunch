@@ -44,7 +44,7 @@ function temari_kuchiyose_kirikiri_mai_on_spell_start(keys)
 
 		local projectile_information =  
 		{
-			EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+			EffectName = "particles/units/heroes/temari/temari_tornado.vpcf",
 			Ability = emp_unit_ability,
 			vSpawnOrigin = caster_origin,
 			fDistance = tornado_travel_distance,

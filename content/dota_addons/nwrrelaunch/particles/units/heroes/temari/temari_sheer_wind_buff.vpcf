@@ -1,0 +1,56 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nBehaviorVersion = 11
+	m_nMaxParticles = 0
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_RemapSpeedtoCP"
+			m_nOutControlPointNumber = 6
+			m_flInputMin = 200.0
+			m_flInputMax = 300.0
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/temari/temari_sheer_wind_buff_blur.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun_dust_drk.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun_dust.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/temari/temari_sheer_wind_buff_dust_top.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/temari/temari_sheer_wind_buff_trail_rope.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun_tornado_pnt.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/temari/temari_sheer_wind_buff_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/temari/temari_sheer_wind_buff_streaks.vpcf"
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun_wind_op.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}
