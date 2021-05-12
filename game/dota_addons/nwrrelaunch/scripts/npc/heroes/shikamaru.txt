@@ -10,7 +10,7 @@
 			"HeroID"					"216"
 		  "BaseClass"   "npc_dota_hero_shadow_shaman" 
 		  "Model" 		"models/shikamaru_new/shika.vmdl"
-		  "Ability1"         "shikamaru_kage_kubishibari"
+		  "Ability1"         "shikamaru_shadow_imitation_technique"
 		  "Ability2"         "shikamaru_explosive_kunai" 
 		  "Ability3"         "shikamaru_meditation" 
   		  "Ability4"        "generic_hidden"
