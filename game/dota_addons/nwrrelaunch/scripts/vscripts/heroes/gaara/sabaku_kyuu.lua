@@ -9,6 +9,16 @@ LinkLuaModifier("modifier_gaara_sabaku_kyuu", "scripts/vscripts/heroes/gaara/sab
 
 gaara_sabaku_kyuu = gaara_sabaku_kyuu or class({})
 
+function gaara_sabaku_kyuu:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+        ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 function gaara_sabaku_kyuu:OnSpellStart()
 	if not IsServer() then return end
 
@@ -17,9 +27,15 @@ function gaara_sabaku_kyuu:OnSpellStart()
 	self.target:EmitSound("gaara_prison_cast")
 	self:GetCaster():EmitSound("gaara_prison_talking")
 
-	if self.target:TriggerSpellAbsorb(self) then
-		return
-	end
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if self.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(false, self.target)
+		
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if self.target:TriggerSpellAbsorb(self) then return end
 
 	if self.target and self.target:IsAlive() and not self.target:IsOutOfGame() then
 		self.target:AddNewModifier(self:GetCaster(), self, "modifier_gaara_sabaku_kyuu", {duration = self:GetSpecialValueFor("duration")})

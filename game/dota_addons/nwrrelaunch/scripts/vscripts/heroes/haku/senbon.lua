@@ -9,18 +9,34 @@ end
 
 function haku_crippling_senbon:GetCooldown(iLevel)
 	local cdrecution = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_haku_2"):GetLevel() > 0 then
-		cdrecution = 2
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_haku_2")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	cdrecution = 2
+	    end
 	end
 	return self.BaseClass.GetCooldown(self, iLevel) - cdrecution
 end
 
 function haku_crippling_senbon:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_haku_3"):GetLevel() > 0 then
-		castrangebonus = 450
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_haku_3")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 450
+	    end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
+end
+
+function haku_crippling_senbon:CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
 end
 
 function haku_crippling_senbon:OnSpellStart()
@@ -30,7 +46,16 @@ function haku_crippling_senbon:OnSpellStart()
 
 	local damage = self:GetSpecialValueFor("damage")
 	local stun_duration = self:GetSpecialValueFor("stun_duration")
-
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if self.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(true, self.target)
+		
+        return
+    end
+	
+	--[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+	if self.target:TriggerSpellAbsorb(self) then return end
 
 	-- Play sound
 	caster:EmitSound("haku_senbon_cast")
@@ -74,14 +99,12 @@ function haku_crippling_senbon:OnProjectileHit_ExtraData(target, location, Extra
 		target:AddNewModifier(caster, self, "modifier_stunned", {duration = ExtraData.stun_duration * (1 - target:GetStatusResistance())})
 
 		local woudns_ability = caster:FindAbilityByName("haku_endless_wounds")
-		if woudns_ability:GetLevel() > 0 then 
-
-			local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
-			woudns_ability:ApplyStacks(target, endless_wounds_stacks)
-
+		if not woudns_ability == nil then
+		    if woudns_ability:GetLevel() > 0 then
+		    	local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
+		    	woudns_ability:ApplyStacks(target, endless_wounds_stacks)
+		    end
 		end
-
-
 	end
 end
 

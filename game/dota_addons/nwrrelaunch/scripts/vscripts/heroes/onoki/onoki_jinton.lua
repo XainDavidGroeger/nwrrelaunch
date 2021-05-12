@@ -14,20 +14,34 @@ end
 function onoki_jinton:GetCooldown(iLevel)
 	local abilityScd = self:GetCaster():FindAbilityByName("special_bonus_onoki_2")
 	local cdredusction = self.BaseClass.GetCooldown(self, iLevel) / 100 * 14
-	if abilityScd:GetLevel() > 0 then
-		return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
-	else
-	    return self.BaseClass.GetCooldown(self, iLevel)
+	if abilityScd ~= nil then
+	    if abilityScd:GetLevel() > 0 then
+	    	return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
+	    else
+	        return self.BaseClass.GetCooldown(self, iLevel)
+	    end
 	end
 end
 
 function onoki_jinton:GetCastRange(location, target)
 local abilityS = self:GetCaster():FindAbilityByName("special_bonus_onoki_1")
-if abilityS:GetLevel() > 0 then
-	return self:GetSpecialValueFor("cast_range") + 225
-else
-    return self:GetSpecialValueFor("cast_range")
+if abilityS ~= nil then
+    if abilityS:GetLevel() > 0 then
+    	return self:GetSpecialValueFor("cast_range") + 225
+    else
+        return self:GetSpecialValueFor("cast_range")
+    end
 end
+end
+
+function onoki_jinton:CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
 end
 
 function onoki_jinton:OnSpellStart()
@@ -41,10 +55,22 @@ function onoki_jinton:OnSpellStart()
 	local damage_type = self:GetAbilityDamageType()
 	local abilitySpec = self:GetCaster():FindAbilityByName("special_bonus_onoki_5")
 	
-    if abilitySpec:IsTrained() then
-    	damage = damage + 100
-		damage_type = DAMAGE_TYPE_PURE
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(true, target)
+		
+        return
     end
+	
+	--[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+	if target:TriggerSpellAbsorb(self) then return end
+	
+	if abilitySpec ~= nil then
+        if abilitySpec:IsTrained() then
+        	damage = damage + 100
+	    	damage_type = DAMAGE_TYPE_PURE
+        end
+	end
 	
 	local enemies = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number

@@ -1,4 +1,27 @@
+function CanBeReflected(bool, target, ability)
+    if bool == true then
+        if target:TriggerSpellReflect(ability) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 function markEnemy( keys )
+    local target = keys.target
+    local ability = keys.ability
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        CanBeReflected(false, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(ability) then return end
+
 	local duration = keys.ability:GetLevelSpecialValueFor("duration", (keys.ability:GetLevel() - 1))
 	keys.ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_demon_mark",{duration = duration})
 	keys.ability.markedEnemy = keys.target

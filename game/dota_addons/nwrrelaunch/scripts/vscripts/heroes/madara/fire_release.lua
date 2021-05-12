@@ -202,13 +202,17 @@ function applyDamageAndStun( keys )
 	)
 
 	local ability4 = caster:FindAbilityByName("special_bonus_madara_4")
-	if ability4:IsTrained() then
-		damage = damage + 160
+	if ability4 ~= nil then
+	    if ability4:IsTrained() then
+	    	damage = damage + 160
+	    end
 	end
 
 	local ability6 = caster:FindAbilityByName("special_bonus_madara_6")
-	if ability6:IsTrained() then
-		duration = duration + 1
+	if ability6 ~= nil then
+	    if ability6:IsTrained() then
+	    	duration = duration + 1
+	    end
 	end
 
 	for _, unit in pairs(targets) do

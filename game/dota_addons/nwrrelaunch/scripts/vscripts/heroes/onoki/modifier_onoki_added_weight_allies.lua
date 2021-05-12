@@ -26,8 +26,10 @@ function modifier_onoki_added_weight_allies:OnCreated( kv )
 	local abilityS = self.caster:FindAbilityByName("special_bonus_onoki_4")
 	self.speed_bonus_perc = self:GetAbility():GetSpecialValueFor( "speed_bonus_perc" )
 	
-    if abilityS:GetLevel() > 0 then
-    	self.speed_bonus_perc = self.speed_bonus_perc + 7
+	if abilityS ~= nil then
+        if abilityS:GetLevel() > 0 then
+        	self.speed_bonus_perc = self.speed_bonus_perc + 7
+	    end
 	end
 end
 

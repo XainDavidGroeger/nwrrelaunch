@@ -53,56 +53,56 @@ function meteorExplode(keys)
 	ParticleManager:SetParticleControl(particle , 0, target_point)
 	ParticleManager:SetParticleControl(particle , 3, target_point)
 
-
-	if wood_ability_level > 0 then
-		local trees = GridNav:GetAllTreesAroundPoint(target_point, aoe, false) 
-				if trees then
-					for _,tree in pairs(trees) do
-						local origin = tree:GetAbsOrigin()
-						xcoord = origin.x
-						ycoord = origin.y
-						--local dummy = CreateUnitByName( "npc_burning_tree", Vector(xcoord, ycoord, 0.0), false, keys.caster, nil, keys.caster:GetTeamNumber() )
-						--dummy:GetAbilityByIndex(0):SetLevel(wood_ability_level)
-						GridNav:DestroyTreesAroundPoint(origin, 40, true)
-						local treesSecond = GridNav:GetAllTreesAroundPoint(origin, 50, false) 
-						
-						local particle = ParticleManager:CreateParticle("particles/units/heroes/madara/burning_tree.vpcf", PATTACH_CUSTOMORIGIN, nil) 
-          				ParticleManager:SetParticleControl(particle , 0, origin)
- 						
-
-          				Timers:CreateTimer( function()
-         
-          						local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), origin, nil, tree_vision, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
-							    if targetEntities then
-							      for _,oneTarget in pairs(targetEntities) do
-							        local modfifier = oneTarget:FindModifierByName("burning_tree_dot")
-							        if modifier == nil then
-							          wood_ability:ApplyDataDrivenModifier(keys.caster, oneTarget, "burning_tree_dot", {Duration = tree_burn_duration})
-							          local particle = ParticleManager:CreateParticle("particles/dire_fx/fire_barracks_glow_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil) 
-							          ParticleManager:SetParticleControl(particle , 0, oneTarget:GetAbsOrigin())
-							        end
-							      end
-							    end
-
-          						if stopCheck then
-          							return 0.3
-          						else
-          							return nil
-          						end
-							  
-						end
-					  	)
-
-          				Timers:CreateTimer( tree_burn_duration, function()
-          						stopCheck = false
-						   		ParticleManager:DestroyParticle(particle, true)
-							  return nil
-						end
-					  	)
-					end
-				end
-	end
-end
+    if wood_ability ~= nil then
+	    if wood_ability_level > 0 then
+	    	local trees = GridNav:GetAllTreesAroundPoint(target_point, aoe, false) 
+	    			if trees then
+	    				for _,tree in pairs(trees) do
+	    					local origin = tree:GetAbsOrigin()
+	    					xcoord = origin.x
+	    					ycoord = origin.y
+	    					--local dummy = CreateUnitByName( "npc_burning_tree", Vector(xcoord, ycoord, 0.0), false, keys.caster, nil, keys.caster:GetTeamNumber() )
+	    					--dummy:GetAbilityByIndex(0):SetLevel(wood_ability_level)
+	    					GridNav:DestroyTreesAroundPoint(origin, 40, true)
+	    					local treesSecond = GridNav:GetAllTreesAroundPoint(origin, 50, false) 
+	    					
+	    					local particle = ParticleManager:CreateParticle("particles/units/heroes/madara/burning_tree.vpcf", PATTACH_CUSTOMORIGIN, nil) 
+              				ParticleManager:SetParticleControl(particle , 0, origin)
+ 	    					
+        
+              				Timers:CreateTimer( function()
+             
+              						local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), origin, nil, tree_vision, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
+	    						    if targetEntities then
+	    						      for _,oneTarget in pairs(targetEntities) do
+	    						        local modfifier = oneTarget:FindModifierByName("burning_tree_dot")
+	    						        if modifier == nil then
+	    						          wood_ability:ApplyDataDrivenModifier(keys.caster, oneTarget, "burning_tree_dot", {Duration = tree_burn_duration})
+	    						          local particle = ParticleManager:CreateParticle("particles/dire_fx/fire_barracks_glow_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil) 
+	    						          ParticleManager:SetParticleControl(particle , 0, oneTarget:GetAbsOrigin())
+	    						        end
+	    						      end
+	    						    end
+        
+              						if stopCheck then
+              							return 0.3
+              						else
+              							return nil
+              						end
+	    						  
+	    					end
+	    				  	)
+        
+              				Timers:CreateTimer( tree_burn_duration, function()
+              						stopCheck = false
+	    					   		ParticleManager:DestroyParticle(particle, true)
+	    						  return nil
+	    					end
+	    				  	)
+	    				end
+	    			end
+	    end
+    end
 --[[ ============================================================================================================
 	Author: LearningDave
 	Date: October 26th, 2015

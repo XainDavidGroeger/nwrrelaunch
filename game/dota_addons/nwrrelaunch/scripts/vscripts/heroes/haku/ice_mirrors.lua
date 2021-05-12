@@ -57,9 +57,10 @@ function haku_ice_mirrors:OnSpellStart()
 			end
 
 			local endless_wounds_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
-
-			if endless_wounds_ability:GetLevel() > 0 then
-				mirror:AddNewModifier(self:GetCaster(), endless_wounds_ability, "modifier_haku_endless_needles_caster",{})
+            if endless_wounds_ability ~= nil then
+			    if endless_wounds_ability:GetLevel() > 0 then
+			    	mirror:AddNewModifier(self:GetCaster(), endless_wounds_ability, "modifier_haku_endless_needles_caster",{})
+			    end
 			end
 
 			table.insert(self.mirrors, mirror)

@@ -7,12 +7,25 @@ function shikamaru_kage_kubishibari:GetChannelTime()
 	local caster = self:GetCaster()
 
     local channel_time = self.BaseClass.GetChannelTime(self)
-
-    if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_4"):GetLevel() > 0 then
-		channel_time =  channel_time + 2
+    
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_4")
+	if abilityS ~= nil then
+        if abilityS:GetLevel() > 0 then
+	    	channel_time =  channel_time + 2
+	    end
 	end
 
 	return channel_time 
+end
+
+function shikamaru_kage_kubishibari:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
 end
 
 function shikamaru_kage_kubishibari:OnSpellStart()
@@ -22,11 +35,24 @@ function shikamaru_kage_kubishibari:OnSpellStart()
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     local ability = self
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(false, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(self) then return end
 
     local duration = self:GetSpecialValueFor("duration")
 
-    if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_4"):GetLevel() > 0 then
-		duration =  duration + 2
+    local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_4")
+	if abilityS ~= nil then
+        if abilityS:GetLevel() > 0 then
+	    	duration =  duration + 2
+	    end
 	end
 
 	caster:EmitSound("shikamaru_hold_cast")
@@ -79,9 +105,12 @@ function modifier_kubishibari:OnIntervalThink()
 	local parent = self:GetParent()
  
     local damage = ability:GetSpecialValueFor( "damage_per_tick")
-
-    if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_1"):GetLevel() > 0 then
-		damage = damage + 5
+    
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_1")
+	if abilityS ~= nil then
+        if abilityS:GetLevel() > 0 then
+	    	damage = damage + 5
+	    end
 	end
 
 	local damageTable = {

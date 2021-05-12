@@ -10,10 +10,12 @@ end
 
 function sasuke_chidori:GetCastRange(location, target)
 	local ability3 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_3")
-	if ability3:GetLevel() > 0 then
-		return self:GetSpecialValueFor("range") + 275
-	else
-		return self:GetSpecialValueFor("range")
+	if ability3 ~= nil then
+	    if ability3:GetLevel() > 0 then
+	    	return self:GetSpecialValueFor("range") + 275
+	    else
+	    	return self:GetSpecialValueFor("range")
+	    end
 	end
 end
 

@@ -15,8 +15,10 @@ function launch_earthquake( event )
 	local distance =  event.distance
 
 	local abilityS = caster:FindAbilityByName("special_bonus_gaara_3")
-	if abilityS:IsTrained() then
-		distance = distance + 600
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	distance = distance + 600
+	    end
 	end
 
 	ProjectileManager:CreateLinearProjectile( {

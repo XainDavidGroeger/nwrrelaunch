@@ -18,8 +18,11 @@ end
 
 function gaara_sabaku_taiso:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_gaara_3"):GetLevel() > 0 then
-		castrangebonus = 600
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_gaara_3")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 600
+	    end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
@@ -105,8 +108,10 @@ function gaara_sabaku_taiso:OnSpellStart()
 	local distance =  self:GetSpecialValueFor("range")
 
 	local abilityS = caster:FindAbilityByName("special_bonus_gaara_3")
-	if abilityS:IsTrained() then
-		distance = distance + 600
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	distance = distance + 600
+	    end
 	end
 
 	local particleName = "particles/units/heroes/gaara/ulti/ulti_core.vpcf"
