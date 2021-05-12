@@ -58,8 +58,10 @@ function Launch(keys)
 			local damage = keys.ability:GetSpecialValueFor("damage")
 
 			local ability4 = caster:FindAbilityByName("special_bonus_kakashi_4")
-			if ability4:IsTrained() then
-				damage = damage + 420
+			if ability4 ~= nil then
+			    if ability4:IsTrained() then
+			    	damage = damage + 420
+			    end
 			end
 
 			local damageTable = {
@@ -83,6 +85,22 @@ function Launch(keys)
 end
 
 function ChannelChidori( keys )
+    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if keys.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        CanBeReflected(false, keys.target, ability)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+	if keys.target:HasItemInInventory("item_sphere") then
+	    keys.ability:SetChanneling(false)
+	    keys.ability:EndChannel(true)
+        if keys.target:TriggerSpellAbsorb(keys.ability) then return end
+		
+		return
+	end
+
 	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.caster, keys.modifier_caster, {})
 	keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_4, 0.3)
 end

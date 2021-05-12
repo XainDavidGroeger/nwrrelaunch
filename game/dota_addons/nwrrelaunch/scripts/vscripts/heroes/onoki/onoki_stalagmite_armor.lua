@@ -16,10 +16,12 @@ end
 function onoki_stalagmite_armor:GetCooldown(iLevel)
 	local abilityScd = self:GetCaster():FindAbilityByName("special_bonus_onoki_2")
 	local cdredusction = self.BaseClass.GetCooldown(self, iLevel) / 100 * 14
-	if abilityScd:GetLevel() > 0 then
-		return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
-	else
-	    return self.BaseClass.GetCooldown(self, iLevel)
+	if abilityScd ~= nil then
+	    if abilityScd:GetLevel() > 0 then
+	    	return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
+	    else
+	        return self.BaseClass.GetCooldown(self, iLevel)
+	    end
 	end
 end
 

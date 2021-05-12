@@ -13,10 +13,30 @@ LinkLuaModifier("modifier_anko_senei_ta_jashu_slow", "scripts/vscripts/heroes/an
 
 anko_senei_ta_jashu = anko_senei_ta_jashu or class({})
 
+function anko_senei_ta_jashu:CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
+end
+
 function anko_senei_ta_jashu:OnSpellStart()
 	if not IsServer() then return end
 
 	local target = self:GetCursorTarget()
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(true, target)
+		
+        return
+    end
+	
+	--[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+	if target:TriggerSpellAbsorb(self) then return end
 
 	if target and target:IsAlive() and not target:IsOutOfGame() then
 		target:AddNewModifier(self:GetCaster(), self, "modifier_anko_senei_ta_jashu_poison", {duration = self:GetSpecialValueFor("duration")})

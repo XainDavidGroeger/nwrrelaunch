@@ -32,7 +32,19 @@ function Kakashi_Sharingan:LevelUp_Stolen(keys)
 		lvlUpAbil = self.caster:FindAbilityByName("kakashi_sharingan")
 	end
 	
-	lvlUpAbil:SetLevel(lvlUpAbil:GetLevel()+1)
+	if lvlUpAbil ~= nil then
+	    lvlUpAbil:SetLevel(lvlUpAbil:GetLevel()+1)
+	end
+end
+
+function CanBeReflected(bool, target, ability)
+    if bool == true then
+        if target:TriggerSpellReflect(ability) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
 end
 
 function sharingan( keys )
@@ -46,6 +58,16 @@ function sharingan( keys )
 		ability:EndCooldown()
 		return
 	end
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        CanBeReflected(false, target, ability)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(ability) then return end
 	
 	if( caster.sharingan_ability ) then
 		sharingan_end( keys )

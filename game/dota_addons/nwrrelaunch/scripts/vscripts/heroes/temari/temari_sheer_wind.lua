@@ -274,12 +274,14 @@ end
 
 function modifier_temari_sheer_wind_stack_buff:OnCreated()
 	local ability4 = self:GetAbility():GetCaster():FindAbilityByName("special_bonus_temari_4")
-	if ability4:GetLevel() > 0 then --using GetLevel instead of IsTrained because IsTrained isn't abailable on client
-		self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_move_speed_bonus_special")
-		self.attackspeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_attack_speed_bonus_special")
-	else
-		self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_move_speed_bonus")
-		self.attackspeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_attack_speed_bonus")
+	if ability4 ~= nil then
+	    if ability4:GetLevel() > 0 then --using GetLevel instead of IsTrained because IsTrained isn't abailable on client
+	    	self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_move_speed_bonus_special")
+	    	self.attackspeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_attack_speed_bonus_special")
+	    else
+	    	self.movespeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_move_speed_bonus")
+	    	self.attackspeed_bonus = self:GetAbility():GetSpecialValueFor("sheer_wind_attack_speed_bonus")
+	    end
 	end
 
 	self:GetAbility():ApplyStacks()

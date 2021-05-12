@@ -7,8 +7,10 @@ function Launch(keys)
 
 
 	local abilityS = caster:FindAbilityByName("special_bonus_guy_2")
-	if abilityS:IsTrained() then
-		modifier_name = keys.ModifierNameSpecial
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	modifier_name = keys.ModifierNameSpecial
+	    end
 	end
 
 	-- apply modifers 

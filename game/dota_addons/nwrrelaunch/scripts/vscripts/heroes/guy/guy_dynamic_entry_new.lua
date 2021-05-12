@@ -6,8 +6,11 @@ end
 
 function guy_dynamic_entry_new:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_guy_5"):GetLevel() > 0 then
-		castrangebonus = 550
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_guy_5")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 550
+	    end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
 end

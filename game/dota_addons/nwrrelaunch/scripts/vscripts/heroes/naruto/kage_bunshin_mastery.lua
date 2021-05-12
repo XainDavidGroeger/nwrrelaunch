@@ -7,8 +7,11 @@ naruto_kage_bunshin_mastery = class({})
 
 function naruto_kage_bunshin_mastery:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_naruto_1"):GetLevel() > 0 then
-		castrangebonus = 200
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_naruto_1")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 200
+	    end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
@@ -31,11 +34,12 @@ function naruto_kage_bunshin_mastery:OnSpellStart( event )
 
 	--reset CD if special is skilled
 	local abilityS2 = caster:FindAbilityByName("special_bonus_naruto_2")
-	if abilityS2:IsTrained() then
-		ability:EndCooldown()
-		 ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 2 )
-	end
-
+	if abilityS2 ~= nil then
+	    if abilityS2:IsTrained() then
+	    	ability:EndCooldown()
+	    	ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 2 )
+	    end
+    end
 end
 
 --------------------------------------------------------------------------------

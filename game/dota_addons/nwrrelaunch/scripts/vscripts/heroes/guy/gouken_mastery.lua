@@ -14,8 +14,10 @@ function ApplyDoubleDamage( keys )
 		local bonus_dmg_percentage = ability:GetLevelSpecialValueFor( "bonus_damage_percentage", ( ability:GetLevel() - 1 ) )
 
 		local abilityS2 = keys.caster:FindAbilityByName("special_bonus_guy_3")
-		if abilityS2:IsTrained()then
-			bonus_dmg_percentage = bonus_dmg_percentage + 35
+		if abilityS2 ~= nil then
+		    if abilityS2:IsTrained()then
+		    	bonus_dmg_percentage = bonus_dmg_percentage + 35
+		    end
 		end
 		local damage = (caster:GetBaseDamageMin() + ((caster:GetBaseDamageMax() - caster:GetBaseDamageMin())  / 2 )) / 100 * bonus_dmg_percentage
 	

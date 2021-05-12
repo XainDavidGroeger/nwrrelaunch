@@ -10,16 +10,22 @@ end
 
 function yondaime_marked_kunai:GetCooldown(iLevel)
 	local cdreduction = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_1"):GetLevel() > 0 then
-		cdreduction = 1
+	local abilityC = self:GetCaster():FindAbilityByName("special_bonus_yondaime_1")
+	if abilityC ~= nil then
+	    if abilityC:GetLevel() > 0 then
+	    	cdreduction = 1
+	    end
 	end
 	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
 end
 
 function yondaime_marked_kunai:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_2"):GetLevel() > 0 then
-		castrangebonus = 300
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_yondaime_2")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 300
+	    end
 	end
 	return self.BaseClass.GetCastRange(self, location, target) + castrangebonus
 end

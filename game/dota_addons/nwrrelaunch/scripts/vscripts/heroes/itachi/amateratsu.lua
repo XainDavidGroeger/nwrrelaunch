@@ -3,12 +3,34 @@ LinkLuaModifier("modifier_itachi_amateratsu_spread_fire_cd", "heroes/itachi/amat
 
 itachi_amateratsu = itachi_amateratsu or class({})
 
+function itachi_amateratsu:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 function itachi_amateratsu:OnSpellStart()
 	if not IsServer() then return end
+	
+	local target = self:GetCursorTarget()
 
 	self:GetCaster():EmitSound("itachi_amaterasu_cast_talking")
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(true, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(self) then return end
 
-	self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_itachi_amateratsu", {duration = self:GetSpecialValueFor("duration")})
+	target:AddNewModifier(self:GetCaster(), self, "modifier_itachi_amateratsu", {duration = self:GetSpecialValueFor("duration")})
 end
 
 modifier_itachi_amateratsu = modifier_itachi_amateratsu or class({})

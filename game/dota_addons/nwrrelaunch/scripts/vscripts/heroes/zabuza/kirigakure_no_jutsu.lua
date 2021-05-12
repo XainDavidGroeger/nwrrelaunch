@@ -100,10 +100,12 @@ function spin_web_aura( keys )
 		end
 
 		local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
-		if ability5:IsTrained() then
-			if not target:HasModifier("modifier_special_bonus_attack_damage") then
-				ability:ApplyDataDrivenModifier(caster, target, "modifier_special_bonus_attack_damage", {})
-			end
+		if ability5 ~= nil then
+		    if ability5:IsTrained() then
+		    	if not target:HasModifier("modifier_special_bonus_attack_damage") then
+		    		ability:ApplyDataDrivenModifier(caster, target, "modifier_special_bonus_attack_damage", {})
+		    	end
+		    end
 		end
 
 	end
@@ -138,8 +140,10 @@ function applyInvisModifier( keys )
 	end
 
 	local ability1 = keys.caster:FindAbilityByName("special_bonus_zabuza_4")
-	if ability1:IsTrained() then
-		fade_delay = fade_delay - 0.8
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	fade_delay = fade_delay - 0.8
+	    end
 	end
 
 	keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_web_invis_fade_datadriven", {duration = fade_delay})
@@ -161,8 +165,10 @@ function applyDamageModifier( keys )
 	end
 
 	local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
-	if ability5:IsTrained() then
-		keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_special_bonus_attack_damage", {duration = fade_delay})
+	if ability5 ~= nil then
+	    if ability5:IsTrained() then
+	    	keys.ability:ApplyDataDrivenModifier(keys.caster, target, "modifier_special_bonus_attack_damage", {duration = fade_delay})
+	    end
 	end
 
 end

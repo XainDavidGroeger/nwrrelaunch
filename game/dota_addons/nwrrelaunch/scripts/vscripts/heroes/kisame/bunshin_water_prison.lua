@@ -17,6 +17,16 @@ function kisame_bunshin_water_prison:GetChannelTime()
 return self:GetSpecialValueFor("channel_time")
 end
 
+function kisame_bunshin_water_prison:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 
 function kisame_bunshin_water_prison:OnSpellStart()
     -- load data
@@ -24,8 +34,18 @@ function kisame_bunshin_water_prison:OnSpellStart()
 	self.target = self:GetCursorTarget()
     self.caster = self:GetCaster()
 	
-	self:GetCursorTarget():AddNewModifier(
-        self:GetCaster(), -- player source
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if self.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(false, self.target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if self.target:TriggerSpellAbsorb(self) then return end
+	
+	self.target:AddNewModifier(
+        self.caster, -- player source
         self, -- ability source
         "modifier_stunned", -- modifier name
         { duration = duration } -- kv
@@ -75,6 +95,8 @@ function kisame_bunshin_water_prison:OnChannelFinish(bInterrupted)
         caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_7)
     end
     
-    ParticleManager:DestroyParticle(self.waterPrison_particle, true)
-    ParticleManager:ReleaseParticleIndex(self.waterPrison_particle)
+	if self.waterPrison_particle ~= nil then
+        ParticleManager:DestroyParticle(self.waterPrison_particle, true)
+        ParticleManager:ReleaseParticleIndex(self.waterPrison_particle)
+	end
 end

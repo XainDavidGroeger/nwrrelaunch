@@ -5,8 +5,10 @@ function rasenshuriken_impact(keys)
 
 	local damage = ability:GetLevelSpecialValueFor( "damage", ability:GetLevel() - 1 )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_naruto_6")
-	if abilityS:IsTrained() then
-		damage = damage + 320
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	damage = damage + 320
+	    end
 	end
 
 
@@ -49,9 +51,28 @@ function removeEffect( keys )
 	ParticleManager:DestroyParticle(keys.caster.rasenParticle, true)
 end
 
+function CanBeReflected(bool, target, ability)
+    if bool == true then
+        if target:TriggerSpellReflect(ability) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 
 function rasenshuriken_start( keys )
-
+    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if keys.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        CanBeReflected(true, keys.target, keys.ability)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if keys.target:TriggerSpellAbsorb(keys.ability) then return end
+	
 	-- Create the projectile
 	local info = {
 		Target = keys.target,

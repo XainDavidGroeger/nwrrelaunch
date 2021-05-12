@@ -76,11 +76,29 @@ function dynamic_entry_periodic(gameEntity, keys)
 	return 0.03
 end
 
+function CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
+end
+
 function dynamic_entry_start(keys)	
 	local caster = keys.caster
 	local target = keys.target
 
-	
+	    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        CanBeReflected(false, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(self) then return end
 	
 	add_physics(caster)
 	keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_dynamic_entry_stunned", {duration = 3})

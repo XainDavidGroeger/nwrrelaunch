@@ -1,8 +1,10 @@
 function upgrade( keys )
 	local jump_ability = keys.caster:FindAbilityByName( "yondaime_hiraishin_jump" )
 	
-	if( jump_ability ) then
-		jump_ability:SetLevel( keys.ability:GetLevel() )
+	if jump_ability ~= nil then
+	    if( jump_ability ) then
+	    	jump_ability:SetLevel( keys.ability:GetLevel() )
+	    end
 	end
 end
 

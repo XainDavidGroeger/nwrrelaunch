@@ -18,8 +18,10 @@ function applyDamage( keys )
 	local damage = keys.ability:GetLevelSpecialValueFor( "damage_per_tick", ( keys.ability:GetLevel() - 1 ) )
 
 	local ability1 = keys.caster:FindAbilityByName("special_bonus_shikamaru_1")
-	if ability1:IsTrained() then
-		damage = damage + 5
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	damage = damage + 5
+	    end
 	end
 
 	local damageTable = {

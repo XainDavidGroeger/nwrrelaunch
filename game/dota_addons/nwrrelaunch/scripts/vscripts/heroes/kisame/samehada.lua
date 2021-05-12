@@ -15,8 +15,10 @@ function StealMana( event )
 		local manasteal_percentage = event.ability:GetLevelSpecialValueFor("manasteal_percentage", event.ability:GetLevel() - 1 )
 
 		local ability3 = caster:FindAbilityByName("special_bonus_kisame_3")
-		if ability3:IsTrained() then
-			manasteal_percentage = manasteal_percentage + 7.0
+		if ability3 ~= nil then
+		    if ability3:IsTrained() then
+		    	manasteal_percentage = manasteal_percentage + 7.0
+		    end
 		end
 
 		local mana = target:GetMana()

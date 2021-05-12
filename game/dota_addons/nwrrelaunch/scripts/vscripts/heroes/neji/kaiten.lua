@@ -20,8 +20,10 @@ function applyStun( keys )
 	local duration = ability:GetLevelSpecialValueFor("stun_duration",ability:GetLevel() - 1)
 
 	local ability1 = caster:FindAbilityByName("special_bonus_neji_1")
-	if ability1:IsTrained() then
-		duration = duration + 0.25
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	duration = duration + 0.25
+	    end
 	end
 
 	local targets = FindUnitsInRadius(

@@ -87,9 +87,10 @@ function modifier_haku_needles_thinker:OnIntervalThink()
 			})
 
 			local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
-
-			if woudns_ability:GetLevel() > 0 then  
-				woudns_ability:ApplyStacks(v, self:GetAbility():GetSpecialValueFor("endless_wounds_stacks"))
+            if woudns_ability ~= nil then
+			    if woudns_ability:GetLevel() > 0 then  
+			    	woudns_ability:ApplyStacks(v, self:GetAbility():GetSpecialValueFor("endless_wounds_stacks"))
+			    end
 			end
 		end
 

@@ -15,10 +15,12 @@ end
 function onoki_kajutan_no_jutsu:GetCooldown(iLevel)
 	local abilityScd = self:GetCaster():FindAbilityByName("special_bonus_onoki_2")
 	local cdredusction = self.BaseClass.GetCooldown(self, iLevel) / 100 * 14
-	if abilityScd:GetLevel() > 0 then
-		return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
-	else
-	    return self.BaseClass.GetCooldown(self, iLevel)
+	if abilityScd ~= nil then
+	    if abilityScd:GetLevel() > 0 then
+	    	return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
+	    else
+	        return self.BaseClass.GetCooldown(self, iLevel)
+	    end
 	end
 end
 
@@ -36,9 +38,11 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
 	local damage_factor = self:GetSpecialValueFor("damage_factor")
 	local abilitySpec = self:GetCaster():FindAbilityByName("special_bonus_onoki_6")
 	
-    if abilitySpec:IsTrained() then
-    	threshold_factor = threshold_factor + 0.04
-    end
+	if abilitySpec ~= nil then
+        if abilitySpec:IsTrained() then
+        	threshold_factor = threshold_factor + 0.04
+        end
+	end
 
 	caster:EmitSound("onoki_ulti_talking")
 	

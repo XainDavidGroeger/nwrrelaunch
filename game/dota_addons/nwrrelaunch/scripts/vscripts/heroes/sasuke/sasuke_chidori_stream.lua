@@ -10,10 +10,12 @@ end
 
 function sasuke_chidori_stream:GetCastRange(location, target)
 	local ability5 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_5")
-	if ability5:GetLevel() > 0 then
-		return self:GetSpecialValueFor("radius") + 225
-	else
-		return self:GetSpecialValueFor("radius")
+	if ability5 ~= nil then
+	    if ability5:GetLevel() > 0 then
+	    	return self:GetSpecialValueFor("radius") + 225
+	    else
+	    	return self:GetSpecialValueFor("radius")
+	    end
 	end
 end
 
