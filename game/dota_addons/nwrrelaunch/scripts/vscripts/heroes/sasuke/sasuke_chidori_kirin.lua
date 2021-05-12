@@ -14,10 +14,33 @@ function sasuke_chidori_kirin:GetCastRange(location, target)
 	return self:GetSpecialValueFor("cast_range")
 end
 
+function sasuke_chidori_kirin:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 function sasuke_chidori_kirin:OnSpellStart()
-	self:GetCaster():EmitSound("sasuke_kirin_cast_talking")
-	self:GetCursorTarget():EmitSound("sasuke_kirin_cast")
-	self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_chidori_kirin_mark", {duration = self:GetSpecialValueFor("duration")})
+    local target = self:GetCursorTarget()
+	
+	EmitSoundOn("sasuke_kirin_cast_talking", self:GetCaster())
+	EmitSoundOn("sasuke_kirin_cast", target)
+	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(true, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(self) then return end
+	
+	target:AddNewModifier(self:GetCaster(), self, "modifier_chidori_kirin_mark", {duration = self:GetSpecialValueFor("duration")})
 end
 
 modifier_chidori_kirin_mark = modifier_chidori_kirin_mark or class({})
@@ -34,7 +57,6 @@ function modifier_chidori_kirin_mark:DeclareFunctions()
 end
 
 function modifier_chidori_kirin_mark:OnCreated()
-
 	self.caster = self:GetCaster()
 	self.stored_damage = 0
 
@@ -55,9 +77,9 @@ function modifier_chidori_kirin_mark:OnDestroy()
 
 	ParticleManager:DestroyParticle(self.storm, true)
 	ParticleManager:ReleaseParticleIndex(self.storm)
-
-	self:GetCaster():EmitSound("sasuke_kirin_impact_talking")
-	self:GetParent():EmitSound("sasuke_kirin_impact")
+	
+	EmitSoundOn("sasuke_kirin_impact_talking", self:GetCaster())
+	EmitSoundOn("sasuke_kirin_impact", self:GetParent())
 
 
 	self.lighting_bolt = ParticleManager:CreateParticle("particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())

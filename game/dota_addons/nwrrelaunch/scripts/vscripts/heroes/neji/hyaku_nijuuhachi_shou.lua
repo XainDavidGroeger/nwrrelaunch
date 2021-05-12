@@ -24,8 +24,10 @@ end
 
 function silenceTarget( keys )
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_neji_4")
-	if abilityS:IsTrained() then
-		keys.ability:ApplyDataDrivenModifier(keys.caster, keys.ability.target, "modifier_hyaku_nijuuhachi_shou_special_silence", {duration = 5})
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.ability.target, "modifier_hyaku_nijuuhachi_shou_special_silence", {duration = 5})
+	    end
 	end
 end
 
@@ -111,8 +113,10 @@ function applySilence(keys)
 	local silence_duration = keys.ability:GetSpecialValueFor("silence_duration")
 
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_neji_4")
-	if abilityS:IsTrained() then
-		silence_duration = silence_duration + 5
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	silence_duration = silence_duration + 5
+	    end
 	end
 
 	keys.ability:ApplyDataDrivenModifier(

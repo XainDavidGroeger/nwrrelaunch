@@ -63,10 +63,12 @@ function ConjureImage( event )
 	
 	-- apply invis modifier
 	local abilityS = caster:FindAbilityByName("special_bonus_kakashi_1")
-	if abilityS:IsTrained() then
-		ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven_special", {})  
-	else
-		ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven", {})  
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven_special", {})  
+	    else
+	    	ability:ApplyDataDrivenModifier(caster, caster, "modifier_wind_walk_datadriven", {})  
+	    end
 	end
 
 	-- Move to the same direction as the caster
@@ -77,11 +79,12 @@ function ConjureImage( event )
 	)
 
 	local abilityS2 = event.caster:FindAbilityByName("special_bonus_kakashi_3")
-	if abilityS2:IsTrained() then
-		event.ability:EndCooldown()
-		event.ability:StartCooldown(event.ability:GetCooldown(event.ability:GetLevel()) - 3)
-	end
-
+	if abilityS2 ~= nil then
+	    if abilityS2:IsTrained() then
+	    	event.ability:EndCooldown()
+	    	event.ability:StartCooldown(event.ability:GetCooldown(event.ability:GetLevel()) - 3)
+	    end
+    end
 end
 
 

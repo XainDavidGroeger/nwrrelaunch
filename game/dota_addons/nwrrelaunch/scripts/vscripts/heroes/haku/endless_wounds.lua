@@ -75,9 +75,7 @@ function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 
 	local target = keys.target
 	local caster = keys.attacker
-
-	print("attack landed")
-
+	
 	if caster == self.caster or (keys.attacker:GetOwner() ~= nil and keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger") then
 		self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
 		self.duration = self:GetAbility():GetSpecialValueFor("duration")
@@ -100,8 +98,11 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 	-- Ability properties
 	self.current_stacks = 0
 	self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack")
-	if self:GetCaster():FindAbilityByName("special_bonus_haku_1"):GetLevel() > 0 then
-		self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack_special")
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_haku_1")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack_special")
+	    end
 	end
 	if IsServer() then
 		-- add stack modifier
@@ -116,7 +117,7 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 
 end
 
-function modifier_haku_endless_needles_victim_counter:OnRemoved()
+function modifier_haku_endless_needles_victim_counter:Onremoved()
 	ParticleManager:DestroyParticle(self.slow_vfx, false)
 	ParticleManager:ReleaseParticleIndex(self.slow_vfx)
 end

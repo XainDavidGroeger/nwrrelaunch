@@ -7,8 +7,10 @@ function execute( keys )
 	local health_threshold = ability:GetLevelSpecialValueFor( "health_threshold", ( ability:GetLevel() - 1 ) )
 
 	local ability3 = keys.caster:FindAbilityByName("special_bonus_zabuza_3")
-	if ability3:IsTrained() then
-		health_threshold = health_threshold + 7
+	if ability3 ~= nil then
+	    if ability3:IsTrained() then
+	    	health_threshold = health_threshold + 7
+	    end
 	end
 
 	if target_hp_percent <= health_threshold or target:HasModifier("modifier_demon_mark") then
@@ -20,8 +22,10 @@ end
 
 function resetCooldown ( keys )
 	local ability2 = keys.caster:FindAbilityByName("special_bonus_zabuza_2")
-	if ability2:IsTrained() then
-		keys.ability:EndCooldown()
-		keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+	if ability2 ~= nil then
+	    if ability2:IsTrained() then
+	    	keys.ability:EndCooldown()
+	    	keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 2)
+	    end
 	end
 end

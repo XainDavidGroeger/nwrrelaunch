@@ -29,8 +29,10 @@ function kankuro_summon_karasu:OnSpellStart()
 	--Health
 	local health = self:GetSpecialValueFor("total_health")
 	local puppet_master_ability = caster:FindAbilityByName("kankuro_kugusta_no_jutsu")
-	if puppet_master_ability:IsTrained() then
-		health = health + puppet_master_ability:GetSpecialValueFor("hp_bonus")
+	if puppet_master_ability ~= nil then
+	    if puppet_master_ability:IsTrained() then
+	    	health = health + puppet_master_ability:GetSpecialValueFor("hp_bonus")
+	    end
 	end
 	
 	self.karasu:SetBaseMaxHealth(health)
@@ -46,10 +48,12 @@ function kankuro_summon_karasu:OnSpellStart()
 	local min_damage = self:GetSpecialValueFor("base_damage_min")
 	local max_damage = self:GetSpecialValueFor("base_damage_max")
 	local bonus_damage_talent = caster:FindAbilityByName("special_bonus_kankuro_7")
-	if bonus_damage_talent:IsTrained() then
-		local bonus_damage = self:GetSpecialValueFor("talent_bonus_damage")
-		min_damage = min_damage + bonus_damage
-		max_damage = max_damage + bonus_damage
+	if bonus_damage_talent ~= nil then
+	    if bonus_damage_talent:IsTrained() then
+	    	local bonus_damage = self:GetSpecialValueFor("talent_bonus_damage")
+	    	min_damage = min_damage + bonus_damage
+	    	max_damage = max_damage + bonus_damage
+	    end
 	end
 
 	self.karasu:SetBaseDamageMin(min_damage)
@@ -58,23 +62,29 @@ function kankuro_summon_karasu:OnSpellStart()
 	--Move speed
 	local move_speed = self:GetSpecialValueFor("move_speed")
 	local talent_bonus_movespeed = caster:FindAbilityByName("special_bonus_kankuro_3")
-	if talent_bonus_movespeed:IsTrained() then
-		move_speed = move_speed + talent_bonus_movespeed:GetSpecialValueFor("value")
+	if talent_bonus_movespeed ~= nil then
+	    if talent_bonus_movespeed:IsTrained() then
+	    	move_speed = move_speed + talent_bonus_movespeed:GetSpecialValueFor("value")
+	    end
 	end
 
 	self.karasu:SetBaseMoveSpeed(move_speed)
 
 	--Attack speed
 	local attack_speed_talent_ability = caster:FindAbilityByName("special_bonus_kankuro_5")
-	if attack_speed_talent_ability:IsTrained() then
-		self.karasu:AddNewModifier(caster, self, "modifier_karasu_talent_attack_speed_bonus", {})
+	if attack_speed_talent_ability ~= nil then
+	    if attack_speed_talent_ability:IsTrained() then
+	    	self.karasu:AddNewModifier(caster, self, "modifier_karasu_talent_attack_speed_bonus", {})
+	    end
 	end
 
 	--Mana regen
 	local base_mana_regen = self:GetSpecialValueFor("mana_regeneration")
 	local mana_regen_bonus_talent_ability = caster:FindAbilityByName("special_bonus_kankuro_1")
-	if mana_regen_bonus_talent_ability:IsTrained() then
-		base_mana_regen = base_mana_regen + mana_regen_bonus_talent_ability:GetSpecialValueFor("value")
+	if mana_regen_bonus_talent_ability ~= nil then
+	    if mana_regen_bonus_talent_ability:IsTrained() then
+	    	base_mana_regen = base_mana_regen + mana_regen_bonus_talent_ability:GetSpecialValueFor("value")
+	    end
 	end
 
 	self.karasu:SetBaseManaRegen(base_mana_regen)

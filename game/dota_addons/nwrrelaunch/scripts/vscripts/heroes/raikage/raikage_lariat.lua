@@ -159,8 +159,10 @@ function LariatHit(keys,target)
 	local stun_duration = ability:GetSpecialValueFor("stun_duration")
 	local damage = ability:GetSpecialValueFor("damage")
 	local abilityS = caster:FindAbilityByName("special_bonus_raikage_3")
-	if abilityS:IsTrained() then
-		damage = damage + 220
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	damage = damage + 220
+	    end
 	end
 
 	target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})

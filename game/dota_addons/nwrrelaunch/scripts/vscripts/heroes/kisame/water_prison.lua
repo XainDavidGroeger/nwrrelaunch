@@ -114,14 +114,16 @@ function applySlowModifer( keys )
 	)
 
 	local ability4 = caster:FindAbilityByName("special_bonus_kisame_4")
-	if ability4:IsTrained() then
-		for _, unit in pairs(targets) do
-			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow_special",{duration = 0.2})
-		end
-	else
-		for _, unit in pairs(targets) do
-			ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow",{duration = 0.2})
-		end
+	if ability4 ~= nil then
+	    if ability4:IsTrained() then
+	    	for _, unit in pairs(targets) do
+	    		ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow_special",{duration = 0.2})
+	    	end
+	    else
+	    	for _, unit in pairs(targets) do
+	    		ability:ApplyDataDrivenModifier(keys.caster, unit, "modifer_water_prison_slow",{duration = 0.2})
+	    	end
+	    end
 	end
 end
 

@@ -21,6 +21,16 @@ end
 
 --------------------------------------------------------------------------------
 
+function anko_giant_snake:CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
+end
+
 function anko_giant_snake:OnSpellStart()
 	self.bChainAttached = false
 	if self.hVictim ~= nil then
@@ -35,8 +45,10 @@ function anko_giant_snake:OnSpellStart()
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
 
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_anko_1")
-	if abilityS:IsTrained() then
-		self.hook_distance = self.hook_distance + 250
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	self.hook_distance = self.hook_distance + 250
+	    end
 	end
 
 	self.hook_followthrough_constant = self:GetSpecialValueFor( "hook_followthrough_constant" )
@@ -99,9 +111,11 @@ function anko_giant_snake:OnSpellStart()
 	self.bDiedInHook = false
 
 	local abilityS2 = self:GetCaster():FindAbilityByName("special_bonus_anko_5")
-	if abilityS2:IsTrained() then
-		self:EndCooldown()
-		self:StartCooldown(self:GetCooldown(self:GetLevel() - 1) -4)
+	if abilityS2 ~= nil then
+	    if abilityS2:IsTrained() then
+	    	self:EndCooldown()
+	    	self:StartCooldown(self:GetCooldown(self:GetLevel() - 1) -4)
+	    end
 	end
 
 	-- TODO
@@ -124,6 +138,16 @@ function anko_giant_snake:OnProjectileHit( hTarget, vLocation )
 
 		local bTargetPulled = false
 		if hTarget ~= nil then
+		    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+            if hTarget:FindModifierByName("modifier_item_lotus_orb_active") then
+                self:CanBeReflected(false, hTarget)
+                
+                return
+            end
+            
+            --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+            if hTarget:TriggerSpellAbsorb(self) then return end
+		
 			EmitSoundOn( "anko_hand_impact", hTarget )
 
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_lua", nil )

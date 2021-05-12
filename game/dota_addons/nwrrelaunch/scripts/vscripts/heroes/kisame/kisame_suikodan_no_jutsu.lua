@@ -135,8 +135,10 @@ function kisame_suikodan_no_jutsu:OnProjectileHit(hTarget, vLocation)
 		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_suikodan_no_jutsu_debuff", {duration = self.debuff_duration})
 		
 		local ability1 = self.caster:FindAbilityByName("special_bonus_kisame_1")
-		if ability1:IsTrained() then
-			self.damage = self.damage + 90
+		if ability1 ~= nil then
+		    if ability1:IsTrained() then
+		    	self.damage = self.damage + 90
+		    end
 		end
 	
 		local damageTable = {
@@ -168,8 +170,10 @@ function modifier_suikodan_no_jutsu_debuff:OnCreated()
 		local abilityS = self.caster:FindAbilityByName("special_bonus_kisame_5")
 		self.armor_debuff = self:GetAbility():GetSpecialValueFor( "armor_debuff" )
 		
-		if abilityS:GetLevel() > 0 then
-			self.armor_debuff = self.armor_debuff - 5
+		if abilityS ~= nil then
+		    if abilityS:GetLevel() > 0 then
+		    	self.armor_debuff = self.armor_debuff - 5
+		    end
 		end
 end
 

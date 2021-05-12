@@ -125,8 +125,8 @@ end
 	Removes Self Pain from Hidan'S abilities
 ]]
 function removeSelfPain( keys )
-	selfPain = keys.caster:FindAbilityByName("hidan_self_pain")
-    selfPain:SetLevel(0)
+	--selfPain = keys.caster:FindAbilityByName("hidan_self_pain")
+    --selfPain:SetLevel(0)
 end
 
 function addDebuff( keys )
@@ -169,6 +169,10 @@ function hidan_death_possession_blood:OnSpellStart()
 
 	-- Sounds
 	caster:EmitSound("hidan_ulti_cast_talking")
+	
+	Timers:CreateTimer(duration, function ()
+	    caster:FindAbilityByName("hidan_self_pain"):SetLevel(0)
+	end)
 end
 
 function hidan_death_possession_blood:GetIntrinsicModifierName()
@@ -476,11 +480,10 @@ function modifier_death_possession_blood_caster_buff:OnTakeDamage(attack_event)
 		}
 
 		ApplyDamage(damage_table)
-
 	end
 end
 
 function modifier_death_possession_blood_caster_buff:OnRemoved()
 	local caster = self:GetAbility():GetCaster()
-	caster:FindAbilityByName("hidan_self_pain"):SetLevel(0)
+	--caster:FindAbilityByName("hidan_self_pain"):SetLevel(0)
 end

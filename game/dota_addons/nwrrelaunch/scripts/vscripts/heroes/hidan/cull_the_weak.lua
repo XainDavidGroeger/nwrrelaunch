@@ -54,6 +54,16 @@ function hidan_cull_the_weak:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function hidan_cull_the_weak:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
 function hidan_cull_the_weak:OnSpellStart()
 	local caster = self:GetCaster()
 	local ability = self
@@ -76,7 +86,6 @@ function hidan_cull_the_weak:OnSpellStart()
 									 DOTA_UNIT_TARGET_FLAG_NONE)
 
 	if #targeted_units ~= 0 then
-
 		local hp_perc_cost = self:GetSpecialValueFor("hp_percentage_cost")
 		local self_damage = (caster:GetMaxHealth()*hp_perc_cost/100)
 		local non_lethal_self_damage_modifier = math.min((caster:GetHealth() - self_damage - 1), 0)
@@ -94,6 +103,16 @@ function hidan_cull_the_weak:OnSpellStart()
 		local duration = self:GetDuration()
 
 		for key,oneTarget in pairs(targeted_units) do 
+		    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+            if oneTarget:FindModifierByName("modifier_item_lotus_orb_active") then
+                self:CanBeReflected(false, oneTarget)
+                
+                return
+            end
+            
+            --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+            if oneTarget:TriggerSpellAbsorb(self) then return end
+		
 			-- keys.ability.hasTargets = true
 			oneTarget:AddNewModifier(caster, 
 									 self, 

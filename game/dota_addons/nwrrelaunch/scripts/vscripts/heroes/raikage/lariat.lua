@@ -38,8 +38,10 @@ function LariatHit(keys,target)
 
 	local damage = ability:GetLevelSpecialValueFor("damage", ability_level)
 	local abilityS = keys.caster:FindAbilityByName("special_bonus_raikage_3")
-	if abilityS:IsTrained() then
-		damage = damage + 220
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	damage = damage + 220
+	    end
 	end
 
 	ability:ApplyDataDrivenModifier(
