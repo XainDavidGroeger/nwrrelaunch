@@ -268,7 +268,7 @@
 	
 	    // Time     
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "18 15 12 9"
+	    "AbilityCooldown"               "17 14 11 8"
 	    "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 	
 	
@@ -290,7 +290,7 @@
 	        "02"
 	        {
 	            "var_type" "FIELD_FLOAT"
-	            "stun" "0.75 1.00 1.25 1.50"
+	            "stun" "0.50 0.75 1.00 1.25"
 	        }
 	    }
 	
@@ -502,7 +502,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"guy_leaf_strong_whirlwind"
@@ -510,7 +510,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityCooldown"				"3 3 3 3"
+		"AbilityCooldown"				"6 5 4 3"
 		"AbilityManaCost"				"40"
 	
 		// Special
@@ -520,7 +520,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"200"
+				"radius"						"275"
 			}
 			"02"
 			{
@@ -530,7 +530,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"stomp_damage"					"50 90 130 170"
+				"stomp_damage"					"25 45 65 85"
 			}
 			"04"
 			{
@@ -605,7 +605,7 @@
 					"Damage"
 					{
 						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Type"		"DAMAGE_TYPE_PHYSICAL"
 						"Damage"	"%stomp_damage"
 					}
 	
@@ -767,7 +767,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"guy_leaf_strong_whirlwind"
@@ -775,7 +775,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-		"AbilityCooldown"				"3 3 3 3"
+		"AbilityCooldown"				"6 5 4 3"
 		"AbilityManaCost"				"40"
 	
 		// Special
@@ -785,7 +785,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"radius"						"200"
+				"radius"						"275"
 			}
 			"02"
 			{
@@ -795,7 +795,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"stomp_damage"					"50 90 130 170"
+				"stomp_damage"					"25 45 65 85"
 			}
 			"04"
 			{
@@ -870,7 +870,7 @@
 					"Damage"
 					{
 						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Type"		"DAMAGE_TYPE_PHYSICAL"
 						"Damage"	"%stomp_damage"
 					}
 	
@@ -918,7 +918,7 @@
 	
 	    // Time     
 	    //-------------------------------------------------------------------------------------------------------------
-	    "AbilityCooldown"               "18 15 12 9"
+	    "AbilityCooldown"               "17 14 11 8"
 	    "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 	
 	
@@ -941,7 +941,7 @@
 	        "02"
 	        {
 	            "var_type" "FIELD_FLOAT"
-	            "stun" "0.45 0.55 0.65 0.75"
+	            "stun" "0.50 0.75 1.00 1.25"
 	        }
 	    }
 	

@@ -31,7 +31,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"110 120 130"
 	
-	"AbilityDamage"					"150 225 300"
+	"AbilityDamage"					"225 350 475"
 	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"reduce_armor"		"-7 -7 -7"
+			"reduce_armor"		"-5 -7 -9"
 			"LinkedSpecialBonus"	"special_bonus_raikage_4"
 		}
 		"02"
@@ -56,7 +56,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"armor_reduction_duration"	"2 3 4"
+			"armor_reduction_duration"	"4"
 		}
 		"05"
 		{
