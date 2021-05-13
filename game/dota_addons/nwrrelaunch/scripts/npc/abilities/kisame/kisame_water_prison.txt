@@ -16,7 +16,7 @@
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"110 90 70"
+	"AbilityCooldown"				"90 70 50"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_slow_percentage"	"-20"
+			"ms_slow_percentage"	"-15"
 			"LinkedSpecialBonus"	"special_bonus_kisame_4"
 		}
 
@@ -86,7 +86,13 @@
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_slow_percentage_special"	"-40"
+			"ms_slow_percentage_special"	"-35"
+		}
+
+		"12"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"ms_buff"	"15"
 		}
 
 	}
@@ -148,6 +154,12 @@
 			"Target"			"CASTER"
 		}
 
+		"ApplyModifier"
+		{
+			"ModifierName"		"modifer_water_prison_buff"
+			"Target"			"CASTER"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/kisame/water_prison.lua"
@@ -185,6 +197,11 @@
 			"ModifierName"	"modifer_water_prison_hp_reg"
 			"Target" 		"CASTER"
 		}
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifer_water_prison_buff"
+			"Target" 		"CASTER"
+		}
 	}
 
 
@@ -207,6 +224,21 @@
           {
 
             "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_percentage"
+          } 
+        
+		}
+
+		"modifer_water_prison_buff"
+		{
+
+          "Passive"     "0"
+          "IsHidden"      "0"
+          "IsBuff"      "1"
+
+          "Properties"
+          {
+
+            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_buff"
           } 
         
 		}

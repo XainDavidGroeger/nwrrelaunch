@@ -142,3 +142,32 @@ function applyModifier( keys )
   
    
 end
+
+
+function applyBunshinBuff(keys)
+   local units = FindUnitsInRadius(
+		keys.caster:GetTeamNumber(),
+		keys.caster:GetAbsOrigin(),
+		nil,
+		900,
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+		DOTA_UNIT_TARGET_HERO,
+		DOTA_UNIT_TARGET_FLAG_NONE,
+		FIND_ANY_ORDER,
+		false
+	)
+
+   for i, individual_unit in ipairs(units) do
+      if individual_unit:IsIllusion() and individual_unit:GetName() == "npc_dota_hero_dragon_knight" then
+
+         keys.ability:ApplyDataDrivenModifier(
+            keys.caster,
+            individual_unit,
+            "modifier_naruto_kawazu_kumite_bunshin_buff",
+            {duration = 2}
+         )
+
+      end
+   end
+
+end

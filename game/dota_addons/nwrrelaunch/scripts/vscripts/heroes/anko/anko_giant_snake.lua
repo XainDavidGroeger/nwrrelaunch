@@ -31,6 +31,17 @@ function anko_giant_snake:CanBeReflected(bool, target)
 	end
 end
 
+function anko_giant_snake:GetCooldown(iLevel)
+	local cdrecution = 0
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_anko_5")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	cdrecution = 6
+	    end
+	end
+	return self.BaseClass.GetCooldown(self, iLevel) - cdrecution
+end
+
 function anko_giant_snake:OnSpellStart()
 	self.bChainAttached = false
 	if self.hVictim ~= nil then
@@ -43,13 +54,6 @@ function anko_giant_snake:OnSpellStart()
 
 
 	self.hook_distance = self:GetSpecialValueFor( "hook_distance" )
-
-	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_anko_1")
-	if abilityS ~= nil then
-	    if abilityS:IsTrained() then
-	    	self.hook_distance = self.hook_distance + 250
-	    end
-	end
 
 	self.hook_followthrough_constant = self:GetSpecialValueFor( "hook_followthrough_constant" )
 
@@ -114,7 +118,7 @@ function anko_giant_snake:OnSpellStart()
 	if abilityS2 ~= nil then
 	    if abilityS2:IsTrained() then
 	    	self:EndCooldown()
-	    	self:StartCooldown(self:GetCooldown(self:GetLevel() - 1) -4)
+	    	self:StartCooldown(self:GetCooldown(self:GetLevel() - 1) -6)
 	    end
 	end
 

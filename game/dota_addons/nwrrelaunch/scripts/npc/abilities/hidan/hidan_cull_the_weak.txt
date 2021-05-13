@@ -28,7 +28,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"350 375 400 425"
-	"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 	"AbilityManaCost"				"90"
 
 	// Time		
@@ -84,6 +84,7 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"range"				"350 375 400 425"
+			"LinkedSpecialBonus"	"special_bonus_hidan_4"
 		}
 		
 	}

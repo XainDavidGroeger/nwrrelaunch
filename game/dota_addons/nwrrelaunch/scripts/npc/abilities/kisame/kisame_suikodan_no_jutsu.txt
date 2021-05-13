@@ -52,14 +52,14 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"110 150 190 230"
+				"damage"		"80 150 220 290"
 				"LinkedSpecialBonus"	"special_bonus_kisame_1"
 			}	
 
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ms_slow_percentage"	"-25 -25 -25 -25"
+				"ms_slow_percentage"	"-20"
 			}
 
 			"04"

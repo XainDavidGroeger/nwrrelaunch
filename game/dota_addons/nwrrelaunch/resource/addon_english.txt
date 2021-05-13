@@ -1020,17 +1020,21 @@
 		"DOTA_Tooltip_ability_neji_kaiten_Description"					"Neji expels chakra from all of his chakra points and spins in circles, forming a protective sphere of chakra around him. This ability pushes back all enemy units around him while dealing magic damage to them. While spinning, Neji becomes invulnerable for 0.4 seconds."
 		"DOTA_Tooltip_ability_neji_kaiten_aoe_target"					"AOE: "
 		"DOTA_Tooltip_ability_neji_kaiten_stun_duration"				"STUN DURATION: "
-		//Hakke Kuuhekishou modifier_neji_internal_bleeding_ms_slow
-		"DOTA_Tooltip_ability_neji_internal_bleeding"					"Internal Bleeding"
-		"DOTA_Tooltip_ability_neji_internal_bleeding_lore"				""
-		"DOTA_Tooltip_ability_neji_internal_bleeding_Description"		"The Hyuuga's signature Jyuuken fighting style attacks the opponents chakra networks directly to stop their flow of chakra. Inflicts a debuff on a target enemy unit which deals magic damage overtime."
-		"DOTA_Tooltip_ability_neji_internal_bleeding_cast_range"		"CAST RANGE: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_duration"			"DOT DURATION: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_damage_per_tick"	"DAMAGE EACH 0.5 SEC: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow_duration"	"MS DEBUFF DURATION: "		
-		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow"			"%MS DEBUFF: "	
-		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow"			    "Internal Bleeding"	
-		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow_description"	"This Unit's Movement Speed is reduced."
+		
+		
+		//neji_air_palm
+		"DOTA_Tooltip_ability_neji_air_palm"					"Air Palm"
+		"DOTA_Tooltip_ability_neji_air_palm_lore"				""
+		"DOTA_Tooltip_ability_neji_air_palm_Description"		"The Hyuuga's signature Jyuuken fighting style attacks the opponents chakra networks directly to stop their flow of chakra. Inflicts a debuff on a target enemy unit which deals magic damage overtime."
+		"DOTA_Tooltip_ability_neji_air_palm_cast_range"		"CAST RANGE: "
+		"DOTA_Tooltip_ability_neji_air_palm_damage"			"DAMAGE: "
+		"DOTA_Tooltip_ability_neji_air_palm_duration"	"MS DEBUFF DURATION: "		
+		"DOTA_Tooltip_ability_neji_air_palm_ms_slow"			"%MS DEBUFF: "	
+		"DOTA_Tooltip_modifier_neji_air_palm_debuff"			    "Air Palm"	
+		"DOTA_Tooltip_modifier_neji_air_palm_debuff_description"	"This Unit's Movement Speed is reduced."
+		
+		
+		
 		//Byakugan
 		"DOTA_Tooltip_ability_neji_byakugan"							"Byakugan"
 		"DOTA_Tooltip_ability_neji_byakugan_Description"				"The Hyuuga's bloodline trait allows them to see an enemy's internal body structure as well as their chakra points. This ability passively benefits his basic attack damage. Activating this ability grants Neji a significant amount of increased vision for a short duration."
@@ -2188,10 +2192,11 @@
 		//25: +325 Self Pain Damage / +15% Jashin's Blessing Heal
 		//20: +70 Taunt AoE / +20 Strength
 		//15: +30 Attack Damage / +25 Movement Speed
-		//10: +1.75 MP Regeneration / +5 HP Regeneration
+		//10: ++75 Cull the Weak Cast Range / +5 HP Regeneration
 		"DOTA_Tooltip_Ability_special_bonus_hidan_1"						"+70 Taunt AoE"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
+		"DOTA_Tooltip_Ability_special_bonus_hidan_4"						"+75 Cull the Weak Cast Range"
 
 		//25: +60 Damage Inside Hidden Mist / +100% Cleave
 		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay 
@@ -2265,7 +2270,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_anko_2"						"+2s Striking Snakes Movement Speed Debuff Duration"
 		"DOTA_Tooltip_Ability_special_bonus_anko_3"						"+80 Snake Hand Damage"
 		"DOTA_Tooltip_Ability_special_bonus_anko_4"						"-1s Snake Hand Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_anko_5"						"-4s Giant Snake Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_anko_5"						"-6s Giant Snake Cooldown"
 
 
 		//25: +3 Power of Youth Max Stacks / +550 Dynamic Entry Range

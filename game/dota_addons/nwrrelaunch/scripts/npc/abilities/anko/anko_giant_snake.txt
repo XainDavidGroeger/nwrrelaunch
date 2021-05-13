@@ -62,7 +62,6 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hook_distance"		"500 700 850 1000"
-			"LinkedSpecialBonus"	"special_bonus_anko_1"
 		}
 		"04"
 		{
@@ -83,12 +82,6 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hook_damage"		"90 180 270 360"
-		}
-		"08"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"cd_reduc"		"0 0 0 0"
-			"LinkedSpecialBonus"	"special_bonus_anko_5"
 		}
 	}
 }

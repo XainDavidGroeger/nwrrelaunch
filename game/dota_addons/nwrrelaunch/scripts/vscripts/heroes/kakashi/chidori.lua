@@ -72,7 +72,7 @@ function Launch(keys)
 			}
 			ApplyDamage( damageTable )
 
-			
+			ability:ApplyDataDrivenModifier(caster, target, "modifier_raikiri_slow", {})
 
 			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 			caster:StopSound("kakashi_raikiri_loop")
