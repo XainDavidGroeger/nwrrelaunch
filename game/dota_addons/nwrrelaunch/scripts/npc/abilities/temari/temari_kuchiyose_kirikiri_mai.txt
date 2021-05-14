@@ -25,8 +25,8 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"1400"
 	"AbilityCastPoint"				"0"
-	"AbilityCooldown"				"130"
-	"AbilityManaCost"				"280 480 680"
+	"AbilityCooldown"				"160 100 40"
+	"AbilityManaCost"				"200 420 650"
 	
 	"precache"
 	{
@@ -68,7 +68,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_damage"			"70 120 170"
+			"base_damage"			"110 160 210"
 			"LinkedSpecialBonus"	"special_bonus_temari_3"
 		}
 		"07"
@@ -90,6 +90,16 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"cyclone_count_tooltips"		"5"
+		}
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow_duration"				"1 1 1"
+		}
+		"12"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow_value"				"-30 -55 -70"
 		}
 	}
 	
@@ -129,6 +139,13 @@
 			"ScriptFile"		"heroes/temari/temari_kuchiyose_kirikiri_mai.lua"
 			"Function"			"temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit"
 		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_kuchiyose_kirikiri_mai"
+			"Target"		"TARGET"
+			"Duration"		"%slow_duration"
+		}
 	}
 	
 	"Modifiers"
@@ -156,8 +173,22 @@
 				"MODIFIER_STATE_NO_HEALTH_BAR"  		"MODIFIER_STATE_VALUE_ENABLED"
 			}
 		}
+
+		"modifier_kuchiyose_kirikiri_mai"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		
+			"EffectName"		""
+			"EffectAttachType"	""
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_value"
+			}
+		}
 	}
 }
-
 
 }
