@@ -120,7 +120,7 @@ function ConjureImage( event )
 	if ability7 ~= nil then
         if ability7:IsTrained() then
           ability:EndCooldown()
-          ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 5 )
+          ability:StartCooldown(ability:GetCooldown(ability:GetLevel() - 1) - 4 )
         end
 	end
 end

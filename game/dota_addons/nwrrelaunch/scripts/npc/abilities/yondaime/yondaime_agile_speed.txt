@@ -20,12 +20,12 @@
         "01"
         { 
             "var_type"  "FIELD_INTEGER"
-            "bonus_ms_percentage" "2 4 6 8"
+            "bonus_ms_percentage" "3 4 5 6"
         }
         "02"
         { 
             "var_type"  "FIELD_INTEGER"
-            "bonus_damage_ms_percent" "2 4 6 8"
+            "bonus_damage_ms_percent" "2 3 4 5"
         }
         "03"
         {

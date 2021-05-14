@@ -90,6 +90,8 @@ function modifier_haku_needles_thinker:OnIntervalThink()
 				ability = self:GetAbility(),
 			})
 
+			v:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_rooted", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
+
 			local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
             if woudns_ability ~= nil then
 			    if woudns_ability:GetLevel() > 0 then  
