@@ -11,7 +11,6 @@ end
 
 function haku_ice_mirrors:OnSpellStart()
 	if not IsServer() then return end
-
 	local attack_min = self:GetSpecialValueFor("attack_min") + self:GetCaster():FindTalentValue("special_bonus_haku_5")	
 	local attack_max = self:GetSpecialValueFor("attack_max") + self:GetCaster():FindTalentValue("special_bonus_haku_5")
 	local health = self:GetSpecialValueFor("hp")
@@ -83,7 +82,6 @@ function modifier_haku_mirror_caster:CheckState() return {
 
 function modifier_haku_mirror_caster:OnCreated()
 	if not IsServer() then return end
-
 	self:GetParent():AddNoDraw()
 end
 
@@ -110,7 +108,6 @@ function modifier_haku_mirror_mirror:CheckState() return {
 
 function modifier_haku_mirror_mirror:OnCreated()
 	if not IsServer() then return end
-
 	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 	ParticleManager:SetParticleControl(self.pfx, 0, self:GetParent():GetAbsOrigin())
 	ParticleManager:SetParticleControl(self.pfx, 1, self:GetParent():GetAbsOrigin())
@@ -157,21 +154,22 @@ function modifier_haku_mirror_mirror:GetModifierIncomingDamage_Percentage()
 end
 
 function modifier_haku_mirror_mirror:OnTakeDamage(params)
-	if not IsServer() then return end
+    if not IsServer() then return end
 
-	if params.attacker == self:GetParent() then
+	if params.unit == self:GetParent() then
 		if params.damage > 0 then
 			local damageTable = {
 				victim = params.unit,
 				damage = 1,
 				damage_type = DAMAGE_TYPE_PURE,
-				attacker = self:GetCaster(),
+				attacker = params.attacker,
 				ability = self:GetAbility()
 			}
 
 			ApplyDamage(damageTable)
 		end
 	end
+   
 end
 
 function modifier_haku_mirror_mirror:OnAttackLanded(params) -- health handling

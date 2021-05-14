@@ -15,6 +15,10 @@ function haku_needles:OnAbilityPhaseStart()
 	return true
 end
 
+function haku_needles:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
 function haku_needles:OnSpellStart()
 	if not IsServer() then return end
 
@@ -34,7 +38,7 @@ function modifier_haku_needles_thinker:OnCreated()
 
 	self.wave_count = self:GetAbility():GetSpecialValueFor("wave_count")
 	self.damage = self:GetAbility():GetSpecialValueFor("wave_damage") + self:GetCaster():FindTalentValue("special_bonus_haku_4")
-
+	self:OnIntervalThink()
 	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("wave_interval"))
 end
 
