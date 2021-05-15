@@ -139,7 +139,7 @@ function sendGameEndStatsToApi(team)
 
 	payload['heroes'] = pickedHeroes
 
-	local request = CreateHTTPRequestScriptVM("POST", "http://localhost/socialmatch/public/nwrstatsfinal")
+	local request = CreateHTTPRequestScriptVM("POST", "http://tt-underground-liga.de/nwrstatsfinal")
 	request:SetHTTPRequestAbsoluteTimeoutMS(5000)
 	
 	local header_key = nil
@@ -175,7 +175,7 @@ function SendHeroPickStatsToServer()
 
 	payload['heroes'] = pickedHeroes
 
-	local request = CreateHTTPRequestScriptVM("POST", "http://localhost/socialmatch/public/nwrstats")
+	local request = CreateHTTPRequestScriptVM("POST", "http://tt-underground-liga.de/nwrstats")
 	request:SetHTTPRequestAbsoluteTimeoutMS(5000)
 	
 	local header_key = nil
