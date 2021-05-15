@@ -93,5 +93,4 @@ function Activate()
 	GameRules.heroKV = LoadKeyValues("scripts/npc/npc_heroes_custom.txt") 
 	GameRules.GameMode = GameMode()
 	GameRules.GameMode:InitGameMode()
-
 end

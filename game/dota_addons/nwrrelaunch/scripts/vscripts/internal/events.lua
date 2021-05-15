@@ -27,6 +27,9 @@ function GameMode:_OnGameRulesStateChange(keys)
 		})
 	elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameMode:OnGameInProgress()
+	elseif newState == DOTA_GAMERULES_STATE_POST_GAME then
+		print("GAME FINISHED")
+		print(keys)
 	end
 end
 
