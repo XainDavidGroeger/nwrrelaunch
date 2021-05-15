@@ -8,6 +8,14 @@ kankuro_summon_karasu = class({})
 LinkLuaModifier("modifier_karasu_talent_attack_speed_bonus", "heroes/kankuro/summon_karasu", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_karasu_base_mana", "heroes/kankuro/summon_karasu", LUA_MODIFIER_MOTION_NONE)
 
+function kankuro_summon_karasu:GetCooldown(iLevel)
+	return self.BaseClass.GetCooldown(self, iLevel)
+end
+
+function kankuro_summon_karasu:ProcsMagicStick()
+	return true
+end
+
 function kankuro_summon_karasu:OnSpellStart()
 
 	--Kill old Karasu if present

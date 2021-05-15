@@ -3,6 +3,9 @@ shikamaru_meditation = shikamaru_meditation or class({})
 LinkLuaModifier("modifier_meditation_negative", "heroes/shikamaru/shikamaru_meditation.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_meditation_positive", "heroes/shikamaru/shikamaru_meditation.lua", LUA_MODIFIER_MOTION_NONE)
 
+function shikamaru_meditation:ProcsMagicStick()
+    return true
+end
 
 function shikamaru_meditation:OnSpellStart()
 

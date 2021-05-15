@@ -9,6 +9,10 @@ function haku_ice_mirrors:OnAbilityPhaseStart()
 	return true
 end
 
+function haku_ice_mirrors:ProcsMagicStick()
+    return true
+end
+
 function haku_ice_mirrors:OnSpellStart()
 	if not IsServer() then return end
 	local attack_min = self:GetSpecialValueFor("attack_min") + self:GetCaster():FindTalentValue("special_bonus_haku_5")	

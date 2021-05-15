@@ -27,6 +27,9 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function kisame_bunshin_water_prison:ProcsMagicStick()
+    return true
+end
 
 function kisame_bunshin_water_prison:OnSpellStart()
     -- load data

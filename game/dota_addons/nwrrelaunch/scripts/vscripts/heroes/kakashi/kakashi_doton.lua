@@ -28,6 +28,10 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function kakashi_doton:ProcsMagicStick()
+    return true
+end
+
 function kakashi_doton:OnSpellStart()
     self.caster = self:GetCaster()
     local caster = self.caster

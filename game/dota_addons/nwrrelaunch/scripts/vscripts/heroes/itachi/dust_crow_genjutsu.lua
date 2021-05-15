@@ -7,6 +7,10 @@ function itachi_dust_crow_genjustsu:GetCooldown(level)
 	return self.BaseClass.GetCooldown(self, level) + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
 end
 
+function itachi_dust_crow_genjustsu:ProcsMagicStick()
+    return true
+end
+
 function itachi_dust_crow_genjustsu:OnSpellStart()
 	if not IsServer() then return end
 

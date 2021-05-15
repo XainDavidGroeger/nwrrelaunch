@@ -39,6 +39,10 @@ function zabuza_stealth:GetCastRange(location , target)
 	return self.BaseClass.GetCastRange(self,location,target) + extracastrange
 end
 
+function zabuza_stealth:ProcsMagicStick()
+	return true
+end
+
 function zabuza_stealth:OnSpellStart()
 	if IsServer() then
 		self.hCaster = self:GetCaster()

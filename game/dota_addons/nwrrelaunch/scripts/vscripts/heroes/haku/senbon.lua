@@ -39,6 +39,10 @@ function haku_crippling_senbon:CanBeReflected(bool, target)
 	end
 end
 
+function haku_crippling_senbon:ProcsMagicStick()
+    return true
+end
+
 function haku_crippling_senbon:OnSpellStart()
 
 	local caster = self:GetCaster()

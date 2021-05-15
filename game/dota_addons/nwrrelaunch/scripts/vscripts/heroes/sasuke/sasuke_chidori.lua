@@ -19,6 +19,10 @@ function sasuke_chidori:GetCastRange(location, target)
 	end
 end
 
+function sasuke_chidori:ProcsMagicStick()
+    return true
+end
+
 function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 
 	-- Preventing projectiles getting stuck in one spot due to potential 0 length vector

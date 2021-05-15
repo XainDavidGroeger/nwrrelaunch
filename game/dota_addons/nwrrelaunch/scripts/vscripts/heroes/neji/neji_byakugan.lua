@@ -10,6 +10,10 @@
 	return self.BaseClass.GetCooldown(self, iLevel)
  end
  
+ function neji_byakugan:ProcsMagicStick()
+    return true
+end
+ 
  function neji_byakugan:OnSpellStart()
 	if IsServer() then
 		local caster 	= self:GetCaster();

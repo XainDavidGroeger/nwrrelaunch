@@ -37,6 +37,10 @@
 
 temari_fusajin_no_jutsu = class({})
 
+function temari_fusajin_no_jutsu:ProcsMagicStick()
+    return true
+end
+
 function temari_fusajin_no_jutsu:OnSpellStart()
 	local caster = self:GetCaster()
 	local projectile_data = {

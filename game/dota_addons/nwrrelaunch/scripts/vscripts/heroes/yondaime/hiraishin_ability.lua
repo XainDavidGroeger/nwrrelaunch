@@ -88,6 +88,9 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 
 end
 
+function yondaime_hiraishin_jump:ProcsMagicStick()
+    return true
+end
 
 function yondaime_hiraishin_jump:OnSpellStart( keys )
 

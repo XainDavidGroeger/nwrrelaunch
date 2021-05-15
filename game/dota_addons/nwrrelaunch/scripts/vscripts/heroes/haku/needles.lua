@@ -19,6 +19,10 @@ function haku_needles:GetAOERadius()
 	return self:GetSpecialValueFor("radius")
 end
 
+function haku_needles:ProcsMagicStick()
+    return true
+end
+
 function haku_needles:OnSpellStart()
 	if not IsServer() then return end
 

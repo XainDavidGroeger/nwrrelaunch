@@ -29,6 +29,10 @@ function onoki_stalagmite_armor:GetCastRange(location, target)
 return self:GetSpecialValueFor("cast_range")
 end
 
+function onoki_stalagmite_armor:ProcsMagicStick()
+    return true
+end
+
 -- function onoki_added_weight:CastFilterResultTarget(hTarget)
 --     return UF_SUCCESS
 -- end

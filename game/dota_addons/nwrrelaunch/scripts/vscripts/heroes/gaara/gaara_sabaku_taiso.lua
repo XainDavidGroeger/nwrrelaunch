@@ -68,6 +68,9 @@ function gaara_sabaku_taiso:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function gaara_sabaku_taiso:ProcsMagicStick()
+    return true
+end
 
 function gaara_sabaku_taiso:OnAbilityPhaseStart()
 

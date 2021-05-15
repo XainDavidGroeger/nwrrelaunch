@@ -30,6 +30,10 @@ function yondaime_marked_kunai:GetCastRange(location, target)
 	return self.BaseClass.GetCastRange(self, location, target) + castrangebonus
 end
 
+function yondaime_marked_kunai:ProcsMagicStick()
+	return true
+end
+
 function yondaime_marked_kunai:OnSpellStart()
 
 	local caster = self:GetCaster()

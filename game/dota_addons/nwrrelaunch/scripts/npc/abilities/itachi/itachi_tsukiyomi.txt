@@ -7,7 +7,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
+	"BaseClass"					"ability_lua"
+	"ScriptFile"                "heroes/itachi/itachi_tsukiyomi.lua"
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityTextureName"		"itachi_tsukiyomi"
 
@@ -43,150 +44,17 @@
 			"slow_duration"				"1.5 2.0 2.5 3.0"
 			"LinkedSpecialBonus"		"special_bonus_itachi_1"
 		}
-	
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"1.0"
+			"duration"				"1.0"
 			"LinkedSpecialBonus"		"special_bonus_itachi_3"
 		}
-
-		"04"
+		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration_special"		"4 4.0 5.0 5.5"
+			"var_type"					"FIELD_INTEGER"
+			"range"				"600"
 		}
 	}
-
-	"OnSpellStart"
-	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Luna.Eclipse.Cast"
-			"Target" 		"CASTER"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"itachi_tsukyomi_cast_talking"
-			"Target" 		"CASTER"
-		}
-
-	"RunScript"
-        {
-        	"ScriptFile"    "items.lua"
-            "Function"      "CheckForSpellBlock"
-            "filePath"      "heroes/itachi/tsukiyomi"
-            "functionName"  "tsukiyomi"
-        }
 	}
-
-	"Modifiers"
-	{
-		"modifier_itachi_tsukiyomi_stun"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%stun_duration"
-
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
-			}
-
-			"OnCreated"
-			{			
-				"AttachEffect"
-				{
-					"Target"			"TARGET"
-					"EffectName"		"particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"ControlPointEntities"
-					{
-						"TARGET"	"follow_origin"
-					}
-				}
-			}
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/itachi/tsukiyomi.lua"
-					"Function"		"applySlowModifier"
-				}
-			}
-
-		}
-
-
-		"modifier_itachi_tsukiyomi_stun_special"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%stun_duration_special"
-
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
-			}
-
-			"OnCreated"
-			{			
-				"AttachEffect"
-				{
-					"Target"			"TARGET"
-					"EffectName"		"particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"ControlPointEntities"
-					{
-						"TARGET"	"follow_origin"
-					}
-				}
-			}
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/itachi/tsukiyomi.lua"
-					"Function"		"applySlowModifier"
-				}
-			}
-
-		}
-
-		"modifier_itachi_tsukiyomi_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%slow_duration"
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_percent"
-			}
-		
-		}
-
-		"modifier_itachi_tsukiyomi_slow_special"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"%slow_duration_special"
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_percent"
-			}
-		
-		}
-	}
-}
-
-
 }

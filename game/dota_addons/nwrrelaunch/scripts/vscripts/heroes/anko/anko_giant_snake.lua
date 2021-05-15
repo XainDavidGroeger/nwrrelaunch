@@ -31,6 +31,10 @@ function anko_giant_snake:CanBeReflected(bool, target)
 	end
 end
 
+function anko_giant_snake:ProcsMagicStick()
+    return true
+end
+
 function anko_giant_snake:GetCooldown(iLevel)
 	local cdrecution = 0
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_anko_5")

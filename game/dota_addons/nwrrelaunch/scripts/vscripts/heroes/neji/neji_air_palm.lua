@@ -9,6 +9,10 @@ neji_air_palm = class({})
 	return self.BaseClass.GetCooldown(self, iLevel)
  end
  
+ function neji_air_palm:ProcsMagicStick()
+    return true
+end
+ 
  function neji_air_palm:OnSpellStart()
 	
 	self.target = self:GetCursorTarget()

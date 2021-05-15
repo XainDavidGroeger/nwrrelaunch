@@ -28,6 +28,10 @@ function onoki_kajutan_no_jutsu:GetCastRange(location, target)
 return self:GetSpecialValueFor("range")
 end
 
+function onoki_kajutan_no_jutsu:ProcsMagicStick()
+    return true
+end
+
 function onoki_kajutan_no_jutsu:OnSpellStart()
 	local caster = self:GetCaster()
 	local casterOrigin = caster:GetOrigin()

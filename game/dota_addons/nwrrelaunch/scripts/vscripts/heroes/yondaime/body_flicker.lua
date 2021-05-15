@@ -17,6 +17,10 @@ function yondaime_body_flicker:OnAbilityPhaseStart( keys )
 	return true
 end
 
+function spell_name:ProcsMagicStick()
+    return true
+end
+
 function yondaime_body_flicker:OnSpellStart( event )
 
 	local ability = self

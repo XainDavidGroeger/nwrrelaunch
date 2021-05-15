@@ -24,6 +24,10 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function sasuke_chidori_kirin:ProcsMagicStick()
+    return true
+end
+
 function sasuke_chidori_kirin:OnSpellStart()
     local target = self:GetCursorTarget()
 	

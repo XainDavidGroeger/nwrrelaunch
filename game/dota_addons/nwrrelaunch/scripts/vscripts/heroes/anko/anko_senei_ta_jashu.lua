@@ -23,6 +23,10 @@ function anko_senei_ta_jashu:CanBeReflected(bool, target)
 	end
 end
 
+function anko_senei_ta_jashu:ProcsMagicStick()
+    return true
+end
+
 function anko_senei_ta_jashu:OnSpellStart()
 	if not IsServer() then return end
 

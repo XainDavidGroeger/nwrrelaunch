@@ -13,6 +13,10 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function itachi_amateratsu:ProcsMagicStick()
+    return true
+end
+
 function itachi_amateratsu:OnSpellStart()
 	if not IsServer() then return end
 	

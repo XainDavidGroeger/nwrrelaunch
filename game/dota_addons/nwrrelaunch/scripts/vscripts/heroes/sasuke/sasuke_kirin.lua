@@ -30,6 +30,10 @@ function sasuke_kirin:GetCastPoint()
 	return cast_point
 end
 
+function sasuke_kirin:ProcsMagicStick()
+    return true
+end
+
 function sasuke_kirin:OnSpellStart()
 
 	local targetpoint = self:GetCursorPosition()
