@@ -61,8 +61,7 @@
 							"value6"		"sounds/vo/zabuza/move_07.vsnd"
 							"value7"		"sounds/vo/zabuza/move_08.vsnd"
 							"value8"		"sounds/vo/zabuza/move_09.vsnd"
-							"value9"		"sounds/vo/zabuza/move_10.vsnd"
-							"value10"		"sounds/vo/zabuza/move_11.vsnd"
+							"value9"		"sounds/vo/zabuza/move_11.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
