@@ -1,4 +1,4 @@
-"itachi_crows"
+"itachi_tsukyomi_cast"
 {
     "operator_stacks"
     {
@@ -14,13 +14,12 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/itachi_crowsquiet_01.vsnd"
-                              "value1"        "sounds/itachi_crowsquiet_02.vsnd"
+                              "value0"        "sounds/itachi_tsukyomi_cast.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "5.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "volume"            {   "value"     "1.50000"  }
+                    "pitch_rand_min"    {   "value"     "0.00000"  }
+                    "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }
                     "distance_max"      {   "value"     "1600.000"  }

@@ -17,12 +17,22 @@ function itachi_amateratsu:ProcsMagicStick()
     return true
 end
 
+function itachi_amateratsu:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("itachi_amaterasu_cast")
+	return true
+end
+
 function itachi_amateratsu:OnSpellStart()
 	if not IsServer() then return end
-	
+
 	local target = self:GetCursorTarget()
 
 	self:GetCaster():EmitSound("itachi_amaterasu_cast_talking")
+
+	target:EmitSound("itachi_amaterasu_impact")	
+	
+	self:GetCaster():EmitSound("itachi_amaterasu_fire")
+
 	
 	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
     if target:FindModifierByName("modifier_item_lotus_orb_active") then
