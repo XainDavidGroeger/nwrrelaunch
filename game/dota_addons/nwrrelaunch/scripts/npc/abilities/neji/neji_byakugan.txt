@@ -61,7 +61,6 @@
             {
                 "var_type" "FIELD_FLOAT"
                 "duration" "2.0"
-                "LinkedSpecialBonus" "special_bonus_neji_3"
             }
 
             "03"
@@ -86,6 +85,7 @@
             {
                 "var_type" "FIELD_FLOAT"
                 "mana_burn_percentage" "1.0 1.5 2.0 2.5"
+                "LinkedSpecialBonus"    "special_bonus_neji_2"
             }
 
             "07"

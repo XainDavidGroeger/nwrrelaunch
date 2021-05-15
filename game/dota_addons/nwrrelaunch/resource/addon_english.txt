@@ -1052,16 +1052,16 @@
 		"DOTA_Tooltip_ability_neji_byakugan_vision_aoe"					"VISION AOE: "
 		"DOTA_Tooltip_ability_neji_byakugan_duration"					"VISION DURATION: "
 		"DOTA_Tooltip_ability_neji_byakugan_bonus_damage_tooltip"				"BONUS DAMAGE: "
-		//Hakke Hyaku Nijuuhachi Shou
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou"				"Eight Trigrams Sixty-Four Palms"
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_lore"			"Hakke Rokujuyon Sho"
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_Description"	"Neji locks on to a single opponent, entering a Gentle Fist stance and unleashing 64 pinpoint attacks to block all of the target's chakra points. Upon use,  roots an enemy unit in place as they are silenced, disarmed and dealt magic damage over 3 seconds. Enemies within a small radius of the target are silenced as well."
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_duration"		"DURATION: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_damage"		"DAMAGE: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_aoe_radius"	"SILENCE AOE: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_silence_duration"	"SILENCE DURATION after spell is finished: "
-		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou"						"Eight Trigrams Sixty-Four Palms"
-		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou_description"			"This Unit is stunned."
+		//Eight Trigrams Sixty-Four Palms
+		"DOTA_Tooltip_ability_neji_32_palms"				"Eight Trigrams Sixty-Four Palms"
+		"DOTA_Tooltip_ability_neji_32_palms_lore"			"Hakke Rokujuyon Sho"
+		"DOTA_Tooltip_ability_neji_32_palms_Description"	"Neji locks on to a single opponent, entering a Gentle Fist stance and unleashing 64 pinpoint attacks to block all of the target's chakra points. Upon use,  roots an enemy unit in place as they are silenced, disarmed and dealt magic damage over 3 seconds. Enemies within a small radius of the target are silenced as well."
+		"DOTA_Tooltip_ability_neji_32_palms_duration"		"DURATION: "
+		"DOTA_Tooltip_ability_neji_32_palms_damage"		"DAMAGE: "
+		"DOTA_Tooltip_ability_neji_32_palms_aoe_radius"	"SILENCE AOE: "
+		"DOTA_Tooltip_ability_neji_32_palms_silence_duration"	"SILENCE DURATION after spell is finished: "
+		"DOTA_Tooltip_neji_32_palms"						"Eight Trigrams Sixty-Four Palms"
+		"DOTA_Tooltip_neji_32_palms_description"			"This Unit is stunned."
 
 		//--------------------
 		//Raikage
@@ -2149,13 +2149,13 @@
 		//Neji special bonus
 		//10: +9 Strength / +20 Attack Speed
 		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
-		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
-		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+		//20: +1.0% Max Mana Byakugan Burn / +450 Air Palm Range
+		//25: +6s 64 Palm Silence Duration / +200 Kaiten Radius
 		"DOTA_Tooltip_Ability_special_bonus_neji_1"						"+0.25s Kaiten Stun Duration"
-		"DOTA_Tooltip_Ability_special_bonus_neji_2"						"+20% Internal Bleeding MS Slow"
-		"DOTA_Tooltip_Ability_special_bonus_neji_3"						"+10s Byakugan Duration"
-		"DOTA_Tooltip_Ability_special_bonus_neji_4"						"+5s 64 Palms Silence Duration"
-
+		"DOTA_Tooltip_Ability_special_bonus_neji_2"						"+1.0% Max Mana Byakugan Burn"
+		"DOTA_Tooltip_Ability_special_bonus_neji_3"						"+450 Air Palm Range"
+		"DOTA_Tooltip_Ability_special_bonus_neji_4"						"+6s 64 Palm Silence Duration"
+		"DOTA_Tooltip_Ability_special_bonus_neji_5"						"+200 Kaiten Radius"
 
 		//Sasuke special bonus
 		//25: +40 Intelligence / -0.75s Kirin Cast Time

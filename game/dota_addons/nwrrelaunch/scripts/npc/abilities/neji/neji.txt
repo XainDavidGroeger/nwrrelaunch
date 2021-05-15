@@ -1,6 +1,6 @@
-#base "neji_byakugan.txt"
-#base "neji_hyaku_nijuuhachi_shou.txt"
-#base "neji_air_palm.txt"
 #base "neji_kaiten.txt"
+#base "neji_air_palm.txt"
+#base "neji_byakugan.txt"
+#base "neji_32_palms.txt"
 
 #base "talents.txt"

@@ -121,7 +121,7 @@ function modifier_neji_byakugan_buff:OnAttackLanded( keys )
 			
 			target:EmitSound("neji_byakugan_mana_burn")
 			
-			local manaburn_percentage = ability:GetSpecialValueFor("mana_burn_percentage")
+			local manaburn_percentage = ability:GetSpecialValueFor("mana_burn_percentage") + self:GetCaster():FindTalentValue("special_bonus_neji_2")
 			local manaburn_flat = ability:GetSpecialValueFor("mana_burn_flat")
 		
 			
@@ -132,14 +132,24 @@ function modifier_neji_byakugan_buff:OnAttackLanded( keys )
 
 			target:SetMana(new_mana)
 
-			local damage = reduce_mana_amount / 2
-			PopupManaDrain(target,math.floor(reduce_mana_amount))
-			ApplyDamage({
-				victim = target,
-				attacker = caster,
-				damage = damage,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			})
+			if mana > 0 then
+				local damage = reduce_mana_amount / 2
+
+				if (mana - reduce_mana_amount) < 0 then 
+					damage = mana / 2
+					reduce_mana_amount = mana
+				end
+
+				PopupManaDrain(target,math.floor(reduce_mana_amount))
+				ApplyDamage({
+					victim = target,
+					attacker = caster,
+					damage = damage,
+					damage_type = DAMAGE_TYPE_PHYSICAL,
+				})
+			end
+
+		
 		end
 	
 		if keys.target:IsIllusion() then
@@ -149,7 +159,7 @@ function modifier_neji_byakugan_buff:OnAttackLanded( keys )
 			
 			target:EmitSound("neji_byakugan_mana_burn")
 			
-			local manaburn_percentage = ability:GetSpecialValueFor("mana_burn_percentage") / 2
+			local manaburn_percentage = (ability:GetSpecialValueFor("mana_burn_percentage")  + self:GetCaster():FindTalentValue("special_bonus_neji_2")) / 2
 			local manaburn_flat = ability:GetSpecialValueFor("mana_burn_flat") / 2
 		
 			
@@ -157,16 +167,25 @@ function modifier_neji_byakugan_buff:OnAttackLanded( keys )
 			local reduce_mana_amount = (target:GetMaxMana() / 100 * manaburn_percentage) + manaburn_flat
 			local new_mana = mana - reduce_mana_amount
 			target:SetMana(new_mana)
-			
-			local damage = reduce_mana_amount / 100 * 25
-			PopupManaDrain(target,math.floor(reduce_mana_amount))
-			PopupDamage(target,math.floor(damage))
-			ApplyDamage({
-				victim = target,
-				attacker = caster,
-				damage = damage,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			})
+
+			if mana > 0 then
+				local damage = reduce_mana_amount / 100 * 25
+
+				if (mana - reduce_mana_amount) < 0 then 
+					damage = mana / 100 * 25
+					reduce_mana_amount = mana
+				end
+	
+				PopupManaDrain(target,math.floor(reduce_mana_amount))
+				PopupDamage(target,math.floor(damage))
+				ApplyDamage({
+					victim = target,
+					attacker = caster,
+					damage = damage,
+					damage_type = DAMAGE_TYPE_PHYSICAL,
+				})
+			end
+		
 		end
 	end
 end

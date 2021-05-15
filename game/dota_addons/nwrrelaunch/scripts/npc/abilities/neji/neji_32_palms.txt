@@ -1,0 +1,96 @@
+
+	
+    "DOTAAbilities"
+{
+
+	"neji_32_palms"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/neji/neji_32_palms.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"neji_32_palms"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/bagum_projected.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/64_palm_finish.vpcf"
+			"soundfile"	"soundevents/heroes/neji/neji_64_cast.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_channel.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_cast_talking.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_finish_talking.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_finish_sound.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_64_hit.vsndevts"
+			
+			"particle"	"particles/units/heroes/neji/ulti/ulti_images.vpcf"
+			"particle"	"particles/units/heroes/neji/ulti/2_ulti_images.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_32.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_64.vpcf"
+			"paritcle"	"particles/units/heroes/neji/ulti/numbers_128.vpcf"
+		}	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"270"
+		"AbilityCastPoint"				"0.1 0.1 0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"4.0 4.0 4.0"
+		"AbilityCooldown"				"120.0 100.0 80.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"tick_interval"					"0.1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"4.0 4.0 4.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"256 384 512"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_radius"					"250"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_interval"			"10 13.33 16.66"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"silence_duration"			    "3 4 5"
+				"LinkedSpecialBonus" 			"special_bonus_neji_4"
+			}
+	
+		}
+	}
+
+}

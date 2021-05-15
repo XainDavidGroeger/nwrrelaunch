@@ -5,8 +5,9 @@
 
 		//10: +9 Strength / +20 Attack Speed
 		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
-		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
-		//25: +30s Byakugan Duration / ( * ) +5s 64 Palms Silence Duration
+		//20: +1.0% Max Mana Byakugan Burn / +450 Air Palm Range
+		//25: +6s 64 Palm Silence Duration / +200 Kaiten Radius
+
 		{
 			"HeroID"					"211"
 		  "BaseClass"   "npc_dota_hero_axe"
@@ -16,15 +17,15 @@
 		  "Ability3"         "neji_byakugan" 
 		  "Ability4"		"generic_hidden"
 		  "Ability5"		"generic_hidden"
-		  "Ability6"         "neji_hyaku_nijuuhachi_shou"
+		  "Ability6"         "neji_32_palms"
 		   "Ability10"		"special_bonus_attack_speed_20"
 		   "Ability11"		"special_bonus_strength_9"
 		   "Ability12"		"special_bonus_movement_speed_30"
 		   "Ability13"		"special_bonus_neji_1"
 		   "Ability14"		"special_bonus_neji_2"
-		   "Ability15"		"special_bonus_mana_break_40"
-		   "Ability16"		"special_bonus_neji_3"
-		   "Ability17"		"special_bonus_neji_4"
+		   "Ability15"		"special_bonus_neji_3"
+		   "Ability16"		"special_bonus_neji_4"
+		   "Ability17"		"special_bonus_neji_5"
 		   
 			"SoundSet"					"Punch"
 			"GameSoundsFile"			"soundevents/game_sounds_punch.vsndevts"

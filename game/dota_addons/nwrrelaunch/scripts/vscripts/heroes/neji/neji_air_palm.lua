@@ -8,6 +8,17 @@ neji_air_palm = class({})
  function neji_air_palm:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
  end
+
+ function neji_air_palm:GetCastRange(location, target)
+	local castrangebonus = 0
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_neji_3")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 450
+	    end
+	end
+	return self:GetSpecialValueFor("cast_range") + castrangebonus
+end
  
  function neji_air_palm:ProcsMagicStick()
     return true

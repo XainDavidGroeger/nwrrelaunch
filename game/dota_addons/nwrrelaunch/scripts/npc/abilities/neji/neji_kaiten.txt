@@ -48,6 +48,7 @@
         { 
             "var_type"  "FIELD_INTEGER"
             "aoe_target" "300"
+            "LinkedSpecialBonus"    "special_bonus_neji_3"
         }
         "02"
         {
@@ -94,29 +95,20 @@
 		    "Target"		"CASTER"
         }
 
-        "FireEffect"
+        "RunScript"
         {
-            "EffectName"		"particles/units/heroes/neji/neji_kaiten_main.vpcf"
-            "EffectAttachType"		"follow_origin"
-            "Target"		"CASTER"
-            "ControlPoints"
-            {
-                "01"	"%aoe_target 100 100"  //radius, smoke thickness, smoke speed
-            }
+            "ScriptFile"	"heroes/neji/kaiten.lua"
+            "Function"		"fireEffect"
         }
 
-        "Damage"
+      
+       "RunScript"
         {
-            "Target"
-            {
-                "Center"            "CASTER"
-                "Radius"            "%aoe_target"
-                "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-            }
-            "Type"           "DAMAGE_TYPE_MAGICAL"
-           "Damage"         "%damage"
+            "ScriptFile"	"heroes/neji/kaiten.lua"
+            "Function"		"dealDamage"
         }
+
+      
 
         "ApplyModifier"
         {

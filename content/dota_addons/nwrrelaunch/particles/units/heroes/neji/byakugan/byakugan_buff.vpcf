@@ -140,9 +140,11 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/neji/byakugan/droplets.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/neji/byakugan/embers.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }
