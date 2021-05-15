@@ -19,6 +19,10 @@ function gaara_sabaku_kyuu:CanBeReflected(bool, target)
     end
 end
 
+function gaara_sabaku_kyuu:ProcsMagicStick()
+    return true
+end
+
 function gaara_sabaku_kyuu:OnSpellStart()
 	if not IsServer() then return end
 

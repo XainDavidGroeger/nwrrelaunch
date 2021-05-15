@@ -21,6 +21,10 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function anko_sojasosai_no_jutsu:ProcsMagicStick()
+    return true
+end
+
 function anko_sojasosai_no_jutsu:OnSpellStart()
 	if not IsServer() then return end
 

@@ -34,6 +34,10 @@ if abilityS ~= nil then
 end
 end
 
+function onoki_jinton:ProcsMagicStick()
+    return true
+end
+
 function onoki_jinton:CanBeReflected(bool, target)
 	if bool == true then
         if target:TriggerSpellReflect(self) then return end

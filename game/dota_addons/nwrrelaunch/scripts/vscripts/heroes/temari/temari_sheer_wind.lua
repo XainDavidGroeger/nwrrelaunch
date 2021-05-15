@@ -153,6 +153,9 @@ function temari_sheer_wind:RefreshCounter()
 	counter:SetDuration(self:GetDuration(), true)
 end
 
+function temari_sheer_wind:ProcsMagicStick()
+    return true
+end
 
 function temari_sheer_wind:ApplyStacks()
 	if not IsServer() then return end

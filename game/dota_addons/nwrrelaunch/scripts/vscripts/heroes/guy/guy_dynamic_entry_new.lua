@@ -15,6 +15,10 @@ function guy_dynamic_entry_new:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
 
+function guy_dynamic_entry_new:ProcsMagicStick()
+    return true
+end
+
 function guy_dynamic_entry_new:OnAbilityPhaseStart()
 	self:GetCaster():EmitSound("guy_entry")
 	return true

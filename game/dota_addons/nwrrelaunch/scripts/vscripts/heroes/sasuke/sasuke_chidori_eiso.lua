@@ -18,6 +18,10 @@ function sasuke_chidori_eiso:GetCastRange(location, target)
 	return self:GetSpecialValueFor("cast_range") + castrangebonus
 end
 
+function sasuke_chidori_eiso:ProcsMagicStick()
+    return true
+end
+
 function sasuke_chidori_eiso:OnSpellStart()
 
 	local target = self:GetCursorTarget()

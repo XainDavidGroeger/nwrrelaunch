@@ -2,6 +2,9 @@ shikamaru_kage_kubishibari = shikamaru_kage_kubishibari or class({})
 
 LinkLuaModifier("modifier_kubishibari", "heroes/shikamaru/shikamaru_kage_kubishibari.lua", LUA_MODIFIER_MOTION_NONE)
 
+function shikamaru_kage_kubishibari:ProcsMagicStick()
+    return true
+end
 
 function shikamaru_kage_kubishibari:GetChannelTime()
 	local caster = self:GetCaster()

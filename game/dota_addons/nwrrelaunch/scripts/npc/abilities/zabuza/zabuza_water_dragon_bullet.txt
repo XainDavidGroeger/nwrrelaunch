@@ -7,7 +7,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"                    "heroes/zabuza/zabuza_water_dragon_bullet.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -18,7 +19,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
 		"soundfile"			"soundevents/zabuza_dragon.vsndevts"
 
 		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_talking.vsndevts"
@@ -28,8 +28,6 @@
 		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_precast.vsndevts"
 
 		"particle"			"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
-		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf"
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		"particle"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
 		"particle"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
@@ -87,7 +85,7 @@
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"duration"				"3"
+			"duration"				"6"
 		}
 
 		"07"
@@ -104,124 +102,5 @@
 		}
 		
 	}
-
-	"OnAbilityPhaseStart"
-	 {
-			 "FireSound"
-			 {
-				 "EffectName"	"zabuza_dragon_talking"
-				 "Target"		"CASTER"
-			 }
-
-			 "FireSound"
-			 {
-				 "EffectName"	"zabuza_dragon_precast"
-				 "Target"		"CASTER"
-			 }
-	 } 
-
-	"OnSpellStart"
-	{
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/zabuza/water_dragon_bullet.lua"
-			"Function"				"releaseDragonPreWater"
-			"Target"				"POINT"
-		}
-
-		"FireSound"
-			{
-				"EffectName"	"zabuza_dragon_cast"
-				"Target"		"CASTER"
-			}
-
-		"RunScript"
-			{
-				"ScriptFile"			"heroes/zabuza/water_dragon_bullet.lua"
-				"Function"				"releaseDragon"
-				"Target"				"POINT"
-				"dragon_particle"		"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-			}	
-
-		
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"		"0"		
-	}
-
-	"OnProjectileFinish"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/zabuza/water_dragon_bullet.lua"
-			"Function"		"fireAbility"
-			"TARGET"		"POINT"
-			"slow_modifier"	"modifier_dragon_bullet_slow"
-		}
-
-		"FireEffect"
-				{
-					"Target"				"CASTER"
-					"EffectName"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-					"EffectAttachType"		"start_at_customorigin"
-					"EffectRadius"			"%radius"
-					"ControlPoints"
-					{
-						"00"				"POINT"
-					}
-				}
-
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"	"POINT"
-				"Radius"	"%radius"
-				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY" 
-				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-			}
-			
-			"Action"
-			{
-				"Damage"
-				{
-					"Target"		"TARGET"
-					"Type"			"DAMAGE_TYPE_MAGICAL"
-					"Damage"		"%damage"
-				}
-			}
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_dragon_bullet_slow"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"1"
-	
-	
-			"Properties"
-			{
-			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow_start" 
-			}
-		}
-
-		"modifier_dragon_dummy"
-		{
-			"States"
-			{
-				"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
-				"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-	}
 }
-
 }

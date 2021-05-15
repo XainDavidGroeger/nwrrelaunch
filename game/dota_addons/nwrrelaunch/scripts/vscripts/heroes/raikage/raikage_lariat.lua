@@ -55,6 +55,10 @@ function raikage_lariat:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function raikage_lariat:ProcsMagicStick()
+    return true
+end
+
 function raikage_lariat:OnSpellStart()
 	
 	self.ability = self

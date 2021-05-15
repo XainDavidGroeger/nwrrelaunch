@@ -16,6 +16,10 @@ function naruto_kage_bunshin_mastery:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
 
+function naruto_kage_bunshin_mastery:ProcsMagicStick()
+    return true
+end
+
 function naruto_kage_bunshin_mastery:OnSpellStart( event )
 	
 		local ability = self

@@ -18,6 +18,10 @@ function gaara_ryuusa_bakuryu:GetAOERadius()
 	return self:GetSpecialValueFor("radius") + extraaoe
 end
 
+function gaara_ryuusa_bakuryu:ProcsMagicStick()
+    return true
+end
+
 function gaara_ryuusa_bakuryu:OnSpellStart()
 
 	-- Ability properties    

@@ -7,7 +7,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"                    "heroes/kisame/kisame_mizu_bunshin_no_jutsu.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -72,65 +73,5 @@
 
       		
 	}
-
-	"OnSpellStart"
-  {
-
-
-    "FireSound"
-        {
-          "EffectName"  "Hero_NagaSiren.MirrorImage"
-          "Target"    "CASTER"
-        }
-
-                "RunScript"
-              {
-                "ScriptFile"      "heroes/kisame/mizu_bunshin_no_jutsu.lua"
-                "Function"        "ConjureImage"
-              }
-              "RunScript"
-              {
-                "ScriptFile"      "heroes/kisame/mizu_bunshin_no_jutsu.lua"
-                "Function"        "ConjureImage"
-              }
-  }
-
-    "Modifiers"
-    {
-      "modifier_water_bunshin"
-      {
-        "Passive"     "0"
-        "IsHidden"      "0"
-        "IsBuff"      "1"
-        "duration"      "%illusion_duration"
-
-
-        "OnDestroy"
-        {
-          "RunScript"
-          {
-            "ScriptFile"      "heroes/kisame/mizu_bunshin_no_jutsu.lua"
-            "Function"        "RemoveBunshin"
-          }
-        
-        }
-      }
-
-       "modifier_water_bunshin_bonus_damage"
-      {
-        "Passive"     "0"
-        "IsHidden"      "1"
-        "IsDebuff"      "0"
-        "Duration"      "%illusion_duration"
-
-          "Properties"
-          {
-            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"  "%bonus_damage"
-          }
-      }
-
-	 }
-	
 }
- 
 }

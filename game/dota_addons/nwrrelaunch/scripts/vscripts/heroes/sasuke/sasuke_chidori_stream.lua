@@ -19,6 +19,10 @@ function sasuke_chidori_stream:GetCastRange(location, target)
 	end
 end
 
+function sasuke_chidori_stream:ProcsMagicStick()
+    return true
+end
+
 function sasuke_chidori_stream:OnSpellStart()
 
 	self.stream = ParticleManager:CreateParticle("particles/units/heroes/sasuke/stream/stream.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )

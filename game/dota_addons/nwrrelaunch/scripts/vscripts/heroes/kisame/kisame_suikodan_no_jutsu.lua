@@ -57,6 +57,9 @@ function kisame_suikodan_no_jutsu:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function kisame_suikodan_no_jutsu:ProcsMagicStick()
+	return true
+end
 
 function kisame_suikodan_no_jutsu:OnAbilityPhaseStart()
 

@@ -14,6 +14,10 @@ function shikamaru_shadow_imitation_technique:OnAbilityPhaseInterrupted()
 	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
 end
 
+function shikamaru_shadow_imitation_technique:ProcsMagicStick()
+    return true
+end
+
 --------------------------------------------------------------------------------
 
 function shikamaru_shadow_imitation_technique:OnSpellStart()

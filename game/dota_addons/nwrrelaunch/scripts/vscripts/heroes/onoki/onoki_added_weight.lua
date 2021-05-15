@@ -41,6 +41,10 @@ function onoki_added_weight:CanBeReflected(bool, target)
 	end
 end
 
+function onoki_added_weight:ProcsMagicStick()
+    return true
+end
+
 --Starta
 function onoki_added_weight:OnSpellStart()
 	-- unit identifier

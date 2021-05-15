@@ -64,6 +64,10 @@ ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PAT
     end
 end
 
+function hidan_cull_the_weak:ProcsMagicStick()
+    return true
+end
+
 function hidan_cull_the_weak:GetCastRange(location, target)
 	local castrangebonus = 0
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_hidan_4")

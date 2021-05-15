@@ -8,6 +8,10 @@ function kankuro_summon_sanshouuo:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_POINT 
 end
 
+function kankuro_summon_sanshouuo:ProcsMagicStick()
+    return true
+end
+
 function kankuro_summon_sanshouuo:OnSpellStart()
 	local caster = self:GetCaster()
 	local target_point = caster:GetCursorPosition()

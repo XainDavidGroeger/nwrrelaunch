@@ -29,6 +29,10 @@ function kankuro_summon_kuroari:CanBeReflected(bool, target)
     end
 end
 
+function kankuro_summon_kuroari:ProcsMagicStick()
+    return true
+end
+
 function kankuro_summon_kuroari:OnSpellStart()
     local target = self:GetCursorTarget()
 	local caster = self:GetCaster()
