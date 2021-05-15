@@ -2,11 +2,11 @@ itachi_tsukiyomi = itachi_tsukiyomi or class({})
 
 LinkLuaModifier("modifier_itachi_slow", "scripts/vscripts/heroes/itachi/modifiers/modifier_itachi_slow.lua", LUA_MODIFIER_MOTION_NONE)
 
-function kakashi_doton_new_lua:GetCooldown(iLevel)
+function itachi_tsukiyomi:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
 
-function kakashi_doton_new_lua:GetCastRange(location, target)
+function itachi_tsukiyomi:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range")
 end
 

@@ -17,7 +17,7 @@ function yondaime_body_flicker:OnAbilityPhaseStart( keys )
 	return true
 end
 
-function spell_name:ProcsMagicStick()
+function yondaime_body_flicker:ProcsMagicStick()
     return true
 end
 
