@@ -300,8 +300,6 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/sasuke/lasthit_01.vsnd"
-							"value1"		"sounds/vo/sasuke/lasthit_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

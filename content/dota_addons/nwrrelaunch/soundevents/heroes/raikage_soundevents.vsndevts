@@ -301,8 +301,6 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/raikage/lasthit_01.vsnd"
-							"value1"		"sounds/vo/raikage/lasthit_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
