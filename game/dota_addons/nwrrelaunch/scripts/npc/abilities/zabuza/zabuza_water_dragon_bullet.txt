@@ -87,7 +87,7 @@
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"duration"				"6"
+			"duration"				"3"
 		}
 
 		"07"

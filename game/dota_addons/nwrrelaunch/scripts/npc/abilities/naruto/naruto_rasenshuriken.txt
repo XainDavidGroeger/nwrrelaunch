@@ -38,7 +38,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"900"
 	"AbilityCastPoint"				"0.3 0.3 0.3"
 
 	// Time		
@@ -61,7 +61,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"rs_stun_duration"	"3.0"
+			"rs_stun_duration"	"2.0 2.5 3.0"
 		}
 		"03"
 		{
@@ -76,12 +76,12 @@
 		"05"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"range"		"600"
+			"range"		"900"
 		}
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"175 225 300"
+			"damage"			"275 400 525"
 			"LinkedSpecialBonus"	"special_bonus_naruto_6"
 		}
 	}

@@ -7,7 +7,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -26,8 +26,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -47,7 +47,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -65,8 +65,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -86,7 +86,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -100,8 +100,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -121,7 +121,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -137,8 +137,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -158,7 +158,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -172,8 +172,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -193,7 +193,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -204,8 +204,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -225,7 +225,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -242,8 +242,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -263,7 +263,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -274,8 +274,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -295,19 +295,19 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/guy/nice.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -338,8 +338,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -359,7 +359,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -374,8 +374,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -395,7 +395,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -406,8 +406,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}

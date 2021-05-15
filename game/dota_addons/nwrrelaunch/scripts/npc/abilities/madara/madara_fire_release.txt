@@ -89,13 +89,13 @@
 		"08"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"explosion_damage"				"70 95 120 145"
+			"explosion_damage"				"90 105 140 165"
 			"LinkedSpecialBonus"			"special_bonus_madara_4"
 		}
 		"07"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"wave_damage"					"50 75 100 125"
+			"wave_damage"					"70 95 120 145"
 		}
 		"09"
         { 

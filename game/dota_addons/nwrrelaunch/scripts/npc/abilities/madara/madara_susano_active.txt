@@ -45,13 +45,13 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "burn_radius"           "175"
+            "burn_radius"           "250"
 			"LinkedSpecialBonus"	"special_bonus_madara_1"
         }
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "burn_damage"           "35 50 65 80"
+            "burn_damage"           "30 50 70 90"
 			"LinkedSpecialBonus"	"special_bonus_madara_5"
         }
 
