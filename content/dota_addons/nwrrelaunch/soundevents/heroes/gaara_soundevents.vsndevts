@@ -294,15 +294,13 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/gaara/lasthit_01.vsnd"
-							"value1"		"sounds/vo/gaara/lasthit_02.vsnd"
 						
 						}
 					}
