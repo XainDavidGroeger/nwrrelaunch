@@ -26,6 +26,7 @@
 		"particle"		"particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
 		"soundfile"  	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 		"soundfile"  	"soundevents/heroes/itachi/itachi_tsukyomi_cast_talking.vsndevts"
+		"soundfile"		"soundevents/itachi_tsukyomi_cast.vsndevts"
 	}
 	
 	// Special
@@ -55,6 +56,15 @@
 		{
 			"var_type"					"FIELD_FLOAT"
 			"slow_duration_special"		"4 4.0 5.0 5.5"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"itachi_tsukyomi_cast"
+			"Target" 		"CASTER"
 		}
 	}
 

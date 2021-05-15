@@ -24,7 +24,10 @@
 		{
 			"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
 			"soundfile"	"soundevents/itachi_amateratsu_burning.vsndevts"
-			"soundfile"  "soundevents/heroes/itachi/itachi_amaterasu_cast_talking.vsndevts"
+			"soundfile" "soundevents/heroes/itachi/itachi_amaterasu_cast_talking.vsndevts"
+			"soundfile"	"soundevents/itachi_amaterasu_fire.vsndevts"
+			"soundfile"	"soundevents/itachi_amaterasu_cast.vsndevts"
+			"soundfile"	"soundevents/itachi_amaterasu_impact.vsndevts"
 		}
 		
 		// Special
