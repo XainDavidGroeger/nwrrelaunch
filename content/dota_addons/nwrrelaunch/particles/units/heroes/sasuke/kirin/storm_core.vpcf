@@ -268,5 +268,9 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/sasuke/kirin/storm_smoke.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf"
+			m_flDelay = 5.75
+		},
 	]
 }

@@ -86,9 +86,9 @@ function modifier_chidori_kirin_mark:OnDestroy()
 	EmitSoundOn("sasuke_kirin_impact", self:GetParent())
 
 
-	self.lighting_bolt = ParticleManager:CreateParticle("particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
-    ParticleManager:SetParticleControl(self.lighting_bolt, 0, self:GetParent():GetAbsOrigin())
-    ParticleManager:SetParticleControl(self.lighting_bolt, 1, self:GetParent():GetAbsOrigin() * Vector(0, 0, 5))
+	--self.lighting_bolt = ParticleManager:CreateParticle("particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf", PATTACH_CUSTOMORIGIN, self:GetParent())
+    --ParticleManager:SetParticleControl(self.lighting_bolt, 0, self:GetParent():GetAbsOrigin())
+    --ParticleManager:SetParticleControl(self.lighting_bolt, 1, self:GetParent():GetAbsOrigin() * Vector(0, 0, 5))
 
 	local damage = self:GetAbility():GetSpecialValueFor("base_damage")
 	if self.stored_damage > 0 then
