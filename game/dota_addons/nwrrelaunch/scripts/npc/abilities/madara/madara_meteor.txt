@@ -8,7 +8,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/madara/meteor.lua"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -18,22 +19,22 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"madara_meteor"
-	"AOERadius"						"%radius"
+	"AOERadius"						"600"
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-				"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-				"particle"	"particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf"
-				"particle"	"particles/units/heroes/madara/shadow_2.vpcf"
-				"particle"	"particles/units/heroes/madara/burning_tree.vpcf"
-				"particle"	"particles/units/heroes/deidara/c4_explo_base.vpcf"
+		"particle"	"particles/generic_gameplay/generic_silence.vpcf"
+		"particle"	"particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf"
+		"particle"	"particles/units/heroes/madara/shadow_2.vpcf"
+		"particle"	"particles/units/heroes/madara/burning_tree.vpcf"
+		"particle"	"particles/units/heroes/deidara/c4_explo_base.vpcf"
 
-				"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
-				"soundfile"	"soundevents/madara_meteor_cast.vsndevts"
-				"soundfile"	"soundevents/madara_meteor_impact.vsndevts"
-				"soundfile"	"soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts"
-				"soundfile"	"soundevents/heroes/madara/madara_ulti_impact_talk.vsndevts"
+		"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+		"soundfile"	"soundevents/madara_meteor_cast.vsndevts"
+		"soundfile"	"soundevents/madara_meteor_impact.vsndevts"
+		"soundfile"	"soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts"
+		"soundfile"	"soundevents/heroes/madara/madara_ulti_impact_talk.vsndevts"
 	}	
 
 	// Casting
@@ -72,7 +73,7 @@
 		"08"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"land_time"					"1.8"
+			"land_time"						"1.8"
 		}
 		"05"
 		{
@@ -100,105 +101,6 @@
 			"damage"						"400 525 650"
 		}
 	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/meteor.lua"
-			"Function"		"spawnShadow"
-			"Target"		"POINT"
-			"LandTime"									"%land_time"
-			"TravelSpeed"								"%travel_speed"
-			"VisionDistance"							"%vision_distance"
-			"EndVisionDuration"							"%end_vision_duration"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"madara_ulti_cast_talk"
-			"Target"		"CASTER"
-		}
-
-			"FireSound"
-		{
-			"EffectName"	"madara_meteor_cast"
-			"Target"		"CASTER"
-		}
-	
-	}
-
-	"OnChannelSucceeded"
-	{
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/meteor.lua"
-			"Function"		"LaunchMeteor"
-			"Target"		"POINT"
-			"LandTime"									"%land_time"
-			"TravelSpeed"								"%travel_speed"
-			"VisionDistance"							"%vision_distance"
-			"EndVisionDuration"							"%end_vision_duration"
-		}
-
-
-		"FireSound"
-		{
-			"EffectName"	"madara_ulti_impact_talk"
-			"Target"		"CASTER"
-		}
-
-		
-		"DelayedAction"
-		{
-			"Delay"     "%delay_to_dmg"
-			"Action"    
-			{
-
-				"FireSound"
-				{
-					"EffectName"	"madara_meteor_impact"
-					"Target"		"CASTER"
-				}
-
-				
-
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/madara/meteor.lua"
-					"Function"		"meteorExplode"
-					"Target"		"POINT"
-					"aoe"			"%radius"	
-					"damage" 		"%damage"
-				}
-
-				"ActOnTargets"
-				{
-					"Target"
-					{
-						"Center"  	"POINT"
-						"Radius" 	"%radius"
-						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-					}
-				
-					"Action"    
-					{
-						"Stun"
-						{
-							"Duration"   "%stun_duration"
-							"Target" 	 "TARGET"
-						}
-					}
-				}
-				
-			}
-		}
-
-		
-	}
-
 }
 
 }
