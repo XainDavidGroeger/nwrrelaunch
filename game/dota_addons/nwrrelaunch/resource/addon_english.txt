@@ -899,22 +899,22 @@
 		"npc_dota_hero_guy"  										"Gai"
 		"npc_dota_hero_guy_lore"  									""
 		// Dynamic Entry
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new"						"Dynamic Entry"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow_ulti"			"%MS DEBUFF ULTI: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_duration"				"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range"				"RANGE: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range_ulti"		"RANGE ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry"						"Dynamic Entry"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range_ulti"		"RANGE ULTI: "
 
 		// Dynamic Entry Ulti
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult"						"Dynamic Entry"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow_ulti"			"%MS DEBUFF ULTI: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_duration"				"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range"				"RANGE: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range_ulti"		"RANGE ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult"						"Dynamic Entry"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range_ulti"		"RANGE ULTI: "
 
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased movement speed."
@@ -950,6 +950,12 @@
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRIT DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION ULTI: "
 		"DOTA_Tooltip_ability_guy_strong_fist_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
+		
+		// Morning Peacock
+		"DOTA_Tooltip_ability_guy_morning_peacock"						"Morning Peacock"
+		"DOTA_Tooltip_ability_guy_morning_peacock_lore"						"Morning Peacock"
+		"DOTA_Tooltip_ability_guy_morning_peacock_stun"					"STUN DURATION: "
+		"DOTA_Tooltip_ability_guy_morning_peacock_description"			"Upon activation, Guy's attack speed increases for the next four attacks and stuns the target while applying reduced attack damage. The cooldown of this ability is reduced with every basic attack made by Guy."
 		
 		// Strong Fist Ulti
 		"DOTA_Tooltip_ability_guy_strong_fist_ult"						"Strong Fist"
@@ -2284,14 +2290,14 @@
 		"DOTA_Tooltip_Ability_special_bonus_anko_5"						"-4s Giant Snake Cooldown"
 
 
-		//25: +3 Power of Youth Max Stacks / +550 Dynamic Entry Range
-		//20: +40 Sixth Gate Movement Speed / +35% Gouken Critical Damage
-		//15: +35% Dynamic Entry Miss Chance/ +15% Lifesteal
-		//10: +15 Damage / +200 Health
-		"DOTA_Tooltip_Ability_special_bonus_guy_1"						"+35% Dynamic Entry Miss Chance"
-		"DOTA_Tooltip_Ability_special_bonus_guy_2"						"+40 Sixth Gate Movement Speed"
-		"DOTA_Tooltip_Ability_special_bonus_guy_3"						"+35% Gouken Critical Damage"
-		"DOTA_Tooltip_Ability_special_bonus_guy_4"						"+3 Power of Youth Max Stacks"
+		//25: +550 Dynamic Entry Range / Gain Morning Peacock in Sixth Gate
+		//20: +50 Sixth Gate Movement Speed / -0.2 Sixth Gate Base Attack Time
+		//15: 15% Lifesteal / +35% Whirlwind Attack Damage
+		//10: +200 Health / +15 Damage
+		"DOTA_Tooltip_Ability_special_bonus_guy_1"						"+35% Whirlwind Attack Damage"
+		"DOTA_Tooltip_Ability_special_bonus_guy_2"						"-0.2 Sixth Gate Base Attack Time"
+		"DOTA_Tooltip_Ability_special_bonus_guy_3"						"+50 Sixth Gate Movement Speed"
+		"DOTA_Tooltip_Ability_special_bonus_guy_4"						"Gain Morning Peacock in Sixth Gate"
 		"DOTA_Tooltip_Ability_special_bonus_guy_5"						"+550 Dynamic Entry Range"
 
 

@@ -16,3 +16,24 @@ function effectStart( keys )
 
 	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_2_END)
 end
+
+function performAttackOnTarget(keys)
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_guy_1")
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	
+			local damage = keys.caster:GetAverageTrueAttackDamage(nil) / 100 * 35
+			ApplyDamage({
+				attacker = keys.caster,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+				ability = keys.ability,
+				victim = keys.target,
+				damage = damage,
+			})
+	    end
+	end
+
+	keys.caster:PerformAttack(keys.target, true, true, true, true, false, false, false)
+
+end

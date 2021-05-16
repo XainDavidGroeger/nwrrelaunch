@@ -1,0 +1,126 @@
+	
+    "DOTAAbilities"
+{
+   
+"guy_strong_fist_ult"
+	{
+	    // General  
+	    // ----------------------------------------------------------------------------------------
+	    "BaseClass"                 "ability_datadriven"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL" 
+	    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityTextureName"        "guy_strong_fist"
+	
+	    // Casting
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCastRange"              "0"
+	
+	
+	    // Time     
+	    //-------------------------------------------------------------------------------------------------------------
+	    "AbilityCooldown"               "17 14 11 8"
+	    "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+	
+	
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+	     "precache"
+	    {
+	        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+			"soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        { 
+	            "var_type" "FIELD_FLOAT"
+	            "crit" "225"
+	        }
+	        "02"
+	        {
+	            "var_type" "FIELD_FLOAT"
+	            "stun" "0.50 0.75 1.00 1.25"
+	        }
+	    }
+	
+	    "OnSpellStart"
+	    {           
+	         "ApplyModifier"
+	        {
+	            "ModifierName"          "modifier_guy_strong_fist"
+	            "Target"                "CASTER"
+	        }
+	
+	        
+	    }
+	
+	
+	    "Modifiers"
+	    {
+	        "modifier_guy_strong_fist_reset_cd"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "OnAttackLanded"
+	            // "%attack_damage" is set to the damage value before mitigation
+	            {
+	                "RunScript"
+	                {
+	                   "ScriptFile"    "heroes/guy/strong_fist.lua"
+	                    "Function"      "resetCooldownOnHit"
+	                }
+	            }
+
+				"FireSound"
+				{
+					"EffectName"	"guy_gouken_talking"
+					"Target"		"CASTER"
+				}
+	        }
+	
+	        "modifier_guy_strong_fist"
+	        {
+	
+	            "Passive" "0"
+	            "IsHidden"  "0"
+	            "IsBuff"    "1"
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"    "%crit"
+	            }
+	
+	            "OnAttackLanded"
+	            {
+	           "FireSound"
+	            {
+	                "EffectName"    "Hero_Tusk.WalrusPunch.Damage"
+	                "Target"         "CASTER"
+	            }
+	
+	                "Stun"
+	                {
+	                    "Duration"   "%stun"
+	                    "Target"      "TARGET"
+	                }
+	
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_guy_strong_fist"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "heroes/guy/strong_fist.lua"
+	                    "Function"      "resetCooldown"
+	                }
+	            }
+	        }
+	
+	    }
+	
+	}
+}
