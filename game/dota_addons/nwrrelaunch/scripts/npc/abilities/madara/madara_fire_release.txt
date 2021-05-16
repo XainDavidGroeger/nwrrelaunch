@@ -10,7 +10,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/madara/fire_release.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -112,93 +113,17 @@
             "var_type"  "FIELD_INTEGER"
             "duration" "2 3 4 5"
         }
-        "06"
+        "12"
         { 
             "var_type"  "FIELD_INTEGER"
             "bonus_damage_percent" "5 10 15 20"
         }
+		"13"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "knockback_duration" "0.6"
+        }
 		
-	}
-
-	"OnAbilityPhaseStart"
-	 {
-	 	"FireSound"
-		{
-			"EffectName"			"madara_katon"
-			"Target"				"CASTER"
-		}
-	 } 
-
-	"OnSpellStart"
-	{
-
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_cast"
-			"Target"				"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"fire_release_initialize"
-			"Target"				"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"ReleaseFire"
-			"Target"				"POINT"
-			"fire_particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-		}		
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"		"0"
-
-		
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"fireKnockback"
-			"Target"				"TARGET"
-			"range"					"%fire_range"
-			"distance"				"%fire_range"
-		}
-
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%wave_damage"
-		}
-		
-	}
-
-	"OnProjectileFinish"
-	{
-
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_explosion"
-			"Target"				"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/fire_release.lua"
-			"Function"		"fireExplosion"
-			"TARGET"		"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/fire_release.lua"
-			"Function"		"applyDamageAndStun"
-			"TARGET"		"POINT"
-		}
 	}
 }
 

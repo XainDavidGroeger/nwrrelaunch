@@ -1,129 +1,131 @@
---[[ ============================================================================================================
-	Author: LearningDave
-	Date: October 26th, 2015
-	Launches the Meteor
-================================================================================================================= ]]
-function LaunchMeteor(keys)
-	--ParticleManager:DestroyParticle(keys.ability.particle, true)
-	local caster_point = keys.caster:GetAbsOrigin()
-	local target_point = keys.target_points[1]
-	
-	local caster_point_temp = Vector(caster_point.x, caster_point.y, 0)
-	local target_point_temp = Vector(target_point.x, target_point.y, 0)
-	
-	local point_difference_normalized = (target_point_temp - caster_point_temp):Normalized()
-	local velocity_per_second = point_difference_normalized * keys.TravelSpeed
-	
-	keys.caster:EmitSound("Hero_Invoker.ChaosMeteor.Cast")
+madara_meteor = class({})
 
-
-
-	--Create a particle effect consisting of the meteor falling from the sky and landing at the target point.
-	local meteor_fly_original_point = (target_point - (velocity_per_second * keys.LandTime)) + Vector (0, 0, 1000)  --Start the meteor in the air in a place where it'll be moving the same speed when flying and when rolling.
-	local chaos_meteor_fly_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf", PATTACH_ABSORIGIN, keys.caster)
-	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 0, meteor_fly_original_point)
-	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 1, target_point)
-	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 2, Vector(1.3, 0, 0))
+function madara_meteor:OnSpellStart()
+	self.target_point = self:GetCursorPosition()
+	self:CastMeteorShadow(self.target_point)
 end
---[[ ============================================================================================================
-	Author: LearningDave
-	Date: October 26th, 2015
-	Fire a explosion effect, applies damage to all enimies in the aoe, burns trees if wood_release is skilled
-================================================================================================================= ]]
-function meteorExplode(keys)
-	local target_point = keys.target_points[1]
-	local aoe = keys.aoe
-	local damage = keys.damage
-	local ability_index = keys.caster:FindAbilityByName("madara_wood_release"):GetAbilityIndex()
-    local wood_ability = keys.caster:GetAbilityByIndex(ability_index)
-    local wood_ability_level = keys.caster:GetAbilityByIndex(ability_index):GetLevel()
-    local tree_vision = wood_ability:GetLevelSpecialValueFor("tree_vision", wood_ability_level)
-    local tree_burn_duration = wood_ability:GetLevelSpecialValueFor("tree_burn_duration", wood_ability_level)
-	local nearby_enemy_units = FindUnitsInRadius(keys.caster:GetTeam(), target_point, nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 
-	for i, individual_unit in ipairs(nearby_enemy_units) do
-			
-			ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL,})
+function madara_meteor:OnChannelFinish(interrupted)
+	if not IsServer() then return end
+	if not interrupted then
+		local caster = self:GetCaster()
+		self:LaunchMeteor(self.target_point)
+		--Second talent meteor
+		if caster:FindAbilityByName("special_bonus_madara_second_meteor"):IsTrained() then
+			Timers:CreateTimer({
+				endTime = 2,
+				callback = function()
+					self:CastMeteorShadow(self.target_point)
+				end
+			})
+			Timers:CreateTimer({
+				endTime = 4,
+				callback = function()
+					self:LaunchMeteor(self.target_point)
+				end
+			})
+		end
 	end
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf", PATTACH_CUSTOMORIGIN, nil) 
-	ParticleManager:SetParticleControl(particle , 0, target_point)
+end
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/deidara/c4_explo_base.vpcf", PATTACH_CUSTOMORIGIN, nil) 
-	ParticleManager:SetParticleControl(particle , 0, target_point)
-	ParticleManager:SetParticleControl(particle , 3, target_point)
+function madara_meteor:CastMeteorShadow(target_point)
+	local caster = self:GetCaster()
+	local caster_origin = caster:GetAbsOrigin()
+	local land_time = self:GetSpecialValueFor("land_time")
+	local travel_speed = self:GetSpecialValueFor("travel_speed")
+	local vision_distance = self:GetSpecialValueFor("vision_distance")
+	local end_vision_duration = self:GetSpecialValueFor("end_vision_duration")
 
-    if wood_ability ~= nil then
-	    if wood_ability_level > 0 then
-	    	local trees = GridNav:GetAllTreesAroundPoint(target_point, aoe, false) 
-	    			if trees then
-	    				for _,tree in pairs(trees) do
-	    					local origin = tree:GetAbsOrigin()
-	    					xcoord = origin.x
-	    					ycoord = origin.y
-	    					--local dummy = CreateUnitByName( "npc_burning_tree", Vector(xcoord, ycoord, 0.0), false, keys.caster, nil, keys.caster:GetTeamNumber() )
-	    					--dummy:GetAbilityByIndex(0):SetLevel(wood_ability_level)
-	    					GridNav:DestroyTreesAroundPoint(origin, 40, true)
-	    					local treesSecond = GridNav:GetAllTreesAroundPoint(origin, 50, false) 
-	    					
-	    					local particle = ParticleManager:CreateParticle("particles/units/heroes/madara/burning_tree.vpcf", PATTACH_CUSTOMORIGIN, nil) 
-              				ParticleManager:SetParticleControl(particle , 0, origin)
- 	    					
-        
-              				Timers:CreateTimer( function()
-             
-              						local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), origin, nil, tree_vision, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
-	    						    if targetEntities then
-	    						      for _,oneTarget in pairs(targetEntities) do
-	    						        local modfifier = oneTarget:FindModifierByName("burning_tree_dot")
-	    						        if modifier == nil then
-	    						          wood_ability:ApplyDataDrivenModifier(keys.caster, oneTarget, "burning_tree_dot", {Duration = tree_burn_duration})
-	    						          local particle = ParticleManager:CreateParticle("particles/dire_fx/fire_barracks_glow_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil) 
-	    						          ParticleManager:SetParticleControl(particle , 0, oneTarget:GetAbsOrigin())
-	    						        end
-	    						      end
-	    						    end
-        
-              						if stopCheck then
-              							return 0.3
-              						else
-              							return nil
-              						end
-	    						  
-	    					end
-	    				  	)
-        
-              				Timers:CreateTimer( tree_burn_duration, function()
-              						stopCheck = false
-	    					   		ParticleManager:DestroyParticle(particle, true)
-	    						  return nil
-	    					end
-	    				  	)
-	    				end
-	    			end
-	    end
-    end
---[[ ============================================================================================================
-	Author: LearningDave
-	Date: October 26th, 2015
-	Fires the shadow for the meteor while madara is channeling
-================================================================================================================= ]]
-function spawnShadow(keys)
-	local caster_point = keys.caster:GetAbsOrigin()
-	local target_point = keys.target_points[1]
-	
-	local caster_point_temp = Vector(caster_point.x, caster_point.y, 0)
-	local target_point_temp = Vector(target_point.x, target_point.y, 0)
-	
-	local point_difference_normalized = (target_point_temp - caster_point_temp):Normalized()
-	local velocity_per_second = target_point_temp:Normalized() * keys.TravelSpeed
+	local point_difference_normalized = (target_point - caster_origin):Normalized()
+	local velocity_per_second = target_point:Normalized() * travel_speed
 	--Create a particle effect consisting of the meteor falling from the sky and landing at the target point.
 	local meteor_fly_original_point = target_point + Vector (-900, 0, 2000)  --Start the meteor in the air in a place where it'll be moving the same speed when flying and when rolling.
 	local meteor_fly_original_point_2 = target_point + Vector (-900, 0, 2000)
-	local meteor_fly_original_point_3 = (target_point - (velocity_per_second * keys.LandTime)) + Vector (0, 0, 100)
-	local chaos_meteor_fly_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly_shadow.vpcf", PATTACH_ABSORIGIN, keys.caster)
+	local meteor_fly_original_point_3 = (target_point - (velocity_per_second * land_time)) + Vector (0, 0, 100)
+	local chaos_meteor_fly_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly_shadow.vpcf", PATTACH_ABSORIGIN, caster)
 	 	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 0, meteor_fly_original_point)
 		ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 1, meteor_fly_original_point_2)
 		ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 2, Vector(3.8 , 0, 0))
-	 keys.ability.particle = chaos_meteor_fly_particle_effect
+	 self.meteor_fly_vfx = chaos_meteor_fly_particle_effect
+
+	caster:EmitSound("madara_ulti_cast_talk")
+	caster:EmitSound("madara_meteor_cast")
+end
+
+function madara_meteor:LaunchMeteor(target_point)
+	local caster = self:GetCaster()
+	local caster_origin = caster:GetAbsOrigin()
+	local land_time = self:GetSpecialValueFor("land_time")
+	local travel_speed = self:GetSpecialValueFor("travel_speed")
+	local vision_distance = self:GetSpecialValueFor("vision_distance")
+	local end_vision_duration = self:GetSpecialValueFor("end_vision_duration")
+
+	local point_difference_normalized = (target_point - caster_origin):Normalized()
+	local velocity_per_second = target_point:Normalized() * travel_speed
+	
+	caster:EmitSound("Hero_Invoker.ChaosMeteor.Cast")
+
+	--Create a particle effect consisting of the meteor falling from the sky and landing at the target point.
+	local meteor_fly_original_point = (target_point - (velocity_per_second * land_time)) + Vector (0, 0, 1000)  --Start the meteor in the air in a place where it'll be moving the same speed when flying and when rolling.
+	local chaos_meteor_fly_particle_effect = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf", PATTACH_ABSORIGIN, caster)
+	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 0, meteor_fly_original_point)
+	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 1, target_point)
+	ParticleManager:SetParticleControl(chaos_meteor_fly_particle_effect, 2, Vector(1.3, 0, 0))
+
+	Timers:CreateTimer({
+		endTime = self:GetSpecialValueFor("delay_to_dmg"),
+		callback = function()
+			local explosion_radius = self:GetSpecialValueFor("radius")
+			local explosion_damage_table = {
+				attacker = self:GetCaster(),
+				damage = self:GetSpecialValueFor("damage"),
+				damage_type = self:GetAbilityDamageType(),
+				ability = self,
+			}
+	
+			local enemies = FindUnitsInRadius(
+				caster:GetTeamNumber(),	-- int, your team number
+				target_point,	-- point, center point
+				nil,	-- handle, cacheUnit. (not known)
+				explosion_radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+				DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+				0,	-- int, flag filter
+				0,	-- int, order filter
+				false	-- bool, can grow cache
+			)
+	
+			for _,enemy in pairs(enemies) do
+				-- apply damage
+				if enemy then
+					explosion_damage_table.victim = enemy
+					ApplyDamage( explosion_damage_table )
+					enemy:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
+				end
+				-- play effects
+				-- self:PlayEffects( enemy )
+			end
+
+			local wood_release_ability =  self:GetCaster():FindAbilityByName("madara_wood_release")
+			if wood_release_ability:IsTrained() then
+		
+				local trees = GridNav:GetAllTreesAroundPoint(target_point, explosion_radius, false) 
+		
+				for _,tree in pairs(trees) do
+					if tree then
+						wood_release_ability:BurnTree(tree)
+					end
+					-- play effects
+					-- self:PlayEffects( enemy )
+				end
+			end
+
+			local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf", PATTACH_ABSORIGIN, caster)
+			ParticleManager:SetParticleControl(explosion_vfx, 0, target_point)
+			ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(explosion_radius,0,0))
+
+			caster:EmitSound("Hero_Warlock.RainOfChaos.Cast")
+
+		end
+	})
 end

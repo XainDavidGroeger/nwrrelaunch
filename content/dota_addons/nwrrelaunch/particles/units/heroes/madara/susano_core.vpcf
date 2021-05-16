@@ -1,0 +1,45 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ROOTBONE_FOLLOW"
+					m_entityName = "parent"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/items/courier/baekho/baekho.vmdl"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/susano_core_proj.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/susano_core_flek.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/susano_core_vapor.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/susano_core_ambient_magic.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/susano_core_ambient_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/madara/madara_susano_cage_bonelocked.vpcf"
+		},
+	]
+}

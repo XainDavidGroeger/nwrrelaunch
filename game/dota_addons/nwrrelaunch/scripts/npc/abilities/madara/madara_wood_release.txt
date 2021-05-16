@@ -6,7 +6,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"heroes/madara/wood_release.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -36,11 +37,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"475"
-		}
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
@@ -70,7 +66,7 @@
 		"07"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"tree_vision"				"150"
+			"tree_vision"				"225"
 		}
 
 		"08"
@@ -78,6 +74,16 @@
 			"var_type"					"FIELD_FLOAT"
 			"cd_reduc"					"0 0 0 0"
 			"LinkedSpecialBonus"		"special_bonus_madara_3"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"475"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"dot_interval"					"0.25"
 		}
 
 	}
@@ -91,56 +97,6 @@
 		"soundfile"						"soundevents/heroes/madara/madara_wood_release_cast.vsndevts"
 		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
 		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-	}
-
-	"OnAbilityPhaseStart"
-	 {
-	 	"RunScript"
-	 	{
-	 		"ScriptFile"	"heroes/madara/wood_release.lua"
-			"Function"		"wood_sound"
-	 	}
-		"FireSound"
-		{
-			"EffectName"		"madara_wood_release_cast"
-			"Target"			"CASTER"
-		}
-	 } 
-	
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/wood_release.lua"
-			"Function"		"wood_release"
-			"Target"		"POINT"
-		}
-	}
-
-	"Modifiers"
-	{
-		"burning_tree_dot"
-      {
-        "IsDebuff"  "1"
-        "Hidden"    "0"
-        "Duration"  "%burn_buff_duration"
-        "ThinkInterval"     "1"
-        "OnIntervalThink"
-        {
-           "Damage"
-          {
-            "Target"  "TARGET"
-            "Type"    "DAMAGE_TYPE_MAGICAL"
-            "Damage"  "%burn_damage"
-          }
-        }
-
-        "Properties"
-          {
-            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%burn_ms_slow_percentage"
-          }
-         
-      }
 	}
 	
 }
