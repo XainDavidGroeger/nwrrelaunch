@@ -1,3 +1,4 @@
+
 function chakra_enhanced_strength( keys )
 	if not keys.target:IsBuilding() then
 		keys.ability.enemy = keys.target
