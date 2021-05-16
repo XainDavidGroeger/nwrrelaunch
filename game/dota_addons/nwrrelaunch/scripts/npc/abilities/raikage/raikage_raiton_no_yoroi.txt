@@ -2,330 +2,79 @@
     "DOTAAbilities"
 {
     
-
-
-"raikage_raiton_no_yoroi"
-{
-    // General  
-    // ----------------------------------------------------------------------------------------
-    "BaseClass"                 "ability_datadriven"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"        "raikage_raiton_no_yoroi" //TODO
-
-
-    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
-    "MaxLevel"               "4"
-    "AbilityDamage"            "50.0 50.0 50.0 50.0"
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "0"
-    "AbilityDuration"               "20.0 40.0 60.0 80.0"
-
-
-    // Time     
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "20"
-    "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "75 80 85 90"
-
-
-     "precache"
+    "raikage_raiton_no_yoroi"
     {
-      "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-      "particle"  "particles/generic_gameplay/generic_purge.vpcf"
-      "particle"   "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf"
-    }
-
-    "AbilitySpecial"
-    {
-        "01"
-        { 
-            "var_type"  "FIELD_INTEGER"
-            "physical_damage_reduce_percent" "10 15 20 25"
-        }
-        "02"
-        {
-            "var_type" "FIELD_FLOAT"
-            "duration" "10.0"
-        }
-        "03"
-        {
-            "var_type" "FIELD_FLOAT"
-            "charge_damage_amount" "350.0"
-			"LinkedSpecialBonus"	"special_bonus_raikage_2"
-        }
-        "04"
-        { 
-            "var_type"  "FIELD_INTEGER"
-            "release_aoe" "250"
-        }
-        "05"
-        {
-            "var_type" "FIELD_FLOAT"
-            "release_purge_duration" "0.25"
-        }
-        "06"
-        {
-            "var_type" "FIELD_FLOAT"
-            "release_damage" "50.0"
-        }
-        "07"
-        {
-            "var_type" "FIELD_FLOAT"
-            "release_ms_slow" "-50.0" 
-        }
-    }
-
-    "OnSpellStart"
-    {           
-
-        "RunScript"
-        {
-            "ScriptFile"    "heroes/raikage/raiton_no_yoroi.lua"
-            "Function"      "Shield"
-        }
-
-        "FireSound"
-        {
-            //TODO Lighting charge sound at start
-        }
-        
-        "ApplyModifier"
-        {
-            "ModifierName"          "modifier_raiton_no_yoroi_charge"
-            "Target"                "CASTER"
-        }
-        
-        "FireSound"
-        {
-            //TODO loop sound during charge?
-        }
-    }
+        // General  
+        // ----------------------------------------------------------------------------------------
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/raikage/raikage_raiton_no_yoroi.lua"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+        "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"        "raikage_raiton_no_yoroi" 
 
 
-    "Modifiers"
-    {
-        "modifier_raiton_no_yoroi_charge"
-        {
-            "IsBuff"            "1"
-            "Duration"          "%duration"
-        
-            "ThinkInterval"     "0.03"
+        "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+        "MaxLevel"               "4"
 
-            "OnIntervalThink"
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityDuration"               "15"
+
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "15 13 11 9"
+        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "90"
+
+        "precache"
+        {
+        "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+        "particle"  "particles/generic_gameplay/generic_purge.vpcf"
+        "particle"   "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf"
+        }
+
+        "AbilitySpecial"
+        {
+            "01"
             {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/raikage/raiton_no_yoroi.lua"
-                    "Function"      "ShieldHealth"
-                }
+                "var_type" "FIELD_FLOAT"
+                "duration" "15.0"
             }
-
-            "OnTakeDamage"
+            "02"
             {
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/raikage/raiton_no_yoroi.lua"
-                    "Function"      "ShieldAbsorb"
-                    "DamageTaken"   "%attack_damage"
-                }
+                "var_type" "FIELD_FLOAT"
+                "charge_damage_amount" "120 160 200 240"
+                "LinkedSpecialBonus"	"special_bonus_raikage_2"
             }
-
-             "OnCreated"
-            {
-               
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_righthand"
-
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftleg"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightleg"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightshoulder"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftshoulder"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightelbow"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftelbow"
-                    }
-                }
+            "03"
+            { 
+                "var_type"  "FIELD_INTEGER"
+                "release_aoe" "250"
             }
-
-
-            "OnDestroy"
+            "04"
             {
-               // "AttachEffect" TODO add particle for releasing the charge
-               // {
-               //     "EffectName"        "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf"
-               //     "EffectAttachType"  "follow_origin"
-               //     "Target"            "TARGET"
-               //     "ControlPointEntities"
-               //     {
-               //         "TARGET"    "attach_origin"
-               //         "TARGET"    "attach_origin"
-               //     }
-               // }
-
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/raikage/raiton_no_yoroi.lua"
-                    "Function"      "EndShieldParticle"
-                }
-
-                "Damage"
-                {
-                    "Target"
-                    {
-                        "Center"            "TARGET"
-                        "Radius"            "%release_aoe"
-                        "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-                    "Type"           "DAMAGE_TYPE_MAGICAL"
-                    "Damage"         "%release_damage"
-                }
-
-               "ApplyModifier"
-                {
-                  "ModifierName"        "modifer_raikage_purge"
-                  "Target"              "TARGET"
-                  "Duration"            "%release_purge_duration"
-                }
-
-                 "FireEffect"
-                {
-                    "Target"
-                    {
-                        "Center"            "TARGET"
-                        "Radius"            "%release_aoe"
-                        "Teams"             "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"             "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-                    "EffectName"        "particles/generic_gameplay/generic_purge.vpcf"
-                    "EffectAttachType"  "attach_hitloc"
-                }
-             }
+                "var_type" "FIELD_FLOAT"
+                "release_purge_duration" "2"
+            }
+            "05"
+            {
+                "var_type" "FIELD_FLOAT"
+                "release_damage" "120 160 200 240"
+            }
+            "06"
+            {
+                "var_type" "FIELD_FLOAT"
+                "release_ms_slow" "-35.0" 
+            }
+            
         }
-
-          "modifer_raikage_purge"
-              {
-                "IsDebuff"    "1"
-                "Properties"
-                {
-                  "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%release_ms_slow"
-                }
-              }
     }
-
-}
 
 
 }
