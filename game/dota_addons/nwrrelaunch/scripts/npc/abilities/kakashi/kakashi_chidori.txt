@@ -7,7 +7,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
+	"BaseClass"					"ability_lua"
+	"ScriptFile"                "heroes/kakashi/kakashi_chidori.lua"
 	"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET"
 	"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -77,117 +78,9 @@
 		"05"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"ms_slow"			"-50"
+			"ms_debuff"			"-50"
 		}
 		
 	}
-
-	"OnAbilityPhaseStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"		"heroes/kakashi/chidori.lua"
-			"Function"			"ChannelChidori"
-			"modifier_caster"	"modifier_imba_storm_bolt_caster"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"kakashi_raikiri_cast_talking"
-			"Target"	"CASTER"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"kakashi_raikiri_cast"
-			"Target"	"CASTER"
-		}
-	}
-	
-	"OnAbilityPhaseInterrupted"
-	{
-		"RemoveModifier"
-		{
-			"ModifierName"		"modifier_epicenter_precast_datadriven"
-			"Target"			"CASTER"
-		}
-		"RunScript"
-		{
-			"ScriptFile"		"heroes/kakashi/chidori.lua"
-			"Function"			"RemoveChannelChidori"
-			"modifier_caster"	"modifier_imba_storm_bolt_caster"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"RemoveModifier"
-		{
-			"ModifierName"		"modifier_epicenter_precast_datadriven"
-			"Target"			"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/kakashi/chidori.lua"
-			"Function"				"Launch"
-			"modifier_caster"		"modifier_imba_storm_bolt_caster"
-			"particle_bolt"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-			"particle_impact"		"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_imba_storm_bolt_caster"
-		{
-			"Passive"			"0"
-			"IsBuff"			"0"
-			"IsPurgable"		"0"
-			"OverrideAnimation" "ACT_DOTA_CAST_ABILITY_5"
-
-			"OnCreated"
-			{		
-
-				"AttachEffect"
-				{
-					"EffectName"		"particles/units/heroes/kakashi/chidori.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"TARGET"
-					"ControlPointEntities"
-					{
-						"TARGET"	"attach_right_hand"
-					}
-				}
-			}
-			
-		}
-
-
-		"modifier_raikiri_stunned"
-		{
-			"Passive"			"0"
-
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-			
-		}
-
-		"modifier_raikiri_slow"
-		{
-			"Passive"			"0"
-			"IsDebuff"			"1"
-			"Duration"			"1"
-
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%ms_slow"
-			}
-			
-		}
-	}
 }
-
 }
