@@ -2369,7 +2369,7 @@
 		"npc_dota_hero_yondaime_npedesc1"	"Eliminates enemies in a flash through the use of Marked Kunais. "
 		"npc_dota_hero_itachi_npedesc1"		"Slippery hybrid damage dealer wielding the Mangekyo Sharingan."
 		"npc_dota_hero_guy_npedesc1"		"Brawls with opponents using powerful combo based Taijutsu."
-		"npc_dota_hero_onoki_npedesc1"		"Rock hard melee support that buffs allies while debuffing foes."
+		"npc_dota_hero_onoki_npedesc1"		"Versatile melee support that buffs allies while debuffing foes."
 		"npc_dota_hero_zabuza_npedesc1"		"Hunts down and eliminates targets with guaranteed critical strikes."
 		"npc_dota_hero_temari_npedesc1"		"Unleashes the power of wind to send enemies flying."
 		"npc_dota_hero_shikamaru_npedesc1"	"Cunning strategist adept at disabling enemies and supporting allies."

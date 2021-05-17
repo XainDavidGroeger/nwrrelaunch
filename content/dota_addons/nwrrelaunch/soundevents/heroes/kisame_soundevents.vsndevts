@@ -14,17 +14,13 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_attack_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_attack_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_attack_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_attack_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_attack_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_attack_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunk_attack_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunk_attack_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunk_attack_09.vsnd"
-							"value9"		"sounds/vo/kunkka/kunk_attack_10.vsnd"
-							"value10"		"sounds/vo/kunkka/kunk_attack_11.vsnd"
+							"value0"		"sounds/vo/kisame/attack_01.vsnd"
+							"value1"		"sounds/vo/kisame/attack_02.vsnd"
+							"value2"		"sounds/vo/kisame/attack_03.vsnd"
+							"value3"		"sounds/vo/kisame/attack_04.vsnd"
+							"value4"		"sounds/vo/kisame/attack_05.vsnd"
+
+							
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -56,17 +52,16 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunkka_move_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunkka_move_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunkka_move_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunkka_move_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunkka_move_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunkka_move_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunkka_move_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunkka_move_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunkka_move_09.vsnd"
-							"value9"		"sounds/vo/kunkka/kunkka_move_10.vsnd"
-							"value10"		"sounds/vo/kunkka/kunkka_move_11.vsnd"
+							"value0"		"sounds/vo/kisame/move_01.vsnd"
+							"value1"		"sounds/vo/kisame/move_02.vsnd"
+							"value2"		"sounds/vo/kisame/move_03.vsnd"
+							"value3"		"sounds/vo/kisame/move_04.vsnd"
+							"value4"		"sounds/vo/kisame/move_05.vsnd"
+							"value5"		"sounds/vo/kisame/move_06.vsnd"
+							"value6"		"sounds/vo/kisame/move_07.vsnd"
+							"value7"		"sounds/vo/kisame/move_08.vsnd"
+							"value8"		"sounds/vo/kisame/move_09.vsnd"
+							"value9"		"sounds/vo/kisame/move_10.vsnd"
 						}
 					"volume"			{"value"	"1.00000"}
 					"pitch_rand_min"	{"value"	"0.00000"}
@@ -98,12 +93,10 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_pain_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_pain_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_pain_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_pain_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_pain_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_pain_06.vsnd"
+							"value0"		"sounds/vo/kisame/pain_01.vsnd"
+							"value1"		"sounds/vo/kisame/pain_02.vsnd"
+							"value2"		"sounds/vo/kisame/pain_03.vsnd"
+							"value3"		"sounds/vo/kisame/pain_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -135,23 +128,9 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_death_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_death_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_death_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_death_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_death_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_death_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunk_death_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunk_death_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunk_death_09.vsnd"
-							"value9"		"sounds/vo/kunkka/kunk_death_10.vsnd"
-							"value10"		"sounds/vo/kunkka/kunk_death_11.vsnd"
-							"value11"		"sounds/vo/kunkka/kunk_death_12.vsnd"
-							"value12"		"sounds/vo/kunkka/kunk_death_13.vsnd"
-							"value13"		"sounds/vo/kunkka/kunk_death_14.vsnd"
-							"value14"		"sounds/vo/kunkka/kunk_death_15.vsnd"
-							"value15"		"sounds/vo/kunkka/kunk_death_16.vsnd"
-							"value16"		"sounds/vo/kunkka/kunk_death_17.vsnd"
+							"value0"		"sounds/vo/kisame/death_01.vsnd"
+							"value1"		"sounds/vo/kisame/death_02.vsnd"
+							"value2"		"sounds/vo/kisame/death_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -183,15 +162,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_respawn_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_respawn_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_respawn_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_respawn_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_respawn_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_respawn_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunk_respawn_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunk_respawn_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunk_respawn_09.vsnd"
+							"value0"		"sounds/vo/kisame/respawn_01.vsnd"
+							"value1"		"sounds/vo/kisame/respawn_02.vsnd"
+							"value2"		"sounds/vo/kisame/respawn_03.vsnd"
+							"value3"		"sounds/vo/kisame/respawn_04.vsnd"
+							"value4"		"sounds/vo/kisame/respawn_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -223,7 +198,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_spawn_01.vsnd"
+							"value0"		"sounds/vo/kisame/spawn_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -255,19 +230,12 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_kill_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_kill_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_kill_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_kill_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_kill_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_kill_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunk_kill_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunk_kill_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunk_kill_09.vsnd"
-							"value9"		"sounds/vo/kunkka/kunk_kill_10.vsnd"
-							"value10"		"sounds/vo/kunkka/kunk_kill_11.vsnd"
-							"value11"		"sounds/vo/kunkka/kunk_kill_12.vsnd"
-							"value12"		"sounds/vo/kunkka/kunk_kill_13.vsnd"
+							"value0"		"sounds/vo/kisame/kill_01.vsnd"
+							"value1"		"sounds/vo/kisame/kill_02.vsnd"
+							"value2"		"sounds/vo/kisame/kill_03.vsnd"
+							"value3"		"sounds/vo/kisame/kill_04.vsnd"
+							"value4"		"sounds/vo/kisame/kill_05.vsnd"
+							"value5"		"sounds/vo/kisame/kill_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -299,7 +267,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_firstblood_01.vsnd"
+							"value0"		"sounds/vo/kisame/kill_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -331,12 +299,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_lasthit_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_lasthit_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_lasthit_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_lasthit_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_lasthit_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_lasthit_06.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -368,15 +331,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_deny_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_deny_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_deny_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_deny_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_deny_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_deny_06.vsnd"
-							"value6"		"sounds/vo/kunkka/kunk_deny_07.vsnd"
-							"value7"		"sounds/vo/kunkka/kunk_deny_08.vsnd"
-							"value8"		"sounds/vo/kunkka/kunk_deny_09.vsnd"
+							"value0"		"sounds/vo/kisame/deny_01.vsnd"
+							"value1"		"sounds/vo/kisame/deny_02.vsnd"
+							"value2"		"sounds/vo/kisame/deny_03.vsnd"
+							"value3"		"sounds/vo/kisame/deny_04.vsnd"
+							"value4"		"sounds/vo/kisame/deny_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -408,12 +367,11 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_level_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_level_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_level_03.vsnd"
-							"value3"		"sounds/vo/kunkka/kunk_level_04.vsnd"
-							"value4"		"sounds/vo/kunkka/kunk_level_05.vsnd"
-							"value5"		"sounds/vo/kunkka/kunk_level_06.vsnd"
+							"value0"		"sounds/vo/kisame/deny_01.vsnd"
+							"value1"		"sounds/vo/kisame/deny_02.vsnd"
+							"value2"		"sounds/vo/kisame/deny_03.vsnd"
+							"value3"		"sounds/vo/kisame/deny_04.vsnd"
+							"value4"		"sounds/vo/kisame/deny_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -445,9 +403,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/kunkka/kunk_win_01.vsnd"
-							"value1"		"sounds/vo/kunkka/kunk_win_02.vsnd"
-							"value2"		"sounds/vo/kunkka/kunk_win_03.vsnd"
+							"value0"		"sounds/vo/kisame/kill_03.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

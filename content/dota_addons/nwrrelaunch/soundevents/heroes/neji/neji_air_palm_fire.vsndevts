@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/neji/neji_air_palm_fire.vsnd"
+                             "value0"        "sounds/heroes/neji/neji_air_palm_fire.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
