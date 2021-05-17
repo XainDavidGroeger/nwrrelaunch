@@ -6,10 +6,6 @@ function kisame_mizu_bunshin_no_jutsu:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
 
-function kisame_mizu_bunshin_no_jutsu:GetCastRange(location, target)
-	return self:GetSpecialValueFor("range")
-end
-
 function kisame_mizu_bunshin_no_jutsu:ProcsMagicStick()
 	return true
 end
@@ -46,17 +42,9 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
     local illusion = CreateUnitByName("kisame_bunshin", origin, true, caster, nil, caster:GetTeamNumber())
     local illusion2 = CreateUnitByName("kisame_bunshin", origin, true, caster, nil, caster:GetTeamNumber())
 	
-	print(self.bunshin)
 	if self.bunshin ~= nil then
-	    self.bunshin:ForceKill(false)
-	    self.bunshin2:ForceKill(false)
-        EmitSoundOn("bunshin_death", self.bunshin)
-        EmitSoundOn("bunshin_death", self.bunshin2)
-          
-        Timers:CreateTimer(0.1, function()
-            self.bunshin:Destroy()
-            self.bunshin2:Destroy()
-        end)
+	    self:RemoveBunshin(self.bunshin)
+	    self:RemoveBunshin(self.bunshin2)
 	end
 	
 	illusion:SetControllableByPlayer(player, true)
@@ -128,17 +116,10 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
 	--local bonus_damage_preattack = caster:GetBonusDamageFromPrimaryStat() / 100 * damage_percentage
     --caster:SetModifierStackCount( "modifier_water_bunshin_bonus_damage", ability, bonus_damage_preattack)
 	
-	Timers:CreateTimer(duration, function ()
+	Timers:CreateTimer(duration - 0.3, function ()
 	    if illusion ~= nil then
-	        illusion:ForceKill(false)
-	        illusion2:ForceKill(false)
-            EmitSoundOn("bunshin_death", illusion)
-            EmitSoundOn("bunshin_death", illusion2)
-              
-            Timers:CreateTimer(0.1, function()
-                illusion:Destroy()
-                illusion2:Destroy()
-            end)
+	        self:RemoveBunshin(illusion)
+	        self:RemoveBunshin(illusion2)
 		end
 	end)
 	
@@ -146,6 +127,20 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
 	    self.bunshin = illusion
         self.bunshin2 = illusion2
 	end)
+end
+
+function kisame_mizu_bunshin_no_jutsu:RemoveBunshin(illusion)
+    if illusion ~= nil then
+	    illusion:ForceKill(false)
+        EmitSoundOn("bunshin_death", illusion)
+          
+        Timers:CreateTimer(0.1, function()
+            illusion:Destroy()
+			illusion = nil
+			self.bunshin = nil
+			self.bunshin2 = nil
+        end)
+	end
 end
 
 --[[function draw( keys )
