@@ -1,4 +1,4 @@
-"hidan_taunt"
+"hidan_jashinblessing_proc"
 {
     "operator_stacks"
     {
@@ -14,11 +14,11 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/hidan_taunt.vsnd"
+                              "value0"        "sounds/hidan_jashinblessing_proc.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "2.50000"  }
-                                 "pitch_rand_min"    {   "value"     "-0.05000"  }
+                    "volume"            {   "value"     "0.750000"  }
+                    "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }

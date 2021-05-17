@@ -82,6 +82,7 @@
 	{
 		"soundfile"	"soundevents/hidan_ulti.vsndevts"
 		"soundfile"	"soundevents/heroes/hidan/hidan_ulti_cast_talking.vsndevts"
+		"soundfile" "soundevents/hidan_curse_cast.vsndevts"
 		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
 		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"

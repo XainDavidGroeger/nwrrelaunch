@@ -83,12 +83,18 @@ end
 
 hidan_self_pain = class({})
 
+function hidan_self_pain:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("hidan_self_pain_cast")
+	return true
+end
+
 function hidan_self_pain:OnSpellStart( event )
 	local caster = self:GetCaster()
 	local damage = self:GetSpecialValueFor("damage")
 	local talent_ability = caster:FindAbilityByName("special_bonus_hidan_2")
 
 	caster:EmitSound("hidan_self_pain_talking")
+	caster:EmitSound("hidan_self_pain_fire")
 	
 	if talent_ability ~= nil then
 	    if talent_ability:IsTrained() then

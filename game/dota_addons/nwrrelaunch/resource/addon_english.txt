@@ -223,7 +223,7 @@
 
 		// Jashin's Blessing
 		"DOTA_Tooltip_ability_hidan_jashins_blessing"						"<b><font color='#C64F45'> Jashin's Blessing </font></b>"
-		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"<b><font color='#C64F45'> Upon taking fatal damage,</font></b> Hidan avoids death and a percentage of his maximum<b><font color='#C64F45'> Health is restored.</font></b>"
+		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"<b><font color='#C64F45'> Upon taking fatal damage,</font></b> Hidan avoids death. <br><br> Instead, a percentage of his maximum<b><font color='#C64F45'> Health is restored.</font></b>"
 		"DOTA_Tooltip_ability_hidan_jashins_blessing_reset_hp_percentage"	"%HP: "
 		"DOTA_Tooltip_modifier_modifier_jashins_blessing"					"Jashin's Blessing"
 		"DOTA_Tooltip_modifier_modifier_jashins_blessing_description"		"Hidan won't die from fatal damage."
@@ -241,7 +241,7 @@
 		// Self Pain
 		"DOTA_Tooltip_ability_hidan_self_pain"							"<b><font color='#880808'> Self Pain </font></b>"
 		"DOTA_Tooltip_ability_hidan_self_pain_damage"					"DAMAGE: "
-		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Hidan impales himself in a vital area <b><font color='#880808'>dealing Pure Damage to himself.</font></b> <br><br> Hidan cannot die from this ability."
+		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Hidan impales himself in a vital area <b><font color='#880808'>dealing Pure Damage to himself.</font></b> <br><br> Hidan cannot die from this ability. <br><br> Requires <b><font color='#B5B5B5'>Death Possession Blood</font></b> to be active in order to use."
 		
 		"DOTA_Tooltip_modifier_hidan_ulti_debuff"						"Death Possession Blood"
 		"DOTA_Tooltip_modifier_hidan_ulti_debuff_description"			"This Unit is marked by Hidan and will receive the same damage as him if Hidan has his ultimate activated."

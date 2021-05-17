@@ -79,6 +79,11 @@ function hidan_cull_the_weak:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
 
+function hidan_cull_the_weak:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("hidan_cull_the_weak_cast")
+	return true
+end
+
 function hidan_cull_the_weak:OnSpellStart()
 	local caster = self:GetCaster()
 	local ability = self
@@ -90,6 +95,7 @@ function hidan_cull_the_weak:OnSpellStart()
 	local width = self:GetSpecialValueFor("pull_width")
 	local final_target = origin+direction*cast_range
 
+	caster:EmitSound("hidan_cull_the_weak_fire")
 
 	targeted_units = FindUnitsInLine(caster:GetTeamNumber(),
 									 origin, 

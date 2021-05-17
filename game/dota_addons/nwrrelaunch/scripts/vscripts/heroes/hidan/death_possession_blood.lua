@@ -155,6 +155,8 @@ function hidan_death_possession_blood:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 
+	caster:EmitSound("hidan_curse_cast")
+
 	--Learn Self Pain ability
 	caster:FindAbilityByName("hidan_self_pain"):SetLevel(self:GetLevel())
 

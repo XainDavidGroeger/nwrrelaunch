@@ -32,7 +32,7 @@ function ResetHp( keys )
 	ParticleManager:DestroyParticle(keys.ability.buffeffect, true)
 	
 
-		EmitSoundOn("Hero_Omniknight.Purification", caster) 
+	EmitSoundOn("hidan_jashinblessing_proc", caster) 
 
 
 

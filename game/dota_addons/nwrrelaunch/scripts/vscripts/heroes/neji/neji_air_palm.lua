@@ -26,6 +26,8 @@ end
  
  function neji_air_palm:OnSpellStart()
 	
+	self:GetCaster():EmitSound("neji_air_palm_fire")
+
 	self.target = self:GetCursorTarget()
 	self.caster = self:GetCaster()
 
