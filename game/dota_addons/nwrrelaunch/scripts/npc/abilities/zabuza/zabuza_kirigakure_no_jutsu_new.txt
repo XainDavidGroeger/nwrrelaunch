@@ -14,9 +14,9 @@
 	
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.2"
-	"AbilityCooldown"				"24 23 22 21"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.4"
+	"AbilityCooldown"				"38 32 26 20"
 	"AbilityManaCost"				"70"
 
 	// Precache
@@ -60,7 +60,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"fade_delay"			"1.4 1.2 1.0 0.8"
+			"fade_delay"			"2.0 1.7 1.4 1.0"
 			"LinkedSpecialBonus"	"special_bonus_zabuza_4"
 		}
 		"07"
@@ -98,7 +98,7 @@
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"6 7 8 9"
+			"duration"				"8 10 12 14"
 		}
 		"14"
 		{
