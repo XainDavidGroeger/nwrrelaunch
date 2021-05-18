@@ -1,5 +1,6 @@
 
 #base "shikamaru_shadow_imitation_technique.txt"
 #base "shikamaru_switching_technique.txt"
+#base "shikamaru_flash_bombs.txt"
 
 #base "talents.txt"

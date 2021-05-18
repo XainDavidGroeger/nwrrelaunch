@@ -19,6 +19,7 @@ function shikamaru_shadow_imitation_technique:OnSpellStart()
 	-- Projectile variables
 	self.shadow_speed = self.ability:GetSpecialValueFor("shadow_speed")
 	self.shadow_duration = self.ability:GetSpecialValueFor("shadow_duration")
+
 	self.shadow_width = self.ability:GetSpecialValueFor("shadow_width")
 	self.shadow_range = self.ability:GetSpecialValueFor("shadow_range")
 	self.shadow_location = self.caster_location
@@ -48,12 +49,15 @@ end
 
 
 function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation)
-
 	if hTarget ~= nil then
 		hTarget:Stop()
-		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = self.shadow_duration})
-	end
+		if hTarget:HasModifier("modifier_flash_bomb_debuff") then
+			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = (self.shadow_duration + 0.5)})
+		else
+			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = self.shadow_duration})
+		end
 
+	end
 end
 
 modifier_shadow_imitation = modifier_shadow_imitation or class({})

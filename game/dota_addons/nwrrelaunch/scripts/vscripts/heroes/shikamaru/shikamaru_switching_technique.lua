@@ -1,6 +1,8 @@
 shikamaru_switching_technique = shikamaru_switching_technique or class({})
 
 LinkLuaModifier("modifier_shikamaru_switching_thinker", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_switching_technique_flash_debuff", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 function shikamaru_switching_technique:GetAbilityTextureName()
 	return "shikamaru_switching_technique"
@@ -48,10 +50,6 @@ end
 function shikamaru_switching_technique:OnChannelFinish(bInterrupted)
 	if not IsServer() then return end
 
-	if bInterrupted == true then
-		-- todo
-	end
-
 	local sound_loop = "Ability.SandKing_SandStorm.loop"
 	self.thinker:StopSound("sound_loop")
 	ParticleManager:DestroyParticle(self.particle_sandstorm_fx, true)
@@ -75,6 +73,7 @@ function shikamaru_switching_technique:OnChannelFinish(bInterrupted)
 
 	for _,enemy in pairs(units) do
 		enemy:RemoveModifierByName("modifier_rooted")
+		enemy:RemoveModifierByName("modifier_switching_technique_flash_debuff")
 	end
 
 end
@@ -88,8 +87,6 @@ end
 function modifier_shikamaru_switching_thinker:OnCreated(keys)
 	if IsServer() then
 		-- Ability specials
-
-	--	print(self:GetParent())
 
 		self.caster = self:GetCaster()
 		self.thinker = self:GetParent()
@@ -144,16 +141,15 @@ function modifier_shikamaru_switching_thinker:OnIntervalThink()
 		ApplyDamage(damageTable)
 
 		enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_rooted", {})
+		if enemy:HasModifier("modifier_flash_bomb_debuff") then
+			enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_switching_technique_flash_debuff", {})
+		end
 
 	end
 end
 
-
 function modifier_shikamaru_switching_thinker:OnDestroy(keys)
 	if IsServer() then
-
-		
-
 		local thinker = self:GetParent()
 		local sound_loop = "Ability.SandKing_SandStorm.loop"
 		thinker:StopSound("sound_loop")
@@ -163,3 +159,40 @@ function modifier_shikamaru_switching_thinker:OnDestroy(keys)
 		StopSoundOn(sound_darude, self.thinker)  
 	end
 end
+
+
+modifier_switching_technique_flash_debuff = class({})
+
+-- Classifications
+function modifier_switching_technique_flash_debuff:IsHidden()
+	return false
+end
+
+function modifier_switching_technique_flash_debuff:IsDebuff()
+	return true
+end
+
+function modifier_switching_technique_flash_debuff:IsStunDebuff()
+	return false
+end
+
+function modifier_switching_technique_flash_debuff:IsPurgable()
+	return true
+end
+
+function modifier_switching_technique_flash_debuff:OnCreated( kv )
+end
+
+function modifier_switching_technique_flash_debuff:OnRemoved()
+end
+
+function modifier_switching_technique_flash_debuff:OnDestroy()
+end
+
+function modifier_switching_technique_flash_debuff:CheckState()
+	return {
+		[MODIFIER_STATE_SILENCED]	= true,
+		[MODIFIER_STATE_DISARMED]	= true,
+	}
+end
+

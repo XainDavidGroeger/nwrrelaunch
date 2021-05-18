@@ -12,7 +12,7 @@
 		  "Model" 		"models/shikamaru_new/shika.vmdl"
 		  "Ability1"         "shikamaru_shadow_imitation_technique"
 		  "Ability2"         "shikamaru_switching_technique" 
-		  "Ability3"         "" 
+		  "Ability3"         "shikamaru_flash_bombs" 
   		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"         ""
