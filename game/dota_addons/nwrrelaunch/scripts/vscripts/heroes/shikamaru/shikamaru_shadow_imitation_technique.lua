@@ -145,8 +145,7 @@ end
 
 function modifier_shadow_imitation:OnDestroy()
 	if not IsServer() then return end
-	self.parent:RemoveGesture(ACT_DOTA_RUN)
-	self.parent:RemoveGesture(ACT_DOTA_IDLE)
+	self.parent:FadeGesture(self.gesture)
 end
 
 --------------------------------------------------------------------------------
