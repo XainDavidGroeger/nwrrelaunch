@@ -76,7 +76,8 @@
 	"precache"
 	{
 
-            "soundfile"            "sounds/weapons/hero/centaur/hoof_stomp.vsnd"
+            "soundfile"              "soundevents/heroes/raikage/raikage_liger_bomb_cast.vsndevts"
+			"soundfile"            "sounds/weapons/hero/centaur/hoof_stomp.vsnd"
 			"soundfile"              "soundevents/heroes/raikage/raikage_liger_bomb_talking.vsndevts"
             "particle" 				"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
             "particle"  			"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
@@ -105,6 +106,12 @@
 		"FireSound"
 		{
 			"EffectName"	"raikage_liger_bomb_talking"
+			"Target"		"CASTER"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"	"raikage_liger_bomb_cast"
 			"Target"		"CASTER"
 		}
 					

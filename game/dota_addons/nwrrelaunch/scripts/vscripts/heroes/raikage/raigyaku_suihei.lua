@@ -16,6 +16,9 @@ function ReleaseAoeDamage( event )
     --If there are targets do something
 	if targetEntities then
 		--Loop each target / Apply damage to each target and add modfier
+		
+		EmitSoundOn("raikage_straight_impact", caster)
+		
 		local strength = caster:GetStrength()
 
 
