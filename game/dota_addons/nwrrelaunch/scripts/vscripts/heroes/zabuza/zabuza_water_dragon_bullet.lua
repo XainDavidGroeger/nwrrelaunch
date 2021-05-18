@@ -1,6 +1,6 @@
 zabuza_water_dragon_bullet = zabuza_water_dragon_bullet or class({})
 
-LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/zabuza_water_dragon_bullet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/modifiers/modifier_zabuza_slow.lua", LUA_MODIFIER_MOTION_NONE)
 
 function zabuza_water_dragon_bullet:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
@@ -14,13 +14,6 @@ function zabuza_water_dragon_bullet:ProcsMagicStick()
 	return true
 end
 
-function zabuza_water_dragon_bullet:OnAbilityPhaseStart()
-	self:GetCaster():EmitSound("zabuza_dragon_talking")
-	self:GetCaster():EmitSound("zabuza_dragon_precast")
-	return true
-end
-
-
 function zabuza_water_dragon_bullet:OnSpellStart()
 	local caster = self:GetCaster()
 	local target_point = self:GetCursorPosition()
@@ -32,6 +25,10 @@ function zabuza_water_dragon_bullet:OnSpellStart()
 	local wave_width = 450
 	local wave_range = (target_point - caster_location):Length2D()
 	local wave_location = caster_location
+	
+	-- Play sound
+	EmitSoundOn("zabuza_dragon_talking", caster)
+	EmitSoundOn("zabuza_dragon_precast", caster)
 	
 	local wave_speed = self:GetSpecialValueFor("dragon_speed")
 
@@ -102,7 +99,6 @@ function zabuza_water_dragon_bullet:OnProjectileThink_ExtraData(location, data)
 		local distance_stack_count = wave_range / 150
 		local damage = self:GetSpecialValueFor("damage")
 
-		
 		local enemies = FindUnitsInRadius(
 			caster:GetTeamNumber(),	-- int, your team number
 			target_point,	-- point, center point
