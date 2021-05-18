@@ -52,12 +52,12 @@
 
 		  "AttackRange"				"128"
 		  "MovementSpeed"			"310"
-		  "AttributeBaseStrength" "18" // Base strength
-		  "AttributeStrengthGain" "2.4" // Strength bonus per level.
-		  "AttributeBaseIntelligence" "16" // Base intelligence
-		  "AttributeIntelligenceGain" "1.9" // Intelligence bonus per level.
-		  "AttributeBaseAgility" "22" // Base agility
-		  "AttributeAgilityGain" "3.2" // Agility bonus per level.
+		  "AttributeBaseStrength" "20" // Base strength
+		  "AttributeStrengthGain" "2.2" // Strength bonus per level.
+		  "AttributeBaseIntelligence" "21" // Base intelligence
+		  "AttributeIntelligenceGain" "2.0" // Intelligence bonus per level.
+		  "AttributeBaseAgility" "24" // Base agility
+		  "AttributeAgilityGain" "2.8" // Agility bonus per level.
 		  
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

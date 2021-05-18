@@ -22,6 +22,7 @@
 			"particle"	"particles/units/heroes/haku/senbon.vpcf"
 			"particle"	"particles/units/heroes/neji/neji_w_debuff_a.vpcf"
 			"soundfile" "soundevents/heroes/neji/neji_air_palm_fire.vsndevts"
+			"soundfile"	"soundevents/heroes/neji/neji_air_palm_impact.vsndevts"
 		}	
 
 		// Casting
@@ -35,7 +36,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 75 80 85"		
+		"AbilityManaCost"				"65 70 75 80"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
