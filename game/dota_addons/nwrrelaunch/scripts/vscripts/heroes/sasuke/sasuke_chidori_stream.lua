@@ -30,6 +30,7 @@ function sasuke_chidori_stream:OnSpellStart()
 	ParticleManager:SetParticleControl( self.stream, 3, Vector(self:GetSpecialValueFor("radius") + self:GetCaster():FindTalentValue("special_bonus_sasuke_5")  ,0,0) )
 
 	self:GetCaster():EmitSound("sasuke_stream_cast")
+	self:GetCaster():EmitSound("sasuke_stream_talking")
 
 	local targets = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), nil, 
 		self:GetSpecialValueFor("radius") + self:GetCaster():FindTalentValue("special_bonus_sasuke_5"), DOTA_UNIT_TARGET_TEAM_ENEMY,
