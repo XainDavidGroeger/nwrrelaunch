@@ -50,7 +50,8 @@ end
 function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation)
 
 	if hTarget ~= nil then
-		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = 10})
+		hTarget:Stop()
+		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = self.shadow_duration})
 	end
 
 end
@@ -85,11 +86,6 @@ function modifier_shadow_imitation:OnCreated( kv )
 	self.direction = Vector(0,0,0)
 	self.gesture = ACT_DOTA_IDLE
 
-	--Physics:Unit(self.parent)
-	--self.parent:PreventDI(true)
-	--self.parent:SetAutoUnstuck(false)
-	--self.parent:SetNavCollisionType(PHYSICS_NAV_NOTHING)
-	--self.parent:FollowNavMesh(false)
 	self.parent:StartGesture(ACT_DOTA_RUN)
 
 
@@ -121,26 +117,22 @@ function modifier_shadow_imitation:OnIntervalThink()
 		self.direction = direction
 		self.direction.z = 0
 		local new_pos = (self.parent:GetAbsOrigin() + self.caster:GetForwardVector() * self.caster:GetMoveSpeedModifier(self.caster:GetBaseMoveSpeed(), false) * FrameTime())
+		new_pos = GetGroundPosition(new_pos, self.parent)
 		self.parent:SetAbsOrigin(new_pos);
 		self.old_shikamaru_postion = new_shikamaru
+		if self.gesture == ACT_DOTA_IDLE then
+			self.parent:RemoveGesture(ACT_DOTA_IDLE)
+			self.parent:StartGesture(ACT_DOTA_RUN)
+			self.gesture = ACT_DOTA_RUN
+	end
 	else
-		
+		if self.gesture == ACT_DOTA_RUN then
+				self.parent:RemoveGesture(ACT_DOTA_RUN)
+				self.parent:StartGesture(ACT_DOTA_IDLE)
+				self.gesture = ACT_DOTA_IDLE
+		end
 	end
 
-	if old_shikamaru ~= new_shikamaru then
-		if self.gesture == ACT_DOTA_IDLE then
-		--	self.parent:RemoveGesture(ACT_DOTA_IDLE)
-		--	self.parent:StartGesture(ACT_DOTA_RUN)
-		--	self.gesture = ACT_DOTA_RUN
-		end
-		
-	else 
-		if self.gesture == ACT_DOTA_RUN then
-		--	self.parent:RemoveGesture(ACT_DOTA_RUN)
-		--	self.parent:StartGesture(ACT_DOTA_IDLE)
-		--	self.gesture = ACT_DOTA_IDLE
-		end
-	end
 	self.direction = direction
 end
 
@@ -151,13 +143,6 @@ function modifier_shadow_imitation:OnDestroy()
 	if not IsServer() then return end
 	self.parent:RemoveGesture(ACT_DOTA_RUN)
 	self.parent:RemoveGesture(ACT_DOTA_IDLE)
-
-	--self.parent:SetPhysicsAcceleration(Vector(0,0,0))
-	--self.parent:SetPhysicsVelocity(Vector(0,0,0))
-	--self.parent:OnPhysicsFrame(nil)
-	--self.parent:PreventDI(false)
-	--self.parent:SetAutoUnstuck(true)
-	--self.parent:FollowNavMesh(true)
 end
 
 --------------------------------------------------------------------------------
