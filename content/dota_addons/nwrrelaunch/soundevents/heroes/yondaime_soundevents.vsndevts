@@ -414,6 +414,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/yondaime/lasthit_01.vsnd"
 						}
 					"volume"			{"value"	"1.00000"}
 					"pitch_rand_min"	{"value"	"0.00000"}
