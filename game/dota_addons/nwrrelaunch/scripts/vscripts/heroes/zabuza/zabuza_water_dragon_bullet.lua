@@ -1,6 +1,6 @@
 zabuza_water_dragon_bullet = zabuza_water_dragon_bullet or class({})
 
-LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/zabuza_water_dragon_bullet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/modifiers/modifier_zabuza_slow.lua", LUA_MODIFIER_MOTION_NONE)
 
 function zabuza_water_dragon_bullet:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
@@ -13,13 +13,6 @@ end
 function zabuza_water_dragon_bullet:ProcsMagicStick()
 	return true
 end
-
-function zabuza_water_dragon_bullet:OnAbilityPhaseStart()
-	self:GetCaster():EmitSound("zabuza_dragon_talking")
-	self:GetCaster():EmitSound("zabuza_dragon_precast")
-	return true
-end
-
 
 function zabuza_water_dragon_bullet:OnSpellStart()
 	local caster = self:GetCaster()
@@ -39,6 +32,9 @@ function zabuza_water_dragon_bullet:OnSpellStart()
 	local slow_base_per_distance = self:GetSpecialValueFor("ms_slow_per_distance")
 	local distance_stack_count = wave_range / 150
 
+	-- Play sound
+	EmitSoundOn("zabuza_dragon_talking", caster)
+	EmitSoundOn("zabuza_dragon_precast", caster)
 	
 	local wave_speed = self:GetSpecialValueFor("dragon_speed")
 

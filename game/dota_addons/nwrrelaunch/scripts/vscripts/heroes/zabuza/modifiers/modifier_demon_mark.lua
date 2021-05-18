@@ -1,5 +1,7 @@
 modifier_demon_mark = class({})
 
+LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/modifiers/modifier_zabuza_slow.lua", LUA_MODIFIER_MOTION_NONE)
+
 --------------------------------------------------------------------------------
 -- Classifications
 function modifier_demon_mark:IsHidden()
@@ -25,9 +27,7 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_demon_mark:OnCreated( kv )
-	if IsServer() then
-		self.silence = false
-	end
+    self.slow_dur = self:GetAbility():GetSpecialValueFor("ms_slow_dur")
 end
 
 function modifier_demon_mark:OnRefresh( kv )
@@ -36,6 +36,34 @@ end
 
 function modifier_demon_mark:OnDestroy( kv )
 
+end
+
+--------------------------------------------------------------------------------
+-- Modifier Effects
+function modifier_demon_mark:DeclareFunctions()
+	local funcs = {
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
+	}
+
+	return funcs
+end
+
+function modifier_demon_mark:OnTakeDamage( params )
+	if not IsServer() then return end
+	
+	local attacker = params.attacker
+	local ability = self:GetAbility()
+	local target = self:GetParent()
+	
+	if attacker:IsRealHero() and attacker:GetUnitName() == "npc_dota_hero_zabuza" then
+		ability:IncreaseDuration(target)
+		target:AddNewModifier(
+                    attacker, -- player source
+                    ability, -- ability source
+                    "modifier_zabuza_slow", -- modifier name
+                    { duration = self.slow_dur } -- kv
+                )
+	end
 end
 
 --------------------------------------------------------------------------------
