@@ -237,6 +237,7 @@
 							"value4"		"sounds/vo/zabuza/kill_05.vsnd"
 							"value5"		"sounds/vo/zabuza/kill_06.vsnd"
 							"value6"		"sounds/vo/zabuza/kill_07.vsnd"
+							"value7"		"sounds/vo/zabuza/kill_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}

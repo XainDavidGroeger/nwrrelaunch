@@ -1,4 +1,4 @@
-"sakura_speed_cast"
+"zabuza_executioner_cast"
 {
     "operator_stacks"
     {
@@ -14,10 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/sakura/sakura_speed_cast.vsnd"
+                              "value0"        "sounds/heroes/zabuza/zabuza_executioner_cast.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.75000"  }
+                    "volume"            {   "value"     "1.00000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

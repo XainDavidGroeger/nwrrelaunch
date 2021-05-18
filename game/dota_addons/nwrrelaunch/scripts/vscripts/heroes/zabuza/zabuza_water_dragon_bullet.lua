@@ -14,6 +14,13 @@ function zabuza_water_dragon_bullet:ProcsMagicStick()
 	return true
 end
 
+function zabuza_water_dragon_bullet:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("zabuza_dragon_talking")
+	self:GetCaster():EmitSound("zabuza_dragon_precast")
+	return true
+end
+
+
 function zabuza_water_dragon_bullet:OnSpellStart()
 	local caster = self:GetCaster()
 	local target_point = self:GetCursorPosition()
@@ -32,9 +39,6 @@ function zabuza_water_dragon_bullet:OnSpellStart()
 	local slow_base_per_distance = self:GetSpecialValueFor("ms_slow_per_distance")
 	local distance_stack_count = wave_range / 150
 
-	-- Play sound
-	EmitSoundOn("zabuza_dragon_talking", caster)
-	EmitSoundOn("zabuza_dragon_precast", caster)
 	
 	local wave_speed = self:GetSpecialValueFor("dragon_speed")
 

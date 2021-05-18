@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
-	m_ConstantColor = [ 255, 20, 147, 255 ]
+	m_ConstantColor = [ 30, 144, 255, 255 ]
 	m_nBehaviorVersion = 11
 	m_nFirstMultipleOverride_BackwardCompat = 3
 	m_controlPointConfigurations = 
@@ -135,7 +135,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 0, 0, 0 ]
+			m_ColorFade = [ 0, 191, 255 ]
 			m_flFadeStartTime = 0.2
 			m_flFadeEndTime = 0.7
 		},
