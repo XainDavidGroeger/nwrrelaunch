@@ -34,6 +34,8 @@ function rasenshuriken_impact(keys)
 		
 		ApplyDamage({attacker = caster, victim = value, ability = ability, damage = damage, damage_type = damage_type})
 		
+		caster:StopSound("naruto_rasenshuriken_fire")
+	
 	end
 
 end

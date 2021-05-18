@@ -6,7 +6,7 @@
 	//=================================================================================================================
 	// Naruto Special Bonus
 	//=================================================================================================================	
-	//25: +320 Rasenshuriken Damage / -5s Bunshin Rasengan Cooldown
+	//25: +320 Rasenshuriken Damage / -4s Bunshin Rasengan Cooldown
 	//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 	//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 	//10: +5 All Stats / +200 Bunshin Swap Range
