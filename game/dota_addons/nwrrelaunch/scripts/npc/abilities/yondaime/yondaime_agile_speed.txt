@@ -8,65 +8,85 @@
 {
     // General  
     // ----------------------------------------------------------------------------------------
-    "BaseClass"              "ability_datadriven"
-    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"              "ability_lua"
+    "ScriptFile"             "heroes/yondaime/agile_speed.lua"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityTextureName"     "yondaime_agile_speed"
 
     "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"               "4"
 
+    "AbilityManaCost"        "30 40 50 60"
+    "AbilityCooldown"		 "28.0 23.0 17.0 12.0"
+
+
     "AbilitySpecial"
     {
         "01"
         { 
-            "var_type"  "FIELD_INTEGER"
-            "bonus_ms_percentage" "3 4 5 6"
+            "var_type"              "FIELD_FLOAT"
+            "bonus_ms_percentage"   "3 4 5 6"
         }
         "02"
         { 
-            "var_type"  "FIELD_INTEGER"
+            "var_type"                "FIELD_FLOAT"
             "bonus_damage_ms_percent" "2 3 4 5"
         }
         "03"
         {
+            "var_type"        "FIELD_FLOAT"
+            "active_modifier" "2"
+        }
+        "04"
+        {
             "var_type"  "FIELD_FLOAT"
-            "bonus_attack_damage" "1"
+            "duration"  "5"
+        }
+        "05"
+        { 
+            "var_type"              "FIELD_FLOAT"
+            "bonus_ms_percentage_active"   "6 8 10 12"
+        }
+        "06"
+        { 
+            "var_type"                "FIELD_FLOAT"
+            "bonus_damage_ms_percent_active" "4 6 8 10"
         }
     }
 
-    "Modifiers"
-    {
-        "modifier_agile_speed"
-        {
-            "Passive" "1"
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_attack_damage"
-            }
+    // "Modifiers"
+    // {
+    //     "modifier_agile_speed"
+    //     {
+    //         "Passive" "1"
+    //         "Properties"
+    //         {
+    //             "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_attack_damage"
+    //         }
 
-            "ThinkInterval" "0.1"
-            "OnIntervalThink"
-            {
-                    "RunScript"
-                {
-                  "ScriptFile"    "heroes/yondaime/agile_speed.lua"
-                  "Function"        "apply_bonus_damage"
-                }
-            }   
-        }
+    //         "ThinkInterval" "0.1"
+    //         "OnIntervalThink"
+    //         {
+    //                 "RunScript"
+    //             {
+    //               "ScriptFile"    "heroes/yondaime/agile_speed.lua"
+    //               "Function"        "apply_bonus_damage"
+    //             }
+    //         }   
+    //     }
 
-        "modifier_agile_speed_ms"
-        {
-            "Passive" "1"
-            "IsHidden" "1"
+    //     "modifier_agile_speed_ms"
+    //     {
+    //         "Passive" "1"
+    //         "IsHidden" "1"
 
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms_percentage"
+    //         "Properties"
+    //         {
+    //             "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms_percentage"
         
-            }  
-        }
-    }
+    //         }  
+    //     }
+    // }
 }
 
 

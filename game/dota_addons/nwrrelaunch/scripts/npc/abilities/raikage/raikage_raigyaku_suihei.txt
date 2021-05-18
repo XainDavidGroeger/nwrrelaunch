@@ -35,6 +35,7 @@
 
      "precache"
     {
+      "soundfile" "soundevents/heroes/raikage/raikage_straight_impact.vsndevts"
       "particle"  "particles/econ/items/spirit_breaker/spirit_breaker_thundering_flail/spirit_breaker_thundering_flail.vpcf"
       "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
       "particle"  "particles/generic_gameplay/generic_purge.vpcf"

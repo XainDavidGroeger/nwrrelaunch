@@ -57,9 +57,9 @@
 		"npc_dota_hero_zabuza_lore"  					""
 		
 		// Water Dragon Bullet
-		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet"						"Water Dragon Bullet"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet"						"<b><font color='#55AFFD'> Water Dragon Bullet </font></b>"
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_lore"						"Suiton: Suiryudan no Jutsu"
-		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_description"			"Sends out a large water dragon to land on a target area. The area of impact will be visible for both allies and enemies until the projectile has landed. Upon being hit, all enemy units within the area take magical damage and are slowed for a duration. Strength of the movement speed slow is based upon the amount of distance that the water dragon travelled."
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_description"			"Sends a Water Dragon to the target area dealing <b><font color='#55AFFD'>Magic Damage and a Movement Speed Slow</font></b> to enemy units within the area. <br><br>The strength of the <b>Slow</b> is based upon the amount of <b><font color='#55AFFD'>distance the Water Dragon traveled.</font></b>"
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_damage"				"DAMAGE: "
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_radius"				"RADIUS: "
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow"				"%MS DEBUFF MIN: "
@@ -72,7 +72,7 @@
 		"DOTA_Tooltip_modifier_dragon_bullet_slow_description"					"This Unit has x%% decreased movement speed."
 
 		// Ninpou: Kirigakure No Jutsu
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new"						"Hidden Mist Technique"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new"						"<b><font color='#96B6D1'> Hidden Mist Technique </font></b>"
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_lore"					"Ninpou: Kirigakure No Jutsu"
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_radius"				"AOE: "
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_duration"				"DURATION: "
@@ -80,11 +80,12 @@
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_fade_delay"			"INVIS FADE TIME: "
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_special_bonus_5_damage" "EXTRA DAMAGE: "
 
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"Creates a dense mist in the target area. Friendly units within the mist will become invisible after a short fade duration. While in the mist, Zabuza gains increased movement speed and can pass through terrain. The effect is cancelled if Zabuza is killed."
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"<b><font color='#96B6D1'>Creates a dense mist</font></b> in the target area causing <b><font color='#96B6D1'>friendly units to become invisible</font></b> after a short fade duration. <br><br> While in the mist, <b><font color='#96B6D1'>Zabuza gains increased Movement Speed.</font></b>"
 
 		// Executioner’s Blade
-		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"Executioner’s Blade"
-		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"Zabuza’s attacks deal critical damage to enemies below a certain health threshold. This ability can also be activated to give Zabuza guaranteed critical strikes for a short duration."
+		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"<b><font color='#5386AF'> Executioner Blade </font></b>"
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"<b>ACTIVE</b> - Causes all of Zabuza's attacks to be <b><font color='#5386AF'>Critical Strikes for a short duration.</font></b> <br><br> <b>PASSIVE</b> - Zabuza’s attacks will always be <b>Critical Strikes</b> to enemies <b><font color='#5386AF'>below a health threshold.</font></b>"
+
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_multiplier"		"%CRIT: "
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_health_threshold"		"%HEALTH THRESHOLD: "
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_duration"				"DURATION: "
@@ -92,8 +93,8 @@
 		
 
 		// Demon of the Hidden Mist
-		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist"					"Demon of the Hidden Mist"
-		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"Marks a target enemy hero for death over a short duration causing Zabuza’s Executioner Blade to critically strike for every attack he makes. While the mark is active, all incoming damage will be significantly reduced and dealt to him only after the mark fades. The effect will also fade if the marked hero moves a certain distance away from Zabuza."
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist"					"<b><font color='#A03830'> Demon of the Hidden Mist </font></b>"
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"<b><font color='#A03830'>Marks a target enemy Hero</font></b> for death over a short duration, causing each of Zabuza's attacks to cause a <b><font color='#5386AF'>Movement Speed Slow</font></b> and <b><font color='#A03830'>extend the Mark's duration.</font></b> <br><br> <b><font color='#A03830'>Zabuza cannot die while the Mark is active.</font></b> <br><br> Applies a <b><font color='#96B6D1'>Strong Dispel</font></b> to Zabuza on cast."
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_range"			"RANGE: "
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_marked_break_distance"		"MARKED BREAK DISTANCE : "
@@ -101,7 +102,7 @@
 		"DOTA_Tooltip_modifier_demon_unkillable_description"				"This Unit cannot die."
 
 		"DOTA_Tooltip_modifier_demon_mark"							"Demon of the Hidden Mist"
-		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will always trigger a critical strike on this Unit."
+		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will increase Mark duration and cause a Movement Speed Slow."
 
 		//--------------------
 		//Jirobo
@@ -205,6 +206,7 @@
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_ms_slow_percentage"	"%MOVE SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_hp_percentage_cost"	"%HP COST: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_pull_radius_start" 	"AOE: "
+
 		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow"				"Cull the Weak"
 		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow_description" "This Unit is slowed."
 
@@ -236,7 +238,7 @@
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_outside_percentage"	"%DAMAGE SHARED OUTSIDE CIRCLE: "
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_inside_percentage"	"%DAMAGE SHARED INSIDE CIRCLE: "
 		"DOTA_Tooltip_modifier_hidan_metamorphosis"							"Death Possession Blood"
-		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				""
+		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				"Damage taken by Hidan is also dealt to foe."
 
 		// Self Pain
 		"DOTA_Tooltip_ability_hidan_self_pain"							"<b><font color='#880808'> Self Pain </font></b>"
@@ -624,8 +626,8 @@
 		"npc_dota_hero_sakura"  								"Sakura"
 		"npc_dota_hero_sakura_lore"  							""
 		// Earth Slam
-		"DOTA_Tooltip_ability_sakura_earth_slam"						"Earth Slam"
-		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Sakura slams the ground with her chakra enhanced fists, rupturing the earth beneath her. Enemy units within the area are stunned and dealt magic damage."
+		"DOTA_Tooltip_ability_sakura_earth_slam"						"<b><font color='#FF65E8'>Cherry Blossom Impact</font></b>"
+		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Sakura slams the ground dealing <b><font color='#FF65E8'>Physical Damage and Stunning</font></b> all nearby enemies."
 		"DOTA_Tooltip_ability_sakura_earth_slam_radius"					"AOE: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stomp_damage"			"DAMAGE: "
@@ -633,22 +635,22 @@
 		"DOTA_Tooltip_modifier_sakura_earth_slam"						"Earth Slam"
 		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"This Unit is stunned."
 		// Chakra Burst
-		"DOTA_Tooltip_ability_sakura_chakra_burst"						"Chakra Burst"
-		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"By gathering chakra within her legs, Sakura is able push her speed to new heights. Once activated, Sakura's movement speed is increased to maximum for a short period of time."
+		"DOTA_Tooltip_ability_sakura_chakra_burst"						"<b><font color='#0EA5FF'>Chakra Burst</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"Grants Sakura <b><font color='#0EA5FF'>maximum Movement Speed</font></b> for a short duration of time."
 		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"DURATION: "
 		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Chakra Burst"
-		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has MAX Movement Speed."
+		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has Maximum Movement Speed."
 		// Chakra Enhanced Strength
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"Chakra Enhanced Strength"
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"Utilizing her excellent skills in chakra control, Sakura drastically increases the power behind her punches. Passively grants a chance to deal extra physical damage from normal attacks, while also pushing the enemy unit back a short distance."
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b>"
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_distance"		"PUSH BACK DISTANCE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_duration"		"PUSH BACK DURATION: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_chance"		"%PROC CHANCE: "
 
 		// Inner Sakura
-		"DOTA_Tooltip_ability_sakura_inner_sakura"						"Inner Sakura"
-		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Sakura unleashes her inner self, bringing her true personality to light. While in this state, Sakura's will and strength are drastically increased, causing her to become nearly unstoppable. Grants a large percentage of extra damage to Sakura's normal attacks while also increasing her armor."
+		"DOTA_Tooltip_ability_sakura_inner_sakura"						"<b><font color='#B473FF'>Strength of a Hundred Seal</font></b>"
+		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Unleashes Sakura's Chakra Seal, temporarily granting a large amount of <b><font color='#B473FF'>additional Attack Damage and Armor</font></b>."
 		"DOTA_Tooltip_ability_sakura_inner_sakura_gods_strength_damage"	"%BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_bonus_armor"			"BONUS ARMOR: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_duration"				"DURATION: "

@@ -1,4 +1,4 @@
-"raikage_lightningstraight"
+"raikage_straight_impact"
 {
     "operator_stacks"
     {
@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/heroes/raikage/raikage_straight.vsnd"
+                            "value0"        "sounds/heroes/raikage/raikage_straight_impact.vsnd"
 
                         }
                     }

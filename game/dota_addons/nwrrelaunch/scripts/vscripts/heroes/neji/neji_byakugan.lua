@@ -74,6 +74,8 @@ end
 
 function modifier_neji_byakugan_buff:OnDestroy()
 	ParticleManager:DestroyParticle(self.pfx, true)
+	
+	self:GetCaster():EmitSound("neji_byakugan_off")
 end
 
 function modifier_neji_byakugan_buff:OnIntervalThink()

@@ -61,6 +61,8 @@ end
 
 function raikage_lariat:OnSpellStart()
 	
+	self:GetCaster():EmitSound("raikage_lariat_cast")
+
 	self.ability = self
 	self.caster = self:GetCaster()
 	self.point = self:GetCursorPosition()
@@ -147,6 +149,7 @@ function LariatPeriodic(gameEntity, keys)
 end
 
 function LariatHit(keys,target)
+	
 	local caster = keys.caster
 	local ability = keys.ability
 	local velocity = ability:GetSpecialValueFor("speed")
@@ -177,6 +180,8 @@ function LariatHit(keys,target)
 	local impact_pfx = ParticleManager:CreateParticle(particle_impact, PATTACH_ABSORIGIN, target)
 	ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
 	ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_ABSORIGIN, "attach_origin", enemy_loc, true)
+	
+	EmitSoundOn("raikage_lariat_impact", caster)
 
 end
 

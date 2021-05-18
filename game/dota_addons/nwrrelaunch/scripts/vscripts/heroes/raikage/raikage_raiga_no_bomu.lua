@@ -41,7 +41,6 @@ function applyRaikageKnockupModifier( keys )
 	    end
 	end
 
-
 end
 
 

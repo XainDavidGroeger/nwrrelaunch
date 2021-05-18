@@ -65,6 +65,7 @@ end
 
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage = damage, damage_type = self:GetAbilityDamageType()})
 		target:AddNewModifier(caster, self, "modifier_neji_air_palm_debuff", {duration = duration})
+		EmitSoundOn("neji_air_palm_impact", target) 
 	end
 end
 
