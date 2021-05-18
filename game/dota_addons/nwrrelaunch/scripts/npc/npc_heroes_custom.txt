@@ -10,7 +10,7 @@
 #base "heroes/yondaime.txt"
 #base "heroes/zabuza.txt"
 #base "heroes/naruto.txt"
-//#base "heroes/shikamaru.txt"
+#base "heroes/shikamaru.txt"
 #base "heroes/anko.txt"
 #base "heroes/guy.txt"
 #base "heroes/kakashi.txt"

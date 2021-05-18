@@ -2,154 +2,173 @@ shikamaru_shadow_imitation_technique = class({})
 LinkLuaModifier( "modifier_shadow_imitation", "heroes/shikamaru/shikamaru_shadow_imitation_technique.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
-
-function shikamaru_shadow_imitation_technique:OnAbilityPhaseStart()
-	self:GetCaster():StartGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
-	return true
-end
-
---------------------------------------------------------------------------------
-
-function shikamaru_shadow_imitation_technique:OnAbilityPhaseInterrupted()
-	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 )
-end
+shikamaru_shadow_imitation_technique = shikamaru_shadow_imitation_technique or class({})
 
 function shikamaru_shadow_imitation_technique:ProcsMagicStick()
-    return true
-end
-
---------------------------------------------------------------------------------
-
-function shikamaru_shadow_imitation_technique:OnSpellStart()
-	self.bChainAttached = false
-	if self.hVictim ~= nil then
-		self.hVictim:InterruptMotionControllers( true )
-	end
-
-	self.speed = self:GetSpecialValueFor( "projectile_speed" )
-	self.width = self:GetSpecialValueFor( "projectile_width" )
-	self.distance = self:GetSpecialValueFor( "cast_range" )
-
-	self.followthrough_constant = self:GetSpecialValueFor( "followthrough_constant" )
-
-	self.vision_radius = self:GetSpecialValueFor( "vision_radius" )  
-	self.vision_duration = self:GetSpecialValueFor( "vision_duration" )  
-	
-
-	self.vStartPosition = self:GetCaster():GetOrigin()
-	self.vProjectileLocation = vStartPosition
-
-	local vDirection = self:GetCursorPosition() - self.vStartPosition
-	vDirection.z = 0.0
-
-	local vDirection = ( vDirection:Normalized() ) * self.distance
-	self.vTargetPosition = self.vStartPosition + vDirection
-
-	local flFollowthroughDuration = ( self.distance / self.speed * self.followthrough_constant )
-	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_meat_hook_followthrough_lua", { duration = flFollowthroughDuration } )
-
-	self.vHookOffset = Vector( 0, 0, 96 )
-	local vHookTarget = self.vTargetPosition + self.vHookOffset
-	local vKillswitch = Vector( ( ( self.distance / self.speed ) * 2 ), 0, 0 )
-
-	self.nChainParticleFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook.vpcf", PATTACH_CUSTOMORIGIN, self:GetCaster() )
-	ParticleManager:SetParticleAlwaysSimulate( self.nChainParticleFXIndex )
-	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_right_hand", self:GetCaster():GetOrigin() + self.vHookOffset, true )
-	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 1, vHookTarget )
-	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 2, Vector( self.speed, self.distance, self.width ) )
-	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 3, vKillswitch )
-	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 4, Vector( 1, 0, 0 ) )
-	ParticleManager:SetParticleControl( self.nChainParticleFXIndex, 5, Vector( 0, 0, 0 ) )
-	ParticleManager:SetParticleControlEnt( self.nChainParticleFXIndex, 7, self:GetCaster(), PATTACH_CUSTOMORIGIN, nil, self:GetCaster():GetOrigin(), true )
-
-	EmitSoundOn( "anko_hand_cast", self:GetCaster() )
-
-	local info = {
-		Ability = self,
-		vSpawnOrigin = self:GetCaster():GetOrigin(),
-		vVelocity = vDirection:Normalized() * self.speed,
-		fDistance = self.distance,
-		fStartRadius = self.width ,
-		fEndRadius = self.width ,
-		Source = self:GetCaster(),
-		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_BOTH,
-		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-	}
-
-	ProjectileManager:CreateLinearProjectile( info )
-
-	self.bRetracting = false
-	self.hVictim = nil
-	self.bDiedInHook = false
-
-end
-
---------------------------------------------------------------------------------
-
-function shikamaru_shadow_imitation_technique:OnProjectileHit( hTarget, vLocation )
-	if hTarget == self:GetCaster() then
-		return false
-	end
-
-	if hTarget ~= nil and ( not ( hTarget:IsCreep() or hTarget:IsConsideredHero() ) ) then
-		Msg( "Target was invalid")
-		return false
-	end
-
-	if hTarget ~= nil then
-		EmitSoundOn( "anko_hand_impact", hTarget )
-
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_shadow_imitation", nil )
-		
-		if hTarget:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
-			
-			if not hTarget:IsAlive() then
-				self.bDiedInHook = true
-			end
-
-			if not hTarget:IsMagicImmune() then
-				hTarget:Interrupt()
-			end
-	
-			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", PATTACH_CUSTOMORIGIN, hTarget )
-			ParticleManager:SetParticleControlEnt( nFXIndex, 0, hTarget, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetOrigin(), true )
-			ParticleManager:ReleaseParticleIndex( nFXIndex )
-		end
-
-		AddFOWViewer( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self.vision_radius, self.vision_duration, false )
-	end
-
 	return true
 end
 
---------------------------------------------------------------------------------
+function shikamaru_shadow_imitation_technique:OnSpellStart()
+	
+	self.caster = self:GetCaster()
+	self.caster_location = self.caster:GetAbsOrigin()
+	self.ability = self
+	self.target_point = self:GetCursorPosition()
+	self.forwardVec = (self.target_point - self.caster_location):Normalized()
 
-function shikamaru_shadow_imitation_technique:OnProjectileThink( vLocation )
-	self.vProjectileLocation = vLocation
+	-- Projectile variables
+	self.shadow_speed = self.ability:GetSpecialValueFor("shadow_speed")
+	self.shadow_duration = self.ability:GetSpecialValueFor("shadow_duration")
+	self.shadow_width = self.ability:GetSpecialValueFor("shadow_width")
+	self.shadow_range = self.ability:GetSpecialValueFor("shadow_range")
+	self.shadow_location = self.caster_location
+	self.wave_particle = "particles/units/heroes/kisame/shark.vpcf"
+	-- Creating the projectile
+	self.projectileTable =
+	{
+		EffectName = self.wave_particle,
+		Ability = self.ability,
+		vSpawnOrigin = self.caster_location,
+		vVelocity = Vector( self.forwardVec.x * self.shadow_speed, self.forwardVec.y * self.shadow_speed, 0 ),
+		fDistance = self.shadow_range,
+		fStartRadius = self.shadow_width,
+		fEndRadius = self.shadow_width,
+		Source = self.caster,
+		bDeleteOnHit = true,
+		bHasFrontalCone = false,
+		bReplaceExisting = false,
+		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+		iUnitTargetType = DOTA_UNIT_TARGET_HERO
+	}
+	-- Saving the projectile ID so that we can destroy it later
+	self.projectile_id = ProjectileManager:CreateLinearProjectile( self.projectileTable )
+
 end
 
---------------------------------------------------------------------------------
 
-function shikamaru_shadow_imitation_technique:OnOwnerDied()
-	self:GetCaster():RemoveGesture( ACT_DOTA_OVERRIDE_ABILITY_1 );
-	self:GetCaster():RemoveGesture( ACT_DOTA_CHANNEL_ABILITY_1 );
+function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation)
+
+	if hTarget ~= nil then
+		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = 10})
+	end
+
 end
-
---------------------------------------------------------------------------------
 
 modifier_shadow_imitation = modifier_shadow_imitation or class({})
 
-function modifier_shadow_imitation:DeclareFunctions() return {
-} end
-
-function modifier_shadow_imitation:OnCreated()
-		-- references
-		self.caster = self:GetCaster()
-		local abilityS = self.caster:FindAbilityByName("special_bonus_kisame_5")
-		self.armor_debuff = self:GetAbility():GetSpecialValueFor( "armor_debuff" )
-		
-		if abilityS:GetLevel() > 0 then
-			self.armor_debuff = self.armor_debuff - 5
-		end
+-- Classifications
+function modifier_shadow_imitation:IsHidden()
+	return false
 end
+
+function modifier_shadow_imitation:IsDebuff()
+	return true
+end
+
+function modifier_shadow_imitation:IsStunDebuff()
+	return true
+end
+
+function modifier_shadow_imitation:IsPurgable()
+	return false
+end
+
+--------------------------------------------------------------------------------
+-- Initializations
+function modifier_shadow_imitation:OnCreated( kv )
+	self.parent = self:GetParent()
+	self.caster = self:GetCaster()
+	self.ability = self:GetAbility()
+	self.team = self:GetCaster():GetTeamNumber()
+	self.old_shikamaru_postion = self:GetCaster():GetAbsOrigin()
+	self.direction = Vector(0,0,0)
+	self.gesture = ACT_DOTA_IDLE
+
+	--Physics:Unit(self.parent)
+	--self.parent:PreventDI(true)
+	--self.parent:SetAutoUnstuck(false)
+	--self.parent:SetNavCollisionType(PHYSICS_NAV_NOTHING)
+	--self.parent:FollowNavMesh(false)
+	self.parent:StartGesture(ACT_DOTA_RUN)
+
+
+	if not IsServer() then return end
+	-- ability properties
+
+	self:StartIntervalThink(FrameTime())
+end
+
+function modifier_shadow_imitation:OnRefresh( kv )
+	
+end
+
+function modifier_shadow_imitation:OnIntervalThink()
+
+	-- get data
+	local current_position = self:GetParent():GetAbsOrigin()
+	local old_shikamaru = self.old_shikamaru_postion
+	local new_shikamaru = self:GetCaster():GetAbsOrigin()
+
+	local vector = new_shikamaru - old_shikamaru
+	local direction = vector:Normalized()
+
+	if self.parent:GetForwardVector() ~= self.caster:GetForwardVector() then
+		self.parent:SetForwardVector(self.caster:GetForwardVector())
+	end
+
+	if self.caster:IsMoving() then
+		self.direction = direction
+		self.direction.z = 0
+		local new_pos = (self.parent:GetAbsOrigin() + self.caster:GetForwardVector() * self.caster:GetMoveSpeedModifier(self.caster:GetBaseMoveSpeed(), false) * FrameTime())
+		self.parent:SetAbsOrigin(new_pos);
+		self.old_shikamaru_postion = new_shikamaru
+	else
+		
+	end
+
+	if old_shikamaru ~= new_shikamaru then
+		if self.gesture == ACT_DOTA_IDLE then
+		--	self.parent:RemoveGesture(ACT_DOTA_IDLE)
+		--	self.parent:StartGesture(ACT_DOTA_RUN)
+		--	self.gesture = ACT_DOTA_RUN
+		end
+		
+	else 
+		if self.gesture == ACT_DOTA_RUN then
+		--	self.parent:RemoveGesture(ACT_DOTA_RUN)
+		--	self.parent:StartGesture(ACT_DOTA_IDLE)
+		--	self.gesture = ACT_DOTA_IDLE
+		end
+	end
+	self.direction = direction
+end
+
+function modifier_shadow_imitation:OnRemoved()
+end
+
+function modifier_shadow_imitation:OnDestroy()
+	if not IsServer() then return end
+	self.parent:RemoveGesture(ACT_DOTA_RUN)
+	self.parent:RemoveGesture(ACT_DOTA_IDLE)
+
+	--self.parent:SetPhysicsAcceleration(Vector(0,0,0))
+	--self.parent:SetPhysicsVelocity(Vector(0,0,0))
+	--self.parent:OnPhysicsFrame(nil)
+	--self.parent:PreventDI(false)
+	--self.parent:SetAutoUnstuck(true)
+	--self.parent:FollowNavMesh(true)
+end
+
+--------------------------------------------------------------------------------
+-- Status Effects
+function modifier_shadow_imitation:CheckState()
+	local state = {
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
+		[MODIFIER_STATE_PROVIDES_VISION] = true,
+	}
+
+	return state
+end
+

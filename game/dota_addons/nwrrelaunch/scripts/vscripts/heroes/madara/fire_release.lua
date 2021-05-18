@@ -16,6 +16,8 @@ function madara_fire_release:OnSpellStart()
 	self.caster_origin = caster:GetAbsOrigin()
 	self.caster_forward_vector = caster:GetForwardVector()
 
+	EmitSoundOn("madara_fire_cast", caster)
+
 	local projectile_table = {
 		Ability = self,
 		EffectName = "particles/econ/items/jakiro/jakiro_ti8_immortal_head/jakiro_ti8_dual_breath_fire.vpcf",
@@ -72,6 +74,8 @@ function madara_fire_release:OnProjectileHit(target, location)
 			-- play effects
 			-- self:PlayEffects( enemy )
 		end
+
+		EmitSoundOnLocationWithCaster(location, "madara_fire_explosion", self:GetCaster())
 
 		local wood_release_ability =  self:GetCaster():FindAbilityByName("madara_wood_release")
 		if wood_release_ability:IsTrained() then
