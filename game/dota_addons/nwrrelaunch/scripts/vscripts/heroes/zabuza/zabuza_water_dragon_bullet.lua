@@ -86,7 +86,7 @@ function zabuza_water_dragon_bullet:OnProjectileHit_ExtraData(target, location, 
 end
 
 function zabuza_water_dragon_bullet:OnProjectileThink_ExtraData(location, data)
-	if location == self.target_point then
+	if location.x  == self.target_point.x and location.y  == self.target_point.y then
 		local caster = self:GetCaster()
 		local target_point = self.target_point
 		local radius = self:GetSpecialValueFor( "radius")

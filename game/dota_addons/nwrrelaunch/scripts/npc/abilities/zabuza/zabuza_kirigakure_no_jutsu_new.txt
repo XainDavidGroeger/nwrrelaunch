@@ -247,14 +247,14 @@
 			}
 		}
 
-		"modifier_special_bonus_attack_damage"
+		"modifier_zabuza_aura_extra_damage"
 		{
 			"IsHidden"	"1"
 			"Duration"	"0.1"
 
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%special_bonus_5_damage"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"60"
 			}
 			
 		}

@@ -83,6 +83,13 @@ function spin_web_aura( keys )
 
 	local fade_delay = ability:GetLevelSpecialValueFor( "fade_delay", ( ability:GetLevel() - 1 ) )
 
+	local ability4 = keys.caster:FindAbilityByName("special_bonus_zabuza_4")
+	if ability4 ~= nil then
+		if ability4:IsTrained() then
+			fade_delay = fade_delay - 0.8
+		end
+	end
+
 
 	if keys.target:IsRealHero() then
 
@@ -102,8 +109,8 @@ function spin_web_aura( keys )
 		local ability5 = keys.caster:FindAbilityByName("special_bonus_zabuza_5")
 		if ability5 ~= nil then
 		    if ability5:IsTrained() then
-		    	if not target:HasModifier("modifier_special_bonus_attack_damage") then
-		    		ability:ApplyDataDrivenModifier(caster, target, "modifier_special_bonus_attack_damage", {})
+		    	if not target:HasModifier("modifier_zabuza_aura_extra_damage") then
+		    		ability:ApplyDataDrivenModifier(caster, target, "modifier_zabuza_aura_extra_damage", {})
 		    	end
 		    end
 		end

@@ -2216,15 +2216,15 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
 
-		//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
-		//20: +100% Cleave / -3 Armor Track
-		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
-		//10: +175 Health / +20 Movement Speed
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_1"						"+300 Stealth Cast Range"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_2"						"+35% Hidden Mist Miss Chance"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_3"						"-3 Armor Track"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"+175 Hidden Mist AoE"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_5"						"-1.5s Weak Spot Cooldown"
+		//25: +60 Damage Inside Hidden Mist / +100% Cleave
+		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay
+		//15: -2s Executioner Cooldown / +275 Health
+		//10: +20 Attack Speed / +300 Water Dragon Projectile Speed
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_1"						"+300 Water Dragon Projectile Speed"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_2"						"-2s Executioner Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_3"						"+7% Executioner Health Threshold"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"-0.8s Hidden Mist Fade Delay"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_5"						"+60 Damage Inside Hidden Mist"
 
 
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun

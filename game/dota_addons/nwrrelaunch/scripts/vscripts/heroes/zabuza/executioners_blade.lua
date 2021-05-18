@@ -13,7 +13,7 @@ function execute( keys )
 	    end
 	end
 
-	if target_hp_percent <= health_threshold or target:HasModifier("modifier_demon_mark") then
+	if target_hp_percent <= health_threshold then
 		if not target:IsBuilding() and keys.caster:GetTeamNumber() ~= keys.target:GetTeamNumber() then
 			keys.ability:ApplyDataDrivenModifier(caster, caster, "modifier_executioners_blade_crit", {duration = 0.3})
 		end
