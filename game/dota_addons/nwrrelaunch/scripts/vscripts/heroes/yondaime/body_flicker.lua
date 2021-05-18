@@ -1,6 +1,5 @@
 yondaime_body_flicker = class({})
 
-
 function yondaime_body_flicker:GetCooldown(iLevel)
 	local cdreduction = 0
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_yondaime_5")
@@ -10,6 +9,14 @@ function yondaime_body_flicker:GetCooldown(iLevel)
 	    end
 	end
 	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
+end
+
+function yondaime_body_flicker:GetCastRange(location, target)
+	if self:GetCaster():HasTalent("special_bonus_yondaime_body_flicker_global") then
+		return 9999999
+	else
+		return 1300
+	end
 end
 
 function yondaime_body_flicker:OnAbilityPhaseStart( keys )
@@ -28,7 +35,12 @@ function yondaime_body_flicker:OnSpellStart( event )
 	
 	local closest_seal = nil
 	local min_dist = 1300
-	local max_dist = ability:GetSpecialValueFor("range") --Maximum allowed distance
+	local max_dist
+	if caster:HasTalent("special_bonus_yondaime_body_flicker_global") then
+		max_dist = 9999999 --Maximum allowed distance
+	else
+		max_dist = ability:GetSpecialValueFor("range") --Maximum allowed distance
+	end
 	
 	for k,v in pairs(placed_seals) do
 		if not v:IsNull() then
