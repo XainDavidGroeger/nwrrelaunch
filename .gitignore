@@ -5,15 +5,15 @@
 *.tmp
 
 # Compiled formats
-#*.vmat_c
-#*.vagrp_c
-#*.vmesh_c
-#*.vmdl_c
-#*.vtex_c
-#*.vsnd_c
-#*.vsndevts_c
-#*.vpcf_c
-#*.vanim_c
+*.vmat_c
+*.vagrp_c
+*.vmesh_c
+*.vmdl_c
+*.vtex_c
+*.vsnd_c
+*.vsndevts_c
+*.vpcf_c
+*.vanim_c
 
 # Map files
 

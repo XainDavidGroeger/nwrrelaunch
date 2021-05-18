@@ -9,13 +9,12 @@
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityTextureName"	"zabuza_executioners_blade"
-	"AbilityCooldown"		"15"
+	"AbilityCooldown"		"30 24 18 12"
 
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	 {
-	  "soundfile"	"soundevents/heroes/zabuza/zabuza_executioner_cast.vsndevts"
 	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 	  "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
 	  "particle"	"particles/units/heroes/hero_bounty_hunter/status_effect_bounty_hunter_jinda_slow.vpcf"
@@ -59,12 +58,6 @@
 				"Target"			"CASTER"
 			}
 
-			"FireSound"
-			{
-				"EffectName"	"zabuza_executioner_cast"
-				"Target"		"CASTER"
-			}
-			
 			"RunScript"
 			{
 				"ScriptFile"	"heroes/zabuza/executioners_blade.lua"

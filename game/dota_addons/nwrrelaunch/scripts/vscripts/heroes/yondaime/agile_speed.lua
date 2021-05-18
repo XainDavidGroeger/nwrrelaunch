@@ -90,6 +90,7 @@ end
 
 function modifier_yondaime_agile_speed_passive:OnRefresh()
 	local ability = self:GetAbility()
+	print(self:GetParent():HasModifier("modifier_yondaime_agile_speed_active"))
 	if self:GetParent():HasModifier("modifier_yondaime_agile_speed_active") then
 		self.bonus_damage_ms_perc = self:GetAbility():GetSpecialValueFor("bonus_damage_ms_percent_active")
 		self.bonus_movespeed_perc = self:GetAbility():GetSpecialValueFor("bonus_ms_percentage_active")
@@ -108,7 +109,6 @@ function modifier_yondaime_agile_speed_passive:OnIntervalThink()
 		self.movement_speed = self:GetParent():GetIdealSpeed()
 		self.bonus_damage = self.movement_speed / 100 * self.bonus_damage_ms_perc
 		self:SetStackCount(self.bonus_damage)
-		print(self.bonus_damage)
 	end
 end
 
@@ -119,14 +119,20 @@ function modifier_yondaime_agile_speed_active:IsDebuff() return false end
 function modifier_yondaime_agile_speed_active:IsPurgable() return true end
 
 function modifier_yondaime_agile_speed_active:OnCreated()
+	if not IsServer() then return end
 	local ability = self:GetAbility()
-	ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName()):ForceRefresh()
+	local modifier = ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName())
+	modifier.bonus_damage_ms_perc = ability:GetSpecialValueFor("bonus_damage_ms_percent_active")
+	modifier.bonus_movespeed_perc = ability:GetSpecialValueFor("bonus_ms_percentage_active")
 end
 
 
 function modifier_yondaime_agile_speed_active:OnRemoved() 
+	if not IsServer() then return end
 	local ability = self:GetAbility()
-	ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName()):ForceRefresh()
+	local modifier = ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName())
+	modifier.bonus_damage_ms_perc = ability:GetSpecialValueFor("bonus_damage_ms_percent")
+	modifier.bonus_movespeed_perc = ability:GetSpecialValueFor("bonus_ms_percentage")
 end
 
 function modifier_yondaime_agile_speed_active:GetEffectName()

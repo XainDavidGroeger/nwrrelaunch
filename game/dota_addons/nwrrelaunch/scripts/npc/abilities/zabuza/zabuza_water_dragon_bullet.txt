@@ -36,7 +36,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1300"
+	"AbilityCastRange"				"900"
 	"AbilityCastPoint"				"0.6 0.6 0.6 0.6"
 
 	// Time		
@@ -67,7 +67,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"ms_slow"		"-10"
+			"ms_slow"		"10"
 		}
 		
 		"04"
@@ -79,7 +79,7 @@
 		"05"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"range"				"1300"
+			"range"				"900"
 		}
 
 		"06"
@@ -98,7 +98,7 @@
 		"08"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"ms_slow_start"		"-1"
+			"ms_slow_start"		"1"
 		}
 		
 	}
