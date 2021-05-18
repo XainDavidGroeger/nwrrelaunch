@@ -27,22 +27,24 @@ end
 
 function zabuza_demon_of_the_hidden_mist:OnSpellStart()
     local caster = self:GetCaster()
+    self.caster = caster
 	local target = self:GetCursorTarget()
     local duration = self:GetSpecialValueFor("duration")
-	local damage = self:GetSpecialValueFor("damage")
 	local distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
 	
 	self:PlaySound()
 	
 	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
     if target:FindModifierByName("modifier_item_lotus_orb_active") then
-        self:CanBeReflected(true, target)
+        self:CanBeReflected(false, target)
         
         return
     end
     
     --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
     if target:TriggerSpellAbsorb(self) then return end
+	
+	--self.incrDuration = 0
 	
 	target:AddNewModifier(
                 caster, -- player source
@@ -57,7 +59,6 @@ function zabuza_demon_of_the_hidden_mist:OnSpellStart()
                 "modifier_demon_unkillable", -- modifier name
                 { duration = duration } -- kv
             )
-	--keys.ability.markedEnemy = keys.target
 	
 	self:PlayEffect(target, duration)
 	
@@ -71,6 +72,16 @@ function zabuza_demon_of_the_hidden_mist:OnSpellStart()
 		
 		return 0.03
 	end)
+end
+
+function zabuza_demon_of_the_hidden_mist:IncreaseDuration(target)
+    if self.caster:FindModifierByName("modifier_demon_unkillable") ~= nil then
+	    local modifierCaster = self.caster:FindModifierByName("modifier_demon_unkillable")
+	    local modifierTarget = target:FindModifierByName("modifier_demon_mark")
+		
+		modifierCaster:SetDuration(modifierCaster:GetRemainingTime() + 1, true)
+		modifierTarget:SetDuration(modifierTarget:GetRemainingTime() + 1, true)
+	end
 end
 
 function zabuza_demon_of_the_hidden_mist:PlayEffect(target, duration)
