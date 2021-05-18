@@ -1,11 +1,23 @@
 shikamaru_shadow_imitation_technique = class({})
 LinkLuaModifier( "modifier_shadow_imitation", "heroes/shikamaru/shikamaru_shadow_imitation_technique.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_shadow_imitation_caster", "heroes/shikamaru/shikamaru_shadow_imitation_technique.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 shikamaru_shadow_imitation_technique = shikamaru_shadow_imitation_technique or class({})
 
 function shikamaru_shadow_imitation_technique:ProcsMagicStick()
 	return true
+end
+
+function shikamaru_shadow_imitation_technique:GetCooldown(iLevel)
+	local cdrecution = 0
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_2")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	cdrecution = 3
+	    end
+	end
+	return self.BaseClass.GetCooldown(self, iLevel) - cdrecution
 end
 
 function shikamaru_shadow_imitation_technique:OnSpellStart()
@@ -16,9 +28,13 @@ function shikamaru_shadow_imitation_technique:OnSpellStart()
 	self.target_point = self:GetCursorPosition()
 	self.forwardVec = (self.target_point - self.caster_location):Normalized()
 
+	self.caster:AddNewModifier(self.caster, self.ability, "modifier_shadow_imitation_caster", {})
+	self.caster:StartGesture(ACT_DOTA_CHANNEL_ABILITY_1)
+
 	-- Projectile variables
 	self.shadow_speed = self.ability:GetSpecialValueFor("shadow_speed")
-	self.shadow_duration = self.ability:GetSpecialValueFor("shadow_duration")
+	self.shadow_duration = self.ability:GetSpecialValueFor("shadow_duration") + self.caster:FindTalentValue("special_bonus_shikamaru_4")
+	print(self.shadow_duration)
 
 	self.shadow_width = self.ability:GetSpecialValueFor("shadow_width")
 	self.shadow_range = self.ability:GetSpecialValueFor("shadow_range")
@@ -49,6 +65,8 @@ end
 
 
 function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation)
+	self.caster:RemoveModifierByName("modifier_shadow_imitation_caster")
+	self.caster:FadeGesture(ACT_DOTA_CHANNEL_ABILITY_1)
 	if hTarget ~= nil then
 		hTarget:Stop()
 		if hTarget:HasModifier("modifier_flash_bomb_debuff") then
@@ -56,7 +74,6 @@ function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation
 		else
 			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = self.shadow_duration})
 		end
-
 	end
 end
 
@@ -155,6 +172,17 @@ function modifier_shadow_imitation:CheckState()
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
 		[MODIFIER_STATE_PROVIDES_VISION] = true,
+	}
+
+	return state
+end
+
+
+modifier_shadow_imitation_caster = modifier_shadow_imitation_caster or class({})
+
+function modifier_shadow_imitation_caster:CheckState()
+	local state = {
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 	}
 
 	return state

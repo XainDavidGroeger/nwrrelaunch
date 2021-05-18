@@ -9,7 +9,17 @@ function shikamaru_switching_technique:GetAbilityTextureName()
 end
 -------------------------------------------
 function shikamaru_switching_technique:GetAOERadius()
-	return self:GetSpecialValueFor("radius")
+	local extraaoe = 0
+	if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_6") ~= nil then
+		if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_6"):GetLevel() > 0 then
+			extraaoe =  300
+		end
+	end
+	return self:GetSpecialValueFor("radius") + extraaoe
+end
+
+function shikamaru_switching_technique:GetChannelTime()
+	return self:GetSpecialValueFor("duration") + self:GetCaster():FindTalentValue("special_bonus_shikamaru_1")
 end
 
 function shikamaru_switching_technique:ProcsMagicStick()
@@ -27,8 +37,9 @@ function shikamaru_switching_technique:OnSpellStart()
 
 	-- Ability specials
 	self.damage = self.ability:GetSpecialValueFor("damage_per_interval")
-	self.radius = self.ability:GetSpecialValueFor("radius")
-	self.duration = self.ability:GetSpecialValueFor("duration")
+	self.radius = self.ability:GetSpecialValueFor("radius") + self.caster:FindTalentValue("special_bonus_shikamaru_6")
+	self.duration = self.ability:GetSpecialValueFor("duration") + self.caster:FindTalentValue("special_bonus_shikamaru_1")
+
 	self.team_id = self.caster:GetTeamNumber()
 	
 	self.target_point = self:GetCursorPosition()

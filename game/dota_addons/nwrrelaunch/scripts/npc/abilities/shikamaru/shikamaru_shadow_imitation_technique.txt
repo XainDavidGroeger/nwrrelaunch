@@ -43,17 +43,13 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.5 2 2.5 3"
+				"shadow_width"	"100"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"shadow_width"	"100"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"shadow_duration"	"1.50 2.00 2.50 3.00"
+				"LinkedSpecialBonus"	"special_bonus_shikamaru_4"
 			}
 		}
 

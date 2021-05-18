@@ -1,10 +1,11 @@
 "DOTAAbilities"
 {
 
-		//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
-		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
-		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
-		//10: +175 Health / +140 Shadow Bind Total Damage
+		//25: +3 Tag Traps / +300 Radius Shadow Gather Radius
+		//20: +175 Flash Bomb Damage / +1s Shadow Paralysis Duration
+		//15: -3s Shadow Paralysis Cooldown / +100 Cast Range
+		//10: +175 Health / +0.5s Shadow Gather Duration
+
 			"npc_dota_hero_shikamaru"  //Shikamaru
 		{
 			"HeroID"					"216"

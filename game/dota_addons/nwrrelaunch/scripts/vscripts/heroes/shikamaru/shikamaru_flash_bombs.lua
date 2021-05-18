@@ -25,7 +25,8 @@ function shikamaru_flash_bombs:OnSpellStart()
 	local small_radius = r / 2
 
 	self.bomb_aoe = self:GetSpecialValueFor("bomb_aoe")
-	self.damage = self:GetSpecialValueFor("damage")
+	self.damage = self:GetSpecialValueFor("damage") + self:GetCaster():FindTalentValue("special_bonus_shikamaru_3")
+	print(self.damage)
 	self.duration = self:GetSpecialValueFor("debuff_duration")
 	self.caster = self:GetCaster()
 
