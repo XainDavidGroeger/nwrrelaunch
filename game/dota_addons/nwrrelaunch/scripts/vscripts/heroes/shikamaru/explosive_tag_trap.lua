@@ -27,8 +27,13 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
                         {duration = self:GetSpecialValueFor("activation_time")})
 
     if self.placed_traps ~= nil then
-        if #self.placed_traps >= self:GetSpecialValueFor("max_traps") then
-            table.remove(self.placed_traps, 1):FindModifierByName("modifier_shikamaru_explosive_tag_trap_active"):TriggerExplosion()
+        if #self.placed_traps >= self:GetSpecialValueFor("max_traps") + self:GetCaster():FindTalentValue("special_bonus_shikamaru_max_traps") then
+            local trap_to_explode = table.remove(self.placed_traps, 1)
+            if trap_to_explode:FindModifierByName("modifier_shikamaru_explosive_tag_trap_active") then
+                trap_to_explode:FindModifierByName("modifier_shikamaru_explosive_tag_trap_active"):TriggerExplosion(nil)
+            else
+                trap_tp_explode:ForceKill(false)
+            end
         end
     end
 
@@ -38,69 +43,50 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
         table.insert(self.placed_traps, trap)
     end
 
-    self.other_var = 2
-
-    if IsClient() then
-        self.client_var = 1
-    end
-
-    if IsClient() then
-        print(self.client_var)
-        print(self.other_var)
-    end
-
 end
 
 function shikamaru_explosive_tag_trap:CastFilterResultLocation(target_point)
 
-	if IsClient() then
-		if self.custom_indicator then
-			-- register cursor position
-			self.custom_indicator:Register( vLoc )
-		end
-	end
-    
-
-	-- local ability = self
-	-- local caster = ability:GetCaster()
-	-- local closest_seal = self:GetClosestSeal(target_point)
-	-- local range = self:GetSpecialValueFor("radius")
-
-	-- if closest_seal == nil then
-	-- 	return UF_FAIL_CUSTOM
+	-- if IsClient() then
+	-- 	if self.custom_indicator then
+	-- 		-- register cursor position
+	-- 		self.custom_indicator:Register( vLoc )
+	-- 	end
 	-- end
 
-	-- local direction = (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
+    if IsClient() then return end 
 
-	
-	-- local target_entities = FindUnitsInLine(caster:GetTeamNumber(),
-	-- 									   caster:GetAbsOrigin() - direction*200,
-	-- 									   closest_seal:GetAbsOrigin() + direction*200,
-	-- 									   nil,
-	-- 									   ability:GetSpecialValueFor("search_width"),
-	-- 									   DOTA_UNIT_TARGET_TEAM_ENEMY,
-	-- 									   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
-	-- 									   DOTA_UNIT_TARGET_FLAG_NONE)
+    local possible_mines = FindUnitsInRadius(self:GetCaster():GetTeamNumber(),
+                                            target_point,
+                                            nil,
+                                            self:GetSpecialValueFor("trigger_radius"),
+                                            DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+                                            DOTA_UNIT_TARGET_ALL, 
+                                            DOTA_UNIT_TARGET_FLAG_NONE, 
+                                            FIND_ANY_ORDER, 
+                                            false)
+                                    
+    print(possible_mines)
 
-	-- if #target_entities == 0 then
-	-- 	return UF_SUCCESS
-	-- end
+    if possible_mines == nil then return UF_SUCCESS end
+    for i=1,#possible_mines do
+        if possible_mines[i]:GetUnitName() == "npc_shikamaru_trap" then 
+            return UF_FAIL_CUSTOM
+        end
+    end
 
-	-- if (closest_seal:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() < self:GetCastRange(target_point ,nil) then
-	-- 	return UF_SUCCESS
-	-- end
-	
-	-- return UF_FAIL_CUSTOM
+    return UF_SUCCESS
+end
 
+function shikamaru_explosive_tag_trap:GetCustomCastErrorLocation(target_point)
+    return "#error_tag_is_too_close"
 end
 
 function shikamaru_explosive_tag_trap:CreateCustomIndicator()
 	local particle_cast = "particles/ui_mouseactions/wards_area_view.vpcf"
-    -- print(self.placed_traps)
     if placed_traps == nil then return end
     if self.placed_traps_vfx == nil then self.placed_traps_vfx = {} end
     for i=1,#self.placed_traps do
-        -- print(i)
         local vfx = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetCaster())
         ParticleManager:SetParticleControl(vfx, 0, self.placed_traps[i]:GetAbsOrigin())
         ParticleManager:SetParticleControl(vfx, 1, Vector(self:GetSpecialValueFor("trigger_radius"),0,0))
@@ -190,6 +176,15 @@ function modifier_shikamaru_explosive_tag_trap_active:OnIntervalThink()
 end
 
 function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
+    local trap_origin = self:GetParent():GetAbsOrigin()
+    local ability = self:GetAbility()
+    local radius = self.radius
+
+    self:GetParent():ForceKill(false)
+
+    local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_stasis_trap_explode.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
+    ParticleManager:SetParticleControl(explosion_vfx, 0, trap_origin)
+    ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(self.radius, 0, 0))
     if units == nil then return end
     local trap_table = self:GetAbility().placed_traps
     for i=1,#trap_table do
@@ -197,14 +192,7 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
             table.remove(trap_table, i)
         end
     end
-    local trap_origin = self:GetParent():GetAbsOrigin()
-    local ability = self:GetAbility()
-    local radius = self.radius
-    self:GetParent():ForceKill(false)
 
-    local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_stasis_trap_explode.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
-    ParticleManager:SetParticleControl(explosion_vfx, 0, trap_origin)
-    ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(self.radius, 0, 0))
 
     for i=1,#units do 
         units[i]:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("bind_duration")})

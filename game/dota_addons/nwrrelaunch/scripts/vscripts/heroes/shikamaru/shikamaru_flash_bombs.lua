@@ -15,6 +15,41 @@ function shikamaru_flash_bombs:ProcsMagicStick()
     return true
 end
 
+function shikamaru_flash_bombs:ExplodeOnLocation(location)
+	local vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", 
+	PATTACH_ABSORIGIN, self.caster)
+	ParticleManager:SetParticleControl(vfx, 0, location)
+	ParticleManager:SetParticleControl(vfx, 1, Vector(0, 0, self.bomb_aoe))
+
+	local targets = FindUnitsInRadius(
+		self.caster:GetTeamNumber(), 
+		location, 
+		nil, 
+		self.bomb_aoe, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		0, 
+		0, 
+		false
+	)
+
+	for _,target in pairs(targets) do
+
+	ApplyDamage({
+		victim = target,
+		attacker = self.caster,
+		damage = self.damage,
+		damage_type = DAMAGE_TYPE_MAGICAL,
+		damage_flags = nil,
+	})
+
+	-- TODO place explosion particle on target 
+
+	-- add modifier
+	target:AddNewModifier(self.caster, self, "modifier_flash_bomb_debuff", {duration = self.duration})
+	end
+end
+
 function shikamaru_flash_bombs:OnSpellStart()
 
 	local target_point = self:GetCursorPosition()
@@ -65,38 +100,11 @@ function shikamaru_flash_bombs:OnSpellStart()
 
 	Timers:CreateTimer( 0.1, function()
 		for i = 1,8 do
+			self:ExplodeOnLocation(self.outer_circle_positions[i])
+		end
 
-			print(self.outer_circle_positions[i])
-
-			-- todo particle explosion on self.outer_circle_positions[i]
-
-			local targets = FindUnitsInRadius(
-				self.caster:GetTeamNumber(), 
-				self.outer_circle_positions[i], 
-				nil, 
-				self.bomb_aoe, 
-				DOTA_UNIT_TARGET_TEAM_ENEMY, 
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
-				0, 
-				0, 
-				false
-			)
-
-			for _,target in pairs(targets) do
-				
-				ApplyDamage({
-					victim = target,
-					attacker = self.caster,
-					damage = self.damage,
-					damage_type = DAMAGE_TYPE_MAGICAL,
-					damage_flags = nil,
-				})
-
-				-- TODO place explosion particle on target 
-
-				-- add modifier
-				target:AddNewModifier(self.caster, self, "modifier_flash_bomb_debuff", {duration = self.duration})
-			end
+		for i = 1,4 do
+			self:ExplodeOnLocation(self.inner_circle_positions[i])
 		end
 	end)
 

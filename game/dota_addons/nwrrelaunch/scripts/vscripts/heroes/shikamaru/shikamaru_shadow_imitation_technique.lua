@@ -39,11 +39,11 @@ function shikamaru_shadow_imitation_technique:OnSpellStart()
 	self.shadow_width = self.ability:GetSpecialValueFor("shadow_width")
 	self.shadow_range = self.ability:GetSpecialValueFor("shadow_range")
 	self.shadow_location = self.caster_location
-	self.wave_particle = "particles/units/heroes/kisame/shark.vpcf"
+	self.wave_particle = "particles/units/heroes/shikamaru/shikamaru_shadow_imitation.vpcf"
 	-- Creating the projectile
 	self.projectileTable =
 	{
-		EffectName = self.wave_particle,
+		-- EffectName = self.wave_particle,
 		Ability = self.ability,
 		vSpawnOrigin = self.caster_location,
 		vVelocity = Vector( self.forwardVec.x * self.shadow_speed, self.forwardVec.y * self.shadow_speed, 0 ),
@@ -61,6 +61,15 @@ function shikamaru_shadow_imitation_technique:OnSpellStart()
 	-- Saving the projectile ID so that we can destroy it later
 	self.projectile_id = ProjectileManager:CreateLinearProjectile( self.projectileTable )
 
+	self.projectile_vfx = ParticleManager:CreateParticle(self.wave_particle, PATTACH_ABSORIGIN, self.caster)
+	ParticleManager:SetParticleControl(self.projectile_vfx, 0, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.projectile_vfx, 1, self.caster:GetForwardVector()*self.shadow_speed)
+
+
+end
+
+function shikamaru_shadow_imitation_technique:OnProjectileThink(location)
+	ParticleManager:SetParticleControl(self.projectile_vfx, 3, location)
 end
 
 
@@ -75,6 +84,9 @@ function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation
 			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = self.shadow_duration})
 		end
 	end
+
+	ParticleManager:DestroyParticle(self.projectile_vfx, true)
+	ParticleManager:ReleaseParticleIndex(self.projectile_vfx)
 end
 
 modifier_shadow_imitation = modifier_shadow_imitation or class({})
@@ -108,6 +120,12 @@ function modifier_shadow_imitation:OnCreated( kv )
 	self.gesture = ACT_DOTA_IDLE
 
 	self.parent:StartGesture(ACT_DOTA_RUN)
+
+	self.status_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_rope.vpcf", 
+													 PATTACH_ABSORIGIN, self.caster)
+	-- ParticleManager:SetParticleControl(self.status_vfx, 0, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.status_vfx, 1, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.status_vfx, 3, self.parent:GetAbsOrigin())
 
 
 	if not IsServer() then return end
@@ -155,12 +173,18 @@ function modifier_shadow_imitation:OnIntervalThink()
 	end
 
 	self.direction = direction
+
+	-- ParticleManager:SetParticleControl(self.status_vfx, 0, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.status_vfx, 1, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.status_vfx, 3, self.parent:GetAbsOrigin())
 end
 
 function modifier_shadow_imitation:OnRemoved()
 end
 
 function modifier_shadow_imitation:OnDestroy()
+	ParticleManager:DestroyParticle(self.status_vfx, true)
+	ParticleManager:ReleaseParticleIndex(self.status_vfx)
 	if not IsServer() then return end
 	self.parent:FadeGesture(self.gesture)
 end

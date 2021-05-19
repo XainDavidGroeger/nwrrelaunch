@@ -50,7 +50,7 @@ function shikamaru_switching_technique:OnSpellStart()
 	self.ability_target_flags	= self.ability:GetAbilityTargetFlags()
 
 	-- Add sandstorm particles
-	local particle_sandstorm = "particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
+	local particle_sandstorm = "particles/units/heroes/shikamaru/shikamaru_shadow_stitching.vpcf"
 	self.particle_sandstorm_fx = ParticleManager:CreateParticle(particle_sandstorm, PATTACH_WORLDORIGIN, self.thinker)
 	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 0, self.target_point)
 	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 1, Vector(self.radius, self.radius, 0))
