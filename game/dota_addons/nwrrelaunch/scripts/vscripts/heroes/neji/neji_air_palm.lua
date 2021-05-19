@@ -1,6 +1,15 @@
 neji_air_palm = class({})
  LinkLuaModifier( "modifier_neji_air_palm_debuff", "scripts/vscripts/heroes/neji/neji_air_palm.lua", LUA_MODIFIER_MOTION_NONE )
  
+
+function neji_air_palm:Precache( context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/neji/neji_air_palm_fire.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_air_palm_impact.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/haku/senbon.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/neji_w_debuff_a.vpcf", context )
+end
+
  function neji_air_palm:GetBehavior()
 	 return self.BaseClass.GetBehavior(self)
  end

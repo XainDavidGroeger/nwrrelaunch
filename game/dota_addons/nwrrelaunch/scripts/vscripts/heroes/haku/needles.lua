@@ -2,16 +2,12 @@ LinkLuaModifier("modifier_haku_needles_thinker", "heroes/haku/needles", LUA_MODI
 
 haku_needles = haku_needles or class({})
 
+function haku_needles:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource("particle",   "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", context)
+end
+
 function haku_needles:OnAbilityPhaseStart()
-	local sound_name = "haku_needles"
-	local random = math.random(1, 2)
-
-	if random == 2 then
-		sound_name = "haku_needles_2"
-	end
-
-	self:GetCaster():EmitSound(sound_name)
-
 	return true
 end
 

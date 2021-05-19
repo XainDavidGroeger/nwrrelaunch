@@ -72,10 +72,9 @@ function Precache( context )
 	-- Models
 	PrecacheModel("models/gaara/gaara.vmdl", context)
 
-	
-
 	-- Stuff
 	PrecacheResource("particle_folder", "particles/hero", context)
+	PrecacheResource("particle_folder", "particles/units", context)
 	PrecacheResource("particle_folder", "particles/ambient", context)
 	PrecacheResource("particle_folder", "particles/generic_gameplay", context)
 	PrecacheResource("particle_folder", "particles/status_fx/", context)

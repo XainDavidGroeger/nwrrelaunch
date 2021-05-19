@@ -1,6 +1,15 @@
 madara_wood_release = class({})
 LinkLuaModifier("modifier_madara_burning_tree_dot", "heroes/madara/wood_release", LUA_MODIFIER_MOTION_NONE)
 
+function madara_wood_release:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/madara_trees.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_wood_release_cast.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf", context )
+end
+
 function madara_wood_release:GetCooldown(level)
 	if self:GetCaster():HasTalent("special_bonus_madara_3") then
 		return self.BaseClass.GetCooldown( self, level ) - self:GetSpecialValueFor("cd_reduc")

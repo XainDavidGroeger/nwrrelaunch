@@ -1,6 +1,13 @@
  guy_seventh_gate_open = class({})
  LinkLuaModifier( "modifier_guy_seventh_gate", "scripts/vscripts/heroes/guy/guy_seventh_gate_open.lua", LUA_MODIFIER_MOTION_NONE )
  
+function guy_seventh_gate_open:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/guy_ulti_new.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_open_gates_talking.vsndevts", context)
+	PrecacheResource("particle", "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", context)
+end
+
  function guy_seventh_gate_open:GetBehavior()
 	 return self.BaseClass.GetBehavior(self)
  end

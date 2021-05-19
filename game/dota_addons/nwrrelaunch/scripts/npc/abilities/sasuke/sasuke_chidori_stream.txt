@@ -10,14 +10,6 @@
         "ScriptFile"             "heroes/sasuke/sasuke_chidori_stream.lua"
         "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
         "AbilityTextureName"     "sasuke_chidori_stream"
-
-        "precache"
-        {
-            "particle"  "particles/units/heroes/sasuke/stream/stream.vpcf"
-            "soundfile" "soundevents/heroes/sasuke/sasuke_stream_talking.vsndevts"
-            "soundfile" "soundevents/heroes/sasuke/sasuke_stream_cast.vsndevts"
-        }
-
         "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
         "MaxLevel"               "4"
         "AbilityCastPoint"              "0.0 0.0 0.0 0.0"

@@ -1,6 +1,14 @@
 sakura_chakra_enhanced_strength = sakura_chakra_enhanced_strength or class({})
 LinkLuaModifier("modifier_sakura_strength_caster", "heroes/sakura/sakura_chakra_enhanced_strength", LUA_MODIFIER_MOTION_NONE)
 
+function sakura_chakra_enhanced_strength:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/sakura_chakra_strength.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", context )
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context )
+    PrecacheResource( "particle", "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_base_attack_impact_b.vpcf", context )
+end
 
 function sakura_chakra_enhanced_strength:GetAbilityTextureName()
 	return "sakura_chakra_enhanced_strength"

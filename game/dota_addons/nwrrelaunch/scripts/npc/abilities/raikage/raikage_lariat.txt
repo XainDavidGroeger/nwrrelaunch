@@ -21,25 +21,6 @@
 	"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"               "1"
 	"AbilityTextureName"            "raikage_lariat"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-		"soundfile"                 "soundevents/heroes/raikage/raikage_lariat_talking.vsndevts"
-		"soundfile"					"soundevents/heroes/raikage/raikage_lariat_cast.vsndevts"
-		"soundfile"					"soundevents/heroes/raikage/raikage_lariat_impact.vsndevts"
-		"particle"                  "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-		"particle"                  "particles/hero/sven/sven_ult_storm_bolt.vpcf"
-		"particle"                  "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-		"particle"                  "particles/generic_gameplay/generic_stunned.vpcf"
-
-		"particle"					"particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-		"particle"                  "particles/units/heroes/raikage/lariat_aura.vpcf"
-        "particle"                  "particles/units/heroes/raikage/lariat_ground_parent.vpcf"
-        "particle"                  "particles/units/heroes/raikage/range_finder_lariat.vpcf"
-	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------

@@ -3,9 +3,16 @@ LinkLuaModifier( "modifier_meat_hook_followthrough_lua", "heroes/anko/modifiers/
 LinkLuaModifier( "modifier_meat_hook_lua", "heroes/anko/modifiers/modifier_meat_hook_lua.lua" ,LUA_MODIFIER_MOTION_HORIZONTAL )
 
 
---[[Author: Zenicus
-	Modified from Pudge's Hook Shot
-	Date: 11.05.2015.]]
+function anko_giant_snake:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pudge/pudge_meathook.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/anko/giant_snake_snake.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/anko/anko_hand_impact.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/anko/anko_hand_cast.vsndevts", context)
+end
+
 --------------------------------------------------------------------------------
 
 function anko_giant_snake:OnAbilityPhaseStart()

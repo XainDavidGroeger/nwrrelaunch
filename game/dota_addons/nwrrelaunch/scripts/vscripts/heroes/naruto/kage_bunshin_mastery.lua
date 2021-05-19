@@ -1,8 +1,4 @@
---[[
-	Author: LearningDave
-	Date: October, 27th 2015
-	Swaps Position of Caster and his Illusion
-]]
+
 naruto_kage_bunshin_mastery = class({})
 
 function naruto_kage_bunshin_mastery:GetCastRange(location, target)

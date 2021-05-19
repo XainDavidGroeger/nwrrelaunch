@@ -19,15 +19,6 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"			"anko_sojasosai_no_jutsu"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-			"soundfile" "soundevents/anko_sacrifice_cast.vsndevts"
-			"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
-		}
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"

@@ -2,6 +2,13 @@ haku_crippling_senbon = haku_crippling_senbon or class({})
 
 LinkLuaModifier("modifier_haku_endless_needles_victim", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
 
+function haku_crippling_senbon:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/haku_senbon_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/haku_senbon_impact.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/haku/haku_senbon.vsndevts", context)
+	PrecacheResource("particle", "particles/units/heroes/haku/senbon.vpcf", context)
+end
 
 function haku_crippling_senbon:GetAbilityTextureName()
 	return "haku_crippling_senbon"

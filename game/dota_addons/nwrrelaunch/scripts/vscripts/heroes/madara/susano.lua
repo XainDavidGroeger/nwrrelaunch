@@ -1,6 +1,13 @@
 
 madara_susano = class({})
 
+function madara_susano:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts", context )
+
+	PrecacheResource( "particle", "particles/units/heroes/madara/susano/susano.vpcf", context )
+    PrecacheResource( "particle", "particles/dire_fx/fire_barracks_glow_b.vpcf", context )
+end
+
 function madara_susano:ResetToggleOnRespawn()
 	return true
 end

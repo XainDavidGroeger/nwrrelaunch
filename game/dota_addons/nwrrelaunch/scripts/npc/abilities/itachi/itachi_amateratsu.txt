@@ -20,16 +20,6 @@
 		"AbilityCastPoint"				"0.4"
 
 	
-		"precache"
-		{
-			"particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
-			"soundfile"	"soundevents/itachi_amateratsu_burning.vsndevts"
-			"soundfile" "soundevents/heroes/itachi/itachi_amaterasu_cast_talking.vsndevts"
-			"soundfile"	"soundevents/itachi_amaterasu_fire.vsndevts"
-			"soundfile"	"soundevents/itachi_amaterasu_cast.vsndevts"
-			"soundfile"	"soundevents/itachi_amaterasu_impact.vsndevts"
-		}
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -37,25 +27,20 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_factor"				"0.06 0.08 0.1"
+				"damage"					"45 60 75"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage"					"30 45 60"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
 				"duration"					"10"
 			}
-			"04"
+			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"spread_aoe"				"100 150 200"
 				"LinkedSpecialBonus"		"special_bonus_itachi_4"
 			}
-			"05"
+			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"spread_cd"					"55.0"

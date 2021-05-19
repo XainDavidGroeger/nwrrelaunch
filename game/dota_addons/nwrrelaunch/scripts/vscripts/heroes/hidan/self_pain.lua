@@ -80,8 +80,15 @@ function self_pain( keys )
 
 end
 
-
 hidan_self_pain = class({})
+
+function hidan_self_pain:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/heroes/hidan/hidan_self_pain_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/hidan_self_pain_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/hidan_self_pain_fire.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hidan/self_pain.vpcf", context)
+end
 
 function hidan_self_pain:OnAbilityPhaseStart()
 	self:GetCaster():EmitSound("hidan_self_pain_cast")

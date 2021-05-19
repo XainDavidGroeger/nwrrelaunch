@@ -2,6 +2,20 @@ zabuza_water_dragon_bullet = zabuza_water_dragon_bullet or class({})
 
 LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/modifiers/modifier_zabuza_slow.lua", LUA_MODIFIER_MOTION_NONE)
 
+function zabuza_water_dragon_bullet:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/zabuza_dragon.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_dragon_talking.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_dragon_cast.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_dragon_fly.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_dragon_impact.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_dragon_precast.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts", context )
+end
+
 function zabuza_water_dragon_bullet:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end

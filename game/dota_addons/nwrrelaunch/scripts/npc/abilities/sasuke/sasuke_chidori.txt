@@ -21,15 +21,6 @@
 
     "AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
 
-    "precache"
-    {
-        "soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast_talking.vsndevts"
-        "particle"  "particles/units/heroes/sasuke/chidori/step.vpcf"
-        "particle"  "particles/units/heroes/sasuke/chidori/impact.vpcf"
-    }
-
     "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"               "4"
     "AbilityCastPoint"       "0.2 0.2 0.2 0.2"

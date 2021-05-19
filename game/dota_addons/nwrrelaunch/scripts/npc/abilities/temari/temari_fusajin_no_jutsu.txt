@@ -3,12 +3,6 @@
 {
     
 
-
-
-// Temari's Fusajin No Jutsu
-// Author: Zenicus
-// Date: 19.11.2015.
-
 "temari_fusajin_no_jutsu"
 {
 	// General
@@ -23,12 +17,6 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"temari_fusajin_no_jutsu"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"particle"			"particles/units/heroes/temari/temari_dust_wind.vpcf"
-	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------

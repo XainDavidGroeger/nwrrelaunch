@@ -15,20 +15,6 @@
 	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"		"yondaime_marked_kunai"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-		"particle"			"particles/units/heroes/yondaime/kunai_proc.vpcf"
-		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
-		"particle"			"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
-		"particle"			"particles/units/heroes/yondaime/blink_core.vpcf"
-		"model"				"models/yondaime_new/yondakunai.vmdl"
-		"particle"			"particles/units/heroes/yondaime/kunai_ground.vpcf"
-		
-	}
-	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"			"725 850 975 1100"

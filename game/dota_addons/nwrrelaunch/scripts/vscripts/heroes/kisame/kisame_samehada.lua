@@ -4,6 +4,11 @@ kisame_samehada = kisame_samehada or class({})
 LinkLuaModifier("modifier_kisame_samehada", "scripts/vscripts/heroes/kisame/kisame_samehada.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_kisame_samehada_bonus_damage", "scripts/vscripts/heroes/kisame/kisame_samehada.lua", LUA_MODIFIER_MOTION_NONE)
 
+function kisame_samehada:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/kisame_samehada_trigger.vsndevts", context)
+	PrecacheResource("particle",   "particles/generic_gameplay/generic_manaburn.vpcf", context)
+end
+
 function kisame_samehada:GetIntrinsicModifierName()
 	return "modifier_kisame_samehada"
 end

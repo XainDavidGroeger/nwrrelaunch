@@ -3,9 +3,17 @@ LinkLuaModifier("modifier_haku_mirror_mirror", "heroes/haku/ice_mirrors", LUA_MO
 
 haku_ice_mirrors = haku_ice_mirrors or class({})
 
+function haku_ice_mirrors:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/haku_mirrors_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/haku/haku_ulti_talking.vsndevts", context)
+	PrecacheResource("particle",   "particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/haku/mirror_destroy.vpcf", context)
+end
+
 function haku_ice_mirrors:OnAbilityPhaseStart()
 	self:GetCaster():EmitSound("haku_mirrors_cast")
-
+	self:GetCaster():EmitSound("haku_ulti_talking")
 	return true
 end
 

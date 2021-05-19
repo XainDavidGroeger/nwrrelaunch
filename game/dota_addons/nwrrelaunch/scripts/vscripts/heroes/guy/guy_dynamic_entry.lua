@@ -5,6 +5,17 @@ function guy_dynamic_entry:GetAbilityTextureName()
 	return "guy_dynamic_entry"
 end
 
+function guy_dynamic_entry:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf", context)
+
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/guy_entry.vsndevts", context)
+end
+
 function guy_dynamic_entry:GetCastRange(location, target)
 	local castrangebonus = 0
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_guy_5")

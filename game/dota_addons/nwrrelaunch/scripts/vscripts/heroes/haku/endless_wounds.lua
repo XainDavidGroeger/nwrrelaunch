@@ -5,6 +5,9 @@ LinkLuaModifier("modifier_haku_endless_needles_victim_counter", "heroes/haku/end
 LinkLuaModifier("modifier_haku_endless_needles_victim_counter_counter", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_haku_endless_needles_caster", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
 
+function haku_endless_wounds:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/haku/haku_wounds_debuff.vpcf", context)
+end
 
 function haku_endless_wounds:GetAbilityTextureName()
 	return "haku_endless_wounds"
@@ -66,9 +69,6 @@ function modifier_haku_endless_needles_caster:OnCreated()
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.stacks = 0
-
-	-- todo fix
-	-- self:GetCaster():SetRangedProjectileName("particles/units/heroes/haku/haku_base_attack_wounds_active.vpcf")
 end
 
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )

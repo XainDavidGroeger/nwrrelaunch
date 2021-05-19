@@ -1,5 +1,15 @@
 sasuke_chidori = sasuke_chidori or class({})
 
+
+function sasuke_chidori:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_chidori_cast_talking.vsndevts", context )
+
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/chidori/step.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/chidori/impact.vpcf", context )
+end
+
 function sasuke_chidori:GetAbilityTextureName()
 	return "sasuke_chidori"
 end

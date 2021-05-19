@@ -87,17 +87,6 @@
 		}
 
 	}
-
-	// Data driven
-	//-------------------------------------------------------------------------------------------------------------	
-	"precache"
-	{
-		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-		"soundfile"						"soundevents/madara_trees.vsndevts"
-		"soundfile"						"soundevents/heroes/madara/madara_wood_release_cast.vsndevts"
-		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
-		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-	}
 	
 }
 

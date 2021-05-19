@@ -2,6 +2,15 @@ raikage_raiton_no_yoroi = class({})
 LinkLuaModifier( "modifier_raikage_shield", "scripts/vscripts/heroes/raikage/raikage_raiton_no_yoroi.lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_raikage_shield_debuff", "scripts/vscripts/heroes/raikage/raikage_raiton_no_yoroi.lua", LUA_MODIFIER_MOTION_NONE )
 
+function raikage_raiton_no_yoroi:Precache( context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/raikage/raikage_lightningarmor_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/raikage/raikage_lightningarmor_end.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", context )
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context )
+    PrecacheResource( "particle", "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf", context )
+end
+
 function raikage_raiton_no_yoroi:GetBehavior()
 	return self.BaseClass.GetBehavior(self)
 end

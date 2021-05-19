@@ -32,15 +32,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"               "0"
 
-
-        "precache"
-        {
-
-        "particle"  "particles/generic_gameplay/generic_manaburn.vpcf"
-        "soundfile"   "soundevents/kisame_samehada_trigger.vsndevts"
-
-        }
-
         "AbilitySpecial"
         {
             "01"

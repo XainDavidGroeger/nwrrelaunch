@@ -3,12 +3,22 @@ LinkLuaModifier("modifier_itachi_amateratsu_spread_fire_cd", "heroes/itachi/amat
 
 itachi_amateratsu = itachi_amateratsu or class({})
 
+function itachi_amateratsu:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/itachi_amateratsu_burning.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/itachi/itachi_amaterasu_cast_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/itachi_amaterasu_fire.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/itachi_amaterasu_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/itachi_amaterasu_impact.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf", context)
+end
+
 function itachi_amateratsu:CanBeReflected(bool, target)
     if bool == true then
         if target:TriggerSpellReflect(self) then return end
     else
         --[[ simulate the cancellation of the ability if it is not reflected ]]
-ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
         EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
     end
 end
@@ -17,16 +27,11 @@ function itachi_amateratsu:ProcsMagicStick()
     return true
 end
 
-function itachi_amateratsu:OnAbilityPhaseStart()
-	self:GetCaster():EmitSound("itachi_amaterasu_cast")
-	return true
-end
-
 function itachi_amateratsu:OnSpellStart()
 	if not IsServer() then return end
 
 	local target = self:GetCursorTarget()
-
+	self:GetCaster():EmitSound("itachi_amaterasu_cast")
 	self:GetCaster():EmitSound("itachi_amaterasu_cast_talking")
 
 	target:EmitSound("itachi_amaterasu_impact")	
@@ -59,17 +64,6 @@ function modifier_itachi_amateratsu:OnCreated()
 
 	self.damage = self:GetAbility():GetSpecialValueFor("damage")
 
---[[
-	self:GetParent():SetContextThink(DoUniqueString("sound_loop"), function()
-		self:GetParent():EmitSound("itachi_amateratsu_burning")
-
-		if self:GetParent():HasModifier("modifier_itachi_amateratsu") then
-			return 0.75
-		else
-			return nil
-		end
-	end, 0.0)
---]]
 
 	self:StartIntervalThink(1.0)
 end

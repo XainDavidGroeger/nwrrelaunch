@@ -1,8 +1,8 @@
 kisame_bunshin_water_prison = class({})
 
 function kisame_bunshin_water_prison:Precache( context )
-PrecacheResource( "soundfile", "soundevents/kisame_bunshin_water_prison.vsndevts", context )
-PrecacheResource( "particle", "particles/units/heroes/kisame/bunshin_prison_new.vpcf", context )
+    PrecacheResource( "soundfile", "soundevents/kisame_bunshin_water_prison.vsndevts", context )
+    PrecacheResource( "particle", "particles/units/heroes/kisame/bunshin_prison_new.vpcf", context )
 end
 
 function kisame_bunshin_water_prison:GetCooldown(iLevel)

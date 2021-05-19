@@ -54,41 +54,7 @@
         }
     }
 
-    // "Modifiers"
-    // {
-    //     "modifier_agile_speed"
-    //     {
-    //         "Passive" "1"
-    //         "Properties"
-    //         {
-    //             "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_attack_damage"
-    //         }
-
-    //         "ThinkInterval" "0.1"
-    //         "OnIntervalThink"
-    //         {
-    //                 "RunScript"
-    //             {
-    //               "ScriptFile"    "heroes/yondaime/agile_speed.lua"
-    //               "Function"        "apply_bonus_damage"
-    //             }
-    //         }   
-    //     }
-
-    //     "modifier_agile_speed_ms"
-    //     {
-    //         "Passive" "1"
-    //         "IsHidden" "1"
-
-    //         "Properties"
-    //         {
-    //             "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms_percentage"
-        
-    //         }  
-    //     }
-    // }
 }
-
 
 
 }

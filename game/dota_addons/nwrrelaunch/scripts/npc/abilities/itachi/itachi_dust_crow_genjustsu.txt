@@ -8,18 +8,7 @@
 		"ScriptFile"				"heroes/itachi/dust_crow_genjutsu"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"		"itachi_dust_crow_genjustsu"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"		"soundevents/itachi_crows.vsndevts"
-			"soundfile"		"soundevents/hero_pick.vsndevts"
-			"particle"		"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
-			"particle"		"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
-			"particle"		"particles/world_creature_fx/crows.vpcf"
-		}
-	
+
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"21.0 18.0 15.0 12.0"

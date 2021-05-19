@@ -4,6 +4,20 @@ LinkLuaModifier("modifier_demon_mark", "scripts/vscripts/heroes/zabuza/zabuza_de
 LinkLuaModifier("modifier_demon_unkillable", "scripts/vscripts/heroes/zabuza/zabuza_demon_of_the_hidden_mist.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_demon_of_the_hidden_mist_slow", "scripts/vscripts/heroes/zabuza/zabuza_demon_of_the_hidden_mist.lua", LUA_MODIFIER_MOTION_NONE)
 
+function zabuza_demon_of_the_hidden_mist:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/zabuza/zabuza_demon_talking.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/zabuza_ult.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/zabuza_ult_2.vsndevts"	, context )
+end
+
 function zabuza_demon_of_the_hidden_mist:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end

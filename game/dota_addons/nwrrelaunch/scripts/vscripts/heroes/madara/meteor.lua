@@ -1,5 +1,22 @@
 madara_meteor = class({})
 
+function madara_meteor:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/madara_meteor_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/madara_meteor_impact.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_silence.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/madara/shadow_2.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/madara/burning_tree.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/deidara/c4_explo_base.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", context )
+end
+
+function madara_meteor:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
 function madara_meteor:OnSpellStart()
 	self.target_point = self:GetCursorPosition()
 	self:CastMeteorShadow(self.target_point)

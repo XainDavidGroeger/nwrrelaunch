@@ -18,16 +18,6 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"anko_senei_ta_jashu"
 	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/heroes/anko/anko_striking_cast.vsndevts"
-			"particle"			"particles/generic_gameplay/generic_silence.vpcf"
-			"particle"			"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
-			"particle"			"particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"
-		}
-	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
