@@ -481,11 +481,11 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/techies/fx_techiesfx_mine.vmdl"	// Model.
+		"Model"						"models/heroes/techies/fx_techiesfx_mine.vmdl"	// models/shikamaru/shikamaru_kunai_bomb.vmdl
 		"BaseClass"					"npc_dota_techies_mines"
 		"SoundSet"					"0"			// Name of sound set.
 		"Level"						"1"
-		"ModelScale"				"1.0"
+		"ModelScale"				"1.0" //10.0
 		"SelectionGroup"			"Techies_LandMines"
 		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
  		"wearable"				"8644"

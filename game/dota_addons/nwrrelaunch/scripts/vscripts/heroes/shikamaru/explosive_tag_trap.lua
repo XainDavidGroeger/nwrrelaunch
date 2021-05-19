@@ -6,6 +6,10 @@ LinkLuaModifier( "modifier_generic_custom_indicator",
 
 shikamaru_explosive_tag_trap = class({})
 
+function shikamaru_explosive_tag_trap:Precache(context)
+    PrecacheResource("model", "models/shikamaru/shikamaru_kunai_bomb.vmdl", context)
+end
+
 function shikamaru_explosive_tag_trap:GetIntrinsicModifierName()
 	return "modifier_generic_custom_indicator"
 end
@@ -20,6 +24,11 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
                                     nil, -- entity owner
                                     self:GetCaster():GetTeamNumber()) --team
     trap:SetControllableByPlayer(self:GetCaster():GetPlayerID(), true)
+	
+	--trap:SetAbsOrigin(Vector(trap:GetAbsOrigin().x + 35, trap:GetAbsOrigin().y + 40, trap:GetAbsOrigin().z + 20))
+	
+	self.sign_vfx_for_team = ParticleManager:CreateParticleForTeam("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, self:GetCaster(), self:GetCaster():GetTeamNumber())
+    ParticleManager:SetParticleControl(self.sign_vfx_for_team, 0, target_point)
 
     trap:AddNewModifier(self:GetCaster(), 
                         self, 
@@ -114,7 +123,7 @@ function modifier_shikamaru_explosive_tag_trap_pre_activation:OnRemoved()
     if not IsServer() then return end -- this i s definetely correct
     self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), 
                                     self:GetAbility(), 
-                                    "modifier_shikamaru_explosive_tag_trap_active", 
+                                    "modifier_shikamaru_explosive_tag_trap_active",
                                     {})
 end
 
@@ -181,7 +190,9 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
     local radius = self.radius
 
     self:GetParent():ForceKill(false)
-
+    
+	local sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
+    ParticleManager:SetParticleControl(sign_vfx, 0, trap_origin)
     local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_stasis_trap_explode.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
     ParticleManager:SetParticleControl(explosion_vfx, 0, trap_origin)
     ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(self.radius, 0, 0))
@@ -225,5 +236,16 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
             local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_remote_mines_detonate.vpcf", PATTACH_ABSORIGIN, ability:GetCaster())
             ParticleManager:SetParticleControl(explosion_vfx, 0, trap_origin)
             ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(radius, 0, 0))
-        end})
+			
+			Timers:CreateTimer(5, function ()
+	            ParticleManager:DestroyParticle(explosion_vfx, true)
+	        	ParticleManager:ReleaseParticleIndex(explosion_vfx)
+				ParticleManager:DestroyParticle(sign_vfx, true)
+	        	ParticleManager:ReleaseParticleIndex(sign_vfx)
+				ParticleManager:DestroyParticle(explosion_vfx, true)
+	        	ParticleManager:ReleaseParticleIndex(explosion_vfx)
+				ParticleManager:DestroyParticle(ability.sign_vfx_for_team, true)
+	        	ParticleManager:ReleaseParticleIndex(ability.sign_vfx_for_team)
+	        end)
+    end})
 end

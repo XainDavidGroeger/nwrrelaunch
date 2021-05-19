@@ -1144,6 +1144,16 @@
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_miss_chance"						"TEMP"
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_ms_slow"							"TEMP"
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_damage"								"TEMP"
+		
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap"							    "TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_lore"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_trigger_radius"				"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_damage"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_bind_duration"				"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_trigger_delay"				"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_damage_radius"				"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_max_traps"					"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_activation_time"				"TEMP"
 
 
 		//--------------------
