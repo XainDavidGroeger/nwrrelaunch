@@ -2,7 +2,7 @@
 
 Layer0
 {
-	shader "global_lit_simple.vfx"
+	shader "hero.vfx"
 
 	//---- Effect Proxies ----
 	F_USE_STATUS_EFFECTS_PROXY 1
