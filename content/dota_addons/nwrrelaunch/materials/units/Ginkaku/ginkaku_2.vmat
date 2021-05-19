@@ -2,7 +2,7 @@
 
 Layer0
 {
-	shader "hero.vfx"
+	shader "global_lit_simple.vfx"
 
 	//---- 2-Sided Rendering ----
 	F_RENDER_BACKFACES 1
