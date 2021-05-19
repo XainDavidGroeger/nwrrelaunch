@@ -2,7 +2,7 @@
 
 Layer0
 {
-	shader "global_lit_simple.vfx"
+	shader "hero.vfx"
 
 	//---- Do not Cast Shadows ----
 	F_DO_NOT_CAST_SHADOWS 1
