@@ -24,14 +24,6 @@
             "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
         
         
-            // Precache
-            //-------------------------------------------------------------------------------------------------------------
-            "precache"
-            {
-            "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
-            "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
-            }
-        
             "AbilitySpecial"
             {
                 "01"

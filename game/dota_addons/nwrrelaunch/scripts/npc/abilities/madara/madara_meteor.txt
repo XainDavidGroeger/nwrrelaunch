@@ -20,22 +20,7 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"madara_meteor"
 	"AOERadius"						"600"
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-		"particle"	"particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf"
-		"particle"	"particles/units/heroes/madara/shadow_2.vpcf"
-		"particle"	"particles/units/heroes/madara/burning_tree.vpcf"
-		"particle"	"particles/units/heroes/deidara/c4_explo_base.vpcf"
-
-		"particle"	"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
-		"soundfile"	"soundevents/madara_meteor_cast.vsndevts"
-		"soundfile"	"soundevents/madara_meteor_impact.vsndevts"
-		"soundfile"	"soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts"
-	}	
-
+	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"650"

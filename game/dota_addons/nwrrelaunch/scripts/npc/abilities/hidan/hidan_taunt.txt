@@ -18,7 +18,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 		"soundfile"			"soundevents/heroes/hidan/hidan_taunt_talking.vsndevts"
 		"soundfile"			"soundevents/hidan_taunt_cast.vsndevts"
 		"particle"			"particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"

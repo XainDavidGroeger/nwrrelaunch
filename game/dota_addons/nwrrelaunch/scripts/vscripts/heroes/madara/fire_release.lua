@@ -1,8 +1,19 @@
 madara_fire_release = class({})
 
+function madara_fire_release:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_katon.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/madara_fire_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/madara_fire_explosion.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf", context )
+    PrecacheResource( "particle", "particles/addons_gameplay/pit_lava_blast.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/madara/fire_explosion_1.vpcf", context )
+end
+
 function madara_fire_release:OnAbilityPhaseStart()
 	self:GetCaster():EmitSound("madara_katon")
-
 	return true
 end
 

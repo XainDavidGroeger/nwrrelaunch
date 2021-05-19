@@ -14,16 +14,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"kisame_suikodan_no_jutsu"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile" 		"soundevents/kisame_shark.vsndevts"
-			"soundfile" 		"soundevents/heroes/kisame/kisame_shark_cast.vsndevts"
-			"particle"  		"particles/units/heroes/kisame/shark.vpcf"		
-			"particle"  		"particles/units/heroes/kisame/range_finder_shark.vpcf"		
-		}
-		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"950"

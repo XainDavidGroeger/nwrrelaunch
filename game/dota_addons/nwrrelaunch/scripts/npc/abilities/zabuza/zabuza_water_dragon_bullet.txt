@@ -15,24 +15,6 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"zabuza_water_dragon_bullet"
 	"AOERadius"						"%radius"
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/zabuza_dragon.vsndevts"
-
-		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_talking.vsndevts"
-		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_cast.vsndevts"
-		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_fly.vsndevts"
-		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_impact.vsndevts"
-		"soundfile"			"soundevents/heroes/zabuza/zabuza_dragon_precast.vsndevts"
-
-		"particle"			"particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf"
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-		"particle"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
-		"particle"			"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-	}
-	
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------

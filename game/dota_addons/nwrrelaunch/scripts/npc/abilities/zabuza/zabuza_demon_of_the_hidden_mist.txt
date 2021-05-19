@@ -15,21 +15,7 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 	"AbilityTextureName"			"zabuza_demon_of_the_hidden_mist"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
-		"soundfile"		"soundevents/heroes/zabuza/zabuza_demon_talking.vsndevts"
-		"soundfile"		"soundevents/zabuza_ult.vsndevts"
-		"soundfile"		"soundevents/zabuza_ult_2.vsndevts"	
-		"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track.vpcf"
-		"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
-		"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
-		"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
-		"particle"		"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
-	}
+	
 	
 	// Unit Targeting
 	//-------------------------------------------------------------------------------------------------------------

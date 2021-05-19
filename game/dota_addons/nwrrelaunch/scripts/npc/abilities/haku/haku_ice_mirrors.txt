@@ -15,16 +15,6 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"haku_ice_mirrors"
 	
-		"precache"
-
-		{
-			"particle"					"particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf"
-			"particle"					"particles/units/heroes/haku/mirror_destroy.vpcf"
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
-			"soundfile"					"soundevents/haku_mirrors_cast.vsndevts"
-			"soundfile"					"soundevents/heroes/haku/haku_ulti_talking.vsndevts"
-		}
-	
 		"AbilityCastPoint"				"0.25 0.25 0.25"
 	
 		// Time		

@@ -4,11 +4,12 @@ function onoki_jinton:Precache( context )
     PrecacheResource( "soundfile", "soundevents/onoki_jinton.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/onoki_atomic_root.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/onoki_atomic_explosion.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/onoki/onoki_particle_talking.vsndevts", context )
     PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_cube1.vpcf", context )
 end
 
 function onoki_jinton:GetBehavior()
-return self.BaseClass.GetBehavior(self)
+	return self.BaseClass.GetBehavior(self)
 end
 
 function onoki_jinton:GetCooldown(iLevel)

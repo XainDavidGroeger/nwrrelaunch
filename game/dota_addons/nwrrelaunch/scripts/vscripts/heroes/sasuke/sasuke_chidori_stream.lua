@@ -1,5 +1,12 @@
 sasuke_chidori_stream = sasuke_chidori_stream or class({})
 
+function sasuke_chidori_stream:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_stream_talking.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_stream_cast.vsndevts", context )
+
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/stream/stream.vpcf", context )
+end
+
 function sasuke_chidori_stream:GetAbilityTextureName()
 	return "sasuke_chidori_stream"
 end

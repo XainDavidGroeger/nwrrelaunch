@@ -3,6 +3,13 @@ LinkLuaModifier("modifier_itachi_crow_bunshin_dummy", "heroes/itachi/dust_crow_g
 
 itachi_dust_crow_genjustsu = itachi_dust_crow_genjustsu or class({})
 
+function itachi_dust_crow_genjustsu:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/itachi_crows.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/hero_pick.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/world_creature_fx/crows.vpcf", context)
+end
+
 function itachi_dust_crow_genjustsu:GetCooldown(level)
 	return self.BaseClass.GetCooldown(self, level) + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
 end

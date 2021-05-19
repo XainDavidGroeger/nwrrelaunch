@@ -2,6 +2,14 @@ itachi_tsukiyomi = itachi_tsukiyomi or class({})
 
 LinkLuaModifier("modifier_itachi_slow", "scripts/vscripts/heroes/itachi/modifiers/modifier_itachi_slow.lua", LUA_MODIFIER_MOTION_NONE)
 
+function itachi_tsukiyomi:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/itachi/itachi_tsukyomi_cast_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/itachi_tsukyomi_cast.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf", context)
+end
+
 function itachi_tsukiyomi:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end

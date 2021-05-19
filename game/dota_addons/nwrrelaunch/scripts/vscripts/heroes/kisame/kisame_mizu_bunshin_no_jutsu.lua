@@ -2,6 +2,16 @@ kisame_mizu_bunshin_no_jutsu = kisame_mizu_bunshin_no_jutsu or class({})
 
 LinkLuaModifier("modifier_water_bunshin_bonus_damage", "scripts/vscripts/heroes/kisame/modifiers/modifier_water_bunshin_bonus_damage.lua", LUA_MODIFIER_MOTION_NONE)
 
+function kisame_mizu_bunshin_no_jutsu:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/kisame/bunshin_death.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/kisame_clone_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts", context )
+	
+    PrecacheResource( "particle", "particles/units/heroes/hero_siren/naga_siren_mirror_image.vpcf", context )
+end
+
 function kisame_mizu_bunshin_no_jutsu:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end

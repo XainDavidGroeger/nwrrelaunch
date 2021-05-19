@@ -6,7 +6,14 @@ LinkLuaModifier( "modifier_generic_custom_indicator",
 				 "modifiers/modifier_generic_custom_indicator",
 				 LUA_MODIFIER_MOTION_BOTH )
 
-
+function gaara_sabaku_taiso:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/ulti/ulti_core.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/ulti/ulti_casting.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/ulti/range_finder_ulti.vpcf"	, context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_burial_cast.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_burial_talking.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_burial_projectile.vsndevts", context)
+end
 
 function gaara_sabaku_taiso:GetIntrinsicModifierName()
 	return "modifier_generic_custom_indicator"
@@ -184,14 +191,6 @@ function modifier_gaara_cyclone:OnCreated(keys)
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.parent = self:GetParent()
-
-	-- TODO
---	local cyclone = ParticleManager:CreateParticle("particles/units/heroes/yondaime/kunai_ground.vpcf", PATTACH_POINT_FOLLOW, keys.target) 
---	ParticleManager:SetParticleControlEnt(cyclone, 0, keys.target, PATTACH_POINT_FOLLOW, "attach_origin", keys.target:GetAbsOrigin(), true)
-
---	self.sandking_epicenter = ParticleManager:CreateParticle("particles/items_fx/cyclone.vpcf", PATTACH_WORLDORIGIN, keys.target)
---	ParticleManager:SetParticleControlEnt(sandking_epicenter, 0, keys.target, PATTACH_POINT_FOLLOW, "attach_origin", keys.target:GetAbsOrigin(), true)
-
 end
 
 

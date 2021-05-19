@@ -2,6 +2,18 @@
  LinkLuaModifier( "modifier_neji_byakugan_buff", "scripts/vscripts/heroes/neji/neji_byakugan.lua", LUA_MODIFIER_MOTION_NONE )
  LinkLuaModifier( "modifier_neji_byakugan_debuff", "scripts/vscripts/heroes/neji/neji_byakugan.lua", LUA_MODIFIER_MOTION_NONE )
  
+function neji_byakugan:Precache( context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/neji/neji_byakugan_activate.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_byakugan_mana_burn.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_byakugan_off.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/neji/byakugan/byakugan_buff.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", context )
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context )
+    PrecacheResource( "particle", "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf", context )
+end
+
+
  function neji_byakugan:GetBehavior()
 	 return self.BaseClass.GetBehavior(self)
  end

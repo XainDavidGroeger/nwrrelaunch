@@ -2,6 +2,19 @@ kakashi_chidori = kakashi_chidori or class({})
 
 LinkLuaModifier("modifier_kakashi_lighting_charge", "scripts/vscripts/heroes/kakashi/modifiers/modifier_kakashi_lighting_charge.lua", LUA_MODIFIER_MOTION_NONE)
 
+function kakashi_chidori:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_raikiri_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_raikiri_loop.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_raikiri_impact.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_raikiri_cast_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_raikiri_impact_talking.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/hero_sven/sven_spell_storm_bolt_projectile_lightning_b.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/kakashi/chidori.vpcf", context)
+end		
+
 function kakashi_chidori:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
@@ -15,7 +28,7 @@ function kakashi_chidori:CanBeReflected(bool, target)
         if target:TriggerSpellReflect(self) then return end
     else
         --[[ simulate the cancellation of the ability if it is not reflected ]]
-ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
         EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
     end
 end

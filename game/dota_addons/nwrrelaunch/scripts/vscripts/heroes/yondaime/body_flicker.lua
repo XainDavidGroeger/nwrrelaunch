@@ -1,5 +1,14 @@
 yondaime_body_flicker = class({})
 
+function yondaime_body_flicker:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/blink_core_alt.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/blink_end_core.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_flicker_start.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_flicker_end.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_flicker_cast_real.vsndevts", context )
+end
+
 function yondaime_body_flicker:GetCooldown(iLevel)
 	local cdreduction = 0
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_yondaime_5")

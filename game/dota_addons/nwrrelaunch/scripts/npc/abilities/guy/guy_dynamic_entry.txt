@@ -16,22 +16,6 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"guy_dynamic_entry"
 	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-					"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
-			        "particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
-			        "particle"  "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"
-			        "soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
-			        "soundfile" "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts"
-			        "soundfile" "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts"
-			        "soundfile" "soundevents/guy_entry.vsndevts"
-	
-			        "particle"  "particles/econ/items/brewmaster/brewmaster_offhand_elixir/brewmaster_thunder_clap_elixir.vpcf"
-			        
-		}	
-	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650"

@@ -13,6 +13,13 @@ LinkLuaModifier("modifier_anko_senei_ta_jashu_slow", "scripts/vscripts/heroes/an
 
 anko_senei_ta_jashu = anko_senei_ta_jashu or class({})
 
+function anko_senei_ta_jashu:Precache(context)
+	PrecacheResource("particle", "particles/generic_gameplay/generic_silence.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf", context)
+	PrecacheResource("soundfile","soundevents/heroes/anko/anko_striking_cast.vsndevts", context)
+end
+
 function anko_senei_ta_jashu:CanBeReflected(bool, target)
 	if bool == true then
         if target:TriggerSpellReflect(self) then return end

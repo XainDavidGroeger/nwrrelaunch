@@ -9,6 +9,17 @@ LinkLuaModifier("modifier_gaara_sabaku_kyuu", "scripts/vscripts/heroes/gaara/sab
 
 gaara_sabaku_kyuu = gaara_sabaku_kyuu or class({})
 
+function gaara_sabaku_kyuu:Precache(context)
+	PrecacheResource("particle","particles/generic_gameplay/generic_silence.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/sand_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/coal/coal_projectile_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf", context)
+	
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_cast.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_impact.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_talking.vsndevts", context)
+end
+
 function gaara_sabaku_kyuu:CanBeReflected(bool, target)
     if bool == true then
         if target:TriggerSpellReflect(self) then return end

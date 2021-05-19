@@ -78,21 +78,6 @@
 
 	}
 
-	"precache"
-	{
-		"soundfile"	"soundevents/hidan_ulti.vsndevts"
-		"soundfile"	"soundevents/heroes/hidan/hidan_ulti_cast_talking.vsndevts"
-		"soundfile" "soundevents/hidan_curse_cast.vsndevts"
-		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
-		"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-		"particle"	"particles/units/heroes/hidan/hidan_blood_possession_ring.vpcf"
-		"particle"	"particles/units/heroes/hidan/ritual_debuff_core.vpcf"
-		"model"		"models/hidan/hidan.vmdl"
-	}
-
 }
 
 

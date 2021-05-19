@@ -72,13 +72,6 @@
 
 	}
 
-	"precache"
-	{
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-		"particle"  "particles/units/heroes/madara/susano/susano.vpcf"
-		"particle"	"particles/dire_fx/fire_barracks_glow_b.vpcf"
-	}
-
 	"OnSpellStart"
 	{
 	

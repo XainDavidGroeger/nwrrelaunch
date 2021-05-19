@@ -18,25 +18,7 @@
 	"FightRecapLevel"			"1"
 	"AbilityTextureName"		"kakashi_chidori"
 	"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_cast.vsndevts"
-		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_loop.vsndevts"
-		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_impact.vsndevts"
-		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_cast_talking.vsndevts"
-		"soundfile"			"soundevents/heroes/kakashi/kakashi_raikiri_impact_talking.vsndevts"
 
-		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-		"particle"			"particles/hero/sven/sven_ult_storm_bolt.vpcf"
-		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
-		"particle"			"particles/units/heroes/hero_sven/chidori.vpcf"
-		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt_projectile_lightning_b.vpcf"
-		"particle"			"particles/units/heroes/kakashi/chidori.vpcf"
-	}
-	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"			"1800"

@@ -1,15 +1,15 @@
---[[
-	Author: Noya, Pizzalol
-	Date: 04.03.2015.
-	After taking damage, checks the mana of the caster and prevents as many damage as possible.
-	Note: This is post-reduction, because there's currently no easy way to get pre-mitigation damage.
-	- Converted from datadriven to lua by EarthSalamander
-	- Date: 27.04.2021
-]]
 
 LinkLuaModifier("modifier_suna_no_yoroi", "scripts/vscripts/heroes/gaara/suna_no_yoroi.lua", LUA_MODIFIER_MOTION_NONE)
 
 gaara_suna_no_yoroi = gaara_suna_no_yoroi or class({})
+
+function gaara_suna_no_yoroi:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/armor/gaara_mana_shield.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/armor/gaara_mana_shield_cast.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/armor/gaara_mana_shield_impact.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/armor/gaara_mana_shield_end.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts", context)
+end
 
 function gaara_suna_no_yoroi:OnToggle()
 	if not IsServer() then return end

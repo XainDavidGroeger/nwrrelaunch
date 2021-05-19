@@ -32,15 +32,6 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"               "90"
 
-        "precache"
-        {
-        "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-        "particle"  "particles/generic_gameplay/generic_purge.vpcf"
-        "particle"   "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf"
-        "soundfile" "soundevents/heroes/raikage/raikage_lightningarmor_cast.vsndevts"
-        "soundfile" "soundevents/heroes/raikage/raikage_lightningarmor_end.vsndevts"
-        }
-
         "AbilitySpecial"
         {
             "01"

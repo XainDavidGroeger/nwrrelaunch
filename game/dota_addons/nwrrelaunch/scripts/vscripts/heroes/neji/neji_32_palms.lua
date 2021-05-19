@@ -3,6 +3,23 @@ LinkLuaModifier("modifier_32_palms_caster", "heroes/neji/neji_32_palms", LUA_MOD
 LinkLuaModifier("modifier_32_palms_debuff", "heroes/neji/neji_32_palms", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_32_palms_debuff_silence", "heroes/neji/neji_32_palms", LUA_MODIFIER_MOTION_NONE)
 
+function neji_32_palms:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_channel.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_cast_talking.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_finish_talking.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_finish_sound.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/neji/neji_64_hit.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_silence.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/bagum_projected.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/64_palm_finish.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/ulti_images.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/2_ulti_images.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/numbers_32.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/numbers_64.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/neji/ulti/numbers_128.vpcf", context )
+end
 
 function neji_32_palms:GetAbilityTextureName()
 	return "neji_32_palms"

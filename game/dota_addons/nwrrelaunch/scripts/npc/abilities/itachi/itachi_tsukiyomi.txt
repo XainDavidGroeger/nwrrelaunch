@@ -22,14 +22,6 @@
 	"AbilityCastPoint"				"0.3"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-	"precache"
-	{
-		"particle"		"particles/units/heroes/hero_mirana/mirana_moonlight_recipient.vpcf"
-		"soundfile"  	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
-		"soundfile"  	"soundevents/heroes/itachi/itachi_tsukyomi_cast_talking.vsndevts"
-		"soundfile"		"soundevents/itachi_tsukyomi_cast.vsndevts"
-	}
-	
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"

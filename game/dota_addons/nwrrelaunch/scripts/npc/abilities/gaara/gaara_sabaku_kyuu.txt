@@ -14,20 +14,6 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"gaara_sabaku_kyuu"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-			"particle"	"particles/units/heroes/gaara/sand_explosion.vpcf"
-			"particle"	"particles/econ/events/coal/coal_projectile_explosion.vpcf"
-			"particle"	"particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf"
-
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_cast.vsndevts"
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_impact.vsndevts"
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_talking.vsndevts"
-		}	
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"

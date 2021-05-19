@@ -54,12 +54,5 @@
 					"stun_duration"			"0.6 1.2 1.8 2.4"
 				}
 			}
-		
-			"precache"
-			{
-				"particle"  "particles/units/heroes/onoki/onoki_rocks.vpcf"
-				"particle"  "particles/units/heroes/onoki/onoki_rocks_sand.vpcf"
-				"particle"  "particles/units/heroes/onoki/onoki_rocks_shield.vpcf"
-			}
 		}
 	}

@@ -11,6 +11,12 @@ LinkLuaModifier("modifier_anko_senei_ta_jashu_poison", "scripts/vscripts/heroes/
 
 anko_sojasosai_no_jutsu = anko_sojasosai_no_jutsu or class({})
 
+function anko_sojasosai_no_jutsu:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf", context)
+	PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts", context)
+	PrecacheResource("soundfile","soundevents/anko_sacrifice_cast.vsndevts", context)
+end
+
 function anko_sojasosai_no_jutsu:CanBeReflected(bool, target)
     if bool == true then
         if target:TriggerSpellReflect(self) then return end

@@ -54,18 +54,6 @@
 			}
 		}
 	
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-			"soundfile"			"soundevents/guy_ulti_new.vsndevts"
-			"soundfile"			"soundevents/heroes/guy/guy_open_gates_talking.vsndevts"
-			"soundfile"			"soundevents/guy_ultimate.vsndevts"
-			"particle"			"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
-			"particle"			"particles/status_fx/status_effect_gods_strength.vpcf"
-			"particle"	"particles/addons_gameplay/lamp_flame_tintable.vpcf"
-			"particle"			"particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf"
-		}
-		
 	}
 
 }

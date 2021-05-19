@@ -22,15 +22,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf"
-			"particle"			"particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf"
-		}
-
+		
 		"AbilitySpecial"
 		{
 			"01"

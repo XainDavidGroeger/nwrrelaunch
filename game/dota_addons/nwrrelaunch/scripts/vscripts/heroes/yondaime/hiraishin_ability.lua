@@ -3,6 +3,16 @@ LinkLuaModifier("modifier_hiraishin_armor_debuff",
                 "heroes/yondaime/modifiers/modifier_hiraishin_armor_debuff.lua", 
 				LUA_MODIFIER_MOTION_NONE )
 
+function yondaime_hiraishin_jump:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_impact.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_talking.vsndevts", context )
+end
+
+
 function yondaime_hiraishin_jump:GetClosestSeal(target_point)
 	--Find the closest seal	
 	local placed_seals = self:GetCaster().daggers

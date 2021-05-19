@@ -2,6 +2,17 @@ sasuke_chidori_kirin = sasuke_chidori_kirin or class({})
 
 LinkLuaModifier("modifier_chidori_kirin_mark", "scripts/vscripts/heroes/sasuke/sasuke_chidori_kirin.lua", LUA_MODIFIER_MOTION_NONE)
 
+function sasuke_chidori_kirin:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_kirin_cast.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_kirin_impact.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_kirin_cast_talking.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_kirin_impact_talking.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/sasuke/kirin/storm_core.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf", context )
+end
+
 function sasuke_chidori_kirin:GetAbilityTextureName()
 	return "sasuke_chidori_kirin"
 end

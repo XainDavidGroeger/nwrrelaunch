@@ -18,25 +18,6 @@
 		"AbilityManaCost"				"120 125 130 135"
 		"AOERadius"     				"%radius"
 
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/haku/needles.lua"
-			"Function"		"BlizzardStartPoint"
-			"Target"		"POINT"
-		}
-
-		"FireSound"
-		{
-			"EffectName"	"haku_deathneedle"
-			"Target"		"CASTER"
-		}
-
-	}
-
-
 		"AbilitySpecial"
 		{
 			"01"
@@ -76,17 +57,5 @@
 				"delay"					"0.3"
 			}
 		}
-
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
-			"soundfile"	"soundevents/haku_needles.vsndevts"
-			"soundfile"	"soundevents/haku_needles_2.vsndevts"
-			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf"
-			"particle"	"particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf"
-			"particle"	"particles/generic_gameplay/generic_slowed_cold.vpcf"
-			"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
-		}
-
 	}
 }

@@ -1,5 +1,19 @@
 kakashi_doton = kakashi_doton or class({})
 
+function kakashi_doton:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/kakashi_dog_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_doton_cast_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf", context)
+	PrecacheResource("particle",   "particles/bloody_particle.vpcf.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/kakashi/doton_dog_summon.vpcf", context)
+
+	PrecacheResource("model",   "models/couriers/pakkun/pakkun.vmdl", context)
+	PrecacheResource("model",   "models/uhei/dog_uhei.vmdl", context)
+	PrecacheResource("model",   "models/guruko/dog_guruko.vmdl", context)
+end
+
 function kakashi_doton:GetAbilityTextureName()
 	return "kakashi_doton"
 end
