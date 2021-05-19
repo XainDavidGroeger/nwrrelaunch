@@ -1,53 +1,56 @@
 	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
     
-  
-"itachi_tsukiyomi"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_lua"
-	"ScriptFile"                "heroes/itachi/itachi_tsukiyomi.lua"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityTextureName"		"itachi_tsukiyomi"
-
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityDamage"					"120 190 260 330"
-	"AbilityCooldown"				"15"
-	"AbilityManaCost"				"95 110 125 140"
-	"AbilityCastRange"				"600"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	"itachi_tsukiyomi"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"                "heroes/itachi/itachi_tsukiyomi.lua"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName"		"itachi_tsukiyomi"
+
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"95 110 125 140"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_percent"				"-10 -18 -26 -34"
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_percent"				"-10 -18 -26 -34"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"1.5 2.0 2.5 3.0"
+				"LinkedSpecialBonus"		"special_bonus_itachi_1"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"				"1.0"
+				"LinkedSpecialBonus"		"special_bonus_itachi_3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"				"600"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"				"120 190 260 330"
+			}
 		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.5 2.0 2.5 3.0"
-			"LinkedSpecialBonus"		"special_bonus_itachi_1"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"				"1.0"
-			"LinkedSpecialBonus"		"special_bonus_itachi_3"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"range"				"600"
-		}
-	}
 	}
 }

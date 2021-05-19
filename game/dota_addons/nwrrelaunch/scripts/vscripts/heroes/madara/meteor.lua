@@ -13,6 +13,10 @@ function madara_meteor:Precache( context )
     PrecacheResource( "particle", "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", context )
 end
 
+function madara_meteor:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
 function madara_meteor:OnSpellStart()
 	self.target_point = self:GetCursorPosition()
 	self:CastMeteorShadow(self.target_point)

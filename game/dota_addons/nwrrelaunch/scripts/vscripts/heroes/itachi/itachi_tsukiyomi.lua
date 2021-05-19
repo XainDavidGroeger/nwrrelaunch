@@ -83,6 +83,7 @@ function itachi_tsukiyomi:OnSpellStart()
                 { duration = slow_duration } -- kv
             )
 			
+			
 	ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 end
 
