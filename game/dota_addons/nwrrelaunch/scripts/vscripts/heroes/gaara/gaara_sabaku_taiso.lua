@@ -28,7 +28,7 @@ function gaara_sabaku_taiso:GetCastRange(location, target)
 	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_gaara_3")
 	if abilityS ~= nil then
 	    if abilityS:GetLevel() > 0 then
-	    	castrangebonus = 600
+	    	castrangebonus = 99999
 	    end
 	end
 	return self:GetSpecialValueFor("range") + castrangebonus
@@ -120,7 +120,7 @@ function gaara_sabaku_taiso:OnSpellStart()
 	local abilityS = caster:FindAbilityByName("special_bonus_gaara_3")
 	if abilityS ~= nil then
 	    if abilityS:IsTrained() then
-	    	distance = distance + 600
+	    	distance = distance + 99999
 	    end
 	end
 
