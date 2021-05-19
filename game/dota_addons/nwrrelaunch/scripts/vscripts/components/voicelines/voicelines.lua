@@ -158,14 +158,11 @@ function VoiceResponses:PlaySound(soundName, unit, allChat, global)
 
 	print(soundName)
 
-
 	if allChat then
 		unit:EmitSound(soundName)
 	else
 		local playerID = unit:GetPlayerOwnerID()
 		local player = PlayerResource:GetPlayer(playerID)
-		print(playerID)
-		print(player)
 		if playerID >= 0 and player then
 			EmitSoundOnEntityForPlayer(soundName, unit, playerID)
 		end

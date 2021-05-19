@@ -18,7 +18,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
+	"AbilityCastRange"				"1500"
 	"AbilityCastPoint"				"1.0 1.0 1.0 1.0"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range"					"900 900 900"
+			"range"					"1500 1500 1500"
 			"LinkedSpecialBonus"	"special_bonus_gaara_3"
 		}
 		"04"
