@@ -47,7 +47,7 @@ function modifier_kakashi_lighting_charge:DeclareFunctions()
 end
 
 function modifier_kakashi_lighting_charge:GetModifierMoveSpeedBonus_Percentage()
-	return -1 * self.slow_percent
+	return self.slow_percent
 end
 
 
