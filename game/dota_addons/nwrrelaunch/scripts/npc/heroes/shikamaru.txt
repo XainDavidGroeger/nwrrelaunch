@@ -15,7 +15,7 @@
 		  "Ability3"         "shikamaru_flash_bombs" 
   		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
-		  "Ability6"         ""
+		  "Ability6"         "shikamaru_explosive_tag_trap"
 
 		   "Ability10"		"special_bonus_hp_175"
 		   "Ability11"		"special_bonus_shikamaru_1"
