@@ -1120,36 +1120,31 @@
 		//Shikamaru
 		//--------------------
 		"npc_dota_hero_shikamaru"  								"Shikamaru"
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari"			"Shadow Neck Bind Technique"
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_lore"			"Kage Kubishibari"
 
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_channel_time"	"HOLD DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_total_damage"	"DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_description"	"Using the secret ninjutsu of the Nara clan. Shikamaru uses the shadows to bind his target, strangling and immobilizing the target. Does 40 damage per second."
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_lore"				"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_range"		"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_speed"		"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_duration"		"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_width"		"TEMP"
 
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai"			"Explosive Kunai"
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_damage"		"DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_raidus"		"AOE: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_movespeed_slow"		"%MS DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_attackspeed_slow"		"%AS DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_duration"		"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_cd_reduc"		"CD REDUCTION: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_description"	"This regular kunai is rigged with an explosive tag. The tag will detonate when the kunai hits its target, inflicting splash damage, and dazing anyone caught in the blast."
+		"DOTA_Tooltip_ability_shikamaru_switching_technique"							"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_lore"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_radius"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_damage"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_duration"					"TEMP"
 
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs"									"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_lore"								"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_spread_aoe"							"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_bomb_aoe"							"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_range"								"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_explosion_delay"					"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_debuff_duration"					"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_miss_chance"						"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_ms_slow"							"TEMP"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_damage"								"TEMP"
 
-		"DOTA_Tooltip_ability_shikamaru_meditation"					"Meditation"
-		"DOTA_Tooltip_ability_shikamaru_meditation_radius"			"AOE: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_duration"		"DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_armor"			"ARMOR DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_description"		"Shikamaru meditates, allowing him to focus and understand his enemies moves. Onces the weak point are found, the enemy can be finished off easier. Reduce enemies armor and increase friends armor in 700 AOE. The effect will slowly decay by 1 per second."
-
-		"DOTA_Tooltip_ability_shikamaru_kage_nui"					"Shadow Gathering Technique"
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_lore"				"Kageyose no Jutsu"
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_ward_count"		"COUNT: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_damage_min"		"ATTACK DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_duration"			"DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_cd_reduc"			"CD REDUCTION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_description"		"By using the shadows, Shikamaru can make the shadow into needle like tendrils, and use them to trap and attack his enemies. Summons 8 Shadow Tendrils to attack enemies. The Shadow tendrils can not be harmed by any jutsu."
 
 		//--------------------
 		//Anko
@@ -2337,16 +2332,16 @@
 		"DOTA_Tooltip_Ability_special_bonus_kankuro_6"						"+350 Puppet Technique Health"
 		"DOTA_Tooltip_Ability_special_bonus_kankuro_7"						"+225 Karasu Attack Damage"
 
-		//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
-		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
-		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
-		//10: +175 Health / +140 Shadow Bind Total Damage
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"+50 Shadow Bind Damage per Second"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"-2s Explosive Kunai Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"+2 Meditation Armor and Duration"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"+2s Shadow Bind Duration"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"+240 Explosive Kunai Damage"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"-45s Tentacles Cooldown"
+		//25: +3 Tag Traps / +300 Radius Shadow Gather Radius
+		//20: +175 Flash Bomb Damage / +1s Shadow Paralysis Duration
+		//15: -3s Shadow Paralysis Cooldown / +100 Cast Range
+		//10: +175 Health / +0.5s Shadow Gather Duration
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"TEMP"
 
 
 		//25: 45/3% Sheer Wind per Stack / +3s Wind Scythe Lift Duration

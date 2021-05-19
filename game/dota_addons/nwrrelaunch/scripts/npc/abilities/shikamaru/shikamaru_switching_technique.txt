@@ -18,7 +18,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"300"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 		"AbilityChannelTime"			"2 2.5 3 3.5"
 
@@ -48,6 +48,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"radius"					"300"
+				"LinkedSpecialBonus"		"special_bonus_shikamaru_6"
 			}
 			"02"
 			{
@@ -62,12 +63,13 @@
             "04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage"		        "100 175 270 385"
+				"damage"		        	"100 175 270 385"
 			}
-			"06"
+			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"				"2 2.5 3 3.5"
+				"duration"					"2 2.5 3 3.5"
+				"LinkedSpecialBonus"		"special_bonus_shikamaru_1"
 			}
 		}
 
