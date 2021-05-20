@@ -23,9 +23,9 @@
 							"value6"		"sounds/vo/madara/attack_07.vsnd"
 							"value7"		"sounds/vo/madara/attack_08.vsnd"
 							"value8"		"sounds/vo/madara/attack_09.vsnd"
-							"value9"		"sounds/vo/madara/attack_10.vsnd"
-							"value10"		"sounds/vo/madara/attack_11.vsnd"
-							"value11"		"sounds/vo/madara/attack_12.vsnd"
+							"value8"		"sounds/vo/madara/attack_10.vsnd"
+							"value9"		"sounds/vo/madara/attack_11.vsnd"
+							"value10"		"sounds/vo/madara/attack_12.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -241,6 +241,7 @@
 							"value6"		"sounds/vo/madara/kill_07.vsnd"
 							"value7"		"sounds/vo/madara/kill_08.vsnd"
 							"value8"		"sounds/vo/madara/kill_09.vsnd"
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -272,6 +273,7 @@
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/madara/kill_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
@@ -305,7 +307,7 @@
 						{
 							"value0"		"sounds/vo/madara/lasthit_01.vsnd"
 							"value1"		"sounds/vo/madara/lasthit_02.vsnd"
-d						}
+						}
 					}
 					"volume"			{"value"	"1.00000"}
 					"pitch_rand_min"	{"value"	"0.00000"}

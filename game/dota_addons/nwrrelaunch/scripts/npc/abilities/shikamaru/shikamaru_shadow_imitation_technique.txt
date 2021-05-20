@@ -52,17 +52,5 @@
 				"LinkedSpecialBonus"	"special_bonus_shikamaru_4"
 			}
 		}
-
-		"precache"
-		{
-			"particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf" 	
-			"particle"	"particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
-			"particle"	"particles/units/heroes/shikamaru/shikamaru_shackle_aladeen.vpcf"
-			"particle"	"particles/units/heroes/shikamaru/shikamaru_aladeen_rope_glow.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
-			"soundfile"	"soundevents/heroes/shikamaru/shikamaru_hold_cast.vsndevts"
-			"particle"	"particles/units/heroes/shikamaru/shikamaru_spectral_test_tracking.vpcf"
-		}
-
 	}
 }
