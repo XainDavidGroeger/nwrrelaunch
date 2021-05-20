@@ -1,83 +1,43 @@
-	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
-    
-   
-"itachi_sharingan"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"itachi_sharingan"
-	
-	"precache"
+	"itachi_sharingan"
 	{
-		"soundfile"  	"soundevents/itachi_sharingan_proc.vsndevts"
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/itachi/sharingan"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"itachi_sharingan"
 
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
+		"precache"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"chance"			"25"
-		}
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"duration"			"4"
-		}
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"mr_reduction"		"-5 -10 -15 -20"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_itachi_sharingan"
-		{
-			"Passive"                   "1"
-            "IsHidden"                  "1"
-            "IsPurgable"                "0"
-        
-           "OnAttackLanded"
-           {
-          "Random"
-	          {
-	            "Chance" "%chance"
-	            "PseudoRandom" "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT"
-	            "OnSuccess"
-	            {
-	              "RunScript"
-	              {
-	                "ScriptFile"  "heroes/itachi/sharingan.lua"
-	                "Function"    "sharingan"
-	              }
-	            }
-	          }
-        	}
+			"soundfile"  	"soundevents/itachi_sharingan_proc.vsndevts"
 		}
 
-		"modifier_itachi_sharingan_mr_reduce"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"Passive"                   "0"
-            "IsHidden"                  "0"
-            "IsPurgable"                "0"
-            "IsDebuff"					"1"
-        
-          	"Properties"
+			"01"
 			{
-				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%mr_reduction"
+				"var_type"			"FIELD_INTEGER"
+				"chance"			"25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_bonus"		"200"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"4"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mr_reduction"		"-5 -10 -15 -20"
 			}
 		}
-
 	}
-}
-
-
 }
