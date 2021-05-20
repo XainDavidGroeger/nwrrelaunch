@@ -9,6 +9,31 @@ LinkLuaModifier("modifier_gaara_sabaku_kyuu", "scripts/vscripts/heroes/gaara/sab
 
 gaara_sabaku_kyuu = gaara_sabaku_kyuu or class({})
 
+function gaara_sabaku_kyuu:Precache(context)
+	PrecacheResource("particle","particles/generic_gameplay/generic_silence.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/sand_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/coal/coal_projectile_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf", context)
+	
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_cast.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_impact.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_prison_talking.vsndevts", context)
+end
+
+function gaara_sabaku_kyuu:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+        ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
+function gaara_sabaku_kyuu:ProcsMagicStick()
+    return true
+end
+
 function gaara_sabaku_kyuu:OnSpellStart()
 	if not IsServer() then return end
 
@@ -17,9 +42,15 @@ function gaara_sabaku_kyuu:OnSpellStart()
 	self.target:EmitSound("gaara_prison_cast")
 	self:GetCaster():EmitSound("gaara_prison_talking")
 
-	if self.target:TriggerSpellAbsorb(self) then
-		return
-	end
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if self.target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(false, self.target)
+		
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if self.target:TriggerSpellAbsorb(self) then return end
 
 	if self.target and self.target:IsAlive() and not self.target:IsOutOfGame() then
 		self.target:AddNewModifier(self:GetCaster(), self, "modifier_gaara_sabaku_kyuu", {duration = self:GetSpecialValueFor("duration")})

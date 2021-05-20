@@ -22,11 +22,27 @@ end
 function onoki_added_weight:GetCooldown(iLevel)
 	local abilityScd = self:GetCaster():FindAbilityByName("special_bonus_onoki_2")
 	local cdredusction = self.BaseClass.GetCooldown(self, iLevel) / 100 * 14
-	if abilityScd:GetLevel() > 0 then
-		return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
-	else
-	    return self.BaseClass.GetCooldown(self, iLevel)
+	if abilityScd ~= nil then
+	    if abilityScd:GetLevel() > 0 then
+	    	return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
+	    else
+	        return self.BaseClass.GetCooldown(self, iLevel)
+	    end
 	end
+end
+
+function onoki_added_weight:CanBeReflected(bool, target)
+	if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+	else
+	    --[[ simulate the cancellation of the ability if it is not reflected ]]
+	    ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+		EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+	end
+end
+
+function onoki_added_weight:ProcsMagicStick()
+    return true
 end
 
 --Starta
@@ -49,6 +65,16 @@ function onoki_added_weight:OnSpellStart()
 		local sound_cast = "onoki_speedbuff_cast"
 	    EmitSoundOn(sound_cast, target)
     else
+	    --[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+        if target:FindModifierByName("modifier_item_lotus_orb_active") then
+            self:CanBeReflected(true, target)
+	    	
+            return
+        end
+	    
+	    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+	    if target:TriggerSpellAbsorb(self) then return end
+		
 		target:AddNewModifier(
             caster, -- player source
             self, -- ability source
@@ -59,5 +85,4 @@ function onoki_added_weight:OnSpellStart()
 		local sound_cast = "onoki_debuff_cast"
 	    EmitSoundOn(sound_cast, target)
     end
-
 end

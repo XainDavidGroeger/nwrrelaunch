@@ -5,6 +5,9 @@ LinkLuaModifier("modifier_haku_endless_needles_victim_counter", "heroes/haku/end
 LinkLuaModifier("modifier_haku_endless_needles_victim_counter_counter", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_haku_endless_needles_caster", "heroes/haku/endless_wounds.lua", LUA_MODIFIER_MOTION_NONE)
 
+function haku_endless_wounds:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/haku/haku_wounds_debuff.vpcf", context)
+end
 
 function haku_endless_wounds:GetAbilityTextureName()
 	return "haku_endless_wounds"
@@ -66,18 +69,13 @@ function modifier_haku_endless_needles_caster:OnCreated()
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.stacks = 0
-
-	-- todo fix
-	-- self:GetCaster():SetRangedProjectileName("particles/units/heroes/haku/haku_base_attack_wounds_active.vpcf")
 end
 
 function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 
 	local target = keys.target
 	local caster = keys.attacker
-
-	print("attack landed")
-
+	
 	if caster == self.caster or (keys.attacker:GetOwner() ~= nil and keys.attacker:GetOwner():GetName() == "npc_dota_hero_drow_ranger") then
 		self.stacks_per_attack = self:GetAbility():GetSpecialValueFor("stacks_per_attack")
 		self.duration = self:GetAbility():GetSpecialValueFor("duration")
@@ -100,8 +98,11 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 	-- Ability properties
 	self.current_stacks = 0
 	self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack")
-	if self:GetCaster():FindAbilityByName("special_bonus_haku_1"):GetLevel() > 0 then
-		self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack_special")
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_haku_1")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	self.slow = self:GetAbility():GetSpecialValueFor("ms_slow_per_stack_special")
+	    end
 	end
 	if IsServer() then
 		-- add stack modifier

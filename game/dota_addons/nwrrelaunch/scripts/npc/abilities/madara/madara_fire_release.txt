@@ -10,28 +10,13 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/madara/fire_release.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"madara_fire_release"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"soundfile"			"soundevents/heroes/madara/madara_katon.vsndevts"
-		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
-		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire_explosion.vpcf"
-
-		"particle"			"particles/units/heroes/madara/fire_explosion_1.vpcf"
-
-		"soundfile"	"soundevents/madara_fire_cast.vsndevts"
-		"soundfile"	"soundevents/madara_fire_explosion.vsndevts"
-	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -89,13 +74,13 @@
 		"08"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"explosion_damage"				"70 95 120 145"
+			"explosion_damage"				"90 105 140 165"
 			"LinkedSpecialBonus"			"special_bonus_madara_4"
 		}
 		"07"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"wave_damage"					"50 75 100 125"
+			"wave_damage"					"70 95 120 145"
 		}
 		"09"
         { 
@@ -112,93 +97,17 @@
             "var_type"  "FIELD_INTEGER"
             "duration" "2 3 4 5"
         }
-        "06"
+        "12"
         { 
             "var_type"  "FIELD_INTEGER"
             "bonus_damage_percent" "5 10 15 20"
         }
+		"13"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "knockback_duration" "0.6"
+        }
 		
-	}
-
-	"OnAbilityPhaseStart"
-	 {
-	 	"FireSound"
-		{
-			"EffectName"			"madara_katon"
-			"Target"				"CASTER"
-		}
-	 } 
-
-	"OnSpellStart"
-	{
-
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_cast"
-			"Target"				"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"fire_release_initialize"
-			"Target"				"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"ReleaseFire"
-			"Target"				"POINT"
-			"fire_particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-		}		
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"		"0"
-
-		
-		"RunScript"
-		{
-			"ScriptFile"			"heroes/madara/fire_release.lua"
-			"Function"				"fireKnockback"
-			"Target"				"TARGET"
-			"range"					"%fire_range"
-			"distance"				"%fire_range"
-		}
-
-		"Damage"
-		{
-			"Target"		"TARGET"
-			"Type"			"DAMAGE_TYPE_MAGICAL"
-			"Damage"		"%wave_damage"
-		}
-		
-	}
-
-	"OnProjectileFinish"
-	{
-
-		"FireSound"
-		{
-			"EffectName"			"madara_fire_explosion"
-			"Target"				"CASTER"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/fire_release.lua"
-			"Function"		"fireExplosion"
-			"TARGET"		"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/fire_release.lua"
-			"Function"		"applyDamageAndStun"
-			"TARGET"		"POINT"
-		}
 	}
 }
 

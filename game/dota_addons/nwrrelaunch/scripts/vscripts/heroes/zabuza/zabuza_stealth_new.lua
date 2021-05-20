@@ -29,11 +29,18 @@ end
 
 function zabuza_stealth:GetCastRange(location , target)
 	local extracastrange = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_zabuza_1"):GetLevel() > 0 then
-		extracastrange =  300
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_zabuza_1")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	extracastrange =  300
+	    end
 	end
 
 	return self.BaseClass.GetCastRange(self,location,target) + extracastrange
+end
+
+function zabuza_stealth:ProcsMagicStick()
+	return true
 end
 
 function zabuza_stealth:OnSpellStart()

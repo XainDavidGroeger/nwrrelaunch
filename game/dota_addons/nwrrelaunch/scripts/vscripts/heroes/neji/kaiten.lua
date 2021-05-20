@@ -20,8 +20,10 @@ function applyStun( keys )
 	local duration = ability:GetLevelSpecialValueFor("stun_duration",ability:GetLevel() - 1)
 
 	local ability1 = caster:FindAbilityByName("special_bonus_neji_1")
-	if ability1:IsTrained() then
-		duration = duration + 0.25
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	duration = duration + 0.25
+	    end
 	end
 
 	local targets = FindUnitsInRadius(
@@ -49,6 +51,14 @@ function knockBack( keys )
 	local caster = keys.caster
 
 	local radius = ability:GetLevelSpecialValueFor("aoe_target", ability:GetLevel() - 1)
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_neji_5")
+	if ability1 ~= nil then
+		if ability1:IsTrained() then
+			radius = radius + 200
+		end
+	end
+
 	local stun_duration = ability:GetLevelSpecialValueFor("stun_duration", ability:GetLevel() - 1)
 	local push_back_length = ability:GetLevelSpecialValueFor("push_back_length",ability:GetLevel() - 1)
 
@@ -84,6 +94,59 @@ function knockBack( keys )
 									knockback_height = 0,
 									knockback_duration = 1.0 * 0.67,	}
 		unit:AddNewModifier(caster, ability, "modifier_knockback", knockback)
+
+	end
+
+end
+
+function fireEffect(keys)
+
+	local aoe_target = keys.ability:GetSpecialValueFor("aoe_target")
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_neji_5")
+	if ability1 ~= nil then
+		if ability1:IsTrained() then
+			aoe_target = aoe_target + 200
+		end
+	end
+
+	local pidx = ParticleManager:CreateParticle("particles/units/heroes/neji/neji_kaiten_main.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
+    ParticleManager:SetParticleControl(pidx, 1, Vector(aoe_target, 100,100))
+end
+
+function dealDamage(keys)
+
+
+	local aoe_target = keys.ability:GetSpecialValueFor("aoe_target")
+	local damage = keys.ability:GetSpecialValueFor("damage")
+
+	local ability1 = keys.caster:FindAbilityByName("special_bonus_neji_5")
+	if ability1 ~= nil then
+		if ability1:IsTrained() then
+			aoe_target = aoe_target + 200
+		end
+	end
+
+	local full_enemies = FindUnitsInRadius(
+		keys.caster:GetTeamNumber(),
+		keys.caster:GetAbsOrigin(),
+		nil,
+		aoe_target,
+		DOTA_UNIT_TARGET_TEAM_ENEMY,
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+		DOTA_UNIT_TARGET_FLAG_NONE,
+		FIND_ANY_ORDER,
+		false
+	)
+
+	for key,oneTarget in pairs(full_enemies) do 
+
+		ApplyDamage({
+			victim = oneTarget,
+			attacker = keys.caster,
+			damage = damage,
+			damage_type =DAMAGE_TYPE_MAGICAL,
+		})
 
 	end
 

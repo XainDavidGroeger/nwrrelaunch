@@ -7,7 +7,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -19,11 +19,14 @@
 							"value2"		"sounds/vo/neji/attack_03.vsnd"
 							"value3"		"sounds/vo/neji/attack_04.vsnd"
 							"value4"		"sounds/vo/neji/attack_05.vsnd"
+							"value5"		"sounds/vo/neji/attack_06.vsnd"
+							"value6"		"sounds/vo/neji/attack_07.vsnd"
+							"value7"		"sounds/vo/neji/attack_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -43,7 +46,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -54,11 +57,20 @@
 							"value1"		"sounds/vo/neji/move_02.vsnd"
 							"value2"		"sounds/vo/neji/move_03.vsnd"
 							"value3"		"sounds/vo/neji/move_04.vsnd"
+							"value4"		"sounds/vo/neji/move_05.vsnd"
+							"value5"		"sounds/vo/neji/move_06.vsnd"
+							"value6"		"sounds/vo/neji/move_07.vsnd"
+							"value7"		"sounds/vo/neji/move_08.vsnd"
+							"value8"		"sounds/vo/neji/move_09.vsnd"
+							"value9"		"sounds/vo/neji/move_10.vsnd"
+							"value10"		"sounds/vo/neji/move_11.vsnd"
+							"value11"		"sounds/vo/neji/move_12.vsnd"
+							"value12"		"sounds/vo/neji/move_13.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -78,7 +90,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -87,11 +99,19 @@
 						{
 							"value0"		"sounds/vo/neji/pain_01.vsnd"
 							"value1"		"sounds/vo/neji/pain_02.vsnd"
+							"value2"		"sounds/vo/neji/pain_03.vsnd"
+							"value3"		"sounds/vo/neji/pain_04.vsnd"
+							"value4"		"sounds/vo/neji/pain_05.vsnd"
+							"value5"		"sounds/vo/neji/pain_06.vsnd"
+							"value6"		"sounds/vo/neji/pain_07.vsnd"
+							"value7"		"sounds/vo/neji/pain_08.vsnd"
+							"value8"		"sounds/vo/neji/pain_09.vsnd"
+							"value9"		"sounds/vo/neji/pain_10.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -111,7 +131,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -120,11 +140,15 @@
 						{
 							"value0"		"sounds/vo/neji/death_01.vsnd"
 							"value1"		"sounds/vo/neji/death_02.vsnd"
+							"value2"		"sounds/vo/neji/death_03.vsnd"
+							"value3"		"sounds/vo/neji/death_04.vsnd"
+							"value4"		"sounds/vo/neji/death_05.vsnd"
+							"value5"		"sounds/vo/neji/death_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -144,7 +168,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -154,11 +178,13 @@
 							"value0"		"sounds/vo/neji/respawn_01.vsnd"
 							"value1"		"sounds/vo/neji/respawn_02.vsnd"
 							"value2"		"sounds/vo/neji/respawn_03.vsnd"
+							"value3"		"sounds/vo/neji/respawn_04.vsnd"
+							"value4"		"sounds/vo/neji/respawn_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -178,7 +204,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -189,8 +215,8 @@
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -210,7 +236,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -223,11 +249,12 @@
 							"value3"		"sounds/vo/neji/kill_04.vsnd"
 							"value4"		"sounds/vo/neji/kill_05.vsnd"
 							"value5"		"sounds/vo/neji/kill_06.vsnd"
+							"value6"		"sounds/vo/neji/kill_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -247,18 +274,25 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
+							"value0"		"sounds/vo/neji/kill_01.vsnd"
+							"value1"		"sounds/vo/neji/kill_02.vsnd"
+							"value2"		"sounds/vo/neji/kill_03.vsnd"
+							"value3"		"sounds/vo/neji/kill_04.vsnd"
+							"value4"		"sounds/vo/neji/kill_05.vsnd"
+							"value5"		"sounds/vo/neji/kill_06.vsnd"
+							"value6"		"sounds/vo/neji/kill_07.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -278,19 +312,19 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-						
+
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -317,12 +351,17 @@
 					{
 						"value"
 						{
-							
+						"value0"		"sounds/vo/neji/deny_01.vsnd"
+						"value1"		"sounds/vo/neji/deny_02.vsnd"
+						"value2"		"sounds/vo/neji/deny_03.vsnd"
+						"value3"		"sounds/vo/neji/deny_04.vsnd"
+						"value4"		"sounds/vo/neji/deny_05.vsnd"
+						"value5"		"sounds/vo/neji/deny_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -342,19 +381,26 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-						
+						"value0"		"sounds/vo/neji/level_01.vsnd"
+						"value1"		"sounds/vo/neji/level_02.vsnd"
+						"value2"		"sounds/vo/neji/level_03.vsnd"
+						"value3"		"sounds/vo/neji/level_04.vsnd"
+						"value4"		"sounds/vo/neji/level_05.vsnd"
+						"value5"		"sounds/vo/neji/level_06.vsnd"
+						"value6"		"sounds/vo/neji/level_07.vsnd"
+						"value7"		"sounds/vo/neji/level_08.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -381,12 +427,12 @@
 					{
 						"value"
 						{
-							
+						"value0"		"sounds/vo/neji/deny_06.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}

@@ -15,7 +15,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"			"1400"
+	"AbilityCastRange"			"1300"
 	"AbilityCastPoint"			"0.4 0.4 0.4 0.4"
 	
 	// Time		
@@ -26,17 +26,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"			"25"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"particle"					"particles/units/heroes/yondaime/blink_core_alt.vpcf"
-		"particle"					"particles/units/heroes/yondaime/blink_end_core.vpcf"
 
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_start.vsndevts"
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_end.vsndevts"
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_cast_real.vsndevts"
-	}
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------

@@ -28,25 +28,29 @@ function ConjureImage( event )
      
      if event.caster:HasAbility("naruto_kage_bunshin_mastery") then
         local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
-        local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
-        if kage_bunshin_mastery_ability:GetLevel() > 0 then 
-
-           outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
-           if caster:FindAbilityByName("special_bonus_naruto_5") ~= nil then
-               local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
-               if abilityS:IsTrained() then
-                  outgoingDamage = outgoingDamage + 13
-               end
-           end
-        
-           incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
-           
-        else
-
-         outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
-         incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
-
-        end 
+		if ability_index ~= nil then
+            local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
+            if kage_bunshin_mastery_ability:GetLevel() > 0 then 
+            
+                outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+                if caster:FindAbilityByName("special_bonus_naruto_5") ~= nil then
+                    local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
+				     if abilityS ~= nil then
+                          if abilityS:IsTrained() then
+                             outgoingDamage = outgoingDamage + 13
+                          end
+				     end
+                end
+                
+                incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+               
+            else
+            
+            outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
+            incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
+            
+            end
+		end
      end
 
      -- handle_UnitOwner needs to be nil, else it will crash the game.
@@ -137,4 +141,33 @@ function applyModifier( keys )
    end
   
    
+end
+
+
+function applyBunshinBuff(keys)
+   local units = FindUnitsInRadius(
+		keys.caster:GetTeamNumber(),
+		keys.caster:GetAbsOrigin(),
+		nil,
+		900,
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+		DOTA_UNIT_TARGET_HERO,
+		DOTA_UNIT_TARGET_FLAG_NONE,
+		FIND_ANY_ORDER,
+		false
+	)
+
+   for i, individual_unit in ipairs(units) do
+      if individual_unit:IsIllusion() and individual_unit:GetName() == "npc_dota_hero_dragon_knight" then
+
+         keys.ability:ApplyDataDrivenModifier(
+            keys.caster,
+            individual_unit,
+            "modifier_naruto_kawazu_kumite_bunshin_buff",
+            {duration = 2}
+         )
+
+      end
+   end
+
 end

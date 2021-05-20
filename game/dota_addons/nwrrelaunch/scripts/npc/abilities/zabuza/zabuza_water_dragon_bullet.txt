@@ -1,0 +1,88 @@
+
+    "DOTAAbilities"
+{
+    
+  
+"zabuza_water_dragon_bullet"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"                    "heroes/zabuza/zabuza_water_dragon_bullet.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"zabuza_water_dragon_bullet"
+	"AOERadius"						"%radius"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1300"
+	"AbilityCastPoint"				"0.6 0.6 0.6 0.6"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16 14 12 10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 100 110 120"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"		"80 160 240 320"
+		}
+		
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"		"225"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"ms_slow"		"10"
+		}
+		
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"ms_slow_per_distance"		"-5"
+		}
+
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"range"				"1300"
+		}
+
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"2 3 4 5"
+		}
+
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"dragon_speed"		"1200"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_1"
+		}
+
+		"08"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ms_slow_start"		"1"
+		}
+		
+	}
+}
+}

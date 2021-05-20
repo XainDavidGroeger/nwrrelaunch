@@ -54,18 +54,19 @@ function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	
 	if not npc or npc:GetClassname() == "npc_dota_thinker" or npc:IsPhantom() then
-         return
-        end
+		return
+	end
 
 	self:_OnNPCSpawned(keys)
 
 	GameMode:RescaleUnit(npc)
 
-        if GetMapName() == "turbo" then --If the map was selected turbo, then at the beginning of the game each courier is given a buff for speed, and the player is given a buff for experience and gold.
-	    npc:AddNewModifier(npc, nil, 'modifier_global_boost', nil) --Give players a buff for experience and gold
-	 if npc:GetUnitName() == "npc_dota_courier" then --if it's a courier
-	    npc:AddNewModifier(npc_dota_courier, nil, 'modifier_courier_speed', nil) --Give courier a buff for ms
-	 end
+	if GetMapName() == "turbo" then --If the map was selected turbo, then at the beginning of the game each courier is given a buff for speed, and the player is given a buff for experience and gold.
+		npc:AddNewModifier(npc, nil, 'modifier_global_boost', nil) --Give players a buff for experience and gold
+	end
+
+	if npc:GetUnitName() == "npc_dota_courier" then --if it's a courier
+		npc:AddNewModifier(npc_dota_courier, nil, 'modifier_courier_speed', nil) --Give courier a buff for ms
 	end
 end
 
@@ -225,7 +226,7 @@ function GameMode:OnNonPlayerUsedAbility(keys)
 	DebugPrint('[BAREBONES] OnNonPlayerUsedAbility')
 	DebugPrintTable(keys)
 
-	local abilityname=  keys.abilityname
+	local abilityname = keys.abilityname
 end
 
 -- A player changed their name
@@ -243,7 +244,13 @@ function GameMode:OnPlayerLearnedAbility( keys)
 	DebugPrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
+	local hero = player:GetAssignedHero()
 	local abilityname = keys.abilityname
+
+	-- add auto-generated modifier related to talent for client-side actions
+	if string.find(abilityname, "special_bonus_") then
+		hero:AddNewModifier(hero, nil, "modifier_"..abilityname, {})
+	end
 end
 
 -- A channelled ability finished by either completing or being interrupted

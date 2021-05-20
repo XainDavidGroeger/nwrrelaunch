@@ -1,43 +1,43 @@
 "DOTAAbilities"
 {
 
-		//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
-		//20: +100% Cleave / -3 Armor Track
-		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
-		//10: +175 Health / +20 Movement Speed
+		//25: +60 Damage Inside Hidden Mist / +100% Cleave
+		//20: +7% Executioner Health Threshold / Removes Hidden Mist Fade Delay
+		//15: -2s Executioner Cooldown / +275 Health
+		//10: +20 Attack Speed / +300 Water Dragon Projectile Speed
     	"npc_dota_hero_zabuza" //zabuza
 		{
-
 
 		"HeroID"					"219"
 
 		"SoundSet"					"Kunai"
 		"GameSoundsFile"			"soundevents/game_sounds_kunai.vsndevts"
 
-		  "BaseClass"   "npc_dota_hero_bloodseeker"
-		  "Ability1"        "zabuza_stealth"
-		  "Ability2"        "zabuza_kirigakure_no_jutsu"
-		  "Ability3"        "zabuza_weak_spot"
-		      "Ability4"		"generic_hidden"
+		  "BaseClass"   	"npc_dota_hero_bloodseeker"
+		  "Ability1"        "zabuza_water_dragon_bullet"
+		  "Ability2"        "zabuza_kirigakure_no_jutsu_new"
+		  "Ability3"        "zabuza_executioners_blade"
+		  "Ability4"		"generic_hidden"
 		  "Ability5"		"generic_hidden"
-		  "Ability6"        "zabuza_track" 
+		  "Ability6"        "zabuza_demon_of_the_hidden_mist" 
 
-		    "Ability10"		"special_bonus_hp_175"
-		   "Ability11"		"special_bonus_movement_speed_20"
+		    "Ability10"		"special_bonus_attack_speed_20"
+		   "Ability11"		"special_bonus_zabuza_1"
 
-		   "Ability12"		"special_bonus_zabuza_1"
-		   "Ability13"		"special_bonus_zabuza_2"
+		   "Ability12"		"special_bonus_zabuza_2"
+		   "Ability13"		"special_bonus_hp_275"
 
-		   "Ability14"		"special_bonus_cleave_100"
-		   "Ability15"		"special_bonus_zabuza_3"
+		   "Ability14"		"special_bonus_zabuza_3"
+		   "Ability15"		"special_bonus_zabuza_4"
 
-		   "Ability16"		"special_bonus_zabuza_4"
-		   "Ability17"		"special_bonus_zabuza_5"
-		  "ModelScale"		"1"
-		  "LoadoutScale"		"1" 
-		"SpectatorLoadoutScale" "1"
-		"VersusScale"			"1"
-		  "Model" 			"models/zabuza/zabuza.vmdl"
+		   "Ability16"		"special_bonus_zabuza_5"
+		   "Ability17"		"special_bonus_cleave_100"
+
+		  "ModelScale"		"0.96"
+		  "LoadoutScale"		"0.9"
+		"SpectatorLoadoutScale" "0.96"
+		"VersusScale"			"0.96"
+		  "Model" 			"models/zabuza_new/zabuza_base.vmdl"
 
 		//Picking Screen
 		"IsCustom"					"1"
@@ -45,7 +45,7 @@
 	 	 "ItemSlots"
 	  	  { }
 	  	    "StatusHealth"    "200"
-  "StatusHealthRegen"   "0.300000"
+ 		 "StatusHealthRegen"   "0.300000"
 		"AttackDamageMin"		"25"
 		"AttackDamageMax"		"28"
 		"Role"			"Carry"
@@ -56,7 +56,7 @@
 		  "AttackAnimationPoint"		"0.4"
 		 // "AttackRate"				"1.0"
 		  "AttackRange"				"100"
-		  "MovementSpeed"			"310"
+		  "MovementSpeed"			"300"
 		  "AttributeBaseStrength" "17" // Base strength
 		  "AttributeStrengthGain" "2" // Strength bonus per level.
 		  "AttributeBaseIntelligence" "15" // Base intelligence
@@ -90,9 +90,9 @@
 		"npc_dota_hero_bloodseeker" 
 	{
 			"override_hero"   "npc_dota_hero_bloodseeker"
-			"Model" 		"models/zabuza/zabuza.vmdl"
-			"ModelScale"		"1"
-			"LoadoutScale"		"1" 
+			"Model" 		"models/zabuza_new/zabuza_base.vmdl"
+			"ModelScale"		"0.8"
+			"LoadoutScale"		"0.8" 
 			"SpectatorLoadoutScale" "1"
 			"VersusScale"			"1"
 	}	

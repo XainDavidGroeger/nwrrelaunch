@@ -45,7 +45,7 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	
 	local projectile_information =  
 	{
-		EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+		EffectName = "particles/units/heroes/temari/temari_tornado_small.vpcf",
 		Ability = emp_unit_ability,
 		vSpawnOrigin = caster_origin,
 		fDistance = tornado_travel_distance,

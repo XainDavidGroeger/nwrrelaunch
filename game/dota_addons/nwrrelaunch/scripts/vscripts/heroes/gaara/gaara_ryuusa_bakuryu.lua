@@ -2,6 +2,11 @@ gaara_ryuusa_bakuryu = gaara_ryuusa_bakuryu or class({})
 
 LinkLuaModifier("modifier_gaara_sandstorm_thinker", "heroes/gaara/gaara_ryuusa_bakuryu.lua", LUA_MODIFIER_MOTION_NONE)
 
+function gaara_ryuusa_bakuryu:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/gaara/sandsturm.vpcf", context)
+	PrecacheResource("soundfile", "soundevents/heroes/gaara/gaara_tsunami_cast.vsndevts", context)
+end
+
 function gaara_ryuusa_bakuryu:GetAbilityTextureName()
 	return "gaara_ryuusa_bakuryu"
 end
@@ -16,6 +21,10 @@ function gaara_ryuusa_bakuryu:GetAOERadius()
 	end
 	
 	return self:GetSpecialValueFor("radius") + extraaoe
+end
+
+function gaara_ryuusa_bakuryu:ProcsMagicStick()
+    return true
 end
 
 function gaara_ryuusa_bakuryu:OnSpellStart()

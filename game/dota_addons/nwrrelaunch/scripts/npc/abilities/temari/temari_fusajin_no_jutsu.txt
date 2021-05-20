@@ -3,17 +3,12 @@
 {
     
 
-
-
-// Temari's Fusajin No Jutsu
-// Author: Zenicus
-// Date: 19.11.2015.
-
 "temari_fusajin_no_jutsu"
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/temari/fusajin_no_jutsu.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -22,25 +17,19 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"temari_fusajin_no_jutsu"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"particle"			"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
-	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550"
+	"AbilityCastRange"				"750"
 	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100 110 120 130"
+	"AbilityManaCost"				"90 100 110 120"
 		
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
@@ -49,13 +38,13 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"magic_missile_speed"	"700"
+			"magic_missile_speed"	"1000"
 		}
 
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"100 150 200 250"
+			"damage"				"80 160 240 320"
 			"LinkedSpecialBonus"	"special_bonus_temari_1"
 		}
 
@@ -65,44 +54,51 @@
 			"cd_reduc"				"0"
 			"LinkedSpecialBonus"	"special_bonus_temari_2"
 		}
+
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cooldown_reduction_other_abilities"				"1"
+			"LinkedSpecialBonus"	"special_bonus_temari_2"
+		}
 	}
-	"OnSpellStart"
-	{
+	// "OnSpellStart"
+	// {
 
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/temari/temari_sheer_wind.lua"
-			"Function"		"sheer_wind_call"
-		}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"	"heroes/temari/temari_sheer_wind.lua"
+	// 		"Function"		"sheer_wind_call"
+	// 	}
 
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
-			"Function"		"resetCooldown"
-		}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+	// 		"Function"		"resetCooldown"
+	// 	}
 
-		"TrackingProjectile"
-		{
-			"Target"           	"TARGET"
-			"EffectName"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
-			"Dodgeable"			"0"
-			"ProvidesVision"	"0"
-			"MoveSpeed"        	"%magic_missile_speed"
-			"SourceAttachment"	"attach_right_hand"
-		}		
-	}
+	// 	"TrackingProjectile"
+	// 	{
+	// 		"Target"           	"TARGET"
+	// 		"EffectName"		"particles/units/heroes/temari/temari_wind_dust.vpcf"
+	// 		"Dodgeable"			"0"
+	// 		"ProvidesVision"	"0"
+	// 		"MoveSpeed"        	"%magic_missile_speed"
+	// 		"SourceAttachment"	"attach_right_hand"
+	// 	}		
+	// }
 
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"	"1"
+	// "OnProjectileHitUnit"
+	// {
+	// 	"DeleteOnHit"	"1"
 
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
-			"Function"		"applyDamage"
-		}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"	"heroes/temari/fusajin_no_jutsu.lua"
+	// 		"Function"		"applyDamage"
+	// 	}
 						
-	}
+	// }
 }
 
 }

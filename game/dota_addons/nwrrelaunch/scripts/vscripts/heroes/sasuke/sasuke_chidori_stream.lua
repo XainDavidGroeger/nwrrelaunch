@@ -1,5 +1,12 @@
 sasuke_chidori_stream = sasuke_chidori_stream or class({})
 
+function sasuke_chidori_stream:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_stream_talking.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_stream_cast.vsndevts", context )
+
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/stream/stream.vpcf", context )
+end
+
 function sasuke_chidori_stream:GetAbilityTextureName()
 	return "sasuke_chidori_stream"
 end
@@ -10,11 +17,17 @@ end
 
 function sasuke_chidori_stream:GetCastRange(location, target)
 	local ability5 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_5")
-	if ability5:GetLevel() > 0 then
-		return self:GetSpecialValueFor("radius") + 225
-	else
-		return self:GetSpecialValueFor("radius")
+	if ability5 ~= nil then
+	    if ability5:GetLevel() > 0 then
+	    	return self:GetSpecialValueFor("radius") + 225
+	    else
+	    	return self:GetSpecialValueFor("radius")
+	    end
 	end
+end
+
+function sasuke_chidori_stream:ProcsMagicStick()
+    return true
 end
 
 function sasuke_chidori_stream:OnSpellStart()
@@ -24,6 +37,7 @@ function sasuke_chidori_stream:OnSpellStart()
 	ParticleManager:SetParticleControl( self.stream, 3, Vector(self:GetSpecialValueFor("radius") + self:GetCaster():FindTalentValue("special_bonus_sasuke_5")  ,0,0) )
 
 	self:GetCaster():EmitSound("sasuke_stream_cast")
+	self:GetCaster():EmitSound("sasuke_stream_talking")
 
 	local targets = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), nil, 
 		self:GetSpecialValueFor("radius") + self:GetCaster():FindTalentValue("special_bonus_sasuke_5"), DOTA_UNIT_TARGET_TEAM_ENEMY,

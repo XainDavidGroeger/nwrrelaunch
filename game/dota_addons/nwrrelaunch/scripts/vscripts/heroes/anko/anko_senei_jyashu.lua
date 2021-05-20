@@ -8,6 +8,12 @@
 
 anko_senei_jyashu = anko_senei_jyashu or class({})
 
+function anko_senei_jyashu:Precache(context)
+	PrecacheResource("particle", "particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf", context)
+	PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts", context)
+end
+
 LinkLuaModifier("modifier_senei_jyashu", "scripts/vscripts/heroes/anko/anko_senei_jyashu.lua", LUA_MODIFIER_MOTION_NONE)
 
 function anko_senei_jyashu:GetIntrinsicModifierName()
@@ -73,14 +79,28 @@ function modifier_senei_jyashu:OnIntervalThink()
 		nil,
 		radius,
 		ability:GetAbilityTargetTeam(),
-		ability:GetAbilityTargetType(),
+		DOTA_UNIT_TARGET_HERO,
 		ability:GetAbilityTargetFlags(),
 		FIND_ANY_ORDER,
 		false
 	)
 
 	if (#full_enemies < 1) then
-		return
+		--search for creeps
+		full_enemies = FindUnitsInRadius(
+			self:GetParent():GetTeamNumber(),
+			origin,
+			nil,
+			radius,
+			ability:GetAbilityTargetTeam(),
+			DOTA_UNIT_TARGET_BASIC,
+			ability:GetAbilityTargetFlags(),
+			FIND_ANY_ORDER,
+			false
+		)
+		if (#full_enemies < 1) then
+			return
+		end
 	end
 
 	--local target_enemy

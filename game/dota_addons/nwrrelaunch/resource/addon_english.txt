@@ -55,38 +55,54 @@
 		//--------------------
 		"npc_dota_hero_zabuza" 						"Zabuza"
 		"npc_dota_hero_zabuza_lore"  					""
-		// Weak Spot
-		"DOTA_Tooltip_ability_zabuza_weak_spot"						"Weak Spot"
-		"DOTA_Tooltip_ability_zabuza_weak_spot_description"			"After studying an enemy's defense, Zabuza delivers a devestating strike upon his opponent. While off cooldown, Zabuza's next basic attack delivers an assured critical. After each succesful attack, the cooldown of this ability is reduced by 1 second."
-		"DOTA_Tooltip_ability_zabuza_weak_spot_crit_multiplier"		"%CRIT: "
-		"DOTA_Tooltip_ability_zabuza_weak_spot_cd_reduc"			"CD REDUCTION: "
-		"DOTA_Tooltip_modifier_weak_spot"							"Weak Spot"
-		"DOTA_Tooltip_modifier_weak_spot_description"				"The next attack will deal extra damage."
-		// Stealth
-		"DOTA_Tooltip_ability_zabuza_stealth"						"Stealth"
-		"DOTA_Tooltip_ability_zabuza_stealth_cast_range"			"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_stealth_description"			"Widely known as one of the greatest silent killers, Zabuza's ability to go in and out of battle undetected makes him a terrifying shinobi to face. Allows Zabuza to blink to a target unit."
-		// Track
-		"DOTA_Tooltip_ability_zabuza_track"							"Track"
-		"DOTA_Tooltip_ability_zabuza_track_aura_radius"				"MS BUFF AOE: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_move_speed_pct"	"%MS BUFF: "
-		"DOTA_Tooltip_ability_zabuza_track_armor_debuff"			"ARMOR DEBUFF: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_radius"		"BONUS GOLD AOE: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold_self"			"BONUS GOLD KILL: "
-		"DOTA_Tooltip_ability_zabuza_track_bonus_gold"				"BONUS GOLD ASSIST: "
-		"DOTA_Tooltip_ability_zabuza_track_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_zabuza_track_cast_range_tooltip"		"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_track_description"				"As a world renowned assassin, Zabuza assures the fulfilmentt of his employer's contracts. After casting on an enemy hero, Zabuza and his allies gain vision of a target of the course of the duration and will move faster if they are close to them. If the target dies, Zabuza will receive bonus gold for the kill."
-		"DOTA_Tooltip_modifier_track_aura_datadriven"						"Track"
-		"DOTA_Tooltip_modifier_track_aura_datadriven_description"			"This Unit is tracked. It has reduced armor and gives vision to the enemy team."
+		
+		// Water Dragon Bullet
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet"						"<b><font color='#55AFFD'> Water Dragon Bullet </font></b>"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_lore"						"Suiton: Suiryudan no Jutsu"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_description"			"Sends a Water Dragon to the target area dealing <b><font color='#55AFFD'>Magic Damage and a Movement Speed Slow</font></b> to enemy units within the area. <br><br>The strength of the <b>Slow</b> is based upon the amount of <b><font color='#55AFFD'>distance the Water Dragon traveled.</font></b>"
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_damage"				"DAMAGE: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_radius"				"RADIUS: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow"				"%MS DEBUFF MIN: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow_per_distance"	"%MS DEBUFF FOR 150 DISCTANCE : "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_range"					"RANGE: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_duration"				"MS DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_dragon_speed"			"DRAGON SPEED: "
+		
+		"DOTA_Tooltip_modifier_dragon_bullet_slow"								"Water Dragon Bullet"
+		"DOTA_Tooltip_modifier_dragon_bullet_slow_description"					"This Unit has x%% decreased movement speed."
+
 		// Ninpou: Kirigakure No Jutsu
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu"						"Hidden Mist Jutsu"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_lore"					"Ninpou: Kirigakure No Jutsu"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_radius"				"AOE: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_miss_percentage"		"%MISS CHANCE DEBUFF"
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_cast_range"			"CAST RANGE: "
-		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_description"			"Zabuza fills the air with his chakra, creating a heavy mist within an area. Enemy units within the mist are silenced and are given a chance to miss."
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new"						"<b><font color='#EFEFEF'> Hidden Mist Technique </font></b>"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_lore"					"Ninpou: Kirigakure No Jutsu"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_radius"				"AOE: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_duration"				"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_bonus_movespeed"		"%MS BUFF"
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_fade_delay"			"INVIS FADE TIME: "
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_special_bonus_5_damage" "EXTRA DAMAGE: "
+
+		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"<b><font color='#EFEFEF'>Creates a dense mist</font></b> in the target area causing <b><font color='#EFEFEF'>friendly units to become invisible</font></b> after a short fade duration. <br><br> While in the mist, <b><font color='#EFEFEF'>Zabuza gains increased Movement Speed.</font></b>"
+
+		// Executioner’s Blade
+		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"<b><font color='#5386AF'> Executioner Blade </font></b>"
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"<b><font color='#FFFFFF'>ACTIVE </font></b>- Causes all of Zabuza's attacks to be <b><font color='#5386AF'>Critical Strikes for a short duration.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - Zabuza’s attacks will always be <b>Critical Strikes</b> to enemies <b><font color='#5386AF'>below a health threshold.</font></b>"
+
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_multiplier"		"%CRIT: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_health_threshold"		"%HEALTH THRESHOLD: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_duration"				"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_cd_reduction"					"CD REDUCTION: "
+		
+
+		// Demon of the Hidden Mist
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist"					"<b><font color='#A03830'> Demon of the Hidden Mist </font></b>"
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"<b><font color='#A03830'>Marks a target enemy Hero</font></b> for death over a short duration, causing each of Zabuza's attacks to cause a <b><font color='#5386AF'>Movement Speed Slow</font></b> and <b><font color='#A03830'>extend the Mark's duration.</font></b> <br><br> <b><font color='#A03830'>Zabuza cannot die while the Mark is active.</font></b> <br><br> Applies a <b><font color='#96B6D1'>Strong Dispel</font></b> to Zabuza on cast."
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_duration"			"DURATION: "
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_range"			"RANGE: "
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_marked_break_distance"		"MARKED BREAK DISTANCE : "
+		"DOTA_Tooltip_modifier_demon_unkillable"							"Demon of the Hidden Mist"
+		"DOTA_Tooltip_modifier_demon_unkillable_description"				"This Unit cannot die."
+
+		"DOTA_Tooltip_modifier_demon_mark"							"Demon of the Hidden Mist"
+		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will increase Mark duration and cause a Movement Speed Slow."
 
 		//--------------------
 		//Jirobo
@@ -180,20 +196,23 @@
 		//--------------------
 		"npc_dota_hero_hidan" "Hidan"
 		"npc_dota_hero_hidan_lore"  								"The only true immortal known in the shinobi world, Hidan is a ruthless worshipper of Jashin and a member of Akatsuki. Through experimenting with the various techniques of his religion, Hidan has gained the ability to survive any injury. Even if he is decapitated Hidan will still survive, although he cannot control the rest of his body. Despite being a religious man Hidan is known to be an extremely disrespectful shinobi. He constantly complains and swears to his allies, including his superiors. The only respect he ever gives is to his god whom he works to fulfil his commandments. His insistence on following his religion’s laws often brings him into conflict with his partner Kakuzu. Since he is unable to be killed by any attack, Hidan and Kakuzu were a perfect team as Kakuzu’s rage could never kill the immortal. His extreme durability and raw strength are what allowed him to become a valued member of Akatsuki."
+
 		// Cull the Weak
-		"DOTA_Tooltip_ability_hidan_cull_the_weak"						"Cull the Weak"
-		"DOTA_Tooltip_ability_hidan_cull_the_weak_description"			"Hidan throws his scythe at the target point and then rips it back, pulling any enemy units within a cone directly in front of him.  Enemies hit by this ability are mini stunned and will take physical damage as they are pulled directly in front of Hidan. Damage done to creeps by this ability is doubled. Cull the Weak costs health from Hidan if any enemy units are hit, but will lose no health if enemies are not affected."
+		"DOTA_Tooltip_ability_hidan_cull_the_weak"						"<b><font color='#9C352C'> Cull The Weak </font></b>"
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_description"			"Hidan rips back his scythe <b><font color='#9C352C'>pulling enemy units</font></b> towards him while dealing <b>Physical Damage</b> and inflicting a <b>Movement Speed</b> slow. <br><br> <b><font color='#9C352C'>Costs Health</font></b> from Hidan if an enemy is hit by the attack."
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_range"				"RANGE: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_hero_damage"			"HERO DAMAGE: "
-		"DOTA_Tooltip_ability_hidan_cull_the_weak_creep_damage"			"UNIT DAMAGE: "
-		"DOTA_Tooltip_ability_hidan_cull_the_weak_ms_slow_percentage"	"%MS DEBUFF: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_creep_damage"			"CREEP DAMAGE: "
+		"DOTA_Tooltip_ability_hidan_cull_the_weak_ms_slow_percentage"	"%MOVE SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_hp_percentage_cost"	"%HP COST: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_pull_radius_start" 	"AOE: "
+
 		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow"				"Cull the Weak"
 		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow_description" "This Unit is slowed."
+
 		// Taunt
-		"DOTA_Tooltip_ability_hidan_taunt"									"Taunt"
-		"DOTA_Tooltip_ability_hidan_taunt_description"						"Hidan taunts his opponents with a number of profanities, forcing nearby enemies to focus their attacks on him. Each basic attack made against Hidan during this time will grant him additional strength for a moderate duration.  "
+		"DOTA_Tooltip_ability_hidan_taunt"									"<b><font color='#D12314'> Taunt </font></b>"
+		"DOTA_Tooltip_ability_hidan_taunt_description"						"Hidan taunts nearby enemies <b><font color='#D52516'>forcing them to attack him.</font></b> <br><br> Each basic attack Hidan takes during the taunt duration<b><font color='#D52516'> grants him temporary Strength. </font></b>"
 		"DOTA_Tooltip_ability_hidan_taunt_radius"							"AOE: "
 		"DOTA_Tooltip_ability_hidan_taunt_duration"							"DURATION: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STR GAIN HERO: "
@@ -203,25 +222,28 @@
 		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str_description"			"This Unit has increased Strength."
 		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven"				"Taunt"
 		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven_description"	"This Unit is forced to attack Hidan."
+
 		// Jashin's Blessing
-		"DOTA_Tooltip_ability_hidan_jashins_blessing"						"Jashin's Blessing"
-		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"Upon taking fatal damage, Hidan health is restored to a certain percentage of his maximum HP."
+		"DOTA_Tooltip_ability_hidan_jashins_blessing"						"<b><font color='#C64F45'> Jashin's Blessing </font></b>"
+		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"<b><font color='#C64F45'> Upon taking fatal damage,</font></b> Hidan avoids death. <br><br> Instead, a percentage of his maximum<b><font color='#C64F45'> Health is restored.</font></b>"
 		"DOTA_Tooltip_ability_hidan_jashins_blessing_reset_hp_percentage"	"%HP: "
 		"DOTA_Tooltip_modifier_modifier_jashins_blessing"					"Jashin's Blessing"
 		"DOTA_Tooltip_modifier_modifier_jashins_blessing_description"		"Hidan won't die from fatal damage."
+
 		// Death Possession Blood
-		"DOTA_Tooltip_ability_hidan_death_possession_blood"						"Death Possession Blood"
-		"DOTA_Tooltip_ability_hidan_death_possession_blood_description"			"Passively grants the ability to acquire blood from the last hero Hidan has attacked. Upon activation, Hidan instantly creates a large symbol on the ground while taking a dark new appearance. While in this form, enemy Heroes whose blood Hidan currently possesses are cursed to take the same amount of damage as Hidan as long as Hidan remains within the symbol. If Hidan moves outside the circle, damage will still be returned to the target but at a reduced percentage. Also gives the ability to inflict Self Pain."
-		"DOTA_Tooltip_ability_hidan_death_possession_blood_radius"				"CIRCLE AOE: "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood"						"<b><font color='#B5B5B5'> Death Possession Blood </font></b>"
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_description"			"<b><font color='#FFFFFF'>PASSIVE </font></b>- Hidan <b><font color='#D52516'>stores blood</font></b> from the most recent hero attacked. <br><br> <b><font color='#FFFFFF'>ACTIVE</font></b> - Creates a symbol on the ground, causing a percentage of damage taken by Hidan to <b><font color='#9C352C'>also be inflicted upon the enemy hero</font></b> who's blood Hidan currently possesses. <br><br> Enemies take full damage while Hidan <b><font color='#9C352C'>remains within the symbol.</font></b> <br><br> Grants the ability to inflict <b><font color='#880808'>Self Pain</font></b> while active."
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_radius"				"SYMBOL RADIUS: "
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_duration"			"DURATION: "
-		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_outside_percentage"	"%DAMAGE OUTSIDE CIRCLE: "
-		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_inside_percentage"	"%DAMAGE INSIDE CIRCLE: "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_outside_percentage"	"%DAMAGE SHARED OUTSIDE CIRCLE: "
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_inside_percentage"	"%DAMAGE SHARED INSIDE CIRCLE: "
 		"DOTA_Tooltip_modifier_hidan_metamorphosis"							"Death Possession Blood"
-		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				""
+		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				"Damage taken by Hidan is also dealt to foe."
+
 		// Self Pain
-		"DOTA_Tooltip_ability_hidan_self_pain"							"Self Pain"
+		"DOTA_Tooltip_ability_hidan_self_pain"							"<b><font color='#880808'> Self Pain </font></b>"
 		"DOTA_Tooltip_ability_hidan_self_pain_damage"					"DAMAGE: "
-		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Hidan takes out a retractable spear and impales himself in a vital area, dealing pure damage. Hidan cannot die from this ability but will instead leave him with at least one HP."
+		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Hidan impales himself in a vital area <b><font color='#880808'>dealing Pure Damage to himself.</font></b> <br><br> Hidan cannot die from this ability. <br><br> Requires <b><font color='#B5B5B5'>Death Possession Blood</font></b> to be active in order to use."
 		
 		"DOTA_Tooltip_modifier_hidan_ulti_debuff"						"Death Possession Blood"
 		"DOTA_Tooltip_modifier_hidan_ulti_debuff_description"			"This Unit is marked by Hidan and will receive the same damage as him if Hidan has his ultimate activated."
@@ -236,48 +258,49 @@
 		//--------------------
 		"npc_dota_hero_madara"  										"Madara"
 		"npc_dota_hero_madara_lore"  								"Widely considered to be the strongest Uchiha to have ever lived, Uchiha Madara is a legendary shinobi who was the leader of his clan before he became a co-founder of Konohagakure. Madara was the first of his clan to gain the Eternal Mangekyo Sharingan after inheriting his brother’s eyes. This newfound power elevated him to the top of the Uchiha hierarchy where he constantly waged war with their rival clan, the Senju. After being defeated in battle, Madara agreed to an alliance proposed by Hashirama to unite as a single ninja village. However, his rivalry with his lifelong rival Hashirama Senju did not end after their agreement to ally under Konoha and it soon led to a deathmatch between the two legendary shinobi at the Valley of the End. Although Madara had lost the battle for Konoha, he had survived and managed to acquire some of Hashirama’s DNA. Filled with new purpose, Madara began preparations for his Eye of the Moon plan which would set the entire ninja world under an eternal genjutsu."
+
 		// Fire Release: Great Fire Annihilation (Katon: Goka Mekkyaku)
-		"DOTA_Tooltip_ability_madara_fire_release"						"Great Fire Annihilation"
-		"DOTA_Tooltip_ability_madara_fire_release_description"			"Sends out a wave of fire that travels a target point pushing all enemies hit towards the target point while dealing magic damage. Upon reaching maximum distance, the fire wave will explode, dealing magic damage and stunning all enemy units within the area.  Any trees touched by this ability will burn if Wood Release: Deep Forest Emergence is leveled."
+		"DOTA_Tooltip_ability_madara_fire_release"						"<b><font color='#EA2D07'>Great Fire Annihilation</font></b>"
+		"DOTA_Tooltip_ability_madara_fire_release_description"			"<b><font color='#EA2D07'>Sends out a wave of fire</font></b> towards the target point dealing <b>Magic Damage</b> and dragging all enemies along with it. <br><br> Upon reaching maximum distance, the fire wave will <b><font color='#EA2D07'>explode dealing Magic Damage and Stunning</font></b> all enemies within the area. <br><br> Any trees touched by this ability will burn if <b><font color='#23A32C'>Deep Forest Emergence</font></b> is leveled."
 		"DOTA_Tooltip_ability_madara_fire_release_lore"					"Katon: Goka Mekkyaku"
-		"DOTA_Tooltip_ability_madara_fire_release_fire_range"			"RANGE: "
-		"DOTA_Tooltip_ability_madara_fire_release_wave_radius_start"	"WAVE AOE: "
-		"DOTA_Tooltip_ability_madara_fire_release_explosion_radius"		"EXPLOSION AOE: "
 		"DOTA_Tooltip_ability_madara_fire_release_wave_damage"			"WAVE DAMAGE: "
 		"DOTA_Tooltip_ability_madara_fire_release_explosion_damage"		"EXPLOSION DAMAGE: "
 		"DOTA_Tooltip_ability_madara_fire_release_explosion_stun_duration"		"STUN DURATION: "
 
 		// Wood Release: Deep Forest Emergence (Mokuton: Jukai Kotan)
-		"DOTA_Tooltip_ability_madara_wood_release"						"Deep Forest Emergence"
-		"DOTA_Tooltip_ability_madara_wood_release_description"			"Creates a large number of trees that circle around a target area for a short period time. This ability also allows Madara to set trees on fire when affected by his other abilities. Trees that have been lit on fire can be passed through, but will burn nearby enemies causing them to be slowed take magic damage per second. Burn effect will persist for a short period of time after an enemy leaves the radius of burning trees."
+		"DOTA_Tooltip_ability_madara_wood_release"						"<b><font color='#23A32C'>Deep Forest Emergence</font></b>"
+		"DOTA_Tooltip_ability_madara_wood_release_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - <b><font color='#23A32C'>Creates a ring of trees</font></b> that circle a target area for a short period time. <br><br><b><font color='#FFFFFF'>PASSIVE </font></b>- Trees affected by Madara's other abilities are <b><font color='#EA2D07'>set on fire dealing Magic Damage</font></b> and reducing the <b>Movement Speed</b> of nearby enemies."
 		"DOTA_Tooltip_ability_madara_wood_release_lore"					"Mokuton: Jukai Kotan"
 		"DOTA_Tooltip_ability_madara_wood_release_tree_burn_duration"	"BURN DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_madara_wood_release_burn_damage"			"BURN DAMAGE: "
-		"DOTA_Tooltip_ability_madara_wood_release_burn_ms_slow_percentage"	"%BURN MS SLOW: "
+		"DOTA_Tooltip_ability_madara_wood_release_burn_ms_slow_percentage"	"%BURN MOVE SPEED SLOW: "
 		"DOTA_Tooltip_ability_madara_wood_release_cd_reduc"				"CD REDUCTION: "
 		
 		"DOTA_Tooltip_ability_madara_wood_release_tree_duration"		"DURATION: "
+		
 		// Susano’o Ribcage
-		"DOTA_Tooltip_ability_madara_susano"							"Susano’o Ribcage"
-		"DOTA_Tooltip_ability_madara_susano_description"				"Upon activation, grants magic resistance and burns nearby enemies while draining the user’s mana. Using this ability again will deactivate it and stop mana from draining. Trees within the radius of the burn will be lit on fire if Wood Release: Deep Forest Emergence is leveled. If Madara runs out of mana, the effect will end."
+		"DOTA_Tooltip_ability_madara_susano"							"<b><font color='#3D79E5'>Susano'o Ribcage</font></b>"
+		"DOTA_Tooltip_ability_madara_susano_description"				"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, Madara deals <b><font color='#3D79E5'>Magic Damage to nearby enemies</font></b> while draining his Mana. <br><br> Madara also gains <b><font color='#3D79E5'>increased Magic Resistance</font></b> while active. <br><br> While toggled on, any trees within radius of Madara will burn if <b><font color='#23A32C'>Deep Forest Emergence</font></b> is leveled."
 		"DOTA_Tooltip_ability_madara_susano_burn_radius"			"AOE: "
-		"DOTA_Tooltip_ability_madara_susano_magic_resistance_percent"	"%BONUS MR: "
+		"DOTA_Tooltip_ability_madara_susano_magic_resistance_percent"	"%BONUS MAGIC RESISTANCE: "
 		"DOTA_Tooltip_ability_madara_susano_mana_cost_per_second"	"MANACOST PER SECOND: "	
 		"DOTA_Tooltip_ability_madara_susano_damage"					"DAMAGE: "	
+		
 		// Susano’o Ribcage activated
-		"DOTA_Tooltip_ability_madara_susano_active"						"Susano’o Ribcage"
-		"DOTA_Tooltip_ability_madara_susano_active_description"			"Upon activation, grants magic resistance and burns nearby enemies while draining the user’s mana. Using this ability again will deactivate it and stop mana from draining. Trees within the radius of the burn will be lit on fire if Wood Release: Deep Forest Emergence is leveled. If Madara runs out of mana, the effect will end."
-		"DOTA_Tooltip_ability_madara_susano_active_burn_radius"			"AOE: "
-		"DOTA_Tooltip_ability_madara_susano_active_magic_resistance_percent"	"%BONUS MR: "
+		"DOTA_Tooltip_ability_madara_susano_active"						"<b><font color='#004CD5'>Susano'o Ribcage</font></b>"
+		"DOTA_Tooltip_ability_madara_susano_active_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, <b><font color='#004CD5'>grants magic resistance and damages nearby enemies</font></b> while draining the user’s mana. <br><br> When toggled on, any trees within radius of Madara will burn if <b><font color='#23A32C'>Deep Forest Emergence</font></b> is leveled."
+		"DOTA_Tooltip_ability_madara_susano_active_burn_radius"			"RADIUS: "
+		"DOTA_Tooltip_ability_madara_susano_active_magic_resistance_percent"	"%BONUS MAGIC RESISTANCE: "
 		"DOTA_Tooltip_ability_madara_susano_active_mana_cost_per_second"	"MANACOST PER SECOND: "	
 		"DOTA_Tooltip_ability_madara_susano_active_damage"					"DAMAGE: "	
 		"DOTA_Tooltip_modifier_madara_susano"							"Susano’o Ribcage"
 		"DOTA_Tooltip_modifier_madara_susano_description"				"Nearby Units will burn."
+		
 		// Heaven Concealed (Tengai Shinsei)
-		"DOTA_Tooltip_ability_madara_meteor"							"Heaven Concealed"
+		"DOTA_Tooltip_ability_madara_meteor"							"<b><font color='#E55C02'>Heaven Concealed</font></b>"
 		"DOTA_Tooltip_ability_madara_meteor_lore"						"Tengai Shinsei"
-		"DOTA_Tooltip_ability_madara_meteor_description"				"Summons a gigantic meteor that will crash onto a target area if the channelling is complete. While channelling, a large shadow will shroud the area that is visible to both teams. The meteor will cause large amounts of magical damage and stun all enemies upon impact. All trees hit by the impact will be set on fire if Deep Forest Emergence is leveled. This ability will give no effect if it is cancelled."
-		"DOTA_Tooltip_ability_madara_meteor_radius"						"AOE: "
+		"DOTA_Tooltip_ability_madara_meteor_description"				"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#E55C02'>Summons a gigantic meteor</font></b> that will crash onto a target area if the channelling is complete. <br><br> Upon impact the meteor <b><font color='#EA2D07'>deals massive Magic Damage and Stuns</font></b> all enemies within the area. <br><br> Any trees caught in the explosion will burn if <b><font color='#23A32C'>Deep Forest Emergence</font></b> is leveled."
+		"DOTA_Tooltip_ability_madara_meteor_radius"						"RADIUS: "
 		"DOTA_Tooltip_ability_madara_meteor_stun_duration"				"STUN DURATION: "
 		"DOTA_Tooltip_ability_madara_meteor_channel_duration"			"CHANNEL DURATION: "
 		"DOTA_Tooltip_ability_madara_meteor_damage"						"DAMAGE: "
@@ -288,10 +311,11 @@
 		"npc_dota_hero_kisame"  										"Kisame"
 		"npc_dota_hero_kisame_lore"  									"Feared as the Monster of the Hidden Mist, Hoshigaki Kisame is a dangerous S-Rank missing nin and one of the Seven Ninja Swordsmen of the Mist. He loves to fight and is often aggressive towards anyone he meets. Despite this Kisame has shown to be very loyal to his allies unless they endanger the mission. He bears the great sword Samehada (Shark Skin) and uses it to shave his enemies and drain their chakra. Kisame has an abundance of chakra that is said to almost match a tailed beast. It is from this great source of power that he gets the title The Tailed Beast without a Tail. Regarded as one of the most powerful shinobi to ever come out of Kirigakure (Village of the Hidden Mist), he earned membership into Akatsuki through his own strength. "
 		"npc_dota_hero_kisame_description"  							"Playing Kisame is about becoming inescapable as you slowly drown your enemies. This hero favors longer more drawn out confrontations meaning that survivability is of top priority. His abilities offer him great utility in almost any situation whether it be ganking, team fighting, or taking on an enemy one on one. Kisame is very mana dependant as his ultimate consumes mana over time. His passive somewhat remedies this problem as his attacks will drain mana from enemies while gaining the stolen mana. However, this mechanic can be deceptive to Kisame’s mana problems as a larger max mana pool requires more mana to sustain his ultimate. This means that his mana drain is more effective the smaller Kisame’s max mana pool is.  Kisame can easily dominate a team fight so long as he can stick onto various heroes. Through proper micro of his clones and intelligent maneuvering, Kisame is a walking pain train that forces the fight onto the enemy."
+		
 		//Water Release: Water Shark Bullet Technique (Suiton: Suikodan no Jutsu)
-		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu"					"Water Shark Bullet"
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu"					"<b><font color='#0689D8'>Water Shark Bullet</font></b>"
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_lore"					"Suiton: Suikodan no Jutsu"
-		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_description"		"Through shaping water into the form of a large shark, Kisame sends a wave to a target location. The shark bullet deals magical damage, reduces armor, and slows enemies it contacts."
+		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_description"		"<b><font color='#0689D8'>Sends out a wave of water</font></b> dealing <b>Magic Damage</b> to enemies in a line. <br><br> Enemies damaged by the wave have <b><font color='#0689D8'>slowed Movement Speed and reduced Magic Resistance</font></b> for a short duration."
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_wave_range"		"RANGE: "
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_wave_aoe"		"AOE: "
@@ -299,42 +323,49 @@
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_armor_debuff"	"ARMOR DEBUFF: "
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_slow_duration"	"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_cast_range"		"CAST RANGE: "
+		
 		//Water Release debuff
 		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff"				"Water Shark Bullet"
-		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff_description"	"This Unit has reduced Armor and Movementspeed."		
+		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff_description"	"This Unit has reduced Armor and Movementspeed."
+
 		//Water Clone Technique (Mizu Bunshin no Jutsu)					
-		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu"				"Water Clone Technique"
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu"				"<b><font color='#276DE8'>Water Clone Technique</font></b>"
 		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_lore"		"Mizu Bunshin no Jutsu"
-		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_description"	"Kisame creates clones out of water to command in battle. The health and damage of the Water Clones are both based upon percentages of Kisame's statistics. Water Clones possess Water Prison Technique as well as a separate passive Samehada. Clone abilities level up with Water Clone Technique."
+		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_description"	"<b><font color='#276DE8'>Creates two clones</font></b> of Kisame under his control. <br><br> Water Clones possess the <b><font color='#0A6AA4'>Water Prison Technique</font></b> as well as the passive <b><font color='#545AE7'>Samehada.</font></b>"
 		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_illusion_duration"	"DURATION: "
 		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_illusion_max_hp_percentage"	"%HP: "
 		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu_damage_percentage" "%DAMAGE: "
+		
 		//Samehada
-		"DOTA_Tooltip_ability_kisame_samehada"							"Samehada"
-		"DOTA_Tooltip_ability_kisame_samehada_description"				"The great sword Samehada shaves off enemy chakra when it connects. Kisame’s next basic attack will steal mana from the target based upon their maximum mana pool."	
+		"DOTA_Tooltip_ability_kisame_samehada"							"<b><font color='#545AE7'>Samehada</font></b>"
+		"DOTA_Tooltip_ability_kisame_samehada_description"				"Kisame's next attack <b><font color='#0689D8'>steals a percentage of the enemy's maximum Mana</font></b> and grants it to Kisame. <br><br> Grants temporary<b><font color='#545AE7'> Bonus Attack Damage</font></b> based of the amount of Mana stolen."	
 		"DOTA_Tooltip_ability_kisame_samehada_manasteal_percentage"		"%MANASTEAL: "
 		"DOTA_Tooltip_modifier_samehada"								"Samehada"
-		"DOTA_Tooltip_modifier_samehada_description"					"Kisame's next attack will steal Chakra."
+		"DOTA_Tooltip_modifier_samehada_description"					"Kisame's next attack will steal Mana."
+
 		//Water Prison
-		"DOTA_Tooltip_ability_kisame_water_prison"						"Water Prison"
-		"DOTA_Tooltip_ability_kisame_water_prison_radius"				"AOE: "
+		"DOTA_Tooltip_ability_kisame_water_prison"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"DOTA_Tooltip_ability_kisame_water_prison_radius"				"RADIUS: "
 		"DOTA_Tooltip_ability_kisame_water_prison_damage"				"DAMAGE PER SECOND: "
-		"DOTA_Tooltip_ability_kisame_water_prison_ms_slow_percentage"	"%MS DEBUFF: "
+		"DOTA_Tooltip_ability_kisame_water_prison_ms_slow_percentage"	"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_kisame_water_prison_mana_cost_per_second_percentage"	"%MANACOST PER SECOND: "
 		"DOTA_Tooltip_ability_kisame_water_prison_hp_reg_per_second_percentage"	"%HP REGEN PER SECOND: "
-		"DOTA_Tooltip_ability_kisame_water_prison_description"			"After fusing with Samehada, Kisame transforms into a shark like creature while creating a large dome of water. Kisame acts as the center of the dome as it follows along with his movement. Enemy units caught within the dome will take magic damage over time and are slowed. Throughout the duration of the transformation, Kisame gains bonus health regeneration. If Kisame runs out of chakra the transformation ends."
+		"DOTA_Tooltip_ability_kisame_water_prison_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - <b><font color='#0689D8'>Creates a large dome of water</font></b> that follows Kisame's movement while draining mana. <br><br>Kisame gains <b><font color='#9AB3F4'>extra Movement Speed and Health Regeneration</font></b> inside the water dome. <br><br> Enemies have<b><font color='#0A6AA4'> reduced Movement Speed and take Magic Damage</font></b> inside the water dome."
+		
 		//Water Prison debuff
-		"Dota_Tooltip_modifer_water_prison_slow"						"Water Prison"
-		"Dota_Tooltip_modifer_water_prison_slow_description"			"This Unit has decreased Movementspeed."
+		"Dota_Tooltip_modifer_water_prison_slow"						"Shark Dance"
+		"Dota_Tooltip_modifer_water_prison_slow_description"			"This Unit has decreased Movement Speed."
+		
 		//Bunshin Water Prison
-		"DOTA_Tooltip_ability_kisame_bunshin_water_prison"						"Water Prison Technique"
-		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_description"			"The water clone creates an inescapable sphere of water that disables the foe. This ability is channelled and will be cancelled if the clone is killed."
+		"DOTA_Tooltip_ability_kisame_bunshin_water_prison"						"<b><font color='#0A6AA4'>Water Prison Technique</font></b>"
+		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_description"			"<b><font color='#FFFFFF'>CHANNELED</font></b> - Creates an inescapable sphere of water that <b><font color='#0A6AA4'>disables the foe.</font></b>"
 		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_channel_time"			"DURATION: "
 		"DOTA_Tooltip_modifier_bunshin_water_prison_hold"				"Water Prison Technique"
 		"DOTA_Tooltip_modifier_bunshin_water_prison_hold_description"	"This Unit is stunned."
+		
 		//Bunshin Samehada
-		"DOTA_Tooltip_ability_kisame_samehada_bunshin"						"Samehada"
-		"DOTA_Tooltip_ability_kisame_samehada_bunshin_description"			"The great sword Samehada shaves off enemy chakra when it connects. This units next basic attack will drain a percentage of the targets current mana. "
+		"DOTA_Tooltip_ability_kisame_samehada_bunshin"						"<b><font color='#474CCA'>Samehada</font></b>"
+		"DOTA_Tooltip_ability_kisame_samehada_bunshin_description"			"The clone's next attack <b><font color='#0689D8'>steals a percentage of the enemy's maximum mana</font></b> and grants it to Kisame."
 		"DOTA_Tooltip_ability_kisame_samehada_bunshin_manasteal_percentage"	"%MANASTEAL: "
 
 		//--------------------
@@ -343,30 +374,30 @@
 		"npc_dota_hero_gaara"  											"Gaara"
 		"npc_dota_hero_gaara_lore"  										""
 		// Sabaku Kyuu
-		"DOTA_Tooltip_ability_gaara_sabaku_kyuu"						"Sand Coffin"
+		"DOTA_Tooltip_ability_gaara_sabaku_kyuu"						"<b><font color='#D86C26'>Sand Coffin</font></b>"
 		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_lore"					"Sabaku Kyu"
-		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_description"			"Gaara encases his target in chakra infused sand, crushing and immobilizing his victim. Over the course of the channel, a target enemy unit is immobilized and disabled as they are lifted into the air. After channeling for 1.40 seconds, the target will receive magical damage as they are lowered back onto the ground. Effect will end if Gaara stops channeling, and no damage will be dealt if 1.40 seconds of channeling was not been reached."
+		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_description"			"<b><font color='#FFFFFF'>CHANNELED</font></b> - Encases the target in sand <b><font color='#D86C26'>fully disabling them while Channeled.</font></b> <br><br> <b><font color='#D86C26'>Magic Damage is dealt</font></b> after <b><font color='#FFFFFF'>1.40</font></b> seconds of being Channeled."
 		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_dmg"				"DAMAGE: "
 		"DOTA_Tooltip_ability_gaara_sabaku_kyuu_duration"				"DURATION: "
 		// Ryuusa Bakuryu
-		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu"						"Sand Tsunami"
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu"						"<b><font color='#C1943D'>Sand Tsunami</font></b>"
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_lore"						"Ryusa Bakuryu"
-		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"Creates a torrent of sand to crash into a target area, covering enemy units while bombarding them. Stuns all enemy units caught within the radius while dealing magic damage to them. Damage dealt to enemy units is given overtime as long as they remain within the area."
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Stuns all enemy units</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage overtime</font></b> while in the radius."
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_stun_duration"		"STUN: "
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_radius"				"AOE: "
 		// Suna no Yoroi
-		"DOTA_Tooltip_ability_gaara_suna_no_yoroi"						"Sand Armor"
-		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"Considered to be his 'Absolute Defense', Gaara encases himself with the sand within his gourd to protect him from harm. While toggled, the Sand Armor absorbs a percentage of incoming damage in exchange for Gaara's mana."
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi"						"<b><font color='#FFDD93'>Sand Armor</font></b>"
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - Absorbs <b><font color='#FFFFFF'>70%</font></b> of <b><font color='#FFDD93'>incoming damage in exchange for Mana</font></b> while toggled on."
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_absorption_tooltip"	"%DAMAGE REDUCTION: "
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_damage_per_mana"		"REDUCED DAMAGE PER MANA: "
 
 		"DOTA_Tooltip_modifier_mana_shield_datadriven"					"Sand Armor"
-		"DOTA_Tooltip_modifier_mana_shield_datadriven_description"		""
+		"DOTA_Tooltip_modifier_mana_shield_datadriven_description"		"Absorbing Damage in exchange for Mana"
 		// Sabaku Taiso
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso"						"Great Sand Burial"
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso"						"<b><font color='#CB5000'>Great Sand Burial</font></b>"
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_lore"					"Sabaku Taiso"
-		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"Gaara unleashes his power on a grand scale, releasing a huge torrent of sand which overwhelms his opponents. After a short delay, a large wave of sand is released towards a target point. Enemy units that come into contact with the wave will become stunned while taking magic damage."
+		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"<b><font color='#CB5000'>Unleashes a large wave of sand</font></b> towards a target point, dealing <b><font color='#C1943D'>Magic Damage and Stunning</font></b> all enemies in it's path."
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_end_radius"			"AOE: "
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_range"					"DISTANCE: "
@@ -378,8 +409,8 @@
 		"npc_dota_hero_yondaime"  									"Minato"
 		"npc_dota_hero_yondaime_lore"  										""
 		// Marked Kunai
-		"DOTA_Tooltip_ability_yondaime_marked_kunai"					"Marked Kunai"
-		"DOTA_Tooltip_ability_yondaime_marked_kunai_description"		"Throws a marked kunai at a target point dealing physical damage to any enemies it passess through. The kunai will then be placed at the target point but cannot be targeted by enemies. Grants the ability Body Flicker which allows Minato to teleport to the position the kunai on the ground as long as he is in range of it. Deals half damage to Heroes."
+		"DOTA_Tooltip_ability_yondaime_marked_kunai"					"<b><font color='#E7B34E'>Marked Kunai</font></b>"
+		"DOTA_Tooltip_ability_yondaime_marked_kunai_description"		"<b><font color='#E7B34E'>Throws a Marked Kunai</font></b> dealing <b>Physical Damage</b> to enemies in its path. <br><br> The Marked Kunai is <b><font color='#E7B34E'>planted at the target position</font></b> and can be teleported to by using the abilities <b><font color='#EE914D'>Flying Thunder God</font></b> and <b><font color='#E95A2E'>Flying Thunder God: Slash</font></b>."
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_dagger_range"		"RANGE: "
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_creep_damage" "CREEP DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_marked_kunai_hero_damage"	"HERO DAMAGE: "
@@ -389,8 +420,8 @@
 		"DOTA_Tooltip_modifier_marked_kunai_debuff_description"			"This Unit's Armor is reduced."
 
 		// Rasengan
-		"DOTA_Tooltip_ability_yondaime_rasengan"						"Rasengan"
-		"DOTA_Tooltip_ability_yondaime_rasengan_description"			"By amassing and rotating chakra in his hand, Minato creates a Rasengan to attack his foe. Causes Minato to gain bonus movement speed until next attack, which will deal bonus damage and knock the target back.  Enemies are stunned while being knocked back."
+		"DOTA_Tooltip_ability_yondaime_rasengan"						"<b><font color='#00D4FF'>Rasengan</font></b>"
+		"DOTA_Tooltip_ability_yondaime_rasengan_description"			"Minato forms a Rasengan causing his next attack to <b>Knockback</b> and deal <b><font color='#00D4FF'>Bonus Damage based on Minato's Attack Damage.</font></b> <br><br> Minato gains <b><font color='#00D4FF'>extra Movement Speed</font></b> while holding the Rasengan."
 		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_damage"			"%BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_rasengan_base_bonus_damage"		"BASE DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_ms"				"%BONUS MOVEMENT SPEED: "
@@ -401,8 +432,8 @@
 
 
 		// The Yellow Flash
-		"DOTA_Tooltip_ability_yondaime_agile_speed"						"The Yellow Flash"
-		"DOTA_Tooltip_ability_yondaime_agile_speed_description"			"Minato’s amazing speed grants him an advantage in combat, granting him extra damage based upon his movement speed. This ability also passively gains Minato additional movement speed."
+		"DOTA_Tooltip_ability_yondaime_agile_speed"						"<b><font color='#E9EB00'>The Yellow Flash</font></b>"
+		"DOTA_Tooltip_ability_yondaime_agile_speed_description"			"<b><font color='#FFFFFF'>PASSIVE</font></b> - Grants Minato bonus <b><font color='#E9EB00'>Attack Damage based on his Movement Speed,</font></b> while also granting <b><font color='#E9EB00'>additional Movement Speed.</font></b> <br><br> <b><font color='#FFFFFF'>ACTIVE</font></b> - Temporarily doubles the benefits of this ability."
 		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_ms_percentage"	"%ADDITIONAL MOVEMENT SPEED: "
 		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_damage_ms_percent"	"%ADDITIONAL DAMAGE: "
 
@@ -412,21 +443,22 @@
 
 
 		// Body Flicker
-		"DOTA_Tooltip_ability_yondaime_body_flicker"						"Body Flicker"
-		"DOTA_Tooltip_ability_yondaime_body_flicker_description"			"Causes Minato to teleport to target Marked Kunai."
+		"DOTA_Tooltip_ability_yondaime_body_flicker"						"<b><font color='#EE914D'>Flying Thunder God</font></b>"
+		"DOTA_Tooltip_ability_yondaime_body_flicker_lore"						"Hiraishin"
+		"DOTA_Tooltip_ability_yondaime_body_flicker_description"			"Causes Minato to <b><font color='#EE914D'>teleport</font></b> to a planted <b><font color='#E7B34E'>Marked Kunai.</font></b> <br><br> This ability is gained when learning <b><font color='#E7B34E'>Marked Kunai.</font></b>"
 		"DOTA_Tooltip_ability_yondaime_body_flicker_range"					"RANGE: "
 
 		
 		// Flying Thunder God Technique
-		"DOTA_Tooltip_ability_yondaime_hiraishin_jump"						"Flying Thunder God Technique"
-		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_description"			"Allows Minato to dash towards a target Marked Kunai, dealing a percentage of his attack damage to all enemies hit between him and the target point. Minato is invulnerable while dashing and reduces the armor of all enemies damaged by this ability for a short duration."
-		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_lore"						"Hiraishin no Jutsu"
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump"						"<b><font color='#E95A2E'>Flying Thunder God: Slash</font></b>"
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_description"			"Allows Minato to dash towards a target <b><font color='#E7B34E'>Marked Kunai</font></b>, dealing a <b><font color='#E95A2E'>percentage of his Attack Damage</font></b> to all enemies hit between him and the target point. <br><br> Minato is invulnerable while dashing and <b><font color='#E95A2E'>reduces the Armor</font></b> of all enemies damaged by this ability for a short duration."
+		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_lore"						"Hiraishingiri"
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_range"					"RANGE: "
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_damage"				"%PERCENTAGE OF DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_reduction"			"ARMOR REDUCTION: "
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_duration"			"ARMOR DEBUFF DURATION: "
 
-		"DOTA_Tooltip_modifier_hiraishin_armor_debuff"						"Flying Thunder God Technique"
+		"DOTA_Tooltip_modifier_hiraishin_armor_debuff"						"Spiralling Flash Super Round Dance Howl Style Three"
 		"DOTA_Tooltip_modifier_hiraishin_armor_debuff_description"			"This Unit's Armor is reduced."
 
 		//--------------------
@@ -513,9 +545,9 @@
 		"npc_dota_hero_haku"  								"Haku"
 		"npc_dota_hero_haku_lore"  							"Born in a snowy village within the Land of Water, Haku was a child amongst a land that feared ninjas and their kekkei genkais. It was because of this fear that Haku’s mother decided to hide her secret bloodline ability called Ice Release. She lived a happy and peaceful life with her husband, until it was discovered that Haku possessed the kekkei genkai as well. After witnessing his child manipulate water, Haku’s father gathered a mob in order to kill his wife as well as his son. He succeeded in killing his spouse but was slain along with his peers when Haku unleashed his ability in self defense. Alone and an orphan, Haku wandered the streets as a beggar with few days left to live. It was during this time that the shinobi Momochi Zabuza of the Hidden Mist discovered the young boy and realized his capabilities. Pledging himself as a weapon for his master, Haku found purpose in life as a tool for Zabuza’s ambitions. Zabuza would proceed to raise Haku in order to develop his skills and create the ultimate weapon for himself."
 		// Crippling Senbon
-		"DOTA_Tooltip_ability_haku_crippling_senbon"					"Crippling Senbon"
+		"DOTA_Tooltip_ability_haku_crippling_senbon"					"<b><font color='#9784FF'>Crippling Senbon</font></b>"
 		"DOTA_Tooltip_ability_haku_crippling_senbon_lore"				""
-		"DOTA_Tooltip_ability_haku_crippling_senbon_description"			"Sends a senbon at the target’s weak point dealing magical damage while also applying a brief stun.  This ability will also add stacks of Endless Wounds if it is leveled."
+		"DOTA_Tooltip_ability_haku_crippling_senbon_description"			"Fires a senbon at the target dealing <b><font color='#9784FF'>Magic Damage and a brief Stun.</font></b> <br><br> Adds stacks of <b><font color='#89BBCE'>Endless Wounds</font></b> if leveled."
 		"DOTA_Tooltip_ability_haku_crippling_senbon_magic_missile_speed"	"SENBON SPEED: "
 		"DOTA_Tooltip_ability_haku_crippling_senbon_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_haku_crippling_senbon_damage"			"DAMAGE: "
@@ -525,9 +557,9 @@
 		"DOTA_Tooltip_modifier_haku_senbon_stun_description"			"This Unit is stunned."
 		
 		// Needles of Death
-		"DOTA_Tooltip_ability_haku_needles"					"Needles of Death"
+		"DOTA_Tooltip_ability_haku_needles"					"<b><font color='#C0EEFF'>Needles of Death</font></b>"
 		"DOTA_Tooltip_ability_haku_needles_lore"				"Sensatsu Suisho"
-		"DOTA_Tooltip_ability_haku_needles_description"			"Summons a large number of senbons above a target area. A wave of senbons will fall onto the area dealing magic damage while briefly stunning them and adding stacks of Endless Wounds if it is leveled. A second wave will fall shortly after causing the same effect."
+		"DOTA_Tooltip_ability_haku_needles_description"			"A wave of ice falls onto the target area dealing <b><font color='#C0EEFF'>Magic Damage and a brief Root.</font></b> <br><br> <b><font color='#C0EEFF'>A second wave will fall</font></b> shortly after the first, causing the same effect. <br><br> Both waves add stacks of <b><font color='#89BBCE'>Endless Wounds</font></b> if leveled."
 		"DOTA_Tooltip_ability_haku_needles_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_haku_needles_wave_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_haku_needles_stun_duration"	"STUN DURATION: "
@@ -536,12 +568,12 @@
 		"DOTA_Tooltip_ability_haku_needles_wave_interval"	"WAVE DELAY: "
 		
 		"DOTA_Tooltip_modifier_haku_needles_stun"						"Needles of Death"
-		"DOTA_Tooltip_modifier_haku_needles_stun_description"			"This Unit is stunned."
+		"DOTA_Tooltip_modifier_haku_needles_stun_description"			"This Unit is rooted."
 		
 		// Endless Wounds 
-		"DOTA_Tooltip_ability_haku_endless_wounds"					"Endless Wounds"
+		"DOTA_Tooltip_ability_haku_endless_wounds"					"<b><font color='#89BBCE'>Endless Wounds</font></b>"
 		"DOTA_Tooltip_ability_haku_endless_wounds_lore"				""
-		"DOTA_Tooltip_ability_haku_endless_wounds_description"			"Causes Haku’s attacks to inflict a movement speed slow on the target. The slow will stack upon itself to a certain threshold. Each ability will cause a distinct number of stacks to be added to enemies affected. Normal attacks from Haku will add 4 stacks."
+		"DOTA_Tooltip_ability_haku_endless_wounds_description"			"Causes Haku’s attacks to inflict a <b><font color='#A1DAEF'>stacking Movement Speed Slow</font></b> on the target up to a threshold. <br><br> Each of Haku's other abilities will also inflict <b><font color='#89BBCE'>Endless Wounds</font></b> stacks."
 		"DOTA_Tooltip_ability_haku_endless_wounds_ms_slow_per_stack"			"%MS SLOW PER STACK: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_threshold"			"STACK THRESHOLD: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_duration"			"STACK DURATION: "		
@@ -551,9 +583,9 @@
 		"DOTA_Tooltip_modifier_haku_endless_needles_victim_special_description"			"This Unit is slowed."
 		
 		// Demonic Ice Mirrors
-		"DOTA_Tooltip_ability_haku_ice_mirrors"					"Demonic Ice Mirrors"
+		"DOTA_Tooltip_ability_haku_ice_mirrors"					"<b><font color='#9DCBF7'>Demonic Ice Mirrors</font></b>"
 		"DOTA_Tooltip_ability_haku_ice_mirrors_lore"				"Makyo Hyosho"
-		"DOTA_Tooltip_ability_haku_ice_mirrors_description"			"Haku separates into a large number of ice mirrors that surround the area. The mirrors are impassable but can be destroyed through physical damage. Each mirror has a ranged attack that also inflicts a stack of Endless Wounds. If all mirrors are destroyed before the duration ends, Haku will be killed."
+		"DOTA_Tooltip_ability_haku_ice_mirrors_description"			"<b><font color='#9DCBF7'>Seperates Haku into a circle of Ice Mirrors</font></b>. <br><br> <b><font color='#9DCBF7'>Ice Mirrors</font></b> possess a <b><font color='#9DCBF7'>Ranged Attack</font></b> and inflict stacks of <b><font color='#89BBCE'>Endless Wounds.</font></b> <br><br> <b><font color='#9DCBF7'>Ice Mirrors</font></b> are impassable but can be <b><font color='#9784FF'>destroyed by enemy attacks.</font></b> <br><br> If all <b><font color='#9DCBF7'>Ice Mirrors</font></b> are destroyed before the duration ends, <b><font color='#9784FF'>Haku will be killed.</font></b>"
 		"DOTA_Tooltip_ability_haku_ice_mirrors_radius"				"RADIUS: "
 		"DOTA_Tooltip_ability_haku_ice_mirrors_threshold"			"STACK THRESHOLD: "
 		"DOTA_Tooltip_ability_haku_ice_mirrors_duration"			"DURATION: "
@@ -595,8 +627,8 @@
 		"npc_dota_hero_sakura"  								"Sakura"
 		"npc_dota_hero_sakura_lore"  							""
 		// Earth Slam
-		"DOTA_Tooltip_ability_sakura_earth_slam"						"Earth Slam"
-		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Sakura slams the ground with her chakra enhanced fists, rupturing the earth beneath her. Enemy units within the area are stunned and dealt magic damage."
+		"DOTA_Tooltip_ability_sakura_earth_slam"						"<b><font color='#FF65E8'>Cherry Blossom Impact</font></b>"
+		"DOTA_Tooltip_ability_sakura_earth_slam_description"			"Sakura slams the ground dealing <b><font color='#FF65E8'>Physical Damage and Stunning</font></b> all nearby enemies."
 		"DOTA_Tooltip_ability_sakura_earth_slam_radius"					"AOE: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stomp_damage"			"DAMAGE: "
@@ -604,22 +636,22 @@
 		"DOTA_Tooltip_modifier_sakura_earth_slam"						"Earth Slam"
 		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"This Unit is stunned."
 		// Chakra Burst
-		"DOTA_Tooltip_ability_sakura_chakra_burst"						"Chakra Burst"
-		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"By gathering chakra within her legs, Sakura is able push her speed to new heights. Once activated, Sakura's movement speed is increased to maximum for a short period of time."
+		"DOTA_Tooltip_ability_sakura_chakra_burst"						"<b><font color='#0EA5FF'>Chakra Burst</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"Grants Sakura <b><font color='#0EA5FF'>maximum Movement Speed</font></b> for a short duration of time."
 		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"DURATION: "
 		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Chakra Burst"
-		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has MAX Movement Speed."
+		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has Maximum Movement Speed."
 		// Chakra Enhanced Strength
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"Chakra Enhanced Strength"
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"Utilizing her excellent skills in chakra control, Sakura drastically increases the power behind her punches. Passively grants a chance to deal extra physical damage from normal attacks, while also pushing the enemy unit back a short distance."
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b>"
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_distance"		"PUSH BACK DISTANCE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_duration"		"PUSH BACK DURATION: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_chance"		"%PROC CHANCE: "
 
 		// Inner Sakura
-		"DOTA_Tooltip_ability_sakura_inner_sakura"						"Inner Sakura"
-		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Sakura unleashes her inner self, bringing her true personality to light. While in this state, Sakura's will and strength are drastically increased, causing her to become nearly unstoppable. Grants a large percentage of extra damage to Sakura's normal attacks while also increasing her armor."
+		"DOTA_Tooltip_ability_sakura_inner_sakura"						"<b><font color='#B473FF'>Strength of a Hundred Seal</font></b>"
+		"DOTA_Tooltip_ability_sakura_inner_sakura_description"			"Unleashes Sakura's Chakra Seal, temporarily granting a large amount of <b><font color='#B473FF'>additional Attack Damage and Armor</font></b>."
 		"DOTA_Tooltip_ability_sakura_inner_sakura_gods_strength_damage"	"%BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_bonus_armor"			"BONUS ARMOR: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_duration"				"DURATION: "
@@ -694,9 +726,9 @@
 		"npc_dota_hero_naruto"  									"Naruto"
 		"npc_dota_hero_naruto_lore"  							""
 		// Kage Bunshin Rasengan
-		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan"					"Shadow Clone: Rasengan"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan"					"<b><font color='#FF860E'>Shadow Clone:</font></b> <b><font color='#00D4FF'>Rasengan</font></b>"
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_lore"			"Kage Bunshin Rasengan"
-		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_description"		"Combining two of his signature techniques, Naruto creates a shadow clone with a Rasengan that charges at a target enemy unit. Upon reaching the enemy, the target is slowed and dealt minor magic damage."
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_description"		"<b><font color='#FF860E'>Creates a Shadow Clone</font></b> holding a Rasengan that charges at a target enemy unit. <br><br> Upon reaching the enemy, the target is <b><font color='#00D4FF'>Slowed and dealt Magic Damage.</font></b>"
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_damage" 			"DAMAGE: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_slow_movement_percentage" "%MS DEBUFF: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_slow_duration" "MS DEBUFF DURATION: "
@@ -706,9 +738,9 @@
 		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow"				"Kage Bunshin Rasengan"
 		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow_description"	"This Unit has decreased Movement Speed."
 		// Kawazu Kumite
-		"DOTA_Tooltip_ability_naruto_kawazu_kumite"							"Frog Kata"
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite"							"<b><font color='#FD570D'>Frog Kata</font></b>"
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_lore"					"Kawazu Kumite"
-		"DOTA_Tooltip_ability_naruto_kawazu_kumite_description"				"Frog Kata is the fighting style used exclusively by those who have mastered Sage Mode. This fighting style takes full advantage of Senjutsu chakra, which increases the User's speed, strength and stamina. Upon using this ability, Naruto increases both his strength and agility for a short period of time, while also creating a clone of himself."
+		"DOTA_Tooltip_ability_naruto_kawazu_kumite_description"				"Naruto dramatically <b><font color='#FD570D'>increases his Strength and Agility</font></b> for a short period of time. <br><br> Additionally, <b><font color='#FF860E'>creates a Shadow Clone</font></b> under Naruto's control on use."
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_strength_bonus"			"BONUS STR: "
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_agility_bonus"			"BONUS AGI: "
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_duration"				"BUFF DURATION: "
@@ -716,9 +748,9 @@
 		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite"						"Kawazu Kumite"
 		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite_description"			"This Unit has increased Agility and Strength."
 		// Kage Bunshin Mastery
-		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery"					"Shadow Clone Mastery"
-		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_lore"					"Kage Bunshin Mastery"
-		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_description"		"After many years of training, Naruto has mastered the Shadow Clone technique and has begun to use it at its full potential. Passively increases the resistance and damage of his clones, and allows the User to swap places with a targeted clone in a 600 AOE."
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery"					"<b><font color='#FF860E'>Shadow Clone Mastery</font></b>"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_lore"					"Kage Bunshin Jukutatsu"
+		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_description"		"<b><font color='#FFFFFF'>ACTIVE</font></b> - <b><font color='#FF860E'>Swaps places with a Shadow Clone</font></b> within range of Naruto. <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#FF860E'>Improves Shadow Clones</font></b> by increasing their Outgoing Damage and decreasing their Incoming Damage."
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_max_clones"		"MAX BUNSHINS: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_illusion_outgoing_damage_percent"		"%OUTGOING DAMAGE: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_illusion_incoming_damage_percent"		"%INC. DAMAGE: "
@@ -726,9 +758,9 @@
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery_cd_reduc"			"CD REDUCTION: "
 		
 		// Futon: Rasenshuriken
-		"DOTA_Tooltip_ability_naruto_rasenshuriken"							"Wind Release: Rasenshuriken"
+		"DOTA_Tooltip_ability_naruto_rasenshuriken"							"<b><font color='#3CFEFF'>Wind Release: Rasenshuriken</font></b>"
 		"DOTA_Tooltip_ability_naruto_rasenshuriken_lore"					"Fuuton: Rasenshuriken"
-		"DOTA_Tooltip_ability_naruto_rasenshuriken_description"				"By manipulating the wind chakra of the Wind Release: Rasengan, Naruto is able to mold his chakra in the form of a giant shuriken which he can throw at his enemies. Upon making contact with the enemy, Rasenshuriken deals magic damage to the target unit while stunning them and any other enemy units in a small AOE."
+		"DOTA_Tooltip_ability_naruto_rasenshuriken_description"				"Throws a Rasenshuriken at the target dealing <b><font color='#3CFEFF'>Magic Damage and Stunning</font></b> nearby enemies on impact."
 		"DOTA_Tooltip_modifier_storm_bolt_datadriven"						"Rasenshuriken"
 		"DOTA_Tooltip_modifier_storm_bolt_datadriven_description"			"This Unit is stunned."
 		"DOTA_Tooltip_ability_naruto_rasenshuriken_damage"					"DAMAGE: "
@@ -740,19 +772,19 @@
 		//--------------------
 		"npc_dota_hero_itachi"  										"Itachi"
 		"npc_dota_hero_itachi_lore"  									""
-		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"Dust Crow Genjutsu"
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"<b><font color='#B5B5B5'>Dust Crow Genjutsu</font></b>"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_cd_reduc"		"CD REDUCTION: "
-		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"Using genjutsu, Itachi dissapears, leaving a flock of crows behind, and reappears at target location."
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Itachi instantly teleports</font></b> to the target point. <br><br> <b><font color='#B5B5B5'>A clone is left</font></b> at his original location after teleporting."
 
-		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"Tsukiyomi"
-		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"Black moon ilusion. This move is one of the most powerful genjutsu in existence, created with the mangekyo sharingan. Itachi brings the victim under an illusion, torturing the victim. Holds for 1 second."
+		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Tsukuyomi</font></b>"
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"<b><font color='#9C352C'>Stuns and deals Magic Damage</font></b> to the target enemy unit. <br><br> The enemy will have their <b><font color='#9C352C'>Movement Speed Slowed for a short period</font></b> after the Stun duration."
 
-		"DOTA_Tooltip_ability_itachi_sharingan"							"Sharingan"
-		"DOTA_Tooltip_ability_itachi_sharingan_description"				"The sharingan is the Uchiha blood-line ability that resides in the eyes. One of the Sharingan's most prominent ability grants the user an incredible clarity of perception. Gives Itachi a chance to deal 100% of his base damage additional as magical damage and reduce the target's magic resistance."
+		"DOTA_Tooltip_ability_itachi_sharingan"							"<b><font color='#E21C30'>Mangekyo Sharingan</font></b>"
+		"DOTA_Tooltip_ability_itachi_sharingan_description"				"Gives Itachi a chance to <b>Critical Strike</b> dealing <b><font color='#E21C30'>Magic Damage based on his Attack Damage.</font></b> <br><br> Triggering this attack will also <b><font color='#E21C30'>reduce the target's Magic Resistance</font></b> for a short period of time."
 
 
-		"DOTA_Tooltip_ability_itachi_amateratsu"						"Amateratsu"
-		"DOTA_Tooltip_ability_itachi_amateratsu_description"			"Divine Flames. The jet-black flames of the Amaterasu, said to be the fires from hell that are as hot as the sun, ignites at the focus of the user's vision. Last for 10 seconds."
+		"DOTA_Tooltip_ability_itachi_amateratsu"						"<b><font color='#9A86AC'>Amaterasu</font></b>"
+		"DOTA_Tooltip_ability_itachi_amateratsu_description"			"Ignites a target enemy dealing <b><font color='#9A86AC'>a large amount of Magic Damage over time.</font></b> <br><br> <b><font color='#B5B5B5'>The flame will spread</font></b> if an affected enemy comes close to their allies."
 
 
 
@@ -785,8 +817,8 @@
 
 
 		// Chidori 
-		"DOTA_Tooltip_ability_sasuke_chidori"					"Chidori"
-		"DOTA_Tooltip_ability_sasuke_chidori_description"		"Sasuke dashes towards a target point at instant speed, dealing magic damage to all enemies caught in his path and briefly rooting them."
+		"DOTA_Tooltip_ability_sasuke_chidori"					"<b><font color='#36B4EE'>Chidori</font></b>"
+		"DOTA_Tooltip_ability_sasuke_chidori_description"		"<b><font color='#36B4EE'>Dashes towards a target point</font></b> at instant speed, dealing <b>Magic Damage</b> to all enemies caught in his path and briefly rooting them. <br><br> Additional <b>Magic Damage</b> is dealt <b><font color='#36B4EE'>based on Sasuke's Attack Damage</font></b>."
 
 		"DOTA_Tooltip_ability_sasuke_chidori_root_duration"					"ROOT DURATION: "
 		"DOTA_Tooltip_ability_sasuke_chidori_min_distance"					"MIN DISTANCE: "
@@ -798,18 +830,18 @@
 
 
 		//Chidori Stream
-		"DOTA_Tooltip_ability_sasuke_chidori_stream"					"Chidori Stream"
+		"DOTA_Tooltip_ability_sasuke_chidori_stream"					"<b><font color='#61B1FF'>Chidori Stream</font></b>"
 		"DOTA_Tooltip_ability_sasuke_chidori_stream_lore"					"Chidori Nagashi"
-		"DOTA_Tooltip_ability_sasuke_chidori_stream_description"		"After casting this ability, an electrical current is discharged around Sasuke dealing magic damage and briefly stunning all enemies in an area around him."
+		"DOTA_Tooltip_ability_sasuke_chidori_stream_description"		"An electrical current is discharged around Sasuke <b><font color='#61B1FF'>dealing Magic Damage and Stunning</font></b> all enemies within the radius."
 		"DOTA_Tooltip_ability_sasuke_chidori_stream_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_sasuke_chidori_stream_aoe_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_sasuke_chidori_stream_stun_duration"			"STUN DURATION: "
 		
 
 		// Chidori Light Sword
-		"DOTA_Tooltip_ability_sasuke_chidori_light_sword"					"Chidori Light Sword"
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword"					"<b><font color='#A5E3FF'>Chidori Light Sword</font></b>"
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_lore"					""
-		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_description"				"After casting a technique, Sasuke’s katana is charged with electrical energy, causing his next basic attack to inflict additional damage and decrease attack speed and movement speed to enemies within the area."
+		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_description"				"<b><font color='#A5E3FF'>After casting an ability</font></b>, Sasuke’s next basic attack inflicts <b><font color='#A5E3FF'>additional Magic Damage</font></b> and decreases <b>Attack Speed</b> and <b>Movement Speed</b> to enemies within the area."
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_aoe_radius"					"RADIUS: "
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_move_slow"			"%MS SLOW: "
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_attack_slow"			"AS SLOW: "
@@ -817,8 +849,8 @@
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_damage"			"DAMAGE: "
 	
 		//Kirin
-		"DOTA_Tooltip_ability_sasuke_chidori_kirin"								"Kirin"
-		"DOTA_Tooltip_ability_sasuke_chidori_kirin_description"					"Marks the target unit with Kirin, granting True Sight and vision of the target unit for a duration of time. After the duration expires, the target is struck with a massive bolt of lightning, dealing magic damage. Additional magic damage is dealt to the target based on how much health they have lost due to Sasuke during the effect’s duration."
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin"								"<b><font color='#00D4FF'>Kirin</font></b>"
+		"DOTA_Tooltip_ability_sasuke_chidori_kirin_description"					"<b><font color='#A5E3FF'>Marks the target unit</font></b> with Kirin, granting <b>True Sight</b> of the target unit for a short duration of time. <br><br> After the duration expires, the target is struck with a <b><font color='#00D4FF'>massive bolt of lightning dealing Magic Damage</font></b>. <br><br> Additional <b>Magic Damage</b> is dealt to the target <b><font color='#4DADFF'>based on health lost from Sasuke</font></b> during the effect’s duration."
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_lore"						""
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_duration"						"DURATION: "
 		"DOTA_Tooltip_ability_sasuke_chidori_base_damage"						"BASE DAMAGE: "
@@ -835,22 +867,22 @@
 		"npc_dota_hero_kakashi_lore"  								""
 
 		// Doton
-		"DOTA_Tooltip_ability_kakashi_doton"							"Tracking Fang Technique"
+		"DOTA_Tooltip_ability_kakashi_doton"							"<b><font color='#C1943D'>Tracking Fang</font></b>"
 		"DOTA_Tooltip_ability_kakashi_doton_lore"						"Doton: Tsuiga No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_doton_description"				"Summoning ninja-dogs that jump out at the target from under the ground and root him."
+		"DOTA_Tooltip_ability_kakashi_doton_description"				"Summons ninja dogs to latch onto the target enemy <b><font color='#C1943D'>dealing Physical Damage and Stunning them.</font></b>"
         "DOTA_Tooltip_ability_kakashi_doton_damage"						"Damage: "
 		"DOTA_Tooltip_ability_kakashi_doton_root_duration"				"Stun duration: "
 
 		// Sharingan
-		"DOTA_Tooltip_ability_kakashi_sharingan"						"Sharingan"
-		"DOTA_Tooltip_ability_kakashi_sharingan_description"			"Known worldwide as 'The Copy Ninja', Kakashi utilizes his sharingan to copy enemy techniques for his own use. Upon use on a target unit, Kakashi steals one of their abilities from them for his own use. The ability stolen will always be the same for each specific hero. You can type -sharingan to see your remaining time with the stolen ability."
+		"DOTA_Tooltip_ability_kakashi_sharingan"						"<b><font color='#E21C30'>Sharingan</font></b>"
+		"DOTA_Tooltip_ability_kakashi_sharingan_description"			"<b><font color='#E21C30'>Steals an ability</font></b> from the target allied or enemy Hero. <br><br> Stolen abilities will <b><font color='#E21C30'>always be the Hero's 2nd ability.</font></b> <br><br> The stolen ability's level is determined by <b><font color='#E21C30'>the level of Sharingan.</font></b>"
 		"DOTA_Tooltip_ability_kakashi_sharingan_copy_timer"				"DURATION: "
 		
 
-		// Kage Bunshi No Jutsu
-		"DOTA_Tooltip_ability_kakashi_bunshin"							"Shadow Clone Technique"
-		"DOTA_Tooltip_ability_kakashi_bunshin_lore"						"Kage Bunshin No Jutsu"
-		"DOTA_Tooltip_ability_kakashi_bunshin_description"				"Kakashi creates a shadow clone of himself, granting it a portion of his chakra in order to make it look like the original Kakashi. Upon use, Kakashi becomes invisible while summoning a clone of himself. The clone will take additional incoming damage and deal reduced outgoing damage."
+		// Kage Bunshin No Jutsu
+		"DOTA_Tooltip_ability_kakashi_bunshin"							"<b><font color='#C7E0E4'>Lightning Release: Shadow Clone</font></b>"
+		"DOTA_Tooltip_ability_kakashi_bunshin_lore"						"Raiton: Kage Bunshin No Jutsu"
+		"DOTA_Tooltip_ability_kakashi_bunshin_description"				"<b><font color='#C7E0E4'>Kakashi becomes invisible</font></b> while leaving behind a <b><font color='#C7E0E4'>Shadow Clone</font></b> at his location. <br><br> <b><font color='#C7E0E4'>Shadow Clones</font></b> take additional incoming damage and reduced outgoing damage. <br><br> On death, the <b><font color='#C7E0E4'>Shadow Clone slows the enemy that killed it.</font></b>"
 		"DOTA_Tooltip_ability_kakashi_bunshin_duration"					"INVIS DURATION: "
 		"DOTA_Tooltip_ability_kakashi_bunshin_ms_debuff"				"%MS DEBUFF: "
 		"DOTA_Tooltip_ability_kakashi_bunshin_cd_reduc"					"CD REDUC: "
@@ -859,40 +891,40 @@
 		"DOTA_Tooltip_ability_kakashi_bunshin_illusion_incoming_damage_percent"		"%BUNSHIN INCOMING DAMAGE: "
 		
 		// Chidori
-		"DOTA_Tooltip_ability_kakashi_chidori"							"Raikiri"
-		"DOTA_Tooltip_ability_kakashi_chidori_description"				"Kakashi channels a large amount of lightning chakra in his hand, to the point that the chakra becomes visible to the naked eye. Once the technique is complete, Kakashi charges toward his target and thrusts Raikiri into them, dealing Magical damage."
+		"DOTA_Tooltip_ability_kakashi_chidori"							"<b><font color='#7EC3FF'>Raikiri</font></b>"
+		"DOTA_Tooltip_ability_kakashi_chidori_description"				"<b><font color='#7EC3FF'>Charges lightning chakra</font></b> as Kakashi prepares to charge his foe. <br><br> Once charging is complete, Kakashi rushes the target <b><font color='#7EC3FF'>dealing Magic Damage</font></b> and briefly slowing <b>Movement Speed</b> on contact."
 		"DOTA_Tooltip_ability_kakashi_chidori_damage"					"DAMAGE: "
 		"DOTA_Tooltip_ability_kakashi_chidori_range"					"RANGE: "
 
 		//--------------------
 		//Guy
 		//--------------------
-		"npc_dota_hero_guy"  										"Gai"
+		"npc_dota_hero_guy"  										"Guy"
 		"npc_dota_hero_guy_lore"  									""
 		// Dynamic Entry
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new"						"Dynamic Entry"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ms_slow_ulti"			"%MS DEBUFF ULTI: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_duration"				"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range"				"RANGE: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_cast_range_ulti"		"RANGE ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"<b><font color='#00A244'>Guy launches himself</font></b> to the target, dealing Physical Damage on impact. <br><br> <b><font color='#00A244'>Range is increased</font></b> and applies a <b><font color='#00A244'>Movement Speed Slow</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range_ulti"		"RANGE ULTI: "
 
 		// Dynamic Entry Ulti
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult"						"Dynamic Entry"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_description"			"Guy launches himself into the target, slowing and dealing physical damage to a target enemy unit. Has increased range and ms debuff if Guy has opened the seventh gate."
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_ms_slow_ulti"			"%MS DEBUFF ULTI: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_duration"				"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range"				"RANGE: "
-		"DOTA_Tooltip_ability_guy_dynamic_entry_new_ult_cast_range_ulti"		"RANGE ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_description"			"<b><font color='#00A244'>Guy launches himself</font></b> to the target, dealing Physical Damage on impact. <br><br> <b><font color='#00A244'>Range is increased</font></b> and applies a <b><font color='#00A244'>Movement Speed Slow</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_ms_slow_ulti"			"%MS DEBUFF ULTI: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_duration"				"DEBUFF DURATION: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range_ulti"		"RANGE ULTI: "
 
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
-		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased movement speed."
+		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased Movement Speed."
 		// Leaf Strong Whirlwind
-		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_lore"			"Konoha Gōriki Senpū"
-		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_description"	"Guy performs a quick spin kick, dealing physical damage and briefly stunning all enemies near Guy. Has a lower cast time (0.1 instead of 0.3 secodns) if Guy has opened the seventh gate." 
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_description"	"Performs a spin kick dealing base<b><font color='#72FF8C'> Physical Damage </font></b> plus <b><font color='#72FF8C'>Guy's Attack Damage</font></b> as well as a <b><font color='#72FF8C'>brief Stun</font></b> to all enemies near Guy. <br><br> Cast time is lowered if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>" 
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stun_duration"	"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stomp_damage"			"DAMAGE: "
@@ -903,9 +935,9 @@
 		
 		
 		// Leaf Strong Whirlwind Ulti
-		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult"				"Leaf Strong Whirlwind"
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_lore"			"Konoha Gōriki Senpū"
-		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_description"	"Guy performs a quick spin kick, dealing physical damage and briefly stunning all enemies near Guy. Has a lower cast time (0.1 instead of 0.3 secodns) if Guy has opened the seventh gate." 
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_description"	"Performs a spin kick dealing base<b><font color='#72FF8C'> Physical Damage </font></b> plus <b><font color='#72FF8C'>Guy's Attack Damage</font></b> as well as a <b><font color='#72FF8C'>brief Stun</font></b> to all enemies near Guy. <br><br> Cast time is lowered if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>" 
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stun_duration"	"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stomp_damage"			"DAMAGE: "
@@ -916,22 +948,28 @@
 
 		
 		// Strong Fist
-		"DOTA_Tooltip_ability_guy_strong_fist"						"Strong Fist"
+		"DOTA_Tooltip_ability_guy_strong_fist"						"<b><font color='#F4E8C7'>Strong Fist</font></b>"
 		"DOTA_Tooltip_ability_guy_strong_fist_lore"						"Goken"
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRIT DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION ULTI: "
-		"DOTA_Tooltip_ability_guy_strong_fist_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
+		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
+		
+		// Morning Peacock
+		"DOTA_Tooltip_ability_guy_morning_peacock"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
+		"DOTA_Tooltip_ability_guy_morning_peacock_lore"						"Morning Peacock"
+		"DOTA_Tooltip_ability_guy_morning_peacock_stun"					"STUN DURATION: "
+		"DOTA_Tooltip_ability_guy_morning_peacock_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - <b><font color='#FF710E'>Dramatically increases Attack Speed</font></b> for up to <b><font color='#FFFFFF'>4</font></b> strikes. <br><br> Each strike does <font color='#FFFFFF'>75%</font></b> <b><font color='#FF710E'>Damage and mini-Stuns</font></b> with the final strike dealing a <b><font color='#FF710E'>full Stun</font></b>. <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy after <b><font color='#FF710E'>Morning Peacock</font></b> attacks have ended. <br><br> <b><font color='#E21C30'>Note:</font></b> Due to limitations, first <b><font color='#FF710E'>Morning Peacock</font></b> attack will reset Cooldown to full duration."
 		
 		// Strong Fist Ulti
-		"DOTA_Tooltip_ability_guy_strong_fist_ult"						"Strong Fist"
+		"DOTA_Tooltip_ability_guy_strong_fist_ult"						"<b><font color='#F4E8C7'>Strong Fist</font></b>"
 		"DOTA_Tooltip_ability_guy_strong_fist_ult_lore"						"Goken"
 		"DOTA_Tooltip_ability_guy_strong_fist_ult_crit"					"%CRIT DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_ult_stun"					"STUN DURATION ULTI: "
-		"DOTA_Tooltip_ability_guy_strong_fist_ult_description"			"Upon activation, Guy's next attack deals critical damage. The cooldown of this ability is reduced with every basic attack made by Guy. This attack will stun if Seventh Gate: Open is active."
+		"DOTA_Tooltip_ability_guy_strong_fist_ult_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
 		
 		
 		// Hachimon Tonkou: Dairoku Keimon
-		"DOTA_Tooltip_ability_guy_seventh_gate_open"				"Seventh Gate: Open"
+		"DOTA_Tooltip_ability_guy_seventh_gate_open"				"<b><font color='#00A913'>Sixth Gate: Open</font></b>"
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_lore"			"Kyomon: Kai"
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_ms_bonus"		"%MS BONUS: "
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_bonus_damage"	"BONUS DAMAGE: "
@@ -939,7 +977,7 @@
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_hp_drain"		"%HP COST PER SECOND: "
 		
 		
-		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"Guy unleashes seven of his inner chakra gates, granting extra damage, decreasing his BAT, increasing his movement speed, improving his other abilities, but draining a percentage of his HP per second. This ability can be toggled off."
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, grants increased <b><font color='#00A244'>Movement Speed</font></b> and <b><font color='#F4E8C7'>Attack Damage</font></b>. <br><br> This ability also decreases <b><font color='#72FF8C'>Base Attack Time</font></b> and <b><font color='#00A913'>improves his other abilities.</font></b> <br><br> <b><font color='#00A913'>Drains health</font></b> from Guy while toggled on."
 		"DOTA_Tooltip_modifier_guy_seventh_gate"							"Seventh Gate: Open"
 		"DOTA_Tooltip_modifier_guy_seventh_gate_description"				"This Unit has decreased base attack time,increased Movement Speed, increased damage."
 
@@ -948,43 +986,43 @@
 		//--------------------
 		"npc_dota_hero_onoki"											"Onoki"
 		//Jinton
-		"DOTA_Tooltip_ability_onoki_jinton"								"Atomic Dismantling"
+		"DOTA_Tooltip_ability_onoki_jinton"								"<b><font color='#FFFFFF'>Atomic Dismantling</font></b>"
 		"DOTA_Tooltip_ability_onoki_jinton_lore"						"Jinton: Genkai Hakuri no Jutsu"
 		"DOTA_Tooltip_ability_onoki_jinton_damage"					    "Damage: "
 		"DOTA_Tooltip_ability_onoki_jinton_root_duration"				"Root duration: "
 		"DOTA_Tooltip_ability_onoki_jinton_stun_duration"				"Stun duration: "
 		"DOTA_Tooltip_ability_onoki_jinton_stun_radius"					"Radius: "
-		"DOTA_Tooltip_ability_onoki_jinton_Description"					"Oonoki forms a cube in which he grabs the target and immobilizes it. Anything inside the cube splits into dust - the target is stunned and receives pure damage. Enemy units near the target are also affected by the technique."
+		"DOTA_Tooltip_ability_onoki_jinton_Description"					"<b><font color='#FFFFFF'>Roots a target unit</font></b> as well as all enemies around them.</font></b> <br><br> After a short delay, an explosion occurs within a short radius of each enemy <b><font color='#FFFFFF'>dealing Magic Damage and Stunning</font></b>."
 		
 		//Stalagmite Armor
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"Stalagmite Armor"
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor"					"<b><font color='#C1943D'>Stalagmite Armor</font></b>"
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_bonus_armor"		"Extra armor: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage_chance"	    "Chance of returning damage: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage"	        "Damage return coefficient: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_duration"			"Duration: "
-		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"Oonoki protects the target with a layer of rocks, giving extra armor and the chance to return damage to attacking enemies."
+		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"<b><font color='#C1943D'>Increases the target's Armor</font></b> and gives a chance to deal <b><font color='#C1943D'>Physical Damage and Stun</font></b> when hit by a<b> Basic Attack.</b>"
 		"DOTA_Tooltip_modifier_onoki_stalagmite_armor"						"Stalagmite Armor"
 		"DOTA_Tooltip_modifier_onoki_stalagmite_armor_description"			"The unit is protected by Oonoki rocks."
 		
 		//Doton: Kajūgan no Jutsu | Doton: Keijūgan no Jutsu
-		"DOTA_Tooltip_ability_onoki_added_weight"						"Weight gain/loss technique"
+		"DOTA_Tooltip_ability_onoki_added_weight"						"<b><font color='#FFD67E'>Weighted Rock Technique</font></b>"
 		"DOTA_Tooltip_ability_onoki_added_weight_lore"				"Doton: Kajūgan no Jutsu | Doton: Keijūgan no Jutsu"
 		"DOTA_Tooltip_ability_onoki_added_weight_speed_bonus_perc"	"%MS buff: "
 		"DOTA_Tooltip_ability_onoki_added_weight_speed_penalty_perc"	"%MS debuff: "
 		"DOTA_Tooltip_ability_onoki_added_weight_duration"			"Duration: "
-		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"If Oonoki uses this skill on an ally, the ally's weight will decrease and his movement speed will increase. /n If Oonoki uses this skill on an enemy, his weight will increase and his movement speed will decrease."
+		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"<b><font color='#FFFFFF'>ON ALLY</font></b> - <b><font color='#FEEDC9'>Increases an ally's Movement Speed</font></b> for a short duration. <br><br> <b><font color='#FFFFFF'>ON ENEMY</font></b> - <b><font color='#D86C26'>Decreases an enemy's Movement Speed</font></b> for a short duration."
 		"DOTA_Tooltip_modifier_onoki_added_weight_enemy"						"Increased weight"
 		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"The unit has a reduced movement speed."
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Reducing weight"
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The unit has increased movement speed."
 		
-		//Turn to dust
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"Turn to dust"
+		//Turn to Dust
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"<b><font color='#CABA9E'>Turn to Dust</font></b>"
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_damage_factor_tooltips"		"%Damage max. hp factor per sec: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"Duration: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"AOE: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%Instant Death Threshold: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"Onoki starts turning enemies around into dust, dealing maximum health damage every second. If an enemy reaches a certain health threshold, it is killed instantly."
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"<b><font color='#CABA9E'>Deals Pure Damage around Onoki</font></b> across <b><font color='#FFFFFF'>5</font></b> Pulses based on each enemy's maximum HP. <br><br> <b><font color='#FFFFFF'>Enemy's below a heath threshold</font></b> are <b>Instantly Killed</b> when damaged by a Pulse."
 		
 		//25: +100 Atomic Dismantling Damage and Pure / +4% Turn to dust Kill Threshold
 	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
@@ -995,72 +1033,84 @@
 		"DOTA_Tooltip_Ability_special_bonus_onoki_3"						"+8 Stalagmite Extra Armor"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_4"						"+7%/-7% Weighted Rock Effect"
 		"DOTA_Tooltip_Ability_special_bonus_onoki_5"						"+100 Atomic Dismantling Damage and Pure Damage"
-		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Turn to dust Kill Threshold"
+		"DOTA_Tooltip_Ability_special_bonus_onoki_6"						"+4% Turn to Dust Kill Threshold"
 		
 		//--------------------
 		//Neji
 		//--------------------
 		"npc_dota_hero_neji"  											"Neji"
+		
 		//Kaiten
-		"DOTA_Tooltip_ability_neji_kaiten"								"Kaiten"
-		"DOTA_Tooltip_ability_neji_kaiten_Description"					"Neji expels chakra from all of his chakra points and spins in circles, forming a protective sphere of chakra around him. This ability pushes back all enemy units around him while dealing magic damage to them. While spinning, Neji becomes invulnerable for 0.4 seconds."
+
+		"DOTA_Tooltip_ability_neji_kaiten"								"<b><font color='#8DECFF'>Kaiten</font></b>"
+		"DOTA_Tooltip_ability_neji_kaiten_Description"					"<b><font color='#8DECFF'>Knocks back</font></b> all nearby enemies while dealing <b><font color='#8DECFF'>Magic Damage and a Stun.</font></b> <br><br> Neji becomes <b><font color='#8DECFF'>Invulnerable for</font></b> <b><font color='#FFFFFF'>0.4</font></b> <b><font color='#8DECFF'>seconds</font></b> while using this ability."
 		"DOTA_Tooltip_ability_neji_kaiten_aoe_target"					"AOE: "
 		"DOTA_Tooltip_ability_neji_kaiten_stun_duration"				"STUN DURATION: "
-		//Hakke Kuuhekishou modifier_neji_internal_bleeding_ms_slow
-		"DOTA_Tooltip_ability_neji_internal_bleeding"					"Internal Bleeding"
-		"DOTA_Tooltip_ability_neji_internal_bleeding_lore"				""
-		"DOTA_Tooltip_ability_neji_internal_bleeding_Description"		"The Hyuuga's signature Jyuuken fighting style attacks the opponents chakra networks directly to stop their flow of chakra. Inflicts a debuff on a target enemy unit which deals magic damage overtime."
-		"DOTA_Tooltip_ability_neji_internal_bleeding_cast_range"		"CAST RANGE: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_duration"			"DOT DURATION: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_damage_per_tick"	"DAMAGE EACH 0.5 SEC: "
-		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow_duration"	"MS DEBUFF DURATION: "		
-		"DOTA_Tooltip_ability_neji_internal_bleeding_ms_slow"			"%MS DEBUFF: "	
-		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow"			    "Internal Bleeding"	
-		"DOTA_Tooltip_modifier_neji_internal_bleeding_ms_slow_description"	"This Unit's Movement Speed is reduced."
+		
+
+
+		//Air Palm
+
+		"DOTA_Tooltip_ability_neji_air_palm"					"<b><font color='#ECECEC'>Vacuum Palm</font></b>"
+		"DOTA_Tooltip_ability_neji_air_palm_lore"				"Hakke Kusho"
+		"DOTA_Tooltip_ability_neji_air_palm_Description"		"Sends an air blast to the target enemy dealing <b><font color='#ECECEC'>Magic Damage and a Movement Speed Slow</font></b> for a short duration."
+		"DOTA_Tooltip_ability_neji_air_palm_cast_range"		"CAST RANGE: "
+		"DOTA_Tooltip_ability_neji_air_palm_duration"			"DOT DURATION: "
+
+		"DOTA_Tooltip_modifier_neji_air_palm_ms_slow"			    "Vacuum Palm"	
+		"DOTA_Tooltip_modifier_neji_air_palm_ms_slow_description"	"This Unit's Movement Speed is reduced."
+		
 		//Byakugan
-		"DOTA_Tooltip_ability_neji_byakugan"							"Byakugan"
-		"DOTA_Tooltip_ability_neji_byakugan_Description"				"The Hyuuga's bloodline trait allows them to see an enemy's internal body structure as well as their chakra points. This ability passively benefits his basic attack damage. Activating this ability grants Neji a significant amount of increased vision for a short duration."
+		"DOTA_Tooltip_ability_neji_byakugan"							"<b><font color='#EBDDFF'>Byakugan</font></b>"
+		"DOTA_Tooltip_ability_neji_byakugan_Description"				"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, Neji's <b>Basic Attacks</b> <b><font color='#EBDDFF'>burn the enemy's mana</font></b> dealing damage equal to <b><font color='#FFFFFF'>50%</font></b> of the mana burned. <br><br> Additionally, enemies near Neji are <b><font color='#EBDDFF'>revealed through the Fog of War.</font></b> <br><br> <b><font color='#EBDDFF'>Drains mana</font></b> from Neji while <b><font color='#FFFFFF'>Toggled On.</font></b>"
 		"DOTA_Tooltip_ability_neji_byakugan_vision_aoe"					"VISION AOE: "
 		"DOTA_Tooltip_ability_neji_byakugan_duration"					"VISION DURATION: "
 		"DOTA_Tooltip_ability_neji_byakugan_bonus_damage_tooltip"				"BONUS DAMAGE: "
-		//Hakke Hyaku Nijuuhachi Shou
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou"				"Eight Trigrams Sixty-Four Palms"
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_lore"			"Hakke Rokujuyon Sho"
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_Description"	"Neji locks on to a single opponent, entering a Gentle Fist stance and unleashing 64 pinpoint attacks to block all of the target's chakra points. Upon use,  roots an enemy unit in place as they are silenced, disarmed and dealt magic damage over 3 seconds. Enemies within a small radius of the target are silenced as well."
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_duration"		"DURATION: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_damage"		"DAMAGE: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_aoe_radius"	"SILENCE AOE: "
-		"DOTA_Tooltip_ability_neji_hyaku_nijuuhachi_shou_silence_duration"	"SILENCE DURATION after spell is finished: "
-		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou"						"Eight Trigrams Sixty-Four Palms"
-		"DOTA_Tooltip_neji_hyaku_nijuuhachi_shou_description"			"This Unit is stunned."
+		
+		//Eight Trigrams Sixty-Four Palms
+		"DOTA_Tooltip_ability_neji_32_palms"				"<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"
+		"DOTA_Tooltip_ability_neji_32_palms_lore"			"Hakke Rokujuyon Sho"
+		"DOTA_Tooltip_ability_neji_32_palms_Description"	"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#6DFF93'>Fully disables a target enemy</font></b> while striking them with <b><font color='#FFFFFF'>64</font></b> seperate strikes dealing <b>Magic Damage.</b> <br><br> <b><font color='#8DECFF'>Each strike will burn mana</font></b> if <b><font color='#EBDDFF'>Byakugan</font></b> is active during the <b>Channel.</b> <br><br> Afterwards the <b><font color='#6DFF93'>enemy is Silenced</font></b> if the full <b>Channel</b> is completed."  
+		"DOTA_Tooltip_ability_neji_32_palms_duration"		"DURATION: "
+		"DOTA_Tooltip_ability_neji_32_palms_damage"		"DAMAGE: "
+		"DOTA_Tooltip_ability_neji_32_palms_aoe_radius"	"SILENCE AOE: "
+		"DOTA_Tooltip_ability_neji_32_palms_silence_duration"	"SILENCE DURATION after spell is finished: "
+		"DOTA_Tooltip_neji_32_palms"						"Eight Trigrams Sixty-Four Palms"
+		"DOTA_Tooltip_neji_32_palms_description"			"This Unit is stunned."
 
 		//--------------------
 		//Raikage
 		//--------------------
 		"npc_dota_hero_raikage"  										"Raikage"
-		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_lore"					"Raiga no Bomu"
-		"DOTA_Tooltip_ability_raikage_raiga_no_bomu"					"Liger Bomb"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_lore"				"Raiga no Bomu"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu"					"<b><font color='#61B1FF'>Liger Bomb</font></b>"
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_reduce_armor"		"ARMOR DEBUFF: "
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_target_aoe"			"AOE: "
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_armor_reduction_duration" "ARMOR DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_cast_range"			"CAST RANGE: "
-		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_Description"		"A's most devetating attack, the Raikage grabs a target unit and throws them violenty into the ground. Upon impact, deals magic damage and reduces the armor of the target as well as any enemies within the radius."
-		"DOTA_Tooltip_ability_raikage_lariat"							"Lariat"
+		"DOTA_Tooltip_ability_raikage_raiga_no_bomu_Description"		"<b><font color='#61B1FF'>Grabs an enemy</font></b> into the air before slamming them to the ground, dealing <b><font color='#61B1FF'>Magic Damage and reducing the Armor</font></b> of all enemies within the radius."
+		
+
+		"DOTA_Tooltip_ability_raikage_lariat"							"<b><font color='#00D4FF'>Lariat</font></b>"
 		"DOTA_Tooltip_ability_raikage_lariat_damange"					"Damage: "
 		"DOTA_Tooltip_ability_raikage_lariat_cast_range"				"CAST RANGE: "
 		"DOTA_Tooltip_ability_raikage_lariat_radius"					"AOE: "
 		"DOTA_Tooltip_ability_raikage_lariat_duration"					"STUN DURATION: "
-		"DOTA_Tooltip_ability_raikage_lariat_Description"				"Charging forward with one of his most feared techniques, A moves at max speed towards a target point. If A makes contact with an enemy hero, he will deal magic damage and stun nearby enemies."
-		"DOTA_Tooltip_ability_raikage_raigyaku_suihei"					"Lightning Horizontal"
+		"DOTA_Tooltip_ability_raikage_lariat_Description"				"<b><font color='#00D4FF'>Launches towards the target point</font></b> at high speed. <br><br> Raikage will collide with the first enemy Hero in his path, dealing <b><font color='#00D4FF'>Magic Damage and Stunning them.</font></b>"
+		
+
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei"					"<b><font color='#FFD038'>Lightning Horizontal</font></b>"
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_lore"				"Raigyaku Suihei"
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_str_ratio_damage"	"STR RATIO: "
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_damage_reduction"	"%DAMAGE REDUC.: "
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_aoe"				"AOE: "
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_damage_reduction_duration"	"DAMAGE REDUCTION DURATION: "
-		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_Description"		"Covering his arm in his Lightning Release chakra, A delivers a powerful strike to his opponent. A's next basic attack deals additional splash damage based upon a percentage of his strength while also reducing the enemy's attack damage for a short duration."
-		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi"					"Lighting Release Armor"
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_Description"		"Raikage's next <b>Basic Attack</b> deals <b><font color='#FFD038'>Magic Damage based on Raikage's Strength</font></b> in a radius. <br><br> Enemies affected by the attack will have their <b><font color='#FFD038'>Attack Damage reduced</font></b> for a short duration."
+
+
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi"					"<b><font color='#36B4EE'>Lightning Release Armor</font></b>"
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_lore"					"Raiton no Yoroi"		
-		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_Description"		"A covers his body with electricity, pushing his body to the max.  After use, reduces physical damage taken for a short duration or untill A accumlates a certain amount of damage. When the effect ends, A will release a wave of electricity dealing minor magic damage and purging nearby enemies briefly."
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_Description"		"<b><font color='#36B4EE'>Creates a shield</font></b> around Raikage that absorbs all incoming damage. <br><br> After absorbing maximum damage or ending, <b><font color='#36B4EE'>deals Magic Damage and reduces Movement Speed</font></b> of all nearby enemies. <br><br> Can be activated a second time to <b><font color='#36B4EE'>end the shield early.</font></b>"
 		"DOTA_Tooltip_raikage_knockup"									"Raiga no Bomu"
 		"DOTA_Tooltip_raikage_knockup_description"						"-7 Armor"
 		"DOTA_Tooltip_modifier_raigyaku_debuff"							"Raigyaku Suihei"
@@ -1076,104 +1126,112 @@
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_purge_duration"	"MS DEBUFF DURATION: "
 		"DOTA_Tooltip_modifier_raiton_no_yoroi_charge_description"		"A's body is covered in electricity"
 		"DOTA_Tooltip_modifier_modifer_raikage_purge"					"Raiton no Yoroi"
-		"DOTA_Tooltip_modifier_modifer_raikage_purge_description"		"Reducded Movementspeed"
+		"DOTA_Tooltip_modifier_modifer_raikage_purge_description"		"Reduced Movementspeed"
 
 
 		//--------------------
 		//Shikamaru
 		//--------------------
 		"npc_dota_hero_shikamaru"  								"Shikamaru"
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari"			"Shadow Neck Bind Technique"
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_lore"			"Kage Kubishibari"
 
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_channel_time"	"HOLD DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_total_damage"	"DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_kage_kubishibari_description"	"Using the secret ninjutsu of the Nara clan. Shikamaru uses the shadows to bind his target, strangling and immobilizing the target. Does 40 damage per second."
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique"						"<b><font color='#BFBFBF'>Shadow Imitation</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_lore"				"Kagemane no Jutsu"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_Description"			"Extends Shikamaru's shadow towards a target point <b><font color='#BFBFBF'>latching onto the first enemy Hero</font></b> it encounters. <br><br> Once bound, the enemy will be fully disabled while <b><font color='#BFBFBF'>copying Shikamaru's movement.</font></b> <br><br> Enemies affected by <b><font color='#FFFFFF'>Flash Bombs</font></b> will remain affected for an additional <b><font color='#FFFFFF'>1</font></b> second."
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_range"		"RANGE"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_speed"		"SPEED"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_duration"		"DURATION"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_width"		"WIDTH"
 
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai"			"Explosive Kunai"
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_damage"		"DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_raidus"		"AOE: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_movespeed_slow"		"%MS DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_attackspeed_slow"		"%AS DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_duration"		"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_cd_reduc"		"CD REDUCTION: "
-		"DOTA_Tooltip_ability_shikamaru_explosive_kunai_description"	"This regular kunai is rigged with an explosive tag. The tag will detonate when the kunai hits its target, inflicting splash damage, and dazing anyone caught in the blast."
+		"DOTA_Tooltip_ability_shikamaru_switching_technique"							"<b><font color='#9A86AC'>Shadow Sewing</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_lore"						"Kage Nui no Jutsu"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_Description"				"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#9A86AC'>Roots and Disarms</font></b> all enemies within the target radius while <b><font color='#9A86AC'>dealing Magic Damage overtime.</font></b> <br><br> Enemies affected by <b><font color='#FFFFFF'>Flash Bombs</font></b> will additionally be <b><font color='#9A86AC'>Silenced for the duration.</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_radius"						"RADIUS"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_damage"						"DAMAGE"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique_duration"					"DURATION"
 
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs"									"<b><font color='#FFFFFF'>Flash Bombs</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_Description"						"<b><font color='#FFFFFF'>Throws flash bombs</font></b> into the target area dealing minor <b>Magic Damage</b>. <br><br> Damaged enemies are <b><font color='#FFFFFF'>Revealed</font></b>, <b><font color='#FFFFFF'>Movement Speed Slowed</font></b>, and <b><font color='#FFFFFF'>Blinded</font></b> causing them to miss attacks. <br><br> Enemies hit by <b><font color='#FFFFFF'>Flash Bombs</font></b> receive enchanced effects from <b><font color='#BFBFBF'>Shadow Imitation</font></b> and <b><font color='#9A86AC'>Shadow Sewing.</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_spread_aoe"							"SPREAD AOE"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_bomb_aoe"							"AOE"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_range"								"RANGE"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_explosion_delay"					"DELAY"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_debuff_duration"					"DEBUFF DURATION"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_miss_chance"						"MISS CHANCE"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_ms_slow"							"MS SLOW"
+		"DOTA_Tooltip_ability_shikamaru_flash_bombs_damage"								"DAMAGE"
+		
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap"							    "<b><font color='#EC5000'>Explosive Tag Trap</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_DESCRIPTION"					"<b><font color='#BFBFBF'>Places an invisible Trap</font></b> that becomes active after a short delay. <br><br> Once active, the next enemy hero that steps in range is <b><font color='#9A86AC'>fully disabled</font></b> for a period of time. <br><br> Afterwards the trap explodes <b><font color='#EC5000'>dealing massive Magic Damage</font></b> within the area. <br><br> Traps cannot be placed within the trigger radius of another Trap."
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_trigger_radius"				"TRIGGER RADIUS"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_damage"						"TRAP DAMAGE"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_bind_duration"				"BIND DURATION"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_trigger_delay"				"TRIGGER DELAY"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_damage_radius"				"DAMAGE RADIUS"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_max_traps"					"MAX TRAPS"
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_activation_time"				"ACTIVATION TIME"
 
-		"DOTA_Tooltip_ability_shikamaru_meditation"					"Meditation"
-		"DOTA_Tooltip_ability_shikamaru_meditation_radius"			"AOE: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_duration"		"DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_armor"			"ARMOR DEBUFF: "
-		"DOTA_Tooltip_ability_shikamaru_meditation_description"		"Shikamaru meditates, allowing him to focus and understand his enemies moves. Onces the weak point are found, the enemy can be finished off easier. Reduce enemies armor and increase friends armor in 700 AOE. The effect will slowly decay by 1 per second."
-
-		"DOTA_Tooltip_ability_shikamaru_kage_nui"					"Shadow Gathering Technique"
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_lore"				"Kageyose no Jutsu"
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_ward_count"		"COUNT: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_damage_min"		"ATTACK DAMAGE: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_duration"			"DURATION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_cd_reduc"			"CD REDUCTION: "
-		"DOTA_Tooltip_ability_shikamaru_kage_nui_description"		"By using the shadows, Shikamaru can make the shadow into needle like tendrils, and use them to trap and attack his enemies. Summons 8 Shadow Tendrils to attack enemies. The Shadow tendrils can not be harmed by any jutsu."
 
 		//--------------------
 		//Anko
 		//--------------------
 		"npc_dota_hero_anko"  									"Anko"
-		"DOTA_Tooltip_ability_anko_giant_snake"						"Summoning Technique: Giant Snake"
+		"DOTA_Tooltip_ability_anko_giant_snake"						"<b><font color='#00B730'>Summoning: Giant Snake</font></b>"
 		"DOTA_Tooltip_ability_anko_giant_snake_lore"				"Kuchiyose no Jutsu: Kyodaija"
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_distance"		"RANGE: "
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_anko_giant_snake_cd_reduc"			"CD REDUC: "
-		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"Anko summons a Giant Snake that will grab the first target it encounters, dealing damage, then dragging the victim back to Anko."
+		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"<b><font color='#00B730'>Sends out a snake</font></b> grabbing the first enemy it encounters, dealing <b><font color='#00B730'>Pure Damage and Pulling</font></b> them to Anko."
 		
-		"DOTA_Tooltip_ability_anko_senei_jyashu"					"Striking Snakes"
+		"DOTA_Tooltip_ability_anko_senei_jyashu"					"<b><font color='#2CEA5E'>Striking Snakes</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_jyashu_lore"				"Senei Jyashu"
 		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage"		"DAMAGE: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage_interval" "COOLDOWN: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_jyashu_magic_resist"	"MR BONUS: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_seek_radius"	"AOE: "
-		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"Sublime Snake Hands. Anko uses her snakes for defensive purposes. Anko summon a snake every two seconds that will guard and attack any enemy that comes too close. Does damage every 2 seconds to a random enemy in 300 AOE, also grant some magic resistance."
+		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"<b><font color='#2CEA5E'>Periodically unleashes a snake</font></b> that inflicts Magic Damage to a nearby enemy Hero. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
 		
-		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"Multiple Striking Snakes"
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"<b><font color='#78D590'>Snake Bite</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				"Senei Ta Jashu"
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_slow_duration"	"MS DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_damage_per_tick"	"DOT: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_ms_slow"			"%MS DEBUFF: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_cast_range"		"CAST RANGE: "
-		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Striking Snakes. This jutsu allows the user to eject snakes from their wrist. These snakes are primarily used to attack from a distance, and inflict poisonous wounds on the victim's body. The poison last for 3 seconds and makes the victim unable to do any jutsu."
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Deals<b><font color='#78D590'> Magic Damage</font></b> and <b><font color='#78D590'>reduced Movement Speed</font></b> to a target enemy unit for a short duration. <br><br> <b><font color='#78D590'>The enemy is Silenced</font></b> for the duration of the effect."
 		
-		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"Twin Snake Sacrifice"
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"<b><font color='#B8D3BE'>Twin Snake Sacrfice</font></b>"
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_lore"			"Sojasosai no Jutsu"
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_damage_percent"	"%MISSING HP AS DAMAGE: "
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_cast_range"	"CAST RANGE: "
-		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_Description"	"Twin Snake Sacrifice. This forbidden jutsu is a murder-suicide attack; killing both the user and the target. Anko makes a one-handed seal with hers and the victims hand. Two snakes are then summoned from the user's sleeve, biting both their wrists and killing them with deadly venom."
+		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_Description"	"Forms a suicide pact dealing <b><font color='#B8D3BE'>Magic Damage to both</font></b> Anko and the target enemy. <br><br> Damage dealt to both Heroes is <b><font color='#2CEA5E'>based on their missing Health</font></b>."
 	
 		//--------------------
 		//Temari
 		//--------------------
 		"npc_dota_hero_temari"  									"Temari"
-		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"Dust Wind Technique"
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Dust Wind Technique</font></b>"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_lore"					"Fusajin no Jutsu"
-		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"Temari releases a vicious wind that rips apart trees and flesh."
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"<b><font color='#7FD3FF'>Deals Magic Damage</font></b> to a target enemy unit. <br><br> On cast, <b><font color='#7FD3FF'>reduces the Cooldown</font></b> of Temari's other abilities."
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_cd_reduc"			"CD REDUCTION: "
 
 		
-		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"Wind Scythe Technique"
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"<b><font color='#EAF8FF'>Wind Scythe Technique</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lore"			"Kamaitachi No Jutsu"
-		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"Temari releases a powerful gust of wind, that can shred trees into pieces and pick up enemies in its path, suspending them helplessly in the air before plummeting them to the ground. Holds enemies in the air for 1.3 seconds."
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"<b><font color='#EAF8FF'>Unleashes a tornado</font></b> towards the target point <b><font color='#EAF8FF'>lifting enemies</font></b> into the air. <br><br> Enemies take <b><font color='#EAF8FF'>Magic Damage upon landing.</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_base_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_travel_distance"	"RANGE: "
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lift_duration"	 "LIFT DURATION: "
-		"DOTA_Tooltip_ability_temari_sheer_wind"						"Sheer Wind"
-		"DOTA_Tooltip_ability_temari_sheer_wind_Description"			"Temari uses the slipstream of her jutsus to increase her attack and movement speed. Stacks with itself. Last for 7 seconds."
+
+		"DOTA_Tooltip_ability_temari_sheer_wind"						"<b><font color='#7FF1DF'>Sheer Wind</font></b>"
+		"DOTA_Tooltip_ability_temari_sheer_wind_Description"			"Grants bonus <b><font color='#7FF1DF'>Movement Speed and Attack Speed</font></b> each time Temari casts a spell. <br><br> Stacks last for <b><font color='#FFFFFF'>12</font></b> seconds and stack up to <b><font color='#FFFFFF'>3</font></b> times."
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_attack_speed_bonus"	"BONUS AS PER STACK: "
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_move_speed_bonus"	"%BONUS MS PER STACK: "
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_max_stacks"	"MAX STACKS: "
 
-		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai"				"Summoning: Blade Dance"
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai"				"<b><font color='#F3C6FF'>Summoning: Blade Dance</font></b>"
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_lore"				"Kuchiyose: Kirikiri Mai"
-		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_description"	"Spinning slashing dance. Temari summons Kamatari, a one-eyed sickle-holding weasel, by wiping blood on her Giant Folding Fan as payment for the contract and then swinging it. The fan whips up a tempest, slashing through everything it touches."
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_description"	"Unleashes <b><font color='#FFFFFF'>5</font></b> tornados in a wave, each <b><font color='#F3C6FF'>dealing Magic Damage</font></b> in a line."
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_base_damage"	"DAMAGE PER TORNADO: "
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_cyclone_count_tooltips"	"CYCLONE COUNT: "
 		"DOTA_Tooltip_modifier_sheer_wind_buff_stack"	"Sheer Wind"
@@ -2120,13 +2178,13 @@
 		//Neji special bonus
 		//10: +9 Strength / +20 Attack Speed
 		//15: +30 Movement Speed / +0.25s Kaiten Stun Duration
-		//20: +28 Mana Break / +20% Internal Bleeding MS Slow
-		//25: +30s Byakugan Duration / ( * ) +8s 64 Palms Silence Duration
+		//20: +1.0% Max Mana Byakugan Burn / +450 Air Palm Range
+		//25: +6s 64 Palm Silence Duration / +200 Kaiten Radius
 		"DOTA_Tooltip_Ability_special_bonus_neji_1"						"+0.25s Kaiten Stun Duration"
-		"DOTA_Tooltip_Ability_special_bonus_neji_2"						"+20% Internal Bleeding MS Slow"
-		"DOTA_Tooltip_Ability_special_bonus_neji_3"						"+10s Byakugan Duration"
-		"DOTA_Tooltip_Ability_special_bonus_neji_4"						"+5s 64 Palms Silence Duration"
-
+		"DOTA_Tooltip_Ability_special_bonus_neji_2"						"+1.0% Max Mana Byakugan Burn"
+		"DOTA_Tooltip_Ability_special_bonus_neji_3"						"+450 Air Palm Range"
+		"DOTA_Tooltip_Ability_special_bonus_neji_4"						"+6s 64 Palm Silence Duration"
+		"DOTA_Tooltip_Ability_special_bonus_neji_5"						"+200 Kaiten Radius"
 
 		//Sasuke special bonus
 		//25: +40 Intelligence / -0.75s Kirin Cast Time
@@ -2140,14 +2198,14 @@
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_5"						"+225 Chidori Stream Radius"
 
 
-		//25: +1.50s Tsukyomi Stun / +225 Amaterasu Spread AOE
+		//25: +1.50s Tsukyomi Stun / +225 Amateratsu Spread AOE
 		//20: +20 Agility / -3s Crow Genjutsu Cooldown
 		//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
 		//10: +20 Movement Speed / +1.75 Mana Regen
 		"DOTA_Tooltip_Ability_special_bonus_itachi_1"						"+2.5s Tskuyomi Slow Duration"
 		"DOTA_Tooltip_Ability_special_bonus_itachi_2"						"-3s Crow Genjutsu Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_itachi_3"						"+1.50s Tsukyomi Stun"
-		"DOTA_Tooltip_Ability_special_bonus_itachi_4"						"+225 Amaterasu Spread AOE"
+		"DOTA_Tooltip_Ability_special_bonus_itachi_4"						"+225 Amateratsu Spread AOE"
 
 
 		//25: +170 Water Needles Damage / +18 Ice Mirror Damage
@@ -2179,15 +2237,15 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
 
-		//25: +175 Hidden Mist AoE / -1.5s Weak Spot Cooldown
-		//20: +100% Cleave / -3 Armor Track
-		//15: +300 Stealth Cast Range / +35% Hidden Mist Miss Chance
-		//10: +175 Health / +20 Movement Speed
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_1"						"+300 Stealth Cast Range"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_2"						"+35% Hidden Mist Miss Chance"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_3"						"-3 Armor Track"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"+175 Hidden Mist AoE"
-		"DOTA_Tooltip_Ability_special_bonus_zabuza_5"						"-1.5s Weak Spot Cooldown"
+		//25: +60 Damage Inside Hidden Mist / +100% Cleave
+		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay
+		//15: -2s Executioner Cooldown / +275 Health
+		//10: +20 Attack Speed / +300 Water Dragon Projectile Speed
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_1"						"+300 Water Dragon Projectile Speed"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_2"						"-2s Executioner Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_3"						"+7% Executioner Health Threshold"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_4"						"-0.8s Hidden Mist Fade Delay"
+		"DOTA_Tooltip_Ability_special_bonus_zabuza_5"						"+60 Damage Inside Hidden Mist"
 
 
 		//25: +100 Susano’o Damage / +1.00s Fire Annihilation Stun
@@ -2200,6 +2258,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_madara_4"						"+160 Damage Fire Annihilation Explosion"
 		"DOTA_Tooltip_Ability_special_bonus_madara_5"						"+100 Susano’o Damage"
 		"DOTA_Tooltip_Ability_special_bonus_madara_6"						"+1.00s Fire Annihilation Stun"
+		"DOTA_Tooltip_Ability_special_bonus_madara_second_meteor"			"Heaven Concealed: Summons a second Meteor"
 
 		//25: +600 Sand Burial Range / +380 Sand Coffin Damage
 		//20: +225 Cast Range / +80 Sand Tsunami Radius
@@ -2222,17 +2281,17 @@
 		"DOTA_Tooltip_Ability_special_bonus_yondaime_5"						"-4s Body Flicker Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_yondaime_6"						"+80% Rasengan Critical Damage"
 
-		//25: +320 Rasenshuriken Damage / -5s Bunshin Rasengan Cooldown
+		//25: +320 Rasenshuriken Damage / -4s Bunshin Rasengan Cooldown
 		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 		//10: +5 All Stats / +200 Bunshin Swap Range
-		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Bunshin Swap Range"
-		"DOTA_Tooltip_Ability_special_bonus_naruto_2"						"-2s Bunshin Swap Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_naruto_3"						"+90 Bunshin Rasengan Damage"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Clone Swap Range"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_2"						"-2s Clone Swap Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_3"						"+90 Clone Rasengan Damage"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_4"						"+4.5s Frog Kata Duration"
-		"DOTA_Tooltip_Ability_special_bonus_naruto_5"						"+13% Bunshin Damage"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_5"						"+13% Clone Damage"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_6"						"+320 Rasenshuriken Damage"
-		"DOTA_Tooltip_Ability_special_bonus_naruto_7"						"-5s Bunshin Rasengan Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_7"						"-4s Clone Rasengan Cooldown"
 
 		//25: 25% Cooldown Reduction / +420 Raikiri Damage
 		//20: + 325 Tracking Fang Range / -8s Kage Bunshin Cooldown
@@ -2255,14 +2314,14 @@
 		"DOTA_Tooltip_Ability_special_bonus_anko_5"						"-4s Giant Snake Cooldown"
 
 
-		//25: +3 Power of Youth Max Stacks / +550 Dynamic Entry Range
-		//20: +40 Sixth Gate Movement Speed / +35% Gouken Critical Damage
-		//15: +35% Dynamic Entry Miss Chance/ +15% Lifesteal
-		//10: +15 Damage / +200 Health
-		"DOTA_Tooltip_Ability_special_bonus_guy_1"						"+35% Dynamic Entry Miss Chance"
-		"DOTA_Tooltip_Ability_special_bonus_guy_2"						"+40 Sixth Gate Movement Speed"
-		"DOTA_Tooltip_Ability_special_bonus_guy_3"						"+35% Gouken Critical Damage"
-		"DOTA_Tooltip_Ability_special_bonus_guy_4"						"+3 Power of Youth Max Stacks"
+		//25: +550 Dynamic Entry Range / Gain Morning Peacock in Sixth Gate
+		//20: +50 Sixth Gate Movement Speed / -0.2 Sixth Gate Base Attack Time
+		//15: 15% Lifesteal / +35% Whirlwind Attack Damage
+		//10: +200 Health / +15 Damage
+		"DOTA_Tooltip_Ability_special_bonus_guy_1"						"+35% Whirlwind Attack Damage"
+		"DOTA_Tooltip_Ability_special_bonus_guy_2"						"-0.2 Sixth Gate Base Attack Time"
+		"DOTA_Tooltip_Ability_special_bonus_guy_3"						"+50 Sixth Gate Movement Speed"
+		"DOTA_Tooltip_Ability_special_bonus_guy_4"						"Gain Morning Peacock in Sixth Gate"
 		"DOTA_Tooltip_Ability_special_bonus_guy_5"						"+550 Dynamic Entry Range"
 
 
@@ -2300,16 +2359,16 @@
 		"DOTA_Tooltip_Ability_special_bonus_kankuro_6"						"+350 Puppet Technique Health"
 		"DOTA_Tooltip_Ability_special_bonus_kankuro_7"						"+225 Karasu Attack Damage"
 
-		//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
-		//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
-		//15: -2s Explosive Kunai Cooldown / +100 Cast Range
-		//10: +175 Health / +140 Shadow Bind Total Damage
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"+50 Shadow Bind Damage per Second"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"-2s Explosive Kunai Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"+2 Meditation Armor and Duration"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"+2s Shadow Bind Duration"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"+240 Explosive Kunai Damage"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"-45s Tentacles Cooldown"
+		//25: +3 Tag Traps / +300 Radius Shadow Stitching Radius
+		//20: +175 Flash Bomb Damage / +1s Shadow Imitation Duration
+		//15: -3s Shadow Imitation Cooldown / +100 Cast Range
+		//10: +175 Health / +0.5s Shadow Stitching Duration
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"+0.5s Shadow Stitching Duration"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"-3s Shadow Imitation Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"+175 Flash Bomb Damage"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"+1s Shadow Imitation Duration"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"+3 Tag Traps"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"+300 Radius Shadow Stitching Radius"
 
 
 		//25: 45/3% Sheer Wind per Stack / +3s Wind Scythe Lift Duration
@@ -2334,16 +2393,16 @@
 		"npc_dota_hero_yondaime_npedesc1"	"Eliminates enemies in a flash through the use of Marked Kunais. "
 		"npc_dota_hero_itachi_npedesc1"		"Slippery hybrid damage dealer wielding the Mangekyo Sharingan."
 		"npc_dota_hero_guy_npedesc1"		"Brawls with opponents using powerful combo based Taijutsu."
-		"npc_dota_hero_onoki_npedesc1"		"Rock hard melee support that buffs allies while debuffing foes."
+		"npc_dota_hero_onoki_npedesc1"		"Melee support that buffs allies while debuffing foes."
 		"npc_dota_hero_zabuza_npedesc1"		"Hunts down and eliminates targets with guaranteed critical strikes."
-		"npc_dota_hero_temari_npedesc1"		"Unleashes the power of wind to send enemies flying."
+		"npc_dota_hero_temari_npedesc1"		"Builds momentum by casting powerful ranged Wind Techniques."
 		"npc_dota_hero_shikamaru_npedesc1"	"Cunning strategist adept at disabling enemies and supporting allies."
 		"npc_dota_hero_hidan_npedesc1"		"High health tank who shares pain with his victims."
 		"npc_dota_hero_kisame_npedesc1"		"Steals mana with Samehada to fuel his various Water Release techniques."
 		"npc_dota_hero_neji_npedesc1"		"Far-seeing initiator that is able to disrupt and lockdown foes."
 		"npc_dota_hero_madara_npedesc1"		"Powerful melee hero who burns down forests as well as creates them."
-		"npc_dota_hero_raikage_npedesc1"		"Durable initiator that cripples foes with his Lightning Release enhancements."
-		"npc_dota_hero_kankuro_npedesc1"		"Summons puppets to disable his foes and protect his allies."
+		"npc_dota_hero_raikage_npedesc1"	"Durable initiator that cripples foes with his Lightning Release enhancements."
+		"npc_dota_hero_kankuro_npedesc1"	"Summons puppets to disable his foes and protect his allies."
 		"npc_dota_hero_gaara_npedesc1"		"Crushes enemies with waves of damage dealing sand attacks."
 		"npc_dota_hero_haku_npedesc1"		"Ranged support that cripples enemies with unrelenting hails of needles."
 		

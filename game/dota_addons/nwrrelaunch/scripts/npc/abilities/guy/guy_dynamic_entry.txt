@@ -3,106 +3,65 @@
 {
     
 "guy_dynamic_entry"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/guy/dynamic_entry.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"FightRecapLevel"				"1"
-	"AbilityTextureName"			"guy_dynamic_entry"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
 	{
-				"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
-		        "particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
-		        "particle"  "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"
-		        "soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
-		        "particle"  "particles/econ/items/brewmaster/brewmaster_offhand_elixir/brewmaster_thunder_clap_elixir.vpcf"
-		        
-	}	
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"475 525 575 625"
-	"AbilityCastPoint"				"0.25 0.25 0.25"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30 24 18 12"
-
-	//Damage
-	"AbilityDamage"					"60 80 100 120"
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"70"		
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guy/guy_dynamic_entry"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"guy_dynamic_entry"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500 550 600 650"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 15 14 13"
+	
+		//Damage
+		"AbilityDamage"					"90 150 210 270"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70"		
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"						"FIELD_FLOAT"
-			"miss_chance"					"20 28 36 44"
-			"LinkedSpecialBonus"			"special_bonus_guy_1"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"duration"						"10"
-		}
-
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range"			"475 525 575 625"
-		}
-
-	}
-
-	"Modifiers"
-	{
-		"modifier_guy_dynamic_entry_miss"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%duration"
-			"EffectName"    "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
-			"EffectAttachType"  "follow_origin"
-      
-			"StatusEffectName"		"particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"     
-			"StatusEffectPriority"  "10"
-			"Properties"
+			"01"
 			{
-				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance"
+				"var_type"						"FIELD_FLOAT"
+				"ms_slow"						"-25"
 			}
-
-		}
-
-
-		"modifier_guy_dynamic_entry_miss_special"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%duration"
-			"EffectName"    "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf"
-			"EffectAttachType"  "follow_origin"
-      
-			"StatusEffectName"		"particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf"     
-			"StatusEffectPriority"  "10"
-			"Properties"
+			"02"
 			{
-				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance_special"
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"1 1.5 2 2.5"
 			}
-			
-
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ms_slow_ulti"						"-35"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cast_range_ulti"				"750 800 850 900"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cast_range"				"500 550 600 650"
+			}
+	
 		}
 	}
-}
 
 }

@@ -21,6 +21,8 @@
 	"precache"
 	{
 		"soundfile"			"soundevents/heroes/naruto/naruto_bunshin_rasengan_cast.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_bunshin_rasengan_cast_talking.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_bunshin_rasengan_fire.vsndevts"
 		"particle"			"particles/units/heroes/naruto/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 	}
@@ -36,7 +38,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"80 100 120 140"
+	"AbilityManaCost"				"80 90 100 110"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -80,7 +82,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 70 90 110"
+			"damage"				"90 140 190 240"
 			"LinkedSpecialBonus"	"special_bonus_naruto_3"
 		}
 
@@ -101,6 +103,15 @@
 	    }
 	  }
 
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"naruto_bunshin_rasengan_cast"
+			"Target"		"CASTER"
+		}
+	}
+
 	"OnSpellStart"
 	{
 		"RemoveModifier"
@@ -111,7 +122,13 @@
 
 		"FireSound"
 		{
-			"EffectName"	"naruto_bunshin_rasengan_cast"
+			"EffectName"	"naruto_bunshin_rasengan_fire"
+			"Target"		"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"naruto_bunshin_rasengan_cast_talking"
 			"Target"		"CASTER"
 		}
 	

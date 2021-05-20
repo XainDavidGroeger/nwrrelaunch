@@ -116,10 +116,13 @@ function LevelUpAbility( event )
 	-- The ability to level up
 	local ability_name = event.ability_name
 	local ability_handle = caster:FindAbilityByName(ability_name)	
-	local ability_level = ability_handle:GetLevel()
-
-	-- Check to not enter a level up loop
-	if ability_level ~= this_abilityLevel then
-		ability_handle:SetLevel(this_abilityLevel)
+	
+	if ability_handle ~= nil then
+	    local ability_level = ability_handle:GetLevel()
+        
+	    -- Check to not enter a level up loop
+	    if ability_level ~= this_abilityLevel then
+	    	ability_handle:SetLevel(this_abilityLevel)
+	    end
 	end
 end

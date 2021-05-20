@@ -23,7 +23,7 @@
       "Ability13"		"special_bonus_temari_2"
 
       "Ability14"		"special_bonus_cast_range_200"
-      "Ability15"		"special_bonus_temari_3"
+      "Ability15"		"special_bonus_attack_range_100"
 
       "Ability16"		"special_bonus_temari_4"
       "Ability17"		"special_bonus_temari_5"
@@ -37,7 +37,7 @@
       { }
 		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
 
-    	"ProjectileModel"   "particles/units/heroes/temari/temari_base_attack_core.vpcf"
+    	"ProjectileModel"   "particles/units/heroes/temari/temari_base_attack_new.vpcf"
   		"ProjectileSpeed"  "1200"
 
     //Picking Screen

@@ -1,103 +1,53 @@
 	
     "DOTAAbilities"
 {
-    
 
-"kisame_samehada"
-{
-    // General  
-    // ----------------------------------------------------------------------------------------
-    "BaseClass"                 "ability_datadriven"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"        "kisame_samehada"
-
-
-    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
-    "MaxLevel"               "4"
-
-
-    // Casting
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"              "0"
-    "AbilityDuration"               "0"
-
-
-    // Time     
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "23 18 12 7"
-
-    // Cost
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"               "0"
-
-
-     "precache"
+    "kisame_samehada"
     {
-
-      "particle"  "particles/generic_gameplay/generic_manaburn.vpcf"
-      "soundfile"   "soundevents/kisame_samehada_trigger.vsndevts"
-
-    }
-
-    "AbilitySpecial"
-    {
-        "01"
-        { 
-            "var_type"  "FIELD_FLOAT"
-            "manasteal_percentage" "8.0 12.0 16.0 20.0"
-			"LinkedSpecialBonus"	"special_bonus_kisame_3"
-        }
-    }
+        // General  
+        // ----------------------------------------------------------------------------------------
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/kisame/kisame_samehada.lua"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+        "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"        "kisame_samehada"
 
 
-    "Modifiers"
-    {
-        "modifier_samehada"
+        "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+        "MaxLevel"               "4"
+
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityDuration"               "0"
+
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "23 18 12 7"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
         {
-            "Passive"                   "1"
-            "IsHidden"                  "0"
-            "IsPurgable"                "0"
-            
-            "OnCreated"
-            {
-                "FireEffect"
-                {
-                    //TODO find a fitting sound
-                    //"Target"            "CASTER" 
-                    //"EffectName"        "Hero_Kunkaa.Tidebringer"
-                }
-            
-                "AttachEffect"
-                {
-                   //TODO
-                }
-
+            "01"
+            { 
+                "var_type"  "FIELD_FLOAT"
+                "manasteal_percentage" "5.0 9.0 13.0 17.0"
+                "LinkedSpecialBonus"	"special_bonus_kisame_3"
             }
 
-            "OnAttackLanded"
-            {
-               
-
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/kisame/samehada.lua"
-                    "Function"      "StealMana"
-                }
-                        
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/kisame/samehada.lua"
-                    "Function"      "SamehadaResetCooldown"
-                }
+            "02"
+            { 
+                "var_type"  "FIELD_FLOAT"
+                "bonus_attack_damage" "40"
             }
-            
         }
 
-
     }
-
-}
 
 }

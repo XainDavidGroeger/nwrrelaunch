@@ -5,7 +5,7 @@
 		//25: +325 Self Pain Damage / +15% Jashin's Blessing Heal
 		//20: +70 Taunt AoE / +20 Strength
 		//15: +30 Attack Damage / +25 Movement Speed
-		//10: +1.75 MP Regeneration / +5 HP Regeneration
+		//10: +75 Cull the Weak Cast Range / +5 HP Regeneration
 		"npc_dota_hero_hidan" //hidan
 		{
 		"BaseClass"   "npc_dota_hero_doom_bringer"
@@ -27,7 +27,7 @@
 		"Ability4"        "hidan_self_pain"
 		"Ability5"        "generic_hidden"
 		"Ability6"        "hidan_death_possession_blood"
-		"Ability10"		"special_bonus_mp_regen_175"
+		"Ability10"		"special_bonus_hidan_4"
 		   "Ability11"		"special_bonus_hp_regen_5"
 		   "Ability12"		"special_bonus_attack_damage_30"
 		   "Ability13"		"special_bonus_movement_speed_25"

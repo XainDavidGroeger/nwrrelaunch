@@ -44,7 +44,7 @@ function temari_kuchiyose_kirikiri_mai_on_spell_start(keys)
 
 		local projectile_information =  
 		{
-			EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+			EffectName = "particles/units/heroes/temari/temari_tornado.vpcf",
 			Ability = emp_unit_ability,
 			vSpawnOrigin = caster_origin,
 			fDistance = tornado_travel_distance,
@@ -140,11 +140,11 @@ function temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit(keys)
 	local burst_damage = ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1)
 
 	DebugPrint(burst_damage)
-	local ability3 = REALCASTER:FindAbilityByName("special_bonus_temari_3")
+	-- local ability3 = REALCASTER:FindAbilityByName("special_bonus_temari_3")
 
-	if ability3:IsTrained() then
-		burst_damage = burst_damage + 60
-	end
+	-- if ability3:IsTrained() then
+	-- 	burst_damage = burst_damage + 60
+	-- end
 
 	keys.target:EmitSound("Hero_Invoker.Tornado.Target")
 	DebugPrint(burst_damage)

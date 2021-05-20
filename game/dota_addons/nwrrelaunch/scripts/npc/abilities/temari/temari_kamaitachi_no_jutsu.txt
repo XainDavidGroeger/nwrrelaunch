@@ -23,11 +23,14 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"900 1100 1300 1500"
 	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-	"AbilityCooldown"				"18"
+	"AbilityCooldown"				"15 14 13 12"
 	"AbilityManaCost"				"120 130 140 150"
 	
 	"precache"
 	{
+
+		"soundfile"			"soundevents/heroes/temari/temari_w_talking.vsndevts"
+
 		"particle"			"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
 		"particle"			"particles/units/heroes/hero_invoker/invoker_tornado_child.vpcf"
 	}
@@ -92,6 +95,12 @@
 	
 	"OnSpellStart"
 	{
+
+		"FireSound"
+		{
+			"EffectName"	"temari_w_talking"
+			"Target"		"CASTER"
+		}
 
 		"RunScript"
 		{

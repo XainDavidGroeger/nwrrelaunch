@@ -7,28 +7,27 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_attack_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_attack_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_attack_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_attack_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_attack_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_attack_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_attack_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_attack_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_attack_09.vsnd"
-							"value9"		"sounds/vo/dragon_knight/drag_attack_10.vsnd"
+							"value0"		"sounds/vo/naruto/attack_01.vsnd"
+							"value1"		"sounds/vo/naruto/attack_02.vsnd"
+							"value2"		"sounds/vo/naruto/attack_03.vsnd"
+							"value3"		"sounds/vo/naruto/attack_04.vsnd"
+							"value4"		"sounds/vo/naruto/attack_05.vsnd"
+							"value5"		"sounds/vo/naruto/attack_06.vsnd"
+							"value6"		"sounds/vo/naruto/attack_07.vsnd"
+							"value7"		"sounds/vo/naruto/attack_08.vsnd"
+							"value8"		"sounds/vo/naruto/attack_09.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -48,31 +47,30 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_move_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_move_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_move_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_move_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_move_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_move_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_move_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_move_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_move_09.vsnd"
-							"value9"		"sounds/vo/dragon_knight/drag_move_10.vsnd"
-							"value10"		"sounds/vo/dragon_knight/drag_move_11.vsnd"
-							"value11"		"sounds/vo/dragon_knight/drag_move_12.vsnd"
-							"value12"		"sounds/vo/dragon_knight/drag_move_13.vsnd"
+							"value0"		"sounds/vo/naruto/move_01.vsnd"
+							"value1"		"sounds/vo/naruto/move_02.vsnd"
+							"value2"		"sounds/vo/naruto/move_03.vsnd"
+							"value3"		"sounds/vo/naruto/move_04.vsnd"
+							"value4"		"sounds/vo/naruto/move_05.vsnd"
+							"value5"		"sounds/vo/naruto/move_06.vsnd"
+							"value6"		"sounds/vo/naruto/move_07.vsnd"
+							"value7"		"sounds/vo/naruto/move_08.vsnd"
+							"value8"		"sounds/vo/naruto/move_09.vsnd"
+							"value9"		"sounds/vo/naruto/move_10.vsnd"
+							"value10"		"sounds/vo/naruto/move_11.vsnd"
+							"value11"		"sounds/vo/naruto/move_12.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -92,26 +90,29 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_pain_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_pain_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_pain_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_pain_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_pain_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_pain_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_pain_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_pain_08.vsnd"
+							"value0"		"sounds/vo/naruto/pain_01.vsnd"
+							"value1"		"sounds/vo/naruto/pain_02.vsnd"
+							"value2"		"sounds/vo/naruto/pain_03.vsnd"
+							"value3"		"sounds/vo/naruto/pain_04.vsnd"
+							"value4"		"sounds/vo/naruto/pain_05.vsnd"
+							"value5"		"sounds/vo/naruto/pain_06.vsnd"
+							"value6"		"sounds/vo/naruto/pain_07.vsnd"
+							"value7"		"sounds/vo/naruto/pain_08.vsnd"
+							"value8"		"sounds/vo/naruto/pain_09.vsnd"
+							"value9"		"sounds/vo/naruto/pain_10.vsnd"
+							"value10"		"sounds/vo/naruto/pain_11.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -131,30 +132,22 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_death_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_death_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_death_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_death_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_death_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_death_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_death_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_death_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_death_09.vsnd"
-							"value9"		"sounds/vo/dragon_knight/drag_death_10.vsnd"
-							"value10"		"sounds/vo/dragon_knight/drag_death_11.vsnd"
-							"value11"		"sounds/vo/dragon_knight/drag_death_12.vsnd"
+							"value0"		"sounds/vo/naruto/death_01.vsnd"
+							"value1"		"sounds/vo/naruto/death_02.vsnd"
+							"value2"		"sounds/vo/naruto/death_03.vsnd"
+							"value3"		"sounds/vo/naruto/death_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -174,28 +167,35 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_respawn_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_respawn_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_respawn_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_respawn_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_respawn_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_respawn_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_respawn_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_respawn_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_respawn_09.vsnd"
-							"value9"		"sounds/vo/dragon_knight/drag_respawn_10.vsnd"
+							"value0"		"sounds/vo/naruto/respawn_01.vsnd"
+							"value1"		"sounds/vo/naruto/respawn_02.vsnd"
+							"value2"		"sounds/vo/naruto/respawn_03.vsnd"
+							"value3"		"sounds/vo/naruto/respawn_04.vsnd"
+							"value4"		"sounds/vo/naruto/respawn_05.vsnd"
+							"value5"		"sounds/vo/naruto/respawn_06.vsnd"
+							"value6"		"sounds/vo/naruto/respawn_07.vsnd"
+							"value7"		"sounds/vo/naruto/respawn_08.vsnd"
+							"value8"		"sounds/vo/naruto/respawn_09.vsnd"
+							"value9"		"sounds/vo/naruto/respawn_10.vsnd"
+							"value10"		"sounds/vo/naruto/respawn_11.vsnd"
+							"value11"		"sounds/vo/naruto/respawn_12.vsnd"
+							"value12"		"sounds/vo/naruto/respawn_13.vsnd"
+							"value13"		"sounds/vo/naruto/respawn_14.vsnd"
+							"value14"		"sounds/vo/naruto/respawn_15.vsnd"
+							"value15"		"sounds/vo/naruto/respawn_16.vsnd"
+							"value16"		"sounds/vo/naruto/respawn_17.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -215,22 +215,22 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_spawn_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_spawn_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_spawn_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_spawn_04.vsnd"
+							"value0"		"sounds/vo/naruto/spawn_01.vsnd"
+							"value1"		"sounds/vo/naruto/spawn_02.vsnd"
+							"value2"		"sounds/vo/naruto/spawn_03.vsnd"
+							"value3"		"sounds/vo/naruto/spawn_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -250,31 +250,32 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_kill_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_kill_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_kill_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_kill_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_kill_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_kill_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_kill_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_kill_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_kill_09.vsnd"
-							"value9"		"sounds/vo/dragon_knight/drag_kill_10.vsnd"
-							"value10"		"sounds/vo/dragon_knight/drag_kill_11.vsnd"
-							"value11"		"sounds/vo/dragon_knight/drag_kill_12.vsnd"
-							"value12"		"sounds/vo/dragon_knight/drag_kill_13.vsnd"
+							"value0"		"sounds/vo/naruto/kill_01.vsnd"
+							"value1"		"sounds/vo/naruto/kill_02.vsnd"
+							"value2"		"sounds/vo/naruto/kill_03.vsnd"
+							"value3"		"sounds/vo/naruto/kill_04.vsnd"
+							"value4"		"sounds/vo/naruto/kill_05.vsnd"
+							"value5"		"sounds/vo/naruto/kill_06.vsnd"
+							"value6"		"sounds/vo/naruto/kill_07.vsnd"
+							"value7"		"sounds/vo/naruto/kill_08.vsnd"
+							"value8"		"sounds/vo/naruto/kill_09.vsnd"
+							"value9"		"sounds/vo/naruto/kill_10.vsnd"
+							"value10"		"sounds/vo/naruto/kill_11.vsnd"
+							"value11"		"sounds/vo/naruto/kill_12.vsnd"
+							"value12"		"sounds/vo/naruto/kill_13.vsnd"
+							"value13"		"sounds/vo/naruto/kill_14.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -294,19 +295,19 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_firstblood_01.vsnd"
+							"value0"		"sounds/vo/naruto/kill_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -326,24 +327,23 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_lasthit_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_lasthit_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_lasthit_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_lasthit_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_lasthit_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_lasthit_06.vsnd"
+							"value0"		"sounds/vo/naruto/lasthit_01.vsnd"
+							"value1"		"sounds/vo/naruto/lasthit_02.vsnd"
+							"value2"		"sounds/vo/naruto/lasthit_03.vsnd"
+							"value3"		"sounds/vo/naruto/lasthit_04.vsnd"
+							"value4"		"sounds/vo/naruto/lasthit_05.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -370,20 +370,15 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_deny_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_deny_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_deny_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_deny_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_deny_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_deny_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_deny_07.vsnd"
-							"value7"		"sounds/vo/dragon_knight/drag_deny_08.vsnd"
-							"value8"		"sounds/vo/dragon_knight/drag_deny_09.vsnd"
+							"value0"		"sounds/vo/naruto/deny_01.vsnd"
+							"value1"		"sounds/vo/naruto/deny_02.vsnd"
+							"value2"		"sounds/vo/naruto/deny_03.vsnd"
+							"value3"		"sounds/vo/naruto/deny_04.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -403,25 +398,35 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_level_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_level_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_level_03.vsnd"
-							"value3"		"sounds/vo/dragon_knight/drag_level_04.vsnd"
-							"value4"		"sounds/vo/dragon_knight/drag_level_05.vsnd"
-							"value5"		"sounds/vo/dragon_knight/drag_level_06.vsnd"
-							"value6"		"sounds/vo/dragon_knight/drag_level_07.vsnd"
+							"value0"		"sounds/vo/naruto/level_01.vsnd"
+							"value1"		"sounds/vo/naruto/level_02.vsnd"
+							"value2"		"sounds/vo/naruto/level_03.vsnd"
+							"value3"		"sounds/vo/naruto/level_04.vsnd"
+							"value4"		"sounds/vo/naruto/level_05.vsnd"
+							"value5"		"sounds/vo/naruto/level_06.vsnd"
+							"value6"		"sounds/vo/naruto/level_07.vsnd"
+							"value7"		"sounds/vo/naruto/level_08.vsnd"
+							"value8"		"sounds/vo/naruto/level_09.vsnd"
+							"value9"		"sounds/vo/naruto/level_10.vsnd"
+							"value10"		"sounds/vo/naruto/level_11.vsnd"
+							"value11"		"sounds/vo/naruto/level_12.vsnd"
+							"value12"		"sounds/vo/naruto/level_13.vsnd"
+							"value13"		"sounds/vo/naruto/level_14.vsnd"
+							"value14"		"sounds/vo/naruto/level_15.vsnd"
+							"value15"		"sounds/vo/naruto/level_16.vsnd"
+							"value16"		"sounds/vo/naruto/level_17.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}
@@ -441,21 +446,20 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_3d"
+				"reference_stack"		"dota_src1_2d"
 				"operator_variables"
 				{
 					"vsnd_files"
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/dragon_knight/drag_win_01.vsnd"
-							"value1"		"sounds/vo/dragon_knight/drag_win_02.vsnd"
-							"value2"		"sounds/vo/dragon_knight/drag_win_03.vsnd"
+							"value0"		"sounds/vo/naruto/win_01.vsnd"
+							"value1"		"sounds/vo/naruto/win_02.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
-					"pitch_rand_min"	{"value"	"-0.05000"}
-					"pitch_rand_max"	{"value"	"0.050000"}
+					"pitch_rand_min"	{"value"	"0.00000"}
+					"pitch_rand_max"	{"value"	"0.000000"}
 					"pitch"				{"value"	"1.000000"}
 					"soundlevel"		{"value"	"100.00000"}
 					"distance_max"		{"value"	"1600.000"}

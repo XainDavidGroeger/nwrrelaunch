@@ -1,5 +1,19 @@
 kakashi_doton = kakashi_doton or class({})
 
+function kakashi_doton:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/kakashi_dog_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_doton_cast_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf", context)
+	PrecacheResource("particle",   "particles/bloody_particle.vpcf.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/kakashi/doton_dog_summon.vpcf", context)
+
+	PrecacheResource("model",   "models/couriers/pakkun/pakkun.vmdl", context)
+	PrecacheResource("model",   "models/uhei/dog_uhei.vmdl", context)
+	PrecacheResource("model",   "models/guruko/dog_guruko.vmdl", context)
+end
+
 function kakashi_doton:GetAbilityTextureName()
 	return "kakashi_doton"
 end
@@ -18,19 +32,43 @@ function kakashi_doton:GetCastRange(location, target)
 	return self:GetSpecialValueFor("range") + castrangebonus
 end
 
+function kakashi_doton:CanBeReflected(bool, target)
+    if bool == true then
+        if target:TriggerSpellReflect(self) then return end
+    else
+        --[[ simulate the cancellation of the ability if it is not reflected ]]
+ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_reflect.vpcf", PATTACH_ABSORIGIN, target)
+        EmitSoundOn("DOTA_Item.AbyssalBlade.Activate", target)
+    end
+end
+
+function kakashi_doton:ProcsMagicStick()
+    return true
+end
+
 function kakashi_doton:OnSpellStart()
     self.caster = self:GetCaster()
     local caster = self.caster
     self.target = self:GetCursorTarget()
 	local target = self.target --for global variables and don't change all "target" to "self.target"
     self.ability = self
-    self.target:EmitSound("kakashi_dog_cast")
 	self.caster:EmitSound("kakashi_doton_cast_talking")
 	local damage = self.ability:GetSpecialValueFor("damage")
 	local rootDuration = self.ability:GetSpecialValueFor("stun_duration")
 	
+	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
+    if target:FindModifierByName("modifier_item_lotus_orb_active") then
+        self:CanBeReflected(false, target)
+        
+        return
+    end
+    
+    --[[ if the target has Linken's Sphere, cancels the use of the ability ]]
+    if target:TriggerSpellAbsorb(self) then return end
+	
+	self.target:EmitSound("kakashi_dog_cast")
+	
 	local forward = caster:GetForwardVector()
-
 	
 	target:AddNewModifier(caster, ability, "modifier_stunned", {duration = rootDuration})
 
@@ -85,29 +123,28 @@ function kakashi_doton:OnSpellStart()
 		end
 	end)
 
-	ParticleManager:DestroyParticle(pakkunSpawn_particle, true)
-	--ParticleManager:DestroyParticle(dogSides1_particle, true)
-	--ParticleManager:DestroyParticle(dogSides2_particle, true)
-	ParticleManager:ReleaseParticleIndex(pakkunSpawn_particle)
-	--ParticleManager:ReleaseParticleIndex(dogSides1_particle)
-	--ParticleManager:ReleaseParticleIndex(dogSides2_particle)
-	local blood_particle = ParticleManager:CreateParticle("particles/bloody_particle.vpcf", PATTACH_POINT, target)
-	ParticleManager:SetParticleControl(blood_particle, 4, target:GetAbsOrigin())
-	target:EmitSound("Hero_LifeStealer.consume")
-	
-	Timers:CreateTimer(0.5, function ()
-		dummy2:RemoveSelf()
-		dummy3:RemoveSelf()
+    Timers:CreateTimer(0.5, function ()
+	    ParticleManager:DestroyParticle(pakkunSpawn_particle, true)
+	    --ParticleManager:DestroyParticle(dogSides1_particle, true)
+	    --ParticleManager:DestroyParticle(dogSides2_particle, true)
+	    ParticleManager:ReleaseParticleIndex(pakkunSpawn_particle)
+	    --ParticleManager:ReleaseParticleIndex(dogSides1_particle)
+	    --ParticleManager:ReleaseParticleIndex(dogSides2_particle)
+	    self.blood_particle = ParticleManager:CreateParticle("particles/bloody_particle.vpcf", PATTACH_POINT, target)
+	    ParticleManager:SetParticleControl(self.blood_particle, 4, target:GetAbsOrigin())
+	    --target:EmitSound("Hero_LifeStealer.consume")
 	end)
 	
 
 	Timers:CreateTimer(1.0, function ()
-	local range = self:GetSpecialValueFor("range")
+		local range = self:GetSpecialValueFor("range")
 		local length = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
 		length = range - range * (length / range)
 		
-		ParticleManager:DestroyParticle(blood_particle, true)
-		ParticleManager:ReleaseParticleIndex(blood_particle)
-	 
+		ParticleManager:DestroyParticle(self.blood_particle, true)
+		ParticleManager:ReleaseParticleIndex(self.blood_particle)
+	    
+		dummy2:RemoveSelf()
+	    dummy3:RemoveSelf()
 	end)
 end

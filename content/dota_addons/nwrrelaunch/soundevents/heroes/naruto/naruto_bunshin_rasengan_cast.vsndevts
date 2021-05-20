@@ -14,12 +14,12 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/naruto/naruto_bunshinrasengan_cast.vsnd"
+                              "value0"        "sounds/heroes/naruto/naruto_bunshin_rasengan_cast.vsnd"
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "pitch_rand_min"    {   "value"     "-0.02000"  }
+                    "pitch_rand_max"    {   "value"     "0.020000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }
                     "distance_max"      {   "value"     "1600.000"  }

@@ -31,6 +31,10 @@ function PopupDamage(target, amount)
     PopupNumbers(target, "damage", Vector(255, 0, 0), 3.0, amount, nil, POPUP_SYMBOL_POST_DROP)
 end
 
+function PopupManaDrain(target, amount)
+    PopupNumbers(target, "damage", Vector(0, 176, 246), 1.0, amount, POPUP_SYMBOL_PRE_MINUS, nil)
+end
+
 -- e.g. when dealing critical damage
 function PopupCriticalDamage(target, amount)
     PopupNumbers(target, "crit", Vector(255, 0, 0), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)

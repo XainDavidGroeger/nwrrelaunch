@@ -2,17 +2,21 @@ LinkLuaModifier("modifier_haku_needles_thinker", "heroes/haku/needles", LUA_MODI
 
 haku_needles = haku_needles or class({})
 
+function haku_needles:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource("particle",   "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", context)
+end
+
 function haku_needles:OnAbilityPhaseStart()
-	local sound_name = "haku_needles"
-	local random = math.random(1, 2)
-
-	if random == 2 then
-		sound_name = "haku_needles_2"
-	end
-
-	self:GetCaster():EmitSound(sound_name)
-
 	return true
+end
+
+function haku_needles:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
+function haku_needles:ProcsMagicStick()
+    return true
 end
 
 function haku_needles:OnSpellStart()
@@ -34,7 +38,7 @@ function modifier_haku_needles_thinker:OnCreated()
 
 	self.wave_count = self:GetAbility():GetSpecialValueFor("wave_count")
 	self.damage = self:GetAbility():GetSpecialValueFor("wave_damage") + self:GetCaster():FindTalentValue("special_bonus_haku_4")
-
+	self:OnIntervalThink()
 	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("wave_interval"))
 end
 
@@ -86,10 +90,13 @@ function modifier_haku_needles_thinker:OnIntervalThink()
 				ability = self:GetAbility(),
 			})
 
-			local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
+			v:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_rooted", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
 
-			if woudns_ability:GetLevel() > 0 then  
-				woudns_ability:ApplyStacks(v, self:GetAbility():GetSpecialValueFor("endless_wounds_stacks"))
+			local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
+            if woudns_ability ~= nil then
+			    if woudns_ability:GetLevel() > 0 then  
+			    	woudns_ability:ApplyStacks(v, self:GetAbility():GetSpecialValueFor("endless_wounds_stacks"))
+			    end
 			end
 		end
 

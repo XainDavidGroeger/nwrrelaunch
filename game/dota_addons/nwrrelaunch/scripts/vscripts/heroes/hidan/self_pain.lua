@@ -11,8 +11,10 @@ function self_pain( keys )
 	local damage = ability:GetLevelSpecialValueFor("damage",ability:GetLevel() - 1)
 
 	local abilityS = caster:FindAbilityByName("special_bonus_hidan_2")
-	if abilityS:IsTrained() then
-		damage = damage + 225
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	damage = damage + 225
+	    end
 	end
 
 	local override_damage = false
@@ -78,8 +80,20 @@ function self_pain( keys )
 
 end
 
-
 hidan_self_pain = class({})
+
+function hidan_self_pain:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/heroes/hidan/hidan_self_pain_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/hidan_self_pain_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/hidan_self_pain_fire.vsndevts", context)
+
+	PrecacheResource("particle",   "particles/units/heroes/hidan/self_pain.vpcf", context)
+end
+
+function hidan_self_pain:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("hidan_self_pain_cast")
+	return true
+end
 
 function hidan_self_pain:OnSpellStart( event )
 	local caster = self:GetCaster()
@@ -87,9 +101,12 @@ function hidan_self_pain:OnSpellStart( event )
 	local talent_ability = caster:FindAbilityByName("special_bonus_hidan_2")
 
 	caster:EmitSound("hidan_self_pain_talking")
-
-	if talent_ability:IsTrained() then
-		local damage = damage + talent_ability:GetSpecialValueFor("value")
+	caster:EmitSound("hidan_self_pain_fire")
+	
+	if talent_ability ~= nil then
+	    if talent_ability:IsTrained() then
+	    	local damage = damage + talent_ability:GetSpecialValueFor("value")
+	    end
 	end
 
 	local vfx = ParticleManager:CreateParticle("particles/units/heroes/hidan/self_pain.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)

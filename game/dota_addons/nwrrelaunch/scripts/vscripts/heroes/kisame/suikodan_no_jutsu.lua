@@ -65,8 +65,10 @@ function suikodan_no_jutsu_apply_damage( keys )
 	local damage = ability:GetLevelSpecialValueFor("damage", (ability:GetLevel() - 1))
 
 	local ability1 = keys.caster:FindAbilityByName("special_bonus_kisame_1")
-	if ability1:IsTrained() then
-		damage = damage + 90
+	if ability1 ~= nil then
+	    if ability1:IsTrained() then
+	    	damage = damage + 90
+	    end
 	end
 
 	local damageTable = {
@@ -82,9 +84,11 @@ end
 function suikodan_no_jutsu_apply_armor_debuff( keys )
 	local ability = keys.ability
 	local ability5 = keys.caster:FindAbilityByName("special_bonus_kisame_5")
-	if ability5:IsTrained() then
-		ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor_special",{})
-	else
-		ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor",{})
+	if ability5 ~= nil then
+	    if ability5:IsTrained() then
+	    	ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor_special",{})
+	    else
+	    	ability:ApplyDataDrivenModifier(keys.caster,keys.target,"modifier_suikodan_no_jutsu_debuff_armor",{})
+	    end
 	end
 end

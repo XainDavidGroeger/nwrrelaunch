@@ -61,13 +61,7 @@
     			"damage_delay"	    "1.0"
     		}
     	}
-    
-    	"precache"
-    	{
-    		"soundfile"			"soundevents/heroes/onoki/onoki_ultimate_pulse.vsndevts"
-    		"soundfile"			"soundevents/heroes/onoki/onoki_ulti_talking.vsndevts"
-    		"particle"			"particles/units/heroes/onoki/onoki_kajutan_no_jutsu.vpcf"
-    	}
+
     }
 
 	}

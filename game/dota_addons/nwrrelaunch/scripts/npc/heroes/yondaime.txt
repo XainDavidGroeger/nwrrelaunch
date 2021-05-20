@@ -38,7 +38,7 @@
 	"Ability14"		"special_bonus_yondaime_4"
 	"Ability15"		"special_bonus_yondaime_5"
 
-	"Ability16"		"special_bonus_movement_speed_60"
+	"Ability16"		"special_bonus_yondaime_body_flicker_global"
 	"Ability17"		"special_bonus_yondaime_6"
 
 	"AttackDamageMin"	"21"

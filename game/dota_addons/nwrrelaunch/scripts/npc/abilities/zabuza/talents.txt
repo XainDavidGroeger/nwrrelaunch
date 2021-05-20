@@ -2,8 +2,6 @@
     "DOTAAbilities"
 {
     
-
-
 	//=================================================================================================================
 	// Zabuza Special Bonus
 	//=================================================================================================================
@@ -21,7 +19,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"zabuza_stealth"
+			"01" 	"zabuza_water_dragon_bullet"
 		}
 
 		// Special
@@ -46,7 +44,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"zabuza_kirigakure_no_jutsu"
+			"01" 	"zabuza_executioners_blade"
 		}
 
 		// Special
@@ -56,7 +54,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"35"
+				"value"					"-2"
 			}
 		}
 	}
@@ -71,7 +69,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"zabuza_track"
+			"01" 	"zabuza_executioners_blade"
 		}
 
 		// Special
@@ -81,7 +79,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"-3"
+				"value"					"7"
 			}
 		}
 	}
@@ -96,7 +94,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"zabuza_kirigakure_no_jutsu"
+			"01" 	"zabuza_kirigakure_no_jutsu_new"
 		}
 
 		// Special
@@ -105,8 +103,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"175"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"-0.8"
 			}
 		}
 	}
@@ -121,7 +119,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"zabuza_weak_spot"
+			"01" 	"zabuza_kirigakure_no_jutsu_new"
 		}
 
 		// Special
@@ -130,8 +128,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"value"					"-1.5"
+				"var_type"				"FIELD_INTEGER"
+				"value"					"60"
 			}
 		}
 	}

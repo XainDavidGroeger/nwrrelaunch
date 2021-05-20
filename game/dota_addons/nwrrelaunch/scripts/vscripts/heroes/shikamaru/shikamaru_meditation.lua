@@ -3,6 +3,9 @@ shikamaru_meditation = shikamaru_meditation or class({})
 LinkLuaModifier("modifier_meditation_negative", "heroes/shikamaru/shikamaru_meditation.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_meditation_positive", "heroes/shikamaru/shikamaru_meditation.lua", LUA_MODIFIER_MOTION_NONE)
 
+function shikamaru_meditation:ProcsMagicStick()
+    return true
+end
 
 function shikamaru_meditation:OnSpellStart()
 
@@ -26,9 +29,11 @@ function shikamaru_meditation:OnSpellStart()
 	)
 
 	local modifier_name_debuff = "modifier_meditation_negative"
-
-	if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3"):GetLevel() > 0 then
-		duration = duration + 2
+    local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	duration = duration + 2
+	    end
 	end
 
 	for _, unit in pairs(targets) do
@@ -67,11 +72,15 @@ function modifier_meditation_negative:OnCreated(keys)
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 	self.parent = self:GetParent()
+	
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3")
 
-	if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3"):GetLevel() > 0 then
-		self.stacks = (self.ability:GetSpecialValueFor("armor") + 2) * -1
-	else
-		self.stacks = self.ability:GetSpecialValueFor("armor") * -1
+    if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	self.stacks = (self.ability:GetSpecialValueFor("armor") + 2) * -1
+	    else
+	    	self.stacks = self.ability:GetSpecialValueFor("armor") * -1
+	    end
 	end
 
     -- Start interval
@@ -105,10 +114,14 @@ function modifier_meditation_positive:OnCreated(keys)
 	self.ability = self:GetAbility()
 	self.parent = self:GetParent()
 
-	if self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3"):GetLevel() > 0 then
-		self.stacks = self.ability:GetSpecialValueFor("armor") + 2 
-	else
-		self.stacks = self.ability:GetSpecialValueFor("armor")
+    local abilityS = self:GetCaster():FindAbilityByName("special_bonus_shikamaru_3")
+
+    if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	self.stacks = self.ability:GetSpecialValueFor("armor") + 2 
+	    else
+	    	self.stacks = self.ability:GetSpecialValueFor("armor")
+	    end
 	end
 
     -- Start interval

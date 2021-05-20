@@ -21,11 +21,12 @@ function applyArmorBuffDebuffModifiers ( keys )
 	local modifier_name_debuff = "modifier_meditation_negative"
 
 	local ability3 = caster:FindAbilityByName("special_bonus_shikamaru_3")
-	if ability3:IsTrained() then
-		modifier_name_debuff = "modifier_meditation_negative_special"
-		duration = duration + 2
+	if ability3 ~= nil then
+	    if ability3:IsTrained() then
+	    	modifier_name_debuff = "modifier_meditation_negative_special"
+	    	duration = duration + 2
+	    end
 	end
-
 
 	for _, unit in pairs(targets) do
 		ability:ApplyDataDrivenModifier(keys.caster, unit, modifier_name_debuff, {duration = duration})
@@ -46,9 +47,11 @@ function applyArmorBuffDebuffModifiers ( keys )
 	local modifier_name = "modifier_meditation_positive"
 
 	local ability3 = caster:FindAbilityByName("special_bonus_shikamaru_3")
-	if ability3:IsTrained() then
-		modifier_name = "modifier_meditation_positive_special"
-		duration = duration + 2
+	if ability3 ~= nil then
+	    if ability3:IsTrained() then
+	    	modifier_name = "modifier_meditation_positive_special"
+	    	duration = duration + 2
+	    end
 	end
 
 	for _, unit in pairs(friends) do

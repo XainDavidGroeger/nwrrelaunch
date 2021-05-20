@@ -18,7 +18,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"900"
+	"AbilityCastRange"				"1500"
 	"AbilityCastPoint"				"1.0 1.0 1.0 1.0"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range"					"900 900 900"
+			"range"					"1500 1500 1500"
 			"LinkedSpecialBonus"	"special_bonus_gaara_3"
 		}
 		"04"
@@ -70,20 +70,5 @@
 		}
 	}
 	
-	// Data driven
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"					"soundevents/heroes/gaara/gaara_burial_cast.vsndevts"
-		"soundfile"					"soundevents/heroes/gaara/gaara_burial_talking.vsndevts"
-		"soundfile"					"soundevents/heroes/gaara/gaara_burial_projectile.vsndevts"
-		"particle"					"particles/units/heroes/gaara/new_ulti/wave.vpcf"
-		"particle"					"particles/units/heroes/hero_jakiro/jakiro_dual_breath_fire.vpcf"
-		"particle"					"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
-		"particle"					"particles/items_fx/cyclone.vpcf"
-		"particle"					"particles/units/heroes/gaara/ulti/ulti_core.vpcf"
-		"particle"					"particles/units/heroes/gaara/ulti/ulti_building_wave.vpcf"
-	}
-
   }
 }
