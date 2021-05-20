@@ -356,6 +356,7 @@
 					m_Stops = [  ]
 				}
 			}
+			m_strShaderOverride = "Hero"
 		},
 	]
 }
