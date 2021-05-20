@@ -2,7 +2,7 @@
 
 Layer0
 {
-	shader "global_lit_simple.vfx"
+	shader "hero.vfx"
 
 	//---- Color ----
 	g_vColorTint "[0.658824 0.188235 0.109804 1.000000]"
