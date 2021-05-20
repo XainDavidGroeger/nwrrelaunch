@@ -18,6 +18,10 @@ function madara_wood_release:GetCooldown(level)
 	end
 end
 
+function madara_wood_release:GetAOERadius()
+	return (self:GetSpecialValueFor("radius") / 2) + 50
+end
+
 function madara_wood_release:ProcsMagicStick()
     return true
 end

@@ -3,7 +3,7 @@
     "shikamaru_explosive_tag_trap"{
         "BaseClass"		"ability_lua"
         "ScriptFile"    "heroes/shikamaru/explosive_tag_trap.lua"
-        "AbilityTextureName"		"ability_name"
+        "AbilityTextureName"		"shikamaru_explosive_tag_trap"
         "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
         "FightRecapLevel"				"1"
 

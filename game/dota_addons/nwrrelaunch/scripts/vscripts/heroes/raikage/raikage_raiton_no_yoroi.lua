@@ -9,6 +9,7 @@ function raikage_raiton_no_yoroi:Precache( context )
     PrecacheResource( "particle", "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", context )
     PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context )
     PrecacheResource( "particle", "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf", context )
+	PrecacheResource( "particle",  "particles/units/heroes/raikage/shield_explosion.vpcf", context )
 end
 
 function raikage_raiton_no_yoroi:GetBehavior()
@@ -50,6 +51,10 @@ function raikage_raiton_no_yoroi:OnToggle()
 	   if toggle == true then 
 		  raikage_raiton_no_yoroi:ToggleOn(caster, ability);
 	   else 
+			self.stream = ParticleManager:CreateParticle("particles/units/heroes/raikage/shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+			ParticleManager:SetParticleControl( self.stream, 0, self:GetCaster():GetAbsOrigin() )
+			ParticleManager:SetParticleControl( self.stream, 3, Vector(self.aoe,0,0) )
+
 		   applyAoeDamageSlow(caster, self.aoe, self.damage, self.duration, ability)
 		   caster:RemoveModifierByName("modifier_raikage_shield");
 	   end

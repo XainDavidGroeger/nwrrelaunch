@@ -2258,6 +2258,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_madara_4"						"+160 Damage Fire Annihilation Explosion"
 		"DOTA_Tooltip_Ability_special_bonus_madara_5"						"+100 Susano’o Damage"
 		"DOTA_Tooltip_Ability_special_bonus_madara_6"						"+1.00s Fire Annihilation Stun"
+		"DOTA_Tooltip_Ability_special_bonus_madara_second_meteor"			"Heaven Concealed: Summons a second Meteor"
 
 		//25: +600 Sand Burial Range / +380 Sand Coffin Damage
 		//20: +225 Cast Range / +80 Sand Tsunami Radius
@@ -2362,12 +2363,12 @@
 		//20: +175 Flash Bomb Damage / +1s Shadow Imitation Duration
 		//15: -3s Shadow Imitation Cooldown / +100 Cast Range
 		//10: +175 Health / +0.5s Shadow Stitching Duration
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"TEMP"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"TEMP"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"TEMP"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"TEMP"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"TEMP"
-		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"TEMP"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_1"						"+0.5s Shadow Stitching Duration"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_2"						"-3s Shadow Imitation Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_3"						"+175 Flash Bomb Damage"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_4"						"+1s Shadow Imitation Duration"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_5"						"+3 Tag Traps"
+		"DOTA_Tooltip_Ability_special_bonus_shikamaru_6"						"+300 Radius Shadow Stitching Radius"
 
 
 		//25: 45/3% Sheer Wind per Stack / +3s Wind Scythe Lift Duration
