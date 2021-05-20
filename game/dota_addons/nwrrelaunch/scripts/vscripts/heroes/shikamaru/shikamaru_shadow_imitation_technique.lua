@@ -1,9 +1,26 @@
 shikamaru_shadow_imitation_technique = class({})
+LinkLuaModifier( "modifier_generic_custom_indicator",
+				 "modifiers/modifier_generic_custom_indicator",
+				 LUA_MODIFIER_MOTION_BOTH )
+
 LinkLuaModifier( "modifier_shadow_imitation", "heroes/shikamaru/shikamaru_shadow_imitation_technique.lua" ,LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_shadow_imitation_caster", "heroes/shikamaru/shikamaru_shadow_imitation_technique.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 shikamaru_shadow_imitation_technique = shikamaru_shadow_imitation_technique or class({})
+
+function shikamaru_shadow_imitation_technique:Precache( context )
+    PrecacheResource( "particle", "particles/status_fx/status_effect_shaman_shackle.vpcf" , context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/shikamaru/shikamaru_shackle_aladeen.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/shikamaru/shikamaru_aladeen_rope_glow.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/shikamaru/shikamaru_spectral_test_tracking.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/raikage/range_finder_lariat.vpcf", context )
+
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_hold_cast.vsndevts", context )
+
+end
 
 function shikamaru_shadow_imitation_technique:ProcsMagicStick()
 	return true
@@ -18,6 +35,54 @@ function shikamaru_shadow_imitation_technique:GetCooldown(iLevel)
 	    end
 	end
 	return self.BaseClass.GetCooldown(self, iLevel) - cdrecution
+end
+
+
+function shikamaru_shadow_imitation_technique:CreateCustomIndicator()
+	local particle_cast = "particles/units/heroes/raikage/range_finder_lariat.vpcf"
+	self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+end
+
+function shikamaru_shadow_imitation_technique:UpdateCustomIndicator( loc )
+	-- get data
+	local origin = self:GetCaster():GetAbsOrigin()
+	local cast_range = self:GetSpecialValueFor("cast_range")
+	local width = self:GetCaster():GetPaddedCollisionRadius()
+
+
+	local distance = loc - self:GetCaster():GetAbsOrigin()
+	local distance_2d = distance:Length2D()
+	if distance_2d < cast_range then
+		cast_range = distance_2d
+	end
+
+	-- get direction
+	local direction = loc - origin
+	direction.z = 0
+	direction = direction:Normalized()
+
+	ParticleManager:SetParticleControl( self.effect_cast, 0, origin )
+	ParticleManager:SetParticleControl( self.effect_cast, 1, origin)
+	ParticleManager:SetParticleControl( self.effect_cast, 2, origin + direction*cast_range)
+	ParticleManager:SetParticleControl( self.effect_cast, 3, Vector(width, width, 0))
+	ParticleManager:SetParticleControl( self.effect_cast, 4, Vector(0, 255, 0)) --Color (green by default)
+	ParticleManager:SetParticleControl( self.effect_cast, 6, Vector(1,1,1)) --Enable color change
+end
+
+function shikamaru_shadow_imitation_technique:DestroyCustomIndicator()
+	ParticleManager:DestroyParticle( self.effect_cast, false )
+	ParticleManager:ReleaseParticleIndex( self.effect_cast )
+end
+
+function shikamaru_shadow_imitation_technique:CastFilterResultLocation(location)
+	if IsClient() then
+		if self.custom_indicator then
+			-- register cursor position
+			self.custom_indicator:Register( location )
+		end
+	end
+
+	return UF_SUCCESS
 end
 
 function shikamaru_shadow_imitation_technique:OnSpellStart()
@@ -78,6 +143,7 @@ function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation
 	self.caster:FadeGesture(ACT_DOTA_CHANNEL_ABILITY_1)
 	if hTarget ~= nil then
 		hTarget:Stop()
+		self.caster:EmitSound("shikamaru_hold_cast")
 		if hTarget:HasModifier("modifier_flash_bomb_debuff") then
 			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = (self.shadow_duration + 0.5)})
 		else
