@@ -62,19 +62,6 @@
 						[
 							{
 								m_influenceName = "root"
-								m_vTranslationOffset = [ -4.762094, -3.784076, -2.928587 ]
-								m_vRotationOffset = [ 0.0, -0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = true
-							},
-						]
-					},
-					{
-						m_name = "attach_hitloc"
-						m_influences = 
-						[
-							{
-								m_influenceName = "root"
 								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
 								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
 								m_flWeight = 1.0
