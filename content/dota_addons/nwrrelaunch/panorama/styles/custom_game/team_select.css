@@ -547,7 +547,7 @@ DOTAAvatarImage {
 }
 
 .TeamSelectPlayer.player_has_host_privileges #PlayerIsHostPanel {
-    visibility: visible;
+    visibility: collapse;
 }
 
 #PlayerName {
