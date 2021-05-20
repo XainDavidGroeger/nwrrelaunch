@@ -92,7 +92,7 @@
 }
 
 .player_has_host_privileges #ShuffleTeamAssignmentButton {
-    visibility: visible;
+    visibility: collapse;
 }
 
 #ShuffleTeamAssignmentButton Label {
@@ -128,6 +128,8 @@
     width: 400px;
     height: 100%;
     flow-children: down;
+    
+    visibility: collapse;
 }
 
 #GameInfoPanel {
@@ -303,7 +305,7 @@
 }
 
 .player_has_host_privileges #AutoAssignButton {
-    visibility: visible;
+    visibility: collapse;
 }
 
 #AutoAssignButton Label {
@@ -360,7 +362,7 @@
 }
 
 .player_has_host_privileges #LockAndStartButton {
-    visibility: visible;
+    visibility: collapse;
 }
 
 .teams_locked #LockAndStartButton {
@@ -401,7 +403,7 @@
 }
 
 .player_has_host_privileges.teams_locked #CancelAndUnlockButton {
-    visibility: visible;
+    visibility: collapse;
 }
 
 .TeamSelectTeam {
