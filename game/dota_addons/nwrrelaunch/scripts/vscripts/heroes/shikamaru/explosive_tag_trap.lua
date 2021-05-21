@@ -51,6 +51,8 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
                 trap_to_explode:FindModifierByName("modifier_shikamaru_explosive_tag_trap_active"):TriggerExplosion(nil)
             else
                 trap_tp_explode:ForceKill(false)
+				ParticleManager:DestroyParticle(self.sign_vfx, true)
+	            ParticleManager:ReleaseParticleIndex(self.sign_vfx)
             end
         end
     end
