@@ -27,6 +27,11 @@ function itachi_amateratsu:ProcsMagicStick()
     return true
 end
 
+function itachi_amateratsu:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("itachi_amaterasu_cast")
+	return true
+end
+
 function itachi_amateratsu:OnSpellStart()
 	if not IsServer() then return end
 

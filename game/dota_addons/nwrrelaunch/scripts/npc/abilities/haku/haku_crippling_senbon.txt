@@ -38,7 +38,12 @@
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
-	{
+	{	
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"range"					"600"
+		}
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -49,20 +54,10 @@
 			"var_type"				"FIELD_FLOAT"
 			"stun_duration"	"0.5"
 		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"	"80 110 140 170"
-		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"endless_wounds_stacks"	"9 10 11 12"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"range"					"600"
 		}
 	}
 }

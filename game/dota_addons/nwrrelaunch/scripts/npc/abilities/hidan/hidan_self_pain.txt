@@ -34,12 +34,6 @@
 			"damage"				"150 225 300"
 			"LinkedSpecialBonus"	"special_bonus_hidan_2"
 		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"150 225 300"
-			"LinkedSpecialBonus"	"special_bonus_hidan_2"
-		}
 	}
 }
 

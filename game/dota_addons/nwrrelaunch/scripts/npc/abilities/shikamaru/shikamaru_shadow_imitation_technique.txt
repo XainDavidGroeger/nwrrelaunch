@@ -33,12 +33,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"shadow_range"		"1100"
+				"shadow_range"		"1300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"shadow_speed"		"1450"
+				"shadow_speed"		"1300"
 			}
 			"03"
 			{

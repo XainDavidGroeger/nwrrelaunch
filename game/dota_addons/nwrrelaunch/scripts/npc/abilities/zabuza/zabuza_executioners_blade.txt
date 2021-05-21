@@ -15,6 +15,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	 {
+	  "soundfile" "soundevents/heroes/zabuza/zabuza_executioner_cast.vsndevts"
 	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
 	  "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
 	  "particle"	"particles/units/heroes/hero_bounty_hunter/status_effect_bounty_hunter_jinda_slow.vpcf"
@@ -34,7 +35,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_threshold"		"10 15 20 25"
+			"health_threshold"		"15 20 25 30"
 			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
 		}
 		"03"
@@ -56,6 +57,12 @@
 			{
 				"ModifierName"		"modifier_executioners_blade_crit_active"
 				"Target"			"CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"zabuza_executioner_cast"
+				"Target"		"CASTER"
 			}
 
 			"RunScript"

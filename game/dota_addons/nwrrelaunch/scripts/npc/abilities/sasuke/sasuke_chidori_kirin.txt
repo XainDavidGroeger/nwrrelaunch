@@ -22,7 +22,7 @@
     "AbilityCooldown"        "90"
     "AbilityManaCost"        "175 250 325"
     "AbilityCastRange"       "700 850 1000"
-    "AbilityDamage"          "150 250 350"
+    "AbilityDamage"          "250 325 400"
 
     "AbilitySpecial"
     {

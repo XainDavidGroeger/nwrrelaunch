@@ -42,7 +42,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"80 150 220 290"
+				"damage"		"85 150 215 280"
 				"LinkedSpecialBonus"	"special_bonus_kisame_1"
 			}	
 
@@ -51,20 +51,17 @@
 				"var_type"			"FIELD_INTEGER"
 				"ms_slow_percentage"	"-20"
 			}
-
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_duration"		"4 4 4 4"
-			}	
-
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"armor_debuff"			"-1 -2 -3 -4"
 				"LinkedSpecialBonus"	"special_bonus_kisame_5"
 			}	
-
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow_duration"		"4 4 4 4"
+			}	
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"

@@ -19,6 +19,8 @@ function shikamaru_shadow_imitation_technique:Precache( context )
 
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_hold_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_hold_impact.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_hold_talking.vsndevts", context )
 
 end
 
@@ -85,6 +87,12 @@ function shikamaru_shadow_imitation_technique:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function shikamaru_shadow_imitation_technique:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("shikamaru_hold_cast")
+	self:GetCaster():EmitSound("shikamaru_hold_talking")
+	return true
+end
+
 function shikamaru_shadow_imitation_technique:OnSpellStart()
 	
 	self.caster = self:GetCaster()
@@ -143,7 +151,7 @@ function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation
 	self.caster:FadeGesture(ACT_DOTA_CHANNEL_ABILITY_1)
 	if hTarget ~= nil then
 		hTarget:Stop()
-		self.caster:EmitSound("shikamaru_hold_cast")
+		hTarget:EmitSound("shikamaru_hold_impact")
 		if hTarget:HasModifier("modifier_flash_bomb_debuff") then
 			hTarget:AddNewModifier(self:GetCaster(), self, "modifier_shadow_imitation", {duration = (self.shadow_duration + 0.5)})
 		else
