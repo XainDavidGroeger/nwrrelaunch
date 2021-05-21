@@ -26,6 +26,7 @@
 		"particle"			"particles/units/heroes/hero_riki/riki_smokebomb.vpcf"
 		"particle"			"particles/units/heroes/hero_broodmother/broodmother_spin_web_cast.vpcf"
 		"soundfile"			"soundevents/heroes/zabuza/zabuza_mist_talking.vsndevts"
+		"soundfile"			"soundevents/heroes/zabuza/zabuza_mist_loop.vsndevts"
 	}
 		
 	// Special

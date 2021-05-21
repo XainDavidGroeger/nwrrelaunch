@@ -2,6 +2,7 @@ kakashi_doton = kakashi_doton or class({})
 
 function kakashi_doton:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/kakashi_dog_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/kakashi_fang_cast.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_doton_cast_talking.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts", context)
 
@@ -44,6 +45,11 @@ end
 
 function kakashi_doton:ProcsMagicStick()
     return true
+end
+
+function kakashi_doton:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("kakashi_fang_cast")
+	return true
 end
 
 function kakashi_doton:OnSpellStart()

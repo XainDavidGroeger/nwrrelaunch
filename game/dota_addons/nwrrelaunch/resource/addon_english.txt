@@ -756,13 +756,13 @@
 		"npc_dota_hero_itachi_lore"  									""
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"<b><font color='#B5B5B5'>Dust Crow Genjutsu</font></b>"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_cd_reduc"		"CD REDUCTION (TALENT): "
-		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Itachi instantly teleports</font></b> to the target point. <br><br> <b><font color='#B5B5B5'>A clone is left</font></b> at his original location after teleporting."
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Itachi instantly teleports</font></b> to the target point. <br><br> <b><font color='#B5B5B5'>A clone is placed</font></b> at his original location after teleporting."
 
 		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Tsukuyomi</font></b>"
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"<b><font color='#9C352C'>Stuns and deals Magic Damage</font></b> to the target enemy unit. <br><br> The enemy will have their <b><font color='#9C352C'>Movement Speed Slowed for a short period</font></b> after the Stun duration."
 
 		"DOTA_Tooltip_ability_itachi_sharingan"							"<b><font color='#E21C30'>Mangekyo Sharingan</font></b>"
-		"DOTA_Tooltip_ability_itachi_sharingan_description"				"Gives Itachi a chance to <b>Critical Strike</b> dealing <b><font color='#E21C30'>Magic Damage based on his Attack Damage.</font></b> <br><br> Triggering this attack will also <b><font color='#E21C30'>reduce the target's Magic Resistance</font></b> for a short period of time."
+		"DOTA_Tooltip_ability_itachi_sharingan_description"				"Gives Itachi a chance to <b>Critical Strike</b> dealing bonus <b><font color='#E21C30'>Magic Damage based on his Attack Damage.</font></b> <br><br> Triggering this attack will also <b><font color='#E21C30'>reduce the target's Magic Resistance</font></b> for a short period of time."
 
 
 		"DOTA_Tooltip_ability_itachi_amateratsu"						"<b><font color='#9A86AC'>Amaterasu</font></b>"
@@ -770,26 +770,26 @@
 
 
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_damage"					"DAMAGE: "
-		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_percent"			"%MOVEMENT SPEED SLOW: "
-		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_duration"			"MOVEMENT SPEED SLOW DURATION: "
-		"DOTA_Tooltip_ability_itachi_tsukiyomi_stun_duration"			"STUN DURATION: "
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_percent"			"%MOVEMENT SLOW: "
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_slow_duration"			"MOVEMENT SLOW DURATION: "
+		"DOTA_Tooltip_ability_itachi_tsukiyomi_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_cd_reduc"				"CD REDUCTION (TALENT): "
 
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_blink_range"			"RANGE: "
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_illusion_duration"		"BUNSHIN DURATION: "
 
 
-		"DOTA_Tooltip_ability_itachi_sharingan_chance"			"%PROC CHANCE: "
-		"DOTA_Tooltip_ability_itachi_sharingan_chance"			"%CRITICAL DAMAGE: "
+		"DOTA_Tooltip_ability_itachi_sharingan_chance"			"%CRITICAL CHANCE: "
+		"DOTA_Tooltip_ability_itachi_sharingan_crit_bonus"			"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_itachi_sharingan_duration"		"DEBUFF DURATION: "
-		"DOTA_Tooltip_ability_itachi_sharingan_mr_reduction"	"MR REDUCTION: "
+		"DOTA_Tooltip_ability_itachi_sharingan_mr_reduction"	"MAGIC RESISTANCE REDUCTION: "
 
 
 
 		"DOTA_Tooltip_ability_itachi_amateratsu_damage_factor"			"DAMAGE FACTOR: "
 		"DOTA_Tooltip_ability_itachi_amateratsu_damage"					"DAMAGE PER SECOND: "
 		"DOTA_Tooltip_ability_itachi_amateratsu_duration"				"DURATION: "
-		"DOTA_Tooltip_ability_itachi_amateratsu_spread_aoe"				"SPREAD AOE: "
+		"DOTA_Tooltip_ability_itachi_amateratsu_spread_aoe"				"SPREAD RADIUS: "
 
 		//--------------------
 		//Sasuke

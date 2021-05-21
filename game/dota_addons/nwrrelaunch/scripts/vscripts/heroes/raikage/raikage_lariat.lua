@@ -9,6 +9,7 @@ function raikage_lariat:Precache( context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/heroes/raikage/raikage_lariat_talking.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/heroes/raikage/raikage_lariat_impact.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/raikage/raikage_lariat_cast.vsndevts", context )
 
     PrecacheResource( "particle", "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf", context )
     PrecacheResource( "particle", "particles/units/heroes/raikage/lariat_aura.vpcf", context )
