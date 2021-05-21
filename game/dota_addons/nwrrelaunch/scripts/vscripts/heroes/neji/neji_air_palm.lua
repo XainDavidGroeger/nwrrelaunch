@@ -45,8 +45,8 @@ end
 		Target 				= self.target,
 		Source 				= self.caster,
 		Ability 			= self,
-		EffectName 			= "particles/units/heroes/haku/senbon.vpcf",
-		iMoveSpeed			= 2800,
+		EffectName 			= "particles/units/heroes/neji/neji_air_palm_proj.vpcf",
+		iMoveSpeed			= 900,
 		vSpawnOrigin 		= self.caster:GetAbsOrigin(),
 		bDrawsOnMinimap 	= false,
 		bDodgeable 			= true,
@@ -95,4 +95,12 @@ end
 
 function modifier_neji_air_palm_debuff:GetModifierMoveSpeedBonus_Percentage()
 	return self.ms_slow
+end
+
+function modifier_neji_air_palm_debuff:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
+
+function modifier_neji_air_palm_debuff:GetEffectName()
+	return "particles/econ/events/ti7/shivas_guard_slow.vpcf"
 end
