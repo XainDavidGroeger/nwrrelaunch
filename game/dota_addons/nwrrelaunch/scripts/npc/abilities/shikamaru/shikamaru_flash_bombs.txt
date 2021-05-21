@@ -85,16 +85,6 @@
 				"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
 			}
 		}
-
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------	
-		"precache"
-		{
-			"particle"						"particles/units/heroes/gaara/sandsturm.vpcf"
-			"soundfile"						"soundevents/heroes/gaara/gaara_tsunami_cast.vsndevts"
-			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_flashbombs_cast.vsndevts"
-			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_flashbombs_fire.vsndevts"
-		}
 	
 	}
 

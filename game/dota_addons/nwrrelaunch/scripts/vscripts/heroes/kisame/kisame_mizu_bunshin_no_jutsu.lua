@@ -66,8 +66,8 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
     if caster:HasModifier("modifier_kisame_metamorphosis") then 
        illusion:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
        illusion2:SetOriginalModel("models/kisame_shark/kisame_shark.vmdl")
-  	   illusion:SetModelScale(1.0)
-  	   illusion2:SetModelScale(1.0)
+  	   illusion:SetModelScale(0.65)
+  	   illusion2:SetModelScale(0.65)
     end
 	
 	if caster:GetName() == "npc_dota_hero_kakashi" then
