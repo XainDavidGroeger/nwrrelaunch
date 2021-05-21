@@ -26,7 +26,7 @@
 		{
 			"item"		"item_phase_boots"
         		"item"		"item_ancient_janggo"
-        		"item"		"item_blink"
+        		"item"		"item_crimson_guard"
 		}
 		
 		"#DOTA_Item_Build_Late_Items"

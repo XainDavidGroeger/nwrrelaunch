@@ -5,6 +5,7 @@ function guy_seventh_gate_open:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/guy_ulti_new.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_open_gates_talking.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_gates_cast.vsndevts", context)
 	PrecacheResource("particle", "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", context)
 end
 
@@ -82,7 +83,7 @@ function modifier_guy_seventh_gate:IsHidden() return false end
 function modifier_guy_seventh_gate:IsBuff() return true end
 
 function modifier_guy_seventh_gate:OnCreated()
-
+	
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 
@@ -98,7 +99,7 @@ function modifier_guy_seventh_gate:OnCreated()
 	ParticleManager:SetParticleControlEnt( self.ability.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
 
 	--sounds
-	self.caster:EmitSound("Hero_Sven.GodsStrength")
+	self.caster:EmitSound("guy_gates_cast")
 	self.caster:EmitSound("guy_ulti_new")
 	self.caster:EmitSound("guy_open_gates_talking")
 

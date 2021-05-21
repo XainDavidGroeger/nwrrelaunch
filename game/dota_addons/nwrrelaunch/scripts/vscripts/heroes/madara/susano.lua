@@ -3,6 +3,8 @@ madara_susano = class({})
 
 function madara_susano:Precache( context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_susano_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_susano_off.vsndevts", context )
 
 	PrecacheResource( "particle", "particles/units/heroes/madara/susano/susano.vpcf", context )
     PrecacheResource( "particle", "particles/dire_fx/fire_barracks_glow_b.vpcf", context )
@@ -21,13 +23,16 @@ function madara_susano:OnToggle()
 			{}
 		)
 
+	
+	self:GetCaster():EmitSound("madara_susano_cast")
 		--Play active sound
 	else
 		if self.modifier then
 			self.modifier:Destroy()
 			self.modifier = nil
 		end
-
+		
+	self:GetCaster():EmitSound("madara_susano_off")
 		--Play endsound
 	end
 end

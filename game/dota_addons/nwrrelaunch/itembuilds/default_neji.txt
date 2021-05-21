@@ -28,7 +28,7 @@
 		{
 			"item"		"item_phase_boots"
         		"item"		"item_blink"
-        		"item"		"item_manta"
+        		"item"		"item_yasha_and_kaya"
 		}
 		
 		"#DOTA_Item_Build_Late_Items"
@@ -47,7 +47,6 @@
 			"item"		"item_monkey_king_bar"
 			"item"		"item_gleipnir"
 			"item"		"item_heavens_halbred"
-			"item"		"item_kaya_and_sange"
 			"item"		"item_swift_blink"
 		}
 	}

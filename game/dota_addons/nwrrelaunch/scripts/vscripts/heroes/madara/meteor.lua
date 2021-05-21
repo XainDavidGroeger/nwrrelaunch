@@ -4,6 +4,7 @@ function madara_meteor:Precache( context )
     PrecacheResource( "soundfile", "soundevents/madara_meteor_cast.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/madara_meteor_impact.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_ulti_cast_talk.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_ulti_impact_talk.vsndevts", context )
 
     PrecacheResource( "particle", "particles/generic_gameplay/generic_silence.vpcf", context )
     PrecacheResource( "particle", "particles/units/heroes/hero_invoker/invoker_chaos_meteor_fly.vpcf", context )
@@ -27,6 +28,7 @@ function madara_meteor:OnChannelFinish(interrupted)
 	if not interrupted then
 		local caster = self:GetCaster()
 		self:LaunchMeteor(self.target_point)
+		caster:EmitSound("madara_ulti_impact_talk")
 		--Second talent meteor
 		if caster:FindAbilityByName("special_bonus_madara_second_meteor"):IsTrained() then
 			Timers:CreateTimer({
@@ -141,7 +143,7 @@ function madara_meteor:LaunchMeteor(target_point)
 			ParticleManager:SetParticleControl(explosion_vfx, 0, target_point)
 			ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(explosion_radius,0,0))
 
-			caster:EmitSound("Hero_Warlock.RainOfChaos.Cast")
+			caster:EmitSound("madara_meteor_impact")
 
 		end
 	})

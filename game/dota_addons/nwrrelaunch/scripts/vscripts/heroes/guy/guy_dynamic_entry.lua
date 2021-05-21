@@ -13,7 +13,7 @@ function guy_dynamic_entry:Precache(context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/guy_entry.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/guy_dynamic_entry.vsndevts", context)
 end
 
 function guy_dynamic_entry:GetCastRange(location, target)
@@ -35,12 +35,10 @@ function guy_dynamic_entry:ProcsMagicStick()
     return true
 end
 
-function guy_dynamic_entry:OnAbilityPhaseStart()
-	self:GetCaster():EmitSound("guy_entry")
-	return true
-end
-
 function guy_dynamic_entry:OnSpellStart()
+
+	self:GetCaster():EmitSound("guy_dynamic_entry_cast")
+	self:GetCaster():EmitSound("guy_dynamic_entry_talking")
 
 	self.caster = self:GetCaster()
 	self.target = self:GetCursorTarget()
