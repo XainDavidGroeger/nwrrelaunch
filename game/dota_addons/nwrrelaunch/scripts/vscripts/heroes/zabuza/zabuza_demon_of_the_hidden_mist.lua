@@ -48,6 +48,7 @@ function zabuza_demon_of_the_hidden_mist:OnSpellStart()
 	local distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
 	
 	self:PlaySound()
+	caster:Purge(false, true, false, true, false)
 	
 	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
     if target:FindModifierByName("modifier_item_lotus_orb_active") then
