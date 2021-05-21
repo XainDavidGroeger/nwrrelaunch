@@ -50,6 +50,12 @@ function shikamaru_flash_bombs:ExplodeOnLocation(location)
 	end
 end
 
+function shikamaru_flash_bombs:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("shikamaru_flashbombs_cast")
+	return true
+end
+
+
 function shikamaru_flash_bombs:OnSpellStart()
 
 	local target_point = self:GetCursorPosition()

@@ -1129,7 +1129,7 @@
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_damage"								"DAMAGE"
 		
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap"							    "<b><font color='#EC5000'>Explosive Tag Trap</font></b>"
-		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_DESCRIPTION"					"<b><font color='#BFBFBF'>Places an invisible Trap</font></b> that becomes active after a short delay. <br><br> Once active, the next enemy hero that steps in range is <b><font color='#9A86AC'>fully disabled</font></b> for a period of time. <br><br> Afterwards the trap explodes <b><font color='#EC5000'>dealing massive Magic Damage</font></b> within the area. <br><br> Traps cannot be placed within the trigger radius of another Trap."
+		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_DESCRIPTION"					"<b><font color='#BFBFBF'>Places an invisible Trap</font></b> that becomes active after a short delay. <br><br> Once active, the next enemy hero that steps in range is <b><font color='#9A86AC'>fully disabled</font></b> for a period of time. <br><br> Afterwards the trapped enemy explodes <b><font color='#EC5000'>dealing massive Magic Damage</font></b> around it. <br><br> Traps cannot be placed within the trigger radius of another Trap."
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_trigger_radius"				"TRIGGER RADIUS"
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_damage"						"TRAP DAMAGE"
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_bind_duration"				"BIND DURATION"

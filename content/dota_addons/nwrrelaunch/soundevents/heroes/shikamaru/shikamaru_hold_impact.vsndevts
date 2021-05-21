@@ -1,4 +1,4 @@
-"shikamaru_hold_cast"
+"shikamaru_hold_impact"
 {
     "operator_stacks"
     {
@@ -14,10 +14,10 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/shikamaru/shikamaru_hold_cast.vsnd"
+                              "value0"        "sounds/heroes/shikamaru/shikamaru_hold_impact.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "0.700000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }

@@ -1,4 +1,4 @@
-"shikamaru_hold_cast"
+"shikamaru_hold_talking"
 {
     "operator_stacks"
     {
@@ -14,10 +14,14 @@
                     {
                         "value"
                         {
-                              "value0"        "sounds/heroes/shikamaru/shikamaru_hold_cast.vsnd"
+                              "value0"        "sounds/heroes/shikamaru/paralysis_01.vsnd"
+                              "value1"        "sounds/heroes/shikamaru/paralysis_02.vsnd"
+                              "value2"        "sounds/heroes/shikamaru/paralysis_03.vsnd"
+                              "value3"        "sounds/heroes/shikamaru/paralysis_04.vsnd"
+                              "value4"        "sounds/heroes/shikamaru/paralysis_05.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "1.15000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
