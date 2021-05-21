@@ -32,7 +32,7 @@ function shikamaru_switching_technique:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.ability = self
 
-	self.caster:EmitSound("gaara_tsunami_cast")
+	self.caster:EmitSound("shikamaru_stitch_talking")
 	--self.caster:EmitSound("sounds/weapons/hero/sand_king/sand_king_sandstorm_loop.vsnd")
 
 	-- Ability specials

@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_shikamaru_explosive_tag_trap_pre_activation", "heroes/shikamaru/explosive_tag_trap", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shikamaru_explosive_tag_trap_active", "heroes/shikamaru/explosive_tag_trap", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_shikamaru_stun", "scripts/vscripts/heroes/shikamaru/modifier_shikamaru_stun.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier( "modifier_generic_custom_indicator",
 				 "modifiers/modifier_generic_custom_indicator",
 				 LUA_MODIFIER_MOTION_BOTH )
@@ -27,12 +28,21 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
 	
 	self.sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, trap)
     ParticleManager:SetParticleControl(self.sign_vfx, 0, target_point)
+	
+	local red_pulse_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign_pulses.vpcf", PATTACH_ABSORIGIN, trap)
+    ParticleManager:SetParticleControl(red_pulse_vfx, 0, target_point)
+	
+	Timers:CreateTimer(1.75, function ()
+	    self.invisibility_start_vfx = ParticleManager:CreateParticle("particles/generic_hero_status/status_invisibility_start.vpcf", PATTACH_ABSORIGIN, trap)
+        ParticleManager:SetParticleControl(self.invisibility_start_vfx, 0, trap:GetAbsOrigin())
+		ParticleManager:DestroyParticle(red_pulse_vfx, true)
+	    ParticleManager:ReleaseParticleIndex(red_pulse_vfx)
+	end)
 
     trap:AddNewModifier(self:GetCaster(), 
                         self, 
                         "modifier_shikamaru_explosive_tag_trap_pre_activation", 
                         {duration = self:GetSpecialValueFor("activation_time")})
-						
 
     if self.placed_traps ~= nil then
         if #self.placed_traps >= self:GetSpecialValueFor("max_traps") + self:GetCaster():FindTalentValue("special_bonus_shikamaru_max_traps") then
@@ -120,6 +130,7 @@ end
 
 function modifier_shikamaru_explosive_tag_trap_pre_activation:OnRemoved()
     if not IsServer() then return end -- this i s definetely correct
+	
     self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), 
                                     self:GetAbility(), 
                                     "modifier_shikamaru_explosive_tag_trap_active",
@@ -152,7 +163,7 @@ end
 
 function modifier_shikamaru_explosive_tag_trap_active:OnCreated()
     self:StartIntervalThink(self:GetAbility():GetSpecialValueFor('trigger_delay'))
-    self.trigger = false
+    self.trigger = nil
 end
 
 function modifier_shikamaru_explosive_tag_trap_active:OnRemoved()
@@ -161,6 +172,7 @@ end
 
 function modifier_shikamaru_explosive_tag_trap_active:OnIntervalThink()
     if not IsServer() then return end
+	
     self.radius = self:GetAbility():GetSpecialValueFor("trigger_radius")
     local units = FindUnitsInRadius(self:GetAbility():GetCaster():GetTeamNumber(),
                                     self:GetParent():GetAbsOrigin(),
@@ -169,71 +181,76 @@ function modifier_shikamaru_explosive_tag_trap_active:OnIntervalThink()
                                     DOTA_UNIT_TARGET_TEAM_ENEMY, 
                                     DOTA_UNIT_TARGET_HERO, 
                                     DOTA_UNIT_TARGET_FLAG_NONE, 
-                                    FIND_ANY_ORDER, 
+                                    FIND_CLOSEST, 
                                     false)
 
+
     if #units ~= 0 then
-        if self.trigger then
-            self:TriggerExplosion(units)
+        if self.trigger ~= nil then
+            for i=1,#units do
+                if self.trigger == units[i] then
+                    self:TriggerExplosion(units[i])
+                end
+            end
         else
-            self.trigger = true
+            self.trigger = units[1]
         end
     else
-        self.trigger = false    
+        self.trigger = nil
     end
+
 end
 
-function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
+function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(target)
     local trap_origin = self:GetParent():GetAbsOrigin()
     local ability = self:GetAbility()
     local radius = self.radius
-    local damageRadius = ability:GetSpecialValueFor("damage_radius")
-    
-	self:GetParent():RemoveModifierByName("modifier_shikamaru_explosive_tag_trap_active")
-    
-    if units == nil then return end
+
+    self:GetParent():ForceKill(false)
+	
+    self.stasis_explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_stasis_trap_explode.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
+    ParticleManager:SetParticleControl(self.stasis_explosion_vfx, 0, trap_origin)
+    ParticleManager:SetParticleControl(self.stasis_explosion_vfx, 1, Vector(self.radius, 0, 0))
+	
+	self.sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
+    ParticleManager:SetParticleControl(self.sign_vfx, 0, trap_origin)
+	
+    if target == nil then return end
     local trap_table = self:GetAbility().placed_traps
     for i=1,#trap_table do
         if trap_table[i] == self:GetParent() then
             table.remove(trap_table, i)
         end
     end
-
-    self:GetParent():ForceKill(false)
-	ParticleManager:DestroyParticle(ability.sign_vfx, true)
-	ParticleManager:ReleaseParticleIndex(ability.sign_vfx)
-
-    for i=1,#units do 
-	    self.forwardVec = (trap_origin - units[i]:GetAbsOrigin()):Normalized()
-        
-	    --[[self.projectile_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shikamaru_shadow_imitation.vpcf", PATTACH_ABSORIGIN, units[i])
-	    ParticleManager:SetParticleControl(self.projectile_vfx, 0, trap_origin)
-	    ParticleManager:SetParticleControl(self.projectile_vfx, 1, (-self.forwardVec)* 250)
-		ParticleManager:SetParticleControl(self.projectile_vfx, 3, units[i]:GetAbsOrigin())]]
 	
-        units[i]:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("bind_duration")})
-		
-		local particle_kunai = "particles/units/heroes/shikamaru/shikamaru_explosive_seal.vpcf"
-	    self.particle_kunai_fx = ParticleManager:CreateParticle(particle_kunai, PATTACH_ABSORIGIN, units[i])
-	    ParticleManager:SetParticleControl(self.particle_kunai_fx, 0, units[i]:GetAbsOrigin())
-	    ParticleManager:SetParticleControl(self.particle_kunai_fx, 1, units[i]:GetAbsOrigin())
-		
-		Timers:CreateTimer({endTime = ability:GetSpecialValueFor("bind_duration"),
-        callback = function()
-			ParticleManager:DestroyParticle(self.particle_kunai_fx, true)
-	        ParticleManager:ReleaseParticleIndex(self.particle_kunai_fx)
-			--ParticleManager:DestroyParticle(self.projectile_vfx, true)
-	        --ParticleManager:ReleaseParticleIndex(self.projectile_vfx)
-		end})
-    end
+	local particle_shadow_path_rope = "particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_rope_for_ult.vpcf"
+	self.particle_shadow_path_rope_fx = ParticleManager:CreateParticle(particle_shadow_path_rope, PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
+	ParticleManager:SetParticleControl(self.particle_shadow_path_rope_fx, 1, trap_origin)
+	ParticleManager:SetParticleControl(self.particle_shadow_path_rope_fx, 3, target:GetAbsOrigin())
+	
+	local particle_kunai = "particles/units/heroes/shikamaru/shikamaru_explosive_seal.vpcf"
+	self.particle_kunai_fx = ParticleManager:CreateParticle(particle_kunai, PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(self.particle_kunai_fx, 0, target:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.particle_kunai_fx, 1, target:GetAbsOrigin())
 
-    Timers:CreateTimer({endTime = ability:GetSpecialValueFor("bind_duration") - 0.1,
+    target:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_shikamaru_stun", {duration = self:GetAbility():GetSpecialValueFor("bind_duration")})
+	
+	self.stun_timer = Timers:CreateTimer(0.0, function ()
+		if not target:HasModifier("modifier_shikamaru_stun") then
+			Timers:RemoveTimer(self.timer)
+			self:DestroyParticles()
+			return nil
+		end
+		return 0.1
+	end)
+
+    self.timer = Timers:CreateTimer({endTime = ability:GetSpecialValueFor("bind_duration") - 0.05, --this reduction by 0.05 is necessary because otherwise damage can be done after the player has moved
         callback = function()
-			ParticleManager:DestroyParticle(self.particle_kunai_fx, true)
-	        ParticleManager:ReleaseParticleIndex(self.particle_kunai_fx)
-		    
+		    Timers:RemoveTimer(self.stun_timer)
+			self:DestroyParticles()
+			
             local units_to_damage = FindUnitsInRadius(ability:GetCaster():GetTeamNumber(),
-            trap_origin,
+            target:GetAbsOrigin(),
             nil,
             radius,
             DOTA_UNIT_TARGET_TEAM_ENEMY, 
@@ -241,25 +258,41 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(units)
             DOTA_UNIT_TARGET_FLAG_NONE, 
             FIND_ANY_ORDER, 
             false)
-
+            
             local damage_table = {
                 attacker = ability:GetCaster(),
 				damage = ability:GetAbilityDamage(),
 				damage_type = ability:GetAbilityDamageType(),
 				ability = ability,
             }
-
+            
             for i=1,#units_to_damage do 
                 damage_table.victim = units_to_damage[i]
                 ApplyDamage(damage_table)
-				local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_remote_mines_detonate.vpcf", PATTACH_ABSORIGIN, ability:GetCaster())
-                ParticleManager:SetParticleControl(explosion_vfx, 0, units[i]:GetAbsOrigin())
-                ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(radius, 0, 0))
             end
-			
-			Timers:CreateTimer(2, function ()
-				ParticleManager:DestroyParticle(explosion_vfx, true)
-	        	ParticleManager:ReleaseParticleIndex(explosion_vfx)
-	        end)
+            
+            self.explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_remote_mines_detonate.vpcf", PATTACH_ABSORIGIN, ability:GetCaster())
+            ParticleManager:SetParticleControl(self.explosion_vfx, 0, target:GetAbsOrigin())
+            ParticleManager:SetParticleControl(self.explosion_vfx, 1, Vector(radius, 0, 0))
     end})
+end
+
+function modifier_shikamaru_explosive_tag_trap_active:DestroyParticles()
+    ParticleManager:DestroyParticle(self.particle_kunai_fx, true)
+	ParticleManager:ReleaseParticleIndex(self.particle_kunai_fx)
+	ParticleManager:DestroyParticle(self.particle_shadow_path_rope_fx, true)
+	ParticleManager:ReleaseParticleIndex(self.particle_shadow_path_rope_fx)
+	ParticleManager:DestroyParticle(self.sign_vfx, true)
+	ParticleManager:ReleaseParticleIndex(self.sign_vfx)
+	
+	Timers:CreateTimer(3, function ()
+	    ParticleManager:DestroyParticle(self.explosion_vfx, true)
+		ParticleManager:ReleaseParticleIndex(self.explosion_vfx)
+		ParticleManager:DestroyParticle(self.stasis_explosion_vfx, true)
+		ParticleManager:ReleaseParticleIndex(self.stasis_explosion_vfx)
+		ParticleManager:DestroyParticle(ability.sign_vfx, true)
+		ParticleManager:ReleaseParticleIndex(ability.sign_vfx)
+		ParticleManager:DestroyParticle(ability.invisibility_start_vfx, true)
+		ParticleManager:ReleaseParticleIndex(ability.invisibility_start_vfx)
+	end)
 end

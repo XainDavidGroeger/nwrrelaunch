@@ -4,6 +4,7 @@ haku_needles = haku_needles or class({})
 
 function haku_needles:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/haku/haku_deathneedle.vsndevts", context)
 	PrecacheResource("particle",   "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", context)
 end
 
@@ -27,6 +28,7 @@ function haku_needles:OnSpellStart()
 
 	local thinker = CreateModifierThinker(self:GetCaster(), self, "modifier_haku_needles_thinker", {duration = duration}, target_point, self:GetCaster():GetTeamNumber(), false)
 
+	self:GetCaster():EmitSound("haku_deathneedle")
 	-- Creates flying vision area
 	self:CreateVisibilityNode(target_point, self:GetSpecialValueFor("radius"), duration)
 end

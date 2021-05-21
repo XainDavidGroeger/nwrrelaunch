@@ -42,15 +42,28 @@
 			"var_type"				"FIELD_FLOAT"
 			"radius"				"450"
 		}
-
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"		"40 64 88"
+		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"ms_slow_percentage"	"-15"
 			"LinkedSpecialBonus"	"special_bonus_kisame_4"
 		}
-
-		"05"
+		"12"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"ms_buff"	"15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hp_reg_per_second_percentage"		"2.5"
+		}		
+		"04"
 		{
 			"var_type"							"FIELD_FLOAT"
 			"mana_cost_per_second_percentage"	"5"
@@ -72,29 +85,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"damage_per_millisecond"				"4.0 6.4 8.8"
 		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hp_reg_per_second_percentage"		"2.5"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"damage"		"40 64 88"
-		}
-
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"ms_slow_percentage_special"	"-35"
 		}
-
-		"12"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"ms_buff"	"15"
-		}
-
 	}
 
 	"precache"

@@ -52,12 +52,7 @@
              "var_type"     "FIELD_INTEGER"
             "path_width"   "170"
         }
-		  "05"
-        {
-            "var_type"  "FIELD_INTEGER"
-            "base_damage"    "25 40 55 70"
-        }
-          "06"
+        "06"
         {
             "var_type"  "FIELD_FLOAT"
             "bonus_damage"    "100"

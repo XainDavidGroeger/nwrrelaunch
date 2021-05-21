@@ -22,7 +22,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"2.8 2.8 2.8"
-		"AbilityCooldown"				"20 20 20 20"
+		"AbilityCooldown"				"18 16 14 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -36,6 +36,12 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"tick_interval"					"0.1"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"						"80 160 240 320"
+				"LinkedSpecialBonus"			"special_bonus_gaara_4"
 			}
 			"02"
 			{
@@ -51,12 +57,6 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"radius"						"75"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"dmg"						"100 150 200 250"
-				"LinkedSpecialBonus"			"special_bonus_gaara_4"
 			}
 		}
 	}

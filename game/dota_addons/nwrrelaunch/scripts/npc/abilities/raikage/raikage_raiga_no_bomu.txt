@@ -224,12 +224,6 @@
 							"EffectAttachType"  "follow_origin"
 							"Target"            "TARGET"
 						}
-
-						"FireSound"
-						{
-							"EffectName"		"Hero_Centaur.HoofStomp"
-							"Target" 			"CASTER"
-						}
 	
 					}
 				}

@@ -39,15 +39,15 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
+		"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"channel_duration"					"2"
+		}
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
 			"radius"						"600"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"stun_duration"					"2.0 2.25 2.5"
 		}
 		"09"
 		{
@@ -74,15 +74,15 @@
 			"var_type"						"FIELD_FLOAT"
 			"end_vision_duration"					"3.0"
 		}
-		"04"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"channel_duration"					"2"
-		}
 		"02"
 		{
 			"var_type"						"FIELD_FLOAT"
 			"damage"						"400 525 650"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"stun_duration"					"2.0 2.25 2.5"
 		}
 	}
 }

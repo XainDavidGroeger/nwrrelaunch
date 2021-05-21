@@ -3,7 +3,7 @@ kakashi_bunshin = kakashi_bunshin or class({})
 LinkLuaModifier("modifier_kakashi_bunshin_charge", "scripts/vscripts/heroes/kakashi/modifiers/modifier_kakashi_bunshin_charge.lua", LUA_MODIFIER_MOTION_NONE)
 
 function kakashi_bunshin:Precache(context)
-	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/kakashi/kakashi_bunshin_cast.vsndevts", context)
 	PrecacheResource("particle",   "particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf", context)
 	PrecacheResource("particle",   "particles/generic_hero_status/status_invisibility_start.vpcf", context)
 	PrecacheResource("particle",   "particles/items_fx/chain_lightning.vpcf", context)

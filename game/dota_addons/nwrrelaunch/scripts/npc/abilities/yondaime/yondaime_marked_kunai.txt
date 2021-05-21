@@ -31,7 +31,22 @@
 	//-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
     {
-        "01"
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dagger_range"				"725 850 975 1100"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hero_damage"				"30 45 60 75"	
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"creep_damage"				"60 90 120 150"	
+		}
+		"01"
         {
 			"var_type"				"FIELD_INTEGER"
 			"bonus_move_speed_pct"	"8 12 16 20"
@@ -57,28 +72,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"dagger_radius"				"125"
 		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dagger_range"				"725 850 975 1100"
-		}
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"dagger_duration"				"30 30 30 30"	
 		}
-
-		"09"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"creep_damage"				"60 90 120 150"	
-		}
-		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hero_damage"				"30 45 60 75"	
-		}
-
     }
 
 }

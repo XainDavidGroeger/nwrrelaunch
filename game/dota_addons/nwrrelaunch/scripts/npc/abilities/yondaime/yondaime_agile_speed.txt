@@ -16,7 +16,7 @@
     "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"               "4"
 
-    "AbilityManaCost"        "30 40 50 60"
+    "AbilityManaCost"        "25"
     "AbilityCooldown"		 "28.0 23.0 17.0 12.0"
 
 

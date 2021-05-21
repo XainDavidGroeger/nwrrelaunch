@@ -5,6 +5,11 @@
 
 "kakashi_sharingan"
 {
+	"precache"
+    {
+      "soundfile"			"soundevents/heroes/kakashi/kakashi_sharingan_cast.vsndevts"
+    }
+	
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
@@ -40,7 +45,14 @@
 			"copy_timer"			"120"
 		}
 	}
-
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"kakashi_sharingan_cast"
+			"Target"			"CASTER"
+		}
+	}
 	"OnSpellStart"
 	{
 		"RunScript"

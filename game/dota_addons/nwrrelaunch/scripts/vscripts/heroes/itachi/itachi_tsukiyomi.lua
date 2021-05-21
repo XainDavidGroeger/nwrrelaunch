@@ -32,6 +32,11 @@ function itachi_tsukiyomi:ProcsMagicStick()
 	return true
 end
 
+function itachi_tsukiyomi:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("itachi_tsukyomi_cast")
+	return true
+end
+
 function itachi_tsukiyomi:OnSpellStart()
     local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
