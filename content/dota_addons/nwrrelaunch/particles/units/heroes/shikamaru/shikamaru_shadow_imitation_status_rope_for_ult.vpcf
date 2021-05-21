@@ -265,7 +265,7 @@
 			{
 				m_nType = "PF_TYPE_LITERAL"
 				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 0.25
+				m_flLiteralValue = 0.1
 				m_nControlPoint = 0
 				m_nScalarAttribute = 3
 				m_nVectorAttribute = 6
@@ -319,9 +319,6 @@
 	]
 	m_Children = 
 	[
-		{
-			m_ChildRef = resource:"particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_caster.vpcf"
-		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_target.vpcf"
 		},
