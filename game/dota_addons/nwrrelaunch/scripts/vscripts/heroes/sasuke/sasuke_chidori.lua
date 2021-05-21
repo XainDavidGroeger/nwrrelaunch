@@ -47,6 +47,7 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 	local crit_damage = ability:GetSpecialValueFor("bonus_damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_4")
 	local base_damage = ability:GetSpecialValueFor("base_damage")
 	local bonus_damage = caster:GetAverageTrueAttackDamage(nil) * (crit_damage / 100)
+	print(bonus_damage)
 	local damage = bonus_damage + base_damage
 
 	local max_distance = self:GetSpecialValueFor("max_distance") + self:GetCaster():FindTalentValue("special_bonus_sasuke_3")

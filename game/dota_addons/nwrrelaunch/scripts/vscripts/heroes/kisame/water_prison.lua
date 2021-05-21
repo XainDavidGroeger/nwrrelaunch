@@ -33,7 +33,7 @@ function ModelSwapEnd( keys )
 	local caster = keys.caster
 	caster:SetModel(caster.caster_model)
 	caster:SetOriginalModel(caster.caster_model)
-	caster:SetModelScale(1)
+	caster:SetModelScale(1.2)
 	ParticleManager:DestroyParticle( keys.ability.dome, true )
 	ParticleManager:DestroyParticle(keys.ability.dome_sharks, true)
 end

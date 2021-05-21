@@ -3,7 +3,6 @@
  
 function guy_seventh_gate_open:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context)
-	PrecacheResource("soundfile",  "soundevents/guy_ulti_new.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_open_gates_talking.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_gates_cast.vsndevts", context)
 	PrecacheResource("particle", "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", context)
@@ -83,7 +82,9 @@ function modifier_guy_seventh_gate:IsHidden() return false end
 function modifier_guy_seventh_gate:IsBuff() return true end
 
 function modifier_guy_seventh_gate:OnCreated()
-	
+
+	if not IsServer() then return end
+
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 
