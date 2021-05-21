@@ -27,7 +27,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110"
+	"AbilityManaCost"				"100"
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -37,16 +37,10 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
+		"09"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"tree_duration"				"3 3.5 4 4.5"
-			"LinkedSpecialBonus"		"special_bonus_madara_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"tree_burn_duration"		"5 6 7 8"
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"475"
 		}
 		"03"
 		{
@@ -63,27 +57,32 @@
 			"var_type"					"FIELD_FLOAT"
 			"burn_buff_duration"		"2 3 4 5"
 		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"tree_burn_duration"		"5 6 7 8"
+		}
 		"07"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"tree_vision"				"225"
 		}
-
-		"08"
+		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"cd_reduc"					"0 0 0 0"
-			"LinkedSpecialBonus"		"special_bonus_madara_3"
-		}
-		"09"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"475"
+			"tree_duration"				"3 3.5 4 4.5"
+			"LinkedSpecialBonus"		"special_bonus_madara_2"
 		}
 		"10"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"dot_interval"					"0.25"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cd_reduc"					"0 0 0 0"
+			"LinkedSpecialBonus"		"special_bonus_madara_3"
 		}
 
 	}

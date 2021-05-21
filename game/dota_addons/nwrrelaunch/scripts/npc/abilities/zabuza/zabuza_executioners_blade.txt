@@ -34,7 +34,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_threshold"		"10 15 20 25"
+			"health_threshold"		"15 20 25 30"
 			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
 		}
 		"03"

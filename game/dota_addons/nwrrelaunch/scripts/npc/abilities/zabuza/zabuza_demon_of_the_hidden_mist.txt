@@ -33,11 +33,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"			"4 5 6"
-		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -57,6 +52,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"ms_slow_dur"	"2"
+		}
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"			"4 5 6"
 		}
 	}
 }

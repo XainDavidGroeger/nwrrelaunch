@@ -42,7 +42,6 @@
 			"var_type"			"FIELD_INTEGER"
 			"fire_range"		"625"
 		}
-		
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
@@ -65,11 +64,10 @@
 			"var_type"			"FIELD_INTEGER"
 			"explosion_radius"		"475"
 		}
-		"12"
+		"07"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"explosion_stun_duration"		"1"
-			"LinkedSpecialBonus"			"special_bonus_madara_6"
+			"wave_damage"					"70 95 120 145"
 		}
 		"08"
 		{
@@ -77,10 +75,11 @@
 			"explosion_damage"				"90 105 140 165"
 			"LinkedSpecialBonus"			"special_bonus_madara_4"
 		}
-		"07"
+		"12"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"wave_damage"					"70 95 120 145"
+			"explosion_stun_duration"		"1"
+			"LinkedSpecialBonus"			"special_bonus_madara_6"
 		}
 		"09"
         { 

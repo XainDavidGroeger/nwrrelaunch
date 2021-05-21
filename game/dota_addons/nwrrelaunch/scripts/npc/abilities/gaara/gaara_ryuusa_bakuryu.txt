@@ -49,11 +49,6 @@
 				"radius"					"300"
 				"LinkedSpecialBonus"		"special_bonus_gaara_2"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1 1 1 1"
-			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
@@ -73,6 +68,11 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"				"2 2 2 2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1 1 1 1"
 			}
 			"07"
 			{

@@ -21,7 +21,7 @@
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550 700 850 1000"
+	"AbilityCastRange"				"1000"
 	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 	// Time		
@@ -50,7 +50,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hook_distance"		"500 700 850 1000"
+			"hook_distance"		"1000"
 		}
 		"04"
 		{

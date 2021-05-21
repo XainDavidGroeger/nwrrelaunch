@@ -31,7 +31,7 @@
 				"02"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"damage"				"20 30 40 50"
+					"damage"				"60 120 180 240"
 				}
 				"03"
 				{
@@ -51,7 +51,7 @@
 				"06"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"stun_duration"			"0.6 1.2 1.8 2.4"
+					"stun_duration"			"0.6 1.0 1.4 1.8"
 				}
 			}
 		}
