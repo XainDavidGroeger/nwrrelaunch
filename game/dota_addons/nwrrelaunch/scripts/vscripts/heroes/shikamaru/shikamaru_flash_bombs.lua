@@ -3,6 +3,15 @@ shikamaru_flash_bombs = shikamaru_flash_bombs or class({})
 LinkLuaModifier("modifier_flash_bomb_debuff", "scripts/vscripts/heroes/shikamaru/shikamaru_flash_bombs.lua", LUA_MODIFIER_MOTION_NONE)
 
 
+function shikamaru_flash_bombs:Precache( context )
+    PrecacheResource( "particle", "particles/units/heroes/gaara/sandsturm.vpcf" , context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf" , context )
+
+    PrecacheResource( "soundfile", "soundevents/heroes/gaara/gaara_tsunami_cast.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_flashbombs_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_flashbombs_fire.vsndevts", context )
+end
+
 function shikamaru_flash_bombs:GetAbilityTextureName()
 	return "shikamaru_flash_bombs"
 end
@@ -20,6 +29,8 @@ function shikamaru_flash_bombs:ExplodeOnLocation(location)
 	PATTACH_ABSORIGIN, self.caster)
 	ParticleManager:SetParticleControl(vfx, 0, location)
 	ParticleManager:SetParticleControl(vfx, 1, Vector(0, 0, self.bomb_aoe))
+
+	self.caster:EmitSound("shikamaru_flashbombs_fire")
 
 	local targets = FindUnitsInRadius(
 		self.caster:GetTeamNumber(), 
@@ -42,6 +53,7 @@ function shikamaru_flash_bombs:ExplodeOnLocation(location)
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		damage_flags = nil,
 	})
+
 
 	-- TODO place explosion particle on target 
 
