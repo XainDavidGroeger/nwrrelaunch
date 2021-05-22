@@ -2309,7 +2309,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Earth Slam Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Inner Sakura Armor"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4s Chakra Burst Duration"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20% Chakra Punch Chance"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5s Cherry Blossom Stun"
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage

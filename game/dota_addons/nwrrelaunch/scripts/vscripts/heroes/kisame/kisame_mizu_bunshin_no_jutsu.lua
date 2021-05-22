@@ -77,11 +77,11 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
     	illusion2:SetModelScale(1.03)
     end
 	
-	illusion:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
-	illusion2:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
+	illusion:SetBaseMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
+	illusion2:SetBaseMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
 	local hp_caster_percentage = caster:GetHealth() / (caster:GetMaxHealth() / 100)
-    illusion:SetHealth(illusion:GetMaxHealth() / 100 * hp_caster_percentage)
-    illusion2:SetHealth(illusion2:GetMaxHealth() / 100 * hp_caster_percentage)
+    illusion:ModifyHealth(illusion:GetMaxHealth() / 100 * hp_caster_percentage, nil, false, 0)
+    illusion2:ModifyHealth(illusion2:GetMaxHealth() / 100 * hp_caster_percentage, nil, false, 0)
 	
 	-- Set the unit as an illusion
     -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 

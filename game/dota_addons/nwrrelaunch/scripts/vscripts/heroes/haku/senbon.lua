@@ -106,15 +106,18 @@ function haku_crippling_senbon:OnProjectileHit_ExtraData(target, location, Extra
 		EmitSoundOnLocationWithCaster(location, "haku_senbon_impact", caster)
 		caster:RemoveNoDraw()
 		
-		ApplyDamage({victim = target, attacker = caster, ability = self, damage = ExtraData.damage, damage_type = self:GetAbilityDamageType()})
+		ApplyDamage({victim = target,
+					 attacker = caster,
+					 ability = self,
+					 damage = self:GetAbilityDamage(),
+					 damage_type = self:GetAbilityDamageType()})
 		target:AddNewModifier(caster, self, "modifier_stunned", {duration = ExtraData.stun_duration * (1 - target:GetStatusResistance())})
 
-		local woudns_ability = caster:FindAbilityByName("haku_endless_wounds")
-		if not woudns_ability == nil then
-		    if woudns_ability:GetLevel() > 0 then
-		    	local endless_wounds_stacks = ability:GetSpecialValueFor("endless_wounds_stacks")
-		    	woudns_ability:ApplyStacks(target, endless_wounds_stacks)
-		    end
+		local woudns_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
+		if woudns_ability ~= nil then
+			if woudns_ability:GetLevel() > 0 then  
+				woudns_ability:ApplyStacks(target, self:GetSpecialValueFor("endless_wounds_stacks"))
+			end
 		end
 	end
 end

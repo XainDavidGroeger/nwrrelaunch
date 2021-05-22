@@ -1,6 +1,6 @@
 zabuza_water_dragon_bullet = zabuza_water_dragon_bullet or class({})
 
-LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/modifiers/modifier_zabuza_slow.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_zabuza_slow", "scripts/vscripts/heroes/zabuza/zabuza_water_dragon_bullet", LUA_MODIFIER_MOTION_NONE)
 
 function zabuza_water_dragon_bullet:Precache( context )
     PrecacheResource( "particle",  "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf", context )
@@ -95,63 +95,68 @@ function zabuza_water_dragon_bullet:OnProjectileHit_ExtraData(target, location, 
 		caster:RemoveNoDraw()
         
 		if target ~= nil then
-		    target:AddNewModifier(caster, self, "modifier_zabuza_slow", {duration = ExtraData.duration})
+		    -- target:AddNewModifier(caster, self, "modifier_zabuza_slow", {duration = ExtraData.duration})
 		end
-	end
-end
 
-function zabuza_water_dragon_bullet:OnProjectileThink_ExtraData(location, data)
-	if location.x  == self.target_point.x and location.y  == self.target_point.y then
-		local caster = self:GetCaster()
-		local target_point = self.target_point
-		local radius = self:GetSpecialValueFor( "radius")
-		local caster_location = caster:GetAbsOrigin()
-		local radius = self:GetSpecialValueFor( "radius")
-		local slow_base = self:GetSpecialValueFor( "ms_slow")
-		local duration = self:GetSpecialValueFor( "duration")
-		local slow_base_per_distance = self:GetSpecialValueFor("ms_slow_per_distance")
-		local wave_range = (target_point - caster_location):Length2D()
-		local distance_stack_count = wave_range / 150
-		local damage = self:GetSpecialValueFor("damage")
-
-		local enemies = FindUnitsInRadius(
-			caster:GetTeamNumber(),	-- int, your team number
-			target_point,	-- point, center point
-			nil,	-- handle, cacheUnit. (not known)
-			radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO,	-- int, type filter
-			0,	-- int, flag filter
-			FIND_ANY_ORDER,	-- int, order filter
-			false	-- bool, can grow cache
-		)
+		if target == nil then
+			--Projectile hit endpoint
+			local caster = self:GetCaster()
+			local target_point = self.target_point
+			local radius = self:GetSpecialValueFor( "radius")
+			local caster_location = caster:GetAbsOrigin()
+			local radius = self:GetSpecialValueFor( "radius")
+			local slow_base = self:GetSpecialValueFor( "ms_slow")
+			local duration = self:GetSpecialValueFor( "duration")
+			local slow_base_per_distance = self:GetSpecialValueFor("ms_slow_per_distance")
+			local wave_range = (target_point - caster_location):Length2D()
+			local distance_stack_count = wave_range / 150
+			local damage = self:GetSpecialValueFor("damage")
 	
-		caster:StopSound("zabuza_dragon_fly")
-
+			local enemies = FindUnitsInRadius(
+				caster:GetTeamNumber(),	-- int, your team number
+				target_point,	-- point, center point
+				nil,	-- handle, cacheUnit. (not known)
+				radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+				DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+				0,	-- int, flag filter
+				FIND_ANY_ORDER,	-- int, order filter
+				false	-- bool, can grow cache
+			)
+		
+			caster:StopSound("zabuza_dragon_fly")
 	
-		local stackcount = slow_base + (distance_stack_count * slow_base_per_distance)
-		stackcount = stackcount * -1
-		if enemies then
-			for _,target in pairs(enemies) do
-				target:AddNewModifier(
-				caster, -- player source
-				self, -- ability source
-				"modifier_zabuza_slow", -- modifier name
-				{ duration = duration } -- kv
-				)
-				target:SetModifierStackCount("modifier_zabuza_slow", self, stackcount)
-				
-				ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+		
+			local stackcount = slow_base + (distance_stack_count * slow_base_per_distance)
+			if enemies then
+				for _,target in pairs(enemies) do
+					local slow_modifier = target:AddNewModifier(
+										  caster, -- player source
+										  self, -- ability source
+										  "modifier_zabuza_slow", -- modifier name
+										  { duration = duration } -- kv
+										  )
+					print(duration)
+					slow_modifier:SetStackCount(stackcount)
+					
+					ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+				end
 			end
+		
+			EmitSoundOnLocationWithCaster(target_point, "zabuza_dragon_impact", caster)
+		
+			local dragon_end_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf", PATTACH_POINT, caster)
+			ParticleManager:SetParticleControl(dragon_end_particle, 0, target_point)
 		end
-	
-		EmitSoundOnLocationWithCaster(target_point, "zabuza_dragon_impact", caster)
-	
-		local dragon_end_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf", PATTACH_POINT, caster)
-		ParticleManager:SetParticleControl(dragon_end_particle, 0, target_point)
 	end
-	
 end
+
+-- function zabuza_water_dragon_bullet:OnProjectileThink_ExtraData(location, data)
+-- 	if location.x  == self.target_point.x and location.y  == self.target_point.y then
+
+-- 	end
+	
+-- end
 
 modifier_zabuza_slow = class({})
 

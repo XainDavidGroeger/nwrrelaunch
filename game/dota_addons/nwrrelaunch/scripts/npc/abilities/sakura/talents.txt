@@ -125,7 +125,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"sakura_chakra_enhanced_strength"
+			"01" 	"sakura_earth_slam"
 		}
 
 		// Special
@@ -135,7 +135,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"20"
+				"value"					"1.5"
 			}
 		}
 	}
