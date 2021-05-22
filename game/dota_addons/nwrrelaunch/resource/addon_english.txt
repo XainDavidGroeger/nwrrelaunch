@@ -35,7 +35,7 @@
 
 
 		//--------------------
-		//Scorebaord
+		//Scoreboard
 		//--------------------
 		"scoreboard_last_hits" 						"LH"
 		"scoreboard_denies" 						"D"
@@ -886,6 +886,8 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_modifier_guy_dynamic_entry_debuff"	"This Unit is Slowed."
+
 
 		// Dynamic Entry Ulti
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
@@ -894,7 +896,7 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range"				"RANGE: "
 
-		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
+		"DOTA_Tooltip_ability_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased Movement Speed."
 		// Leaf Strong Whirlwind
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
@@ -926,6 +928,7 @@
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION IN GATES: "
 		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
+		"DOTA_Tooltip_modifier_guy_strong_fist"					"Next Attack will Crit."
 		
 		// Morning Peacock
 		"DOTA_Tooltip_ability_guy_morning_peacock"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
@@ -1042,6 +1045,7 @@
 		"DOTA_Tooltip_ability_neji_byakugan_duration"					"VISION DURATION: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_percentage"		"%MAX MANA BURNED PER HIT: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_flat"				"MANA BURNED PER HIT: "
+		"DOTA_Tooltip_ability_neji_byakugan_mana_lose_percentage"       "%MANA COST PER SECOND: "
 		
 		//Eight Trigrams Sixty-Four Palms
 		"DOTA_Tooltip_ability_neji_32_palms"				"<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"
@@ -1094,6 +1098,7 @@
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_physical_damage_reduce_percent"	"%DAMAGE REDUCTION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_charge_damage_amount"	"MAX DAMAGE TAKEN: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_damage"    "RELEASE DAMAGE: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_aoe"		"RADIUS: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_ms_slow"	"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_purge_duration"	"MOVEMENT SPEED SLOW DURATION: "
@@ -1157,12 +1162,15 @@
 		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"<b><font color='#2CEA5E'>Periodically unleashes a snake</font></b> that inflicts Magic Damage to a nearby enemy Hero. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
 		
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"<b><font color='#78D590'>Snake Bite</font></b>"
-		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				"Senei Ta Jashu"
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				""
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_slow_duration"	"MOVEMENT SPEED DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_damage_per_tick"	"DAMAGE OVER TIME : "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_ms_slow"			"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Deals<b><font color='#78D590'> Magic Damage</font></b> and <b><font color='#78D590'>reduced Movement Speed</font></b> to a target enemy unit for a short duration. <br><br> <b><font color='#78D590'>The enemy is Silenced</font></b> for the duration of the effect."
+		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_poison" "Unit is taking Damage over time."
+		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_slow" "Unit is Slowed."
+
 		
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"<b><font color='#B8D3BE'>Twin Snake Sacrfice</font></b>"
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_lore"			"Sojasosai no Jutsu"
