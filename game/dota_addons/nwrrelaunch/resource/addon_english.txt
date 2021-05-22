@@ -35,7 +35,7 @@
 
 
 		//--------------------
-		//Scorebaord
+		//Scoreboard
 		//--------------------
 		"scoreboard_last_hits" 						"LH"
 		"scoreboard_denies" 						"D"
@@ -212,7 +212,7 @@
 		"DOTA_Tooltip_ability_hidan_taunt_description"						"Hidan taunts nearby enemies <b><font color='#D52516'>forcing them to attack him.</font></b> <br><br> Each basic attack Hidan takes during the taunt duration<b><font color='#D52516'> grants him temporary Strength. </font></b>"
 		"DOTA_Tooltip_ability_hidan_taunt_radius"							"RADIUS: "
 		"DOTA_Tooltip_ability_hidan_taunt_duration"							"TAUNT DURATION: "
-		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STRENGTH GAIN HRO: "
+		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STRENGTH GAIN HERO: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_gain_not_hero"				"STRENGTH GAIN UNIT: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_duration"						"STRENGTH BUFF DURATION: "
 		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str"						"Taunt"
@@ -626,7 +626,7 @@
 		
 		// Chakra Enhanced Strength
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b> <br><br> <b><font color='#D98CFF'>Deals double damage</font></b> to creeps."
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_stun_duration"	"STUN DURATION: "
 
@@ -886,6 +886,8 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
+		"DOTA_Tooltip_ability_guy_modifier_guy_dynamic_entry_debuff"	"This Unit is Slowed."
+
 
 		// Dynamic Entry Ulti
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
@@ -894,7 +896,7 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range"				"RANGE: "
 
-		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
+		"DOTA_Tooltip_ability_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased Movement Speed."
 		// Leaf Strong Whirlwind
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
@@ -926,6 +928,7 @@
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION IN GATES: "
 		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
+		"DOTA_Tooltip_modifier_guy_strong_fist"					"Next Attack will Crit."
 		
 		// Morning Peacock
 		"DOTA_Tooltip_ability_guy_morning_peacock"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
@@ -1042,6 +1045,7 @@
 		"DOTA_Tooltip_ability_neji_byakugan_duration"					"VISION DURATION: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_percentage"		"%MAX MANA BURNED PER HIT: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_flat"				"MANA BURNED PER HIT: "
+		"DOTA_Tooltip_ability_neji_byakugan_mana_lose_percentage"       "%MANA COST PER SECOND: "
 		
 		//Eight Trigrams Sixty-Four Palms
 		"DOTA_Tooltip_ability_neji_32_palms"				"<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"
@@ -1094,6 +1098,7 @@
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_physical_damage_reduce_percent"	"%DAMAGE REDUCTION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_charge_damage_amount"	"MAX DAMAGE TAKEN: "
+		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_damage"    "RELEASE DAMAGE: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_aoe"		"RADIUS: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_ms_slow"	"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_purge_duration"	"MOVEMENT SPEED SLOW DURATION: "
@@ -1157,12 +1162,15 @@
 		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"<b><font color='#2CEA5E'>Periodically unleashes a snake</font></b> that inflicts Magic Damage to a nearby enemy Hero. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
 		
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"<b><font color='#78D590'>Snake Bite</font></b>"
-		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				"Senei Ta Jashu"
+		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				""
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_slow_duration"	"MOVEMENT SPEED DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_damage_per_tick"	"DAMAGE OVER TIME : "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_ms_slow"			"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Deals<b><font color='#78D590'> Magic Damage</font></b> and <b><font color='#78D590'>reduced Movement Speed</font></b> to a target enemy unit for a short duration. <br><br> <b><font color='#78D590'>The enemy is Silenced</font></b> for the duration of the effect."
+		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_poison" "Unit is taking Damage over time."
+		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_slow" "Unit is Slowed."
+
 		
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"<b><font color='#B8D3BE'>Twin Snake Sacrfice</font></b>"
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu_lore"			"Sojasosai no Jutsu"
@@ -2250,7 +2258,7 @@
 		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 		//10: +5 All Stats / +200 Bunshin Swap Range
-		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Clone Swap Range"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Clone Mastery Range"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_2"						"-2s Clone Swap Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_3"						"+90 Clone Rasengan Damage"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_4"						"+4.5s Frog Kata Duration"
@@ -2305,11 +2313,12 @@
 		//20: -3s Earth Slam Cooldown / +15 Inner Sakura Armor
 		//15: +12 Strength / +70 Chakra Punch Damage
 		//10: +20 Attack Speed / +2.5 Mana Regen
-		"DOTA_Tooltip_Ability_special_bonus_sakura_1"						"+70 Chakra Punch Damage"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Earth Slam Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Inner Sakura Armor"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_1"						"+70 Chakra Enchanced Stength Damage"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Cherry Blossom Impact Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Stength of a Hundred Seal Armor"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4s Chakra Burst Duration"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5s Cherry Blossom Stun"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5s Cherry Blossom Stun Duration"
+
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
