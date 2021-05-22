@@ -35,26 +35,33 @@ function modifier_kisame_samehada:OnCreated()
 	self.ability = self:GetAbility()
 end
 
-function modifier_kisame_samehada:IsHidden() return true end
+--function modifier_kisame_samehada:IsHidden() return true end
 
 function modifier_kisame_samehada:OnAttackLanded(keys)
-
+    if keys.attacker ~= self:GetParent() then return end
+	
 	if self.ability:IsCooldownReady() then
 		if (keys.target:IsHero() or keys.target:IsIllusion()) and keys.target:GetMaxMana() > 0 then
 			-- Variables
 			local caster = keys.attacker
 			local ability = self.ability
 			local target = keys.target
-	
+			
 			target:EmitSound("kisame_samehada_trigger")
 	
 			local manasteal_percentage = ability:GetSpecialValueFor("manasteal_percentage")
 	
+	        local can_up_bunshins_samehada = false
 			local ability3 = caster:FindAbilityByName("special_bonus_kisame_3")
 			if ability3 ~= nil then
 				if ability3:IsTrained() then
 					manasteal_percentage = manasteal_percentage + 7.0
+					can_up_bunshins_samehada = true
 				end
+			end
+			
+			if self:GetParent():GetUnitName() == "kisame_bunshin" and can_up_bunshins_samehada then
+			    manasteal_percentage = manasteal_percentage + 7.0
 			end
 	
 			local mana = target:GetMana()

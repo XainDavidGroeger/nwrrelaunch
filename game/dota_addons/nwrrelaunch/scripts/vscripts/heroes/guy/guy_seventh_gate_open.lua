@@ -1,5 +1,7 @@
- guy_seventh_gate_open = class({})
- LinkLuaModifier( "modifier_guy_seventh_gate", "scripts/vscripts/heroes/guy/guy_seventh_gate_open.lua", LUA_MODIFIER_MOTION_NONE )
+guy_seventh_gate_open = class({})
+LinkLuaModifier( "modifier_guy_seventh_gate", "scripts/vscripts/heroes/guy/guy_seventh_gate_open.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_guy_morning_peacock_buff", "scripts/vscripts/heroes/guy/guy_morning_peacock.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_guy_morning_peacock_cd_reset", "scripts/vscripts/heroes/guy/guy_morning_peacock.lua", LUA_MODIFIER_MOTION_NONE )
  
 function guy_seventh_gate_open:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context)
@@ -34,7 +36,7 @@ end
 		local caster 	= self:GetCaster();
 		local ability 	= self;
 		self.caster = caster
-		self.ability = self
+		--self.ability = self
 
 		if toggle == true then 
 			guy_seventh_gate_open:ToggleOn(caster, ability);
@@ -49,7 +51,6 @@ end
 			self.caster:RemoveAbility("guy_leaf_strong_whirlwind_ult")
 			self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
 			self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
-
 
 			if self.caster:HasAbility("guy_strong_fist_ult") then 
 				ability_name = "guy_strong_fist_ult"
@@ -67,7 +68,11 @@ end
 			self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
 			self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
 			
-			caster:RemoveModifierByName("modifier_guy_seventh_gate");
+			caster:RemoveModifierByName("modifier_guy_seventh_gate")
+			if caster:HasModifier("modifier_guy_morning_peacock_buff") then
+			    caster:RemoveModifierByName("modifier_guy_morning_peacock_buff")
+			    caster:RemoveModifierByName("modifier_guy_morning_peacock_cd_reset")
+			end
 		end
 	end
 end
@@ -91,13 +96,12 @@ function modifier_guy_seventh_gate:OnCreated()
 	self.ms_bonus = self.ability:GetSpecialValueFor("ms_bonus") + self.caster:FindTalentValue("special_bonus_guy_3")
 	self.attack_bonus = self.ability:GetSpecialValueFor("bonus_damage")
 	self.base_attack_time = self.ability:GetSpecialValueFor("bat") + self.caster:FindTalentValue("special_bonus_guy_2")
-	print(self.base_attack_time)
+	--print(self.base_attack_time)
 
-
-	self.ability.pfx3 = ParticleManager:CreateParticle("particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	ParticleManager:SetParticleControlEnt( self.ability.pfx3, 0, self:GetCaster(), PATTACH_POINT, "attach_origin", self:GetCaster():GetAbsOrigin(), false )
-	self.ability.pfx4 = ParticleManager:CreateParticle( "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	ParticleManager:SetParticleControlEnt( self.ability.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
+	self.pfx3 = ParticleManager:CreateParticle("particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	ParticleManager:SetParticleControlEnt( self.pfx3, 0, self:GetCaster(), PATTACH_POINT, "attach_origin", self:GetCaster():GetAbsOrigin(), false )
+	self.pfx4 = ParticleManager:CreateParticle( "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	ParticleManager:SetParticleControlEnt( self.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
 
 	--sounds
 	self.caster:EmitSound("guy_gates_cast")
@@ -136,9 +140,11 @@ function modifier_guy_seventh_gate:OnCreated()
 	end
 end
 
-function modifier_guy_seventh_gate:OnDestroy()
-	ParticleManager:DestroyParticle(self.ability.pfx3, true)
-	ParticleManager:DestroyParticle(self.ability.pfx4, true)
+function modifier_guy_seventh_gate:OnRemoved()
+	ParticleManager:DestroyParticle(self.pfx3, true)
+	ParticleManager:ReleaseParticleIndex(self.pfx3)
+	ParticleManager:DestroyParticle(self.pfx4, true)
+	ParticleManager:ReleaseParticleIndex(self.pfx4)
 end
 
 function modifier_guy_seventh_gate:OnIntervalThink()

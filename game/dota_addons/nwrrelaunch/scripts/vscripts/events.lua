@@ -15,6 +15,9 @@ require('leaverGold')
 --cheats.lua, includes functions which listen to chat inputs of the players
 require('cheats')
 
+LinkLuaModifier("modifier_global_boost", "scripts/vscripts/modifiers/modifier_global_boost.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_courier_speed", "scripts/vscripts/modifiers/modifier_courier_speed.lua", LUA_MODIFIER_MOTION_NONE)
+
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
 	DebugPrint("[BAREBONES] GameRules State Changed")
@@ -57,16 +60,22 @@ function GameMode:OnNPCSpawned(keys)
 		return
 	end
 
-	self:_OnNPCSpawned(keys)
+	--self:_OnNPCSpawned(keys)
 
 	GameMode:RescaleUnit(npc)
 
 	if GetMapName() == "turbo" then --If the map was selected turbo, then at the beginning of the game each courier is given a buff for speed, and the player is given a buff for experience and gold.
-		npc:AddNewModifier(npc, nil, 'modifier_global_boost', nil) --Give players a buff for experience and gold
-	end
-
-	if npc:GetUnitName() == "npc_dota_courier" then --if it's a courier
-		npc:AddNewModifier(npc_dota_courier, nil, 'modifier_courier_speed', nil) --Give courier a buff for ms
+	    if npc.bFirstSpawned == false then
+	        if npc:IsRealHero() then
+		        npc:AddNewModifier(npc, nil, 'modifier_global_boost', nil) --Give players a buff for experience and gold
+				print("add modifier_global_boost for players")
+		    end
+		    if npc:GetUnitName() == "npc_dota_courier" then --if it's a courier
+	        	npc:AddNewModifier(npc, nil, 'modifier_courier_speed', nil) --Give courier a buff for ms
+				print("add modifier_courier_speed for couriers")
+	        end
+			npc.bFirstSpawned = true
+		end
 	end
 end
 
