@@ -1173,14 +1173,14 @@
 		//Temari
 		//--------------------
 		"npc_dota_hero_temari"  									"Temari"
-		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Dust Wind Technique</font></b>"
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Dust Wind</font></b>"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_lore"					"Fusajin no Jutsu"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"<b><font color='#7FD3FF'>Deals Magic Damage</font></b> to a target enemy unit. <br><br> On cast, <b><font color='#7FD3FF'>reduces the Cooldown</font></b> of Temari's other abilities."
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_cd_reduc"			"COOLDOWN REDUCTION (TALENT): "
 
 		
-		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"<b><font color='#EAF8FF'>Wind Scythe Technique</font></b>"
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"<b><font color='#EAF8FF'>Wind Scythe</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lore"			"Kamaitachi No Jutsu"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"<b><font color='#EAF8FF'>Unleashes a tornado</font></b> towards the target point <b><font color='#EAF8FF'>lifting enemies</font></b> into the air. <br><br> Enemies take <b><font color='#EAF8FF'>Magic Damage upon landing.</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_base_damage"	"DAMAGE: "
@@ -2158,7 +2158,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_1"						"+25 Chidori Sword Damage"
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_2"						"+75 Chidori Stream Damage"
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_3"						"+275 Chidori Max Range"
-		"DOTA_Tooltip_Ability_special_bonus_sasuke_4"						"200% Chidori Attack Damage"
+		"DOTA_Tooltip_Ability_special_bonus_sasuke_4"						"+100% Chidori Attack Damage"
 		"DOTA_Tooltip_Ability_special_bonus_sasuke_5"						"+225 Chidori Stream Radius"
 
 
@@ -2217,7 +2217,7 @@
 		//15: +1.5s Deep Forest Duration ( * ) / +6 Armor
 		//10: +12 Intelligence / +70 Susano’o Radius
 		"DOTA_Tooltip_Ability_special_bonus_madara_1"						"+70 Susano’o Radius"
-		"DOTA_Tooltip_Ability_special_bonus_madara_2"						"+1.5s Deep Forest Duration"
+		"DOTA_Tooltip_Ability_special_bonus_madara_2"						"+1.5s Forest Emergence Duration"
 		"DOTA_Tooltip_Ability_special_bonus_madara_3"						"-2s Forest Emergence Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_madara_4"						"+160 Damage Fire Annihilation Explosion"
 		"DOTA_Tooltip_Ability_special_bonus_madara_5"						"+100 Susano’o Damage"
