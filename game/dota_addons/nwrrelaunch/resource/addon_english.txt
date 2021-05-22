@@ -626,7 +626,7 @@
 		
 		// Chakra Enhanced Strength
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b>"
+		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b> <br><br> <b><font color='#D98CFF'>Deals double damage</font></b> to creeps."
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_stun_duration"	"STUN DURATION: "
 
@@ -2258,7 +2258,7 @@
 		//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
 		//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
 		//10: +5 All Stats / +200 Bunshin Swap Range
-		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Clone Swap Range"
+		"DOTA_Tooltip_Ability_special_bonus_naruto_1"						"+200 Clone Mastery Range"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_2"						"-2s Clone Swap Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_3"						"+90 Clone Rasengan Damage"
 		"DOTA_Tooltip_Ability_special_bonus_naruto_4"						"+4.5s Frog Kata Duration"
@@ -2313,11 +2313,11 @@
 		//20: -3s Earth Slam Cooldown / +15 Inner Sakura Armor
 		//15: +12 Strength / +70 Chakra Punch Damage
 		//10: +20 Attack Speed / +2.5 Mana Regen
-		"DOTA_Tooltip_Ability_special_bonus_sakura_1"						"+70 Chakra Punch Damage"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Earth Slam Cooldown"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Inner Sakura Armor"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_1"						"+70 Chakra Enchanced Stength Damage"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Cherry Blossom Impact Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Stength of a Hundred Seal Armor"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4s Chakra Burst Duration"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20% Chakra Punch Chance"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20%  Chance"
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
