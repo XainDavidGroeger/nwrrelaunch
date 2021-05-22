@@ -110,7 +110,7 @@ function modifier_raikage_shield:OnCreated()
    self.ability.pfx8 = ParticleManager:CreateParticle(  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
    ParticleManager:SetParticleControlEnt( self.ability.pfx8, 0, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, "attach_righthand", self:GetCaster():GetAbsOrigin(), true )
 
-   self:GetCaster():EmitSound("raikage_lightningarmor_cast")
+   EmitSoundOn("raikage_lightningarmor_cast", self:GetCaster())
 
    self:GetCaster():Purge(false, true, false, false, false)
 
@@ -135,7 +135,7 @@ function modifier_raikage_shield:OnDestroy()
 	
 	self:GetCaster():StopSound("raikage_lightningarmor_cast")
 
-	self:GetCaster():EmitSound("raikage_lightningarmor_end")
+	EmitSoundOn("raikage_lightningarmor_end", self:GetCaster())
 	
 
 end

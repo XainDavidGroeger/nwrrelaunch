@@ -108,17 +108,18 @@ elseif GetMapName() == "ranked" then
 elseif GetMapName() == "turbo" then
 	USE_AUTOMATIC_PLAYERS_PER_TEAM = true
 	CUSTOM_TEAM_PLAYER_COUNT = {}           -- If we're not automatically setting the number of players per team, use this table
-	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 2
-	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 2              -- How many potential players can be in this team?
+	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_GOODGUYS] = 5
+	CUSTOM_TEAM_PLAYER_COUNT[DOTA_TEAM_BADGUYS]  = 5              -- How many potential players can be in this team?
 	PRE_GAME_TIME = 40                   -- How long after people select their heroes should the horn blow and the game start?
-	END_GAME_ON_KILLS = true               -- Should the game end after a certain number of kills?
-	KILLS_TO_END_GAME_FOR_TEAM = 10         -- How many kills for a team should signify an end of game?
-        COURIER_SPEED_BONUS = 640.0
-        GLOBAL_EXP_RATE_BONUS = 120.0           -- Returns the amount of exp boost that will be provided - 100 = Normal XP
+	END_GAME_ON_KILLS = false               -- Should the game end after a certain number of kills?
+	KILLS_TO_END_GAME_FOR_TEAM = 0         -- How many kills for a team should signify an end of game?
+    COURIER_SPEED_BONUS = 640.0
+    GLOBAL_EXP_RATE_BONUS = 120.0           -- Returns the amount of exp boost that will be provided - 100 = Normal XP
+    GLOBAL_RESPAWN_TIME_PERCENTAGE = -50           -- Increases the respawn time of the parent by a percentage returned to it. Can return negative values.
 	UNIVERSAL_SHOP_MODE = true
 	FIXED_RESPAWN_TIME = 30
 	FOUNTAIN_CONSTANT_MANA_REGEN = 60       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
-        FOUNTAIN_PERCENTAGE_MANA_REGEN = 5      -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
-        FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 7
+    FOUNTAIN_PERCENTAGE_MANA_REGEN = 5      -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
+    FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 7
 	STARTING_GOLD = 600
 end

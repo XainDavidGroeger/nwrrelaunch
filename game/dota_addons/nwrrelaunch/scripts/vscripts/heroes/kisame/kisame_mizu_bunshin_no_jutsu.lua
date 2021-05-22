@@ -27,7 +27,7 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
 	local damage_percentage = self:GetSpecialValueFor("damage_percentage")
 	local unit_name = caster:GetUnitName()
 	local origin = caster:GetAbsOrigin() + RandomVector(100)
-	local illusion_max_hp_percentage = self:GetSpecialValueFor("illusion_max_hp_percentage")
+	local illusion_max_hp_percentage = self:GetSpecialValueFor("illusion_max_hp_percentage") + caster:FindTalentValue("special_bonus_kisame_2")
 	local ability2 = caster:FindAbilityByName("special_bonus_kisame_2")
     if ability2 ~= nil then
   	 if ability2:IsTrained() then
@@ -77,6 +77,12 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
     	illusion2:SetModelScale(1.03)
     end
 	
+	illusion:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
+	illusion2:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
+	local hp_caster_percentage = caster:GetHealth() / (caster:GetMaxHealth() / 100)
+    illusion:SetHealth(illusion:GetMaxHealth() / 100 * hp_caster_percentage)
+    illusion2:SetHealth(illusion2:GetMaxHealth() / 100 * hp_caster_percentage)
+	
 	-- Set the unit as an illusion
     -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
 	illusion:AddNewModifier(
@@ -94,6 +100,9 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
 	
 	GameMode:RemoveWearables(illusion)
 	GameMode:RemoveWearables(illusion2)
+	
+	illusion:MakeIllusion()
+	illusion2:MakeIllusion()
 
     illusion:SetForwardVector(caster:GetForwardVector())
     illusion2:SetForwardVector(caster:GetForwardVector())
@@ -112,12 +121,6 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
     ability_samehada2:SetAbilityIndex(1)
     ability_samehada:SetLevel(self:GetLevel())
     ability_samehada2:SetLevel(self:GetLevel())
-	
-	illusion:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
-	illusion2:SetMaxHealth(caster:GetMaxHealth() / 100 * illusion_max_hp_percentage)
-	local hp_caster_percentage = caster:GetHealth() / (caster:GetMaxHealth() / 100)
-    illusion:SetHealth(illusion:GetMaxHealth() / 100 * hp_caster_percentage)
-    illusion2:SetHealth(illusion2:GetMaxHealth() / 100 * hp_caster_percentage)
     
     illusion:SetBaseDamageMin(caster:GetBaseDamageMin() / 100 * damage_percentage)
     illusion2:SetBaseDamageMin(caster:GetBaseDamageMin() / 100 * damage_percentage)

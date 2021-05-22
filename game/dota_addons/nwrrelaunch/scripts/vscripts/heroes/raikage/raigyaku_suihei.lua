@@ -9,6 +9,10 @@ function ReleaseAoeDamage( event )
 	local ability = event.ability
 	local ability_level = ability:GetLevel() - 1
 	local aoe = event.ability:GetLevelSpecialValueFor("aoe", ability_level )
+	
+	if event.target:IsBuilding() then
+		return nil
+	end
 
 	-- Find Enemy Targets in AOE
 	local targetEntities = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
