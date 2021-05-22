@@ -139,7 +139,7 @@ function madara_meteor:LaunchMeteor(target_point)
 				end
 			end
 
-			local explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf", PATTACH_ABSORIGIN, caster)
+			local explosion_vfx = ParticleManager:CreateParticle("particles/units copy/heroes/deidara/c4_explo_base.vpcf", PATTACH_ABSORIGIN, caster)
 			ParticleManager:SetParticleControl(explosion_vfx, 0, target_point)
 			ParticleManager:SetParticleControl(explosion_vfx, 1, Vector(explosion_radius,0,0))
 
