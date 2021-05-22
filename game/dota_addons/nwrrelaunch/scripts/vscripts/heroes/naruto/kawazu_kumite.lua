@@ -96,6 +96,19 @@ function ConjureImage( event )
      -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
      illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
      ability:ApplyDataDrivenModifier(caster, illusion, "modifier_naruto_bunshin_reduce_count", {duration = duration})
+	 
+	local naruto_modifier = event.ModiferName
+
+	local applied_modifier = ability:ApplyDataDrivenModifier(caster, illusion, naruto_modifier, {})
+
+    --If naruto has buuf duration talent
+    if caster:FindAbilityByName("special_bonus_naruto_4") ~= nil then
+       local duration_bonus_talent = caster:FindAbilityByName("special_bonus_naruto_4")
+       if duration_bonus_talent:IsTrained() then
+          duration = ability:GetLevelSpecialValueFor('duration_special', ability:GetLevel())
+          applied_modifier:SetDuration(duration, true)
+       end
+    end
 
      -- Without MakeIllusion the unit counts as a hero, e.g. if it dies to neutrals it says killed by neutrals, it respawns, etc.
      illusion:MakeIllusion()
@@ -141,33 +154,4 @@ function applyModifier( keys )
    end
   
    
-end
-
-
-function applyBunshinBuff(keys)
-   local units = FindUnitsInRadius(
-		keys.caster:GetTeamNumber(),
-		keys.caster:GetAbsOrigin(),
-		nil,
-		900,
-		DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-		DOTA_UNIT_TARGET_HERO,
-		DOTA_UNIT_TARGET_FLAG_NONE,
-		FIND_ANY_ORDER,
-		false
-	)
-
-   for i, individual_unit in ipairs(units) do
-      if individual_unit:IsIllusion() and individual_unit:GetName() == "npc_dota_hero_dragon_knight" then
-
-         keys.ability:ApplyDataDrivenModifier(
-            keys.caster,
-            individual_unit,
-            "modifier_naruto_kawazu_kumite_bunshin_buff",
-            {duration = 2}
-         )
-
-      end
-   end
-
 end

@@ -117,15 +117,8 @@
       {
         "ScriptFile"      "heroes/naruto/kawazu_kumite.lua"
         "Function"        "ConjureImage"
+		"ModiferName"			"modifier_naruto_kawazu_kumite"
       }
-
-      "ApplyModifier"
-      {
-        "ModifierName"	"modofier_naruto_aura_illusions"
-        "Target"		"CASTER"
-        "Duration"		"%duration"
-      }
-
     }
 
     "Modifiers"
@@ -148,23 +141,6 @@
           "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%strength_agility_bonus"
           "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"     "%strength_agility_bonus" 
         }
-      }
-
-      "modofier_naruto_aura_illusions"
-      {
-          "Passive"           "0"
-          "IsHidden"          "1"
-          
-          "ThinkInterval"	"0.5"
-          "OnIntervalThink"
-          {
-            "RunScript"
-            {
-              "ScriptFile"  "heroes/naruto/kawazu_kumite.lua"
-              "Function"    "applyBunshinBuff"
-              "Caster"      "CASTER"
-            }
-          }
       }
 
       "modifier_naruto_kawazu_kumite_bunshin_buff"

@@ -55,7 +55,7 @@ function modifier_kakashi_bunshin_charge:OnTakeDamage(params)
 	local ability = self:GetAbility()
 	local caster = ability:GetCaster()
 	
-	if attacker:IsRealHero() and attacker ~= self:GetParent() then
+	if attacker:IsRealHero() and attacker ~= caster then
 		attacker:AddNewModifier(caster, ability, "modifier_kakashi_lighting_charge", { duration = self.duration })
 
 		local dummy = CreateUnitByName("npc_dummy_unit", ability.bunshin:GetAbsOrigin(), false, caster, caster, caster:GetTeam())

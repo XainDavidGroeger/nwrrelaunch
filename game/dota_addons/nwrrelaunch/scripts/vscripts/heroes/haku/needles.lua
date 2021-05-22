@@ -84,6 +84,10 @@ function modifier_haku_needles_thinker:OnIntervalThink()
 		local units = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), 0, 0, false)
 
 		for k, v in pairs(units) do
+		    if v:IsBuilding() then
+	        	return nil
+	        end
+			
 			ApplyDamage({
 				victim =  v,
 				attacker = self:GetCaster(),

@@ -26,14 +26,28 @@ end
 
 modifier_guy_morning_peacock_buff = modifier_guy_morning_peacock_buff or class({})
 
-function modifier_guy_morning_peacock_buff:IsHidden() return true end
-function modifier_guy_morning_peacock_buff:IsDebuff() return true end
+function modifier_guy_morning_peacock_buff:IsHidden() return false end
+function modifier_guy_morning_peacock_buff:IsBuff() return true end
 
 function modifier_guy_morning_peacock_buff:OnCreated()
 	self.ability = self:GetAbility()
 	self.caster = self:GetCaster()
-	self.damage = (-1) * (self.caster:GetAverageTrueAttackDamage(nil) / 100 * 25)
 	self:SetStackCount(0)
+	
+	self.damage_timer = Timers:CreateTimer(0.0, function ()
+		if self.caster:HasModifier("modifier_guy_morning_peacock_buff") then
+			self.damage = (-1) * (self.caster:GetAverageTrueAttackDamage(nil) / 100 * 25)
+		end
+		return 1
+	end)
+end
+
+function modifier_guy_morning_peacock_buff:OnRefresh( kv )
+	self:OnCreated( kv )
+end
+
+function modifier_guy_morning_peacock_buff:OnRemoved()
+	Timers:RemoveTimer(self.damage_timer)
 end
 
 function modifier_guy_morning_peacock_buff:GetPriority()
@@ -47,7 +61,7 @@ function modifier_guy_morning_peacock_buff:DeclareFunctions()
 	}
 end
 
-function modifier_guy_morning_peacock_buff:GetModifierBaseAttack_BonusDamage()	
+function modifier_guy_morning_peacock_buff:GetModifierBaseAttack_BonusDamage()
 	return self.damage
 end
 
@@ -57,8 +71,8 @@ end
 
 modifier_guy_morning_peacock_cd_reset = modifier_guy_morning_peacock_cd_reset or class({})
 
-function modifier_guy_morning_peacock_cd_reset:IsHidden() return true end
-function modifier_guy_morning_peacock_cd_reset:IsPassvie() return true end
+function modifier_guy_morning_peacock_cd_reset:IsHidden() return false end
+function modifier_guy_morning_peacock_cd_reset:IsBuff() return true end
 
 function modifier_guy_morning_peacock_cd_reset:OnCreated()
 	self.ability = self:GetAbility()

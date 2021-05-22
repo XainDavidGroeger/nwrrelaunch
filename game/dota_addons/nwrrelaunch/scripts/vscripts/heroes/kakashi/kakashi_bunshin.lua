@@ -126,16 +126,18 @@ function kakashi_bunshin:OnSpellStart()
 end
 
 function kakashi_bunshin:RemoveBunshin(illusion)
-    local dummy = CreateUnitByName("npc_dummy_unit", illusion:GetAbsOrigin(), false, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeam())
-	local lightningChain = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
-	ParticleManager:SetParticleControl(lightningChain,0,Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	
-	dummy:RemoveSelf()
-	EmitSoundOn("clone_pop", illusion)
-	illusion:ForceKill(false)
-          
-    Timers:CreateTimer(0.1, function()
-        illusion:Destroy()
-		illusion = nil
-		self.bunshin = nil
-    end)
+    if illusion ~= nil then
+        local dummy = CreateUnitByName("npc_dummy_unit", illusion:GetAbsOrigin(), false, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeam())
+	    local lightningChain = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
+	    ParticleManager:SetParticleControl(lightningChain,0,Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	
+	    dummy:RemoveSelf()
+	    EmitSoundOn("clone_pop", illusion)
+	    illusion:ForceKill(false)
+              
+        Timers:CreateTimer(0.1, function()
+            illusion:Destroy()
+	    	illusion = nil
+	    	self.bunshin = nil
+        end)
+	end
 end
