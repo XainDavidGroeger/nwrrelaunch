@@ -17,13 +17,13 @@
 				<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
 			</Button>
 		</Panel>
-	</Panel>
+	</Panel>-->
 	<Panel id="community_patreon_container" >
 		<Panel id="CommunityPanel">
-			<Button id="community_header" class="CommunityImg" onactivate="DOTADisplayURL('https://discord.gg/amrUr8sByJ');" >
-				<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
+			<Button id="community_header" class="CommunityImg" onactivate="DOTADisplayURL('https://www.patreon.com/customcoders');" >
+				<Image src="file://{images}/custom_game/loading_screen/patreon_logo.png" />
 			</Button>
 		</Panel>
-	</Panel>-->
+	</Panel>
   </Panel>
 </root>
