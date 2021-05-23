@@ -9,8 +9,11 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/sakura/earth_slam.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO|DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"				"1"
@@ -35,6 +38,7 @@
 		{
 			"var_type"						"FIELD_FLOAT"
 			"stun_duration"					"2.0"
+			"LinkedSpecialBonus"			"special_bonus_sakura_5"
 		}
 		"03"
 		{
@@ -57,83 +61,83 @@
 		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
 	}
 
-	"OnAbilityPhaseStart"
-	{
-			"FireSound"
-		{
-			"EffectName"		"sakura_slam"
-			"Target" 			"CASTER"
-		}
-	}
+	// "OnAbilityPhaseStart"
+	// {
+	// 		"FireSound"
+	// 	{
+	// 		"EffectName"		"sakura_slam"
+	// 		"Target" 			"CASTER"
+	// 	}
+	// }
 
-	"OnSpellStart"
-	{
-		"FireEffect"
-		{
-			"EffectName"		"particles/units/heroes/sakura/sakura_earth_slam.vpcf"
-			"EffectAttachType" 	"follow_origin"
-			"EffectRadius"		"%radius"
-			"Target" 			"CASTER"
-			"ControlPoints"
-			{
-				"01"	"%radius 0 %radius"
-			}
-		}
+	// "OnSpellStart"
+	// {
+	// 	"FireEffect"
+	// 	{
+	// 		"EffectName"		"particles/units/heroes/sakura/sakura_earth_slam.vpcf"
+	// 		"EffectAttachType" 	"follow_origin"
+	// 		"EffectRadius"		"%radius"
+	// 		"Target" 			"CASTER"
+	// 		"ControlPoints"
+	// 		{
+	// 			"01"	"%radius 0 %radius"
+	// 		}
+	// 	}
 
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/sakura/earth_slam.lua"
-			"Function"		"resetCooldown"
-		}
+	// 	"RunScript"
+	// 	{
+	// 		"ScriptFile"	"heroes/sakura/earth_slam.lua"
+	// 		"Function"		"resetCooldown"
+	// 	}
 
-		"FireSound"
-		{
-			"EffectName"		"Hero_Centaur.HoofStomp"
-			"Target" 			"CASTER"
-		}
-		"ActOnTargets"
-		{
-			"Target"
-			{
-				"Center"  				"CASTER"
-				"Radius" 				"%radius"
-				"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}
+	// 	"FireSound"
+	// 	{
+	// 		"EffectName"		"Hero_Centaur.HoofStomp"
+	// 		"Target" 			"CASTER"
+	// 	}
+	// 	"ActOnTargets"
+	// 	{
+	// 		"Target"
+	// 		{
+	// 			"Center"  				"CASTER"
+	// 			"Radius" 				"%radius"
+	// 			"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	// 			"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	// 		}
 
-			"Action"
-			{
-				"Damage"
-				{
-					"Target"	"TARGET"
-					"Type"		"DAMAGE_TYPE_MAGICAL"
-					"Damage"	"%stomp_damage"
-				}
+	// 		"Action"
+	// 		{
+	// 			"Damage"
+	// 			{
+	// 				"Target"	"TARGET"
+	// 				"Type"		"DAMAGE_TYPE_MAGICAL"
+	// 				"Damage"	"%stomp_damage"
+	// 			}
 
-				"ApplyModifier"
-				{
-					"Target" 		"TARGET"
-					"ModifierName"	"modifier_sakura_earth_slam"
-				}
-			}
-		}		
-	}
+	// 			"ApplyModifier"
+	// 			{
+	// 				"Target" 		"TARGET"
+	// 				"ModifierName"	"modifier_sakura_earth_slam"
+	// 			}
+	// 		}
+	// 	}		
+	// }
 
-	"Modifiers"
-	{
-		"modifier_sakura_earth_slam"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%stun_duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
-		}
-	}
+	// "Modifiers"
+	// {
+	// 	"modifier_sakura_earth_slam"
+	// 	{
+	// 		"IsDebuff"	"1"
+	// 		"Duration"	"%stun_duration"
+	// 		"States"
+	// 		{
+	// 			"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
+	// 		}
+	// 		"OverrideAnimation"	"ACT_DOTA_DISABLED"
+	// 		"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+	// 		"EffectAttachType"	"follow_overhead"
+	// 	}
+	// }
 }
 
 }

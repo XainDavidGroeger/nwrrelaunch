@@ -141,6 +141,22 @@ modifier_32_palms_debuff = modifier_32_palms_debuff or class({})
 
 function modifier_32_palms_debuff:IsDebuff() return true end
 
+function modifier_32_palms_debuff:CheckState()
+    local state = {
+        [MODIFIER_STATE_STUNNED] = true,
+        }
+    
+    return state
+end
+
+function modifier_32_palms_debuff:GetEffectName()
+	return "particles/generic_gameplay/generic_stunned.vpcf"
+end
+
+function modifier_32_palms_debuff:GetEffectAttachType()
+	return PATTACH_OVERHEAD_FOLLOW
+end
+
 function modifier_32_palms_debuff:OnCreated()
 	if not IsServer() then return end
 

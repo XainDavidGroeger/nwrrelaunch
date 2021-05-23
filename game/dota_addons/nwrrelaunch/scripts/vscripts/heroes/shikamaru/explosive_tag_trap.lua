@@ -15,6 +15,10 @@ function shikamaru_explosive_tag_trap:GetIntrinsicModifierName()
 	return "modifier_generic_custom_indicator"
 end
 
+function shikamaru_explosive_tag_trap:ProcsMagicStick()
+    return true
+end
+
 function shikamaru_explosive_tag_trap:OnSpellStart()
     local target_point = self:GetCursorPosition()
 

@@ -28,6 +28,8 @@ function haku_endless_wounds:GetIntrinsicModifierName()
 end
 
 function haku_endless_wounds:ApplyStacks(target, stacks)
+	if target:IsBuilding() then return end
+
 	if not target:HasModifier("modifier_haku_endless_needles_victim_counter") then
 		target:AddNewModifier(self:GetCaster(),
 							  self,
@@ -141,9 +143,6 @@ function modifier_haku_endless_needles_victim_counter:DeclareFunctions()
 end
 
 function modifier_haku_endless_needles_victim_counter:GetModifierMoveSpeedBonus_Percentage()
-	if IsClient() then
-		print(self.slow * self.current_stacks)
-	end
 	
     return  self.slow * self:GetStackCount()
 end

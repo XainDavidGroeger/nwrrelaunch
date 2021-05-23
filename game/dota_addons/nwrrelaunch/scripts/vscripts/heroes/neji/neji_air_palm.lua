@@ -46,7 +46,7 @@ end
 		Source 				= self.caster,
 		Ability 			= self,
 		EffectName 			= "particles/units/heroes/neji/neji_air_palm_proj.vpcf",
-		iMoveSpeed			= 900,
+		iMoveSpeed			= 2800,
 		vSpawnOrigin 		= self.caster:GetAbsOrigin(),
 		bDrawsOnMinimap 	= false,
 		bDodgeable 			= true,

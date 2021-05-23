@@ -60,7 +60,7 @@ function GameMode:OnNPCSpawned(keys)
 		return
 	end
 
-	--self:_OnNPCSpawned(keys)
+	self:_OnNPCSpawned(keys)
 
 	GameMode:RescaleUnit(npc)
 
