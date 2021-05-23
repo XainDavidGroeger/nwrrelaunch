@@ -3,6 +3,27 @@
     <include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
   </styles>
   <Panel class="AddonLoadingRoot">
-     <Image id="" class="SeqImg" src="file://{images}/custom_game/loading_screen/nwu.png" />
+    <Image id="" class="SeqImg" src="file://{images}/custom_game/loading_screen/nwu.png" />
+	<Panel id="community_discord_container" >
+		<Panel id="CommunityPanel">
+			<Button id="community_header" class="CommunityDiscordImg" onactivate="DOTADisplayURL('https://discord.gg/amrUr8sByJ');" >
+				<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
+			</Button>
+		</Panel>
+	</Panel>
+	<!--<Panel id="community_website_container" >
+		<Panel id="CommunityPanel">
+			<Button id="community_header" class="CommunityImg" onactivate="DOTADisplayURL('https://discord.gg/amrUr8sByJ');" >
+				<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
+			</Button>
+		</Panel>
+	</Panel>
+	<Panel id="community_patreon_container" >
+		<Panel id="CommunityPanel">
+			<Button id="community_header" class="CommunityImg" onactivate="DOTADisplayURL('https://discord.gg/amrUr8sByJ');" >
+				<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
+			</Button>
+		</Panel>
+	</Panel>-->
   </Panel>
 </root>

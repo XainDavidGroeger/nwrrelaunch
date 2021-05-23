@@ -11,6 +11,10 @@
 		//"DOTA_Shop_Category_Basics"				"ABILITIES"
 		//"DOTA_Shop_Category_Upgrades"			"ITEMS"
 		
+		// *************** MESSAGES AT GAME START ****************
+		"start_text_1"								"" //for example - Remember to restart Dota 2 before and after playing NWR.
+		"start_text_2"								"" //for example - Follow the development of NWR in our website: <b><font color='#F3C6FF'>naruto-wars-reborn.com</font></b>
+		
 
 			// *************** ERROR MESSAGES ****************
 
@@ -212,7 +216,7 @@
 		"DOTA_Tooltip_ability_hidan_taunt_description"						"Hidan taunts nearby enemies <b><font color='#D52516'>forcing them to attack him.</font></b> <br><br> Each basic attack Hidan takes during the taunt duration<b><font color='#D52516'> grants him temporary Strength. </font></b>"
 		"DOTA_Tooltip_ability_hidan_taunt_radius"							"RADIUS: "
 		"DOTA_Tooltip_ability_hidan_taunt_duration"							"TAUNT DURATION: "
-		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STRENGTH GAIN HERO: "
+		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STRENGTH GAIN HRO: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_gain_not_hero"				"STRENGTH GAIN UNIT: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_duration"						"STRENGTH BUFF DURATION: "
 		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str"						"Taunt"
@@ -2317,8 +2321,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Cherry Blossom Impact Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Stength of a Hundred Seal Armor"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4s Chakra Burst Duration"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5s Cherry Blossom Stun Duration"
-
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20%  Chance"
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
