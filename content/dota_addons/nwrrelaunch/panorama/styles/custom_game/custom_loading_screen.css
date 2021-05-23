@@ -34,7 +34,7 @@
 {
 	width: 100%;
 	height: 100%;
-	margin-left: 5%;
+	margin-left: 11%;
 	margin-top: -15%;
 }
 
@@ -42,7 +42,7 @@
 {
 	width: 100%;
 	height: 100%;
-	margin-left: 17%;
+	margin-left: 5%;
 	margin-top: -15%;
 }
 
@@ -50,7 +50,7 @@
 {
 	width: 100%;
 	height: 100%;
-	margin-left: 11%;
+	margin-left: 17%;
 	margin-top: -15%;
 }
 
@@ -82,7 +82,7 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 	horizontal-align: center;
-	border-radius: 10px;
+	border-radius: 15px;
 	saturation: 0.9;
 	transition-property: saturation, box-shadow;
 	transition-duration: 0.2s;
