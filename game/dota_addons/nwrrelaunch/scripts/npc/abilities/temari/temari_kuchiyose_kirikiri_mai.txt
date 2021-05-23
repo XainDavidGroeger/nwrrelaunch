@@ -69,7 +69,6 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"base_damage"			"110 160 210"
-			"LinkedSpecialBonus"	"special_bonus_temari_3"
 		}
 		"07"
 		{

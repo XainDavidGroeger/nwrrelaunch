@@ -70,7 +70,12 @@ end
 
 function modifier_onoki_stalagmite_armor:OnAttacked(params)
     if IsServer() then
+
 	    if params.unit==self:GetParent() then
+			return
+		end
+
+		if params.attacker==self:GetParent() then
 			return
 		end
 		

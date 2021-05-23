@@ -28,6 +28,8 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 		end
 	end
 
+	print(tornado_lift_duration)
+
 	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.
 	--Its invoker_tornado_datadriven ability also applies the cyclone modifier to hit enemy units, since if Invoker uninvokes Tornado,
 	--existing modifiers linked to that ability can cause errors.
