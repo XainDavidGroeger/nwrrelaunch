@@ -93,6 +93,10 @@ function gaara_sabaku_taiso:OnAbilityPhaseStart()
 	ParticleManager:SetParticleControl( self.build_up_particle, 3, Vector(0,0,0) )
 	ParticleManager:SetParticleControl( self.build_up_particle, 10, Vector(0,0,0) )
 
+	Timers:CreateTimer( 1.15, function()
+		ParticleManager:DestroyParticle( self.build_up_particle, true )
+	end)
+
 	return true
 end
 
