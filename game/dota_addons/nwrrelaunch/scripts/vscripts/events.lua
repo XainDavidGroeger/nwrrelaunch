@@ -49,6 +49,8 @@ function GameMode:OnGameRulesStateChange(keys)
 			end
 		end
 	elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+	    GameRules:SendCustomMessage("start_text_1", 0, 0)
+		GameRules:SendCustomMessage("start_text_2", 0, 0)
 	end
 end
 
@@ -60,7 +62,7 @@ function GameMode:OnNPCSpawned(keys)
 		return
 	end
 
-	self:_OnNPCSpawned(keys)
+	--self:_OnNPCSpawned(keys)
 
 	GameMode:RescaleUnit(npc)
 

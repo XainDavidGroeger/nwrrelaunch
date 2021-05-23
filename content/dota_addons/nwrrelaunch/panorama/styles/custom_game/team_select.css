@@ -33,6 +33,7 @@
     padding-left: 16px;
     padding-right: 16px;
     margin-left: 16px;
+	margin-bottom: 300px;
     animation-name: TeamsListAppear;
     animation-duration: 0.75s;
 }
@@ -55,7 +56,6 @@
     letter-spacing: 1px;
     color: #667273;
     margin-left: 8px;
-
     visibility: collapse;
 }
 
@@ -154,6 +154,7 @@
 #StartGameCountdownTimer {
     width: 96px;
     margin-top: 32px;
+	margin-left: 32%;
 }
 
 #TeamSelectTimer {
@@ -192,7 +193,7 @@
     font-size: 16px;
     text-transform: uppercase;
     horizontal-align: center;
-    visibility: collapse;
+    visibility: visible;
     transition-property: opacity;
     transition-duration: 0.2s;
 }
@@ -206,7 +207,7 @@
     font-size: 16px;
     text-transform: uppercase;
     horizontal-align: center;
-    visibility: collapse;
+    visibility: visible;
     transition-property: opacity;
     transition-duration: 0.2s;
     background-color: #0a0a0ef4;

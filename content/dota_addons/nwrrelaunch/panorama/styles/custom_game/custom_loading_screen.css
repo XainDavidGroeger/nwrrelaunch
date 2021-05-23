@@ -30,26 +30,103 @@
   text-shadow: 2px 2px 2px #000000;
 }
 
-.SeqImg
+#community_discord_container
 {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 100% 100%;
-  width:100%;
-  height:100%;
+	width: 100%;
+	height: 100%;
+	margin-left: 5%;
+	margin-top: -15%;
 }
 
-#CustomBg
+#community_website_container
 {
+	width: 100%;
+	height: 100%;
+	margin-left: 17%;
+	margin-top: -15%;
+}
 
-  margin-top: 350px;
-    overflow: clip;
-  pre-transform-scale2d: 1.0;
-  animation-name: gamemode_anim;
-  animation-delay: AnimationDelay;
-  animation-duration: TotalLength;
-  animation-timing-function: TimingFunc;
-  animation-iteration-count: IterationCount;
+#community_patreon_container
+{
+	width: 100%;
+	height: 100%;
+	margin-left: 11%;
+	margin-top: -15%;
+}
+
+#CommunityPanel
+{
+	padding-top: 100px;
+	margin-top: 60px;
+	width: 100px;
+	flow-children: down;
+	transition-property: opacity;
+	transition-delay: 0.0s;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+}
+
+.AspectRatio4x3 #CommunityPanel
+{
+	width: 300px;
+}
+
+#community_header {
+	
+}
+
+.CommunityImg
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	horizontal-align: center;
+	border-radius: 10px;
+	saturation: 0.9;
+	transition-property: saturation, box-shadow;
+	transition-duration: 0.2s;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.CommunityDiscordImg
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	horizontal-align: center;
+	border-radius: 50px;
+	saturation: 0.9;
+	transition-property: saturation, box-shadow;
+	transition-duration: 0.2s;
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.CommunityImg:hover
+{
+	saturation: 1.0;
+	box-shadow: #ffffff 0px 0px 10px 0px;
+}
+
+.CommunityImg:active
+{
+	transform: translate3d(1px, 1px, 0px);
+	sound: "ui_team_select_lock_and_start";
+	opacity: .65;
+}
+
+.CommunityDiscordImg:hover
+{
+	saturation: 1.0;
+	box-shadow: #ffffff 0px 0px 10px 0px;
+}
+
+.CommunityDiscordImg:active
+{
+	transform: translate3d(1px, 1px, 0px);
+	sound: "ui_team_select_lock_and_start";
+	opacity: .65;
 }
 
 #gamemode
