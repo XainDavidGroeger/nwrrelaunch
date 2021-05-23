@@ -15,7 +15,7 @@ function shikamaru_explosive_tag_trap:GetIntrinsicModifierName()
 	return "modifier_generic_custom_indicator"
 end
 
-function spell_name:ProcsMagicStick()
+function shikamaru_explosive_tag_trap:ProcsMagicStick()
     return true
 end
 
