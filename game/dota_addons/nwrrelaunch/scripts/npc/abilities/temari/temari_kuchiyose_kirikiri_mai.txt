@@ -138,6 +138,7 @@
 		{
 			"ScriptFile"		"heroes/temari/temari_kuchiyose_kirikiri_mai.lua"
 			"Function"			"temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit"
+			"Caster"			"CASTER"
 		}
 
 		"ApplyModifier"
