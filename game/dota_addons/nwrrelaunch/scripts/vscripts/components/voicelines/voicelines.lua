@@ -85,7 +85,7 @@ function VoiceResponses:PlayTrigger(responses, response_rules, unit)
 	local lastSound = responses.lastSound or 0
 	local lastCooldown = responses.Cooldown or 0 
 
-	local global = true
+	local global = false
 	if response_rules.Global ~= nil then
 		global = response_rules.Global
 	end
@@ -156,9 +156,7 @@ end
 function VoiceResponses:PlaySound(soundName, unit, allChat, global)
 	if not IsServer() then return end
 
-	print(soundName)
-
-	if allChat then
+	if global then
 		unit:EmitSound(soundName)
 	else
 		local playerID = unit:GetPlayerOwnerID()

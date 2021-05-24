@@ -121,7 +121,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_2d"
+				"reference_stack"		"dota_src1_3d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -225,7 +225,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_2d"
+				"reference_stack"		"dota_src1_3d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -263,7 +263,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_2d"
+				"reference_stack"		"dota_src1_3d"
 				"operator_variables"
 				{
 					"vsnd_files"
@@ -295,7 +295,7 @@
 			"reference_operator"
 			{
 				"operator"				"sos_reference_stack"
-				"reference_stack"		"dota_src1_2d"
+				"reference_stack"		"dota_src1_3d"
 				"operator_variables"
 				{
 					"vsnd_files"
