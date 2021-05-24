@@ -74,7 +74,13 @@ function modifier_temari_sheer_wind_caster:DeclareFunctions()
 end
 
 function modifier_temari_sheer_wind_caster:OnAbilityExecuted(event)
-	if event.ability:IsItem() then return end
+	if not IsServer() then return end
+	-- filter
+	if event.unit~=self:GetParent() then return end
+	if self:GetParent():PassivesDisabled() then return end
+	if not event.ability then return end
+	if event.ability:IsItem() or event.ability:IsToggle() then return end
+	
 	local ability = self:GetAbility()
 	local caster = ability:GetCaster()
 
