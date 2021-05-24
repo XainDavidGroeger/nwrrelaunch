@@ -363,7 +363,7 @@
 	"OnLevelUp"
 	{
 		"Priority"  "2"
-		"Global" "1"
+		"Global" "0"
 		"Delay" "0.5"
 		"Sounds"
 		{
