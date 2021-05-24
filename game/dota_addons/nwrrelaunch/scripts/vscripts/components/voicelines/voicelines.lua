@@ -155,11 +155,7 @@ end
 function VoiceResponses:PlaySound(soundName, unit, global)
 	if not IsServer() then return end
 
-	print("global?")
-	print(global)
-
 	if global == 1 then
-		print("doesplayglobal")
 		unit:EmitSound(soundName)
 	else
 		local playerID = unit:GetPlayerOwnerID()
