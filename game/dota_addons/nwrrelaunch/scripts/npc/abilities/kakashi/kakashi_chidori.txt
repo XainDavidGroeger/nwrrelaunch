@@ -10,7 +10,7 @@
 	"BaseClass"					"ability_lua"
 	"ScriptFile"                "heroes/kakashi/kakashi_chidori.lua"
 	"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET"
 	"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"   
@@ -22,11 +22,13 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"			"1800"
-	"AbilityCastPoint"			"2.00"
+	"AbilityCastPoint"			"0 0 0"
+
+	"AbilityChannelTime"		"2.00 2.00 2.00"
 
 	// Time	 
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"			"45"
+	"AbilityCooldown"			"45 45 45"
 	
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------

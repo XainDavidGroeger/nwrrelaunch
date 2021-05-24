@@ -4,7 +4,7 @@
   </styles>
   <Panel class="AddonLoadingRoot">
     <Image id="" class="SeqImg" src="file://{images}/custom_game/loading_screen/nwu.png" />
-	
+
 	<Panel id="TitleCommunityPanel" >
 		<Button id="community_header" class="CommunityImg" onactivate="DOTADisplayURL('https://discord.gg/amrUr8sByJ');" >
 			<Image src="file://{images}/custom_game/loading_screen/discord_logo.png" />
@@ -17,6 +17,7 @@
 		<Button id="community_patreon_header" class="CommunityImg" onactivate="DOTADisplayURL('https://www.patreon.com/customcoders');" >
 			<Image src="file://{images}/custom_game/loading_screen/patreon_logo.png" />
 		</Button>
+
 	</Panel>
   </Panel>
 </root>

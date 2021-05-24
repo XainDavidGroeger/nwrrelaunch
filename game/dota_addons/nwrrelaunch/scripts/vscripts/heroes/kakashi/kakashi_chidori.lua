@@ -37,11 +37,13 @@ function kakashi_chidori:ProcsMagicStick()
 	return true
 end
 
-function kakashi_chidori:OnAbilityPhaseStart()
-    local caster = self:GetCaster()
+function kakashi_chidori:OnSpellStart()
+   
+	local caster = self:GetCaster()
 	self.caster = caster
 	local target = self:GetCursorTarget()
 	self.target = target
+	self.ability = self
 	
 	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
     if target:FindModifierByName("modifier_item_lotus_orb_active") then
@@ -61,76 +63,15 @@ function kakashi_chidori:OnAbilityPhaseStart()
 	EmitSoundOn("kakashi_raikiri_cast_talking", caster)
 	EmitSoundOn("kakashi_raikiri_cast", caster)
 	
-	--Timer
-	self:OnSpellStart()
 end
 
-function kakashi_chidori:OnSpellStart()
-    local caster = self:GetCaster()
+function kakashi_chidori:OnChannelFinish(bInterrupted)
+
+	local caster = self:GetCaster()
 	local target = self.target
 	local ability_level = self:GetLevel()
 	local velocity = self:GetSpecialValueFor("speed")
 
-	-- Movement
-	Timers:CreateTimer(2, function() -- 2 = delay before Kakashi runs at the target
-	    --EmitSoundOn("kakashi_raikiri_loop", caster)
-        
-	    caster:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
-	    caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_4, 1)
-        
-	    caster:AddNewModifier(
-            caster, -- player source
-            self, -- ability source
-            "modifier_stunned", -- modifier name 
-            {} -- kv
-        )
-	    self:AddPhysics(caster)
-	
-		local vector = target:GetAbsOrigin() - caster:GetAbsOrigin()
-		local direction = vector:Normalized()
-		caster:SetPhysicsVelocity(direction * velocity)
-		caster:SetForwardVector(direction)
-		if target:IsOutOfGame() or not target:IsAlive() then
-			self:OnChannelFinish(true)
-			return nil
-		elseif vector:Length2D() <= 2 * target:GetPaddedCollisionRadius() then
-			local enemy_loc = target:GetAbsOrigin()
-			local impact_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf", PATTACH_POINT_FOLLOW, target)
-			ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
-			ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_POINT_FOLLOW, "attach_origin", enemy_loc, true)
-			self:OnChannelFinish(false)
-
-			local damage = self:GetSpecialValueFor("damage")
-
-			local ability4 = caster:FindAbilityByName("special_bonus_kakashi_4")
-			if ability4 ~= nil then
-			    if ability4:IsTrained() then
-			    	damage = damage + 420
-			    end
-			end
-
-			local damageTable = {
-				victim = target,
-				attacker = caster,
-				damage = damage,
-				damage_type = self:GetAbilityDamageType()
-			}
-			ApplyDamage( damageTable )
-
-			target:AddNewModifier(caster, self, "modifier_kakashi_lighting_charge", { duration = 1 })
-
-			FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
-			--caster:StopSound("kakashi_raikiri_loop")
-			EmitSoundOn("kakashi_raikiri_impact", target)
-			EmitSoundOn("kakashi_raikiri_impact_talking", caster)
-			return nil
-		end
-		return 0.03
-	end)
-end
-
-function kakashi_chidori:OnChannelFinish(bInterrupted)
-	if not IsServer() then return end
 
 	if bInterrupted == true then
 		self.caster:StopSound("kakashi_raikiri_cast")
@@ -144,18 +85,78 @@ function kakashi_chidori:OnChannelFinish(bInterrupted)
 		    self.caster:RemoveModifierByName("modifier_stunned")
 		end
 		self:RemovePhysics(self.caster)
+		self.ability:EndCooldown()
 	else
-		self.caster:StopSound("kakashi_raikiri_cast")
-		--self.target:StopSound("kakashi_raikiri_impact")
-	    self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
-	    self.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_4)
-	    self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_5)
-		ParticleManager:DestroyParticle(self.chidori_particle, true)
-		ParticleManager:ReleaseParticleIndex(self.chidori_particle)
-		if self.caster:FindModifierByName("modifier_stunned") then
-		    self.caster:RemoveModifierByName("modifier_stunned")
-		end
-		self:RemovePhysics(self.caster)
+		Timers:CreateTimer(0.1, function() -- 2 = delay before Kakashi runs at the target
+			--EmitSoundOn("kakashi_raikiri_loop", caster)
+			
+			caster:FadeGesture(ACT_DOTA_CAST_ABILITY_4)
+			caster:StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_4, 1)
+			
+			self:AddPhysics(caster)
+		
+			local vector = target:GetAbsOrigin() - caster:GetAbsOrigin()
+			local direction = vector:Normalized()
+			caster:SetPhysicsVelocity(direction * velocity)
+			caster:SetForwardVector(direction)
+			if target:IsOutOfGame() or not target:IsAlive() then
+				self.caster:StopSound("kakashi_raikiri_cast")
+				--self.target:StopSound("kakashi_raikiri_impact")
+				self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
+				self.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_4)
+				self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_5)
+				ParticleManager:DestroyParticle(self.chidori_particle, true)
+				ParticleManager:ReleaseParticleIndex(self.chidori_particle)
+				if self.caster:FindModifierByName("modifier_stunned") then
+					self.caster:RemoveModifierByName("modifier_stunned")
+				end
+				self:RemovePhysics(self.caster)
+				return nil
+			elseif vector:Length2D() <= 2 * target:GetPaddedCollisionRadius() then
+				local enemy_loc = target:GetAbsOrigin()
+				local impact_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf", PATTACH_POINT_FOLLOW, target)
+				ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
+				ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_POINT_FOLLOW, "attach_origin", enemy_loc, true)
+				self.caster:StopSound("kakashi_raikiri_cast")
+				--self.target:StopSound("kakashi_raikiri_impact")
+				self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
+				self.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_4)
+				self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_5)
+				ParticleManager:DestroyParticle(self.chidori_particle, true)
+				ParticleManager:ReleaseParticleIndex(self.chidori_particle)
+				if self.caster:FindModifierByName("modifier_stunned") then
+					self.caster:RemoveModifierByName("modifier_stunned")
+				end
+				self:RemovePhysics(self.caster)
+	
+				local damage = self:GetSpecialValueFor("damage")
+	
+				local ability4 = caster:FindAbilityByName("special_bonus_kakashi_4")
+				if ability4 ~= nil then
+					if ability4:IsTrained() then
+						damage = damage + 420
+					end
+				end
+	
+				local damageTable = {
+					victim = target,
+					attacker = caster,
+					damage = damage,
+					damage_type = self:GetAbilityDamageType()
+				}
+				ApplyDamage( damageTable )
+	
+				target:AddNewModifier(caster, self, "modifier_kakashi_lighting_charge", { duration = 1 })
+	
+				FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
+				--caster:StopSound("kakashi_raikiri_loop")
+				EmitSoundOn("kakashi_raikiri_impact", target)
+				EmitSoundOn("kakashi_raikiri_impact_talking", caster)
+				return nil
+			end
+			return 0.03
+		end)
+		
 	end
 end
 
@@ -168,7 +169,7 @@ function kakashi_chidori:AddPhysics(caster)
 end
 
 function kakashi_chidori:RemovePhysics(caster)
-	caster:SetPhysicsAcceleration(Vector(0,0,0))
+	--caster:SetPhysicsAcceleration(Vector(0,0,0))
 	caster:SetPhysicsVelocity(Vector(0,0,0))
 	caster:OnPhysicsFrame(nil)
 	caster:PreventDI(false)
