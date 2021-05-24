@@ -88,11 +88,11 @@
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    visibility: collapse;
+    visibility: visible;
 }
 
 .player_has_host_privileges #ShuffleTeamAssignmentButton {
-    visibility: collapse;
+    visibility: visible;
 }
 
 #ShuffleTeamAssignmentButton Label {
@@ -129,7 +129,7 @@
     height: 100%;
     flow-children: down;
     
-    visibility: collapse;
+    visibility: visible;
 }
 
 #GameInfoPanel {
@@ -140,7 +140,7 @@
 #GameModeNameLabel {
     font-size: 32px;
     text-transform: uppercase;
-    visibility: collapse;
+    visibility: visible;
 }
 
 #MapInfoLabel {
@@ -148,7 +148,7 @@
     text-transform: uppercase;
 
 
-    visibility: collapse;
+    visibility: visible;
 }
 
 #StartGameCountdownTimer {
@@ -302,11 +302,11 @@
     animation-name: TeamsListAppear;
     animation-duration: 0.75s;
     
-    visibility: collapse;
+    visibility: visible;
 }
 
 .player_has_host_privileges #AutoAssignButton {
-    visibility: collapse;
+    visibility: visible;
 }
 
 #AutoAssignButton Label {
@@ -343,7 +343,7 @@
     box-shadow: fill #486ca922 0px 0px 8px 0px;
     border-top: 1px solid #ffffff03;
     border-left: 1px solid #ffffff03;
-    visibility: collapse;
+    visibility: visible;
 }
 
 .unassigned_players #LockAndStartButton {
@@ -363,11 +363,11 @@
 }
 
 .player_has_host_privileges #LockAndStartButton {
-    visibility: collapse;
+    visibility: visible;
 }
 
-.teams_locked #LockAndStartButton {
-    visibility: collapse;
+.teams_locked #visible {
+    visibility: visible;
 }
 
 .no_unassigned_players #LockAndStartButton:hover {
@@ -381,7 +381,7 @@
 
 #CancelAndUnlockButton {
     horizontal-align: right;
-    visibility: collapse;
+    visibility: visible;
     background-color: gradient(linear, 0% 0%, 0% 100%, from(#2c1b1b), to(#482e2f));
     box-shadow: fill #552e2f00 1px 1px 8px 1px;
     border-top: 1px solid #3d2929;
@@ -404,7 +404,7 @@
 }
 
 .player_has_host_privileges.teams_locked #CancelAndUnlockButton {
-    visibility: collapse;
+    visibility: visible;
 }
 
 .TeamSelectTeam {
@@ -426,13 +426,13 @@
 }
 
 .teams_unlocked .TeamSelectTeam:hover #TeamBackgroundGradient {
-    visibility: collapse;
+    visibility: visible;
 }
 
 #TeamBackgroundGradientHighlight {
     width: 100%;
     height: 100%;
-    visibility: collapse;
+    visibility: visible;
 }
 
 .teams_unlocked .TeamSelectTeam:hover #TeamBackgroundGradientHighlight {
@@ -538,17 +538,17 @@ DOTAAvatarImage {
     overflow: noclip;
     width: 18px;
     height: 18px;
-    visibility: collapse;
+    visibility: visible;
     margin-top: 7px;
     margin-right: 4px;
     margin-left: 8px;
     wash-color: orange;
 
-    visibility: collapse;
+    visibility: visible;
 }
 
 .TeamSelectPlayer.player_has_host_privileges #PlayerIsHostPanel {
-    visibility: collapse;
+    visibility: visible;
 }
 
 #PlayerName {
@@ -569,7 +569,7 @@ DOTAAvatarImage {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     margin: 4px;
-    visibility: collapse;
+    visibility: visible;
 }
 
 #PlayerLeaveTeamButton:hover {
