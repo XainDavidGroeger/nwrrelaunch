@@ -35,10 +35,6 @@ function GameMode:_InitGameMode()
 		
 		return 1
 	end)
-	
-	if timer == 0 then
-	    Timers:RemoveTimer(game_start_timer)
-	end
 
 	-- This is multiteam configuration stuff
 	if USE_AUTOMATIC_PLAYERS_PER_TEAM then
