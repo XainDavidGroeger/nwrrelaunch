@@ -108,10 +108,6 @@ function ConjureImage( event )
 
     illusion:SetHealth(caster:GetHealth())
 
-
-    print(outgoingDamage)
-    print(incomingDamage)
-
     -- Set the unit as an illusion
     -- modifier_illusion controls many illusion properties like +Green damage not adding to the unit damage, not being able to cast spells and the team-only blue particle 
     illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
@@ -193,6 +189,7 @@ end
 function FinishChidori(keys, illusion)
   local duration = keys.ability:GetLevelSpecialValueFor( "slow_duration", keys.ability:GetLevel() - 1)
   RemovePhysics(illusion)
+  FindClearSpaceForUnit( illusion, illusion:GetAbsOrigin(), true )
   illusion:RemoveModifierByName("modifier_imba_storm_bolt_caster_hit")
   illusion:Stop()
   keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_naruto_bunshin_rasengan_slow", {duration = duration})
