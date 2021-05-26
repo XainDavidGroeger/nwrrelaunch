@@ -2,8 +2,14 @@ function playSound( keys )
 
 	if keys.ability:GetName() == "guy_leaf_strong_whirlwind_ult" then 
 		keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_2_END, 3.0)
+		Timers:CreateTimer(0.1, function()
+			keys.caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2_END)
+		end)
 	else
 		keys.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_2_END, 1.0)
+		Timers:CreateTimer(0.3, function()
+			keys.caster:FadeGesture(ACT_DOTA_CAST_ABILITY_2_END)
+		end)
 	end
 
 end
