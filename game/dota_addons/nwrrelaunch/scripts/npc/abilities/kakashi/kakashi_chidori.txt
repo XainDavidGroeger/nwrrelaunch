@@ -64,6 +64,11 @@
 			"var_type"			"FIELD_FLOAT"
 			"ms_debuff"			"-50"
 		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"range"			"1800"
+		}
 		
 	}
 }
