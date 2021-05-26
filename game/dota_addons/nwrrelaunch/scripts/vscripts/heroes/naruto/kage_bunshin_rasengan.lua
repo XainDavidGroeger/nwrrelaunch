@@ -184,6 +184,7 @@ function FinishChidori(keys, illusion)
   illusion:RemoveModifierByName("modifier_imba_storm_bolt_caster_hit")
   illusion:Stop()
   keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_naruto_bunshin_rasengan_slow", {duration = duration})
+  print("apply damage")
 end
 
 function Launch(keys, illusion) 
