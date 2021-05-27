@@ -100,9 +100,6 @@ function kisame_mizu_bunshin_no_jutsu:OnSpellStart()
 	
 	GameMode:RemoveWearables(illusion)
 	GameMode:RemoveWearables(illusion2)
-	
-	illusion:MakeIllusion()
-	illusion2:MakeIllusion()
 
     illusion:SetForwardVector(caster:GetForwardVector())
     illusion2:SetForwardVector(caster:GetForwardVector())
