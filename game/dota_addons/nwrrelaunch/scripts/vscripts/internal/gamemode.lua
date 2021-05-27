@@ -21,36 +21,6 @@ function GameMode:_InitGameMode()
 	GameRules:SetShowcaseTime(0)
 	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 	
-	GameRules:EnableCustomGameSetupAutoLaunch(false)
-	local timer = GAMESETUP_TIME
-	local playersCount = PlayerResource:GetPlayerCount()
-	--local numPlayers = PlayerResource:NumPlayers()
-	local loadedPlayers = 0
-	
-	local game_start_timer = Timers:CreateTimer(0.0, function ()
-	    for i = 0, PlayerResource:GetPlayerCount()-1 do
-            if PlayerResource:IsValidPlayerID(i) and PlayerResource:GetPlayerLoadedCompletely(i) and loadedPlayers ~= playersCount then
-	    	    loadedPlayers = i + 1
-            end
-        end
-	
-		if loadedPlayers >= playersCount then
-		    GameRules:EnableCustomGameSetupAutoLaunch(true)
-            GameRules:SetCustomGameSetupAutoLaunchDelay(timer)
-			timer = timer - 1
-		end
-		
-		if timer <= 0 then
-	        GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-	    end
-		
-		if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
-		    Timers:RemoveTimer(game_start_timer)
-		end
-
-		return 1
-	end)
-	
 	GameRules:SetFirstBloodActive( ENABLE_FIRST_BLOOD )
 	GameRules:SetHideKillMessageHeaders( HIDE_KILL_BANNERS )
 

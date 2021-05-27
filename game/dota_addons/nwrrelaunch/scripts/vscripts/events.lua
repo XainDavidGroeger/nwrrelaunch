@@ -33,7 +33,6 @@ function GameMode:OnGameRulesStateChange(keys)
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		GameMode:ChangeBuildings()
 		VoiceResponses:Start()
-		GameRules:SendCustomMessage("message_game_start_timer", 0, 0)
 	elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
 		GameMode:SetShops()
 		for i = 0, PlayerResource:GetPlayerCount() - 1 do
