@@ -24,7 +24,7 @@ end
 
 function sakura_earth_slam:OnAbilityPhaseStart()
 	EmitSoundOn("sakura_slam", self:GetCaster())
-
+	EmitSoundOn("sakura_slam_cast", self:GetCaster())
 	return true
 end
 
@@ -80,4 +80,6 @@ function sakura_earth_slam:OnSpellStart()
 	local vfx = ParticleManager:CreateParticle("particles/units/heroes/sakura/sakura_earth_slam.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:SetParticleControl(vfx, 0, origin)
 	ParticleManager:SetParticleControl(vfx, 1, Vector(radius, 0, radius))
+
+	caster:EmitSound("sakura_slam_impact")
 end

@@ -10,6 +10,7 @@ function yondaime_hiraishin_jump:Precache( context )
     PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts", context )
     PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_impact.vsndevts", context )
     PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_talking.vsndevts", context )
+	PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_cast.vsndevts", context )
 end
 
 
@@ -110,6 +111,7 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 	caster.ulti = ability
 
 	caster:EmitSound("minato_raijin_talking")
+	caster:EmitSound("minato_raijin_cast")
 
 	local closest_seal = self:GetClosestSeal(target)
 
@@ -224,7 +226,6 @@ function hiraishin_dash_timer(game_entity, keys)
 		
 		-- Slash particles
 		local slash_effect_index = ParticleManager:CreateParticle( particle_slash_name, PATTACH_ABSORIGIN_FOLLOW, target )
-		StartSoundEvent( slash_sound , caster )
 
 		Timers:CreateTimer( 0.1, function()
 				ParticleManager:DestroyParticle( slash_effect_index, false )

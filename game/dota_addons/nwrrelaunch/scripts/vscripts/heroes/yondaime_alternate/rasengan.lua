@@ -10,6 +10,7 @@ function rasengan(keys)
 
 	caster:StopSound("minato_rasengan_loop.loop")
 	EmitSoundOn("minato_rasengan", keys.target)
+	EmitSoundOn("minato_rasengan_talking", keys.caster)
 
 	local range = keys.ability:GetLevelSpecialValueFor( "distance", ( keys.ability:GetLevel() - 1 ) )
 
@@ -44,7 +45,7 @@ function rasengan(keys)
 	local knockbackModifierTable =
 	{
 		should_stun = 1,
-		knockback_duration = 0.75,
+		knockback_duration = 0.50,
 		duration = stun_duration,
 		knockback_distance = len,
 		knockback_height = 0,

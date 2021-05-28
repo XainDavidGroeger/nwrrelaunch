@@ -413,7 +413,7 @@
 					{
 						"value"
 						{
-							"value0"		"sounds/vo/yondaime/level_01.vsnd"
+							"value0"		"sounds/vo/yondaime/lasthit_01.vsnd"
 						}
 					}
 					"volume"			{"value"	"1.00000"}
