@@ -70,8 +70,8 @@
 		"AttributeAgilityGain" "1.4" // Agility bonus per level.
 
 		"Ability1"        "anko_giant_snake"
-		"Ability2"        "anko_senei_jyashu"
-		"Ability3"        "anko_senei_ta_jashu"
+		"Ability2"        "anko_senei_ta_jashu"
+		"Ability3"        "anko_senei_jyashu"
   		"Ability4"        "generic_hidden"
 		"Ability5"        "generic_hidden"
 		"Ability6"        "anko_sojasosai_no_jutsu"      
