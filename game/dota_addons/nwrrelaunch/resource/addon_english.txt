@@ -19,6 +19,8 @@
 			// *************** ERROR MESSAGES ****************
 
 		"error_must_target_owner_illusion"			"Must target own Illisions"
+		"error_tag_is_too_close"					"Explosive Tag Trap Placement Too Close"
+		"error_no_kunai_nearby"						"No Marked Kunai Nearby"
 
 		"npc_dota_roshan"								"Kurama"
 		"npc_dota_roshan_datadriven"								"Kurama"
@@ -768,9 +770,14 @@
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_slow_duration" "MOVEMENT SPEED DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_illusion_duration" "CLONE DURATION: "
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_rasengan_cd_reduc" 		"CD REDUCTION (TALENT): "
-		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow"				"Kage Bunshin Rasengan"
-		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow_description"	"This Unit has decreased Movement Speed."
-		
+		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow"				"<b><font color='#FF860E'>Shadow Clone:</font></b> <b><font color='#00D4FF'>Rasengan</font></b>"
+		"DOTA_Tooltip_modifier_naruto_bunshin_rasengan_slow_description"	"This Unit has decreased <b><font color='#00D4FF'>Movement Speed.</font></b>"
+		"DOTA_Tooltip_modifier_imba_storm_bolt_caster_hit"					"Rasengan"
+		"DOTA_Tooltip_modifier_imba_storm_bolt_caster_hit_description"		"This Clone is carrying a Rasengan."
+		"DOTA_Tooltip_modifier_imba_storm_bolt_caster"						"<b><font color='#FF860E'>Charging</font></b>"
+		"DOTA_Tooltip_modifier_imba_storm_bolt_caster_description"			"This Clone is <b><font color='#FF860E'>charging a target.</font></b>"
+
+
 		// Kawazu Kumite
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite"							"<b><font color='#FD570D'>Frog Kata</font></b>"
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_lore"					"Kawazu Kumite"
@@ -779,8 +786,8 @@
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_agility_bonus"			"BONUS AGILITY: "
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_duration"				"BUFF DURATION: "
 		"DOTA_Tooltip_ability_naruto_kawazu_kumite_illusion_duration"		"CLONE DURATION: "
-		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite"						"Kawazu Kumite"
-		"DOTA_Tooltip_modfiier_naruto_kawazu_kumite_description"			"This Unit has increased Agility and Strength."
+		"DOTA_Tooltip_modifier_naruto_kawazu_kumite"						"<b><font color='#FD570D'>Frog Kata</font></b>"
+		"DOTA_Tooltip_modifier_naruto_kawazu_kumite_description"			"This Unit has increased <b><font color='#FD570D'>Agility</font></b> and <b><font color='#FD570D'>Strength.</font></b>"
 		
 		// Kage Bunshin Mastery
 		"DOTA_Tooltip_ability_naruto_kage_bunshin_mastery"					"<b><font color='#FF860E'>Shadow Clone Mastery</font></b>"
@@ -802,6 +809,9 @@
 		"DOTA_Tooltip_ability_naruto_rasenshuriken_rs_stun_duration"		"STUN DURATION: "
 		"DOTA_Tooltip_ability_naruto_rasenshuriken_range"					"RANGE: "
 
+		"DOTA_Tooltip_modifier_rasenshuriken_datadriven"						"<b><font color='#3CFEFF'>Rasenshuriken</font></b>"
+		"DOTA_Tooltip_modifier_rasenshuriken_datadriven_description"			"Stunned by <b><font color='#3CFEFF'>Wind Release: Rasenshuriken.</font></b>"
+
 		//--------------------
 		//Itachi
 		//--------------------
@@ -814,12 +824,21 @@
 		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Tsukuyomi</font></b>"
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"<b><font color='#9C352C'>Stuns and deals Magic Damage</font></b> to the target enemy unit. <br><br> The enemy will have their <b><font color='#9C352C'>Movement Speed Slowed for a short period</font></b> after the Stun duration."
 
+		"DOTA_Tooltip_modifier_itachi_slow"						"<b><font color='#9C352C'>Tsukuyomi</font></b>"
+		"DOTA_Tooltip_modifier_itachi_slow_description"			"This Unit has decreased <b><font color='#9C352C'>Movement Speed.</font></b>"		
+
 		"DOTA_Tooltip_ability_itachi_sharingan"							"<b><font color='#E21C30'>Mangekyo Sharingan</font></b>"
 		"DOTA_Tooltip_ability_itachi_sharingan_description"				"Gives Itachi a chance to <b>Critical Strike</b> dealing bonus <b><font color='#E21C30'>Magic Damage based on his Attack Damage.</font></b> <br><br> Triggering this attack will also <b><font color='#E21C30'>reduce the target's Magic Resistance</font></b> for a short period of time."
+
+		"DOTA_Tooltip_modifier_itachi_sharingan_mr_reduce"						"<b><font color='#E21C30'>Mangekyo Sharingan</font></b>"
+		"DOTA_Tooltip_modifier_itachi_sharingan_mr_reduce_description"			"This Unit has decreased <b><font color='#E21C30'>Magic Resistance.</font></b>"	
 
 
 		"DOTA_Tooltip_ability_itachi_amateratsu"						"<b><font color='#9A86AC'>Amaterasu</font></b>"
 		"DOTA_Tooltip_ability_itachi_amateratsu_description"			"Ignites a target enemy dealing <b><font color='#9A86AC'>a large amount of Magic Damage over time.</font></b> <br><br> <b><font color='#B5B5B5'>The flame will spread</font></b> if an affected enemy comes close to their allies."
+
+		"DOTA_Tooltip_modifier_itachi_amateratsu"						"<b><font color='#9A86AC'>Amaterasu</font></b>"
+		"DOTA_Tooltip_modifier_itachi_amateratsu_description"			"This Unit is taking <b><font color='#9A86AC'>Damage over time</font></b> and will <b><font color='#9A86AC'>spread the fire</font></b> to nearby Allies."	
 
 
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_damage"					"DAMAGE: "
@@ -880,12 +899,21 @@
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_sasuke_chidori_light_sword_damage"			"DAMAGE: "
 	
+		"DOTA_Tooltip_modifier_chidori_light_sword_damage"						"<b><font color='#A5E3FF'>Chidori Light Sword</font></b>"
+		"DOTA_Tooltip_modifier_chidori_light_sword_damage_description"			"Next attack deals <b><font color='#A5E3FF'>Magic Damage</font></b> and reduces <b><font color='#A5E3FF'>Attack Speed</font></b> and <b><font color='#A5E3FF'>Movement Speed.</font></b>"
+		"DOTA_Tooltip_modifier_chidori_light_sword_debuff"						"<b><font color='#A5E3FF'>Chidori Light Sword</font></b>"
+		"DOTA_Tooltip_modifier_chidori_light_sword_debuff_description"			"This Unit has reduced <b><font color='#A5E3FF'>Movement Speed</font></b> and <b><font color='#A5E3FF'>Attack Speed.</font></b>"
+
+
 		//Kirin
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin"								"<b><font color='#00D4FF'>Kirin</font></b>"
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_description"					"<b><font color='#A5E3FF'>Marks the target unit</font></b> with Kirin, granting <b>True Sight</b> of the target unit for a short duration of time. <br><br> After the duration expires, the target is struck with a <b><font color='#00D4FF'>massive bolt of lightning dealing Magic Damage</font></b>. <br><br> Additional <b>Magic Damage</b> is dealt to the target <b><font color='#4DADFF'>based on health lost from Sasuke</font></b> during the effect’s duration."
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_lore"						""
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_duration"						"DURATION: "
 		"DOTA_Tooltip_ability_sasuke_chidori_kirin_lost_health_bonus_damage"			"%LOST HEALTH BONUS DAMAGE: "
+
+		"DOTA_Tooltip_modifier_chidori_kirin_mark"						"<b><font color='#00D4FF'>Kirin</font></b>"
+		"DOTA_Tooltip_modifier_chidori_kirin_mark_description"			"<b><font color='#00D4FF'>Revealed</font></b> and will take <b><font color='#00D4FF'>Magic Damage</font></b> once duration has ended."
 	
 
 		//--------------------
@@ -910,6 +938,9 @@
 		"DOTA_Tooltip_ability_kakashi_sharingan_description"			"<b><font color='#E21C30'>Steals an ability</font></b> from the target allied or enemy Hero. <br><br> Stolen abilities will <b><font color='#E21C30'>always be the Hero's 2nd ability.</font></b> <br><br> The stolen ability's level is determined by <b><font color='#E21C30'>the level of Sharingan.</font></b>"
 		"DOTA_Tooltip_ability_kakashi_sharingan_copy_timer"				"DURATION: "
 		
+		"DOTA_Tooltip_kakashi_sharingan_modifier"						"<b><font color='#E21C30'>Sharingan</font></b>"
+		"DOTA_Tooltip_kakashi_sharingan_modifier_description"			"Kakashi has <b><font color='#E21C30'>copied an enemy ability.</font></b>"
+
 
 		// Kage Bunshin No Jutsu
 		"DOTA_Tooltip_ability_kakashi_bunshin"							"<b><font color='#C7E0E4'>Lightning Release: Shadow Clone</font></b>"
@@ -924,9 +955,12 @@
 		
 		// Chidori
 		"DOTA_Tooltip_ability_kakashi_chidori"							"<b><font color='#7EC3FF'>Raikiri</font></b>"
-		"DOTA_Tooltip_ability_kakashi_chidori_description"				"<b><font color='#7EC3FF'>Charges lightning chakra</font></b> as Kakashi prepares to charge his foe. <br><br> Once charging is complete, Kakashi rushes the target <b><font color='#7EC3FF'>dealing Magic Damage</font></b> and briefly slowing <b>Movement Speed</b> on contact."
+		"DOTA_Tooltip_ability_kakashi_chidori_description"				"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#7EC3FF'>Channels lightning chakra</font></b> as Kakashi prepares to charge his foe. <br><br> Once channeling is complete, Kakashi rushes the target <b><font color='#7EC3FF'>dealing Magic Damage</font></b> and briefly slowing <b>Movement Speed</b> on contact."
 		"DOTA_Tooltip_ability_kakashi_chidori_damage"					"DAMAGE: "
 		"DOTA_Tooltip_ability_kakashi_chidori_range"					"RANGE: "
+
+		"DOTA_Tooltip_modifier_kakashi_lighting_charge"						"<b><font color='#7EC3FF'>Raikiri</font></b>"
+		"DOTA_Tooltip_modifier_kakashi_lighting_charge_description"			"This Unit's <b><font color='#7EC3FF'>Movement Speed is Slowed.</font></b>"
 
 		//--------------------
 		//Guy
@@ -939,7 +973,9 @@
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
-		"DOTA_Tooltip_ability_guy_modifier_guy_dynamic_entry_debuff"	"This Unit is Slowed."
+		
+		"DOTA_Tooltip_modifier_guy_dynamic_entry_debuff"				"<b><font color='#00A244'>Dynamic Entry</font></b>"
+		"DOTA_Tooltip_modifier_guy_dynamic_entry_debuff_description"	"This Unit's <b><font color='#00A244'>Movement Speed is Slowed.</font></b>"
 
 
 		// Dynamic Entry Ulti
@@ -951,6 +987,8 @@
 
 		"DOTA_Tooltip_ability_modifier_guy_dynamic_ms_slow"					"Dynamic Entry"
 		"DOTA_Tooltip_modifier_guy_dynamic_ms_slow_description"		"This Unit has decreased Movement Speed."
+		
+
 		// Leaf Strong Whirlwind
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_lore"			"Konoha Gōriki Senpū"
@@ -959,8 +997,8 @@
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stun_duration"	"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stomp_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_cast_time"			"CAST TIME: "
-		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun"						"Leaf Strong Whirlwind"
-		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun_description" 			"This Unit is stunned."
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun"						"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun_description" 			"This Unit is <b><font color='#72FF8C'>Stunned.</font></b>"
 		
 		
 		// Leaf Strong Whirlwind Ulti
@@ -971,8 +1009,8 @@
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stun_duration"	"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_stomp_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_ult_cast_time"			"CAST TIME: "
-		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun"						"Leaf Strong Whirlwind"
-		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun_description" 			"This Unit is stunned."
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun"						"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
+		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_ult_stun_description" 			"This Unit is <b><font color='#72FF8C'>Stunned.</font></b>"
 
 		
 		// Strong Fist
@@ -981,13 +1019,22 @@
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION IN GATES: "
 		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
-		"DOTA_Tooltip_modifier_guy_strong_fist"					"Next Attack will Crit."
+		
+		"DOTA_Tooltip_modifier_guy_strong_fist"					"<b><font color='#F4E8C7'>Strong Fist</font></b>"
+		"DOTA_Tooltip_modifier_guy_strong_fist_description"		"Guy's next attack will be a <b><font color='#F4E8C7'>Critical Strike.</font></b>"
+
 		
 		// Morning Peacock
 		"DOTA_Tooltip_ability_guy_morning_peacock"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
 		"DOTA_Tooltip_ability_guy_morning_peacock_lore"						"Morning Peacock"
 		"DOTA_Tooltip_ability_guy_morning_peacock_stun"					"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_morning_peacock_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - <b><font color='#FF710E'>Dramatically increases Attack Speed</font></b> for up to <b><font color='#FFFFFF'>4</font></b> strikes. <br><br> Each strike does <font color='#FFFFFF'>75%</font></b> <b><font color='#FF710E'>Damage and mini-Stuns</font></b> with the final strike dealing a <b><font color='#FF710E'>full Stun</font></b>. <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy after <b><font color='#FF710E'>Morning Peacock</font></b> attacks have ended. <br><br> <b><font color='#E21C30'>Note:</font></b> Due to limitations, first <b><font color='#FF710E'>Morning Peacock</font></b> attack will reset Cooldown to full duration."
+
+		"DOTA_Tooltip_modifier_guy_morning_peacock_buff"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
+		"DOTA_Tooltip_modifier_guy_morning_peacock_buff_description" 			"On next attack will gain <b><font color='#FF710E'>increased Attack Speed and Stun.</font></b>"
+
+		"DOTA_Tooltip_modifier_guy_morning_peacock_cd_reset"						"<b><font color='#FF710E'>Morning Peacock</font></b>"
+		"DOTA_Tooltip_modifier_guy_morning_peacock_cd_reset_description" 			"Guy has access to <b><font color='#FF710E'>Morning Peacock.</font></b>"
 		
 		// Strong Fist Ulti
 		"DOTA_Tooltip_ability_guy_strong_fist_ult"						"<b><font color='#F4E8C7'>Strong Fist</font></b>"
@@ -1007,8 +1054,8 @@
 		
 		
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, grants increased <b><font color='#00A244'>Movement Speed</font></b> and <b><font color='#F4E8C7'>Attack Damage</font></b>. <br><br> This ability also decreases <b><font color='#72FF8C'>Base Attack Time</font></b> and <b><font color='#00A913'>improves his other abilities.</font></b> <br><br> <b><font color='#00A913'>Drains health</font></b> from Guy while toggled on."
-		"DOTA_Tooltip_modifier_guy_seventh_gate"							"Sixth Gate: Open"
-		"DOTA_Tooltip_modifier_guy_seventh_gate_description"				"This Unit has decreased base attack time,increased Movement Speed, increased damage."
+		"DOTA_Tooltip_modifier_guy_seventh_gate"							"<b><font color='#00A913'>Sixth Gate: Open</font></b>"
+		"DOTA_Tooltip_modifier_guy_seventh_gate_description"				"Guy has increased <b><font color='#00A244'>Movement Speed</font></b> and <b><font color='#F4E8C7'>Attack Damage</font></b> along with decreased <b><font color='#72FF8C'>Base Attack Time.</font></b>"
 
 		//--------------------
 		//Onoki
@@ -1030,20 +1077,20 @@
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_damage"	        "RETURN DAMAGE: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_onoki_stalagmite_armor_Description"		"<b><font color='#C1943D'>Increases the target's Armor</font></b> and gives a chance to deal <b><font color='#C1943D'>Physical Damage and Stun</font></b> when hit by a<b> Basic Attack.</b>"
-		"DOTA_Tooltip_modifier_onoki_stalagmite_armor"						"Stalagmite Armor"
-		"DOTA_Tooltip_modifier_onoki_stalagmite_armor_description"			"The unit is protected by Oonoki rocks."
+		"DOTA_Tooltip_modifier_onoki_stalagmite_armor"						"<b><font color='#C1943D'>Stalagmite Armor</font></b>"
+		"DOTA_Tooltip_modifier_onoki_stalagmite_armor_description"			"This Unit has <b><font color='#C1943D'>increased Armor</font></b> and a chance to deal <b><font color='#C1943D'>Damage and Stun attackers.</font></b>"
 		
 		//Doton: Kajūgan no Jutsu | Doton: Keijūgan no Jutsu
 		"DOTA_Tooltip_ability_onoki_added_weight"						"<b><font color='#FFD67E'>Weighted Rock Technique</font></b>"
 		"DOTA_Tooltip_ability_onoki_added_weight_lore"				"Doton: Kajūgan no Jutsu | Doton: Keijūgan no Jutsu"
 		"DOTA_Tooltip_ability_onoki_added_weight_speed_bonus_perc"	"%MOVEMENT SPEED INCREASE: "
-		"DOTA_Tooltip_ability_onoki_added_weight_speed_penalty_perc"	"MOVEMENT SPEED SLOW: "
+		"DOTA_Tooltip_ability_onoki_added_weight_speed_penalty_perc"	"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_onoki_added_weight_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"<b><font color='#FFFFFF'>ON ALLY</font></b> - <b><font color='#FEEDC9'>Increases an ally's Movement Speed</font></b> for a short duration. <br><br> <b><font color='#FFFFFF'>ON ENEMY</font></b> - <b><font color='#D86C26'>Decreases an enemy's Movement Speed</font></b> for a short duration."
-		"DOTA_Tooltip_modifier_onoki_added_weight_enemy"						"Increased Weight"
-		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"The unit has a reduced movement speed."
-		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"Reducing Weight"
-		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The unit has increased movement speed."
+		"DOTA_Tooltip_modifier_onoki_added_weight_enemy"						"<b><font color='#D86C26'>Weighted Rock Technique</font></b>"
+		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"This Unit has <b><font color='#D86C26'>reduced Movement Speed.</font></b>"
+		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"<b><font color='#FEEDC9'>Weighted Rock Technique</font></b>"
+		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The Unit has <b><font color='#FEEDC9'>increased Movement Speed.</font></b>"
 		
 		//Turn to Dust
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"<b><font color='#CABA9E'>Turn to Dust</font></b>"
@@ -1075,6 +1122,9 @@
 		"DOTA_Tooltip_ability_neji_kaiten_Description"					"<b><font color='#8DECFF'>Knocks back</font></b> all nearby enemies while dealing <b><font color='#8DECFF'>Magic Damage and a Stun.</font></b> <br><br> Neji becomes <b><font color='#8DECFF'>Invulnerable for</font></b> <b><font color='#FFFFFF'>0.4</font></b> <b><font color='#8DECFF'>seconds</font></b> while using this ability."
 		"DOTA_Tooltip_ability_neji_kaiten_aoe_target"					"RADIUS: "
 		"DOTA_Tooltip_ability_neji_kaiten_stun_duration"				"STUN DURATION: "
+
+		"DOTA_Tooltip_modifier_neji_kaiten_untouchable"			    	"<b><font color='#8DECFF'>Kaiten</font></b>"	
+		"DOTA_Tooltip_modifier_neji_kaiten_untouchable_description"		"This Unit is <b><font color='#8DECFF'>invulnerable.</font></b>"
 		
 
 
@@ -1088,8 +1138,8 @@
 		"DOTA_Tooltip_ability_neji_air_palm_duration"			"MOVEMENT SPEED SLOW DURATION: "
 		"DOTA_Tooltip_ability_neji_air_palm_damage"				"DAMAGE: "
 
-		"DOTA_Tooltip_modifier_neji_air_palm_ms_slow"			    "Vacuum Palm"	
-		"DOTA_Tooltip_modifier_neji_air_palm_ms_slow_description"	"This Unit's Movement Speed is reduced."
+		"DOTA_Tooltip_modifier_neji_air_palm_debuff"			    "<b><font color='#ECECEC'>Vacuum Palm</font></b>"	
+		"DOTA_Tooltip_modifier_neji_air_palm_debuff_description"	"This Unit's has <b><font color='#ECECEC'>reduced Movement Speed.</font></b>"
 		
 		//Byakugan
 		"DOTA_Tooltip_ability_neji_byakugan"							"<b><font color='#EBDDFF'>Byakugan</font></b>"
@@ -1099,6 +1149,11 @@
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_percentage"		"%MAX MANA BURNED PER HIT: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_burn_flat"				"MANA BURNED PER HIT: "
 		"DOTA_Tooltip_ability_neji_byakugan_mana_lose_percentage"       "%MANA COST PER SECOND: "
+
+		"DOTA_Tooltip_modifier_neji_byakugan_buff"			    "<b><font color='#EBDDFF'>Byakugan</font></b>"	
+		"DOTA_Tooltip_modifier_neji_byakugan_buff_description"	"This Unit <b><font color='#EBDDFF'>burns Mana</font></b> on attacks and can <b><font color='#EBDDFF'>see enemies</font></b> through Fog of War."
+		"DOTA_Tooltip_modifier_neji_byakugan_debuff"			    "<b><font color='#EBDDFF'>Byakugan</font></b>"	
+		"DOTA_Tooltip_modifier_neji_byakugan_debuff_description"	"This Unit is<b><font color='#EBDDFF'> revealed</font></b> through the Fog of War."			
 		
 		//Eight Trigrams Sixty-Four Palms
 		"DOTA_Tooltip_ability_neji_32_palms"				"<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"
@@ -1109,6 +1164,12 @@
 		"DOTA_Tooltip_ability_neji_32_palms_silence_duration"	"SILENCE DURATION: "
 		"DOTA_Tooltip_neji_32_palms"						"Eight Trigrams Sixty-Four Palms"
 		"DOTA_Tooltip_neji_32_palms_description"			"This Unit is stunned."
+
+		"DOTA_Tooltip_modifier_32_palms_debuff"			    "<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"	
+		"DOTA_Tooltip_modifier_32_palms_debuff_description"	"This Unit is <b><font color='#6DFF93'>Stunned.</font></b>"	
+
+		"DOTA_Tooltip_modifier_32_palms_debuff_silence"			    "<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"	
+		"DOTA_Tooltip_modifier_32_palms_debuff_silence_description"	"This Unit is <b><font color='#6DFF93'>Silenced.</font></b>"	
 
 		//--------------------
 		//Raikage
@@ -1141,13 +1202,18 @@
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi"					"<b><font color='#36B4EE'>Lightning Release Armor</font></b>"
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_lore"					"Raiton no Yoroi"		
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_Description"		"<b><font color='#36B4EE'>Creates a shield</font></b> around Raikage that absorbs all incoming damage. <br><br> After absorbing maximum damage or ending, <b><font color='#36B4EE'>deals Magic Damage and reduces Movement Speed</font></b> of all nearby enemies. <br><br> Can be activated a second time to <b><font color='#36B4EE'>end the shield early.</font></b>"
-		"DOTA_Tooltip_raikage_knockup"									"Raiga no Bomu"
-		"DOTA_Tooltip_raikage_knockup_description"						"-7 Armor"
-		"DOTA_Tooltip_modifier_raigyaku_debuff"							"Raigyaku Suihei"
-		"DOTA_Tooltip_modifier_raigyaku_debuff_description"				"Reduced Attack Damage"
-		"DOTA_Tooltip_modifier_raigyaku"								"Raigyaku Suihei"
-		"DOTA_Tooltip_modifier_raigyaku_description"					"Raikage's next attack will deal Spell damage based on his Strength in an AoE of 250 and lower's target's Attackdamage"
-		"DOTA_Tooltip_modifier_raiton_no_yoroi_charge"					"Raiton no Yoroi"
+		
+		"DOTA_Tooltip_raikage_knockup"									"<b><font color='#61B1FF'>Liger Bomb</font></b>"
+		"DOTA_Tooltip_raikage_knockup_description"						"This Unit has <b><font color='#61B1FF'>reduced Armor.</font></b>"
+		
+		"DOTA_Tooltip_modifier_raigyaku_debuff"							"<b><font color='#FFD038'>Lightning Horizontal</font></b>"
+		"DOTA_Tooltip_modifier_raigyaku_debuff_description"				"This Unit has <b><font color='#FFD038'>reduced Attack Damage.</font></b>"
+
+		"DOTA_Tooltip_modifier_raigyaku"								"<b><font color='#FFD038'>Lightning Horizontal</font></b>"
+		"DOTA_Tooltip_modifier_raigyaku_description"					"Next attack will deal additional area <b><font color='#FFD038'>Damage</font></b> and <b><font color='#FFD038'>reduce enemy Attack Damage</font></b>."
+
+		
+
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_physical_damage_reduce_percent"	"%DAMAGE REDUCTION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_charge_damage_amount"	"MAX DAMAGE TAKEN: "
@@ -1155,9 +1221,11 @@
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_aoe"		"RADIUS: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_ms_slow"	"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_raikage_raiton_no_yoroi_release_purge_duration"	"MOVEMENT SPEED SLOW DURATION: "
-		"DOTA_Tooltip_modifier_raiton_no_yoroi_charge_description"		"A's body is covered in electricity"
-		"DOTA_Tooltip_modifier_modifer_raikage_purge"					"Raiton no Yoroi"
-		"DOTA_Tooltip_modifier_modifer_raikage_purge_description"		"Reduced Movementspeed"
+
+		"DOTA_Tooltip_modifier_raikage_shield"							"<b><font color='#36B4EE'>Lightning Release Armor</font></b>"
+		"DOTA_Tooltip_modifier_raikage_shield_description"				"This Unit is <b><font color='#36B4EE'>absorbing Damage.</font></b>"
+		"DOTA_Tooltip_modifier_raikage_shield_debuff"							"<b><font color='#36B4EE'>Lightning Release Armor</font></b>"
+		"DOTA_Tooltip_modifier_raikage_shield_debuff_description"				"This Unit has <b><font color='#36B4EE'>reduced Movement Speed.</font></b>"		
 
 
 		//--------------------
@@ -1171,11 +1239,20 @@
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_range"		"RANGE"
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_duration"		"DURATION"
 
+		"DOTA_Tooltip_modifier_shadow_imitation"				 		 "<b><font color='#BFBFBF'>Shadow Imitation</font></b>"
+		"DOTA_Tooltip_modifier_shadow_imitation_description"	 		 "This Unit is <b><font color='#BFBFBF'>disabled</font></b> and will <b><font color='#BFBFBF'>mimic the caster's</font></b> movement."
+		"DOTA_Tooltip_modifier_shadow_imitation_caster"				 		 "<b><font color='#BFBFBF'>Shadow Imitation</font></b>"
+		"DOTA_Tooltip_modifier_shadow_imitation_caster_description"	 		 "This Unit is <b><font color='#BFBFBF'>extending their shadow</font></b> and cannot move."	
+
+
 		"DOTA_Tooltip_ability_shikamaru_switching_technique"							"<b><font color='#9A86AC'>Shadow Sewing</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_lore"						"Kage Nui no Jutsu"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_Description"				"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#9A86AC'>Roots and Disarms</font></b> all enemies within the target radius while <b><font color='#9A86AC'>dealing Magic Damage overtime.</font></b> <br><br> Enemies affected by <b><font color='#FFFFFF'>Flash Bombs</font></b> will additionally be <b><font color='#9A86AC'>Silenced for the duration.</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_radius"						"RADIUS"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_duration"					"DURATION"
+
+		"DOTA_Tooltip_modifier_switching_technique_flash_debuff"				 		 "<b><font color='#9A86AC'>Shadow Sewing</font></b>"
+		"DOTA_Tooltip_modifier_switching_technique_flash_debuff_description"	 		 "This Unit is <b><font color='#9A86AC'>Silenced.</font></b>"	
 
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs"									"<b><font color='#FFFFFF'>Flash Bombs</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_Description"						"<b><font color='#FFFFFF'>Throws flash bombs</font></b> into the target area dealing minor <b>Magic Damage</b>. <br><br> Damaged enemies are <b><font color='#FFFFFF'>Revealed</font></b>, <b><font color='#FFFFFF'>Movement Speed Slowed</font></b>, and <b><font color='#FFFFFF'>Blinded</font></b> causing them to miss attacks. <br><br> Enemies hit by <b><font color='#FFFFFF'>Flash Bombs</font></b> receive enchanced effects from <b><font color='#BFBFBF'>Shadow Imitation</font></b> and <b><font color='#9A86AC'>Shadow Sewing.</font></b>"
@@ -1185,6 +1262,9 @@
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_miss_chance"						"%MISS CHANCE"
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_ms_slow"							"MOVEMENT SPEED SLOW"
 		"DOTA_Tooltip_ability_shikamaru_flash_bombs_damage"								"DAMAGE"
+
+		"DOTA_Tooltip_modifier_flash_bomb_debuff"				 		 "<b><font color='#FFFFFF'>Flash Bombs</font></b>"
+		"DOTA_Tooltip_modifier_flash_bomb_debuff_description"	 		 "This Unit's <b><font color='#FFFFFF'>Movement Speed</font></b> and <b><font color='#FFFFFF'>Accuracy</font></b> is reduced and is <b><font color='#FFFFFF'>Revealed.</font></b>"		
 		
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap"							    "<b><font color='#EC5000'>Explosive Tag Trap</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_DESCRIPTION"					"<b><font color='#BFBFBF'>Places an invisible Trap</font></b> that becomes active after a short delay. <br><br> Once active, the next enemy hero that steps in range is <b><font color='#9A86AC'>fully disabled</font></b> for a period of time. <br><br> Afterwards the trapped enemy explodes <b><font color='#EC5000'>dealing massive Magic Damage</font></b> around it. <br><br> Traps cannot be placed within the trigger radius of another Trap."
@@ -1193,6 +1273,9 @@
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_bind_duration"				"BIND DURATION"
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_max_traps"					"MAX TRAPS"
 		"DOTA_Tooltip_ability_shikamaru_explosive_tag_trap_activation_time"				"ACTIVATION TIME"
+
+		"DOTA_Tooltip_modifier_shikamaru_stun"				 		 "<b><font color='#EC5000'>Explosive Tag Trap</font></b>"
+		"DOTA_Tooltip_modifier_shikamaru_stun_description"	 		 "This Unit is <b><font color='#EC5000'>Stunned.</font></b>"	
 
 
 		//--------------------
@@ -1205,6 +1288,10 @@
 		"DOTA_Tooltip_ability_anko_giant_snake_hook_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_anko_giant_snake_cd_reduc"			"COOLDOWN REDUCTION: "
 		"DOTA_Tooltip_ability_anko_giant_snake_Description"			"<b><font color='#00B730'>Sends out a snake</font></b> grabbing the first enemy it encounters, dealing <b><font color='#00B730'>Pure Damage and Pulling</font></b> them to Anko."
+
+		"DOTA_Tooltip_modifier_meat_hook_lua"				 "<b><font color='#00B730'>Summoning: Giant Snake</font></b>"
+		"DOTA_Tooltip_modifier_meat_hook_lua_description"	 "Enemy is being <b><font color='#00B730'>Pulled.</font></b>"
+
 		
 		"DOTA_Tooltip_ability_anko_senei_jyashu"					"<b><font color='#2CEA5E'>Striking Snakes</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_jyashu_lore"				"Senei Jyashu"
@@ -1221,8 +1308,12 @@
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_damage_per_tick"	"DAMAGE OVER TIME : "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_ms_slow"			"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_Description"		"Deals<b><font color='#78D590'> Magic Damage</font></b> and <b><font color='#78D590'>reduced Movement Speed</font></b> to a target enemy unit for a short duration. <br><br> <b><font color='#78D590'>The enemy is Silenced</font></b> for the duration of the effect."
-		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_poison" "Unit is taking Damage over time."
-		"DOTA_Tooltip_ability_anko_modifier_anko_senei_ta_jashu_slow" "Unit is Slowed."
+
+		"DOTA_Tooltip_modifier_anko_senei_ta_jashu_slow"				 "<b><font color='#78D590'>Snake Bite</font></b>"
+		"DOTA_Tooltip_modifier_anko_senei_ta_jashu_slow_description"	 "This Unit has <b><font color='#78D590'>reduced Movement Speed.</font></b>"
+
+		"DOTA_Tooltip_modifier_anko_senei_ta_jashu_poison"				 "<b><font color='#78D590'>Snake Bite</font></b>"
+		"DOTA_Tooltip_modifier_anko_senei_ta_jashu_poison_description"	 "This Unit is <b><font color='#78D590'> Silenced</font></b> and taking <b><font color='#78D590'>Damage over time.</font></b>"
 
 		
 		"DOTA_Tooltip_ability_anko_sojasosai_no_jutsu"				"<b><font color='#B8D3BE'>Twin Snake Sacrfice</font></b>"
@@ -1248,20 +1339,29 @@
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_travel_distance"	"RANGE: "
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lift_duration"	 "LIFT DURATION: "
 
+		"DOTA_Tooltip_modifier_temari_kamaitachi_no_jutsu_cyclone"				 "<b><font color='#EAF8FF'>Wind Scythe</font></b>"
+		"DOTA_Tooltip_modifier_temari_kamaitachi_no_jutsu_cyclone_description"	 "This Unit is being <b><font color='#EAF8FF'>lifted</font></b> and is unable to move."
+
 		"DOTA_Tooltip_ability_temari_sheer_wind"						"<b><font color='#7FF1DF'>Sheer Wind</font></b>"
 		"DOTA_Tooltip_ability_temari_sheer_wind_Description"			"Grants bonus <b><font color='#7FF1DF'>Movement Speed and Attack Speed</font></b> each time Temari casts a spell. <br><br> Stacks last for <b><font color='#FFFFFF'>12</font></b> seconds and stack up to <b><font color='#FFFFFF'>3</font></b> times."
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_attack_speed_bonus"	"BONUS ATTACK SPEED PER STACK: "
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_move_speed_bonus"	"%BONUS MOVEMENT SPEED PER STACK: "
 		"DOTA_Tooltip_ability_temari_sheer_wind_sheer_wind_max_stacks"	"MAX STACKS: "
 
+		"DOTA_Tooltip_modifier_temari_sheer_wind_stack_counter"				 "<b><font color='#7FF1DF'>Sheer Wind Counter</font></b>"
+		"DOTA_Tooltip_modifier_temari_sheer_wind_stack_counter_description"	 "This Unit will gain <b><font color='#7FF1DF'>Movement Speed</font></b> and <b><font color='#7FF1DF'>Attack Speed</font></b> when casting spells."
+		"DOTA_Tooltip_modifier_temari_sheer_wind_stack_buff"				 "<b><font color='#7FF1DF'>Sheer Wind Stack</font></b>"
+		"DOTA_Tooltip_modifier_temari_sheer_wind_stack_buff_description"	 "Duration for a stack of <b><font color='#7FF1DF'>Sheer Wind.</font></b>"
+
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai"				"<b><font color='#F3C6FF'>Summoning: Blade Dance</font></b>"
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_lore"				"Kuchiyose: Kirikiri Mai"
-		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_description"	"Unleashes <b><font color='#FFFFFF'>5</font></b> tornados in a wave, each <b><font color='#F3C6FF'>dealing Magic Damage</font></b> in a line."
+		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_description"	"Unleashes <b><font color='#FFFFFF'>5</font></b> Tornados in a wave, each <b><font color='#EAF8FF'>dealing Magic Damage</font></b> in a line. <br><br> Each Tornado inflicts a short <b><font color='#F3C6FF'>Movement Speed Slow</font></b> on contact with an enemy."
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_base_damage"	"DAMAGE PER TORNADO: "
 		"DOTA_Tooltip_ability_temari_kuchiyose_kirikiri_mai_cyclone_count_tooltips"	"CYCLONE COUNT: "
-		"DOTA_Tooltip_modifier_sheer_wind_buff_stack"	"Sheer Wind"
-		"DOTA_Tooltip_modifier_sheer_wind_buff_stack_description"	"Temari has increased MS and AS."
-		
+
+		"DOTA_Tooltip_modifier_kuchiyose_kirikiri_mai"				 "<b><font color='#F3C6FF'>Summoning: Blade Dance</font></b>"
+		"DOTA_Tooltip_modifier_kuchiyose_kirikiri_mai_description"	 "This Unit's <b><font color='#F3C6FF'>Movement Speed is reduced.</font></b>"
+
 		//--------------------
 		//Sarutobi
 		//--------------------
@@ -2371,7 +2471,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3s Cherry Blossom Impact Cooldown"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 Stength of a Hundred Seal Armor"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4s Chakra Burst Duration"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20%  Chance"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5s Cherry Blossom Impact Stun"
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
