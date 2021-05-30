@@ -29,3 +29,6 @@ resource/overviews/*
 .settings
 .DS_Store
 .idea
+
+
+node_modules

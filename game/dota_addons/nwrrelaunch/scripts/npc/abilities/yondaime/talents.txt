@@ -6,7 +6,7 @@
 	//=================================================================================================================
 	// Yondaime Minato Special Bonus
 	//=================================================================================================================	
-	//25: +60 Movement Speed / +80% Rasengan Critical Damage
+	//25: Blink is Global / +80% Rasengan Critical Damage
 	//20: -3 Armor Flying Thunder God / -4s Body Flicker Cooldown
 	//15: +300 Marked Kunai Range / +0.3s Rasengan Stun
 	//10: +8 Agility / -1s Marked Kunai Cooldown
