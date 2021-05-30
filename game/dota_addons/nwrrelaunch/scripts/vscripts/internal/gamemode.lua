@@ -11,8 +11,6 @@ function GameMode:_InitGameMode()
 	GameRules:SetPostGameTime( POST_GAME_TIME )
 	GameRules:SetTreeRegrowTime( TREE_REGROW_TIME )
 	GameRules:SetUseCustomHeroXPValues ( USE_CUSTOM_XP_VALUES )
-	GameRules:EnableCustomGameSetupAutoLaunch(true)
-	GameRules:LockCustomGameSetupTeamAssignment(false)
 	GameRules:SetGoldPerTick(GOLD_PER_TICK)
 	GameRules:SetGoldTickTime(GOLD_TICK_TIME)
 	--GameRules:SetRuneSpawnTime(RUNE_SPAWN_TIME)
@@ -21,24 +19,11 @@ function GameMode:_InitGameMode()
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
 	GameRules:SetShowcaseTime(0)
-
-
 	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
-
+	
 	GameRules:SetFirstBloodActive( ENABLE_FIRST_BLOOD )
 	GameRules:SetHideKillMessageHeaders( HIDE_KILL_BANNERS )
-	
-	local timer = 17 -- he miss ~2-3 sec
-	local game_start_timer = Timers:CreateTimer(0.0, function ()
-		GameRules:SetCustomGameSetupAutoLaunchDelay(timer)
-		timer = timer - 1
-		
-		return 1
-	end)
-	
-	if timer == 0 then
-	    Timers:RemoveTimer(game_start_timer)
-	end
+
 
 	-- This is multiteam configuration stuff
 	if USE_AUTOMATIC_PLAYERS_PER_TEAM then

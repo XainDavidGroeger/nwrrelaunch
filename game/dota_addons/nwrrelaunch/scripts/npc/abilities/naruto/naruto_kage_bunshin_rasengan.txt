@@ -142,9 +142,6 @@
 			"sound_impact"			"Hero_Sven.StormBoltImpact"
 			"particle_impact"		"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 
-			// Spell Blocking
-			"GenericFunction"		"GenericSpellFunction"
-			"doDamage"				"true"
 		}
 	}	
 

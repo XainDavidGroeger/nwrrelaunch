@@ -57,7 +57,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"search_width"					"500"
+				"search_width"					"300"
 			}
 			"06"
 			{

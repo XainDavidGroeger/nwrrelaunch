@@ -59,6 +59,8 @@ function modifier_sakura_strength_caster:OnAttackLanded(params)
 			end
 			PopupDamage(params.target, self.damage)
 
+			params.target:EmitSound("sakura_chakra_strength")
+
 			self:SetStackCount(0)
 		end
 	end

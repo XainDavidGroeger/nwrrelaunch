@@ -178,7 +178,7 @@ function modifier_32_palms_debuff:OnCreated()
     })
     PopupManaDrain(self:GetParent(),math.floor(1))
     self:GetParent():EmitSound("neji_64_hit")
-    burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+    burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
     Timers:CreateTimer(0.33, function()
         ApplyDamage({
             victim = self:GetParent(),
@@ -186,7 +186,7 @@ function modifier_32_palms_debuff:OnCreated()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         PopupManaDrain(self:GetParent(),math.floor(2))
         self:GetParent():EmitSound("neji_64_hit")
         self:GetCaster():RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_6)
@@ -214,7 +214,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         self:GetParent():EmitSound("neji_64_hit")
         Timers:CreateTimer(0.33, function()
             ApplyDamage({
@@ -223,7 +223,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
                 damage = self.one_palm_damage,
                 damage_type = self:GetAbility():GetAbilityDamageType()
             })
-            burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+            burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
             PopupManaDrain(self:GetParent(),math.floor(4))
             self:GetParent():EmitSound("neji_64_hit")
         end)
@@ -237,7 +237,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         self:GetParent():EmitSound("neji_64_hit")
         PopupManaDrain(self:GetParent(),math.floor(5))
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.17, 3, 6)
@@ -254,7 +254,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.08, 7, 10)
         playSound(self:GetParent(), 0.19, 4)
     end
@@ -269,7 +269,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.04, 15, 18)
         playSound(self:GetParent(), 0.12, 5)
     end
@@ -284,7 +284,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             damage = self.one_palm_damage,
             damage_type = self:GetAbility():GetAbilityDamageType()
         })
-        burnMana(self:GetParent(), 50.0, 1, self:GetCaster()) 
+        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.02, 31, 34)
         playSound(self:GetParent(), 0.08, 7)
     end
@@ -302,7 +302,7 @@ function damageAfterXSecondsForXTimes(caster, target, damage, timer, times, popu
                     damage = damage,
                     damage_type = DAMAGE_TYPE_MAGICAL
                 })
-                burnMana(target, 30.0, 1, caster) 
+                burnMana(target, 100.0, 1, caster) 
                 damageAfterXSecondsForXTimes(caster, target, damage, timer, times-1, popupcount+1)
             end
         end)

@@ -70,8 +70,8 @@
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_ms_slow_per_distance"	"%MOVEMENT SPEED SLOW GAIN: "
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet_duration"				"MOVEMENT SLOW DURATION: "
 		
-		"DOTA_Tooltip_modifier_dragon_bullet_slow"								"Water Dragon Bullet"
-		"DOTA_Tooltip_modifier_dragon_bullet_slow_description"					"This Unit has x% decreased movement speed."
+		"DOTA_Tooltip_modifier_zabuza_slow"								"<b><font color='#55AFFD'> Water Dragon Bullet </font></b>"
+		"DOTA_Tooltip_modifier_zabuza_slow_description"					"This Unit has <b><font color='#55AFFD'>decreased Movement Speed.</font></b>"
 
 		// Ninpou: Kirigakure No Jutsu
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new"						"<b><font color='#EFEFEF'> Hidden Mist Technique </font></b>"
@@ -84,9 +84,16 @@
 
 		"DOTA_Tooltip_ability_zabuza_kirigakure_no_jutsu_new_description"			"<b><font color='#EFEFEF'>Creates a dense mist</font></b> in the target area causing <b><font color='#EFEFEF'>friendly units to become invisible</font></b> after a short fade duration. <br><br> While in the mist, <b><font color='#EFEFEF'>Zabuza gains increased Movement Speed.</font></b>"
 
+		"DOTA_Tooltip_modifier_zabuza_fog_ms_boos"								"<b><font color='#EFEFEF'> Hidden Mist Technique </font></b>"
+		"DOTA_Tooltip_modifier_zabuza_fog_ms_boos_Description"								"This Unit has <b><font color='#EFEFEF'>increased Movement Speed.</font></b>"
+
 		// Executioner’s Blade
 		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"<b><font color='#5386AF'> Executioner Blade </font></b>"
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"<b><font color='#FFFFFF'>ACTIVE </font></b>- Causes all of Zabuza's attacks to be <b><font color='#5386AF'>Critical Strikes for a short duration.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - Zabuza’s attacks will always be <b>Critical Strikes</b> to enemies <b><font color='#5386AF'>below a health threshold.</font></b>"
+
+		"DOTA_Tooltip_modifier_executioners_blade_crit_active"								"<b><font color='#5386AF'> Executioner Blade </font></b>"
+		"DOTA_Tooltip_modifier_executioners_blade_crit_active_description"								"All of this Unit's attacks will be <b><font color='#5386AF'>Critical Strikes.</font></b>"
+
 
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_crit_multiplier"		"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_health_threshold"		"%HEALTH THRESHOLD: "
@@ -96,16 +103,21 @@
 
 		// Demon of the Hidden Mist
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist"					"<b><font color='#A03830'> Demon of the Hidden Mist </font></b>"
-		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"<b><font color='#A03830'>Marks a target enemy Hero</font></b> for as long as they remain in distance, causing each of Zabuza's attacks to cause a <b><font color='#55AFFD'>Movement Speed Slow</font></b> and <b><font color='#5386AF'>extend the Mark's duration.</font></b> <br><br> <b><font color='#A03830'>Zabuza cannot die </font></b>while the Mark is active. <br><br> Applies a<b><font color='#EFEFEF'> Strong Dispel</font></b> to Zabuza on cast."
+		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_description"		"<b><font color='#A03830'>Marks a target enemy Hero</font></b> for as long as they remain within distance. <br><br> Each of Zabuza's attacks on the Marked target causes a <b><font color='#55AFFD'>Movement Speed Slow</font></b> and <b><font color='#5386AF'>extend the Mark's duration.</font></b> <br><br> <b><font color='#A03830'>Zabuza cannot die </font></b>while the Mark is active. <br><br> Applies a<b><font color='#EFEFEF'> Strong Dispel</font></b> to Zabuza on cast."
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_marked_break_distance"		"MARK BREAK DISTANCE: "
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_ms_slow_start"		"%MOVEMENT SPEED SLOW:"
 		"DOTA_Tooltip_ability_zabuza_demon_of_the_hidden_mist_ms_slow_dur"		"MOVEMENT SPEED SLOW DURATION: "
-		"DOTA_Tooltip_modifier_demon_unkillable"							"Demon of the Hidden Mist"
-		"DOTA_Tooltip_modifier_demon_unkillable_description"				"This Unit cannot die."
+		"DOTA_Tooltip_modifier_demon_unkillable"							"<b><font color='#A03830'> Demon of the Hidden Mist </font></b>"
+		"DOTA_Tooltip_modifier_demon_unkillable_description"				"This Unit <b><font color='#A03830'>cannot die.</font></b>"
 
-		"DOTA_Tooltip_modifier_demon_mark"							"Demon of the Hidden Mist"
-		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will increase Mark duration and cause a Movement Speed Slow."
+		"DOTA_Tooltip_modifier_demon_of_the_hidden_mist_slow"								"<b><font color='#A03830'>Wounded</font></b>"
+		"DOTA_Tooltip_modifier_demon_of_the_hidden_mist_slow_description"								"This Unit is <b><font color='#A03830'>slowed.</font></b>"
+
+
+
+		"DOTA_Tooltip_modifier_demon_mark"							"<b><font color='#5386AF'>Demon of the Hidden Mist</font></b>"
+		"DOTA_Tooltip_modifier_demon_mark_description"				"Zabuza's attacks will <b><font color='#5386AF'>increase Mark duration</font></b> and cause a <b><font color='#A03830'>Movement Speed Slow.</font></b>"
 
 		//--------------------
 		//Jirobo
@@ -208,8 +220,8 @@
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_ms_slow_percentage"	"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_hidan_cull_the_weak_hp_percentage_cost"	"%MAXIMUM HEALTH COST: "
 
-		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow"				"Cull the Weak"
-		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow_description" "This Unit is slowed."
+		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow"				"<b><font color='#9C352C'> Cull The Weak </font></b>"
+		"DOTA_Tooltip_modifier_hidan_cull_the_weak_ms_slow_description" "This Unit is <b><font color='#9C352C'>slowed.</font></b>"
 
 		// Taunt
 		"DOTA_Tooltip_ability_hidan_taunt"									"<b><font color='#D12314'> Taunt </font></b>"
@@ -219,35 +231,46 @@
 		"DOTA_Tooltip_ability_hidan_taunt_str_gain_hero"					"STRENGTH GAIN HRO: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_gain_not_hero"				"STRENGTH GAIN UNIT: "
 		"DOTA_Tooltip_ability_hidan_taunt_str_duration"						"STRENGTH BUFF DURATION: "
-		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str"						"Taunt"
-		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str_description"			"This Unit has increased Strength."
-		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven"				"Taunt"
-		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven_description"	"This Unit is forced to attack Hidan."
+		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str"						"<b><font color='#D12314'> Taunt </font></b>"
+		"DOTA_Tooltip_modifier_hidan_taunt_bonus_str_description"			"This Unit has increased <b><font color='#D12314'>Strength.</font></b>"
+		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven"				"<b><font color='#D12314'> Taunt </font></b>"
+		"DOTA_Tooltip_modifier_beserkers_call_enemy_datadriven_description"	"This Unit is <b><font color='#D12314'>forced to attack</font></b> Hidan."
 
 		// Jashin's Blessing
 		"DOTA_Tooltip_ability_hidan_jashins_blessing"						"<b><font color='#C64F45'> Jashin's Blessing </font></b>"
 		"DOTA_Tooltip_ability_hidan_jashins_blessing_description"			"<b><font color='#C64F45'> Upon taking fatal damage,</font></b> Hidan avoids death. <br><br> Instead, a percentage of his maximum<b><font color='#C64F45'> Health is restored.</font></b>"
 		"DOTA_Tooltip_ability_hidan_jashins_blessing_reset_hp_percentage"	"%MAXIMUM HEALTH RESTORED: "
-		"DOTA_Tooltip_modifier_modifier_jashins_blessing"					"Jashin's Blessing"
-		"DOTA_Tooltip_modifier_modifier_jashins_blessing_description"		"Hidan won't die from fatal damage."
+		"DOTA_Tooltip_modifier_jashins_blessing"					"<b><font color='#C64F45'> Jashin's Blessing </font></b>"
+		"DOTA_Tooltip_modifier_jashins_blessing_description"		"Hidan will <b><font color='#C64F45'>restore Health</font></b> upon taking fatal damage."
 
 		// Death Possession Blood
 		"DOTA_Tooltip_ability_hidan_death_possession_blood"						"<b><font color='#B5B5B5'> Death Possession Blood </font></b>"
-		"DOTA_Tooltip_ability_hidan_death_possession_blood_description"			"<b><font color='#FFFFFF'>PASSIVE </font></b>- Hidan <b><font color='#D52516'>stores blood</font></b> from the most recent hero attacked. <br><br> <b><font color='#FFFFFF'>ACTIVE</font></b> - Creates a symbol on the ground, causing a percentage of damage taken by Hidan to <b><font color='#9C352C'>also be inflicted upon the enemy hero</font></b> who's blood Hidan currently possesses. <br><br> Enemies take full damage while Hidan <b><font color='#9C352C'>remains within the symbol.</font></b> <br><br> Grants the ability to inflict <b><font color='#880808'>Self Pain</font></b> while active."
+		"DOTA_Tooltip_ability_hidan_death_possession_blood_description"			"<b><font color='#FFFFFF'>PASSIVE </font></b>- Hidan <b><font color='#D52516'>stores blood</font></b> from the most recent hero attacked. <br><br> <b><font color='#FFFFFF'>ACTIVE</font></b> - Creates a symbol on the ground, causing a percentage of damage taken by Hidan to <b><font color='#9C352C'>also be inflicted upon the enemy hero</font></b> who's blood Hidan currently possesses. <br><br> Enemies take full damage while Hidan <b><font color='#C64F45'>remains within the symbol.</font></b> <br><br> Grants the ability to inflict <b><font color='#880808'>Self Pain</font></b> while active."
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_radius"				"SYMBOL RADIUS: "
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_outside_percentage"	"%DAMAGE SHARED OUTSIDE CIRCLE: "
 		"DOTA_Tooltip_ability_hidan_death_possession_blood_returned_damage_inside_percentage"	"%DAMAGE SHARED INSIDE CIRCLE: "
-		"DOTA_Tooltip_modifier_hidan_metamorphosis"							"Death Possession Blood"
-		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				"Damage taken by Hidan is also dealt to foe."
+		"DOTA_Tooltip_modifier_hidan_metamorphosis"							"<b><font color='#B5B5B5'> Death Possession Blood </font></b>"
+		"DOTA_Tooltip_modifier_hidan_metamorphosis_description"				"Damage taken by Hidan is also <b><font color='#B5B5B5'>dealt to cursed foe.</font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_caster_on_attack"								"<b><font color='#9C352C'>Bloodlust</font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_Caster_on_attack_description"								"Takes the blood from the <b><font color='#9C352C'>next Hero Hidan attacks.</font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_target"								"<b><font color='#B5B5B5'>Death Possession Target</font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_target_Description"								"The Unit is dealt a percentage of <b><font color='#D12314'>damage taken by Hidan</font></b> if <b><font color='#B5B5B5'> Death Possession Blood</font></b> is active."
+		"DOTA_Tooltip_modifier_death_possession_blood_caster_status"								"<b><font color='#D12314'> Blood Taken </font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_caster_status_description"								"Hidan possesses an <b><font color='#D12314'>enemy's blood.</font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_dummy_aura_inside_ring"								"<b><font color='#C64F45'> Inside Ritual Circle </font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_dummy_aura_inside_ring_Description"								"<b><font color='#C64F45'> All of the damage </font></b> taken by Hidan is dealt to the cursed target."
+		"DOTA_Tooltip_modifier_death_possession_blood_caster_buff"								"<b><font color='#B5B5B5'> Death Possession Blood </font></b>"
+		"DOTA_Tooltip_modifier_death_possession_blood_caster_buff_Description"								"A percentage of damage taken by Hidan is <b><font color='#B5B5B5'>dealt to the cursed target.</font></b>"
+
+
+
 
 		// Self Pain
 		"DOTA_Tooltip_ability_hidan_self_pain"							"<b><font color='#880808'> Self Pain </font></b>"
 		"DOTA_Tooltip_ability_hidan_self_pain_damage"					"DAMAGE: "
 		"DOTA_Tooltip_ability_hidan_self_pain_description"				"Hidan impales himself in a vital area <b><font color='#880808'>dealing Pure Damage to himself.</font></b> <br><br> Hidan cannot die from this ability. <br><br> Requires <b><font color='#B5B5B5'>Death Possession Blood</font></b> to be active in order to use."
-		
-		"DOTA_Tooltip_modifier_hidan_ulti_debuff"						"Death Possession Blood"
-		"DOTA_Tooltip_modifier_hidan_ulti_debuff_description"			"This Unit is marked by Hidan and will receive the same damage as him if Hidan has his ultimate activated."
+
 
 		//--------------------
 		//Kidoumaru
@@ -279,6 +302,9 @@
 		"DOTA_Tooltip_ability_madara_wood_release_cd_reduc"				"CD REDUCTION (TALENT): "
 		
 		"DOTA_Tooltip_ability_madara_wood_release_tree_duration"		"TREE DURATION: "
+
+		"DOTA_Tooltip_modifier_madara_burning_tree_dot"					"<b><font color='#EA2D07'>Burned</font></b>"
+		"DOTA_Tooltip_modifier_madara_burning_tree_dot_description"		"The unit is <b><font color='#EA2D07'>Slowed</font></b> and taking <b><font color='#EA2D07'>Damage over time.</font></b>"
 		
 		// Susano’o Ribcage
 		"DOTA_Tooltip_ability_madara_susano"							"<b><font color='#3D79E5'>Susano'o Ribcage</font></b>"
@@ -288,6 +314,9 @@
 		"DOTA_Tooltip_ability_madara_susano_mana_cost_per_second"	"MANACOST PER SECOND: "	
 		"DOTA_Tooltip_ability_madara_susano_damage"					"DAMAGE: "	
 		
+		"DOTA_Tooltip_modifier_madara_susano_caster_active"					"<b><font color='#3D79E5'>Susano'o Ribcage</font></b>"
+		"DOTA_Tooltip_modifier_madara_susano_caster_active_description"					"This Unit has increased <b><font color='#3D79E5'>Magic Resistance</font></b> and deals <b><font color='#3D79E5'>Damage to nearby enemies.</font></b>"
+
 		// Susano’o Ribcage activated
 		"DOTA_Tooltip_ability_madara_susano_active"						"<b><font color='#004CD5'>Susano'o Ribcage</font></b>"
 		"DOTA_Tooltip_ability_madara_susano_active_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, <b><font color='#004CD5'>grants magic resistance and damages nearby enemies</font></b> while draining the user’s mana. <br><br> When toggled on, any trees within radius of Madara will burn if <b><font color='#23A32C'>Deep Forest Emergence</font></b> is leveled."
@@ -324,8 +353,8 @@
 		"DOTA_Tooltip_ability_kisame_suikodan_no_jutsu_slow_duration"	"DEBUFF DURATION: "
 		
 		//Water Release debuff
-		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff"				"Water Shark Bullet"
-		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff_description"	"This Unit has reduced Armor and Movementspeed."
+		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff"				"<b><font color='#0689D8'>Water Shark Bullet</font></b>"
+		"DOTA_Tooltip_modifier_suikodan_no_jutsu_debuff_description"	"This Unit has <b><font color='#0689D8'>reduced Armor</font></b> and <b><font color='#0689D8'>Movement Speed.</font></b>"
 
 		//Water Clone Technique (Mizu Bunshin no Jutsu)					
 		"DOTA_Tooltip_ability_kisame_mizu_bunshin_no_jutsu"				"<b><font color='#276DE8'>Water Clone Technique</font></b>"
@@ -340,8 +369,9 @@
 		"DOTA_Tooltip_ability_kisame_samehada_description"				"Kisame's next attack <b><font color='#0689D8'>steals a percentage of the enemy's maximum Mana</font></b> and grants it to Kisame. <br><br> Grants temporary<b><font color='#545AE7'> Bonus Attack Damage</font></b> based of the amount of Mana stolen."	
 		"DOTA_Tooltip_ability_kisame_samehada_manasteal_percentage"		"%MANASTEAL: "
 		"DOTA_Tooltip_ability_kisame_samehada_bonus_attack_damage"		"%BONUS ATTACK DAMAGE: "
-		"DOTA_Tooltip_modifier_samehada"								"Samehada"
-		"DOTA_Tooltip_modifier_samehada_description"					"Kisame's next attack will steal Mana."
+		"DOTA_Tooltip_modifier_kisame_samehada"								"<b><font color='#545AE7'>Samehada</font></b>"
+		"DOTA_Tooltip_modifier_kisame_samehada_description"					"Kisame's next attack will <b><font color='#0689D8'>steal Mana</font></b> and grant <b><font color='#545AE7'>Attack Damage.</font></b>"
+
 
 		//Water Prison
 		"DOTA_Tooltip_ability_kisame_water_prison"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
@@ -353,16 +383,26 @@
 		"DOTA_Tooltip_ability_kisame_water_prison_ms_buff"	"%MOVEMENT SPEED BUFF: "
 		"DOTA_Tooltip_ability_kisame_water_prison_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - <b><font color='#0689D8'>Creates a large dome of water</font></b> that follows Kisame's movement while draining mana. <br><br>Kisame gains <b><font color='#9AB3F4'>extra Movement Speed and Health Regeneration</font></b> inside the water dome. <br><br> Enemies have<b><font color='#0A6AA4'> reduced Movement Speed and take Magic Damage</font></b> inside the water dome."
 		
+		"Dota_Tooltip_modifier_kisame_metamorphosis"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"Dota_Tooltip_modifier_kisame_metamorphosis_description"			"Creating a <b><font color='#0689D8'>Water Dome</font></b> around the User that deals <b><font color='#0689D8'>Damage to nearby enemies.</font></b>"
+		"Dota_Tooltip_modifier_water_prison_buff"						"<b><font color='#9AB3F4'>Aquatic</font></b>"
+		"Dota_Tooltip_modifier_water_prison_buff_description"			"Kisame has increased Movement Speed and Health Regeneration inside the Water Dome."
+		"Dota_Tooltip_modifer_water_prison_hp_reg"						"<b><font color='#9AB3F4'>Regeneration</font></b>"
+		"Dota_Tooltip_modifer_water_prison_hp_reg_description"			"Kisame has <b><font color='#9AB3F4'>increased Health Regneration</font></b> inside the Water Dome."
+		"Dota_Tooltip_modifer_water_prison_buff"						"<b><font color='#9AB3F4'>Aquatic</font></b>"
+		"Dota_Tooltip_modifer_water_prison_buff_description"			"Kisame has <b><font color='#9AB3F4'>increased Movement Speed</font></b> inside the Water Dome."
+
+
 		//Water Prison debuff
-		"Dota_Tooltip_modifer_water_prison_slow"						"Shark Dance"
-		"Dota_Tooltip_modifer_water_prison_slow_description"			"This Unit has decreased Movement Speed."
+		"Dota_Tooltip_modifer_water_prison_slow"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"Dota_Tooltip_modifer_water_prison_slow_description"			"This Unit is taking <b><font color='#9AB3F4'>Damage</font></b> and is <b><font color='#9AB3F4'>Slowed.</font></b>"
 		
 		//Bunshin Water Prison
 		"DOTA_Tooltip_ability_kisame_bunshin_water_prison"						"<b><font color='#0A6AA4'>Water Prison Technique</font></b>"
 		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_description"			"<b><font color='#FFFFFF'>CHANNELED</font></b> - Creates an inescapable sphere of water that <b><font color='#0A6AA4'>disables the foe.</font></b>"
 		"DOTA_Tooltip_ability_kisame_bunshin_water_prison_channel_time"			"DURATION: "
-		"DOTA_Tooltip_modifier_bunshin_water_prison_hold"				"Water Prison Technique"
-		"DOTA_Tooltip_modifier_bunshin_water_prison_hold_description"	"This Unit is stunned."
+		"DOTA_Tooltip_modifier_bunshin_water_prison_hold"				"<b><font color='#0A6AA4'>Water Prison Technique</font></b>"
+		"DOTA_Tooltip_modifier_bunshin_water_prison_hold_description"	"This Unit is <b><font color='#0A6AA4'>Stunned</font></b>."
 		
 		//Bunshin Samehada
 		"DOTA_Tooltip_ability_kisame_samehada_bunshin"						"<b><font color='#474CCA'>Samehada</font></b>"
@@ -383,7 +423,7 @@
 		// Ryuusa Bakuryu
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu"						"<b><font color='#C1943D'>Sand Tsunami</font></b>"
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_lore"						"Ryusa Bakuryu"
-		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Stuns all enemy units</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage overtime</font></b> while in the radius."
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Stuns all enemy units</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage over time</font></b> while in the radius."
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_duration"			"DAMAGE DURATION: "
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_stun_duration"		"STUN DURATION: "
 		// Suna no Yoroi
@@ -391,6 +431,9 @@
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - Absorbs <b><font color='#FFFFFF'>70%</font></b> of <b><font color='#FFDD93'>incoming damage in exchange for Mana</font></b> while toggled on."
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_absorption_tooltip"	"%DAMAGE REDUCTION: "
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_damage_per_mana"		"REDUCED DAMAGE PER MANA: "
+
+		"Dota_Tooltip_modifier_suna_no_yoroi"							"<b><font color='#FFDD93'>Sand Armor</font></b>"
+		"Dota_Tooltip_modifier_suna_no_yoroi_description"							"Gaara takes <b><font color='#FFDD93'>reduced Damage</font></b> in exchange for <b><font color='#0689D8'>Mana.</font></b>"
 
 		"DOTA_Tooltip_modifier_mana_shield_datadriven"					"Sand Armor"
 		"DOTA_Tooltip_modifier_mana_shield_datadriven_description"		"Absorbing Damage in exchange for Mana"
@@ -425,8 +468,8 @@
 		"DOTA_Tooltip_ability_yondaime_rasengan_base_bonus_damage"		"BASE DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_ms"				"%BONUS MOVEMENT SPEED: "
 
-		"DOTA_Tooltip_modifier_rasengan"								"Rasengan"
-		"DOTA_Tooltip_modifier_rasengan_description"					"Minato's next attack will knockback an enemy.\n Minato has increased MS."
+		"DOTA_Tooltip_modifier_rasengan"								"<b><font color='#00D4FF'>Rasengan</font></b>"
+		"DOTA_Tooltip_modifier_rasengan_description"					"Minato's next attack deals <b><font color='#00D4FF'>Additional Damage</font></b> and <b><font color='#00D4FF'>Knocks Back.</font></b>"
 
 
 		// The Yellow Flash
@@ -435,8 +478,10 @@
 		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_ms_percentage"	"%ADDITIONAL MOVEMENT SPEED: "
 		"DOTA_Tooltip_ability_yondaime_agile_speed_bonus_damage_ms_percent"	"%ADDITIONAL DAMAGE: "
 
-		"DOTA_Tooltip_modifier_agile_speed"								"The Yellow Flash"
-		"DOTA_Tooltip_modifier_agile_speed_description"					"Minato has increased MS and Attack Damage based on his MS."
+		"DOTA_Tooltip_modifier_yondaime_agile_speed_passive"								"<b><font color='#E9EB00'>The Yellow Flash</font></b>"
+		"DOTA_Tooltip_modifier_yondaime_agile_speed_passive_description"					"Minato has increased <b><font color='#E9EB00'>Movement Speed</font></b> and <b><font color='#E9EB00'>Attack Damage.</font></b>"
+		"DOTA_Tooltip_modifier_yondaime_agile_speed_active"								"<b><font color='#E9EB00'>Double Bonuses</font></b>"
+		"DOTA_Tooltip_modifier_yondaime_agile_speed_active_description"					"Bonuses from <b><font color='#E9EB00'>The Yellow Flash</font></b> are doubled."
 		
 
 
@@ -456,8 +501,8 @@
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_reduction"			"ARMOR REDUCTION: "
 		"DOTA_Tooltip_ability_yondaime_hiraishin_jump_armor_duration"			"ARMOR DEBUFF DURATION: "
 
-		"DOTA_Tooltip_modifier_hiraishin_armor_debuff"						"Flying Thunder God: Slash"
-		"DOTA_Tooltip_modifier_hiraishin_armor_debuff_description"			"This Unit's Armor is reduced."
+		"DOTA_Tooltip_modifier_hiraishin_armor_debuff"						"<b><font color='#E95A2E'>Flying Thunder God: Slash</font></b>"
+		"DOTA_Tooltip_modifier_hiraishin_armor_debuff_description"			"This Unit's <b><font color='#E95A2E'>Armor is reduced.</font></b>"
 
 		//--------------------
 		//Kankuro
@@ -549,8 +594,8 @@
 		"DOTA_Tooltip_ability_haku_crippling_senbon_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_haku_crippling_senbon_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_haku_crippling_senbon_endless_wounds_stacks"		"ENDLESS WOUNDS STACKS: "
-		"DOTA_Tooltip_modifier_haku_senbon_stun"						"Crippling Senbon"
-		"DOTA_Tooltip_modifier_haku_senbon_stun_description"			"This Unit is stunned."
+		"DOTA_Tooltip_modifier_haku_senbon_stun"						"<b><font color='#9784FF'>Crippling Senbon</font></b>"
+		"DOTA_Tooltip_modifier_haku_senbon_stun_description"			"This Unit is <b><font color='#9784FF'>Stunned.</font></b>"
 		
 		// Needles of Death
 		"DOTA_Tooltip_ability_haku_needles"					"<b><font color='#C0EEFF'>Needles of Death</font></b>"
@@ -563,8 +608,8 @@
 		"DOTA_Tooltip_ability_haku_needles_range"			"RANGE: "
 		"DOTA_Tooltip_ability_haku_needles_wave_interval"	"WAVE DELAY: "
 		
-		"DOTA_Tooltip_modifier_haku_needles_stun"						"Needles of Death"
-		"DOTA_Tooltip_modifier_haku_needles_stun_description"			"This Unit is rooted."
+		"DOTA_Tooltip_modifier_haku_needles_stun"						""<b><font color='#C0EEFF'>Needles of Death</font></b>"
+		"DOTA_Tooltip_modifier_haku_needles_stun_description"			"This Unit is "<b><font color='#C0EEFF'>Rooted.</font></b>"
 		
 		// Endless Wounds 
 		"DOTA_Tooltip_ability_haku_endless_wounds"					"<b><font color='#89BBCE'>Endless Wounds</font></b>"
@@ -573,11 +618,13 @@
 		"DOTA_Tooltip_ability_haku_endless_wounds_ms_slow_per_stack"			"%MS SLOW PER STACK: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_threshold"			"STACK THRESHOLD: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_duration"			"STACK DURATION: "		
-		"DOTA_Tooltip_modifier_haku_endless_needles_victim"						"Endless Wounds"
-		"DOTA_Tooltip_modifier_haku_endless_needles_victim_description"			"This Unit is slowed."
-		"DOTA_Tooltip_modifier_haku_endless_needles_victim_special"						"Endless Wounds"
-		"DOTA_Tooltip_modifier_haku_endless_needles_victim_special_description"			"This Unit is slowed."
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim"						"<b><font color='#89BBCE'>Endless Wounds</font></b>"
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim_description"			"This Unit is <b><font color='#89BBCE'>Slowed.</font></b>"
+		"DOTA_Tooltip_modifier_haku_endless_needles_caster"						"<b><font color='#89BBCE'>Endless Wounds</font></b>"
+		"DOTA_Tooltip_modifier_haku_endless_needles_caster_description"			"Haku's attacks and spells will <b><font color='#89BBCE'>Slow the enemy.</font></b>"
 		
+
+
 		// Demonic Ice Mirrors
 		"DOTA_Tooltip_ability_haku_ice_mirrors"					"<b><font color='#9DCBF7'>Demonic Ice Mirrors</font></b>"
 		"DOTA_Tooltip_ability_haku_ice_mirrors_lore"				"Makyo Hyosho"
@@ -618,21 +665,23 @@
 		"DOTA_Tooltip_ability_sakura_earth_slam_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_stomp_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_earth_slam_cd_reduc"			    "CD REDUCTION: "
-		"DOTA_Tooltip_modifier_sakura_earth_slam"						"Earth Slam"
-		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"This Unit is stunned."
+		"DOTA_Tooltip_modifier_sakura_earth_slam"						"<b><font color='#FF65E8'>Cherry Blossom Impact</font></b>"
+		"DOTA_Tooltip_modifier_sakura_earth_slam_description"			"This Unit is <b><font color='#FF65E8'>Stunned.</font></b>"
 		
 		// Chakra Burst
 		"DOTA_Tooltip_ability_sakura_chakra_burst"						"<b><font color='#0EA5FF'>Chakra Burst</font></b>"
 		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"Grants Sakura <b><font color='#0EA5FF'>maximum Movement Speed</font></b> for a short duration of time."
 		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"DURATION: "
-		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Chakra Burst"
-		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has Maximum Movement Speed."
+		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"<b><font color='#0EA5FF'>Chakra Burst</font></b>"
+		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"This Unit has <b><font color='#0EA5FF'>Maximum Movement Speed.</font></b>"
 		
 		// Chakra Enhanced Strength
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"After <b><font color='#FFFFFF'>3</font></b> attacks, Sakura's next attack will <b><font color='#D98CFF'>Stun and deal additional Physical Damage.</font></b> <br><br> <b><font color='#D98CFF'>Deals double damage</font></b> to creeps."
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_stun_duration"	"STUN DURATION: "
+		"DOTA_Tooltip_modifier_sakura_strength_caster"						"<b><font color='#D98CFF'>Chakra Enchanced Strength</font></b>"
+		"DOTA_Tooltip_modifier_sakura_strength_caster_Description"			"After <b><font color='#FFFFFF'>3</font></b> attacks, the next attack will <b><font color='#D98CFF'>Stun</font></b> and deal <b><font color='#D98CFF'>extra Damage.</font></b>"
 
 		// Inner Sakura
 		"DOTA_Tooltip_ability_sakura_inner_sakura"						"<b><font color='#B473FF'>Strength of a Hundred Seal</font></b>"
@@ -640,8 +689,8 @@
 		"DOTA_Tooltip_ability_sakura_inner_sakura_gods_strength_damage"	"%BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_bonus_armor"			"BONUS ARMOR: "
 		"DOTA_Tooltip_ability_sakura_inner_sakura_duration"				"DURATION: "
-		"DOTA_Tooltip_modifier_sakura_inner_sakura"						"Inner Sakura"
-		"DOTA_Tooltip_modifier_sakura_inner_sakura_description"			"This Unit has increased Attack Damage and Armor."
+		"DOTA_Tooltip_modifier_sakura_inner_sakura"						"<b><font color='#B473FF'>Strength of a Hundred Seal</font></b>"
+		"DOTA_Tooltip_modifier_sakura_inner_sakura_description"			"This Unit has increased <b><font color='#B473FF'>Attack Damage</font></b> and <b><font color='#B473FF'>Armor.</font></b>"
 
 
 
@@ -2212,6 +2261,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_1"						"+70 Taunt AoE"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
+		"DOTA_Tooltip_Ability_special_bonus_hidan_4"						"+75 Cull the Weak Range"
 
 		//25: +60 Damage Inside Hidden Mist / +100% Cleave
 		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay

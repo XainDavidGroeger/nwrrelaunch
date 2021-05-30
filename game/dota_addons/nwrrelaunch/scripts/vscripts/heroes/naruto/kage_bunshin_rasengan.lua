@@ -45,23 +45,31 @@ function ConjureImage( event )
     local incomingDamage = 0
     
     if event.caster:HasAbility("naruto_kage_bunshin_mastery") then
-        local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
-	    if ability_index ~= nil then
-            local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
-            if kage_bunshin_mastery_ability:GetLevel() > 0 then 
-                outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
-                local abilityS5 = caster:FindAbilityByName("special_bonus_naruto_5")
-			    if abilityS5 ~= nil then
-                    if abilityS5:IsTrained() then
-                     outgoingDamage = outgoingDamage + 13
-                    end
-			    end
-            else
-                outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
-                incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
-            end 
-	    end
-    end
+      local ability_index = event.caster:FindAbilityByName("naruto_kage_bunshin_mastery"):GetAbilityIndex()
+  if ability_index ~= nil then
+          local kage_bunshin_mastery_ability = event.caster:GetAbilityByIndex(ability_index)
+          if kage_bunshin_mastery_ability:GetLevel() > 0 then 
+          
+              outgoingDamage = kage_bunshin_mastery_ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+              if caster:FindAbilityByName("special_bonus_naruto_5") ~= nil then
+                  local abilityS = event.caster:FindAbilityByName("special_bonus_naruto_5")
+           if abilityS ~= nil then
+                        if abilityS:IsTrained() then
+                           outgoingDamage = outgoingDamage + 13
+                        end
+           end
+              end
+              
+              incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", kage_bunshin_mastery_ability:GetLevel())
+             
+          else
+          
+          outgoingDamage = ability:GetLevelSpecialValueFor( "illusion_outgoing_damage_percent", 0)
+          incomingDamage = ability:GetLevelSpecialValueFor( "illusion_incoming_damage_percent", 0)
+          
+          end
+  end
+   end
 
     -- handle_UnitOwner needs to be nil, else it will crash the game.
     local illusion = CreateUnitByName(unit_name, origin, true, caster, nil, caster:GetTeamNumber())
@@ -181,9 +189,12 @@ end
 function FinishChidori(keys, illusion)
   local duration = keys.ability:GetLevelSpecialValueFor( "slow_duration", keys.ability:GetLevel() - 1)
   RemovePhysics(illusion)
+  FindClearSpaceForUnit( illusion, illusion:GetAbsOrigin(), true )
+  ResolveNPCPositions(illusion:GetAbsOrigin(), illusion:GetHullRadius())
   illusion:RemoveModifierByName("modifier_imba_storm_bolt_caster_hit")
   illusion:Stop()
   keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_naruto_bunshin_rasengan_slow", {duration = duration})
+  print("apply damage")
 end
 
 function Launch(keys, illusion) 

@@ -57,6 +57,8 @@
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
 		"soundfile"	"soundevents/heroes/sakura/sakura_slam.vsndevts"
+		"soundfile"	"soundevents/heroes/sakura/sakura_slam_impact.vsndevts"
+		"soundfile"	"soundevents/heroes/sakura/sakura_slam_cast.vsndevts"
 		"particle"	"particles/units/heroes/sakura/sakura_earth_slam.vpcf"
 		"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
 	}

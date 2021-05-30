@@ -56,7 +56,7 @@ function modifier_senei_jyashu:OnCreated()
 end
 
 function modifier_senei_jyashu:OnIntervalThink()
-	if not self:GetParent():IsRealHero() then return end
+	if not self:GetParent():IsRealHero() or self:GetParent():IsAlive() == false then return end
 
 	if self.interval_upgraded == false and self:GetParent():HasTalent("special_bonus_anko_4") then
 		self.interval_upgraded = true

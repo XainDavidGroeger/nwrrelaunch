@@ -71,7 +71,6 @@ end
 function VoiceResponses:PlayTrigger(responses, response_rules, unit)
 	local lastCast = response_rules.lastCast or 0
 	local cooldown = response_rules.Cooldown or VO_DEFAULT_COOLDOWN
-	local allChat = response_rules.AllChat or false
 	local delay = response_rules.Delay or 0
 
 	-- Priority 0 = follows default cooldown (move & attack)
@@ -85,7 +84,7 @@ function VoiceResponses:PlayTrigger(responses, response_rules, unit)
 	local lastSound = responses.lastSound or 0
 	local lastCooldown = responses.Cooldown or 0 
 
-	local global = true
+	local global = false
 	if response_rules.Global ~= nil then
 		global = response_rules.Global
 	end
@@ -130,7 +129,7 @@ function VoiceResponses:PlayTrigger(responses, response_rules, unit)
 	for soundName, weight in pairs(response_rules.Sounds) do
 		count = count + weight
 		if count >= selection then
-			return Timers:CreateTimer(delay, function () self:PlaySound(soundName, unit, allChat, global) end)
+			return Timers:CreateTimer(delay, function () self:PlaySound(soundName, unit, global) end)
 		end
 	end
 end
@@ -153,12 +152,10 @@ function VoiceResponses:TriggerSoundSpecial(triggerName, special, unit, response
 	end
 end
 
-function VoiceResponses:PlaySound(soundName, unit, allChat, global)
+function VoiceResponses:PlaySound(soundName, unit, global)
 	if not IsServer() then return end
 
-	print(soundName)
-
-	if allChat then
+	if global == 1 then
 		unit:EmitSound(soundName)
 	else
 		local playerID = unit:GetPlayerOwnerID()

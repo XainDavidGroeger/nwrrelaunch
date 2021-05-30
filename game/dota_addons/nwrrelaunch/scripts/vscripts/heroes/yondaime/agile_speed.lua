@@ -124,6 +124,7 @@ function modifier_yondaime_agile_speed_active:OnCreated()
 	local modifier = ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName())
 	modifier.bonus_damage_ms_perc = ability:GetSpecialValueFor("bonus_damage_ms_percent_active")
 	modifier.bonus_movespeed_perc = ability:GetSpecialValueFor("bonus_ms_percentage_active")
+	self:GetCaster():EmitSound("minato_flash_cast")
 end
 
 
@@ -136,5 +137,5 @@ function modifier_yondaime_agile_speed_active:OnRemoved()
 end
 
 function modifier_yondaime_agile_speed_active:GetEffectName()
-	return "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+	return "particles/units/heroes/yondaime/minato_flash_active.vpcf"
 end
