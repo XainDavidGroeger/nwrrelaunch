@@ -122,73 +122,43 @@ function sendGameEndStatsToApi(team)
 
 	-- get all players heroes
 	local PlayerCount = PlayerResource:GetPlayerCount() - 1
-	for i=0, PlayerCount do
-		if PlayerResource:IsValidPlayer(i) then
-			local player = PlayerResource:GetPlayer(i)
-			
-			local hero = player:GetAssignedHero()
-			if hero ~= nil then
-				pickedHeroes[hero:GetName()] = {}
-				if player:GetTeamNumber() == team then
-					pickedHeroes[hero:GetName()]['win'] = 1
-				else
-					pickedHeroes[hero:GetName()]['win'] = 0
+
+	if PlayerResource:GetPlayerCountForTeam(2) == 5 and PlayerResource:GetPlayerCountForTeam(3) == 5 then
+		for i=0, PlayerCount do
+			if PlayerResource:IsValidPlayer(i) then
+				local player = PlayerResource:GetPlayer(i)
+				
+				local hero = player:GetAssignedHero()
+				if hero ~= nil then
+					pickedHeroes[hero:GetName()] = {}
+					if player:GetTeamNumber() == team then
+						pickedHeroes[hero:GetName()]['win'] = 1
+					else
+						pickedHeroes[hero:GetName()]['win'] = 0
+					end
 				end
 			end
 		end
+	
+		payload['heroes'] = pickedHeroes
+	
+		local request = CreateHTTPRequestScriptVM("POST", "http://tt-underground-liga.de/nwrstatsfinal")
+		request:SetHTTPRequestAbsoluteTimeoutMS(5000)
+		
+		local header_key = nil
+		
+		local encoded = json.encode(payload)
+		print(payload)
+		print(encoded)
+		request:SetHTTPRequestRawPostBody("application/json", encoded)
+		
+		request:Send(function(result)
+			local code = result.StatusCode;
+		end)
 	end
 
-	payload['heroes'] = pickedHeroes
-
-	local request = CreateHTTPRequestScriptVM("POST", "http://tt-underground-liga.de/nwrstatsfinal")
-	request:SetHTTPRequestAbsoluteTimeoutMS(5000)
 	
-	local header_key = nil
-	
-	local encoded = json.encode(payload)
-	print(payload)
-	print(encoded)
-	request:SetHTTPRequestRawPostBody("application/json", encoded)
-	
-	request:Send(function(result)
-		local code = result.StatusCode;
-	end)
 end
-
--- TODO add live api url / add api security?
-function SendHeroPickStatsToServer()
-
-	local payload = {}
-	local pickedHeroes = {}
-
-	-- get all players heroes
-	local PlayerCount = PlayerResource:GetPlayerCount() - 1
-	for i=0, PlayerCount do
-		if PlayerResource:IsValidPlayer(i) then
-			local player = PlayerResource:GetPlayer(i)
-			
-			local hero = player:GetAssignedHero()
-			if hero ~= nil then
-				pickedHeroes[i] = hero:GetName()
-			end
-		end
-	end
-
-	payload['heroes'] = pickedHeroes
-
-	local request = CreateHTTPRequestScriptVM("POST", "http://tt-underground-liga.de/nwrstats")
-	request:SetHTTPRequestAbsoluteTimeoutMS(5000)
-	
-	local header_key = nil
-	
-	local encoded = json.encode(payload)
-	request:SetHTTPRequestRawPostBody("application/json", encoded)
-	
-	request:Send(function(result)
-		local code = result.StatusCode;
-	end)
-end
-
 
 function sendOverrideHeroImage(hero)
 	CustomGameEventManager:Send_ServerToAllClients("override_hero_image", {
@@ -226,7 +196,7 @@ function GameMode:OnEntityKilled(event)
 	  end
 	if hTarget:GetName() == "dota_goodguys_fort" then
 		print("AKATSUKI WON")
-		sendGameEndStatsToApi(2)
+		sendGameEndStatsToApi(3)
 	end
 
 	if hTarget:GetOwner() ~= nil then
@@ -297,7 +267,6 @@ end
 	is useful for starting any game logic timers/thinkers, beginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
-	SendHeroPickStatsToServer()
 end
 
 function GameMode:OnEntityHurt( event )
