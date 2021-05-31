@@ -104,6 +104,10 @@ function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
 
 	local attacker = keys.attacker
 	local target = keys.target
+	
+	if target:IsBuilding() then
+		return nil
+	end
 
 	if self.parent == attacker and attacker:GetTeamNumber() ~= target:GetTeamNumber() then
 		local target = keys.target
