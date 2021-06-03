@@ -627,19 +627,6 @@
 		"DOTA_Tooltip_ability_haku_ice_mirrors_mirror_attack_range"	"ДАЛЬНОСТЬ АТАКИ ЗЕРКАЛ: "
 		"DOTA_Tooltip_ability_haku_ice_mirrors_attack_damage"		"УРОН ЗЕРКАЛ: "
 		"DOTA_Tooltip_ability_haku_ice_mirrors_hp" 					"ЗДОРОВЬЕ ЗЕРКАЛ: "
-				
-		// Chakra Burst
-		"DOTA_Tooltip_ability_sakura_chakra_burst"						"Взрыв Чакры"
-		"DOTA_Tooltip_ability_sakura_chakra_burst_description"			"Собирая чакру в своих ногах, Сакура может увеличить свою скорость до новых высот. После активации скорость передвижения Сакуры увеличивается до максимума на короткий промежуток времени."
-		"DOTA_Tooltip_ability_sakura_chakra_burst_duration"				"ДЛИТЕЛЬНОСТЬ: "
-		"DOTA_Tooltip_modifier_sakura_chakra_burst"						"Взрыв Чакры"
-		"DOTA_Tooltip_modifier_sakura_chakra_burst_description"			"Этот юнит имеет максимальную скорость передвижения."
-		// Chakra Enhanced Strength
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength"				"Усиленная чакрой физическая сила"
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_description"	"Используя свои превосходные навыки управления чакрой, Сакура значительно увеличивает силу своих ударов. Пассивно дает шанс нанести дополнительный физический урон от обычных атак, а также отбросить врага на небольшое расстояние."
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_bonus_damage"	"УРОН: "
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_distance"		"ДАЛЬНОСТЬ ОТТАЛКИВАНИЯ: "
-		"DOTA_Tooltip_ability_sakura_chakra_enhanced_strength_chance"		"%ШАНС: "
 
 
 		//--------------------
