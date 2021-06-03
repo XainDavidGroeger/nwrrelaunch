@@ -90,7 +90,7 @@
 		// Executioner’s Blade
 		"DOTA_Tooltip_ability_zabuza_executioners_blade"						"<b><font color='#5386AF'> Обезглавливающий Меч </font></b>"
 		"DOTA_Tooltip_ability_zabuza_executioners_blade_lore"					"Кубикирибочо"
-		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"<b><font color='#FFFFFF'>АКТИВНО</font></b>: Все атаки Забузы становятся <b><font color='#5386AF'>Критическими на короткое время.</font></b> <br><br> <b><font color='#FFFFFF'>ПАССИВНО</font></b> - Атаки Забузы всегда будут <b>Критическими</b> против противников<b><font color='#5386AF'>здоровье которых ниже определенного порога.</font></b>"
+		"DOTA_Tooltip_ability_zabuza_executioners_blade_description"			"<b><font color='#FFFFFF'>АКТИВНО</font></b>: Все атаки Забузы становятся <b><font color='#5386AF'>Критическими на короткое время.</font></b> <br><br> <b><font color='#FFFFFF'>ПАССИВНО</font></b> - Атаки Забузы будут <b>Критическими</b>, если <b><font color='#5386AF'>здоровье цели ниже определенного порога.</font></b>"
 
 		"DOTA_Tooltip_modifier_executioners_blade_crit_active"								"<b><font color='#5386AF'> Обезглавливающий Меч </font></b>"
 		"DOTA_Tooltip_modifier_executioners_blade_crit_active_description"								"Все атаки этого юнита будут <b><font color='#5386AF'>Критическими.</font></b>"
@@ -118,7 +118,7 @@
 
 
 		"DOTA_Tooltip_modifier_demon_mark"							"<b><font color='#5386AF'>Демон Скрытого Тумана</font></b>"
-		"DOTA_Tooltip_modifier_demon_mark_description"				"Атаки Забузыl <b><font color='#5386AF'>продлевают длительность действия Метки</font></b> и <b><font color='#A03830'>уменьшают скорость передвижения</font></b> помеченного."
+		"DOTA_Tooltip_modifier_demon_mark_description"				"Атаки Забузы <b><font color='#5386AF'>продлевают длительность действия Метки</font></b> и <b><font color='#A03830'>уменьшают скорость передвижения</font></b> помеченного."
 
 		//--------------------
 		//Jirobo
@@ -290,7 +290,7 @@
 		"DOTA_Tooltip_ability_madara_fire_release_fire_range"			"ДАЛЬНОСТЬ: "
 		"DOTA_Tooltip_ability_madara_fire_release_wave_damage"			"УРОН ВОЛНЫ: "
 		"DOTA_Tooltip_ability_madara_fire_release_explosion_damage"		"УРОН ВЗРЫВА: "
-		"DOTA_Tooltip_ability_madara_fire_release_explosion_stun_duration"		"ДЛИТЕЛЬНОСТЬ СТАНА: "
+		"DOTA_Tooltip_ability_madara_fire_release_explosion_stun_duration"		"ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ: "
 
 		// Wood Release: Deep Forest Emergence (Mokuton: Jukai Kotan)
 		"DOTA_Tooltip_ability_madara_wood_release"						"<b><font color='#23A32C'>Рождение Девственного Леса</font></b>"
