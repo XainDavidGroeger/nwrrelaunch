@@ -8,6 +8,7 @@ function guy_seventh_gate_open:Precache(context)
 	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_open_gates_talking.vsndevts", context)
 	PrecacheResource("soundfile",  "soundevents/heroes/guy/guy_gates_cast.vsndevts", context)
 	PrecacheResource("particle", "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/guy/gates_toggle_on.vpcf", context)
 end
 
  function guy_seventh_gate_open:GetBehavior()
@@ -79,6 +80,7 @@ end
 
 function guy_seventh_gate_open:ToggleOn(caster, ability)
 	caster:AddNewModifier(caster, ability, "modifier_guy_seventh_gate", {});
+	ParticleManager:CreateParticle("particles/units/heroes/guy/gates_toggle_on.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 end
 
 modifier_guy_seventh_gate = modifier_guy_seventh_gate or class({})

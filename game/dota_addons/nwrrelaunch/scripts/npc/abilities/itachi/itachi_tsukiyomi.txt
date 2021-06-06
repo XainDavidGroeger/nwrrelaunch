@@ -32,7 +32,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"1.5 2.0 2.5 3.0"
+				"slow_duration"				"3.0"
 				"LinkedSpecialBonus"		"special_bonus_itachi_1"
 			}
 			"03"

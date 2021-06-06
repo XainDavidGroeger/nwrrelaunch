@@ -66,7 +66,7 @@
         "04"
         { 
             "var_type"  "FIELD_INTEGER"
-            "damage_reduction_duration" "2"
+            "damage_reduction_duration" "4"
         }
 		 "05"
         { 

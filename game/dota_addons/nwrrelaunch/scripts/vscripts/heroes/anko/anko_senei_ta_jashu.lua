@@ -17,6 +17,7 @@ function anko_senei_ta_jashu:Precache(context)
 	PrecacheResource("particle", "particles/generic_gameplay/generic_silence.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf", context)
 	PrecacheResource("particle", "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/anko/snake_debuff.vpcf", context)
 	PrecacheResource("soundfile","soundevents/heroes/anko/anko_striking_cast.vsndevts", context)
 end
 
@@ -32,6 +33,11 @@ end
 
 function anko_senei_ta_jashu:ProcsMagicStick()
     return true
+end
+
+function anko_senei_ta_jashu:OnAbilityPhaseStart()
+	self:GetCaster():StartGesture( ACT_DOTA_CAST_ABILITY_4 )
+	return true
 end
 
 function anko_senei_ta_jashu:OnSpellStart()
@@ -87,7 +93,7 @@ end
 
 modifier_anko_senei_ta_jashu_slow = modifier_anko_senei_ta_jashu_slow or class({})
 
-function modifier_anko_senei_ta_jashu_slow:GetEffectName() return "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap_debuff.vpcf" end
+function modifier_anko_senei_ta_jashu_slow:GetEffectName() return "particles/units/heroes/anko/snake_debuff.vpcf" end
 function modifier_anko_senei_ta_jashu_slow:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_anko_senei_ta_jashu_slow:GetStatusEffectName() return "particles/status_fx/status_effect_brewmaster_thunder_clap.vpcf" end
 function modifier_anko_senei_ta_jashu_slow:GetPriority() return 10 end

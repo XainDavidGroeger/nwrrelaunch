@@ -12,6 +12,8 @@ function anko_senei_jyashu:Precache(context)
 	PrecacheResource("particle", "particles/units/heroes/hero_medusa/medusa_mystic_snake_cast.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_medusa/medusa_mystic_snake_projectile.vpcf", context)
 	PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts", context)
+	PrecacheResource("soundfile","soundevents/heroes/anko/anko_passive_cast.vsndevts", context)
+	PrecacheResource("soundfile","soundevents/heroes/anko/anko_passive_impact.vsndevts", context)
 end
 
 LinkLuaModifier("modifier_senei_jyashu", "scripts/vscripts/heroes/anko/anko_senei_jyashu.lua", LUA_MODIFIER_MOTION_NONE)
@@ -34,7 +36,7 @@ function anko_senei_jyashu:OnProjectileHit(hTarget, vLocation)
 			damage = damage,
 		})
 
-		hTarget:EmitSound("Hero_Medusa.MysticSnake.Target")
+		hTarget:EmitSound("anko_passive_impact")
 	end
 end
 
@@ -128,7 +130,7 @@ function modifier_senei_jyashu:OnIntervalThink()
 
 	ProjectileManager:CreateTrackingProjectile(projectile_info)
 
-	target_enemy:EmitSound("Hero_Medusa.MysticSnake.Cast")
+	self:GetCaster():EmitSound("anko_passive_cast")
 end
 
 function modifier_senei_jyashu:GetModifierMagicalResistanceBonus()
