@@ -50,8 +50,8 @@ end
 
 function yondaime_agile_speed:OnSpellStart()
 	self.active_multiplier = 2
-	self.modifier:ForceRefresh()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_yondaime_agile_speed_active", {duration = self:GetSpecialValueFor("duration")})
+	self.modifier:ForceRefresh()
 end
 
 modifier_yondaime_agile_speed_passive = class({})
@@ -90,7 +90,7 @@ end
 
 function modifier_yondaime_agile_speed_passive:OnRefresh()
 	local ability = self:GetAbility()
-	print(self:GetParent():HasModifier("modifier_yondaime_agile_speed_active"))
+	
 	if self:GetParent():HasModifier("modifier_yondaime_agile_speed_active") then
 		self.bonus_damage_ms_perc = self:GetAbility():GetSpecialValueFor("bonus_damage_ms_percent_active")
 		self.bonus_movespeed_perc = self:GetAbility():GetSpecialValueFor("bonus_ms_percentage_active")
