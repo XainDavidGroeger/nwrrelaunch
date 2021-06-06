@@ -7,7 +7,7 @@
 function StealManaBunshin( event )
 
 	if (event.ability:IsCooldownReady()) then
-		if not event.target:IsBuilding() and event.target:GetMaxMana() > 0 then
+		if not event.target:IsBuilding() and event.target:GetMaxMana() > 0 and not event.target:IsMagicImmune() then
 			-- Variables
 			local caster = event.caster
 			local ability = event.ability
