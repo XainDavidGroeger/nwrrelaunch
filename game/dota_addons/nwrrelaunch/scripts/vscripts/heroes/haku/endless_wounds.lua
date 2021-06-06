@@ -84,7 +84,9 @@ function modifier_haku_endless_needles_caster:OnAttackLanded( keys )
 		self.threshold = self:GetAbility():GetSpecialValueFor("threshold")
 		self.stack_modifier = "modifier_haku_endless_needles_victim_counter"
 
-		self:GetAbility():ApplyStacks(target, self.stacks_per_attack)
+		if target:IsMagicImmune() == false then
+			self:GetAbility():ApplyStacks(target, self.stacks_per_attack)
+		end
 			
 	end
 	

@@ -87,8 +87,10 @@ function dynamic_entry_hit(target, caster, ability)
 	local particle_impact = "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
 	local duration = ability:GetSpecialValueFor("duration")
 
-	target:AddNewModifier(caster, ability, "modifier_guy_dynamic_entry_debuff", {duration = duration})
-	ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})		
+	if target:IsMagicImmune() == false then
+		target:AddNewModifier(caster, ability, "modifier_guy_dynamic_entry_debuff", {duration = duration})
+		ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})		
+	end
 
 	EmitSoundOn("Hero_Brewmaster.ThunderClap",caster)
 	EmitSoundOn("Hero_Brewmaster.ThunderClap.Target",target)

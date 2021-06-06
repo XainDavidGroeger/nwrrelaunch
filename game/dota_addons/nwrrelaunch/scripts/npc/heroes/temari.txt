@@ -7,7 +7,7 @@
     //10: +75 Dust Wind Damage / +30 Attack Damage
     "npc_dota_hero_temari" //Temari
 {
-  "HeroID"					"217"
+      "HeroID"					"217"
       "BaseClass"   "npc_dota_hero_enchantress"
       "Ability1"        "temari_fusajin_no_jutsu"
       "Ability2"        "temari_kamaitachi_no_jutsu"
