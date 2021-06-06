@@ -101,7 +101,6 @@ function modifier_chidori_light_sword_damage:OnRemoved()
 end
 
 function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
-
 	local attacker = keys.attacker
 
 	if self.parent == attacker and attacker:GetTeamNumber() ~= keys.target:GetTeamNumber() and not keys.target:IsBuilding() then

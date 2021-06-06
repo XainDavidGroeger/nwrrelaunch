@@ -88,8 +88,10 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 		
 		self:GetCaster():SetAbsOrigin(enemy:GetAbsOrigin() - self:GetCaster():GetForwardVector())
 		
-		enemy:AddNewModifier(self:GetCaster(), self, "modifier_rooted", {duration = root_duration })
-		ApplyDamage({ victim =enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+		if enemy:IsMagicImmune() == false then
+			enemy:AddNewModifier(self:GetCaster(), self, "modifier_rooted", {duration = root_duration })
+			ApplyDamage({ victim =enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+		end
 		
 		if enemy:IsHero() and not bHeroHit then
 			bHeroHit = true

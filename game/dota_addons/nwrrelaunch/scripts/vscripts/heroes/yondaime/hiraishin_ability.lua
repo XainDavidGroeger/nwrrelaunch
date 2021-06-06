@@ -164,7 +164,7 @@ function hiraishin_dash( caster, closest_seal, ability )
 										   ability:GetSpecialValueFor("search_width"),
 										   DOTA_UNIT_TARGET_TEAM_ENEMY,
 										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
-										   DOTA_UNIT_TARGET_FLAG_NONE)
+										   DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
 
 	
 	local timer_tbl =

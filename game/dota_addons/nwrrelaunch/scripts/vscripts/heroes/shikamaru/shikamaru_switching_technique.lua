@@ -149,13 +149,15 @@ function modifier_shikamaru_switching_thinker:OnIntervalThink()
 			attacker = self:GetAbility():GetCaster(), 
 			ability = self:GetAbility()
 		}
-		ApplyDamage(damageTable)
 
-		enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_rooted", {})
-		if enemy:HasModifier("modifier_flash_bomb_debuff") then
-			enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_switching_technique_flash_debuff", {})
+		if enemy:IsMagicImmune() == false then 
+			ApplyDamage(damageTable)
+
+			enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_rooted", {})
+			if enemy:HasModifier("modifier_flash_bomb_debuff") then
+				enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_switching_technique_flash_debuff", {})
+			end
 		end
-
 	end
 end
 
