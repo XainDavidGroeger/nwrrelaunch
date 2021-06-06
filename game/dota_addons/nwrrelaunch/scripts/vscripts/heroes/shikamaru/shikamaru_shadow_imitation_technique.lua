@@ -149,7 +149,7 @@ end
 function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation)
 	self.caster:RemoveModifierByName("modifier_shadow_imitation_caster")
 	self.caster:FadeGesture(ACT_DOTA_CHANNEL_ABILITY_1)
-	if hTarget ~= nil then
+	if hTarget ~= nil and hTarget:IsMagicImmune() == false then
 		hTarget:Stop()
 		hTarget:EmitSound("shikamaru_hold_impact")
 		if hTarget:HasModifier("modifier_flash_bomb_debuff") then

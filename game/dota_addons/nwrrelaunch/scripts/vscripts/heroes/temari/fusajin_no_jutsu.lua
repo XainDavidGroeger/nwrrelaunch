@@ -54,7 +54,9 @@ function temari_fusajin_no_jutsu:OnProjectileHit(target, location)
 		ability = self
 	}
 
-	ApplyDamage(damage_table)
+	if target:IsMagicImmune() == false then
+		ApplyDamage(damage_table)
+	end
 end
 
 function temari_fusajin_no_jutsu:GetCooldown()

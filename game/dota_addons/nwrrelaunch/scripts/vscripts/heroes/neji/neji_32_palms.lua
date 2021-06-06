@@ -110,7 +110,11 @@ function neji_32_palms:OnChannelFinish(bInterrupted)
         self.target_bagum = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/64_palm_finish.vpcf",PATTACH_ABSORIGIN , self.target)
         ParticleManager:SetParticleControl( self.target_bagum, 0, self.target:GetAbsOrigin()) -- Origin
         local silence_duration = self.ability:GetSpecialValueFor("silence_duration") + self:GetCaster():FindTalentValue("special_bonus_neji_4")
-        self.target:AddNewModifier(self.caster, self.ability, "modifier_32_palms_debuff_silence", {duration = silence_duration})
+
+        if self.target:IsMagicImmune() == false then
+            self.target:AddNewModifier(self.caster, self.ability, "modifier_32_palms_debuff_silence", {duration = silence_duration})
+        end
+
     end
 end
 
