@@ -624,6 +624,8 @@
 		"DOTA_Tooltip_modifier_haku_endless_needles_victim_description"			"This Unit is <b><font color='#89BBCE'>Slowed.</font></b>"
 		"DOTA_Tooltip_modifier_haku_endless_needles_caster"						"<b><font color='#89BBCE'>Endless Wounds</font></b>"
 		"DOTA_Tooltip_modifier_haku_endless_needles_caster_description"			"Haku's attacks and spells will <b><font color='#89BBCE'>Slow the enemy.</font></b>"
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim_counter"				"<b><font color='#89BBCE'>Endless Wounds</font></b>"
+		"DOTA_Tooltip_modifier_haku_endless_needles_victim_counter_description"	"This unit is <b><font color='#89BBCE'>Slowed</font></b> by Hakus <b><font color='#89BBCE'>Attacks</font></b> and <b><font color='#89BBCE'>Abilities.</font></b>"
 		
 
 
@@ -1158,7 +1160,7 @@
 		//Eight Trigrams Sixty-Four Palms
 		"DOTA_Tooltip_ability_neji_32_palms"				"<b><font color='#6DFF93'>Eight Trigrams: Sixty Four Palms</font></b>"
 		"DOTA_Tooltip_ability_neji_32_palms_lore"			"Hakke Rokujuyon Sho"
-		"DOTA_Tooltip_ability_neji_32_palms_Description"	"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#6DFF93'>Fully disables a target enemy</font></b> while striking them with <b><font color='#FFFFFF'>64</font></b> seperate strikes dealing <b>Magic Damage.</b> <br><br> <b><font color='#8DECFF'>Each strike will burn </font></b><b><font color='#FFFFFF'>1%</font></b> <b><font color='#8DECFF'>target's Maximum Mana</font></b> if <b><font color='#EBDDFF'>Byakugan</font></b> is active during the <b>Channel.</b> <br><br> Afterwards the <b><font color='#6DFF93'>enemy is Silenced</font></b> if the full <b>Channel</b> is completed."  
+		"DOTA_Tooltip_ability_neji_32_palms_Description"	"<b><font color='#FFFFFF'>CHANNELED</font></b> - <b><font color='#6DFF93'>Fully disables a target enemy</font></b> while striking them with <b><font color='#FFFFFF'>64</font></b> seperate strikes dealing <b>Magic Damage.</b> <br><br> <b><font color='#8DECFF'>Each strike will burn </font></b><b><font color='#FFFFFF'>1%</font></b> <b><font color='#8DECFF'>target's Maximum Mana</font></b> if <b><font color='#EBDDFF'>Byakugan</font></b> is active during the <b>Channel.</b> <br><br> Afterwards the <b><font color='#6DFF93'>enemy is Silenced</font></b> if the full <b>Channel</b> is completed. <br><br> <i><b><font color='#FFFFFF'>Strikes</font></b> do not cause Auto-Attack Modifiers.</i>"  
 		"DOTA_Tooltip_ability_neji_32_palms_duration"		"CHANNEL DURATION: "
 		"DOTA_Tooltip_ability_neji_32_palms_damage"		"DAMAGE: "
 		"DOTA_Tooltip_ability_neji_32_palms_silence_duration"	"SILENCE DURATION: "

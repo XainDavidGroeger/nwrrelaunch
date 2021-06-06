@@ -30,12 +30,14 @@
 		"soundfile"			"soundevents/heroes/naruto/naruto_ulti_talking.vsndevts"
 		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_cast.vsndevts"
 		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_fire.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_impact.vsndevts"
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
 		"particle"			"particles/units/heroes/naruto/shuriken2.vpcf"
 		"particle"			"particles/units/heroes/naruto/rasenshuriken_alt.vpcf"
 		"particle"  		"particles/units/heroes/yondaime/raseng_model.vpcf"
+		"particle"			"particles/units/heroes/naruto/shuriken_impact.vpcf"
 	}
 	
 	// Casting
@@ -143,7 +145,7 @@
 	{
 		"FireSound"
 		{
-			"EffectName"		"Hero_Sven.StormBoltImpact"
+			"EffectName"		"naruto_rasenshuriken_impact"
 			"Target"			"TARGET"
 		}
 
@@ -177,7 +179,7 @@
 			{
 				"FireEffect"
 				{
-					"EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+					"EffectName"	"particles/units/heroes/naruto/shuriken_impact.vpcf"
 					"EffectAttachType"	"attach_origin"
 					"Target"		"TARGET"
 					"ControlPointEntities"

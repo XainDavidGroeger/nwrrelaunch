@@ -13,8 +13,11 @@ anko_sojasosai_no_jutsu = anko_sojasosai_no_jutsu or class({})
 
 function anko_sojasosai_no_jutsu:Precache(context)
 	PrecacheResource("particle", "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/anko/sacrifice_impact.vpcf", context)
 	PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts", context)
-	PrecacheResource("soundfile","soundevents/anko_sacrifice_cast.vsndevts", context)
+	PrecacheResource("soundfile","soundevents/heroes/anko/anko_sacrifice_cast.vsndevts", context)
+	PrecacheResource("soundfile","soundevents/heroes/anko/anko_sacrifice_impact.vsndevts", context)
+
 end
 
 function anko_sojasosai_no_jutsu:CanBeReflected(bool, target)
@@ -29,6 +32,11 @@ end
 
 function anko_sojasosai_no_jutsu:ProcsMagicStick()
     return true
+end
+
+function anko_sojasosai_no_jutsu:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("anko_sacrifice_cast")
+	return true
 end
 
 function anko_sojasosai_no_jutsu:OnSpellStart()
@@ -66,5 +74,9 @@ function anko_sojasosai_no_jutsu:OnSpellStart()
 		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
 	})
 
-	self:GetCaster():EmitSound("anko_sacrifice_cast")
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/anko/sacrifice_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+	ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
+
+	self:GetCaster():EmitSound("anko_sacrifice_impact")
 end
