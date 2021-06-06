@@ -3,7 +3,10 @@ raikage_lariat = class({})
 LinkLuaModifier( "modifier_generic_custom_indicator",
 				 "modifiers/modifier_generic_custom_indicator",
 				 LUA_MODIFIER_MOTION_BOTH )
-
+				 
+LinkLuaModifier( "modifier_raikage_lariat_active",
+				 "heroes/raikage/raikage_lariat",
+				 LUA_MODIFIER_MOTION_NONE )
 
 function raikage_lariat:Precache( context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
@@ -127,17 +130,20 @@ function raikage_lariat:OnSpellStart()
 		Ability = self,
 		Source = self:GetCaster(),
 		bProvidesVision = false,
-		vSpawnOrigin = self.origin,
-		fDistance = distance,
-		vVelocity = self.velocity * self.caster:GetForwardVector():Normalized(),
-		fStartRadius = self.width,
-		fEndRadius = self.width,
+		vSpawnOrigin = self:GetCaster():GetOrigin(),
+		fDistance = distance:Length2D(),
+		vVelocity = self.velocity / 1.5 * self.caster:GetForwardVector():Normalized(),
+		-- vVelocity = 100 * self.caster:GetForwardVector():Normalized(),
+		fStartRadius = 128,
+		fEndRadius = 128,
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
 	}
 
 	ProjectileManager:CreateLinearProjectile(projectile_table)
+	
+	self.caster:AddNewModifier(self.caster, self, "modifier_raikage_lariat_active", {})
 
 end
 
@@ -145,7 +151,7 @@ function raikage_lariat:OnProjectileHit(target, destination)
 	local caster = self:GetCaster()
 
 	ParticleManager:DestroyParticle(self.lariat_vfx, false)
-	caster:RemoveModifierByName("modifier_lariat_energy_shield")
+	caster:RemoveModifierByName("modifier_raikage_lariat_active")
 
 	caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_3)
 	caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_3_END, 2)
@@ -165,17 +171,25 @@ function raikage_lariat:OnProjectileHit(target, destination)
 		ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
 		ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_ABSORIGIN, "attach_origin", enemy_loc, true)
 	end
+
+	return true
 end
 
 function raikage_lariat:OnProjectileThink(location)
 	local caster = self:GetCaster()
 	local velocity = self:GetSpecialValueFor("speed")
 
-	
-
 	GridNav:DestroyTreesAroundPoint(location, 60, true)
 	caster:SetPhysicsVelocity(caster:GetForwardVector():Normalized() * velocity)
 end
+
+modifier_raikage_lariat_active = class({})
+
+function modifier_raikage_lariat_active:CheckState()
+	return {[MODIFIER_STATE_COMMAND_RESTRICTED] = true}
+end
+
+
 
 
 function LariatPeriodic(gameEntity, keys)
