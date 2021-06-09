@@ -72,8 +72,11 @@ end
 		local damage = self:GetSpecialValueFor("damage")
 		local duration = self:GetSpecialValueFor("duration")
 
-		ApplyDamage({victim = target, attacker = caster, ability = self, damage = damage, damage_type = self:GetAbilityDamageType()})
-		target:AddNewModifier(caster, self, "modifier_neji_air_palm_debuff", {duration = duration})
+		if target:IsMagicImmune() == false then
+			ApplyDamage({victim = target, attacker = caster, ability = self, damage = damage, damage_type = self:GetAbilityDamageType()})
+			target:AddNewModifier(caster, self, "modifier_neji_air_palm_debuff", {duration = duration})
+		end
+	
 		EmitSoundOn("neji_air_palm_impact", target) 
 	end
 end

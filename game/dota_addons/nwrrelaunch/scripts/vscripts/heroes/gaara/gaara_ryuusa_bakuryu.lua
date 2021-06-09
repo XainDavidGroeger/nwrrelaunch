@@ -36,12 +36,6 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 	self.caster:EmitSound("gaara_tsunami_cast")
 	--self.caster:EmitSound("sounds/weapons/hero/sand_king/sand_king_sandstorm_loop.vsnd")
 
-
-	Timers:CreateTimer(2.0, function()
-		--self.caster:StopSound("sounds/weapons/hero/sand_king/sand_king_sandstorm_loop.vsnd")
-	end)
-
-
 	-- Ability specials
 	self.damage = self.ability:GetSpecialValueFor("thinker_damage")
 	self.stun_duration = self.ability:GetSpecialValueFor("stun_duration")
@@ -53,7 +47,6 @@ function gaara_ryuusa_bakuryu:OnSpellStart()
 		end
 	end
 
-	
 	self.cursor_position = self:GetCursorPosition()
 	self.damage_interval = self.ability:GetSpecialValueFor("thinker_interval")
 
