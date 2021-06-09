@@ -3,10 +3,7 @@ raikage_lariat = class({})
 LinkLuaModifier( "modifier_generic_custom_indicator",
 				 "modifiers/modifier_generic_custom_indicator",
 				 LUA_MODIFIER_MOTION_BOTH )
-				 
-LinkLuaModifier( "modifier_raikage_lariat_active",
-				 "heroes/raikage/raikage_lariat",
-				 LUA_MODIFIER_MOTION_NONE )
+
 
 function raikage_lariat:Precache( context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
@@ -83,21 +80,18 @@ function raikage_lariat:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.point = self:GetCursorPosition()
 	self.velocity = self.ability:GetSpecialValueFor("speed")
-	self.width = self.ability:GetSpecialValueFor("radius")
 	self.sound_impact = "Hero_Sven.StormBoltImpact"
 	self.particle_impact = "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 
 	self.caster:FadeGesture(ACT_DOTA_IDLE)
 	self.caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 
-	self.lariat_vfx = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.caster)
-	ParticleManager:SetParticleControl(self.lariat_vfx, 0, Vector(1, 0, 0))
+	self.caster.pfx = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.caster)
+	ParticleManager:SetParticleControl(self.caster.pfx, 0, Vector(1, 0, 0))
 
 	self.caster:EmitSound("raikage_lariat_talking")
 
 	self.origin = self.caster:GetAbsOrigin()
-	local distance = self.point - self.origin
-
 	local between = self.origin:Lerp(self.point, 0.5)
 
 	local ground = ParticleManager:CreateParticle("particles/units/heroes/raikage/lariat_ground_parent.vpcf", PATTACH_ABSORIGIN, self.caster)
@@ -112,85 +106,20 @@ function raikage_lariat:OnSpellStart()
 
 	add_physics(self.caster)
 	
-	-- local timer_tbl =
-	-- 	{
-	-- 		callback = LariatPeriodic,
-	-- 		keys = self,
-	-- 		point = self.point,
-	-- 		origin = self.caster:GetAbsOrigin(),
-	-- 		ability = self.ability,
-	-- 		caster = self.caster,
-	-- 	}
+	local timer_tbl =
+		{
+			callback = LariatPeriodic,
+			keys = self,
+			point = self.point,
+			origin = self.caster:GetAbsOrigin(),
+			ability = self.ability,
+			caster = self.caster,
+		}
 	
-	-- --Movement
-	-- Timers:CreateTimer(timer_tbl)
-
-	local projectile_table = {
-		EffectName = "",
-		Ability = self,
-		Source = self:GetCaster(),
-		bProvidesVision = false,
-		vSpawnOrigin = self:GetCaster():GetOrigin(),
-		fDistance = distance:Length2D(),
-		vVelocity = self.velocity / 1.5 * self.caster:GetForwardVector():Normalized(),
-		-- vVelocity = 100 * self.caster:GetForwardVector():Normalized(),
-		fStartRadius = 128,
-		fEndRadius = 128,
-		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
-	}
-
-	ProjectileManager:CreateLinearProjectile(projectile_table)
-	
-	self.caster:AddNewModifier(self.caster, self, "modifier_raikage_lariat_active", {})
+	--Movement
+	Timers:CreateTimer(timer_tbl)
 
 end
-
-function raikage_lariat:OnProjectileHit(target, destination)
-	local caster = self:GetCaster()
-
-	ParticleManager:DestroyParticle(self.lariat_vfx, false)
-	caster:RemoveModifierByName("modifier_raikage_lariat_active")
-
-	caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_3)
-	caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_3_END, 2)
-
-	EmitSoundOn("raikage_lariat_impact", caster)
-
-	remove_physics(caster)
-
-	local stun_duration = self:GetSpecialValueFor("stun_duration")
-	local damage = self:GetSpecialValueFor("damage") + caster:FindTalentValue("special_bonus_raikage_3")
-
-	if target then
-		target:AddNewModifier(caster, self, "modifier_stunned", {duration = stun_duration})
-		ApplyDamage({attacker = caster, victim = target, ability = self, damage = damage, damage_type = self:GetAbilityDamageType()})	
-		local enemy_loc = target:GetAbsOrigin()
-		local impact_pfx = ParticleManager:CreateParticle(particle_impact, PATTACH_ABSORIGIN, target)
-		ParticleManager:SetParticleControl(impact_pfx, 0, enemy_loc)
-		ParticleManager:SetParticleControlEnt(impact_pfx, 3, target, PATTACH_ABSORIGIN, "attach_origin", enemy_loc, true)
-	end
-
-	return true
-end
-
-function raikage_lariat:OnProjectileThink(location)
-	local caster = self:GetCaster()
-	local velocity = self:GetSpecialValueFor("speed")
-
-	GridNav:DestroyTreesAroundPoint(location, 60, true)
-	caster:SetPhysicsVelocity(caster:GetForwardVector():Normalized() * velocity)
-end
-
-modifier_raikage_lariat_active = class({})
-
-function modifier_raikage_lariat_active:CheckState()
-	return {[MODIFIER_STATE_COMMAND_RESTRICTED] = true}
-end
-
-
-
 
 function LariatPeriodic(gameEntity, keys)
 	local caster = keys.caster
@@ -270,6 +199,41 @@ function LariatHit(keys,target)
 end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --[[
 	Author: Mognakor
 	Date: December, 5/6th 2015.
@@ -292,5 +256,17 @@ function remove_physics(caster)
 	caster:FollowNavMesh(true)
 
 	caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_3)
+
+end
+
+
+
+
+
+
+function fireGroundEffect( keys )
+
+
+
 
 end

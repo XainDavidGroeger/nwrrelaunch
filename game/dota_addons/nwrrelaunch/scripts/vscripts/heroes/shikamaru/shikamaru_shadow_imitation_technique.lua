@@ -161,6 +161,8 @@ function shikamaru_shadow_imitation_technique:OnProjectileHit(hTarget, vLocation
 
 	ParticleManager:DestroyParticle(self.projectile_vfx, true)
 	ParticleManager:ReleaseParticleIndex(self.projectile_vfx)
+
+	return true
 end
 
 modifier_shadow_imitation = modifier_shadow_imitation or class({})
@@ -193,17 +195,19 @@ function modifier_shadow_imitation:OnCreated( kv )
 	self.direction = Vector(0,0,0)
 	self.gesture = ACT_DOTA_IDLE
 
-	self.parent:StartGesture(ACT_DOTA_RUN)
 
-	self.status_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_rope.vpcf", 
-													 PATTACH_ABSORIGIN, self.caster)
 	-- ParticleManager:SetParticleControl(self.status_vfx, 0, self.caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(self.status_vfx, 1, self.caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(self.status_vfx, 3, self.parent:GetAbsOrigin())
+
 
 
 	if not IsServer() then return end
 	-- ability properties
+	-- self.parent:StartGesture(ACT_DOTA_RUN)
+	self.parent:Stop()
+	self.status_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_rope.vpcf", 
+	PATTACH_ABSORIGIN, self.caster)
+	ParticleManager:SetParticleControl(self.status_vfx, 1, self.caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(self.status_vfx, 3, self.parent:GetAbsOrigin())
 
 	self:StartIntervalThink(FrameTime())
 end
@@ -259,6 +263,7 @@ end
 function modifier_shadow_imitation:OnDestroy()
 	ParticleManager:DestroyParticle(self.status_vfx, true)
 	ParticleManager:ReleaseParticleIndex(self.status_vfx)
+	
 	if not IsServer() then return end
 	self.parent:FadeGesture(self.gesture)
 end
@@ -270,6 +275,7 @@ function modifier_shadow_imitation:CheckState()
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = true,
 		[MODIFIER_STATE_PROVIDES_VISION] = true,
+		[MODIFIER_STATE_DISARMED] = true
 	}
 
 	return state
