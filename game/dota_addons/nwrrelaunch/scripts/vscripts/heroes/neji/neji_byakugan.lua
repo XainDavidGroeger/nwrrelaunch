@@ -97,6 +97,10 @@ function modifier_neji_byakugan_buff:OnIntervalThink()
 		local mana_lose_percentage = self.ability:GetSpecialValueFor("mana_lose_percentage")
 		self.caster:SetMana(self.caster:GetMana() - (maxMana / 100 * 2.5))
 
+		if self.caster:GetMana() - (maxMana / 100 * 2.5) < 0 then
+			self.ability:ToggleAbility()
+		end
+
 
 		-- find enemies in x aoe
 		local vision_aoe = self.ability:GetSpecialValueFor("vision_aoe")
