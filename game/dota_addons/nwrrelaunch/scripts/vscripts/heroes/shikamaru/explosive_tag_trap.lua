@@ -9,6 +9,10 @@ shikamaru_explosive_tag_trap = class({})
 
 function shikamaru_explosive_tag_trap:Precache(context)
     PrecacheResource("model", "models/shikamaru/shikamaru_kunai_bomb.vmdl", context)
+
+    PrecacheResource("soundfile", "soundevents/heroes/shikamaru/shikamaru_trap_set.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/heroes/shikamaru/shikamaru_trap_trigger.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/heroes/shikamaru/shikamaru_trap_explosion.vsndevts", context)
 end
 
 function shikamaru_explosive_tag_trap:GetIntrinsicModifierName()
@@ -34,6 +38,8 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
 	
 	trap.sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, trap)
     ParticleManager:SetParticleControl(trap.sign_vfx, 0, target_point)
+
+    self:GetCaster():EmitSound("shikamaru_trap_set")
 	
 	Timers:CreateTimer(1.75, function ()
 
@@ -241,6 +247,8 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(target)
             table.remove(trap_table, i)
         end
     end
+
+    target:EmitSound("shikamaru_trap_trigger")
 	
 	local particle_shadow_path_rope = "particles/units/heroes/shikamaru/shikamaru_shadow_imitation_status_rope_for_ult.vpcf"
 	self.particle_shadow_path_rope_fx = ParticleManager:CreateParticle(particle_shadow_path_rope, PATTACH_ABSORIGIN, self:GetAbility():GetCaster())
@@ -289,6 +297,8 @@ function modifier_shikamaru_explosive_tag_trap_active:TriggerExplosion(target)
                 damage_table.victim = units_to_damage[i]
                 ApplyDamage(damage_table)
             end
+
+            target:EmitSound("shikamaru_trap_explosion")
             
             self.explosion_vfx = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_remote_mines_detonate.vpcf", PATTACH_ABSORIGIN, ability:GetCaster())
             ParticleManager:SetParticleControl(self.explosion_vfx, 0, target:GetAbsOrigin())

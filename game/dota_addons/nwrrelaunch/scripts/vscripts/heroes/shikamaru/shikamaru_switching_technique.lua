@@ -4,6 +4,10 @@ LinkLuaModifier("modifier_shikamaru_switching_thinker", "heroes/shikamaru/shikam
 LinkLuaModifier("modifier_switching_technique_flash_debuff", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_switching_technique_debuff", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
 
+function shikamaru_switching_technique:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts", context )
+end
+
 
 function shikamaru_switching_technique:GetAbilityTextureName()
 	return "shikamaru_switching_technique"
