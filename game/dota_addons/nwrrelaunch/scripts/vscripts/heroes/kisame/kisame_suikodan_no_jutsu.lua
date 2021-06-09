@@ -137,9 +137,8 @@ function kisame_suikodan_no_jutsu:OnProjectileHit(hTarget, vLocation)
 
 	if hTarget ~= nil then
 
-		if hTarget:IsBuilding() then
-			return
-		end
+		if hTarget:IsBuilding() then return end
+		if hTarget:IsMagicImmune() then return end
 
 		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_suikodan_no_jutsu_debuff", {duration = self.debuff_duration})
 		

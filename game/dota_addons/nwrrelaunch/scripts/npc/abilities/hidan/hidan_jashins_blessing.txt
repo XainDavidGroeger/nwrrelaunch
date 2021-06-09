@@ -56,7 +56,7 @@
         "modifier_jashins_blessing"
         {
             "Passive"                   "1"
-            "IsHidden"                  "0"
+            "IsHidden"                  "1"
             "IsPurgable"                "0"
             
             "OnCreated"

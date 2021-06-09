@@ -81,6 +81,7 @@
 			"soundfile"						"soundevents/heroes/gaara/gaara_tsunami_cast.vsndevts"
 			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_talking.vsndevts"
 			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_fire.vsndevts"
+			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts"
 		}
 	
 	}

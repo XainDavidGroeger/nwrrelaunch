@@ -29,24 +29,25 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
                                     nil, -- entity owner
                                     self:GetCaster():GetTeamNumber()) --team
     trap:SetControllableByPlayer(self:GetCaster():GetPlayerID(), true)
+
+    local activation_time = self:GetSpecialValueFor("activation_time")
 	
-	self.sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, trap)
-    ParticleManager:SetParticleControl(self.sign_vfx, 0, target_point)
-	
-	local red_pulse_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign_pulses.vpcf", PATTACH_ABSORIGIN, trap)
-    ParticleManager:SetParticleControl(red_pulse_vfx, 0, target_point)
+	trap.sign_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign.vpcf", PATTACH_ABSORIGIN, trap)
+    ParticleManager:SetParticleControl(trap.sign_vfx, 0, target_point)
 	
 	Timers:CreateTimer(1.75, function ()
-	    self.invisibility_start_vfx = ParticleManager:CreateParticle("particles/generic_hero_status/status_invisibility_start.vpcf", PATTACH_ABSORIGIN, trap)
-        ParticleManager:SetParticleControl(self.invisibility_start_vfx, 0, trap:GetAbsOrigin())
-		ParticleManager:DestroyParticle(red_pulse_vfx, true)
-	    ParticleManager:ReleaseParticleIndex(red_pulse_vfx)
+
 	end)
 
     trap:AddNewModifier(self:GetCaster(), 
                         self, 
                         "modifier_shikamaru_explosive_tag_trap_pre_activation", 
-                        {duration = self:GetSpecialValueFor("activation_time")})
+                        {duration = activation_time})
+
+    trap:AddNewModifier(self:GetCaster(), 
+                        self, 
+                        "modifier_phased", 
+                        {duration = activation_time})
 
     if self.placed_traps ~= nil then
         if #self.placed_traps >= self:GetSpecialValueFor("max_traps") + self:GetCaster():FindTalentValue("special_bonus_shikamaru_max_traps") then
@@ -55,8 +56,8 @@ function shikamaru_explosive_tag_trap:OnSpellStart()
                 trap_to_explode:FindModifierByName("modifier_shikamaru_explosive_tag_trap_active"):TriggerExplosion(nil)
             else
                 trap_tp_explode:ForceKill(false)
-				ParticleManager:DestroyParticle(self.sign_vfx, true)
-	            ParticleManager:ReleaseParticleIndex(self.sign_vfx)
+				-- ParticleManager:DestroyParticle(self.sign_vfx, true)
+	            -- ParticleManager:ReleaseParticleIndex(self.sign_vfx)
             end
         end
     end
@@ -132,9 +133,15 @@ end
 modifier_shikamaru_explosive_tag_trap_pre_activation = class({})
 
 function modifier_shikamaru_explosive_tag_trap_pre_activation:OnCreated()
+    self.red_pulse_vfx = ParticleManager:CreateParticle("particles/units/heroes/shikamaru/shika_ground_sign_pulses.vpcf", PATTACH_ABSORIGIN, trap)
+    ParticleManager:SetParticleControl(self.red_pulse_vfx, 0, self:GetParent():GetAbsOrigin())
 end
 
 function modifier_shikamaru_explosive_tag_trap_pre_activation:OnRemoved()
+    self.invisibility_start_vfx = ParticleManager:CreateParticle("particles/generic_hero_status/status_invisibility_start.vpcf", PATTACH_ABSORIGIN, trap)
+    ParticleManager:SetParticleControl(self.invisibility_start_vfx, 0, self:GetParent():GetAbsOrigin())
+    ParticleManager:DestroyParticle(self.red_pulse_vfx, true)
+    ParticleManager:ReleaseParticleIndex(self.red_pulse_vfx)
     if not IsServer() then return end -- this i s definetely correct
 	
     self:GetParent():AddNewModifier(self:GetAbility():GetCaster(), 
@@ -174,6 +181,12 @@ end
 
 function modifier_shikamaru_explosive_tag_trap_active:OnRemoved()
 
+end
+
+function modifier_shikamaru_explosive_tag_trap_active:OnDestroy()
+    local trap = self:GetParent()
+    ParticleManager:DestroyParticle( trap.sign_vfx, false )
+    ParticleManager:ReleaseParticleIndex( trap.sign_vfx )
 end
 
 function modifier_shikamaru_explosive_tag_trap_active:OnIntervalThink()

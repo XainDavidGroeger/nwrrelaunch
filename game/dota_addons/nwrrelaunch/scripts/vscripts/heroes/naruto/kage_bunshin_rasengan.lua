@@ -193,7 +193,9 @@ function FinishChidori(keys, illusion)
   ResolveNPCPositions(illusion:GetAbsOrigin(), illusion:GetHullRadius())
   illusion:RemoveModifierByName("modifier_imba_storm_bolt_caster_hit")
   illusion:Stop()
-  keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_naruto_bunshin_rasengan_slow", {duration = duration})
+  if not keys.target:IsMagicImmune() then
+    keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_naruto_bunshin_rasengan_slow", {duration = duration})
+  end
   print("apply damage")
 end
 

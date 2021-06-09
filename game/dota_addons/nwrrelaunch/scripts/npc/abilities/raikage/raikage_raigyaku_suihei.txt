@@ -7,7 +7,8 @@
 {
     // General  
     // ----------------------------------------------------------------------------------------
-    "BaseClass"                 "ability_datadriven"
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "heroes/raikage/raigyaku_suihei.lua"
     "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"

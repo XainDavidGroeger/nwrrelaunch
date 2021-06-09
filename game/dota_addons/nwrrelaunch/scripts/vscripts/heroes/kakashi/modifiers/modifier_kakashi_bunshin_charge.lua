@@ -37,6 +37,9 @@ function modifier_kakashi_bunshin_charge:OnRemoved()
 end
 
 function modifier_kakashi_bunshin_charge:OnDestroy()
+	local ability = self:GetAbility()
+	ability:BunshinDeathParticles(ability.bunshin:GetAbsOrigin())
+	ability.bunshin = nil
 end
 
 --------------------------------------------------------------------------------
@@ -56,20 +59,16 @@ function modifier_kakashi_bunshin_charge:OnTakeDamage(params)
 	local caster = ability:GetCaster()
 	
 	if attacker:IsRealHero() and attacker ~= caster then
-		attacker:AddNewModifier(caster, ability, "modifier_kakashi_lighting_charge", { duration = self.duration })
-
-		local dummy = CreateUnitByName("npc_dummy_unit", ability.bunshin:GetAbsOrigin(), false, caster, caster, caster:GetTeam())
-		local lightningChain = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_WORLDORIGIN, dummy)
-		ParticleManager:SetParticleControl(lightningChain,0,Vector(dummy:GetAbsOrigin().x,dummy:GetAbsOrigin().y,dummy:GetAbsOrigin().z + dummy:GetBoundingMaxs().z ))	
-		EmitSoundOn("Hero_Zuus.ArcLightning.Target", attacker)
-		ParticleManager:SetParticleControl(lightningChain,1,Vector(attacker:GetAbsOrigin().x,attacker:GetAbsOrigin().y,attacker:GetAbsOrigin().z + attacker:GetBoundingMaxs().z ))
-		dummy:RemoveSelf()
+		-- if not attacker:IsMagicImmune() then
+		-- 	attacker:AddNewModifier(caster, ability, "modifier_kakashi_lighting_charge", { duration = self.duration })
+		-- end
+		ability:BunshinDeathParticles(attacker:GetAbsOrigin())
 		EmitSoundOn("clone_pop", ability.bunshin)
 		ability.bunshin:ForceKill(false)
           
-        Timers:CreateTimer(0.1, function()
-            ability.bunshin:Destroy()
-			ability.bunshin = nil
-        end)
+        -- Timers:CreateTimer(0.1, function()
+        --     ability.bunshin:Destroy()
+		-- 	ability.bunshin = nil
+        -- end)
 	end
 end

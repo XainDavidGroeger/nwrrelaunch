@@ -45,8 +45,8 @@ function anko_sojasosai_no_jutsu:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local damage_percent = self:GetSpecialValueFor("damage_percent")
-	local target_max_hp = target:GetMaxHealth()
-	local final_damage = target_max_hp * damage_percent / 100
+	local target_missing_health = target:GetMaxHealth() - target:GetHealth()
+	local caster_missing_health = caster:GetMaxHealth() - caster:GetHealth()
 	local damageType = self:GetAbilityDamageType()
 	
 	--[[ if the target used Lotus Orb, reflects the ability back into the caster ]]
@@ -62,14 +62,14 @@ function anko_sojasosai_no_jutsu:OnSpellStart()
 	ApplyDamage({
 		victim = target,
 		attacker = caster,
-		damage = final_damage,
+		damage = target_missing_health * damage_percent / 100,
 		damage_type = damageType,
 	})
 
 	ApplyDamage({
 		victim = caster,
 		attacker = caster,
-		damage = final_damage,
+		damage = caster_missing_health * damage_percent / 100,
 		damage_type = damageType,
 		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
 	})
