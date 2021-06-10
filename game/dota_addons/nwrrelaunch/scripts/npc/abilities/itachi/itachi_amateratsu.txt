@@ -15,9 +15,9 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		
 		"AbilityCooldown"				"100 80 60"
-		"AbilityManaCost"				"120"
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.4"
+		"AbilityManaCost"				"150 200 250"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.6"
 
 	
 		// Special
@@ -27,12 +27,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage"					"45 60 75"
+				"damage"					"50 65 80"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"10"
+				"duration"					"10 11 12"
 			}
 			"03"
 			{

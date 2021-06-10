@@ -21,14 +21,14 @@
     	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
     
     	"AbilityCooldown"				"90 80 70"
-    	"AbilityManaCost"				"175 250 325"
+    	"AbilityManaCost"				"150 200 250"
     
     	"AbilitySpecial"
     	{
     		"01"
     		{
     			"var_type"			"FIELD_FLOAT"
-    			"damage_factor"		"0.05 0.055 0.06"
+    			"damage_factor"		"0.06 0.07 0.08"
     		}
     		"02"
     		{
@@ -59,6 +59,11 @@
     		{
     			"var_type"			"FIELD_FLOAT"
     			"damage_delay"	    "1.0"
+    		}
+			"08"
+    		{
+    			"var_type"			"FIELD_FLOAT"
+    			"last_wave_bonus_damage"	    "0.04"
     		}
     	}
 

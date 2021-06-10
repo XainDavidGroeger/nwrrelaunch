@@ -11,7 +11,7 @@ function itachi_dust_crow_genjustsu:Precache(context)
 end
 
 function itachi_dust_crow_genjustsu:GetCooldown(level)
-	return self.BaseClass.GetCooldown(self, level) + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
+	return self.BaseClass.GetCooldown(self, level) -- + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
 end
 
 function itachi_dust_crow_genjustsu:ProcsMagicStick()
@@ -38,9 +38,9 @@ function itachi_dust_crow_genjustsu:OnSpellStart()
 	self:GetCaster():RemoveNoDraw()
 
 	local illusions = CreateIllusions(self:GetCaster(), self:GetCaster(), {
-		outgoing_damage = 0,
-		incoming_damage	= 100,
-		duration		= self:GetSpecialValueFor("illusion_duration")
+		outgoing_damage = self:GetSpecialValueFor("illusion_outgoing_damage"),
+		incoming_damage	= self:GetSpecialValueFor("illusion_ingoing_damage"),
+		duration		= self:GetSpecialValueFor("illusion_duration") + self:GetCaster():FindTalentValue("special_bonus_itachi_2")
 	}, 1, self:GetCaster():GetHullRadius(), true, true)
 
 	for _, illusion in pairs(illusions) do

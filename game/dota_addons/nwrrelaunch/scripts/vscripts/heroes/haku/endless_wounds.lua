@@ -119,6 +119,32 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 		ParticleManager:SetParticleControlEnt(self.slow_vfx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "origin", self:GetParent():GetOrigin(), true )
 	end
 
+	local ability = self:GetAbility()
+
+	self.dot_damage_table = {
+		victim = self:GetParent(),
+		attackes = ability:GetCaster(),
+		--damage = 1,
+		damage_type = ability:GetAbilityDamageType(),
+		damage_flags = 0,
+		ability = ability,
+	}
+
+	self:StartIntervalThink(1)
+end
+
+function modifier_haku_endless_needles_victim_counter:OnIntervalThink()
+	local current_stacks = self:GetStackCount()
+	self.dot_damage_table.damage = current_stacks
+	ApplyDamage(self.dot_damage_table)
+
+	SendOverheadEventMessage(
+		nil,
+		OVERHEAD_ALERT_BONUS_SPELL_DAMAGE,
+		self:GetParent(),
+		current_stacks,
+		self:GetCaster():GetPlayerOwner()
+	)
 end
 
 function modifier_haku_endless_needles_victim_counter:Onremoved()

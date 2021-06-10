@@ -46,6 +46,11 @@
                     "var_type"				"FIELD_INTEGER"
                     "speed_penalty_perc"				"16 24 32 40"
                 }
+                "04"
+                {
+                    "var_type"				"FIELD_FLOAT"
+                    "manaloss_modifier"				"7 11 15 19"
+                }
             }
         }
 

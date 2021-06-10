@@ -305,7 +305,7 @@ function damageAfterXSecondsForXTimes(caster, target, damage, timer, times, popu
                     victim = target,
                     attacker = caster,
                     damage = damage,
-                    damage_type = DAMAGE_TYPE_MAGICAL
+                    damage_type = self:GetAbility():GetAbilityDamageType()
                 })
                 burnMana(target, 100.0, mana_burn_perc, caster) 
                 damageAfterXSecondsForXTimes(caster, target, damage, timer, times-1, popupcount+1)
@@ -341,7 +341,7 @@ function burnMana(target, damage_percent, max_mana_percent, caster)
             victim = target,
             attacker = caster,
             damage = damage,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
+            damage_type = self:GetAbility():GetAbilityDamageType(),
         })
 
     end
