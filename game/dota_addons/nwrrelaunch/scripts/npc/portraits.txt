@@ -385,6 +385,38 @@
 		}
 	}
 
+	"models/hidan_brand_new/hidan_base.vmdl"
+	{
+		"PortraitLightPosition"		"81.44 0.80 343.45"
+		"PortraitLightAngles"		"56.94 171.91 0.00"
+		"PortraitLightFOV"		"69"
+		"PortraitLightDistance"		"377"
+		"PortraitLightColor"		"254 235 192"
+		"PortraitShadowColor"		"38 79 69"
+		"PortraitShadowScale"		"5.000000"
+		"PortraitAmbientColor"		"126 148 120"
+		"PortraitAmbientScale"		"5.000000"
+		"PortraitSpecularColor"		"251 74 84"
+		 "PortraitBackgroundColor1"      ".933 .455 .255"
+        "PortraitBackgroundColor2"      "1 0 0"
+        "PortraitBackgroundColor3"      "1 0 0"
+        "PortraitBackgroundColor4"      ".6 .1 0"
+		"PortraitBackgroundTexture"		"materials/vgui/hud/heroportraits/portraitbackground_coolinterior.vmat"
+		"PortraitLightScale"		"1.800000"
+		"PortraitGroundShadowScale"		"1.500000"
+		"PortraitAmbientDirection"		"-35.210 -88.060 -30.160"
+		"PortraitAnimationActivity"		"ACT_DOTA_IDLE"
+		"cameras"
+		{
+			"default"
+			{
+				"PortraitPosition"		"442.72 272.07 298.34"
+				"PortraitAngles"		"18.76 214.24 0.00"
+				"PortraitFOV"		"4.8"
+			}
+		}
+	}
+
 	"models/hidan/hidan.vmdl"
 	{
 		"PortraitLightPosition"		"81.44 0.80 343.45"
