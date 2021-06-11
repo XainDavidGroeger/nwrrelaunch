@@ -314,7 +314,7 @@
 					m_Filepath = "models/hidan_brand_new/hidan_anim.smd"
 					m_nStartframe = 499
 					m_nEndframe = 526
-					m_flFps = 60.0
+					m_flFps = 42.0
 					m_Loop = 
 					{
 						m_bLoop = false
