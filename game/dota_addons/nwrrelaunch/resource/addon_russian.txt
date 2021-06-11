@@ -1135,13 +1135,13 @@
 		//--------------------
 		"npc_dota_hero_shikamaru"  								"Шикамару"
 
-		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique"						"<b><font color='#BFBFBF'>Техника Теневого Подражания</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique"						"<b><font color='#BFBFBF'>Теневое Подражание</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_lore"				"Kagemane no Jutsu"
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_Description"			"Шикамару вытягивает свою тень в выбранном направлении, <b><font color='#BFBFBF'>объединяя ее с тенью первого встреченного вражеского героя</font></b>. <br><br> После этого враг будет полностью выведен из строя, пока <b><font color='#BFBFBF'>копирует движения Шикамару.</font></b> <br><br> Если перед этим враг был поражен <b><font color='#FFFFFF'>Слепящими Бомбами,</font></b> то длительность этой способности продлевается на <b><font color='#FFFFFF'>1</font></b> секунду."
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_range"		"ДАЛЬНОСТЬ: "
 		"DOTA_Tooltip_ability_shikamaru_shadow_imitation_technique_shadow_duration"		"ДЛИТЕЛЬНОСТЬ: "
 
-		"DOTA_Tooltip_ability_shikamaru_switching_technique"							"<b><font color='#9A86AC'>Техника Теневых Игл</font></b>"
+		"DOTA_Tooltip_ability_shikamaru_switching_technique"							"<b><font color='#9A86AC'>Теневые Иглы</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_lore"						"Kage Nui no Jutsu"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_Description"				"<b><font color='#FFFFFF'>ПРЕРЫВАЕМАЯ</font></b> - <b><font color='#9A86AC'>Обездвиживает и обезоруживает</font></b> всех врагов в выбранной области, переодически <b><font color='#9A86AC'>нанося Магический урон.</font></b> <br><br> Если перед этим враги были поражены <b><font color='#FFFFFF'>Слепящими Бомбами,</font></b> то они так же <b><font color='#9A86AC'>не смогут применять способности.</font></b>"
 		"DOTA_Tooltip_ability_shikamaru_switching_technique_radius"						"РАДИУС: "
