@@ -19,6 +19,11 @@ function hidan_death_possession_blood:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 
+	caster:StartGesture(ACT_DOTA_CAST_ABILITY_6)
+	Timers:CreateTimer( 0.5, function()
+		caster:FadeGesture(ACT_DOTA_CAST_ABILITY_6)
+	end)
+
 	caster:EmitSound("hidan_curse_cast")
 
 	--Learn Self Pain ability
