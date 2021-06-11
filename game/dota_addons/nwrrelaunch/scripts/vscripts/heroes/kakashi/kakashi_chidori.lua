@@ -144,10 +144,10 @@ function kakashi_chidori:OnChannelFinish(bInterrupted)
 					damage = damage,
 					damage_type = self:GetAbilityDamageType()
 				}
-				ApplyDamage( damageTable )
-	
-				target:AddNewModifier(caster, self, "modifier_kakashi_lighting_charge", { duration = 1 })
-	
+				if not target:IsMagicImmune() then
+					ApplyDamage( damageTable )
+					target:AddNewModifier(caster, self, "modifier_kakashi_lighting_charge", { duration = 1 })
+				end
 				FindClearSpaceForUnit( caster, caster:GetAbsOrigin(), false )
 				--caster:StopSound("kakashi_raikiri_loop")
 				EmitSoundOn("kakashi_raikiri_impact", target)

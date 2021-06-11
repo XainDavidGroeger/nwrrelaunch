@@ -80,7 +80,9 @@ function modifier_itachi_sharingan:OnAttackLanded(keys)
 				attacker:EmitSound("itachi_sharingan_proc")
 			end
 
-			target:AddNewModifier(attacker, self:GetAbility(), "modifier_itachi_sharingan_mr_reduce", {duration = duration})
+			if not target:IsMagicImmune() then
+				target:AddNewModifier(attacker, self:GetAbility(), "modifier_itachi_sharingan_mr_reduce", {duration = duration})
+			end
 		end
 	end
 end

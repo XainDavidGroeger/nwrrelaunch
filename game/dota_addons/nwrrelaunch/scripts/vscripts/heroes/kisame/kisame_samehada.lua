@@ -41,7 +41,7 @@ function modifier_kisame_samehada:OnAttackLanded(keys)
     if keys.attacker ~= self:GetParent() then return end
 	
 	if self.ability:IsCooldownReady() then
-		if (keys.target:IsHero() or keys.target:IsIllusion()) and keys.target:GetMaxMana() > 0 then
+		if (keys.target:IsHero() or keys.target:IsIllusion()) and keys.target:GetMaxMana() > 0 and not keys.target:IsMagicImmune() then
 			-- Variables
 			local caster = keys.attacker
 			local ability = self.ability

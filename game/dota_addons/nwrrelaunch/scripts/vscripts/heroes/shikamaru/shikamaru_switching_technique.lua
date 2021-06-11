@@ -2,6 +2,11 @@ shikamaru_switching_technique = shikamaru_switching_technique or class({})
 
 LinkLuaModifier("modifier_shikamaru_switching_thinker", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_switching_technique_flash_debuff", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_switching_technique_debuff", "heroes/shikamaru/shikamaru_switching_technique.lua", LUA_MODIFIER_MOTION_NONE)
+
+function shikamaru_switching_technique:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts", context )
+end
 
 
 function shikamaru_switching_technique:GetAbilityTextureName()
@@ -83,7 +88,7 @@ function shikamaru_switching_technique:OnChannelFinish(bInterrupted)
 	)
 
 	for _,enemy in pairs(units) do
-		enemy:RemoveModifierByName("modifier_rooted")
+		enemy:RemoveModifierByName("modifier_switching_technique_debuff")
 		enemy:RemoveModifierByName("modifier_switching_technique_flash_debuff")
 	end
 
@@ -123,6 +128,8 @@ function modifier_shikamaru_switching_thinker:OnCreated(keys)
 		self.thinker:EmitSound(sound_loop)
 
 		self:StartIntervalThink(self.interval_time)
+		EmitSoundOn("shikamaru_stitch_area", self.thinker)
+
 	end
 end
 
@@ -153,7 +160,7 @@ function modifier_shikamaru_switching_thinker:OnIntervalThink()
 		if enemy:IsMagicImmune() == false then 
 			ApplyDamage(damageTable)
 
-			enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_rooted", {})
+			enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_switching_technique_debuff", {})
 			if enemy:HasModifier("modifier_flash_bomb_debuff") then
 				enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_switching_technique_flash_debuff", {})
 			end
@@ -161,17 +168,55 @@ function modifier_shikamaru_switching_thinker:OnIntervalThink()
 	end
 end
 
+function modifier_shikamaru_switching_thinker:CheckState()
+	return {
+		[MODIFIER_STATE_DISARMED] = true
+	}
+end
+
 function modifier_shikamaru_switching_thinker:OnDestroy(keys)
 	if IsServer() then
-		local thinker = self:GetParent()
-		local sound_loop = "Ability.SandKing_SandStorm.loop"
-		thinker:StopSound("sound_loop")
+		-- local thinker = self:GetParent()
+		StopSoundOn("shikamaru_stitch_area", self.thinker)
 		ParticleManager:DestroyParticle(self.particle_sandstorm_fx, true)
 		ParticleManager:ReleaseParticleIndex(self.particle_sandstorm_fx)
-		StopSoundOn(sound_loop, self.thinker)
-		StopSoundOn(sound_darude, self.thinker)  
 	end
 end
+
+modifier_switching_technique_debuff = class({})
+
+function modifier_switching_technique_debuff:IsHidden()
+	return false
+end
+
+function modifier_switching_technique_debuff:IsDebuff()
+	return true
+end
+
+function modifier_switching_technique_debuff:IsStunDebuff()
+	return false
+end
+
+function modifier_switching_technique_debuff:IsPurgable()
+	return true
+end
+
+function modifier_switching_technique_debuff:OnCreated( kv )
+end
+
+function modifier_switching_technique_debuff:OnRemoved()
+end
+
+function modifier_switching_technique_debuff:OnDestroy()
+end
+
+function modifier_switching_technique_debuff:CheckState()
+	return {
+		[MODIFIER_STATE_DISARMED]	= true,
+		[MODIFIER_STATE_ROOTED]	= true,
+	}
+end
+
 
 
 modifier_switching_technique_flash_debuff = class({})
@@ -205,7 +250,6 @@ end
 function modifier_switching_technique_flash_debuff:CheckState()
 	return {
 		[MODIFIER_STATE_SILENCED]	= true,
-		[MODIFIER_STATE_DISARMED]	= true,
 	}
 end
 
