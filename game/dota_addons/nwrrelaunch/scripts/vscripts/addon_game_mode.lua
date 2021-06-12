@@ -5,6 +5,7 @@ require('gamemode')
 require('libraries/popups')
 require('libraries/utils')
 require('libraries/animations')
+require('libraries/better_cooldown')
 
 
 function Precache( context )

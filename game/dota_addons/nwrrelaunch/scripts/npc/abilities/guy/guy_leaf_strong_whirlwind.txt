@@ -12,7 +12,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"guy_leaf_strong_whirlwind"
+		// "AbilityTextureName"			"guy_leaf_strong_whirlwind"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
