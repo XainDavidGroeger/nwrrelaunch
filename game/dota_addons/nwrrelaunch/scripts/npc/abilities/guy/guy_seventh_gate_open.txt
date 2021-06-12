@@ -8,7 +8,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"heroes/guy/guy_seventh_gate_open.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE "
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET "
 		"AbilityTextureName"			"guy_seventh_gate_open"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		// Casting

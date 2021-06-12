@@ -6,7 +6,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/guy/leaf_strong_whirlwind.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -41,7 +42,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"cast_time"					"0.3"
+				"cast_time"						"0.3"
 			}
 			"05"
 			{
@@ -53,6 +54,21 @@
 				"var_type"						 "FIELD_FLOAT"
 				"extra_attack_damage_percentage" "100"
 				"LinkedSpecialBonus"			"special_bonus_guy_1"
+			}
+			"07"
+			{
+				"var_type"						 "FIELD_FLOAT"
+				"slow_duration" 					"1.0 1.5 2.0 2.5"
+			}
+			"08"
+			{
+				"var_type"						 "FIELD_FLOAT"
+				"slow_value" 					"25"
+			}
+			"09"
+			{
+				"var_type"						 "FIELD_FLOAT"
+				"slow_value_ult" 					"40"
 			}
 		}
 	
@@ -68,91 +84,92 @@
 			"particle"	"particles/units/heroes/guy/senpuu_tornado.vpcf"
 		}
 	
-		"OnAbilityPhaseStart"
-		{
+		// "OnAbilityPhaseStart"
+		// {
 	
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
-				"Function"		"playSound"
-			}
+		// 	"RunScript"
+		// 	{
+		// 		"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
+		// 		"Function"		"playSound"
+		// 	}
 
-			"FireSound"
-			{
-				"EffectName"	"guy_senpu_cast"
-				"Target"		"CASTER"
-			}
+		// 	"FireSound"
+		// 	{
+		// 		"EffectName"	"guy_senpu_cast"
+		// 		"Target"		"CASTER"
+		// 	}
 	
-		}
+		// }
 	
-		"OnSpellStart"
-		{
+		// "OnSpellStart"
+		// {
 	
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
-				"Function"		"effectStart"
-			}
+		// 	"RunScript"
+		// 	{
+		// 		"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
+		// 		"Function"		"effectStart"
+		// 	}
 		
 	
 		
 	
-			"FireSound"
-			{
-				"EffectName"		"Hero_Centaur.HoofStomp"
-				"Target" 			"CASTER"
-			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  				"CASTER"
-					"Radius" 				"%radius"
-					"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-	
-				"Action"
-				{
+		// 	"FireSound"
+		// 	{
+		// 		"EffectName"		"Hero_Centaur.HoofStomp"
+		// 		"Target" 			"CASTER"
+		// 	}
 
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
-						"Function"		"performAttackOnTarget"
-						"Target"		"TARGET"
-					}
+		// 	"ActOnTargets"
+		// 	{
+		// 		"Target"
+		// 		{
+		// 			"Center"  				"CASTER"
+		// 			"Radius" 				"%radius"
+		// 			"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		// 			"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		// 		}
+	
+		// 		"Action"
+		// 		{
 
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_PHYSICAL"
-						"Damage"	"%stomp_damage"
-					}
+		// 			"RunScript"
+		// 			{
+		// 				"ScriptFile"	"heroes/guy/leaf_strong_whirlwind.lua"
+		// 				"Function"		"performAttackOnTarget"
+		// 				"Target"		"TARGET"
+		// 			}
+
+		// 			"Damage"
+		// 			{
+		// 				"Target"	"TARGET"
+		// 				"Type"		"DAMAGE_TYPE_PHYSICAL"
+		// 				"Damage"	"%stomp_damage"
+		// 			}
 	
-					"ApplyModifier"
-					{
-						"Target" 		"TARGET"
-						"ModifierName"	"modfiier_guy_leaf_strong_whirlwind_stun"
-					}
-				}
-			}		
-		}
+		// 			"ApplyModifier"
+		// 			{
+		// 				"Target" 		"TARGET"
+		// 				"ModifierName"	"modfiier_guy_leaf_strong_whirlwind_stun"
+		// 			}
+		// 		}
+		// 	}		
+		// }
 	
-		"Modifiers"
-		{
-			"modfiier_guy_leaf_strong_whirlwind_stun"
-			{
-				"IsDebuff"	"1"
-				"Duration"	"%stun_duration"
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-				}
-				"OverrideAnimation"	"ACT_DOTA_DISABLED"
-				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"	"follow_overhead"
-			}
-		}
+		// "Modifiers"
+		// {
+		// 	"modfiier_guy_leaf_strong_whirlwind_stun"
+		// 	{
+		// 		"IsDebuff"	"1"
+		// 		"Duration"	"%stun_duration"
+		// 		"States"
+		// 		{
+		// 			"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
+		// 		}
+		// 		"OverrideAnimation"	"ACT_DOTA_DISABLED"
+		// 		"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+		// 		"EffectAttachType"	"follow_overhead"
+		// 	}
+		// }
 	}
 
 

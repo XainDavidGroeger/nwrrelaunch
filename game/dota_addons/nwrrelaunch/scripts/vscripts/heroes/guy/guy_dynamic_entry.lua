@@ -17,22 +17,27 @@ function guy_dynamic_entry:Precache(context)
 end
 
 function guy_dynamic_entry:GetCastRange(location, target)
-	local castrangebonus = 0
-	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_guy_5")
-	if abilityS ~= nil then
-	    if abilityS:GetLevel() > 0 then
-	    	castrangebonus = 550
-	    end
-	end
+	local caster = self:GetCaster()
+
 	if self:GetCaster():HasModifier("modifier_guy_seventh_gate") then
-		return self:GetSpecialValueFor("cast_range_ulti") + castrangebonus
+		return self:GetSpecialValueFor("cast_range_ulti") + caster:FindTalentValue("special_bonus_guy_5")
 	else
-		return self:GetSpecialValueFor("cast_range") + castrangebonus
+		return self:GetSpecialValueFor("cast_range") + caster:FindTalentValue("special_bonus_guy_5")
 	end
 end
 
 function guy_dynamic_entry:ProcsMagicStick()
     return true
+end
+
+function guy_dynamic_entry:GetAbilityTextureName()
+	local texture = "guy_dynamic_entry"
+	local caster = self:GetCaster()
+	if not caster then return texture end
+	if caster:HasModifier("modifier_guy_seventh_gate") then
+		texture = "guy_dynamic_entry_gates"
+	end
+	return texture
 end
 
 function guy_dynamic_entry:OnSpellStart()
@@ -95,9 +100,18 @@ function dynamic_entry_hit(target, caster, ability)
 	EmitSoundOn("Hero_Brewmaster.ThunderClap",caster)
 	EmitSoundOn("Hero_Brewmaster.ThunderClap.Target",target)
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+	local particle
+
+	if caster:HasModifier("modifier_guy_seventh_gate") then
+		particle = ParticleManager:CreateParticle("particles/units/heroes/guy/guy_dynamic_entry_impact_gates.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+	else
+		particle = ParticleManager:CreateParticle("particles/units/heroes/guy/guy_dynamic_entry_impact_base.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+	end
 	ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(particle, 2, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(particle, 3, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(particle, 6, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", Vector(100,1,1), true)
 		  
 end
 
@@ -137,22 +151,34 @@ function modifier_guy_dynamic_entry_debuff:IsHidden() return false end
 function modifier_guy_dynamic_entry_debuff:IsDebuff() return true end
 
 function modifier_guy_dynamic_entry_debuff:OnCreated()
-	self.ability = self:GetAbility()
+	ability = self:GetAbility()
 	self.caster = self:GetCaster()
-	self.ms_debuff = self.ability:GetSpecialValueFor("ms_slow")
-	self.ms_debuff_ulti = self.ability:GetSpecialValueFor("ms_slow_ulti")
+	self.ms_debuff = ability:GetSpecialValueFor("ms_slow")
+	self.ms_debuff_ulti = ability:GetSpecialValueFor("ms_slow_ulti")
+
+	if self.caster:HasModifier("modifier_guy_seventh_gate") then
+		self.armor_debuff = ability:GetSpecialValueFor("armor_debuff_ulti")
+		self.debuff_vfx = "particles/units/heroes/guy/guy_dynamic_entry_armor_debuff_gates.vpcf"
+	else
+		self.armor_debuff = ability:GetSpecialValueFor("armor_debuff")
+		self.debuff_vfx = "particles/units/heroes/guy/guy_dynamic_entry_armor_debuff_base.vpcf"
+	end
 end
 
 function modifier_guy_dynamic_entry_debuff:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	}
 end
 
-function modifier_guy_dynamic_entry_debuff:GetModifierMoveSpeedBonus_Percentage()
-	if self.caster:HasModifier("modifier_guy_seventh_gate") then
-		return self.ms_debuff_ulti
-	else 
-		return self.ms_debuff
-	end
+function modifier_guy_dynamic_entry_debuff:GetModifierPhysicalArmorBonus()
+	return -1 * self.armor_debuff
+end
+
+function modifier_guy_dynamic_entry_debuff:GetEffectName()
+	return self.debuff_vfx
+end
+
+function modifier_guy_dynamic_entry_debuff:GetEffectAttachType()
+	return PATTACH_OVERHEAD_FOLLOW
 end

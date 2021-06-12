@@ -23,70 +23,106 @@ end
     return true
 end
  
- function guy_seventh_gate_open:OnSpellStart()
-	if IsServer() then
-		local caster 	= self:GetCaster();
-		local ability 	= self;
-		guy_seventh_gate_open:ToggleOn(caster, ability);
-	end
- end
+--  function guy_seventh_gate_open:OnSpellStart()
+-- 	if IsServer() then
+-- 		local caster 	= self:GetCaster();
+-- 		local ability 	= self;
+-- 		guy_seventh_gate_open:ToggleOn(caster, ability);
+-- 	end
+--  end
  
- function guy_seventh_gate_open:OnToggle()
-	if IsServer() then 
-		local toggle 	= self:GetToggleState();
-		local caster 	= self:GetCaster();
-		local ability 	= self;
-		self.caster = caster
-		--self.ability = self
+ function guy_seventh_gate_open:OnSpellStart()
+	local caster = self:GetCaster()
+	caster:AddNewModifier(caster, self, "modifier_guy_seventh_gate", {})
 
-		if toggle == true then 
-			guy_seventh_gate_open:ToggleOn(caster, ability);
-		else 
-			local ability2_name = self.caster:GetAbilityByIndex(1)
-			local ability3_name = self.caster:GetAbilityByIndex(2)
-
-			local ability1_cooldown = self.caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
-			local ability1_level = self.caster:GetAbilityByIndex(1):GetLevel()
-			self.caster:AddAbility("guy_leaf_strong_whirlwind")
-			self.caster:SwapAbilities("guy_leaf_strong_whirlwind", "guy_leaf_strong_whirlwind_ult", true, false)
-			self.caster:RemoveAbility("guy_leaf_strong_whirlwind_ult")
-			self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
-			self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
-
-			if self.caster:HasAbility("guy_strong_fist_ult") then 
-				ability_name = "guy_strong_fist_ult"
-			end
-
-			if self.caster:HasAbility("guy_morning_peacock") then 
-				ability_name = "guy_morning_peacock"
-			end
-
-			local ability2_cooldown = self.caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
-			local ability2_level = self.caster:GetAbilityByIndex(2):GetLevel()
-			self.caster:AddAbility("guy_strong_fist")
-			self.caster:SwapAbilities("guy_strong_fist", ability_name, true, false)
-			self.caster:RemoveAbility(ability_name)
-			self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
-			self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
-			
-			caster:RemoveModifierByName("modifier_guy_seventh_gate")
-			if caster:HasModifier("modifier_guy_morning_peacock_buff") then
-			    caster:RemoveModifierByName("modifier_guy_morning_peacock_buff")
-			    caster:RemoveModifierByName("modifier_guy_morning_peacock_cd_reset")
-			end
-		end
+	if not IsServer() then return end
+	-- check sister ability
+	local ability = caster:FindAbilityByName("guy_seventh_gate_close")
+	if not ability then
+		ability = caster:AddAbility( "guy_seventh_gate_close" )
+		ability:SetStolen( true )
 	end
+
+	-- check ability level
+	ability:SetLevel( self:GetLevel() )
+
+	caster:SwapAbilities(
+		self:GetAbilityName(),
+		ability:GetAbilityName(),
+		false,
+		true
+	)
+
+	-- local whirwind_ability = caster:FindAbilityByName( "guy_leaf_strong_whirlwind" )
+	-- if whirwind_ability then
+	-- 	whirwind_ability.texture_name = "guy_dynamic_entry_gates"
+	-- end
+
+	-- if IsServer() then 
+	-- 	local toggle 	= self:GetToggleState();
+	-- 	local caster 	= self:GetCaster();
+	-- 	local ability 	= self;
+	-- 	self.caster = caster
+	-- 	--self.ability = self
+
+	-- 	if toggle == true then 
+	-- 		guy_seventh_gate_open:ToggleOn(caster, ability);
+	-- 	else 
+	-- 		local ability2_name = self.caster:GetAbilityByIndex(1)
+	-- 		local ability3_name = self.caster:GetAbilityByIndex(2)
+
+	-- 		local ability1_cooldown = self.caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
+	-- 		local ability1_level = self.caster:GetAbilityByIndex(1):GetLevel()
+	-- 		self.caster:AddAbility("guy_leaf_strong_whirlwind")
+	-- 		self.caster:SwapAbilities("guy_leaf_strong_whirlwind", "guy_leaf_strong_whirlwind_ult", true, false)
+	-- 		self.caster:RemoveAbility("guy_leaf_strong_whirlwind_ult")
+	-- 		self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
+	-- 		self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
+
+	-- 		if self.caster:HasAbility("guy_strong_fist_ult") then 
+	-- 			ability_name = "guy_strong_fist_ult"
+	-- 		end
+
+	-- 		if self.caster:HasAbility("guy_morning_peacock") then 
+	-- 			ability_name = "guy_morning_peacock"
+	-- 		end
+
+	-- 		local ability2_cooldown = self.caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
+	-- 		local ability2_level = self.caster:GetAbilityByIndex(2):GetLevel()
+	-- 		self.caster:AddAbility("guy_strong_fist")
+	-- 		self.caster:SwapAbilities("guy_strong_fist", ability_name, true, false)
+	-- 		self.caster:RemoveAbility(ability_name)
+	-- 		self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
+	-- 		self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
+			
+	-- 		caster:RemoveModifierByName("modifier_guy_seventh_gate")
+	-- 		if caster:HasModifier("modifier_guy_morning_peacock_buff") then
+	-- 		    caster:RemoveModifierByName("modifier_guy_morning_peacock_buff")
+	-- 		    caster:RemoveModifierByName("modifier_guy_morning_peacock_cd_reset")
+	-- 		end
+	-- 	end
+	-- end
 end
 
-function guy_seventh_gate_open:ToggleOn(caster, ability)
-	caster:AddNewModifier(caster, ability, "modifier_guy_seventh_gate", {});
-	ParticleManager:CreateParticle("particles/units/heroes/guy/gates_toggle_on.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+-- function guy_seventh_gate_open:ToggleOn(caster, ability)
+-- 	caster:AddNewModifier(caster, ability, "modifier_guy_seventh_gate", {});
+-- 	ParticleManager:CreateParticle("particles/units/heroes/guy/gates_toggle_on.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+-- end
+
+guy_seventh_gate_close = class({})
+
+function guy_seventh_gate_close:OnSpellStart()
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	caster:RemoveModifierByName("modifier_guy_seventh_gate")
 end
 
 modifier_guy_seventh_gate = modifier_guy_seventh_gate or class({})
 
 function modifier_guy_seventh_gate:IsHidden() return false end
 function modifier_guy_seventh_gate:IsBuff() return true end
+function modifier_guy_seventh_gate:IsPurgable() return false end
+function modifier_guy_seventh_gate:RemoveOnDeath() return true end
 
 function modifier_guy_seventh_gate:OnCreated()
 
@@ -100,41 +136,41 @@ function modifier_guy_seventh_gate:OnCreated()
 	self.base_attack_time = self.ability:GetSpecialValueFor("bat") + self.caster:FindTalentValue("special_bonus_guy_2")
 	--print(self.base_attack_time)
 
-	self.pfx3 = ParticleManager:CreateParticle("particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	ParticleManager:SetParticleControlEnt( self.pfx3, 0, self:GetCaster(), PATTACH_POINT, "attach_origin", self:GetCaster():GetAbsOrigin(), false )
-	self.pfx4 = ParticleManager:CreateParticle( "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	ParticleManager:SetParticleControlEnt( self.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
+	-- self.pfx3 = ParticleManager:CreateParticle("particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	-- ParticleManager:SetParticleControlEnt( self.pfx3, 0, self:GetCaster(), PATTACH_POINT, "attach_origin", self:GetCaster():GetAbsOrigin(), false )
+	-- self.pfx4 = ParticleManager:CreateParticle( "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	-- ParticleManager:SetParticleControlEnt( self.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
 
 	--sounds
 	self.caster:EmitSound("guy_gates_cast")
 	self.caster:EmitSound("guy_ulti_new")
 	self.caster:EmitSound("guy_open_gates_talking")
 
-	--change abilities
+	-- --change abilities
 	
-	local ability1_level = self.caster:GetAbilityByIndex(1):GetLevel()
-	local ability1_cooldown = self.caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
-	self.caster:AddAbility("guy_leaf_strong_whirlwind_ult")
-	self.caster:SwapAbilities("guy_leaf_strong_whirlwind", "guy_leaf_strong_whirlwind_ult", false, true)
-	self.caster:RemoveAbility("guy_leaf_strong_whirlwind")
-	self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
-	self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
+	-- local ability1_level = self.caster:GetAbilityByIndex(1):GetLevel()
+	-- local ability1_cooldown = self.caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
+	-- self.caster:AddAbility("guy_leaf_strong_whirlwind_ult")
+	-- self.caster:SwapAbilities("guy_leaf_strong_whirlwind", "guy_leaf_strong_whirlwind_ult", false, true)
+	-- self.caster:RemoveAbility("guy_leaf_strong_whirlwind")
+	-- self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
+	-- self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
 
 
-	local ability_name = "guy_strong_fist_ult"
-	local ability1 = self.caster:FindAbilityByName("special_bonus_guy_4")
-	if ability1 ~= nil then
-	    if ability1:IsTrained() then
-	    	ability_name = "guy_morning_peacock"
-	    end
-	end
-	local ability2_level = self.caster:GetAbilityByIndex(2):GetLevel()
-	local ability2_cooldown = self.caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
-	self.caster:AddAbility(ability_name)
-	self.caster:SwapAbilities("guy_strong_fist", ability_name, false, true)
-	self.caster:RemoveAbility("guy_strong_fist")
-	self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
-	self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
+	-- local ability_name = "guy_strong_fist_ult"
+	-- local ability1 = self.caster:FindAbilityByName("special_bonus_guy_4")
+	-- if ability1 ~= nil then
+	--     if ability1:IsTrained() then
+	--     	ability_name = "guy_morning_peacock"
+	--     end
+	-- end
+	-- local ability2_level = self.caster:GetAbilityByIndex(2):GetLevel()
+	-- local ability2_cooldown = self.caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
+	-- self.caster:AddAbility(ability_name)
+	-- self.caster:SwapAbilities("guy_strong_fist", ability_name, false, true)
+	-- self.caster:RemoveAbility("guy_strong_fist")
+	-- self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
+	-- self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
 
 	-- start interval for hp lose
 	if IsServer() then
@@ -143,10 +179,23 @@ function modifier_guy_seventh_gate:OnCreated()
 end
 
 function modifier_guy_seventh_gate:OnRemoved()
-	ParticleManager:DestroyParticle(self.pfx3, true)
-	ParticleManager:ReleaseParticleIndex(self.pfx3)
-	ParticleManager:DestroyParticle(self.pfx4, true)
-	ParticleManager:ReleaseParticleIndex(self.pfx4)
+	-- ParticleManager:DestroyParticle(self.pfx3, true)
+	-- ParticleManager:ReleaseParticleIndex(self.pfx3)
+	-- ParticleManager:DestroyParticle(self.pfx4, true)
+	-- ParticleManager:ReleaseParticleIndex(self.pfx4)
+end
+
+function modifier_guy_seventh_gate:OnDestroy()
+	local caster = self:GetAbility():GetCaster()
+	local ability = caster:FindAbilityByName( "guy_seventh_gate_open" )
+	
+	if not IsServer() then return end
+	caster:SwapAbilities(
+		"guy_seventh_gate_open",
+		"guy_seventh_gate_close",
+		true,
+		false
+	)
 end
 
 function modifier_guy_seventh_gate:OnIntervalThink()
