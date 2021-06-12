@@ -398,9 +398,9 @@
 				{
 					m_Animationname = "hidan_cull"
 					m_Filepath = "models/hidan_brand_new/hidan_anim.smd"
-					m_nStartframe = 411
-					m_nEndframe = 441
-					m_flFps = 30.0
+					m_nStartframe = 499
+					m_nEndframe = 511
+					m_flFps = 18.0
 					m_Loop = 
 					{
 						m_bLoop = false
