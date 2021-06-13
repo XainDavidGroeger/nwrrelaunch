@@ -622,7 +622,7 @@
 		[
 			{
 				m_sSearchMaterial = "hidan654321.vmat"
-				m_sReplaceMaterial = "materials/hidan_brand_new/hidan_brand_new.vmat"
+				m_sReplaceMaterial = "materials/hidan_brand_new/hidan_brand_black_fixed.vmat"
 			},
 		]
 	}
