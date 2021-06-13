@@ -26,6 +26,7 @@ function resetCooldownOnHit( keys )
 end
 
 LinkLuaModifier("modifier_guy_strong_fist_caster", "heroes/guy/strong_fist.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_guy_morning_peacock_attacks", "heroes/guy/strong_fist.lua", LUA_MODIFIER_MOTION_NONE)
 
 guy_strong_fist = class({})
 
@@ -64,28 +65,54 @@ function PerformCritAttack(ability, attack_event)
 	local bonus_damage = attack_event.damage * crit_fraction
 	local full_damage = attack_event.damage + bonus_damage
 	local stun_duration = ability:GetSpecialValueFor("stun")
+	local morning_peacock_bonus_attack_count = ability:GetSpecialValueFor("morning_peacock_bonus_attack_count")
+	local morning_peacock_attack_interval = ability:GetSpecialValueFor("morning_peacock_attack_interval")
 
-	local bonus_damage_table = {
-		victim = target,
-		attacker = caster,
-		damage = bonus_damage,
-		damage_type = DAMAGE_TYPE_PHYSICAL,
-		damage_flags = DOTA_DAMAGE_FLAG_NONE,
-	}
-	ApplyDamage(bonus_damage_table)
+	EmitSoundOn("guy_gouken_talking", caster)
 
-	if caster:HasModifier("modifier_guy_seventh_gate") then
-		target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
+	if caster:HasTalent("special_bonus_guy_4") and caster:HasModifier("modifier_guy_seventh_gate") then
+		--Morning peacock
+		local morning_peacock_duration = morning_peacock_bonus_attack_count * morning_peacock_attack_interval
+		target:AddNewModifier(
+			caster, 
+			ability, 
+			"modifier_guy_morning_peacock_attacks", 
+			{
+				duration = morning_peacock_duration,
+				attack_damage = attack_event.damage
+			}
+		)
+
+		--INSERT MORNING PEACOCK SOUND HERE
+
+	else
+		--normal behaviour
+		local bonus_damage_table = {
+			victim = target,
+			attacker = caster,
+			damage = bonus_damage,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_flags = DOTA_DAMAGE_FLAG_NONE,
+		}
+		ApplyDamage(bonus_damage_table)
+
+		if caster:HasModifier("modifier_guy_seventh_gate") then
+			target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
+			--INSTER GOUKEN IN GATES SOUND HERE
+		else
+			--INSERT GOUKEN NORMAL IMPACT SOUND HERE
+		end
+
+		--visual numbers
+		SendOverheadEventMessage(
+			nil,
+			OVERHEAD_ALERT_CRITICAL,
+			target,
+			full_damage,
+			caster:GetPlayerOwner()
+		)
+
 	end
-
-	--visual numbers
-	SendOverheadEventMessage(
-		nil,
-		OVERHEAD_ALERT_CRITICAL,
-		target,
-		full_damage,
-		caster:GetPlayerOwner()
-	)
 end
 
 
@@ -129,3 +156,41 @@ function modifier_guy_strong_fist_caster:OnAttackLanded(attack_event)
 	strong_fist_ability.activated = false
 end
 
+
+modifier_guy_morning_peacock_attacks = class({})
+
+function modifier_guy_morning_peacock_attacks:IsHidden() return true end
+
+function modifier_guy_morning_peacock_attacks:OnCreated(kv)
+	self.ability = self:GetAbility()
+	self.parent = self:GetParent()
+	self.caster = self.ability:GetCaster()
+	self.stun_duration = self.ability:GetSpecialValueFor("stun")
+
+	local morning_peacock_attack_interval = self.ability:GetSpecialValueFor("morning_peacock_attack_interval")
+	local morning_peacock_attack_damage_perc = self.ability:GetSpecialValueFor("morning_peacock_attack_damage_perc")
+	self.attack_damage = kv.attack_damage
+	self:StartIntervalThink(morning_peacock_attack_interval)
+	self.damage_table = {
+		victim = self.parent,
+		attacker = self.caster,
+		damage = (self.attack_damage * morning_peacock_attack_damage_perc) / 100,
+		damage_type = DAMAGE_TYPE_PHYSICAL,
+		damage_flags = 0
+	}
+end
+
+function modifier_guy_morning_peacock_attacks:OnIntervalThink()
+	SendOverheadEventMessage(
+		nil,
+		OVERHEAD_ALERT_CRITICAL,
+		self.parent,
+		self.damage_table.damage,
+		self.ability:GetCaster():GetPlayerOwner()
+	)
+	if not IsServer() then return end
+	ApplyDamage(self.damage_table)
+	print("damage done")
+
+	self.parent:AddNewModifier(self.caster, self.ability, "modifier_stunned", {duration = self.stun_duration})
+end

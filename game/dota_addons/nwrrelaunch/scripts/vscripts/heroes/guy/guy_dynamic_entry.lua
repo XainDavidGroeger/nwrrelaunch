@@ -103,9 +103,15 @@ function dynamic_entry_hit(target, caster, ability)
 	local particle
 
 	if caster:HasModifier("modifier_guy_seventh_gate") then
-		particle = ParticleManager:CreateParticle("particles/units/heroes/guy/guy_dynamic_entry_impact_gates.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+		particle = ParticleManager:CreateParticle(
+			"particles/units/heroes/guy/guy_dynamic_entry_six_gates_impact_base.vpcf", 
+			PATTACH_ABSORIGIN_FOLLOW, 
+			target) 
 	else
-		particle = ParticleManager:CreateParticle("particles/units/heroes/guy/guy_dynamic_entry_impact_base.vpcf", PATTACH_ABSORIGIN_FOLLOW, target) 
+		particle = ParticleManager:CreateParticle(
+			"particles/units/heroes/guy/guy_dynamic_entry_impact_base.vpcf", 
+			PATTACH_ABSORIGIN_FOLLOW, 
+			target) 
 	end
 	ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_ABSORIGIN_FOLLOW, "follow_origin", target:GetAbsOrigin(), true)
@@ -151,6 +157,21 @@ function modifier_guy_dynamic_entry_debuff:IsHidden() return false end
 function modifier_guy_dynamic_entry_debuff:IsDebuff() return true end
 
 function modifier_guy_dynamic_entry_debuff:OnCreated()
+	ability = self:GetAbility()
+	self.caster = self:GetCaster()
+	self.ms_debuff = ability:GetSpecialValueFor("ms_slow")
+	self.ms_debuff_ulti = ability:GetSpecialValueFor("ms_slow_ulti")
+
+	if self.caster:HasModifier("modifier_guy_seventh_gate") then
+		self.armor_debuff = ability:GetSpecialValueFor("armor_debuff_ulti")
+		self.debuff_vfx = "particles/units/heroes/guy/guy_dynamic_entry_armor_debuff_gates.vpcf"
+	else
+		self.armor_debuff = ability:GetSpecialValueFor("armor_debuff")
+		self.debuff_vfx = "particles/units/heroes/guy/guy_dynamic_entry_armor_debuff_base.vpcf"
+	end
+end
+
+function modifier_guy_dynamic_entry_debuff:OnRefresh()
 	ability = self:GetAbility()
 	self.caster = self:GetCaster()
 	self.ms_debuff = ability:GetSpecialValueFor("ms_slow")

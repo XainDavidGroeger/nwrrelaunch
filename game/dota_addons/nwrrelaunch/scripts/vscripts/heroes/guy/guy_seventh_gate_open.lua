@@ -233,3 +233,11 @@ end
 function modifier_guy_seventh_gate:GetModifierBaseAttackTimeConstant()
 	return self.base_attack_time
 end
+
+function modifier_guy_seventh_gate:GetEffectName()
+	return "particles/units/heroes/guy/guy_gates_generic_core.vpcf"
+end
+
+function modifier_guy_seventh_gate:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end

@@ -45,6 +45,21 @@
                     "var_type" "FIELD_FLOAT"
                     "stun" "1.0"
                 }
+                "03"
+                {
+                    "var_type" "FIELD_INTEGER"
+                    "morning_peacock_bonus_attack_count" "3"
+                }
+                "04"
+                {
+                    "var_type" "FIELD_FLOAT"
+                    "morning_peacock_attack_damage_perc" "60"
+                }
+                "05"
+                {
+                    "var_type" "FIELD_FLOAT"
+                    "morning_peacock_attack_interval" "0.1"
+                }
             }
         
             "OnSpellStart"

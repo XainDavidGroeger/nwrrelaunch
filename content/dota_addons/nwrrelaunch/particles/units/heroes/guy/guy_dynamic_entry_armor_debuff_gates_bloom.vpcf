@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 1
 	m_flConstantRadius = 75.0
-	m_ConstantColor = [ 255, 96, 96, 255 ]
+	m_ConstantColor = [ 114, 243, 114, 255 ]
 	m_nBehaviorVersion = 11
 	m_nFirstMultipleOverride_BackwardCompat = 3
 	m_controlPointConfigurations = 
@@ -94,7 +94,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 165, 42, 42 ]
+			m_ColorFade = [ 34, 139, 34 ]
 		},
 		{
 			_class = "C_OP_ClampScalar"
