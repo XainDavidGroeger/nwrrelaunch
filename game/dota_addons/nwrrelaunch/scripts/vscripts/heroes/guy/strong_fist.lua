@@ -99,8 +99,61 @@ function PerformCritAttack(ability, attack_event)
 		if caster:HasModifier("modifier_guy_seventh_gate") then
 			target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
 			--INSTER GOUKEN IN GATES SOUND HERE
+
+			--VFXs
+			local impact_vfx = ParticleManager:CreateParticle(
+				"particles/units/heroes/guy_strong_fist_gates_impact.vpcf",
+				PATTACH_CUSTOMORIGIN_FOLLOW, 
+				target
+			)
+			ParticleManager:SetParticleControl(impact_vfx, 3, caster:GetForwardVector():Normalized())
+			ParticleManager:SetParticleControlEnt(
+				impact_vfx,
+				0,
+				target,
+				PATTACH_POINT_FOLLOW,
+				"attach_hitloc",
+				Vector(0,0,0), -- unknown
+				true -- unknown, true
+			)
+			ParticleManager:SetParticleControlEnt(
+				impact_vfx,
+				4,
+				target,
+				PATTACH_POINT_FOLLOW,
+				"attach_hitloc",
+				Vector(0,0,0), -- unknown
+				true -- unknown, true
+			)
 		else
 			--INSERT GOUKEN NORMAL IMPACT SOUND HERE
+
+			--VFXs
+			local impact_vfx = ParticleManager:CreateParticle(
+				"particles/units/heroes/guy_strong_fist_impact.vpcf",
+				PATTACH_CENTER_FOLLOW, 
+				target
+			)
+			ParticleManager:SetParticleControl(impact_vfx, 3, caster:GetForwardVector():Normalized())
+			ParticleManager:SetParticleControlEnt(
+				impact_vfx,
+				0,
+				target,
+				PATTACH_POINT_FOLLOW,
+				"attach_hitloc",
+				Vector(0,0,0), -- unknown
+				true -- unknown, true
+			)
+			ParticleManager:SetParticleControlEnt(
+				impact_vfx,
+				4,
+				target,
+				PATTACH_POINT_FOLLOW,
+				"attach_hitloc",
+				Vector(0,0,0), -- unknown
+				true -- unknown, true
+			)
+			print(target:GetOrigin())
 		end
 
 		--visual numbers
@@ -188,6 +241,33 @@ function modifier_guy_morning_peacock_attacks:OnIntervalThink()
 		self.damage_table.damage,
 		self.ability:GetCaster():GetPlayerOwner()
 	)
+
+	--VFXs
+	local impact_vfx = ParticleManager:CreateParticle(
+		"particles/units/heroes/guy_morning_peacock_impact.vpcf",
+		PATTACH_CUSTOMORIGIN_FOLLOW, 
+		self.parent
+	)
+
+	ParticleManager:SetParticleControlEnt(
+		impact_vfx,
+		0,
+		self.parent,
+		PATTACH_POINT_FOLLOW,
+		"attach_hitloc",
+		Vector(0,0,0), -- unknown
+		true -- unknown, true
+	)
+	ParticleManager:SetParticleControlEnt(
+		impact_vfx,
+		1,
+		self.parent,
+		PATTACH_POINT_FOLLOW,
+		"attach_hitloc",
+		Vector(0,0,0), -- unknown
+		true -- unknown, true
+	)
+
 	if not IsServer() then return end
 	ApplyDamage(self.damage_table)
 	print("damage done")

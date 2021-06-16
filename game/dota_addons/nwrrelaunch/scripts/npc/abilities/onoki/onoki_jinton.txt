@@ -18,7 +18,8 @@
 			
 			"AbilityCooldown"				"14 12 10 8"
 			"AbilityManaCost"				"110"
-			"AbilityDamage"					"85 105 200 275"
+			"AbilityDamage"					"95 160 225 290"
+			"AbilityCastPoint"				"0.2"
 			
 			"AbilitySpecial"
 			{

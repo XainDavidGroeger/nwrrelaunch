@@ -73,13 +73,23 @@ function guy_leaf_strong_whirlwind:OnSpellStart()
 	local caster = self:GetCaster()
 	local radius = self:GetSpecialValueFor("radius")
 	local slow_duration = self:GetSpecialValueFor("slow_duration")
+	local particle_caster
 
-	local particle_caster = ParticleManager:CreateParticle(
-		"particles/units/heroes/guy/senpuu_tornado.vpcf",
-	 	PATTACH_ABSORIGIN, 
-		caster)
-	ParticleManager:SetParticleControl(particle_caster, 0, caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(particle_caster, 3, caster:GetAbsOrigin())
+	if caster:HasModifier("modifier_guy_seventh_gate") then
+		particle_caster = ParticleManager:CreateParticle(
+			"particles/units/heroes/guy/senpuu_gates_tornado.vpcf",
+			PATTACH_ABSORIGIN, 
+			caster)
+		ParticleManager:SetParticleControl(particle_caster, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle_caster, 3, caster:GetAbsOrigin())
+	else
+		particle_caster = ParticleManager:CreateParticle(
+			"particles/units/heroes/guy/senpuu_tornado.vpcf",
+			PATTACH_ABSORIGIN, 
+			caster)
+		ParticleManager:SetParticleControl(particle_caster, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle_caster, 3, caster:GetAbsOrigin())
+	end
 
 	local damage_table = {
 		attacker = caster,

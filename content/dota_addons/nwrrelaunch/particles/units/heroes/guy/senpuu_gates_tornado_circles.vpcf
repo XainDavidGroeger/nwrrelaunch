@@ -50,12 +50,12 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 150.0
+			m_flRadiusMin = 125.0
 			m_flRadiusMax = 150.0
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 74, 90, 124 ]
+			m_ColorMax = [ 34, 139, 34 ]
 			m_ColorMin = [ 100, 124, 100 ]
 			m_TintMin = [ 0, 0, 0 ]
 			m_TintMax = [ 255, 255, 255 ]
@@ -482,7 +482,6 @@
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.0345
 			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
 		},
 		{
@@ -494,9 +493,18 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.4
+			m_flStartScale = 0.0
+			m_flEndScale = 1.2
+			m_flBias = 0.45
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
 			m_flBias = 0.45
 			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
 			m_flEndScale = 2.0
+			m_flStartTime = 0.4
 		},
 		{
 			_class = "C_OP_RampScalarLinearSimple"
@@ -543,7 +551,7 @@
 			_class = "C_OP_ColorInterpolate"
 			m_flFadeEndTime = 0.5
 			m_flFadeStartTime = 0.3
-			m_ColorFade = [ 255, 255, 255 ]
+			m_ColorFade = [ 165, 255, 165 ]
 		},
 	]
 	m_Renderers = 

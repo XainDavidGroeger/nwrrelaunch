@@ -19,7 +19,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"1500"
-	"AbilityCastPoint"				"1.0 1.0 1.0 1.0"
+	"AbilityCastPoint"				"1.0 1.0 1.0"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"130 100 70"
@@ -45,23 +45,23 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"start_radius"			"50 50 50"
+			"start_radius"			"50"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"end_radius"			"300 300 300"
+			"end_radius"			"300"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range"					"1500 1500 1500"
+			"range"					"1500"
 			"LinkedSpecialBonus"	"special_bonus_gaara_3"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"speed"					"500 500 500"
+			"speed"					"800"
 		}
 		"05"
 		{

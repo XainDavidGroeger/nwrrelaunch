@@ -35,7 +35,7 @@
 
 
 		  	"ArmorPhysical"		"1.000000"
-			"ModelScale"		"0.74"
+			"ModelScale"		"0.7"
 			"LoadoutScale"		"0.64" 
 
 			//Picking Screen

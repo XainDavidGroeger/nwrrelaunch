@@ -126,7 +126,6 @@ function modifier_guy_seventh_gate:RemoveOnDeath() return true end
 
 function modifier_guy_seventh_gate:OnCreated()
 
-	if not IsServer() then return end
 
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
@@ -134,48 +133,15 @@ function modifier_guy_seventh_gate:OnCreated()
 	self.ms_bonus = self.ability:GetSpecialValueFor("ms_bonus") + self.caster:FindTalentValue("special_bonus_guy_3")
 	self.attack_bonus = self.ability:GetSpecialValueFor("bonus_damage")
 	self.base_attack_time = self.ability:GetSpecialValueFor("bat") + self.caster:FindTalentValue("special_bonus_guy_2")
-	--print(self.base_attack_time)
-
-	-- self.pfx3 = ParticleManager:CreateParticle("particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	-- ParticleManager:SetParticleControlEnt( self.pfx3, 0, self:GetCaster(), PATTACH_POINT, "attach_origin", self:GetCaster():GetAbsOrigin(), false )
-	-- self.pfx4 = ParticleManager:CreateParticle( "particles/units/heroes/guy/wyvern_winters_curse_buff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
-	-- ParticleManager:SetParticleControlEnt( self.pfx4, 0, self:GetCaster(), PATTACH_POINT, "attach_hitloc", self:GetCaster():GetAbsOrigin(), false )
 
 	--sounds
+	if not IsServer() then return end
 	self.caster:EmitSound("guy_gates_cast")
 	self.caster:EmitSound("guy_ulti_new")
 	self.caster:EmitSound("guy_open_gates_talking")
 
-	-- --change abilities
-	
-	-- local ability1_level = self.caster:GetAbilityByIndex(1):GetLevel()
-	-- local ability1_cooldown = self.caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
-	-- self.caster:AddAbility("guy_leaf_strong_whirlwind_ult")
-	-- self.caster:SwapAbilities("guy_leaf_strong_whirlwind", "guy_leaf_strong_whirlwind_ult", false, true)
-	-- self.caster:RemoveAbility("guy_leaf_strong_whirlwind")
-	-- self.caster:GetAbilityByIndex(1):SetLevel(ability1_level)
-	-- self.caster:GetAbilityByIndex(1):StartCooldown(ability1_cooldown)
-
-
-	-- local ability_name = "guy_strong_fist_ult"
-	-- local ability1 = self.caster:FindAbilityByName("special_bonus_guy_4")
-	-- if ability1 ~= nil then
-	--     if ability1:IsTrained() then
-	--     	ability_name = "guy_morning_peacock"
-	--     end
-	-- end
-	-- local ability2_level = self.caster:GetAbilityByIndex(2):GetLevel()
-	-- local ability2_cooldown = self.caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
-	-- self.caster:AddAbility(ability_name)
-	-- self.caster:SwapAbilities("guy_strong_fist", ability_name, false, true)
-	-- self.caster:RemoveAbility("guy_strong_fist")
-	-- self.caster:GetAbilityByIndex(2):SetLevel(ability2_level)
-	-- self.caster:GetAbilityByIndex(2):StartCooldown(ability2_cooldown)
-
 	-- start interval for hp lose
-	if IsServer() then
-		self:StartIntervalThink(0.1)
-	end
+	self:StartIntervalThink(0.1)
 end
 
 function modifier_guy_seventh_gate:OnRemoved()
@@ -200,34 +166,27 @@ end
 
 function modifier_guy_seventh_gate:OnIntervalThink()
 	local drain_hp_percent = self:GetAbility():GetSpecialValueFor("hp_drain")
-	drain_hp_percent = drain_hp_percent / 10
-	local drain_hp = (self.caster:GetMaxHealth() / 100) * drain_hp_percent
-	if self.caster:GetHealth() - drain_hp > 0 then
-		self.caster:SetHealth(self.caster:GetHealth() - drain_hp)
-	else
-		self:GetAbility():ToggleAbility()
-	end	
+	local drain_hp = (self.caster:GetMaxHealth() / 100) * drain_hp_percent * 0.1
+
+	ApplyDamage({
+		victim = self.caster,
+		attacker = self.caster,
+		damage = drain_hp,
+		damage_type = DAMAGE_TYPE_PURE,
+		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
+		ability = self
+	})
 end
 
 function modifier_guy_seventh_gate:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-		MODIFIER_PROPERTY_MIN_HEALTH,
 	}
 end
 
-function modifier_guy_seventh_gate:GetModifierMoveSpeedBonus_Percentage()
+function modifier_guy_seventh_gate:GetModifierMoveSpeedBonus_Constant()
 	return self.ms_bonus
-end
-
-function modifier_guy_seventh_gate:GetModifierPreAttack_BonusDamage()
-	return self.attack_bonus
-end
-
-function modifier_guy_seventh_gate:GetMinHealth()
-	return 1
 end
 
 function modifier_guy_seventh_gate:GetModifierBaseAttackTimeConstant()
