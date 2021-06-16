@@ -9,6 +9,10 @@ function temari_fusajin_no_jutsu:ProcsMagicStick()
     return true
 end
 
+function temari_fusajin_no_jutsu:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
 function temari_fusajin_no_jutsu:OnSpellStart()
 	local caster = self:GetCaster()
 	local projectile_data = {
@@ -45,17 +49,37 @@ function temari_fusajin_no_jutsu:OnSpellStart()
 end
 
 function temari_fusajin_no_jutsu:OnProjectileHit(target, location)
+	local caster = self:GetCaster()
+	local radius = self:GetSpecialValueFor("radius")
 	local damage_table = {
-		victim = target,
-		attacker = self:GetCaster(),
+		-- victim = target,
+		attacker = caster,
 		damage = self:GetSpecialValueFor("damage"),
 		damage_type = self:GetAbilityDamageType(),
 		damage_flags = DOTA_DAMAGE_FLAG_NONE,
 		ability = self
 	}
 
-	if target:IsMagicImmune() == false then
-		ApplyDamage(damage_table)
+	local units = FindUnitsInRadius(
+		caster:GetTeamNumber(), 
+		location,
+		nil,
+		radius, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 
+		DOTA_UNIT_TARGET_FLAG_NONE, 
+		0, 
+		false
+	)
+
+	print(units)
+
+	for _,unit in pairs(units) do
+
+		if unit:IsMagicImmune() == false then
+			damage_table.victim = unit
+			ApplyDamage(damage_table)
+		end
 	end
 end
 

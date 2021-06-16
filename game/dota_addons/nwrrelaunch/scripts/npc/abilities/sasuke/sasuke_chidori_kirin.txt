@@ -22,7 +22,7 @@
     "AbilityCooldown"        "90"
     "AbilityManaCost"        "175 250 325"
     "AbilityCastRange"       "700 850 1000"
-    "AbilityDamage"          "250 325 400"
+    "AbilityDamage"          "225 300 375"
 
     "AbilitySpecial"
     {
@@ -39,7 +39,7 @@
 		"03"
         { 
             "var_type"  "FIELD_INTEGER"
-            "lost_health_bonus_damage" "60 75 90"
+            "lost_health_bonus_damage" "30 45 60"
         }
 		"04"
         { 
