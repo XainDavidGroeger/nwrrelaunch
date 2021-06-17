@@ -1,4 +1,4 @@
-"guy_senpu_gates_cast"
+"guy_gouken_talking_6"
 {
     "operator_stacks"
     {
@@ -14,10 +14,14 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/heroes/guy/guy_senpu_gates_cast.vsnd"
+                            "value0"        "sounds/heroes/guy/guy_gouken_6_01.vsnd"
+                            "value1"        "sounds/heroes/guy/guy_gouken_6_02.vsnd"
+                            "value2"        "sounds/heroes/guy/guy_gouken_6_03.vsnd"
+                            "value3"        "sounds/heroes/guy/guy_gouken_6_04.vsnd"
+                            "value4"        "sounds/heroes/guy/guy_gouken_6_05.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.50000"  }
+                    "volume"            {   "value"     "1.20000"  }
                     "pitch_rand_min"    {   "value"     "-0.05000"  }
                     "pitch_rand_max"    {   "value"     "0.050000"  }
                     "pitch"             {   "value"     "1.000000"  }
