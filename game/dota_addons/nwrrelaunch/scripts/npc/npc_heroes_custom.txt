@@ -23,6 +23,9 @@
 #base "heroes/madara.txt"
 #base "heroes/haku.txt"
 #base "heroes/sai.txt"
+#base "heroes/naruto_new.txt"
+#base "heroes/naruto_new_two.txt"
+
 
 
 // Dota Heroes File
