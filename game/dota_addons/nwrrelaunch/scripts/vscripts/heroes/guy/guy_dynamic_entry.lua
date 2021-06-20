@@ -12,8 +12,10 @@ function guy_dynamic_entry:Precache(context)
 
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_talking.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_talking_6.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/guy_dynamic_entry.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/guy_dynamicentry_impact_6.vsndevts", context)
 end
 
 function guy_dynamic_entry:GetCastRange(location, target)
@@ -97,17 +99,21 @@ function dynamic_entry_hit(target, caster, ability)
 		ApplyDamage({attacker = caster, victim = target, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})		
 	end
 
-	EmitSoundOn("Hero_Brewmaster.ThunderClap",caster)
-	EmitSoundOn("Hero_Brewmaster.ThunderClap.Target",target)
-
 	local particle
 
 	if caster:HasModifier("modifier_guy_seventh_gate") then
+		
+		EmitSoundOn("guy_dynamicentry_impact_6",target)
+		
 		particle = ParticleManager:CreateParticle(
 			"particles/units/heroes/guy/guy_dynamic_entry_six_gates_impact_base.vpcf", 
 			PATTACH_ABSORIGIN_FOLLOW, 
 			target) 
 	else
+		
+		EmitSoundOn("Hero_Brewmaster.ThunderClap",caster)
+		EmitSoundOn("Hero_Brewmaster.ThunderClap.Target",target)
+		
 		particle = ParticleManager:CreateParticle(
 			"particles/units/heroes/guy/guy_dynamic_entry_impact_base.vpcf", 
 			PATTACH_ABSORIGIN_FOLLOW, 

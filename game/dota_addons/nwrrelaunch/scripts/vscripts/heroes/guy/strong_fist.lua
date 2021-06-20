@@ -68,8 +68,6 @@ function PerformCritAttack(ability, attack_event)
 	local morning_peacock_bonus_attack_count = ability:GetSpecialValueFor("morning_peacock_bonus_attack_count")
 	local morning_peacock_attack_interval = ability:GetSpecialValueFor("morning_peacock_attack_interval")
 
-	EmitSoundOn("guy_gouken_talking", caster)
-
 	if caster:HasTalent("special_bonus_guy_4") and caster:HasModifier("modifier_guy_seventh_gate") then
 		--Morning peacock
 		local morning_peacock_duration = morning_peacock_bonus_attack_count * morning_peacock_attack_interval
@@ -83,7 +81,8 @@ function PerformCritAttack(ability, attack_event)
 			}
 		)
 
-		--INSERT MORNING PEACOCK SOUND HERE
+		EmitSoundOn("guy_morningpeacock_talking", caster)
+		EmitSoundOn("guy_morningpeacock_impact", target)
 
 	else
 		--normal behaviour
@@ -98,7 +97,9 @@ function PerformCritAttack(ability, attack_event)
 
 		if caster:HasModifier("modifier_guy_seventh_gate") then
 			target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
-			--INSTER GOUKEN IN GATES SOUND HERE
+
+			EmitSoundOn("guy_gouken_talking_6", caster)
+			EmitSoundOn("guy_gouken_impact_6", target)
 
 			--VFXs
 			local impact_vfx = ParticleManager:CreateParticle(
@@ -126,7 +127,10 @@ function PerformCritAttack(ability, attack_event)
 				true -- unknown, true
 			)
 		else
-			--INSERT GOUKEN NORMAL IMPACT SOUND HERE
+			
+			EmitSoundOn("guy_gouken_talking", caster)
+			EmitSoundOn("guy_gouken_impact", target)
+
 
 			--VFXs
 			local impact_vfx = ParticleManager:CreateParticle(

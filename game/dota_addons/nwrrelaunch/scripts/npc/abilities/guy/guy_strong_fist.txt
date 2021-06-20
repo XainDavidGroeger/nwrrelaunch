@@ -31,6 +31,11 @@
             {
             "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
             "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking_6.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_impact.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_impact_6.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_morningpeacock_talking.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_morningpeacock_impact.vsndevts"
             }
         
             "AbilitySpecial"
@@ -48,12 +53,12 @@
                 "03"
                 {
                     "var_type" "FIELD_INTEGER"
-                    "morning_peacock_bonus_attack_count" "3"
+                    "morning_peacock_bonus_attack_count" "5"
                 }
                 "04"
                 {
                     "var_type" "FIELD_FLOAT"
-                    "morning_peacock_attack_damage_perc" "60"
+                    "morning_peacock_attack_damage_perc" "36"
                 }
                 "05"
                 {
