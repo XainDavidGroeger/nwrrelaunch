@@ -1,0 +1,5 @@
+#base "sai_super_beast_drawing.txt"
+#base "sai_snake_entanglement.txt"
+#base "sai_rat_reconnaissance.txt"
+#base "sai_super_god_drawing.txt"
+#base "talents.txt"

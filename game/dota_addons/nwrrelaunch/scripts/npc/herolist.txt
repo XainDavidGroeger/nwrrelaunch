@@ -41,6 +41,8 @@
 	"npc_dota_hero_shikamaru" "1"	// Nara Shikamaru
 	"npc_dota_hero_temari" "1" // temari
 	"npc_dota_hero_haku" "1" //haku
+	"npc_dota_hero_sai" "1" //sai
+
 
 	// Dota
 
@@ -183,7 +185,6 @@
 	"npc_dota_hero_puck" "0"
 	"npc_dota_hero_pugna" "0"
 	"npc_dota_hero_queenofpain" "0"
-	"npc_dota_hero_rubick" "0"
 	"npc_dota_hero_shadow_demon" "0"
 	"npc_dota_hero_silencer" "0"
 	"npc_dota_hero_skywrath_mage" "0"

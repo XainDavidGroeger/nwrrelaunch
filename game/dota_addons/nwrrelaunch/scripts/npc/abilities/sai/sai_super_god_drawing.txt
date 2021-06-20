@@ -1,0 +1,194 @@
+	
+    "DOTAAbilities"
+{
+    
+
+"sai_super_god_drawing"
+{
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "heroes/raikage/raigyaku_suihei.lua"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"        "sai_super_god_drawing"
+
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "4"
+
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "0"
+    "AbilityDuration"               "0"
+    "AbilityDamage"                 "0.5 0.6 0.7 0.8"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "15 12 9 6"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+
+     "precache"
+    {
+      "soundfile" "soundevents/heroes/raikage/raikage_straight_impact.vsndevts"
+      "particle"  "particles/econ/items/spirit_breaker/spirit_breaker_thundering_flail/spirit_breaker_thundering_flail.vpcf"
+      "particle"  "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+      "particle"  "particles/generic_gameplay/generic_purge.vpcf"
+      "particle"  "particles/econ/items/razor/razor_punctured_crest/razor_helmet_blade_ambient_a.vpcf"
+      "particle"  "particles/units/heroes/hero_razor/razor_base_attack_impact_b.vpcf"
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "str_ratio_damage" "0.5 0.6 0.7 0.8"
+			"LinkedSpecialBonus"	"special_bonus_raikage_1"
+        }
+        "02"
+        {
+            "var_type" "FIELD_FLOAT"
+            "damage_reduction" "-15.0 -20.0 -25.0 -30.0"
+			"LinkedSpecialBonus"	"special_bonus_raikage_5"
+        }
+        "03"
+        {
+            "var_type" "FIELD_FLOAT"
+            "aoe"       "250.0"
+        }
+        "04"
+        { 
+            "var_type"  "FIELD_INTEGER"
+            "damage_reduction_duration" "4"
+        }
+		 "05"
+        { 
+            "var_type"  "FIELD_FLOAT"
+            "damage_reduction_special" "-75.0 -80.0 -85.0 -90.0"
+        }
+    }
+
+	"Modifiers"
+    {
+		"modifier_raigyaku"
+        {
+			"Passive"                   "1"
+            "IsHidden"                  "0"
+            "IsPurgable"                "0"
+            
+            "OnCreated"
+            {
+            
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/raikage/raigyaku_suihei.lua"
+                    "Function"        "attachEffect"
+                }
+            }
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/raikage/raigyaku_suihei.lua"
+                    "Function"        "removeEffect"
+                }
+            
+
+                "AttachEffect"
+                {
+                    "EffectName" "particles/units/heroes/hero_razor/razor_base_attack_impact_b.vpcf"
+                    "EffectAttachType" "follow_origin"
+
+                    "Target" "TARGET"
+                    "ControlPointEntities"
+                   {
+                      "TARGET"    "attach_hitloc"
+
+                    }
+                }
+              
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/raikage/raigyaku_suihei.lua"
+                    "Function"      "ReleaseAoeDamage"
+                }
+                        
+                "RunScript"
+                {
+                    "ScriptFile"    "heroes/raikage/raigyaku_suihei.lua"
+                    "Function"      "SuiheiResetCooldown"
+                }
+            }
+            
+        }
+
+		"modifier_raigyaku_debuff"
+		{
+			"Duration"        "%damage_reduction_duration"     
+			"IsDebuff"        "1"
+			"IsPurgable"      "0"
+			"Attributes"    "MODIFIER_ATTRIBUTE_NONE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"     "%damage_reduction"
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+					"EffectAttachType" "follow_origin"
+
+					"Target" "TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"    "attach_hitloc"
+					}
+				}
+			}
+
+		}
+
+		"modifier_raigyaku_debuff_special"
+		{
+			"Duration"        "%damage_reduction_duration"     
+			"IsDebuff"        "1"
+			"IsPurgable"      "0"
+			"Attributes"    "MODIFIER_ATTRIBUTE_NONE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"     "%damage_reduction_special"
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
+					"EffectAttachType" "follow_origin"
+
+					"Target" "TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"    "attach_hitloc"
+					}
+				}
+			}
+
+		}
+    }
+}
+
+
+}

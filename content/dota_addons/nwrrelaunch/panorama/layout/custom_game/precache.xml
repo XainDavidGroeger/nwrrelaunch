@@ -10,6 +10,7 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_guy.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_haku.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_kakashi.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_sai.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_anko.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_onoki.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/selection/npc_dota_hero_raikage.png" />
@@ -42,6 +43,7 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_kisame.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_haku.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_naruto.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_sai.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_guy.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_onoki.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_raikage.png" />
@@ -65,6 +67,7 @@
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_centaur.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_sven.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_sand_king.png" />
+			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_visage.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_phantom_assassin.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_ogre_magi.png" />
 			<Image id="gamemode" class="SeqImg" src="file://{images}/heroes/npc_dota_hero_bloodseeker.png" />

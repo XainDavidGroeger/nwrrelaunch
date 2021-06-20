@@ -1,0 +1,73 @@
+	
+    "DOTAAbilities"
+{
+    
+    "sai_rat_reconnaissance"
+    {
+        // General  
+        // ----------------------------------------------------------------------------------------
+        "BaseClass"                 "ability_lua"
+        "ScriptFile"                "heroes/raikage/raikage_raiton_no_yoroi.lua"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+        "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"        "sai_rat_reconnaissance" 
+
+
+        "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+        "MaxLevel"               "4"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "0"
+        "AbilityDuration"               "15"
+
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "15 13 11 9"
+        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "90"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_FLOAT"
+                "duration" "15.0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_FLOAT"
+                "charge_damage_amount" "120 160 200 240"
+                "LinkedSpecialBonus"	"special_bonus_raikage_2"
+            }
+            "03"
+            { 
+                "var_type"  "FIELD_INTEGER"
+                "release_aoe" "250"
+            }
+            "04"
+            {
+                "var_type" "FIELD_FLOAT"
+                "release_purge_duration" "2"
+            }
+            "05"
+            {
+                "var_type" "FIELD_FLOAT"
+                "release_damage" "120 160 200 240"
+            }
+            "06"
+            {
+                "var_type" "FIELD_FLOAT"
+                "release_ms_slow" "-35.0" 
+            }
+            
+        }
+    }
+
+
+}

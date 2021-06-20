@@ -657,6 +657,13 @@
 
 
 		//--------------------
+		//Sai
+		//--------------------
+		"npc_dota_hero_sai" 						"Sai"
+		"npc_dota_hero_sai_lore"  					""
+
+
+		//--------------------
 		//Sakura
 		//--------------------
 		"npc_dota_hero_sakura"  								"Sakura"

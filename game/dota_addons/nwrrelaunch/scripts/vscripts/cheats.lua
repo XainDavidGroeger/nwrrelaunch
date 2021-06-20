@@ -36,6 +36,7 @@ function GameMode:SpawnAllHeroes()
         "npc_dota_hero_kankuro",
         "npc_dota_hero_shikamaru",
         "npc_dota_hero_temari",
+        "npc_dota_hero_sai",
     }
     for nameCount = 1, 18 do
    --   local illusion = CreateUnitByName(names[nameCount], player:GetAbsOrigin(), true, player, nil, 2)
@@ -220,6 +221,7 @@ function GameMode:Setup_Hero_Tables()
         GameRules.heroTable[16] = "npc_dota_hero_axe"
 		GameRules.heroTable[17] = "npc_dota_hero_shadow_shaman"
         GameRules.heroTable[18] = "npc_dota_hero_anko"
+        GameRules.heroTable[19] = "npc_dota_hero_rubick"
     end
     if GameRules.nwrHeroTable == nil then
         GameRules.nwrHeroTable = {}
@@ -241,6 +243,7 @@ function GameMode:Setup_Hero_Tables()
         GameRules.nwrHeroTable[16] = "neji"
 		GameRules.nwrHeroTable[17] = "shikamaru"
         GameRules.nwrHeroTable[18] = "anko"
+        GameRules.nwrHeroTable[19] = "sai"
     end
 end
 
