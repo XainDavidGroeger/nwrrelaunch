@@ -95,7 +95,6 @@ end
 function neji_32_palms:OnChannelFinish(bInterrupted)
     self.ability = self
     self.caster = self:GetCaster()
-    self.target = self:GetCursorTarget()
 
     self.caster:RemoveModifierByName("modifier_32_palms_caster")
     self.target:RemoveModifierByName("modifier_32_palms_debuff")

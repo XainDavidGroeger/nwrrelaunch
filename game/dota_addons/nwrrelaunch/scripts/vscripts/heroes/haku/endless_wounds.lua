@@ -29,6 +29,7 @@ end
 
 function haku_endless_wounds:ApplyStacks(target, stacks)
 	if target:IsBuilding() then return end
+	if self:GetCaster():PassivesDisabled() then return end
 
 	if not target:HasModifier("modifier_haku_endless_needles_victim_counter") then
 		target:AddNewModifier(self:GetCaster(),
@@ -119,11 +120,12 @@ function modifier_haku_endless_needles_victim_counter:OnCreated(keys)
 		ParticleManager:SetParticleControlEnt(self.slow_vfx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "origin", self:GetParent():GetOrigin(), true )
 	end
 
+	if not IsServer() then return end
 	local ability = self:GetAbility()
 
 	self.dot_damage_table = {
 		victim = self:GetParent(),
-		attackes = ability:GetCaster(),
+		attacker = ability:GetCaster(),
 		--damage = 1,
 		damage_type = ability:GetAbilityDamageType(),
 		damage_flags = 0,
@@ -136,6 +138,8 @@ end
 function modifier_haku_endless_needles_victim_counter:OnIntervalThink()
 	local current_stacks = self:GetStackCount()
 	self.dot_damage_table.damage = current_stacks
+	
+	if not IsServer() then return end
 	ApplyDamage(self.dot_damage_table)
 
 	SendOverheadEventMessage(

@@ -11,13 +11,7 @@
 	[
 		{
 			m_name = "preview"
-			m_drivers = 
-			[
-				{
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_entityName = "self"
-				},
-			]
+			m_drivers = [  ]
 		},
 	]
 	m_Emitters = 
@@ -210,6 +204,7 @@
 					m_vDomainMaxs = [ 0.0, 0.0 ]
 				}
 			}
+			m_nControlPointNumber = 1
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"

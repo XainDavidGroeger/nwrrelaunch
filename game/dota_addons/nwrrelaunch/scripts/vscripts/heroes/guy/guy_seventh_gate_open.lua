@@ -126,7 +126,6 @@ function modifier_guy_seventh_gate:RemoveOnDeath() return true end
 
 function modifier_guy_seventh_gate:OnCreated()
 
-
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
 
