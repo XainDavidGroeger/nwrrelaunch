@@ -15,7 +15,7 @@
 
   "BaseClass"   "npc_dota_hero_rubick"
   "Ability1"        "sai_super_beast_drawing"
-  "Ability2"        "generic_hidden"
+  "Ability2"        "sai_snake_entanglement"
   "Ability3"        "generic_hidden" 
   "Ability4"        "generic_hidden" 
   "Ability5"        "generic_hidden" 
