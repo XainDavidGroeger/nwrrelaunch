@@ -198,6 +198,8 @@ function modifier_kisame_water_prision_caster:OnCreated()
 
 	if not IsServer() then return end
 
+	self.caster:SetModelScale(0.65)
+
 	self.dome_vfx = ParticleManager:CreateParticle(
 		"particles/units/heroes/kisame/water_dome2.vpcf", 
 		PATTACH_ABSORIGIN_FOLLOW, 
@@ -221,8 +223,6 @@ function modifier_kisame_water_prision_caster:OnDestroy()
 
 	--Remove loop sound
 
-
-	
 	if not IsServer() then return end
 	caster:SwapAbilities(
 		"kisame_water_prison",
@@ -237,6 +237,8 @@ function modifier_kisame_water_prision_caster:OnDestroy()
 	ParticleManager:DestroyParticle(self.dome_sharks_vfx, true)
 	ParticleManager:ReleaseParticleIndex(self.dome_vfx)
 	ParticleManager:ReleaseParticleIndex(self.dome_sharks_vfx)
+
+	caster:SetModelScale(1.1)
 
 end
 
@@ -253,9 +255,9 @@ function modifier_kisame_water_prision_caster:GetModifierModelChange()
 	return "models/kisame_shark/kisame_shark.vmdl"
 end
 
-function modifier_kisame_water_prision_caster:GetModifierModelScale()
-	return 0.3
-end
+-- function modifier_kisame_water_prision_caster:GetModifierModelScale()
+-- 	return 6.5
+-- end
 
 function modifier_kisame_water_prision_caster:GetModifierMoveSpeedBonus_Percentage()
 	return self.move_speed_bonus_perc

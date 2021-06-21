@@ -168,6 +168,7 @@ function modifier_32_palms_debuff:OnCreated()
 
     self.damage = self:GetAbility():GetSpecialValueFor("damage")
     self.one_palm_damage = self.damage / 62
+    print(self.one_palm_damage)
 
     self.interval_time = 0.66
 
@@ -177,7 +178,7 @@ function modifier_32_palms_debuff:OnCreated()
         victim = self:GetParent(),
         attacker = self:GetCaster(),
         damage = self.one_palm_damage,
-        damage_type = self:GetAbility():GetAbilityDamageType()
+        damage_type = DAMAGE_TYPE_MAGICAL
     })
     PopupManaDrain(self:GetParent(),math.floor(1))
     self:GetParent():EmitSound("neji_64_hit")
@@ -187,7 +188,7 @@ function modifier_32_palms_debuff:OnCreated()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
         PopupManaDrain(self:GetParent(),math.floor(2))
@@ -199,6 +200,7 @@ function modifier_32_palms_debuff:OnCreated()
 end
 
 function modifier_32_palms_debuff:OnDestroy() 
+    if not IsServer() then return end
     self:GetParent():RemoveGesture(ACT_DOTA_FLAIL)
 end
 
@@ -216,7 +218,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
         self:GetParent():EmitSound("neji_64_hit")
@@ -225,7 +227,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
                 victim = self:GetParent(),
                 attacker = self:GetCaster(),
                 damage = self.one_palm_damage,
-                damage_type = self:GetAbility():GetAbilityDamageType()
+                damage_type = DAMAGE_TYPE_MAGICAL
             })
             burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
             PopupManaDrain(self:GetParent(),math.floor(4))
@@ -239,7 +241,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
         self:GetParent():EmitSound("neji_64_hit")
@@ -256,7 +258,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.08, 7, 10)
@@ -271,7 +273,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.04, 15, 18)
@@ -286,7 +288,7 @@ function modifier_32_palms_debuff:OnIntervalThink()
             victim = self:GetParent(),
             attacker = self:GetCaster(),
             damage = self.one_palm_damage,
-            damage_type = self:GetAbility():GetAbilityDamageType()
+            damage_type = DAMAGE_TYPE_MAGICAL
         })
         burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
         damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.02, 31, 34)
@@ -304,7 +306,7 @@ function damageAfterXSecondsForXTimes(caster, target, damage, timer, times, popu
                     victim = target,
                     attacker = caster,
                     damage = damage,
-                    damage_type = self:GetAbility():GetAbilityDamageType()
+                    damage_type = DAMAGE_TYPE_MAGICAL 
                 })
                 burnMana(target, 100.0, mana_burn_perc, caster) 
                 damageAfterXSecondsForXTimes(caster, target, damage, timer, times-1, popupcount+1)
@@ -340,7 +342,7 @@ function burnMana(target, damage_percent, max_mana_percent, caster)
             victim = target,
             attacker = caster,
             damage = damage,
-            damage_type = self:GetAbility():GetAbilityDamageType(),
+            damage_type = DAMAGE_TYPE_MAGICAL,
         })
 
     end
