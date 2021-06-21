@@ -171,8 +171,8 @@ function modifier_guy_seventh_gate:OnIntervalThink()
 		victim = self.caster,
 		attacker = self.caster,
 		damage = drain_hp,
-		damage_type = DAMAGE_TYPE_PURE,
-		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
+		damage_type = DAMAGE_TYPE_HP_REMOVAL,
+		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS,
 		ability = self
 	})
 end

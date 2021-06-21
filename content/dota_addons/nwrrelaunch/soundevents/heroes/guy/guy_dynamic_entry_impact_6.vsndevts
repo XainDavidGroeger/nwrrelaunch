@@ -14,7 +14,7 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/heroes/guy/guy_dynamic_entry_impact_6.vsnd"
+                              "value0"        "sounds/heroes/guy/guy_dynamic_entry_impact_6.vsnd"
                         }
                     }
                     "volume"            {   "value"     "10.00000"  }

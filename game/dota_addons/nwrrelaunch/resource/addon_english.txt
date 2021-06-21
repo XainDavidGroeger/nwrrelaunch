@@ -434,6 +434,10 @@
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Massively slows enemies</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage over time</font></b> while in the radius."
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_duration"			"DAMAGE DURATION: "
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_stun_duration"		"STUN DURATION: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_damage_per_second"	"DAMAGE PER SECOND: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_total_damage"		"TOTAL DAMAGE: "
+
+
 		// Suna no Yoroi
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi"						"<b><font color='#FFDD93'>Sand Armor</font></b>"
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"Target friendly Unit absorbs <b><font color='#FFFFFF'>30%</font></b> Incoming Damage <b><font color='#FFDD93'>in exchange for Gaara's Mana</font></b> for a short duration. <br><br> Gaara absorbs <b><font color='#FFFFFF'>60%</font></b> Incoming Damage <b><font color='#FFDD93'>if casted upon himself.</font></b>"
@@ -2382,6 +2386,8 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_4"						"+75 Cull the Weak Range"
+		"DOTA_Tooltip_Ability_special_bonus_hidan_5"						"-3s Cull the Weak Cooldown"
+
 
 		//25: +60 Damage Inside Hidden Mist / +100% Cleave
 		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay

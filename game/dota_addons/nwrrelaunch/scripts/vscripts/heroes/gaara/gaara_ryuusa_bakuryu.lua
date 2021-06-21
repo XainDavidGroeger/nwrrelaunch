@@ -130,8 +130,9 @@ function modifier_gaara_sandstorm_thinker:OnCreated(keys)
 
 	self.thinker_loc = self.thinker:GetAbsOrigin()
 	self.thinker_interval = self.ability:GetSpecialValueFor("thinker_interval")
+	self.duration = self.ability:GetSpecialValueFor("duration")
 
-	self.damage_per_tick = (self.ability:GetAbilityDamage() * self.thinker_interval) / self.ability.aura_duration
+	self.damage_per_tick = (self.ability:GetSpecialValueFor("damage_per_second") * self.thinker_interval)
 	self.radius = self.ability:GetSpecialValueFor("radius")
 
 	if self:GetCaster():FindAbilityByName("special_bonus_gaara_2") ~= nil then
@@ -165,7 +166,7 @@ function modifier_gaara_sandstorm_thinker:OnCreated(keys)
 	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 0, self.thinker:GetAbsOrigin())
 	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 1, Vector(self.radius, self.radius, 0))
 
-	Timers:CreateTimer(3, function()
+	Timers:CreateTimer(self.duration, function()
 		ParticleManager:DestroyParticle(self.particle_sandstorm_fx, false)
 		ParticleManager:ReleaseParticleIndex(self.particle_sandstorm_fx)   
 		StopSoundOn(sound_loop, self.thinker)
@@ -204,7 +205,6 @@ function modifier_gaara_sandstorm_thinker:OnIntervalThink()
 	for _,enemy in pairs(units) do
 		-- Deal damage
 		self.damage_table.victim = enemy
-		print(self.damage_table)
 		ApplyDamage(self.damage_table)  
 	end
 end

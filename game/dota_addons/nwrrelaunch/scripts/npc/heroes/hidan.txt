@@ -32,7 +32,7 @@
 		   "Ability12"		"special_bonus_attack_damage_30"
 		   "Ability13"		"special_bonus_movement_speed_25"
 		   "Ability14"		"special_bonus_hidan_1"
-		   "Ability15"		"special_bonus_strength_20"
+		   "Ability15"		"special_bonus_hidan_5"
 		   "Ability16"		"special_bonus_hidan_2"
 		   "Ability17"		"special_bonus_hidan_3"
 		 "AttributePrimary" 		"DOTA_ATTRIBUTE_STRENGTH"

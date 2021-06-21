@@ -749,7 +749,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_CAST_ABILITY_4"
+							m_Name = "ACT_DOTA_CAST_ABILITY_6"
 							m_nWeight = 1
 						},
 					]

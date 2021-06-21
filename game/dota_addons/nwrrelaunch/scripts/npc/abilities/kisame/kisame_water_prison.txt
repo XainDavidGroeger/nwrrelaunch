@@ -8,14 +8,14 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_lua"
 	"ScriptFile"			"heroes/kisame/water_prison.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityTextureName"			"kisame_water_prison"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"1"
+	"AbilityCastPoint"				"0"
 
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
