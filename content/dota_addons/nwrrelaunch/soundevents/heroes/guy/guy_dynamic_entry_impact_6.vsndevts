@@ -1,4 +1,4 @@
-"guy_morningpeacock_talking"
+"guy_dynamic_entry_impact_6"
 {
     "operator_stacks"
     {
@@ -14,14 +14,12 @@
                     {
                         "value"
                         {
-                            "value0"        "sounds/heroes/guy/guy_morningpeacock_talking.vsnd"
-                            "value1"        "sounds/heroes/guy/guy_morningpeacock_talking2.vsnd"
-                            "value2"        "sounds/heroes/guy/guy_morningpeacock_talking3.vsnd"
+                            "value0"        "sounds/heroes/guy/guy_dynamic_entry_impact_6.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "volume"            {   "value"     "10.00000"  }
+                    "pitch_rand_min"    {   "value"     "-0.02000"  }
+                    "pitch_rand_max"    {   "value"     "0.020000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }
                     "distance_max"      {   "value"     "1600.000"  }

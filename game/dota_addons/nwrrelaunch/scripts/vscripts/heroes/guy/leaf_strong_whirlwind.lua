@@ -157,9 +157,9 @@ end
 
 function guy_leaf_strong_whirlwind:GetCastPoint()
 	if self:GetCaster():HasModifier("modifier_guy_seventh_gate") then
-		return self:GetSpecialValueFor("cast_point_ult")
+		return 0.1
 	else
-		return self:GetSpecialValueFor("cast_point")
+		return 0.3
 	end
 end
 
@@ -179,9 +179,13 @@ function modifier_guy_string_whirlwind_slow_debuff:OnCreated()
 		self.slow_value = ability:GetSpecialValueFor("slow_value_ult")
 		self.effect_name = "particles/units/heroes/guy/guy_senpuu_slow_gates.vpcf"
 
+		EmitSoundOn("guy_senpu_impact_6", caster)
+
 	else
 		self.slow_value = ability:GetSpecialValueFor("slow_value")
 		self.effect_name = "particles/units/heroes/guy/guy_senpuu_slow_base.vpcf"
+
+		EmitSoundOn("guy_senpu_impact", caster)
 	end
 end
 

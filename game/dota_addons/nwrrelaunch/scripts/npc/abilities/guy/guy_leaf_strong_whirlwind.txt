@@ -79,6 +79,8 @@
 			"soundfile"	"soundevents/heroes/guy/guy_senpu_gates_cast.vsndevts"
 			"soundfile"	"soundevents/heroes/sakura/sakura_slam.vsndevts"
 			"soundfile"	"soundevents/sakura_slam_2.vsndevts"
+			"soundfile"	"soundevents/heroes/guy/guy_senpu_impact.vsndevts"
+			"soundfile"	"soundevents/heroes/guy/guy_senpu_impact_6.vsndevts"
 			"particle"	"particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 			"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
 			"particle"	"particles/units/heroes/guy/senpuu_tornado.vpcf"
