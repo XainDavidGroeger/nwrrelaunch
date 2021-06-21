@@ -15,7 +15,7 @@ function guy_dynamic_entry:Precache(context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_talking_6.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/heroes/guy/guy_dynamic_entry_cast.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/guy_dynamic_entry.vsndevts", context)
-	PrecacheResource("soundfile", "soundevents/guy_dynamicentry_impact_6.vsndevts", context)
+	PrecacheResource("soundfile", "soundevents/guy_dynamic_entry_impact_6.vsndevts", context)
 end
 
 function guy_dynamic_entry:GetCastRange(location, target)
@@ -44,8 +44,13 @@ end
 
 function guy_dynamic_entry:OnSpellStart()
 
+	if self:GetCaster():HasModifier("modifier_guy_seventh_gate") then
+		self:GetCaster():EmitSound("guy_dynamic_entry_talking_6")
+	  else
+		self:GetCaster():EmitSound("guy_dynamic_entry_talking")
+	  end
+	
 	self:GetCaster():EmitSound("guy_dynamic_entry_cast")
-	self:GetCaster():EmitSound("guy_dynamic_entry_talking")
 
 	self.caster = self:GetCaster()
 	self.target = self:GetCursorTarget()
@@ -103,7 +108,7 @@ function dynamic_entry_hit(target, caster, ability)
 
 	if caster:HasModifier("modifier_guy_seventh_gate") then
 		
-		EmitSoundOn("guy_dynamicentry_impact_6",target)
+		EmitSoundOn("guy_dynamic_entry_impact_6",target)
 		
 		particle = ParticleManager:CreateParticle(
 			"particles/units/heroes/guy/guy_dynamic_entry_six_gates_impact_base.vpcf", 
