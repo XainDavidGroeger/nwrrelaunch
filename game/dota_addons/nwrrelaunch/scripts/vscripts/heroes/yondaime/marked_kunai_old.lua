@@ -72,9 +72,11 @@ function startKunai( keys )
 
 		--reset cd if talent is skilled
 		local ability1 = keys.caster:FindAbilityByName("special_bonus_yondaime_1")
-		if ability1:IsTrained() then
-			keys.ability:EndCooldown()
-			keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 1)
+		if ability1 ~= nil then
+		    if ability1:IsTrained() then
+		    	keys.ability:EndCooldown()
+		    	keys.ability:StartCooldown(keys.ability:GetCooldown(keys.ability:GetLevel() - 1) - 1)
+		    end
 		end
 	
 
@@ -115,5 +117,7 @@ end
 
 function learn_flicker( keys )
 	local flicker = keys.caster:FindAbilityByName("yondaime_body_flicker")
-	flicker:SetLevel(keys.ability:GetLevel())
+	if flicker ~= nil then
+	    flicker:SetLevel(keys.ability:GetLevel())
+	end
 end

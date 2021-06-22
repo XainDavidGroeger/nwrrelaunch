@@ -3,7 +3,7 @@
 	//=================================================================================================================
 	// HERO: Anko
 	//=================================================================================================================
-	//25: -1s Snake Hand Cooldown / -4s Giant Snake Cooldown
+	//25: -1s Snake Hand Cooldown / -6s Giant Snake Cooldown
 	//20: +20 Strength / +80 Snake Hand Damage
 	//15: +250 Giant Snake Cast Range / +2s Striking Snakes Movement Speed Debuff Duration
 	//10: +2 Mana Regeneration / +100 Cast Range
@@ -70,8 +70,8 @@
 		"AttributeAgilityGain" "1.4" // Agility bonus per level.
 
 		"Ability1"        "anko_giant_snake"
-		"Ability2"        "anko_senei_jyashu"
-		"Ability3"        "anko_senei_ta_jashu"
+		"Ability2"        "anko_senei_ta_jashu"
+		"Ability3"        "anko_senei_jyashu"
   		"Ability4"        "generic_hidden"
 		"Ability5"        "generic_hidden"
 		"Ability6"        "anko_sojasosai_no_jutsu"      
@@ -79,7 +79,7 @@
 		"Ability10"		"special_bonus_mp_regen_2"
 		"Ability11"		"special_bonus_cast_range_100"
 
-		"Ability12"		"special_bonus_anko_1"
+		"Ability12"		"special_bonus_spell_lifesteal_10"
 		"Ability13"		"special_bonus_anko_2"
 
 		"Ability14"		"special_bonus_strength_20"

@@ -30,8 +30,10 @@ function modifier_onoki_stalagmite_armor:OnCreated( kv )
 	local abilityS = self.caster:FindAbilityByName("special_bonus_onoki_3")
 	self.armor_bonus = self:GetAbility():GetSpecialValueFor("bonus_armor")
 	
-	if abilityS:GetLevel() > 0 then
-    	self.armor_bonus = self.armor_bonus + 8
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+        	self.armor_bonus = self.armor_bonus + 8
+	    end
 	end
 	
 	--if not IsServer() then return end
@@ -67,8 +69,14 @@ function modifier_onoki_stalagmite_armor:GetModifierPhysicalArmorBonus()
 end
 
 function modifier_onoki_stalagmite_armor:OnAttacked(params)
+	if params.target ~= self:GetParent() then return end
     if IsServer() then
+
 	    if params.unit==self:GetParent() then
+			return
+		end
+
+		if params.attacker==self:GetParent() then
 			return
 		end
 		

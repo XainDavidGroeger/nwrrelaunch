@@ -1,0 +1,33 @@
+"DOTAAbilities"
+{
+    
+"kisame_water_prison_deactivate"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"				        "ability_lua"
+    "ScriptFile"			        "heroes/kisame/water_prison.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityTextureName"			"kisame_water_prison_deactivate"
+    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "MaxLevel"                      "1"
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"				"0.0"
+
+    // Time		
+    //-------------------------------------------------------------------------------------------------------------
+    // "AbilityCooldown"				"0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    // "AbilityManaCost"				"25"
+
+    // Special	
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+    }
+}
+
+}

@@ -31,7 +31,7 @@
 				"02"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"damage"				"20 30 40 50"
+					"damage"				"60 120 180 240"
 				}
 				"03"
 				{
@@ -41,7 +41,7 @@
 				"04"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"duration"				"4 6 8 10"
+					"duration"				"8"
 				}
 				"05"
 				{
@@ -51,15 +51,8 @@
 				"06"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"stun_duration"			"0.6 1.2 1.8 2.4"
+					"stun_duration"			"0.6 1.0 1.4 1.8"
 				}
-			}
-		
-			"precache"
-			{
-				"particle"  "particles/units/heroes/onoki/onoki_rocks.vpcf"
-				"particle"  "particles/units/heroes/onoki/onoki_rocks_sand.vpcf"
-				"particle"  "particles/units/heroes/onoki/onoki_rocks_shield.vpcf"
 			}
 		}
 	}

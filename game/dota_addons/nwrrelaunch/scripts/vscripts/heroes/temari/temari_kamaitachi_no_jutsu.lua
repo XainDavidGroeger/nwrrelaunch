@@ -13,7 +13,7 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	local parent = keys.target
 	local ability = keys.ability
 	local caster = keys.caster
-	BASEDAMAGE = keys.ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1)
+	BASEDAMAGE = keys.ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1) + caster:FindTalentValue("special_bonus_temari_5")
 	REALCASTER = caster
 	print(REALCASTER)
 
@@ -21,12 +21,7 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 
 	tornado_lift_duration = keys.ability:GetLevelSpecialValueFor("lift_duration",  ability:GetLevel() - 1)
 
-	local ability5 = caster:FindAbilityByName("special_bonus_temari_5")
-	if ability5 ~= nil then
-		if ability5:GetLevel() > 0 then
-			tornado_lift_duration = tornado_lift_duration + 3.0
-		end
-	end
+	print(tornado_lift_duration)
 
 	--Create a dummy unit that will follow the path of the tornado, providing flying vision and sound.
 	--Its invoker_tornado_datadriven ability also applies the cyclone modifier to hit enemy units, since if Invoker uninvokes Tornado,
@@ -45,7 +40,7 @@ function temari_kamaitachi_no_jutsu_on_spell_start(keys)
 	
 	local projectile_information =  
 	{
-		EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+		EffectName = "particles/units/heroes/temari/temari_tornado_small.vpcf",
 		Ability = emp_unit_ability,
 		vSpawnOrigin = caster_origin,
 		fDistance = tornado_travel_distance,

@@ -3,6 +3,16 @@ sasuke_chidori_light_sword = sasuke_chidori_light_sword or class({})
 LinkLuaModifier("modifier_chidori_light_sword_damage", "scripts/vscripts/heroes/sasuke/sasuke_chidori_light_sword.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_chidori_light_sword_debuff", "scripts/vscripts/heroes/sasuke/sasuke_chidori_light_sword.lua", LUA_MODIFIER_MOTION_NONE)
 
+function sasuke_chidori_light_sword:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_chidori_light_sword_talking.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_sword_impact.vsndevts", context )
+
+    PrecacheResource( "particle", "particles/units/heroes/hero_stormspirit/stormspirit_overload_ambient.vpcf", context )
+    PrecacheResource( "particle", "particles/econ/items/spirit_breaker/spirit_breaker_thundering_flail/spirit_breaker_thundering_flail.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", context )
+end
+
 function sasuke_chidori_light_sword:GetAbilityTextureName()
 	return "sasuke_chidori_light_sword"
 end
@@ -91,11 +101,9 @@ function modifier_chidori_light_sword_damage:OnRemoved()
 end
 
 function modifier_chidori_light_sword_damage:OnAttackLanded( keys )
-
 	local attacker = keys.attacker
-	local target = keys.target
 
-	if self.parent == attacker and attacker:GetTeamNumber() ~= target:GetTeamNumber() then
+	if self.parent == attacker and attacker:GetTeamNumber() ~= keys.target:GetTeamNumber() and not keys.target:IsBuilding() then
 		local target = keys.target
 		local caster = keys.attacker
 		local damage = self.ability:GetSpecialValueFor("damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_1")

@@ -21,22 +21,13 @@
 
     "AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
 
-    "precache"
-    {
-        "soundfile" "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_chidori_cast_talking.vsndevts"
-        "particle"  "particles/units/heroes/sasuke/chidori/step.vpcf"
-        "particle"  "particles/units/heroes/sasuke/chidori/impact.vpcf"
-    }
-
     "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"               "4"
     "AbilityCastPoint"       "0.2 0.2 0.2 0.2"
     "AbilityCooldown"        "11 9 7 5"
-    "AbilityManaCost"        "70"
+    "AbilityManaCost"        "90"
     "AbilityCastRange"       "650 700 750 800"
-    "AbilityDamage"          "25 40 55 70"
+    "AbilityDamage"          "0"
 
     "AbilitySpecial"
     {
@@ -61,12 +52,7 @@
              "var_type"     "FIELD_INTEGER"
             "path_width"   "170"
         }
-		  "05"
-        {
-            "var_type"  "FIELD_INTEGER"
-            "base_damage"    "25 40 55 70"
-        }
-          "06"
+        "06"
         {
             "var_type"  "FIELD_FLOAT"
             "bonus_damage"    "100"

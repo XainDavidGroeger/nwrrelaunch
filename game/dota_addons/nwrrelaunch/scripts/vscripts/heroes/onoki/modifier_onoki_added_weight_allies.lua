@@ -26,9 +26,13 @@ function modifier_onoki_added_weight_allies:OnCreated( kv )
 	local abilityS = self.caster:FindAbilityByName("special_bonus_onoki_4")
 	self.speed_bonus_perc = self:GetAbility():GetSpecialValueFor( "speed_bonus_perc" )
 	
-    if abilityS:GetLevel() > 0 then
-    	self.speed_bonus_perc = self.speed_bonus_perc + 7
+	if abilityS ~= nil then
+        if abilityS:GetLevel() > 0 then
+        	self.speed_bonus_perc = self.speed_bonus_perc + 7
+	    end
 	end
+
+	self.manacost_reduction = self:GetAbility():GetSpecialValueFor( "manaloss_modifier" )
 end
 
 function modifier_onoki_added_weight_allies:OnRefresh( kv )
@@ -45,7 +49,8 @@ end
 -- Modifier Effects
 function modifier_onoki_added_weight_allies:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE ,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
 	}
 
 	return funcs
@@ -55,6 +60,9 @@ function modifier_onoki_added_weight_allies:GetModifierMoveSpeedBonus_Percentage
 	return self.speed_bonus_perc
 end
 
+function modifier_onoki_added_weight_allies:GetModifierPercentageManacost()
+	return self.manacost_reduction
+end
 
 --------------------------------------------------------------------------------
 -- Status Effects

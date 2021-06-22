@@ -1,0 +1,56 @@
+	
+    "DOTAAbilities"
+{
+	"shikamaru_shadow_imitation_technique"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/shikamaru/shikamaru_shadow_imitation_technique.lua"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"			"1"
+		"AbilityTextureName"		"shikamaru_shadow_imitation_technique"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 115 120 125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shadow_range"		"1300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shadow_speed"		"1300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shadow_width"	"100"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"shadow_duration"	"1.50 2.00 2.50 3.00"
+				"LinkedSpecialBonus"	"special_bonus_shikamaru_4"
+			}
+		}
+	}
+}

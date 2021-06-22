@@ -14,7 +14,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.5"
+	"AbilityCastPoint"				"0.4"
 	"MaxLevel" 						"3"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -34,18 +34,6 @@
 			"damage"				"150 225 300"
 			"LinkedSpecialBonus"	"special_bonus_hidan_2"
 		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"150 225 300"
-			"LinkedSpecialBonus"	"special_bonus_hidan_2"
-		}
-	}
-
-	"precache"
-	{
-		"particle" "particles/units/heroes/hidan/self_pain.vpcf"
-		"soundfile"	"soundevents/heroes/hidan/hidan_self_pain_talking.vsndevts"
 	}
 }
 

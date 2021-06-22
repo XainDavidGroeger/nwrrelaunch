@@ -8,6 +8,10 @@ function kankuro_summon_sanshouuo:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_POINT 
 end
 
+function kankuro_summon_sanshouuo:ProcsMagicStick()
+    return true
+end
+
 function kankuro_summon_sanshouuo:OnSpellStart()
 	local caster = self:GetCaster()
 	local target_point = caster:GetCursorPosition()
@@ -16,13 +20,16 @@ function kankuro_summon_sanshouuo:OnSpellStart()
 	local puppet_total_health = self:GetSpecialValueFor("puppet_health")
 
 	local kugusta_ability = caster:FindAbilityByName("kankuro_kugusta_no_jutsu")
-
-	if kugusta_ability:GetLevel() > 0 then
-    	puppet_total_health = puppet_total_health + kugusta_ability:GetSpecialValueFor("extra_hp")
-		local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
-		if abilityspecial:IsTrained() then
-			puppet_total_health = puppet_total_health + 350
-		end
+    if kugusta_ability ~= nil then
+	    if kugusta_ability:GetLevel() > 0 then
+        	puppet_total_health = puppet_total_health + kugusta_ability:GetSpecialValueFor("extra_hp")
+	    	local abilityspecial = keys.caster:FindAbilityByName("special_bonus_kankuro_6")
+			if abilityspecial ~= nil then
+	    	    if abilityspecial:IsTrained() then
+	    	    	puppet_total_health = puppet_total_health + 350
+	    	    end
+			end
+	    end
 	end
 
 	local sanshouuo  = CreateUnitByName("npc_sanshouuo", target_point, true, caster, caster, caster:GetTeamNumber())

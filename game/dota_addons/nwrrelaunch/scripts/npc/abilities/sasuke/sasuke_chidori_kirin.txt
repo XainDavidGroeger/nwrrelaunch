@@ -17,23 +17,12 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
-    "precache"
-    {
-        "soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_cast.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_impact.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_cast_talking.vsndevts"
-        "soundfile" "soundevents/heroes/sasuke/sasuke_kirin_impact_talking.vsndevts"
-        "particle"  "particles/units/heroes/sasuke/kirin/storm_core.vpcf"
-        "particle"  "particles/units/heroes/sasuke/kirin/lighting_bolt.vpcf"
-    }
-
     "MaxLevel"               "3"
     "AbilityCastPoint"       "0"
     "AbilityCooldown"        "90"
     "AbilityManaCost"        "175 250 325"
     "AbilityCastRange"       "700 850 1000"
-    "AbilityDamage"          "150 250 350"
+    "AbilityDamage"          "225 300 375"
 
     "AbilitySpecial"
     {
@@ -50,7 +39,7 @@
 		"03"
         { 
             "var_type"  "FIELD_INTEGER"
-            "lost_health_bonus_damage" "60 75 90"
+            "lost_health_bonus_damage" "30 45 60"
         }
 		"04"
         { 

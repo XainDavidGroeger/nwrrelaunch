@@ -27,7 +27,7 @@
 		{
 			"item"		"item_power_treads"
         		"item"		"item_ancient_janggo"
-        		"item"		"item_sange"
+        		"item"		"item_meteor_hammer"
 		}
 		
 		"#DOTA_Item_Build_Late_Items"

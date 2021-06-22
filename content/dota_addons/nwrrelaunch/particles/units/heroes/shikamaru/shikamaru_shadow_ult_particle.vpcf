@@ -1,0 +1,43 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf35:version{ec5bfcca-b89d-4591-9ef4-c8679487d623} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 128
+	m_flConstantRadius = 15.0
+	m_nBehaviorVersion = 11
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/axe/axe.vmdl"
+				m_nModSpecificData = 2
+				m_sequenceName = "idle"
+				m_hitboxSetName = "default"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite_snow_explode.vpcf"
+			m_flDelay = 0.1
+			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/cm_ti7_immortal_frostbite_body_snow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_bane/bane_fiendsgrip_ground_water.vpcf"
+			m_bDisableChild = true
+		},
+	]
+}

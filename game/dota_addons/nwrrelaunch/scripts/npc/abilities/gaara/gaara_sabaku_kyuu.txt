@@ -9,34 +9,20 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"gaara_sabaku_kyuu"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"particle"	"particles/generic_gameplay/generic_silence.vpcf"
-			"particle"	"particles/units/heroes/gaara/sand_explosion.vpcf"
-			"particle"	"particles/econ/events/coal/coal_projectile_explosion.vpcf"
-			"particle"	"particles/units/heroes/gaara/sandstorm_explosion/sandstorm_explosion.vpcf"
-
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_cast.vsndevts"
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_impact.vsndevts"
-			"soundfile"					"soundevents/heroes/gaara/gaara_prison_talking.vsndevts"
-		}	
-
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0 0 0"
+		"AbilityCastPoint"				"0 0 0 0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"2.8 2.8 2.8"
-		"AbilityCooldown"				"20 20 20 20"
+		"AbilityCooldown"				"18 16 14 12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -50,6 +36,12 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"tick_interval"					"0.1"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"						"80 160 240 320"
+				"LinkedSpecialBonus"			"special_bonus_gaara_4"
 			}
 			"02"
 			{
@@ -65,12 +57,6 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"radius"						"75"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"dmg"						"100 150 200 250"
-				"LinkedSpecialBonus"			"special_bonus_gaara_4"
 			}
 		}
 	}

@@ -76,17 +76,10 @@
             "OnAttackLanded"
             {
                
-              
                 "RunScript"
                 {
                     "ScriptFile"    "heroes/kisame/samehada.lua"
                     "Function"      "StealManaBunshin"
-                }
-                        
-                "RunScript"
-                {
-                    "ScriptFile"    "heroes/kisame/samehada.lua"
-                    "Function"      "SamehadaResetCooldown"
                 }
             }
             

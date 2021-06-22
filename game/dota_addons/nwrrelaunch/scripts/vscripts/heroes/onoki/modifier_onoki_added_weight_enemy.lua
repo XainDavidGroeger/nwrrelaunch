@@ -26,9 +26,14 @@ function modifier_onoki_added_weight_enemy:OnCreated( kv )
 	local abilityS = self.caster:FindAbilityByName("special_bonus_onoki_4")
 	self.speed_penalty_perc = self:GetAbility():GetSpecialValueFor( "speed_penalty_perc" )
 	
-	if abilityS:GetLevel() > 0 then
-    	self.speed_penalty_perc = self.speed_penalty_perc + 7
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+        	self.speed_penalty_perc = self.speed_penalty_perc + 7
+	    end
 	end
+
+	self.manacost_reduction = self:GetAbility():GetSpecialValueFor( "manaloss_modifier" )
+
 end
 
 function modifier_onoki_added_weight_enemy:OnRefresh( kv )
@@ -45,7 +50,8 @@ end
 -- Modifier Effects
 function modifier_onoki_added_weight_enemy:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE  ,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING,
 	}
 
 	return funcs
@@ -53,6 +59,10 @@ end
 
 function modifier_onoki_added_weight_enemy:GetModifierMoveSpeedBonus_Percentage()
 	return -1 * self.speed_penalty_perc
+end
+
+function modifier_onoki_added_weight_enemy:GetModifierPercentageManacostStacking()
+	return -1 * self.manacost_reduction
 end
 
 

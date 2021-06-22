@@ -28,16 +28,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"			"100 140 180"
 		
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
-			"soundfile"	"soundevents/heroes/yondaime/minato_raijin_impact.vsndevts"
-			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
-			"particle"	"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
-		}
-		
+
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -66,7 +57,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"search_width"					"500"
+				"search_width"					"300"
 			}
 			"06"
 			{

@@ -15,20 +15,6 @@
 	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"		"yondaime_marked_kunai"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-		"particle"			"particles/units/heroes/yondaime/kunai_proc.vpcf"
-		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
-		"particle"			"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
-		"particle"			"particles/units/heroes/yondaime/blink_core.vpcf"
-		"model"				"models/yondaime_new/yondakunai.vmdl"
-		"particle"			"particles/units/heroes/yondaime/kunai_ground.vpcf"
-		
-	}
-	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"			"725 850 975 1100"
@@ -45,7 +31,22 @@
 	//-------------------------------------------------------------------------------------------------------------
     "AbilitySpecial"
     {
-        "01"
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dagger_range"				"725 850 975 1100"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hero_damage"				"30 45 60 75"	
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"creep_damage"				"60 90 120 150"	
+		}
+		"01"
         {
 			"var_type"				"FIELD_INTEGER"
 			"bonus_move_speed_pct"	"8 12 16 20"
@@ -71,28 +72,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"dagger_radius"				"125"
 		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dagger_range"				"725 850 975 1100"
-		}
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"dagger_duration"				"30 30 30 30"	
 		}
-
-		"09"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"creep_damage"				"60 90 120 150"	
-		}
-		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hero_damage"				"30 45 60 75"	
-		}
-
     }
 
 }

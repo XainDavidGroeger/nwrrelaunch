@@ -26,17 +26,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"			"25"
 	
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"particle"					"particles/units/heroes/yondaime/blink_core_alt.vpcf"
-		"particle"					"particles/units/heroes/yondaime/blink_end_core.vpcf"
 
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_start.vsndevts"
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_end.vsndevts"
-		"soundfile" "soundevents/heroes/yondaime/minato_flicker_cast_real.vsndevts"
-	}
 	
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
@@ -45,7 +35,7 @@
     	"01"
         { 
             "var_type"  "FIELD_INTEGER"
-            "range" "1300"
+            "range" "1400"
         }
     }
 	

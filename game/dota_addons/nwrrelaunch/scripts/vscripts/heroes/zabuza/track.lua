@@ -42,8 +42,10 @@ function applyModifiers( keys )
 	local armor_debuff = "modifier_track_armor_debuff_datadriven"
  
 	local ability3 = keys.caster:FindAbilityByName("special_bonus_zabuza_3")
-	if ability3:IsTrained() then
-		armor_debuff = "modifier_track_armor_debuff_datadriven_special"
+	if ability3 ~= nil then
+	    if ability3:IsTrained() then
+	    	armor_debuff = "modifier_track_armor_debuff_datadriven_special"
+	    end
 	end
  
 	 ability:ApplyDataDrivenModifier(caster, target, armor_debuff, {duration = duration})

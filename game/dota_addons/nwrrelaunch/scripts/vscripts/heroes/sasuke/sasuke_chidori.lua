@@ -1,5 +1,15 @@
 sasuke_chidori = sasuke_chidori or class({})
 
+
+function sasuke_chidori:Precache( context )
+    PrecacheResource( "soundfile",   "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_chidori_cast.vsndevts", context )
+    PrecacheResource( "soundfile",   "soundevents/heroes/sasuke/sasuke_chidori_cast_talking.vsndevts", context )
+
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/chidori/step.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/sasuke/chidori/impact.vpcf", context )
+end
+
 function sasuke_chidori:GetAbilityTextureName()
 	return "sasuke_chidori"
 end
@@ -8,17 +18,19 @@ function sasuke_chidori:GetCooldown(iLevel)
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
 
-function sasuke_chidori:GetCooldown(iLevel)
-	return self.BaseClass.GetCooldown(self, iLevel)
-end
-
 function sasuke_chidori:GetCastRange(location, target)
 	local ability3 = self:GetCaster():FindAbilityByName("special_bonus_sasuke_3")
-	if ability3:GetLevel() > 0 then
-		return self:GetSpecialValueFor("range") + 275
-	else
-		return self:GetSpecialValueFor("range")
+	if ability3 ~= nil then
+	    if ability3:GetLevel() > 0 then
+	    	return self:GetSpecialValueFor("range") + 275
+	    else
+	    	return self:GetSpecialValueFor("range")
+	    end
 	end
+end
+
+function sasuke_chidori:ProcsMagicStick()
+    return true
 end
 
 function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
@@ -35,6 +47,7 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 	local crit_damage = ability:GetSpecialValueFor("bonus_damage") + self:GetCaster():FindTalentValue("special_bonus_sasuke_4")
 	local base_damage = ability:GetSpecialValueFor("base_damage")
 	local bonus_damage = caster:GetAverageTrueAttackDamage(nil) * (crit_damage / 100)
+	print(bonus_damage)
 	local damage = bonus_damage + base_damage
 
 	local max_distance = self:GetSpecialValueFor("max_distance") + self:GetCaster():FindTalentValue("special_bonus_sasuke_3")
@@ -75,8 +88,10 @@ function sasuke_chidori:OnSpellStart(recastVector, warpVector, bInterrupted)
 		
 		self:GetCaster():SetAbsOrigin(enemy:GetAbsOrigin() - self:GetCaster():GetForwardVector())
 		
-		enemy:AddNewModifier(self:GetCaster(), self, "modifier_rooted", {duration = root_duration })
-		ApplyDamage({ victim =enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+		if enemy:IsMagicImmune() == false then
+			enemy:AddNewModifier(self:GetCaster(), self, "modifier_rooted", {duration = root_duration })
+			ApplyDamage({ victim =enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL })
+		end
 		
 		if enemy:IsHero() and not bHeroHit then
 			bHeroHit = true

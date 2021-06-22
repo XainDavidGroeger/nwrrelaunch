@@ -6,7 +6,8 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"				"ability_lua"
+	"ScriptFile"			"heroes/madara/wood_release.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -26,7 +27,7 @@
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110"
+	"AbilityManaCost"				"100"
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
@@ -36,21 +37,10 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"06"
+		"09"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"radius"					"475"
-		}
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"tree_duration"				"2.5 3.0 3.5 4.0"
-			"LinkedSpecialBonus"		"special_bonus_madara_2"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"tree_burn_duration"		"2 3 4 5"
 		}
 		"03"
 		{
@@ -67,12 +57,27 @@
 			"var_type"					"FIELD_FLOAT"
 			"burn_buff_duration"		"2 3 4 5"
 		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"tree_burn_duration"		"5 6 7 8"
+		}
 		"07"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"tree_vision"				"150"
+			"tree_vision"				"225"
 		}
-
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"tree_duration"				"3 3.5 4 4.5"
+			"LinkedSpecialBonus"		"special_bonus_madara_2"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"dot_interval"					"0.25"
+		}
 		"08"
 		{
 			"var_type"					"FIELD_FLOAT"
@@ -80,67 +85,6 @@
 			"LinkedSpecialBonus"		"special_bonus_madara_3"
 		}
 
-	}
-
-	// Data driven
-	//-------------------------------------------------------------------------------------------------------------	
-	"precache"
-	{
-		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-		"soundfile"						"soundevents/madara_trees.vsndevts"
-		"soundfile"						"soundevents/heroes/madara/madara_wood_release_cast.vsndevts"
-		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
-		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-	}
-
-	"OnAbilityPhaseStart"
-	 {
-	 	"RunScript"
-	 	{
-	 		"ScriptFile"	"heroes/madara/wood_release.lua"
-			"Function"		"wood_sound"
-	 	}
-		"FireSound"
-		{
-			"EffectName"		"madara_wood_release_cast"
-			"Target"			"CASTER"
-		}
-	 } 
-	
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"heroes/madara/wood_release.lua"
-			"Function"		"wood_release"
-			"Target"		"POINT"
-		}
-	}
-
-	"Modifiers"
-	{
-		"burning_tree_dot"
-      {
-        "IsDebuff"  "1"
-        "Hidden"    "0"
-        "Duration"  "%burn_buff_duration"
-        "ThinkInterval"     "1"
-        "OnIntervalThink"
-        {
-           "Damage"
-          {
-            "Target"  "TARGET"
-            "Type"    "DAMAGE_TYPE_MAGICAL"
-            "Damage"  "%burn_damage"
-          }
-        }
-
-        "Properties"
-          {
-            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%burn_ms_slow_percentage"
-          }
-         
-      }
 	}
 	
 }

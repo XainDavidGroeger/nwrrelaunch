@@ -1,0 +1,91 @@
+	
+"DOTAAbilities"
+{
+    
+     "shikamaru_flash_bombs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/shikamaru/shikamaru_flash_bombs.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"shikamaru_flash_bombs"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000 1100 1200 1300"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		"AOERadius"						"500"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21 17 13 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spread_aoe"				"500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bomb_aoe"					"100"
+			}
+            "03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"range"		        		"1000 1100 1200 1300"
+			}
+            "04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bomb_count"		        "12"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"explosion_delay"		     "0.1"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"debuff_duration"		     "3"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"miss_chance"				"25 30 35 40"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ms_slow"					"-25 -30 -35 -40"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage"					"30 45 60 75"
+				"LinkedSpecialBonus"		"special_bonus_shikamaru_3"
+			}
+		}
+	
+	}
+
+}

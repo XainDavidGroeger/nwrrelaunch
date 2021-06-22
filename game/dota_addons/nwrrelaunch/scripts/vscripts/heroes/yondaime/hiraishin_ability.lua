@@ -3,6 +3,17 @@ LinkLuaModifier("modifier_hiraishin_armor_debuff",
                 "heroes/yondaime/modifiers/modifier_hiraishin_armor_debuff.lua", 
 				LUA_MODIFIER_MOTION_NONE )
 
+function yondaime_hiraishin_jump:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_impact.vsndevts", context )
+    PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_talking.vsndevts", context )
+	PrecacheResource( "soundfile",  "soundevents/heroes/yondaime/minato_raijin_cast.vsndevts", context )
+end
+
+
 function yondaime_hiraishin_jump:GetClosestSeal(target_point)
 	--Find the closest seal	
 	local placed_seals = self:GetCaster().daggers
@@ -88,6 +99,9 @@ function yondaime_hiraishin_jump:CastFilterResultLocation(target_point)
 
 end
 
+function yondaime_hiraishin_jump:ProcsMagicStick()
+    return true
+end
 
 function yondaime_hiraishin_jump:OnSpellStart( keys )
 
@@ -95,6 +109,9 @@ function yondaime_hiraishin_jump:OnSpellStart( keys )
 	local caster = ability:GetCaster()
 	local target = ability:GetCursorPosition()
 	caster.ulti = ability
+
+	caster:EmitSound("minato_raijin_talking")
+	caster:EmitSound("minato_raijin_cast")
 
 	local closest_seal = self:GetClosestSeal(target)
 
@@ -147,7 +164,7 @@ function hiraishin_dash( caster, closest_seal, ability )
 										   ability:GetSpecialValueFor("search_width"),
 										   DOTA_UNIT_TARGET_TEAM_ENEMY,
 										   DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO,
-										   DOTA_UNIT_TARGET_FLAG_NONE)
+										   DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
 
 	
 	local timer_tbl =
@@ -209,7 +226,6 @@ function hiraishin_dash_timer(game_entity, keys)
 		
 		-- Slash particles
 		local slash_effect_index = ParticleManager:CreateParticle( particle_slash_name, PATTACH_ABSORIGIN_FOLLOW, target )
-		StartSoundEvent( slash_sound , caster )
 
 		Timers:CreateTimer( 0.1, function()
 				ParticleManager:DestroyParticle( slash_effect_index, false )

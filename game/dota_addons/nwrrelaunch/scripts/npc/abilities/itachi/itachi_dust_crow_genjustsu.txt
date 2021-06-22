@@ -1,139 +1,48 @@
-	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
-    
-  
-"itachi_dust_crow_genjustsu"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	"AbilityTextureName"		"itachi_dust_crow_genjustsu"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
+	"itachi_dust_crow_genjustsu"
 	{
-		"soundfile"		"soundevents/itachi_crows.vsndevts"
-		"soundfile"		"soundevents/hero_pick.vsndevts"
-		"particle"		"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
-		"particle"		"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
-		"particle"		"particles/world_creature_fx/crows.vpcf"
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/itachi/dust_crow_genjutsu"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"		"itachi_dust_crow_genjustsu"
 
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"21.0 18.0 15.0 12.0"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"60 60 60 60"
-	
-	// Special	
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blink_range"			"700 800 900 1000"
-		}
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21.0 18.0 15.0 12.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
 		
-		"02"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"min_blink_range"		"200"
-		}
-
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"illusion_duration"		"4"
-		}
-
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cd_reduc"				"0"
-			"LinkedSpecialBonus"	"special_bonus_itachi_2"
-		}
-	}
-
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"scripts/vscripts/heroes/itachi/dust_crow_genjutsu.lua"
-			"Function"		"Blink"
-			"Target"		"POINT"
-		}
-
-		"RunScript"
-		{
-			"ScriptFile"	"scripts/vscripts/heroes/itachi/dust_crow_genjutsu.lua"
-			"Function"		"createBunshin"
-		}
-
-		
-	}
-
-	"Modifiers"
-	{
-		"itachi_crow_bunshin"
-		{
-			"Passive"			"0"
-			"IsHidden"			"0"
-			"IsDebuff"			"0"
-			"Duration"			"%illusion_duration"
-	
-			"OnTakeDamage"
-			// "%attack_damage" is set to the damage value after mitigation
+			"01"
 			{
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/itachi/dust_crow_genjutsu.lua"
-					"Function"		"killBunshin"
-					"dummy_particle"	"modifier_itachi_crows"
-				}
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"700 800 900 1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_duration"		"4"
+				"LinkedSpecialBonus"		"special_bonus_itachi_2"
 
 			}
-
-			"OnDestroy"
+			"03"
 			{
-				"FireEffect"
-				{
-					"EffectName"        "particles/world_creature_fx/crows.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "TARGET"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"heroes/itachi/dust_crow_genjutsu.lua"
-					"Function"		"destroyBunshin"		
-				}
-				
+				"var_type"				"FIELD_FLOAT"
+				"illusion_incoming_damage"		"100"
 			}
-
-			"States"
+			"04"
 			{
-				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-
-		"modifier_itachi_crows"
-		{
-			
-			"States"
-			{
-				"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
-				"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				"var_type"				"FIELD_FLOAT"
+				"illusion_outgoing_damage"		"20"
 			}
 		}
 	}
-}
-
-
 }

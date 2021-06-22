@@ -24,10 +24,12 @@ function modifier_hiraishin_armor_debuff:OnCreated( kv )
 	-- references
     local talent = self:GetAbility():GetCaster():FindAbilityByName("special_bonus_yondaime_4")
     self.armor_reduction = self:GetAbility():GetSpecialValueFor( "armor_reduction" ) -- special value
-
-    if talent:GetLevel() > 0 then
-        self.armor_reduction = self.armor_reduction + talent:GetSpecialValueFor("value")
-    end
+    
+	if talent ~= nil then
+        if talent:GetLevel() > 0 then
+            self.armor_reduction = self.armor_reduction + talent:GetSpecialValueFor("value")
+        end
+	end
 end
 
 function modifier_hiraishin_armor_debuff:OnRefresh( kv )

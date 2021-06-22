@@ -17,22 +17,11 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"ScriptFile"					"heroes/anko/anko_giant_snake.lua"	
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
-		"soundfile"			"soundevents/heroes/anko/anko_hand_impact.vsndevts"
-		"soundfile"			"soundevents/heroes/anko/anko_hand_cast.vsndevts"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
-		"particle"			"particles/units/heroes/anko/giant_snake_snake.vpcf"
-	}
+
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"550 700 850 1000"
+	"AbilityCastRange"				"1000"
 	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 	// Time		
@@ -61,8 +50,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"hook_distance"		"500 700 850 1000"
-			"LinkedSpecialBonus"	"special_bonus_anko_1"
+			"hook_distance"		"1000"
 		}
 		"04"
 		{
@@ -83,12 +71,6 @@
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hook_damage"		"90 180 270 360"
-		}
-		"08"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"cd_reduc"		"0 0 0 0"
-			"LinkedSpecialBonus"	"special_bonus_anko_5"
 		}
 	}
 }

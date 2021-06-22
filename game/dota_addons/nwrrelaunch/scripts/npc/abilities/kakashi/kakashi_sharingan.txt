@@ -5,13 +5,18 @@
 
 "kakashi_sharingan"
 {
+	"precache"
+    {
+      "soundfile"			"soundevents/heroes/kakashi/kakashi_sharingan_cast.vsndevts"
+    }
+	
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"kakashi_sharingan"
 	"CastFilterRejectCaster"    	"1" 
@@ -23,12 +28,12 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15"
+	"AbilityCooldown"				"30"
 
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"45 55 65 75"
+	"AbilityManaCost"				"50"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -40,7 +45,14 @@
 			"copy_timer"			"120"
 		}
 	}
-
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"kakashi_sharingan_cast"
+			"Target"			"CASTER"
+		}
+	}
 	"OnSpellStart"
 	{
 		"RunScript"

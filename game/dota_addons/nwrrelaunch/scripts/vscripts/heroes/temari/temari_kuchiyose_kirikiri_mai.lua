@@ -5,9 +5,11 @@
 	Additional parameters: keys.TravelSpeed, keys.AreaOfEffect, keys.VisionDistance, and keys.EndVisionDuration
 ================================================================================================================= ]]
 function temari_kuchiyose_kirikiri_mai_on_spell_start(keys)
+
 	local caster_origin = keys.caster:GetAbsOrigin()
 	local parent = keys.target
 	local ability = keys.ability
+	keys.ability.level = ability:GetLevel()
 	local caster = keys.caster
 	local tornado_projectile_array = {}
 	local tornado_dummy_array = {}
@@ -31,6 +33,7 @@ function temari_kuchiyose_kirikiri_mai_on_spell_start(keys)
 		--existing modifiers linked to that ability can cause errors.
 		local tornado_dummy = CreateUnitByName("npc_dummy_unit", caster_origin, false, nil, nil, keys.caster:GetTeam())
 		tornado_dummy:AddAbility("temari_kuchiyose_kirikiri_mai")
+		tornado_dummy:SetOwner(keys.caster)
 
 		local emp_unit_ability = tornado_dummy:FindAbilityByName("temari_kuchiyose_kirikiri_mai")
 		if emp_unit_ability ~= nil then
@@ -44,7 +47,7 @@ function temari_kuchiyose_kirikiri_mai_on_spell_start(keys)
 
 		local projectile_information =  
 		{
-			EffectName = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf",
+			EffectName = "particles/units/heroes/temari/temari_tornado.vpcf",
 			Ability = emp_unit_ability,
 			vSpawnOrigin = caster_origin,
 			fDistance = tornado_travel_distance,
@@ -135,23 +138,13 @@ end
 ================================================================================================================= ]]
 function temari_kuchiyose_kirikiri_mai_on_projectile_hit_unit(keys)
 	
-	local ability = keys.ability
+	local caster = keys.caster
+	local ability = caster:GetOwner():GetAbilityByIndex(5)
 
-	local burst_damage = ability:GetLevelSpecialValueFor("base_damage", ability:GetLevel() - 1)
-
-	DebugPrint(burst_damage)
-	local ability3 = REALCASTER:FindAbilityByName("special_bonus_temari_3")
-
-	if ability3:IsTrained() then
-		burst_damage = burst_damage + 60
-	end
-
+	local burst_damage = ability:GetSpecialValueFor("base_damage")
 	keys.target:EmitSound("Hero_Invoker.Tornado.Target")
-	DebugPrint(burst_damage)
 
-
-
-	ApplyDamage({victim = keys.target, attacker = REALCASTER, damage = burst_damage, damage_type = DAMAGE_TYPE_MAGICAL,})
+	ApplyDamage({victim = keys.target, attacker = REALCASTER, damage = burst_damage, damage_type = DAMAGE_TYPE_MAGICAL})
 
 	--Stop the sound when the cycloning ends.
 	Timers:CreateTimer({

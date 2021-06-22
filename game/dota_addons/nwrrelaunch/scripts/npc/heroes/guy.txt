@@ -1,10 +1,10 @@
 "DOTAAbilities"
 {
 
-		//25: +3 Power of Youth Max Stacks / +550 Dynamic Entry Range
-		//20: +40 Sixth Gate Movement Speed / +35% Gouken Critical Damage
-		//15: +35% Dynamic Entry Miss Chance/ +15% Lifesteal
-		//10: +15 Damage / +200 Health
+		//25: +550 Dynamic Entry Range / Morning Peacock
+		//20: -0.2 BAT Sixth Gate Base Attack Time / +50 Sixth Gate Movement Speed
+		//15: +15% Lifesteal / +35% Whirlwind Attack Damage
+		// 10: +200 Health / +15 Damage
 		"npc_dota_hero_guy" //guy
 		{
 
@@ -18,12 +18,13 @@
 
 		"BaseClass"   		"npc_dota_hero_centaur"
 		  "Model" 			"models/guy/gai.vmdl"
-		  "Ability1"        "guy_dynamic_entry_new"
+		  "Ability1"        "guy_dynamic_entry"
 		  "Ability2"        "guy_leaf_strong_whirlwind" 
 		  "Ability3"        "guy_strong_fist" 
 		  "Ability4"        "generic_hidden"
 		  "Ability5"        "generic_hidden"
 		  "Ability6"        "guy_seventh_gate_open"
+		  "Ability7"        "guy_seventh_gate_close"
 
 		   "Ability10"		"special_bonus_attack_damage_15"
 		   "Ability11"		"special_bonus_hp_200"

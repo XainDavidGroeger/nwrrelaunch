@@ -1,3 +1,4 @@
+
 function chakra_enhanced_strength( keys )
 	if not keys.target:IsBuilding() then
 		keys.ability.enemy = keys.target
@@ -13,9 +14,11 @@ function chakra_enhanced_strength_apply( keys )
 
 	if keys.caster:HasModifier("modifier_sakura_chakra_enhanced_strength") then
 		local ability5 = keys.caster:FindAbilityByName("special_bonus_sakura_5")
-		if ability5:IsTrained() then
-			keys.caster:RemoveModifierByName("modifier_sakura_chakra_enhanced_strength")
-			keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
+		if ability5 ~= nil then
+		    if ability5:IsTrained() then
+		    	keys.caster:RemoveModifierByName("modifier_sakura_chakra_enhanced_strength")
+		    	keys.ability:ApplyDataDrivenModifier(keys.caster, keys.target, "modifier_sakura_chakra_enhanced_strength_special", {passive = 1})
+		    end
 		end
 	end
 
@@ -44,8 +47,10 @@ function chakra_enhanced_strength_apply( keys )
 		local damage = keys.ability:GetLevelSpecialValueFor("bonus_damage", keys.ability:GetLevel() - 1 )
 
 		local ability1 = keys.caster:FindAbilityByName("special_bonus_sakura_1")
-		if ability1:IsTrained() then
-			damage = damage + 70
+		if ability1 ~= nil then
+		    if ability1:IsTrained() then
+		    	damage = damage + 70
+		    end
 		end
 
 		local damageTable = {}

@@ -1,0 +1,89 @@
+	
+"DOTAAbilities"
+{
+    
+     "shikamaru_switching_technique"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/shikamaru/shikamaru_switching_technique.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"shikamaru_switching_technique"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityChannelTime"			"2 2.5 3 3.5"
+
+		"AOERadius"						"325"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 170 240 300"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 130 140 150"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300"
+				"LinkedSpecialBonus"		"special_bonus_shikamaru_6"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_interval"		"12.5 17.5 22.5 27.5"
+			}
+            "03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"interval_time"		        "0.25"
+			}
+            "04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage"		        	"100 175 270 385"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2 2.5 3 3.5"
+				"LinkedSpecialBonus"		"special_bonus_shikamaru_1"
+			}
+		}
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------	
+		"precache"
+		{
+			"particle"						"particles/units/heroes/gaara/sandsturm.vpcf"
+			"soundfile"						"soundevents/heroes/gaara/gaara_tsunami_cast.vsndevts"
+			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_talking.vsndevts"
+			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_fire.vsndevts"
+			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts"
+		}
+	
+	}
+
+}

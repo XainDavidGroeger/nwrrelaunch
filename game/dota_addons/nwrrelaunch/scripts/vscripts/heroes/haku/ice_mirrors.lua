@@ -3,15 +3,26 @@ LinkLuaModifier("modifier_haku_mirror_mirror", "heroes/haku/ice_mirrors", LUA_MO
 
 haku_ice_mirrors = haku_ice_mirrors or class({})
 
+function haku_ice_mirrors:Precache(context)
+	PrecacheResource("soundfile",  "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/haku_mirrors_cast.vsndevts", context)
+	PrecacheResource("soundfile",  "soundevents/heroes/haku/haku_ulti_talking.vsndevts", context)
+	PrecacheResource("particle",   "particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", context)
+	PrecacheResource("particle",   "particles/units/heroes/haku/mirror_destroy.vpcf", context)
+end
+
 function haku_ice_mirrors:OnAbilityPhaseStart()
 	self:GetCaster():EmitSound("haku_mirrors_cast")
-
+	self:GetCaster():EmitSound("haku_ulti_talking")
 	return true
+end
+
+function haku_ice_mirrors:ProcsMagicStick()
+    return true
 end
 
 function haku_ice_mirrors:OnSpellStart()
 	if not IsServer() then return end
-
 	local attack_min = self:GetSpecialValueFor("attack_min") + self:GetCaster():FindTalentValue("special_bonus_haku_5")	
 	local attack_max = self:GetSpecialValueFor("attack_max") + self:GetCaster():FindTalentValue("special_bonus_haku_5")
 	local health = self:GetSpecialValueFor("hp")
@@ -39,6 +50,7 @@ function haku_ice_mirrors:OnSpellStart()
 			FindClearSpaceForUnit(mirror, mirror_position, false)
 			mirror:SetBaseDamageMin(attack_min)
 			mirror:SetBaseDamageMax(attack_max)
+			mirror:SetBaseMaxHealth(health)
 			mirror:SetMaxHealth(health)
 			mirror:SetHealth(health)
 			mirror:SetOwner(self:GetCaster())
@@ -56,9 +68,10 @@ function haku_ice_mirrors:OnSpellStart()
 			end
 
 			local endless_wounds_ability = self:GetCaster():FindAbilityByName("haku_endless_wounds")
-
-			if endless_wounds_ability:GetLevel() > 0 then
-				mirror:AddNewModifier(self:GetCaster(), endless_wounds_ability, "modifier_haku_endless_needles_caster",{})
+            if endless_wounds_ability ~= nil then
+			    if endless_wounds_ability:GetLevel() > 0 then
+			    	mirror:AddNewModifier(self:GetCaster(), endless_wounds_ability, "modifier_haku_endless_needles_caster",{})
+			    end
 			end
 
 			table.insert(self.mirrors, mirror)
@@ -81,7 +94,6 @@ function modifier_haku_mirror_caster:CheckState() return {
 
 function modifier_haku_mirror_caster:OnCreated()
 	if not IsServer() then return end
-
 	self:GetParent():AddNoDraw()
 end
 
@@ -97,6 +109,9 @@ function modifier_haku_mirror_mirror:IsHidden() return true end
 
 function modifier_haku_mirror_mirror:DeclareFunctions() return {
 	MODIFIER_EVENT_ON_DEATH,
+	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+	MODIFIER_EVENT_ON_ATTACK_LANDED,
+	MODIFIER_EVENT_ON_TAKEDAMAGE,
 } end
 
 function modifier_haku_mirror_mirror:CheckState() return {
@@ -105,7 +120,6 @@ function modifier_haku_mirror_mirror:CheckState() return {
 
 function modifier_haku_mirror_mirror:OnCreated()
 	if not IsServer() then return end
-
 	self.pfx = ParticleManager:CreateParticle("particles/units/heroes/haku/wyvern_cold_embrace_buff.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 	ParticleManager:SetParticleControl(self.pfx, 0, self:GetParent():GetAbsOrigin())
 	ParticleManager:SetParticleControl(self.pfx, 1, self:GetParent():GetAbsOrigin())
@@ -144,5 +158,42 @@ function modifier_haku_mirror_mirror:OnDeath(keys)
 
 	if should_die and keys.attacker then
 		self:GetAbility():GetCaster():Kill(nil, keys.attacker)
+	end
+end
+
+function modifier_haku_mirror_mirror:GetModifierIncomingDamage_Percentage()
+	return -100
+end
+
+function modifier_haku_mirror_mirror:OnTakeDamage(params)
+    if not IsServer() then return end
+
+	if params.unit == self:GetParent() then
+		if params.damage > 0 then
+			local damageTable = {
+				victim = params.unit,
+				damage = 1,
+				damage_type = DAMAGE_TYPE_PURE,
+				attacker = params.attacker,
+				ability = self:GetAbility()
+			}
+
+			ApplyDamage(damageTable)
+		end
+	end
+   
+end
+
+function modifier_haku_mirror_mirror:OnAttackLanded(params) -- health handling
+	if not IsServer() then return end
+
+	if params.target == self:GetParent() then
+		local damage = 1
+
+		if self:GetParent():GetHealth() > damage then
+			self:GetParent():SetHealth( self:GetParent():GetHealth() - damage)
+		else
+			self:GetParent():Kill(nil, params.attacker)
+		end
 	end
 end

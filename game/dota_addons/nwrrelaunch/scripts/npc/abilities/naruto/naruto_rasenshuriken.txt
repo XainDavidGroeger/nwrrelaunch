@@ -27,17 +27,22 @@
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		"soundfile"			"soundevents/naruto_rasen_shuriken.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_ulti_talking.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_cast.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_fire.vsndevts"
+		"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_impact.vsndevts"
 		"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
 		"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
 		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
 		"particle"			"particles/units/heroes/naruto/shuriken2.vpcf"
 		"particle"			"particles/units/heroes/naruto/rasenshuriken_alt.vpcf"
 		"particle"  		"particles/units/heroes/yondaime/raseng_model.vpcf"
+		"particle"			"particles/units/heroes/naruto/shuriken_impact.vpcf"
 	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"900"
 	"AbilityCastPoint"				"0.3 0.3 0.3"
 
 	// Time		
@@ -60,7 +65,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"rs_stun_duration"	"3.0"
+			"rs_stun_duration"	"2.0 2.5 3.0"
 		}
 		"03"
 		{
@@ -75,21 +80,29 @@
 		"05"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"range"		"600"
+			"range"		"900"
 		}
 		"06"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"175 225 300"
+			"damage"			"275 400 525"
 			"LinkedSpecialBonus"	"special_bonus_naruto_6"
 		}
 	}
 
 	"OnAbilityPhaseStart"
 	{
-			"FireSound"
+		
+
+		"FireSound"
 		{
-			"EffectName"		"naruto_rasen_shuriken"
+			"EffectName"		"naruto_ulti_talking"
+			"Target"			"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"naruto_rasenshuriken_cast"
 			"Target"			"CASTER"
 		}
 
@@ -113,6 +126,12 @@
 		}
 		
 
+		"FireSound"
+		{
+			"EffectName"		"naruto_rasenshuriken_fire"
+			"Target"			"CASTER"
+		}
+
 		"RunScript"
 		{
 			"ScriptFile"	"heroes/naruto/rasenshuriken.lua"
@@ -126,7 +145,7 @@
 	{
 		"FireSound"
 		{
-			"EffectName"		"Hero_Sven.StormBoltImpact"
+			"EffectName"		"naruto_rasenshuriken_impact"
 			"Target"			"TARGET"
 		}
 
@@ -160,7 +179,7 @@
 			{
 				"FireEffect"
 				{
-					"EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+					"EffectName"	"particles/units/heroes/naruto/shuriken_impact.vpcf"
 					"EffectAttachType"	"attach_origin"
 					"Target"		"TARGET"
 					"ControlPointEntities"

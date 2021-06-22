@@ -28,8 +28,10 @@ function applyDamageInterval ( keys )
 	local damage = ability:GetLevelSpecialValueFor("damage", ability:GetLevel())
 
 	local abilityS = caster:GetOwner():FindAbilityByName("special_bonus_kankuro_4")
-	if abilityS:IsTrained() then
-		damage = damage + 20
+	if abilityS ~= nil then
+	    if abilityS:IsTrained() then
+	    	damage = damage + 20
+	    end
 	end
 
 	ApplyDamage({

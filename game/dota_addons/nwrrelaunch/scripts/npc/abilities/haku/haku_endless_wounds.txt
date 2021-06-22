@@ -10,6 +10,7 @@
 	"ScriptFile"					"heroes/haku/endless_wounds.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"haku_endless_wounds"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	
 
 	// Special

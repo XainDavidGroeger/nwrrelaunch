@@ -78,6 +78,10 @@ function karasu_daggers:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE + DOTA_ABILITY_BEHAVIOR_IMMEDIATE
 end
 
+function karasu_daggers:ProcsMagicStick()
+    return true
+end
+
 function karasu_daggers:OnSpellStart()
 	local caster = self:GetCaster()
 

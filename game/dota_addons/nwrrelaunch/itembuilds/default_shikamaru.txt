@@ -26,7 +26,7 @@
 			"item"		"item_arcane_boots"
 			"item"		"item_magic_wand"
         		"item"		"item_aether_lens"
-        		"item"		"item_tranquil_boots"
+			"item"  	"item_rod_of_atos"
 			"item"		"item_blink"
 		}
 		
@@ -44,7 +44,6 @@
 			"item"		"item_glimmer_cape"
 			"item"		"item_cyclone"
 			"item"		"item_lotus_orb"
-			"item"  	"item_rod_of_atos"
 			"item"		"item_force_staff"
 		}
 	}

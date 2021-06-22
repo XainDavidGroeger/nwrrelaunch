@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 1
-	m_flConstantLifespan = 10.0
+	m_flConstantLifespan = 11.0
 	m_nBehaviorVersion = 11
 	m_nFirstMultipleOverride_BackwardCompat = 7
 	m_controlPointConfigurations = 
@@ -81,8 +81,8 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 10.0
-			m_fLifetimeMin = 10.0
+			m_fLifetimeMax = 11.0
+			m_fLifetimeMin = 11.0
 		},
 		{
 			_class = "C_INIT_RandomRotation"
@@ -96,21 +96,14 @@
 			_class = "C_INIT_RandomAlpha"
 		},
 		{
-			_class = "C_INIT_CreateOnModel"
-			m_nForceInModel = 1
-			m_nDesiredHitbox = 1
-		},
-		{
-			_class = "C_INIT_SetRigidAttachment"
-			m_nControlPointNumber = 1
-			m_bDisableOperator = true
+			_class = "C_INIT_RingWave"
 		},
 	]
 	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
-			m_bDisableOperator = true
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
 		},
 		{
 			_class = "C_OP_BasicMovement"
@@ -134,18 +127,14 @@
 			m_bDisableOperator = true
 		},
 		{
-			_class = "C_OP_PositionLock"
-			m_flEndTime_max = 0.7
-			m_flEndTime_min = 0.5
-			m_flStartTime_max = 0.3
-			m_flStartTime_min = 0.2
-			m_bDisableOperator = true
-		},
-		{
 			_class = "C_OP_FadeInSimple"
 		},
 		{
-			_class = "C_OP_LockToBone"
+			_class = "C_OP_FadeAndKill"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_PositionLock"
 		},
 	]
 	m_Renderers = 
@@ -155,15 +144,14 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/susano/susanoo2_base.vmdl"
+					m_model = resource:"models/madara_susano_bones/madara_susano_bones.vmdl"
 				},
 			]
-			m_bAnimated = true
 			m_flRadiusScale = 
 			{
 				m_nType = "PF_TYPE_LITERAL"
 				m_nMapType = "PF_MAP_TYPE_DIRECT"
-				m_flLiteralValue = 0.24
+				m_flLiteralValue = 0.2
 				m_nControlPoint = 0
 				m_nScalarAttribute = 3
 				m_nVectorAttribute = 6

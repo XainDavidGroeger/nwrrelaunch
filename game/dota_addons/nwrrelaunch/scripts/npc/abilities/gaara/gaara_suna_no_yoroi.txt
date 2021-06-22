@@ -6,21 +6,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/gaara/suna_no_yoroi.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"gaara_suna_no_yoroi"
-		"AbilityCooldown"				"5.0"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield.vpcf"
-			"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_cast.vpcf"
-			"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_impact.vpcf"
-			"particle"			"particles/units/heroes/gaara/armor/gaara_mana_shield_end.vpcf"
-		}
-	
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"25"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -35,7 +27,17 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"absorption_tooltip"		"60"
-			}	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"absorption_tooltip_allies"		"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield_duration"		"6 9 12 15"
+			}
 		}
 	}
 }

@@ -10,6 +10,7 @@ function rasengan(keys)
 
 	caster:StopSound("minato_rasengan_loop.loop")
 	EmitSoundOn("minato_rasengan", keys.target)
+	EmitSoundOn("minato_rasengan_talking", keys.caster)
 
 	local range = keys.ability:GetLevelSpecialValueFor( "distance", ( keys.ability:GetLevel() - 1 ) )
 
@@ -44,7 +45,7 @@ function rasengan(keys)
 	local knockbackModifierTable =
 	{
 		should_stun = 1,
-		knockback_duration = 0.75,
+		knockback_duration = 0.30,
 		duration = stun_duration,
 		knockback_distance = len,
 		knockback_height = 0,
@@ -52,17 +53,24 @@ function rasengan(keys)
 		center_y = keys.caster:GetAbsOrigin().y,
 		center_z = keys.caster:GetAbsOrigin().z
 	}
-	keys.target:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
-	
 
-	local averageDamage = caster:GetBaseDamageMin() + ((caster:GetBaseDamageMax() - caster:GetBaseDamageMin())  / 2 )
-	local damage = averageDamage + (averageDamage / 100 * bonus_damage_percent) + base_bonus_damage
-	ApplyDamage({ victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_PHYSICAL })
-	
+	if keys.target:IsMagicImmune() == false then
+		if not keys.ability:GetAutoCastState() then
+			-- dont apply knockback if ability is autocasted
+			keys.target:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
+		else
+			keys.target:AddNewModifier( keys.caster, nil, "modifier_stunned", {duration = stun_duration} )
+		end
+
+		local averageDamage = caster:GetBaseDamageMin() + ((caster:GetBaseDamageMax() - caster:GetBaseDamageMin())  / 2 )
+		local damage = averageDamage + (averageDamage / 100 * bonus_damage_percent) + base_bonus_damage
+		ApplyDamage({ victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_PHYSICAL })
+	end
+
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/yondaime/raseng_impact.vpcf", PATTACH_POINT_FOLLOW, keys.caster) 
-	ParticleManager:SetParticleControlEnt(particle, 0, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(particle, 2, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(particle, 3, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle, 0, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle, 2, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(particle, 3, keys.target, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.target:GetAbsOrigin(), true)
 
 	caster:Stop()
 

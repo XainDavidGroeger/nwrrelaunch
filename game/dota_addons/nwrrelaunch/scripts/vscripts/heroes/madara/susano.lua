@@ -1,171 +1,175 @@
---[[Author LearningDave
-	Date october, 25th 2015
-	Swaps abilities (madara_susano <> madara_susano_active) (couldnt use toggle behavior cause the custom model animations made problems(no act_dota_toggle found))
-]]
-function SwapAbility( keys )
-	local caster = keys.caster	
-	local ability = keys.ability
-	local ability_level = ability:GetLevel()
 
-	local main_ability_name = keys.main_ability_name
-	local sub_ability_name = keys.sub_ability_name
-	print(main_ability_name)
-	print(sub_ability_name)
-	-- Ability swap
-	caster:RemoveAbility(main_ability_name)
-		
-	Ability = caster:AddAbility(sub_ability_name)
-	Ability:SetAbilityIndex(1)
-	Ability:SetLevel(ability_level)
+madara_susano = class({})
 
+function madara_susano:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_susano_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/madara/madara_susano_off.vsndevts", context )
+
+	PrecacheResource( "particle", "particles/units/heroes/madara/susano/susano.vpcf", context )
+    PrecacheResource( "particle", "particles/dire_fx/fire_barracks_glow_b.vpcf", context )
 end
---[[
-	Author LearningDave
-	Date october, 25th 2015.
-	Reduces the mana of the caster and switches to madara_susano if the caster is out of mana
-]]
-function ManaCost( keys )
-	-- Variables
-	local ability_level = keys.ability:GetLevel()
-	local caster = keys.caster
-	local ability = keys.ability
 
-	local manacost_per_second = keys.ability:GetLevelSpecialValueFor("mana_cost_per_second", keys.ability:GetLevel() - 1 )
-	local ability2 = caster:FindAbilityByName("special_bonus_madara_2")
-	if ability2:IsTrained() then
-		manacost_per_second = manacost_per_second - 0.72
-	end
+function madara_susano:ResetToggleOnRespawn()
+	return true
+end
 
-	local current_mana = caster:GetMana()
-	local new_mana = current_mana - manacost_per_second
-	print(new_mana)
-	if (current_mana - manacost_per_second) <= 0 then
-		caster:SetMana(1)
-		caster:RemoveAbility("madara_susano_active")
-		caster:RemoveModifierByName("modifier_madara_susano")
-		caster:RemoveModifierByName("modifier_madara_susano_burn_trees")
-		Ability = caster:AddAbility("madara_susano")
-		Ability:SetAbilityIndex(1)
-		Ability:SetLevel(ability_level)
+function madara_susano:OnToggle()
+	if self:GetToggleState() then
+		self.modifier = self:GetCaster():AddNewModifier(
+			self:GetCaster(),
+			self,
+			"modifier_madara_susano_caster_active",
+			{}
+		)
+
+	
+	self:GetCaster():EmitSound("madara_susano_cast")
+		--Play active sound
 	else
-		caster:SetMana(new_mana)
-	end
-end
---[[
-	Author LearningDave
-	Date october, 25th 2015.
-	Applies damage to all nearby enemy units of the caster
-]]
-function BurnEnemies( keys )
-	-- Variables
-	local caster = keys.caster
-	local ability = keys.ability
-
-	local burn_radius = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
-
-	local abilityS1 = keys.caster:FindAbilityByName("special_bonus_madara_1")
-	if abilityS1:IsTrained() then
-		burn_radius = burn_radius + 70
-	end
-
-	local burn_damage = keys.ability:GetLevelSpecialValueFor("burn_damage", keys.ability:GetLevel() - 1 )
-	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_5")
-	if abilityS:IsTrained() then
-		burn_damage = burn_damage + 100
-	end
-
-	local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, burn_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
-		if targetEntities then
-			for _,oneTarget in pairs(targetEntities) do
-				local damage_table = {}
-				damage_table.attacker = caster
-				damage_table.victim = oneTarget
-				damage_table.damage_type = ability:GetAbilityDamageType()
-				damage_table.ability = ability
-				damage_table.damage = burn_damage
-				ApplyDamage(damage_table)
-				--PopupDamage(oneTarget, burn_damage)
-				local particle = ParticleManager:CreateParticle("particles/dire_fx/fire_barracks_glow_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil) 
-				ParticleManager:SetParticleControl(particle , 0, oneTarget:GetAbsOrigin())
-			end
+		if self.modifier then
+			self.modifier:Destroy()
+			self.modifier = nil
 		end
+		
+	self:GetCaster():EmitSound("madara_susano_off")
+		--Play endsound
+	end
 end
---[[
-	Author LearningDave
-	Date october, 25th 2015.
-	Burns all nearby trees if madara_wood_release is skilled
-]]
-function BurnTrees( keys )
-	local ability_index = keys.caster:FindAbilityByName("madara_wood_release"):GetAbilityIndex()
-    local wood_ability = keys.caster:GetAbilityByIndex(ability_index)
-    local wood_ability_level = keys.caster:GetAbilityByIndex(ability_index):GetLevel()
-    local tree_vision = wood_ability:GetLevelSpecialValueFor("tree_vision", wood_ability_level)
-    local tree_burn_duration = wood_ability:GetLevelSpecialValueFor("tree_burn_duration", wood_ability_level)
 
-    local aoe = keys.ability:GetLevelSpecialValueFor("burn_radius", keys.ability:GetLevel() - 1 )
-	local abilityS = keys.caster:FindAbilityByName("special_bonus_madara_1")
-	if abilityS:IsTrained() then
-		aoe = aoe + 70
+function madara_susano:OnUpgrade()
+	if self.modifier then
+		self.modifier:ForceRefresh()
+	end
+end
+
+modifier_madara_susano_caster_active = class({})
+LinkLuaModifier("modifier_madara_susano_caster_active", "heroes/madara/susano.lua", LUA_MODIFIER_MOTION_NONE)
+
+function modifier_madara_susano_caster_active:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+	}
+end
+
+function modifier_madara_susano_caster_active:GetModifierMagicalResistanceBonus()
+	return self:GetAbility():GetSpecialValueFor("magic_resistance_percent")
+end
+
+function modifier_madara_susano_caster_active:OnCreated( kv )
+	if not IsServer() then return end
+
+	local ability = self:GetAbility()
+	self.radius = ability:GetSpecialValueFor("burn_radius")
+	self.tick_interval = ability:GetSpecialValueFor("tick_interval")
+	self.damage_per_tick = ability:GetSpecialValueFor("damage") * self.tick_interval
+	self.mana_cost_per_tick = ability:GetSpecialValueFor("mana_cost_per_second") * self.tick_interval
+
+	self.parent = self:GetParent()
+	self.damageTable = {
+		-- victim = target,
+		attacker = self.parent,
+		damage = self.damage_per_tick,
+		damage_type = ability:GetAbilityDamageType(),
+		ability = ability,
+	}
+
+	self:OnTickDamage()
+	self:StartIntervalThink( self.tick_interval )
+end
+
+function modifier_madara_susano_caster_active:CheckState()
+	local state = {
+		[MODIFIER_STATE_ALLOW_PATHING_THROUGH_TREES] = true, --This is used to fix pathfinding
+	}
+
+	return state
+end
+
+function modifier_madara_susano_caster_active:OnRefresh( kv )
+	local ability = self:GetAbility()
+	self.radius = ability:GetSpecialValueFor("burn_radius")
+	self.tick_interval = ability:GetSpecialValueFor("tick_interval")
+	self.damage_per_tick = ability:GetSpecialValueFor("damage") * self.tick_interval
+	self.mana_cost_per_tick = ability:GetSpecialValueFor("mana_cost_per_second") * self.tick_interval
+
+	self.parent = self:GetParent()
+	self.damageTable = {
+		-- victim = target,
+		attacker = self.parent,
+		damage = self.damage_per_tick,
+		damage_type = ability:GetAbilityDamageType(),
+		ability = ability,
+	}
+end
+
+function modifier_madara_susano_caster_active:OnRemoved()
+end
+
+function modifier_madara_susano_caster_active:OnDestroy()
+	if not IsServer() then return end
+	--stop sound loop
+end
+
+function modifier_madara_susano_caster_active:OnTickDamage()
+	-- find enemies
+	local enemies = FindUnitsInRadius(
+		self.parent:GetTeamNumber(),	-- int, your team number
+		self.parent:GetOrigin(),	-- point, center point
+		nil,	-- handle, cacheUnit. (not known)
+		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+		DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+		0,	-- int, flag filter
+		0,	-- int, order filter
+		false	-- bool, can grow cache
+	)
+
+	for _,enemy in pairs(enemies) do
+		-- apply damage
+		if enemy then
+			self.damageTable.victim = enemy
+			ApplyDamage( self.damageTable )
+		end
+		-- play effects
+		-- self:PlayEffects( enemy )
 	end
 
+	local wood_release_ability =  self.parent:FindAbilityByName("madara_wood_release")
+	if wood_release_ability:IsTrained() then
 
-    if wood_ability_level > 0 then
-		local trees = GridNav:GetAllTreesAroundPoint(keys.caster:GetAbsOrigin(), aoe, false) 
-				if trees then
-					for _,tree in pairs(trees) do
-						local origin = tree:GetAbsOrigin()
-						xcoord = origin.x
-						ycoord = origin.y
-						--local dummy = CreateUnitByName( "npc_burning_tree", Vector(xcoord, ycoord, 0.0), false, keys.caster, nil, keys.caster:GetTeamNumber() )
-						--dummy:GetAbilityByIndex(0):SetLevel(wood_ability_level)
-						GridNav:DestroyTreesAroundPoint(origin, 40, true)
-						local treesSecond = GridNav:GetAllTreesAroundPoint(origin, 50, false) 
-						
-						local particle = ParticleManager:CreateParticle("particles/units/heroes/madara/burning_tree.vpcf", PATTACH_CUSTOMORIGIN, nil) 
-          				ParticleManager:SetParticleControl(particle , 0, origin)
- 						
-          				Timers:CreateTimer( function()
-         
-          						local targetEntities = FindUnitsInRadius(keys.caster:GetTeamNumber(), origin, nil, tree_vision, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
-							    if targetEntities then
-							      for _,oneTarget in pairs(targetEntities) do
-							        local modfifier = oneTarget:FindModifierByName("burning_tree_dot")
-							        if modifier == nil then
-							          wood_ability:ApplyDataDrivenModifier(keys.caster, oneTarget, "burning_tree_dot", {Duration = tree_burn_duration})
-							          local particle = ParticleManager:CreateParticle("particles/dire_fx/fire_barracks_glow_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, nil) 
-							          ParticleManager:SetParticleControl(particle , 0, oneTarget:GetAbsOrigin())
-							        end
-							      end
-							    end
+		local trees = GridNav:GetAllTreesAroundPoint(self.parent:GetAbsOrigin(), self.radius, false) 
 
-          						if stopCheck then
-          							return 0.3
-          						else
-          							return nil
-          						end
-							  
-						end
-					  	)
-
-          				Timers:CreateTimer( tree_burn_duration, function()
-          						stopCheck = false
-						   		ParticleManager:DestroyParticle(particle, true)
-							  return nil
-						end
-					  	)
-					end
-				end
+		for _,tree in pairs(trees) do
+			-- apply damage
+			if tree then
+				wood_release_ability:BurnTree(tree)
+			end
+			-- play effects
+			-- self:PlayEffects( enemy )
+		end
 	end
 
+	self.parent:SpendMana( self.mana_cost_per_tick, self.ability )
 end
 
+function modifier_madara_susano_caster_active:OnIntervalThink()
+	if self.mana_cost_per_tick > self.parent:GetMana() then
+		-- turn off
+		if self.ability:GetToggleState() then
+			self.ability:ToggleAbility()
+		end
+		return
+	end
 
-function spawnCage (keys)
-	keys.caster.cage = ParticleManager:CreateParticle("particles/units/heroes/madara/susano/susano.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.caster)
-	ParticleManager:SetParticleControl(keys.caster.cage, 0, keys.caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(keys.caster.cage, 1, keys.caster:GetAbsOrigin() + Vector(0,0,40))
+	self:OnTickDamage()
 end
 
-function removeCage (keys)
-	ParticleManager:DestroyParticle(keys.caster.cage, true)
+-- Graphics & Animations
+function modifier_madara_susano_caster_active:GetEffectName()
+	return "particles/units/heroes/madara/susano_core.vpcf"
+end
+
+function modifier_madara_susano_caster_active:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
 end

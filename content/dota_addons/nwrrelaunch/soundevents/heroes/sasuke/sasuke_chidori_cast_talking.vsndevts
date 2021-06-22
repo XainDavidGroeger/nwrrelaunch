@@ -15,7 +15,7 @@
                         "value"
                         {
                              
-                            "value0"        "sounds/heroes/sasuke/chidori_01.vsnd"
+                              "value0"        "sounds/heroes/sasuke/chidori_01.vsnd"
                               "value1"        "sounds/heroes/sasuke/chidori_02.vsnd"
                               "value2"        "sounds/heroes/sasuke/chidori_03.vsnd"
                               "value3"        "sounds/heroes/sasuke/chidori_04.vsnd"
@@ -24,8 +24,8 @@
                         }
                     }
                     "volume"            {   "value"     "1.00000"  }
-                    "pitch_rand_min"    {   "value"     "-0.05000"  }
-                    "pitch_rand_max"    {   "value"     "0.050000"  }
+                    "pitch_rand_min"    {   "value"     "-0.02000"  }
+                    "pitch_rand_max"    {   "value"     "0.020000"  }
                     "pitch"             {   "value"     "1.000000"  }
                     "soundlevel"        {   "value"     "100.00000" }
                     "distance_max"      {   "value"     "1600.000"  }

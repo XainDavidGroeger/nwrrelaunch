@@ -1,0 +1,69 @@
+
+    "DOTAAbilities"
+{
+
+	"neji_32_palms"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/neji/neji_32_palms.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"neji_32_palms"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"270"
+		"AbilityCastPoint"				"0.1 0.1 0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"4.0"
+		"AbilityCooldown"				"120.0 100.0 80.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150 200 250"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"4.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage"						"384 512 640"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aoe_radius"					"250"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_burned_per_attack_perc"	"1"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"silence_duration"			    "3 4 5"
+				"LinkedSpecialBonus" 			"special_bonus_neji_4"
+			}
+	
+		}
+	}
+
+}

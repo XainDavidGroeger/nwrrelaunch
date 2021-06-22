@@ -51,11 +51,6 @@
 		}
 	}
 
-	"precache"
-	{
-		"particle"	"particles/units/heroes/kisame/bunshin_prison_new.vpcf"
-		"soundfile" "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts"
-	}
 }
 
 }

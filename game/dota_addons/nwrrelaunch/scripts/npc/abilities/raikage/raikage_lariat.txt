@@ -11,43 +11,28 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"                     "ability_datadriven"
+	"BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/raikage/raikage_lariat.lua"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-	"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+	"AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"   
 	"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
 	"FightRecapLevel"               "1"
 	"AbilityTextureName"            "raikage_lariat"
-
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-		"soundfile"                 "soundevents/heroes/raikage/raikage_lariat_talking.vsndevts"
-		"particle"                  "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-		"particle"                  "particles/hero/sven/sven_ult_storm_bolt.vpcf"
-		"particle"                  "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-		"particle"                  "particles/generic_gameplay/generic_stunned.vpcf"
-
-		"particle"					"particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-		"particle"                  "particles/units/heroes/raikage/lariat_aura.vpcf"
-        "particle"                  "particles/units/heroes/raikage/lariat_ground_parent.vpcf"
-	}
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"              "400 600 800 1000"
+	"AbilityCastRange"              "550 700 850 1000"
 	"AbilityCastPoint"              "0"
 	// Time     
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"               "15.0"
+	"AbilityCooldown"               "12 11 10 9"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"               "95 115 125 135"
+	"AbilityManaCost"               "75 90 105 120"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -56,12 +41,12 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"speed"                 "800 1000 1200 1400"
+			"speed"                 "1400"
 		}
 		"02"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"damage"                "125 150 175 200"
+			"damage"                "70 140 210 280"
 			"LinkedSpecialBonus"	"special_bonus_raikage_3"
 		}
 		"03"
@@ -74,188 +59,13 @@
 			"var_type"              "FIELD_INTEGER"
 			"radius"                "350"
 		}
-             "05"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "cast_range"         "400 600 800 1000"
-            }
+		"05"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"cast_range"         "550 700 850 1000"
+		}
 	}
 
-	"OnSpellStart"
-	{			
-		"RunScript"
-		{
-			"ScriptFile"            "heroes/raikage/lariat.lua"
-			"Function"              "Lariat"
-			
-			"Target"		"POINT"
-			"particle_impact"       "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-		}
-
-        "RunScript"
-		{
-			"ScriptFile"            "heroes/raikage/lariat.lua"
-			"Function"              "fireGroundEffect"
-            "Target"		"POINT"
-		}
-
-		   "ApplyModifier"
-        {
-            "ModifierName"          "modifier_lariat_energy_shield"
-            "Target"                "CASTER"
-        }
-
-        "FireSound"
-        {
-            "EffectName"	"raikage_lariat_talking"
-            "Target"		"CASTER"
-        }
-
-		
-	}
-	
-	"Modifiers"
-	{
-		"modifier_lariat_stun"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%stun_duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"			
-			}
-			"OverrideAnimation"	"ACT_DOTA_DISABLED"
-			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
-			"EffectAttachType"	"follow_overhead"
-		}
-
-		"modifier_lariat_energy_shield"
-        {
-            "IsHidden"            "1"
-
-             "OnCreated"
-            {
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_righthand"
-
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_lefthand"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftleg"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightleg"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightshoulder"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftshoulder"
-                    }
-                }
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_rightelbow"
-                    }
-                }
-
-                "AttachEffect"
-                {
-                    "EffectName" "particles/units/heroes/hero_razor/razor_ambient_g.vpcf"
-                    "EffectAttachType" "follow_origin"
-
-                    "Target" "CASTER"
-                    "ControlPointEntities"
-                   {
-                      "CASTER"    "attach_leftelbow"
-                    }
-                }
-            }
-        }
-	}
 }
 
 

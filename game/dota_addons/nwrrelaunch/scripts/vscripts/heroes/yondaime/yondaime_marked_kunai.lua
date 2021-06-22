@@ -3,6 +3,18 @@ LinkLuaModifier( "modifier_marked_kunai_debuff", "heroes/yondaime/yondaime_marke
 LinkLuaModifier( "modifier_marked_kunai_bonus", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_marked_kunai", "heroes/yondaime/yondaime_marked_kunai.lua" , LUA_MODIFIER_MOTION_NONE )
 
+function yondaime_marked_kunai:Precache( context )
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/kunai_proc.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/blink_core.vpcf", context )
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/kunai_ground.vpcf", context )
+
+    PrecacheResource( "soundfile",  "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts", context )
+
+    PrecacheResource( "model",  "models/yondaime_new/yondakunai.vmdl", context )
+
+end
 
 function yondaime_marked_kunai:GetAbilityTextureName()
 	return "yondaime_marked_kunai"
@@ -10,18 +22,28 @@ end
 
 function yondaime_marked_kunai:GetCooldown(iLevel)
 	local cdreduction = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_1"):GetLevel() > 0 then
-		cdreduction = 1
+	local abilityC = self:GetCaster():FindAbilityByName("special_bonus_yondaime_1")
+	if abilityC ~= nil then
+	    if abilityC:GetLevel() > 0 then
+	    	cdreduction = 1
+	    end
 	end
 	return self.BaseClass.GetCooldown(self, iLevel) - cdreduction
 end
 
 function yondaime_marked_kunai:GetCastRange(location, target)
 	local castrangebonus = 0
-	if self:GetCaster():FindAbilityByName("special_bonus_yondaime_2"):GetLevel() > 0 then
-		castrangebonus = 300
+	local abilityS = self:GetCaster():FindAbilityByName("special_bonus_yondaime_2")
+	if abilityS ~= nil then
+	    if abilityS:GetLevel() > 0 then
+	    	castrangebonus = 300
+	    end
 	end
 	return self.BaseClass.GetCastRange(self, location, target) + castrangebonus
+end
+
+function yondaime_marked_kunai:ProcsMagicStick()
+	return true
 end
 
 function yondaime_marked_kunai:OnSpellStart()

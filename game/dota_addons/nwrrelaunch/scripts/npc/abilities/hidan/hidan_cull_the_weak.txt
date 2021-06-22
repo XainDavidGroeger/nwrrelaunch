@@ -14,19 +14,10 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"hidan_cull_the_weak"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
-		"particle"			"particles/addons_gameplay/pit_lava_blast.vpcf"
-	}
-	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"350 375 400 425"
-	"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 	"AbilityManaCost"				"90"
 
 	// Time		
@@ -53,35 +44,41 @@
 			"var_type"			"FIELD_INTEGER"
 			"pull_radius_end"		"110"
 		}
-		"03"
+		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"creep_damage"		"200 260 320 380"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"hp_percentage_cost"		"10"
-		}
-		"05"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"ms_slow_percentage"		"15 20 25 30"
-		}
-		"06"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"pull_speed"		"4000"
+			"range"				"350 375 400 425"
+			"LinkedSpecialBonus"	"special_bonus_hidan_4"
 		}
 		"07"
 		{
 			"var_type"			"FIELD_INTEGER"
 			"hero_damage"		"100 130 160 190"
 		}
-		"07"
+		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"range"				"350 375 400 425"
+			"creep_damage"		"200 260 320 380"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ms_slow_percentage"		"15 20 25 30"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"		"4"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hp_percentage_cost"		"10"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"pull_speed"		"4000"
 		}
 		
 	}

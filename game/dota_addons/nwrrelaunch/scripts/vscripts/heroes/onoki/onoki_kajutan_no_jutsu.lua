@@ -3,6 +3,7 @@ onoki_kajutan_no_jutsu = class({})
 function onoki_kajutan_no_jutsu:Precache( context )
     PrecacheResource( "soundfile", "soundevents/heroes/onoki/onoki_ultimate_pulse.vsndevts", context )
     PrecacheResource( "soundfile", "sounds/weapons/hero/elder_titan/echo_stomp_cast.vsnd", context )
+    PrecacheResource( "soundfile", "soundevents/heroes/onoki/onoki_ulti_talking.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts", context )
     PrecacheResource( "soundfile", "soundevents/onoki_ult_end.vsndevts", context )
     PrecacheResource( "particle", "particles/units/heroes/onoki/onoki_kajutan_no_jutsu.vpcf", context )
@@ -15,15 +16,21 @@ end
 function onoki_kajutan_no_jutsu:GetCooldown(iLevel)
 	local abilityScd = self:GetCaster():FindAbilityByName("special_bonus_onoki_2")
 	local cdredusction = self.BaseClass.GetCooldown(self, iLevel) / 100 * 14
-	if abilityScd:GetLevel() > 0 then
-		return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
-	else
-	    return self.BaseClass.GetCooldown(self, iLevel)
+	if abilityScd ~= nil then
+	    if abilityScd:GetLevel() > 0 then
+	    	return self.BaseClass.GetCooldown(self, iLevel) - cdredusction
+	    else
+	        return self.BaseClass.GetCooldown(self, iLevel)
+	    end
 	end
 end
 
 function onoki_kajutan_no_jutsu:GetCastRange(location, target)
 return self:GetSpecialValueFor("range")
+end
+
+function onoki_kajutan_no_jutsu:ProcsMagicStick()
+    return true
 end
 
 function onoki_kajutan_no_jutsu:OnSpellStart()
@@ -36,9 +43,11 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
 	local damage_factor = self:GetSpecialValueFor("damage_factor")
 	local abilitySpec = self:GetCaster():FindAbilityByName("special_bonus_onoki_6")
 	
-    if abilitySpec:IsTrained() then
-    	threshold_factor = threshold_factor + 0.04
-    end
+	if abilitySpec ~= nil then
+        if abilitySpec:IsTrained() then
+        	threshold_factor = threshold_factor + 0.04
+        end
+	end
 
 	caster:EmitSound("onoki_ulti_talking")
 	
@@ -46,6 +55,9 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
 	Timers:CreateTimer(0.0, function ()
 	    if timerDur < duration then
 	        timerDur = timerDur + 1
+			if timerDur == duration then
+				damage_factor = damage_factor + self:GetSpecialValueFor("last_wave_bonus_damage")
+			end
 	        local enemiesDelayd = FindUnitsInRadius(
 	        	caster:GetTeamNumber(),	-- int, your team number
 	        	casterOrigin,	-- point, center point

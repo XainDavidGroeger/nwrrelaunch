@@ -2,15 +2,13 @@
     "DOTAAbilities"
 {
     
-
 	//=================================================================================================================
 	// Shikamaru Special Bonus
 	//=================================================================================================================	
-	//25: +240 Explosive Kunai Damage / -45s Tentacles Cooldown
-	//20: +2 Meditation Armor and Duration / +2s Shadow Bind Duration
-	//15: -2s Explosive Kunai Cooldown / +100 Cast Range
-	//10: +175 Health / +50 Shadow Bind Damage per Second
-
+	//25: +3 Tag Traps / +300 Radius Shadow Gather Radius
+	//20: +175 Flash Bomb Damage / +1s Shadow Paralysis Duration
+	//15: -3s Shadow Paralysis Cooldown / +100 Cast Range
+	//10: +175 Health / +0.5s Shadow Gather Duration
 	"special_bonus_shikamaru_1"	
 	{
 		// General
@@ -21,7 +19,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"shikamaru_kage_kubishibari"
+			"01" 	"shikamaru_switching_technique"
 		}
 
 		// Special
@@ -31,13 +29,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_damage"					"5.0"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sum_damage"					"150 162.50 200 237.50"
+				"value"					"0.5"
 			}
 		}
 	}
@@ -52,7 +44,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"shikamaru_explosive_kunai"
+			"01" 	"shikamaru_shadow_imitation_technique"
 
 		}
 
@@ -63,7 +55,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"-2"
+				"value"					"-3"
 			}
 		}
 	}
@@ -78,7 +70,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"shikamaru_meditation"
+			"01" 	"shikamaru_flash_bombs"
 		}
 
 		// Special
@@ -88,17 +80,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_buff"					"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_debuff"					"-2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"					"2"
+				"value"					"175"
 			}
 		}
 	}
@@ -114,7 +96,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"shikamaru_kage_kubishibari"
+			"01" 	"shikamaru_shadow_imitation_technique"
 		}
 
 		// Special
@@ -124,7 +106,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"2"
+				"value"					"1"
 			}
 		}
 	}
@@ -149,7 +131,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"240"
+				"value"					"3"
 			}
 		}
 	}
@@ -164,7 +146,7 @@
 
 		"LinkedAbility"
 		{
-			"01" 	"shikamaru_kage_nui"
+			"01" 	"shikamaru_switching_technique"
 		}
 
 		// Special
@@ -174,7 +156,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"-45"
+				"value"					"300"
+			}
+		}
+	}
+
+	"special_bonus_shikamaru_max_traps"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"shikamaru_explosive_tag_trap"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"3"
 			}
 		}
 	}

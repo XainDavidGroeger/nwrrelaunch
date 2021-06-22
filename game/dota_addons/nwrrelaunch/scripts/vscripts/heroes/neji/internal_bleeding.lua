@@ -9,6 +9,7 @@ function internal_bleeding( keys )
 	local ability = keys.ability
 	local bleeding_damage = ability:GetLevelSpecialValueFor("damage_per_tick", (ability:GetLevel() - 1))
 	local damageType = ability:GetAbilityDamageType()
+	
 	local damageTable = {
 						victim = target,
 						attacker = caster,
@@ -21,7 +22,6 @@ end
 
 
 function startEffect( keys )
-
 	if keys.ability.dotParticle ~= nil then
 		ParticleManager:DestroyParticle(keys.ability.dotParticle, true) 
 	end
@@ -37,7 +37,6 @@ function endEffect( keys )
 end
 
 function applySlowModifier( keys )
-
 	local ability = keys.ability
 	local caster = keys.caster
 	local target = keys.target

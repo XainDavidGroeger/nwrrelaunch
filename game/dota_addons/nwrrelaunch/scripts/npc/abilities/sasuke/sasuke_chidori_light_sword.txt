@@ -18,18 +18,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportBonus"	"40"
 		
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-			"soundfile"			"soundevents/heroes/sasuke/sasuke_chidori_light_sword_talking.vsndevts"
-			"soundfile"			"soundevents/heroes/sasuke/sasuke_sword_impact.vsndevts"
-			"particle"			"particles/units/heroes/hero_stormspirit/stormspirit_overload_ambient.vpcf"
-			"particle"  		"particles/econ/items/spirit_breaker/spirit_breaker_thundering_flail/spirit_breaker_thundering_flail.vpcf"
-			"particle"			"particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf"
-		}
-
 		"AbilitySpecial"
 		{
 			"01"

@@ -1,0 +1,167 @@
+
+    "DOTAAbilities"
+{
+    
+"zabuza_executioners_blade"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"	"zabuza_executioners_blade"
+	"AbilityCooldown"		"30 24 18 12"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile" "soundevents/heroes/zabuza/zabuza_executioner_cast.vsndevts"
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+	  "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+	  "particle"	"particles/units/heroes/hero_bounty_hunter/status_effect_bounty_hunter_jinda_slow.vpcf"
+	  "particle"	"particles/units/heroes/zabuza/executioners_blade_buff.vpcf"
+	 }
+
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_multiplier"		"170"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_threshold"		"15 20 25 30"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"crit_duration"		"1.50 2.00 2.50 3.00"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cd_reduction"		"0"
+			"LinkedSpecialBonus"	"special_bonus_zabuza_2"
+		}
+	}
+
+	"OnSpellStart"
+	{
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_executioners_blade_crit_active"
+				"Target"			"CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"zabuza_executioner_cast"
+				"Target"		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/zabuza/executioners_blade.lua"
+				"Function"		"resetCooldown"
+			}
+	}
+
+	"Modifiers"
+	{
+
+		"modifier_executioners_blade"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/zabuza/executioners_blade.lua"
+					"Function"		"execute"
+				}
+			}
+		}
+
+		"modifier_executioners_blade_crit"
+		{
+
+			"Passive" "0"
+			"IsHidden"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+			}
+
+			"OnAttackLanded"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"		"TARGET"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_BountyHunter.Jinada"
+					"Target"		"TARGET"
+				}
+
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_executioners_blade_crit"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+
+		"modifier_executioners_blade_crit_active"
+		{
+
+			"Passive" "0"
+			"IsHidden"	"0"
+			"IsBuff"	"1"
+
+			"duration"			"%crit_duration"
+
+
+			"EffectName"		"particles/units/heroes/zabuza/executioners_blade_buff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"StatusEffectName"	"particles/units/heroes/naruto/naruto_kawazu_kumite_status_effect.vpcf"
+			"StatusEffectPriority"	"10"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+			}
+
+			"OnAttackLanded"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"		"TARGET"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_BountyHunter.Jinada"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+}
+
+}

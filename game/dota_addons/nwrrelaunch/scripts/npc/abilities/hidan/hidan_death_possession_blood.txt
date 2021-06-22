@@ -29,11 +29,6 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10 12 14"
-		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
@@ -45,13 +40,21 @@
 			"var_type"				"FIELD_FLOAT"
 			"radius"				"350"
 		}
-
+		"07"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"returned_damage_inside_percentage"	"100"
+		}
 		"04"
 		{
 			"var_type"								"FIELD_FLOAT"
 			"returned_damage_outside_percentage"	"35 50 65"
 		}
-
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"10 12 14"
+		}
 		"05"
 		{
 			"var_type"							"FIELD_FLOAT"
@@ -63,12 +66,6 @@
 			"var_type"							"FIELD_FLOAT"
 			"tick_interval_modifier"			"0.1"
 		}
-
-		"07"
-		{
-			"var_type"								"FIELD_FLOAT"
-			"returned_damage_inside_percentage"	"100"
-		}
 		"08"
 		{
 			"var_type"								"FIELD_FLOAT"
@@ -76,20 +73,6 @@
 		}
 
 
-	}
-
-	"precache"
-	{
-		"soundfile"	"soundevents/hidan_ulti.vsndevts"
-		"soundfile"	"soundevents/heroes/hidan/hidan_ulti_cast_talking.vsndevts"
-		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
-		"particle"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-		"particle"	"particles/units/heroes/hidan/hidan_blood_possession_ring.vpcf"
-		"particle"	"particles/units/heroes/hidan/ritual_debuff_core.vpcf"
-		"model"		"models/hidan/hidan.vmdl"
 	}
 
 }

@@ -1,0 +1,63 @@
+
+    "DOTAAbilities"
+{
+    
+
+
+"zabuza_demon_of_the_hidden_mist"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_lua"
+	"ScriptFile"                "heroes/zabuza/zabuza_demon_of_the_hidden_mist.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	"AbilityTextureName"			"zabuza_demon_of_the_hidden_mist"
+
+	
+	
+	// Unit Targeting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"100 110 120"
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"marked_break_distance"	"1500"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"	"900"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ms_slow_start"	"10 20 30"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ms_slow_dur"	"2"
+		}
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"			"4 5 6"
+		}
+	}
+}
+}
