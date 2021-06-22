@@ -54,41 +54,6 @@ function neji_32_palms:OnSpellStart()
 	ParticleManager:SetParticleControl(self.ability.images_particle, 1, self.caster:GetAbsOrigin())
 	ParticleManager:SetParticleControl(self.ability.images_particle, 3, self.target:GetAbsOrigin())
 	ParticleManager:SetParticleControl(self.ability.images_particle, 4, self.caster:GetForwardVector() * distance:Length2D() )
-
-	Timers:CreateTimer(1.33, function()
-        if self.caster:HasModifier("modifier_32_palms_caster") then
-            self.number_32 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_32.vpcf", PATTACH_OVERHEAD_FOLLOW, self.target)
-            ParticleManager:SetParticleControl(self.number_32, 1, Vector(0, 1, 0))
-            ParticleManager:SetParticleControl(self.number_32, 2, Vector(0, 6, 0))
-        end
-
-		Timers:CreateTimer(1.33, function()
-            
-			ParticleManager:DestroyParticle(self.number_32, false)
-
-            if self.caster:HasModifier("modifier_32_palms_caster") then
-                self.number_64 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_64.vpcf", PATTACH_OVERHEAD_FOLLOW, self.target)
-                ParticleManager:SetParticleControl(self.number_64, 1, Vector(0, 3, 0))
-                ParticleManager:SetParticleControl(self.number_64, 2, Vector(0, 2, 0))
-            end
-	
-			Timers:CreateTimer(1.33, function()
-				ParticleManager:DestroyParticle(self.number_64, false)
-                if self.caster:HasModifier("modifier_32_palms_caster") then
-                    self.number_128 = ParticleManager:CreateParticle("particles/units/heroes/neji/ulti/numbers_128.vpcf", PATTACH_OVERHEAD_FOLLOW, self.target)
-				    ParticleManager:SetParticleControl(self.number_128, 1, Vector(0, 6, 0))
-				    ParticleManager:SetParticleControl(self.number_128, 2, Vector(0, 4, 0))
-                end
-				
-			end)
-		end)
-	end)
-
-	Timers:CreateTimer(5.0, function()
-		ParticleManager:DestroyParticle(self.number_32, false)
-		ParticleManager:DestroyParticle(self.number_64, false)
-		ParticleManager:DestroyParticle(self.number_128, false)
-	end)
   
 end
 
@@ -131,9 +96,14 @@ function modifier_32_palms_caster:OnCreated()
 	ParticleManager:SetParticleControl(self.bagum, 0, self:GetCaster():GetAbsOrigin()) -- Origin
 
 	self.damage = self:GetAbility():GetSpecialValueFor("damage")
+
+    self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 1.5)
+
 end
 
 function modifier_32_palms_caster:OnDestroy()
+	if not IsServer() then return end
+
 	ParticleManager:DestroyParticle(self.bagum, true)
     ParticleManager:DestroyParticle(self.ability.images_particle, true)
     self:GetParent():RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_6)
@@ -146,7 +116,7 @@ function modifier_32_palms_debuff:IsDebuff() return true end
 
 function modifier_32_palms_debuff:CheckState()
     local state = {
-        [MODIFIER_STATE_STUNNED] = true,
+            [MODIFIER_STATE_STUNNED] = true,
         }
     
     return state
@@ -161,42 +131,67 @@ function modifier_32_palms_debuff:GetEffectAttachType()
 end
 
 function modifier_32_palms_debuff:OnCreated()
+    self.hits_count = 0
+    self.interval_count = 1
+    self.intervals = {0.4, 0.4, 0.17, 0.085, 0.02085, 0.01042, -1}
+    self.hits = {2,4,8,16,32,64}
+    --TODO: fix VFX, vector belove is for that
+    self.vfx_v_1 = {
+        Vector(0,2,0),
+        Vector(0,0,0),
+        Vector(0,4,0),
+        Vector(0,8,0),
+        Vector(0,1,0),
+        Vector(0,3,0),
+        Vector(0,6,0),
+    }
+    self.vfx_v_2 = {
+        Vector(0,0,0),
+        Vector(0,0,0),
+        Vector(0,0,0),
+        Vector(0,0,0),
+        Vector(1,6,0),
+        Vector(1,2,0),
+        Vector(1,4,0),
+    }
+    self.vfx_v_color = {
+        Vector(156,156,0),
+        Vector(156,156,0),
+        Vector(156,156,0),
+        Vector(156,156,0),
+        Vector(156,156,0),
+        Vector(156,156,0),
+        Vector(239,145,38),
+        Vector(255,0,0),
+    }
+
+    self.ability = self:GetAbility()
+    self.caster = self.ability:GetCaster()
+    self.parent = self:GetParent()
+    self.damage = self.ability:GetSpecialValueFor("damage")
+    self.mana_burned_per_attack_perc = self.ability:GetSpecialValueFor("mana_burned_per_attack_perc")
+    self.one_palm_damage = self.damage / 64
+
+
 	if not IsServer() then return end
+    self.mana_burn_damage_table = {
+        victim = self.parent,
+        attacker = self.caster,
+        damage_type = self.ability:GetAbilityDamageType(),
+        ability = self.ability
+    }
+
+    self.damage_table = {
+        victim = self.parent,
+        attacker = self.caster,
+        damage = self.one_palm_damage,
+        damage_type = self.ability:GetAbilityDamageType(),
+        ability = self.ability
+    }
 
     self:GetParent():StartGesture(ACT_DOTA_FLAIL)
-    self.interval_count = 1
 
-    self.damage = self:GetAbility():GetSpecialValueFor("damage")
-    self.one_palm_damage = self.damage / 62
-    print(self.one_palm_damage)
-
-    self.interval_time = 0.66
-
-
-    self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 1.5)
-    ApplyDamage({
-        victim = self:GetParent(),
-        attacker = self:GetCaster(),
-        damage = self.one_palm_damage,
-        damage_type = DAMAGE_TYPE_MAGICAL
-    })
-    PopupManaDrain(self:GetParent(),math.floor(1))
-    self:GetParent():EmitSound("neji_64_hit")
-    burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
-    Timers:CreateTimer(0.33, function()
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, 1, self:GetCaster()) 
-        PopupManaDrain(self:GetParent(),math.floor(2))
-        self:GetParent():EmitSound("neji_64_hit")
-        self:GetCaster():RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_6)
-    end)
-
-	self:StartIntervalThink(0.66)
+	self:StartIntervalThink(self.intervals[self.interval_count])
 end
 
 function modifier_32_palms_debuff:OnDestroy() 
@@ -205,149 +200,52 @@ function modifier_32_palms_debuff:OnDestroy()
 end
 
 function modifier_32_palms_debuff:OnIntervalThink()
-    local mana_burn_perc = 1
+    ApplyDamage(self.damage_table)
+    self.hits_count = self.hits_count + 1
 
-    self.interval_count = self.interval_count + 1
-    self:GetCaster():RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_6)
+    --Sound
+    self.parent:EmitSound("neji_64_hit")
 
-
-    if self.interval_count == 2 then
-        self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 1.5)
-        PopupManaDrain(self:GetParent(),math.floor(3))
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-        self:GetParent():EmitSound("neji_64_hit")
-        Timers:CreateTimer(0.33, function()
-            ApplyDamage({
-                victim = self:GetParent(),
-                attacker = self:GetCaster(),
-                damage = self.one_palm_damage,
-                damage_type = DAMAGE_TYPE_MAGICAL
-            })
-            burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-            PopupManaDrain(self:GetParent(),math.floor(4))
-            self:GetParent():EmitSound("neji_64_hit")
-        end)
-    end
-
-    if self.interval_count == 3 then
-        self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 2)
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-        self:GetParent():EmitSound("neji_64_hit")
-        PopupManaDrain(self:GetParent(),math.floor(5))
-        damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.17, 3, 6)
-        playSound(self:GetParent(), 0.26, 3)
-    end
-
-    if self.interval_count == 4 then
-        self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 3)
-        PopupManaDrain(self:GetParent(),math.floor(9))
-        self:GetParent():EmitSound("neji_64_hit")
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-        damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.08, 7, 10)
-        playSound(self:GetParent(), 0.19, 4)
-    end
-
-    if self.interval_count == 5 then
-        self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 4)
-        PopupManaDrain(self:GetParent(),math.floor(17))
-        self:GetParent():EmitSound("neji_64_hit")
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-        damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.04, 15, 18)
-        playSound(self:GetParent(), 0.12, 5)
-    end
-
-    if self.interval_count == 6 then
-        self:GetCaster():StartGestureWithPlaybackRate(ACT_DOTA_CHANNEL_ABILITY_6, 5)
-        PopupManaDrain(self:GetParent(),math.floor(33))
-        self:GetParent():EmitSound("neji_64_hit")
-        ApplyDamage({
-            victim = self:GetParent(),
-            attacker = self:GetCaster(),
-            damage = self.one_palm_damage,
-            damage_type = DAMAGE_TYPE_MAGICAL
-        })
-        burnMana(self:GetParent(), 100.0, mana_burn_perc, self:GetCaster()) 
-        damageAfterXSecondsForXTimes(self:GetCaster(), self:GetParent(), self.one_palm_damage, 0.02, 31, 34)
-        playSound(self:GetParent(), 0.08, 7)
-    end
-
-end
-
-function damageAfterXSecondsForXTimes(caster, target, damage, timer, times, popupcount)
-    if times > 0 then
-        Timers:CreateTimer(timer, function()
-            if target:HasModifier("modifier_32_palms_debuff") then
-                PopupManaDrain(target,math.floor(popupcount))
-                ApplyDamage({
-                    victim = target,
-                    attacker = caster,
-                    damage = damage,
-                    damage_type = DAMAGE_TYPE_MAGICAL 
-                })
-                burnMana(target, 100.0, mana_burn_perc, caster) 
-                damageAfterXSecondsForXTimes(caster, target, damage, timer, times-1, popupcount+1)
-            end
-        end)
-    end
-end
-
-function playSound(target, timer, times)
-    if times > 0 then
-        Timers:CreateTimer(timer, function()
-            if target:HasModifier("modifier_32_palms_debuff") then
-                target:EmitSound("neji_64_hit")
-                playSound(target, timer, times-1)
-            end
-        end)
-    end
-end
-
-
-function burnMana(target, damage_percent, max_mana_percent, caster) 
-
-    if caster:HasModifier("modifier_neji_byakugan_buff") then
+    --Manaburn per hit
+    if self.caster:HasModifier("modifier_neji_byakugan_buff") then
         
-        local mana = target:GetMana()
-        local reduce_mana_amount = target:GetMaxMana() / 100 * max_mana_percent
+        local mana = self.parent:GetMana()
+        local reduce_mana_amount = self.parent:GetMaxMana() / 100 * self.mana_burned_per_attack_perc
         local new_mana = mana - reduce_mana_amount
+        local damage_percent = 100 --TODO: This should be KV
     
-        target:SetMana(new_mana)
+        self.parent:SetMana(new_mana)
     
         local damage = reduce_mana_amount / 100 * damage_percent
-        ApplyDamage({
-            victim = target,
-            attacker = caster,
-            damage = damage,
-            damage_type = DAMAGE_TYPE_MAGICAL,
-        })
+        self.mana_burn_damage_table.damage = damage
+        ApplyDamage(self.mana_burn_damage_table) --Manaburn damage
 
+        --Manaburn overhead effect
+        SendOverheadEventMessage(
+            nil,
+            OVERHEAD_ALERT_MANA_LOSS,
+            self:GetParent(),
+            reduce_mana_amount,
+            self:GetCaster():GetPlayerOwner()
+        )
     end
 
+    if self.hits_count == self.hits[self.interval_count] then
+        self.interval_count = self.interval_count + 1
+        self:StartIntervalThink(-1)
+        self:StartIntervalThink(self.intervals[self.interval_count])
+
+        SendOverheadEventMessage(
+            nil,
+            OVERHEAD_ALERT_DAMAGE,
+            self:GetParent(),
+            self.hits_count,
+            self:GetCaster():GetPlayerOwner()
+        )
+
+    end
 end
+
 
 -- Blast Off Silence modifier
 modifier_32_palms_debuff_silence = modifier_32_palms_debuff_silence or class({})
