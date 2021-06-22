@@ -64,27 +64,37 @@ function modifier_itachi_crow_bunshin:OnCreated()
 
 	self.remove_pfx = false
 
-	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("illusion_duration"))
 end
 
-function modifier_itachi_crow_bunshin:OnIntervalThink()
-	CreateModifierThinker(self:GetCaster(), self, "modifier_itachi_crow_bunshin_dummy", {duration = self:GetAbility():GetSpecialValueFor("illusion_duration")}, self:GetParent():GetAbsOrigin(), self:GetCaster():GetTeamNumber(), false)
-end
-
-modifier_itachi_crow_bunshin_dummy = modifier_itachi_crow_bunshin_dummy or class({})
-
-function modifier_itachi_crow_bunshin_dummy:OnCreated()
+function modifier_itachi_crow_bunshin:OnDestroy()
 	if not IsServer() then return end
 
 	self:GetParent():EmitSound("itachi_crows")
-	self.crows = ParticleManager:CreateParticle("particles/world_creature_fx/crows.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+	self.crows = ParticleManager:CreateParticle(
+		"particles/world_creature_fx/crows.vpcf", 
+		PATTACH_CUSTOMORIGIN, 
+		self:GetAbility():GetCaster()
+	)
+	ParticleManager:SetParticleControl(self.crows, 0, self:GetParent():GetAbsOrigin())
+	print(self:GetParent():GetAbsOrigin())
+	-- ParticleManager:SetParticleControlEnt(int_1, int_2, handle_3, int_4, string_5, Vector_6, bool_7)
+
 end
 
-function modifier_itachi_crow_bunshin_dummy:OnRemoved()
-	if not IsServer() then return end
+-- modifier_itachi_crow_bunshin_dummy = modifier_itachi_crow_bunshin_dummy or class({})
 
-	if self.pfx then
-		ParticleManager:DestroyParticle(self.crows, false)
-		ParticleManager:ReleaseParticleIndex(self.crows)
-	end
-end
+-- function modifier_itachi_crow_bunshin_dummy:OnCreated()
+-- 	if not IsServer() then return end
+
+-- 	self:GetParent():EmitSound("itachi_crows")
+-- 	self.crows = ParticleManager:CreateParticle("particles/world_creature_fx/crows.vpcf", PATTACH_ABSORIGIN, self:GetParent())
+-- end
+
+-- function modifier_itachi_crow_bunshin_dummy:OnRemoved()
+-- 	if not IsServer() then return end
+
+-- 	if self.pfx then
+-- 		ParticleManager:DestroyParticle(self.crows, false)
+-- 		ParticleManager:ReleaseParticleIndex(self.crows)
+-- 	end
+-- end

@@ -1,0 +1,206 @@
+Hey @everyone , after long bumpy ride, I present to you **Naruto Wars Reborn 1.1** Patch. Along with patch notes below.
+Enjoy, see you on a battlefield.
+
+**Anko**
+*[W] Striking Snakes*
+- Is now Active Ability
+
+Gives buff for 5 seconds that launches snakes on 1 sec intervals to closest enemy (heroes are prioritised) dealing damage, passively gives Magic Resistance.
+Each snake applies stack that increase damage.
+Damage per snake: 40\60\80\100
+Bonus Damage Per Stack: 10\12\14\16
+Manacost: 100
+Cooldown: 13\12\11\10s
+
+- Lvl 25 talent changed from “-1 snakes interval” -> “-0.5s snakes interval”
+
+**Gaara**
+*[W] Sand Tsunami*
+- Radius Increased from 300 to 425
+- Now instead of stunning slows targets inside Radius for 100%
+- Duration: 1.25\2.0\2.75\3.5s
+- Damage per second: 100
+- Total Damage: 125\200\275\350
+- Damage is dealt each 0.1s now
+- Cast point changed from 0.2 to 0.5 (total delay before sandstorm is the same)
+
+*[E] Sand Armor*
+- Is now Active Ability
+
+Targets friendly hero to partially absorb incoming damage in excange for Gaara's Mana. 
+- Duration: 6\9\12\15s
+- Persentage absorbed: 30% (60% for Gaara) 
+- Damage absorbed per mana: 0.55\0.7\0.85\1
+
+*[R] Great Sand Burial*
+- Wave speed changed from 500 to 800
+- Stun is now piercing Spell SpellImmunity
+
+
+**Guy**
+*[Q] Dynamic Entry*
+- Now reduces armor instead of slow
+- Armor reduction: 1\2\3\4 (4\5\6\7 with Gates Open)
+- Armor reduction duration: 4s
+- Cooldown reduced from 16\15\14\13 to 12\11\10\9
+- Damage changed from 90\180\270\360 to 70\120\170\220
+- Damage type changed from Magical to Physical 
+
+*[W] Leaf Strong Whirlwind*
+- Now applies slow instead of stun
+- Slow: 25% (40% with Gates Open)
+- Slow Duration: 1\1.5\2\2.5s
+
+*[E] Strong Fist*
+- Can now be set on autocast to always crit when off cooldown
+- Crit changed from 225% to 180\195\210\225%
+- Cooldown changed from 17/14/11/8s to 14/12/10/8s
+- Stun duration (with Gates Open) changed from 0.5\0.75\1\1.25s to 1s
+
+*[R] Sixth Gate: Open*
+- Health drain changed from 3% to 2%
+- No longer gives bonus damage
+- Movement bonus changed from 8\12\16% to 40\50\60 **(flat, not percents)**
+- Base Attack Time changed from 1.5\1.3\1.1 to 1.4\1.3\1.2
+
+
+**Haku**
+*[E] Endless Wounds*
+-- Now deals 1 magical damage per stack each second
+
+
+**Hidan**
+Level 20 talent changed from "+20 Strength" to "-3s Cooldown on Cull the Weak"
+
+
+**Itachi**
+*[Q] Tsukuyomi*
+- Cooldown reduced from 15s to 12s
+- Damage reduced from 120/190/260/330 to 100/160/220/280
+
+*[W] Dust Crow Genjutsu*
+- Manacost changed from 60 to 75
+- Clone outgoing damage from 0% to 20%
+
+- Level 20 talent changed from “from -3s CD Crow genjutsu” -> “+10s crow genjutsu clone duration”
+
+*[R] Amaterasu*
+- Cast Point increased from 0.4 to 0.6
+- Range increased from 500 to 700
+- Damage per second increased from 45\60\75 to 50/65/80
+- Duration increased from 10 to 10/11/12
+- Mana Cost increased from 120 to 150/200/250
+
+
+**Kisame**
+*[R] Shark Dance*
+- Movement speed debuff increased from -15% to -15%\-20%\-25%
+- Health regen per second increased form 2.5% to 3.0%
+- Manacost per second decreased from 5% to 4% max mana
+
+-Now under effect of dome enemies will get slowed more and take more damage
+--Slow increases every second by 5% up to 40\45\50% 
+--Damage per second increases every second for 4 up to 60\84\108 max
+
+
+**Minato**
+*[W] Rasengan*
+- Cooldown reduced from 12 to 12\11\10\9s
+- Base damage increased from 50 to 50\75\100\125
+- Stun duration increased from 0.75s to 0.8s
+- Knockback duration decreased from 0.5s to 0.3s
+- Can now be set on autocast to disable Knockback
+
+
+**Neji**
+*[W] Air Palm*
+- Manacost increased from 65\70\75\80 to 95\100\105\110
+
+*[E] Byakugan*
+- Cooldown decreased from 20s to 5s
+
+*[R] 64 Palms*
+- Damage type changed  from Physical to Magical
+
+
+**Onoki**
+*[Q] Atomic Dismantling*
+- Cast point increased from 0 to 0.2s
+- Damage Inncreased from 85\105\200\275 to 95\160\225\290
+
+*[E] Weighted Rock Technique*
+- Now also applies manaloss reduction\amplification for 7\11\15\19%
+- Cooldown reduced from 14\13\12\11s to 9\8\7\6s
+- Manacost increased from 50 to 75
+- Now has cast point 0.1s
+
+*[R] Turn To Dust*
+- Manacost reduced from 175\250\325 to 150\200\250
+- Max health damage per pulse increased from 5\5.5\6% to 6\7\8%
+- Lasp pulse now delas bonus 4% max health damage
+
+
+**Raikage**
+*[W] Lariat*
+- Damage type changed from magical to Physical
+
+*[E] Lightning Horizontal*
+- Damage type changed from Magical to Physical
+- Damage from strength is now 0.7\0.8\0.9\1.0
+- Cooldown reduced from 15\12\9\6s to 13\10\7\4s
+- Debuff duration changed  from 4s to 2s 
+
+**Sasuke**
+*[Q] Chidori*
+- No longer has base damage
+- Manacost increased from 70 to 90
+
+*[R] Kirin*
+- Base damage decreased from 250\325\400 to 225\300\375
+- Additional damage decreased from 60\75\90% to 30\45\60%
+
+
+
+**Temari**
+*[Q] Wind Dust Technique*
+- Cast point reduced from 0.3s to 0.1s
+- Damage reduced to 80\150\220\290
+- Cooldown increased from 5s to 8\7\6\5s
+- Now deals damage in 200 radius around target
+
+*[W] Wind Scythe Technique*
+- Lift duration changed from 1.3 to 1.2\1.4\1.6\1.8s
+- Damage increased from 85\105\215\280 to 100\160\220\280
+
+
+*[R] Balde Dance*
+- Now has cast point of 0.2s
+
+- Level 25 talent changed from "+3s Wind Scythe Lift Duration" to "+420 damage on Wind Scythe"
+
+
+
+**Zabuza**
+*[W] Hidden Mist*
+- Cooldown decreased from 36/29/22/15s to 32/24/16/9s
+- Duration changed  to 9s
+
+
+**Other changes**
+- Updated tooltips
+- Completely new Visual Effects for Guy
+- Some updated general Visual Effects
+- New revamped sound effects for Guy
+- Some updated general sound effects
+- New revamped icons for Guy
+- Some abilities are rewriten and now more stable
+
+- Fixed some passives not reacting to Break 
+- Fixed Neji being able to permastun targets
+- Fixed Onokis W stunning people all over the map 
+- Other minor bugfixes
+
+Please Report Any bugs you found to our #bug-report channel
+GL HF
+
+
