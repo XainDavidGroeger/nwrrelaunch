@@ -1322,7 +1322,7 @@
 		"DOTA_Tooltip_ability_anko_senei_jyashu_damage_per_stack"	"BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_jyashu_magic_resist"	"%MAGIC RESISTANCE BONUS: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_seek_radius"	"RADIUS: "
-		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"<b><font color='#2CEA5E'>Unleashes snakes overtime</font></b> from Anko that inflict Magic Damage to nearby enemies prioritizing Heroes. <br><br> Enemies take <b><font color='#2CEA5E'>increased damage for each consecutive snake</font></b> that damages them. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
+		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"For a short duration, <b><font color='#2CEA5E'>unleashes snakes overtime</font></b> from Anko that inflict Magic Damage to nearby enemies prioritizing Heroes. <br><br> Enemies take <b><font color='#2CEA5E'>increased damage for each consecutive snake</font></b> that damages them. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
 		
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"<b><font color='#78D590'>Snake Bite</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				""

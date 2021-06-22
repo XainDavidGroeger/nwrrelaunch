@@ -195,6 +195,10 @@ function modifier_kisame_water_prision_caster:OnCreated()
 	self.aura_radius = self:GetAbility():GetSpecialValueFor("radius")
 	self.move_speed_bonus_perc = self:GetAbility():GetSpecialValueFor("ms_buff")
 	self.hp_regen_perc = self:GetAbility():GetSpecialValueFor("hp_reg_per_second_percentage")
+	self.interval = self.ability:GetSpecialValueFor("tick_interval")
+	self.max_mana_per_second = self.ability:GetSpecialValueFor("mana_cost_per_second_percentage")
+
+	self:StartIntervalThink(self.interval)
 
 	if not IsServer() then return end
 
@@ -214,6 +218,15 @@ function modifier_kisame_water_prision_caster:OnCreated()
 	)
 	ParticleManager:SetParticleControl(self.dome_sharks_vfx, 0, self.caster:GetAbsOrigin()) -- Origin
 	ParticleManager:SetParticleControl(self.dome_sharks_vfx, 3, Vector(self.aura_radius,0,0)) -- Origin
+end
+
+function modifier_kisame_water_prision_caster:OnIntervalThink()
+	--Manacost
+	self.caster:SpendMana(self.caster:GetMaxMana() * self.max_mana_per_second * self.interval / 100, self.ability)
+	
+	if self.caster:GetMana() <= 0 then
+		self:Destroy()
+	end
 end
 
 function modifier_kisame_water_prision_caster:OnDestroy()
@@ -310,6 +323,7 @@ function modifier_kisame_water_prision_aura:OnCreated()
 	self.max_stacks = self.ability:GetSpecialValueFor("max_stacks")
 	self.stack_duration = self.ability:GetSpecialValueFor("stacks_duration")
 	self.interval = self.ability:GetSpecialValueFor("tick_interval")
+	self.max_mana_per_second = self.ability:GetSpecialValueFor("mana_cost_per_second_percentage")
 	self.damage_per_tick = self.interval * self.ability:GetSpecialValueFor("damage_per_second")
 	self.bonus_damage_per_tick_per_stack = self.interval * self.ability:GetSpecialValueFor("damage_per_stack")
 	self.parent_stacks = 0
