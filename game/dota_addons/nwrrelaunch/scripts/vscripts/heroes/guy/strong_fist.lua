@@ -179,7 +179,8 @@ function modifier_guy_strong_fist_caster:IsHidden() return true end
 
 function modifier_guy_strong_fist_caster:DeclareFunctions()
 	return {
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_EVENT_ON_DEATH
 	}
 end
 
@@ -207,10 +208,17 @@ function modifier_guy_strong_fist_caster:OnAttackLanded(attack_event)
 	else
 		if strong_fist_ability.activated then
 			PerformCritAttack(strong_fist_ability, attack_event)
-			strong_fist_ability:SetCooldownSpeed(1)
 		end
 	end
 	strong_fist_ability.activated = false
+	strong_fist_ability:SetCooldownSpeed(1)
+end
+
+function modifier_guy_strong_fist_caster:OnDeath(event_table)
+	if event_table.unit ~= self:GetParent() then return end
+	local strong_fist_ability = self:GetAbility()
+	strong_fist_ability.activated = false
+	strong_fist_ability:SetCooldownSpeed(1)
 end
 
 

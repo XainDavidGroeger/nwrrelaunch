@@ -1,6 +1,6 @@
 
 //special bonus flat
-#base "special_bonus_flat.txt"
+#base "special_bonus_flat.txt" //$
 
 // main abilities
 #base "abilities/gaara/gaara.txt"

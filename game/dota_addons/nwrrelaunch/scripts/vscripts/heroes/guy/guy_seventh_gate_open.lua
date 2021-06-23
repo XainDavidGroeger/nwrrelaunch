@@ -166,15 +166,18 @@ end
 function modifier_guy_seventh_gate:OnIntervalThink()
 	local drain_hp_percent = self:GetAbility():GetSpecialValueFor("hp_drain")
 	local drain_hp = (self.caster:GetMaxHealth() / 100) * drain_hp_percent * 0.1
-
-	ApplyDamage({
+	local damage_table = {
 		victim = self.caster,
 		attacker = self.caster,
 		damage = drain_hp,
-		damage_type = DAMAGE_TYPE_HP_REMOVAL,
-		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS,
+		damage_type = DAMAGE_TYPE_PURE,
+		damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
 		ability = self
-	})
+	}
+	print(damage_table.damage)
+	print(damage_table.damage_type)
+	print(damage_table.damage_flags)
+	ApplyDamage(damage_table)
 end
 
 function modifier_guy_seventh_gate:DeclareFunctions()
