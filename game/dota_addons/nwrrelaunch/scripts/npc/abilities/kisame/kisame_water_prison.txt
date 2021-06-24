@@ -73,12 +73,12 @@
 		"09"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"hp_reg_per_second_percentage"		"2.5"
+			"hp_reg_per_second_percentage"		"3"
 		}		
 		"10"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"mana_cost_per_second_percentage"	"5"
+			"mana_cost_per_second_percentage"	"4"
 		}
 		"11"
 		{
