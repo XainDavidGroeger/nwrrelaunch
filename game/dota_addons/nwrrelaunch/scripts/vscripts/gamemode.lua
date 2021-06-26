@@ -8,7 +8,9 @@ require('addon_init')
 BAREBONES_DEBUG_SPEW = false
 --Set this to false to deactive cheat inputs(cheats.lua) and true to activate cheat inputs 
 CHEATS_ACTIVATED = false
+
 -- CHEATS_ACTIVATED = true
+
 
 if GameMode == nil then
 	_G.GameMode = class({})

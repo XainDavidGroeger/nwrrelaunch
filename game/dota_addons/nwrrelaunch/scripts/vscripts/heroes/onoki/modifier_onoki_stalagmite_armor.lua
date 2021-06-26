@@ -72,25 +72,20 @@ function modifier_onoki_stalagmite_armor:OnAttacked(params)
 	if params.target ~= self:GetParent() then return end
     if IsServer() then
 
-	    if params.unit==self:GetParent() then
-			return
-		end
-
-		if params.attacker==self:GetParent() then
-			return
-		end
+		if params.target == self:GetParent() 
+				and params.attacker:GetTeamNumber() ~= params.target:GetTeamNumber() 
+				and params.attacker:IsTower() == false 
+		then
+			local parent = self:GetParent()
+			local random_per = self:GetAbility():GetSpecialValueFor("damage_chance")
+			local damage = self:GetAbility():GetSpecialValueFor("damage")
+			local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
+			local damage_type = self:GetAbility():GetAbilityDamageType()
 		
-		local parent = self:GetParent()
-	    local random_per = self:GetAbility():GetSpecialValueFor("damage_chance")
-	    local damage = self:GetAbility():GetSpecialValueFor("damage")
-	    local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
-	    local damage_type = self:GetAbility():GetAbilityDamageType()
-	
-        if params.attacker:IsConsideredHero() then
-		    if RollPercentage(random_per) then
-			    self:PlayEffects(params.attacker)
+			if RollPercentage(random_per) then
+				self:PlayEffects(params.attacker)
 				params.attacker:AddNewModifier(parent, self, "modifier_stunned", {duration = stun_duration})
-	            ApplyDamage({ victim = params.attacker, attacker = parent, damage = damage, damage_type = damage_type })
+				ApplyDamage({ victim = params.attacker, attacker = parent, damage = damage, damage_type = damage_type })
 			end
 		end
 	end

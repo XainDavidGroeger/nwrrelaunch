@@ -1,0 +1,94 @@
+"DOTAAbilities"
+{
+
+  // 25: +2 Multishot Beast Drawing / +250 Bash Damage for God Drawings
+  // 20: +15 Armor for God Drawings / +1 Maximum Rat Targets
+  // 15: +40 Snake Entanglement DPS / +25 Movement Speed
+  // 10: +175 Health / +2s Rat Vision Duration
+"npc_dota_hero_sai" //sai
+{
+
+		"HeroID"					"221"
+
+//Picking Screen
+		"IsCustom"					"1"
+
+  "BaseClass"   "npc_dota_hero_rubick"
+  "Ability1"        "sai_super_beast_drawing"
+  "Ability2"        "sai_snake_entanglement"
+  "Ability3"        "generic_hidden" 
+  "Ability4"        "generic_hidden" 
+  "Ability5"        "generic_hidden" 
+  "Ability6"        "generic_hidden"
+  "Ability10"		"special_bonus_mp_regen_175"
+  "Ability11"		"special_bonus_armor_5"
+  "Ability12"		"special_bonus_attack_range_100"
+  "Ability13"		"special_bonus_haku_1"
+  "Ability14"		"special_bonus_haku_2"
+  "Ability15"		"special_bonus_haku_3"
+  "Ability16"		"special_bonus_haku_4"
+  "Ability17"		"special_bonus_haku_5"
+  "ModelScale"		"0.40"
+  "LoadoutScale"	"0.37" 
+
+
+  "SpectatorLoadoutScale" "0.40"
+	"VersusScale"		"0.40" 
+
+  "Model" 		"models/sai/sai.vmdl"
+
+  "ItemSlots"
+  { }
+
+  "StatusHealth"    "200"
+  "StatusHealthRegen"   "0.300000"
+  "ArmorPhysical"   "0.000000"
+  "AttributePrimary"    "DOTA_ATTRIBUTE_INTELLECT"
+  "AttackDamageMin"   "21"
+  "Role"      "Support,Nuker,Disabler"
+  "Rolelevels"  "3,1,1,1"
+  "AttackDamageMax"   "25"
+  "AttackRate"    "1.700000"
+  "AttackAnimationPoint"		"0.4"
+  "AttackRange"				"600"
+  "ProjectileModel"   "particles/units/heroes/haku/haku_base_attack.vpcf"
+  "ProjectileSpeed"  "1200"
+  "MovementSpeed"			"290"
+  "AttributeBaseStrength" "21" // Base strength
+  "AttributeStrengthGain" "2.5" // Strength bonus per level.
+  "AttributeBaseIntelligence" "25" // Base intelligence
+  "AttributeIntelligenceGain" "3.5" // Intelligence bonus per level.
+  "AttributeBaseAgility" "17" // Base agility
+  "AttributeAgilityGain" "1.7" // Agility bonus per level.
+  "Village"			"konoha"
+  "Gender"      "male"  
+
+  	"VisionDaytimeRange"		"1800"                            // Range of vision during day light.
+		"VisionNighttimeRange"		"800"                             // Range of vision at night time.
+
+		"HasInventory"				"1" // This KV is required for units file only
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"275"
+			"fastest"	"350"
+		}
+
+}	
+
+  "npc_dota_hero_rubick" 
+	{
+		  	"override_hero"   "npc_dota_hero_rubick"
+		    "Model" 		"models/sai/sai.vmdl"
+		    "ModelScale"		"0.40"
+        "LoadoutScale"	"0.37" 
+		    "SpectatorLoadoutScale" "0.40" 
+	      "VersusScale"		"0.40"
+	}
+
+
+}
