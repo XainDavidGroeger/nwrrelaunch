@@ -25,8 +25,6 @@ function sai_snake_entanglement:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.ability = self
 
-	self.caster:EmitSound("shikamaru_stitch_talking")
-
 	-- Ability specials
 	self.radius = self.ability:GetSpecialValueFor("radius")
 	self.duration = self.ability:GetSpecialValueFor("duration")

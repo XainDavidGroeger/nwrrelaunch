@@ -28,6 +28,7 @@
 	// Time     
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"               "14 13 12 11"
+	"AbilityDamage"					"90 180 270 360"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -38,40 +39,30 @@
 	"AbilitySpecial"
 	{
 		"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"wave_range"		"1200"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"90 180 270 360"
-			}	
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"root_duration"		"2.5 3 3.5 4"
-			}	
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"projectile_speed"		"1300.0"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"wave_aoe"			"110"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"1200"
-			}	
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"wave_width"		"110"
-			}
+		{
+			"var_type"			"FIELD_FLOAT"
+			"wave_range"		"1200"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"		"90 180 270 360"
+		}	
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"root_duration"		"2.5 3 3.5 4"
+		}	
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"projectile_speed"		"1300.0"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"wave_width"			"110"
+		}
 	}
 }
 

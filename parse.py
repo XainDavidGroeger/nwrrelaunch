@@ -109,6 +109,18 @@ class DOTAArcadeHelper():
 
 		self.script_files_list = []
 
+<<<<<<< Updated upstream
+=======
+	def compile_lua_file(self, local_path):
+		if not local_path.endswith('.lua'):
+			local_path += ".lua"
+
+		if local_path.startswith('scripts/vscripts/'):
+			local_path = '/'.join(local_path.split('/')[2:])
+
+		return self.vscritps_path + local_path
+
+>>>>>>> Stashed changes
 	def parse_recursively(self, file_path):
 		abilities_file = open(file_path)
 		file_dir = '/'.join(file_path.split('/')[:-1]) + "/"
@@ -158,6 +170,7 @@ class DOTAArcadeHelper():
 	def gather_modifiers_lua(self, parsed_abilities):
 		result = {}
 		for key, value in parsed_abilities.items():
+<<<<<<< Updated upstream
 			lua_file_path = self.vscritps_path + value["ScriptFile"]
 			lua_file_content = open(lua_file_path).read()
 			modifier_list = re.findall('LinkLuaModifier\("(\S*)",\s?"(\S*)",\s?[A-Z_]*\)', lua_file_content)
@@ -165,6 +178,14 @@ class DOTAArcadeHelper():
 			for modifier_name, modifier_file_path in modifier_list:
 				modifier_file_full_path = self.vscritps_path + modifier_file_path
 				modifier_file_full_path = modifier_file_full_path if modifier_file_full_path.endswith('.lua') else modifier_file_full_path + '.lua'
+=======
+			lua_file_path = self.compile_lua_file(value["ScriptFile"])
+			lua_file = open(lua_file_path)
+			lua_file_content = lua_file.read()
+			modifier_list = re.findall('LinkLuaModifier\("(\S*)",\s?"(\S*)",\s?[A-Z_]*\)', lua_file_content)
+			for modifier_name, modifier_file_path in modifier_list:
+				modifier_file_full_path = self.compile_lua_file(modifier_file_path)
+>>>>>>> Stashed changes
 				if modifier_file_full_path == lua_file_path:
 					modifier_file_content = lua_file_content
 				else:
@@ -173,9 +194,16 @@ class DOTAArcadeHelper():
 				is_hidden = re.match(
 					f"{modifier_name}:IsHidden\(\)\s*return\s*(true|false)\s*end", 
 					modifier_file_content)
+<<<<<<< Updated upstream
 				is_hidden = is_hidden.group(1) if is_hidden is not None else 'false'
 				result = result | {modifier_name: {"IsHidden": True if is_hidden == 'true' else False}}
 		lua_file_content.close()
+=======
+				print(is_hidden.group(1))
+				is_hidden = is_hidden.group(1) if is_hidden is not None else 'false'
+				result = result | {modifier_name: {"IsHidden": True if is_hidden == 'true' else False}}
+			lua_file.close()
+>>>>>>> Stashed changes
 		return result
 
 
@@ -196,5 +224,11 @@ if __name__ == "__main__":
 	helper.main()
 	result = helper.gather_modifier_kv(helper.abilities_kv)
 	result = helper.gather_modifiers_lua(helper.abilities_lua)
+<<<<<<< Updated upstream
+=======
+	print(result)
+	for key, value in result.items():
+		print(f"{key}: {{ISHidden: {value['IsHidden']}}}")
+>>>>>>> Stashed changes
 
 	
