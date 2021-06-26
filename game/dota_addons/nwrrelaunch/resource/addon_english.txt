@@ -383,10 +383,14 @@
 		"DOTA_Tooltip_ability_kisame_water_prison_mana_cost_per_second_percentage"	"%MANACOST PER SECOND: "
 		"DOTA_Tooltip_ability_kisame_water_prison_hp_reg_per_second_percentage"	"%HP REGEN PER SECOND: "
 		"DOTA_Tooltip_ability_kisame_water_prison_ms_buff"	"%MOVEMENT SPEED BUFF: "
-		"DOTA_Tooltip_ability_kisame_water_prison_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - <b><font color='#0689D8'>Creates a large dome of water</font></b> that follows Kisame's movement while draining mana. <br><br>Kisame gains <b><font color='#9AB3F4'>extra Movement Speed and Health Regeneration</font></b> inside the water dome. <br><br> Enemies have<b><font color='#0A6AA4'> reduced Movement Speed and take Magic Damage</font></b> inside the water dome."
+		"DOTA_Tooltip_ability_kisame_water_prison"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"DOTA_Tooltip_ability_kisame_water_prison_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - <b><font color='#0689D8'>Creates a large dome of water</font></b> that follows Kisame's movement while draining mana. <br><br>Kisame gains <b><font color='#9AB3F4'>extra Movement Speed and Health Regeneration</font></b> inside the water dome. <br><br> Enemies take<b><font color='#0A6AA4'> increasing Magic Damage and Movement Speed Slow</font></b> while inside the water dome."
 		
-		"Dota_Tooltip_modifier_kisame_metamorphosis"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
-		"Dota_Tooltip_modifier_kisame_metamorphosis_description"			"Creating a <b><font color='#0689D8'>Water Dome</font></b> around the User that deals <b><font color='#0689D8'>Damage to nearby enemies.</font></b>"
+		"DOTA_Tooltip_ability_kisame_water_prison_deactivate"			"<b><font color='#9AB3F4'>Shark Dance (Off)</font></b>"
+		"DOTA_Tooltip_ability_kisame_water_prison_deactivate_description"	"Removes the effects of <b><font color='#9AB3F4'>Shark Dance</font></b>."
+
+		"Dota_Tooltip_modifier_kisame_water_prision_caster"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"Dota_Tooltip_modifier_kisame_water_prision_caster_description"			"Creating a <b><font color='#0689D8'>Water Dome</font></b> around the User that deals <b><font color='#0689D8'>Damage to nearby enemies.</font></b>"
 		"Dota_Tooltip_modifier_water_prison_buff"						"<b><font color='#9AB3F4'>Aquatic</font></b>"
 		"Dota_Tooltip_modifier_water_prison_buff_description"			"Kisame has increased Movement Speed and Health Regeneration inside the Water Dome."
 		"Dota_Tooltip_modifer_water_prison_hp_reg"						"<b><font color='#9AB3F4'>Regeneration</font></b>"
@@ -394,10 +398,12 @@
 		"Dota_Tooltip_modifer_water_prison_buff"						"<b><font color='#9AB3F4'>Aquatic</font></b>"
 		"Dota_Tooltip_modifer_water_prison_buff_description"			"Kisame has <b><font color='#9AB3F4'>increased Movement Speed</font></b> inside the Water Dome."
 
-
 		//Water Prison debuff
-		"Dota_Tooltip_modifer_water_prison_slow"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
-		"Dota_Tooltip_modifer_water_prison_slow_description"			"This Unit is taking <b><font color='#9AB3F4'>Damage</font></b> and is <b><font color='#9AB3F4'>Slowed.</font></b>"
+		"Dota_Tooltip_modifier_kisame_water_prision_aura"						"<b><font color='#9AB3F4'>Shark Dance</font></b>"
+		"Dota_Tooltip_modifier_kisame_water_prision_aura_description"			"This Unit is taking <b><font color='#9AB3F4'>Damage</font></b> and is <b><font color='#9AB3F4'>Slowed.</font></b>"
+		"Dota_Tooltip_modifier_kisame_water_prision_debuff_stacks"						"<b><font color='#0A6AA4'>Drowning</font></b>"
+		"Dota_Tooltip_modifier_kisame_water_prision_debuff_stacks_description"			"Taking <b><font color='#0A6AA4'>increasing damage and slow</font></b> while inside the Water Dome."
+
 		
 		//Bunshin Water Prison
 		"DOTA_Tooltip_ability_kisame_bunshin_water_prison"						"<b><font color='#0A6AA4'>Water Prison Technique</font></b>"
@@ -425,14 +431,18 @@
 		// Ryuusa Bakuryu
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu"						"<b><font color='#C1943D'>Sand Tsunami</font></b>"
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_lore"						"Ryusa Bakuryu"
-		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Stuns all enemy units</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage over time</font></b> while in the radius."
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_description"			"<b><font color='#C1943D'>Massively slows enemies</font></b> caught within the radius. <br><br> Enemies are <b><font color='#C1943D'>dealt Magic Damage over time</font></b> while in the radius."
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_duration"			"DAMAGE DURATION: "
 		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_stun_duration"		"STUN DURATION: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_damage_per_second"	"DAMAGE PER SECOND: "
+		"DOTA_Tooltip_ability_gaara_ryuusa_bakuryu_total_damage"		"TOTAL DAMAGE: "
+
+
 		// Suna no Yoroi
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi"						"<b><font color='#FFDD93'>Sand Armor</font></b>"
-		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"<b><font color='#FFFFFF'>TOGGLE</font></b> - Absorbs <b><font color='#FFFFFF'>70%</font></b> of <b><font color='#FFDD93'>incoming damage in exchange for Mana</font></b> while toggled on."
-		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_absorption_tooltip"	"%DAMAGE REDUCTION: "
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_description"			"Target friendly Unit absorbs <b><font color='#FFFFFF'>30%</font></b> Incoming Damage <b><font color='#FFDD93'>in exchange for Gaara's Mana</font></b> for a short duration. <br><br> Gaara absorbs <b><font color='#FFFFFF'>60%</font></b> Incoming Damage <b><font color='#FFDD93'>if casted upon himself.</font></b>"
 		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_damage_per_mana"		"REDUCED DAMAGE PER MANA: "
+		"DOTA_Tooltip_ability_gaara_suna_no_yoroi_shield_duration"		"SHIELD DURATION: "
 
 		"Dota_Tooltip_modifier_suna_no_yoroi"							"<b><font color='#FFDD93'>Sand Armor</font></b>"
 		"Dota_Tooltip_modifier_suna_no_yoroi_description"							"Gaara takes <b><font color='#FFDD93'>reduced Damage</font></b> in exchange for <b><font color='#0689D8'>Mana.</font></b>"
@@ -444,6 +454,9 @@
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_lore"					"Sabaku Taiso"
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_description"			"<b><font color='#CB5000'>Unleashes a large wave of sand</font></b> towards a target point, dealing <b><font color='#C1943D'>Magic Damage and Stunning</font></b> all enemies in it's path."
 		"DOTA_Tooltip_ability_gaara_sabaku_taiso_stun_duration"			"STUN DURATION: "
+
+		"DOTA_Tooltip_modifier_gaara_sandstorm_thinker_debuff"			"<b><font color='#C1943D'>Sand Tsunami</font></b>"
+		"DOTA_Tooltip_modifier_gaara_sandstorm_thinker_debuff_description"	"This Unit is taking <b><font color='#C1943D'>Magic Damage</font></b> and is <b><font color='#C1943D'>Slowed.</font></b>"	
 
 
 		//--------------------
@@ -464,7 +477,7 @@
 
 		// Rasengan
 		"DOTA_Tooltip_ability_yondaime_rasengan"						"<b><font color='#00D4FF'>Rasengan</font></b>"
-		"DOTA_Tooltip_ability_yondaime_rasengan_description"			"Minato forms a Rasengan causing his next attack to <b>Knock Back</b> and deal <b><font color='#00D4FF'>Bonus Damage based on Minato's Attack Damage.</font></b> <br><br> Minato gains <b><font color='#00D4FF'>extra Movement Speed</font></b> while holding the Rasengan."
+		"DOTA_Tooltip_ability_yondaime_rasengan_description"			"Minato forms a Rasengan causing his next attack to <b>Knock Back</b> and deal <b><font color='#00D4FF'>Bonus Damage based on Minato's Attack Damage.</font></b> <br><br> Minato gains <b><font color='#00D4FF'>extra Movement Speed</font></b> while holding the Rasengan. <br><br> <b><font color='#FFFFFF'>AUTO CAST</font></b> - Right click this ability to <b><font color='#00D4FF'>remove the knockback</font></b> from Rasengan."
 		"DOTA_Tooltip_ability_yondaime_rasengan_stun_duration"			"STUN DURATION: "
 		"DOTA_Tooltip_ability_yondaime_rasengan_bonus_damage"			"%BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_yondaime_rasengan_base_bonus_damage"		"BASE DAMAGE: "
@@ -616,7 +629,7 @@
 		// Endless Wounds 
 		"DOTA_Tooltip_ability_haku_endless_wounds"					"<b><font color='#89BBCE'>Endless Wounds</font></b>"
 		"DOTA_Tooltip_ability_haku_endless_wounds_lore"				""
-		"DOTA_Tooltip_ability_haku_endless_wounds_description"			"Causes Haku’s attacks to inflict a <b><font color='#A1DAEF'>stacking Movement Speed Slow</font></b> on the target up to a threshold. <br><br> Each of Haku's other abilities will also inflict <b><font color='#89BBCE'>Endless Wounds</font></b> stacks."
+		"DOTA_Tooltip_ability_haku_endless_wounds_description"			"Causes Haku’s attacks and abilities to inflict <b><font color='#A1DAEF'>stacks of Endless Wounds</font></b> on enemies. <br><br> Each stack of Endless Wounds causes increasing <b><font color='#A1DAEF'>Magic Damage overtime and Movement Speed Slow.</font></b>"
 		"DOTA_Tooltip_ability_haku_endless_wounds_ms_slow_per_stack"			"%MS SLOW PER STACK: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_threshold"			"STACK THRESHOLD: "
 		"DOTA_Tooltip_ability_haku_endless_wounds_duration"			"STACK DURATION: "		
@@ -828,7 +841,7 @@
 		"npc_dota_hero_itachi_lore"  									""
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"<b><font color='#B5B5B5'>Dust Crow Genjutsu</font></b>"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_cd_reduc"		"CD REDUCTION (TALENT): "
-		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Itachi instantly teleports</font></b> to the target point. <br><br> <b><font color='#B5B5B5'>A clone is placed</font></b> at his original location after teleporting."
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Itachi instantly teleports</font></b> to the target point. <br><br> <b><font color='#B5B5B5'>A clone is placed</font></b> at his original location after teleporting, dealing reduced <b>Outgoing Damage</b>."
 
 		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Tsukuyomi</font></b>"
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"<b><font color='#9C352C'>Stuns and deals Magic Damage</font></b> to the target enemy unit. <br><br> The enemy will have their <b><font color='#9C352C'>Movement Speed Slowed for a short period</font></b> after the Stun duration."
@@ -858,6 +871,8 @@
 
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_blink_range"			"RANGE: "
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_illusion_duration"		"BUNSHIN DURATION: "
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_illusion_outgoing_damage"	"%CLONE OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_illusion_incoming_damage"	"%CLONE INCOMING DAMAGE:"
 
 
 		"DOTA_Tooltip_ability_itachi_sharingan_chance"			"%CRITICAL CHANCE: "
@@ -978,18 +993,18 @@
 		"npc_dota_hero_guy_lore"  									""
 		// Dynamic Entry
 		"DOTA_Tooltip_ability_guy_dynamic_entry"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"<b><font color='#00A244'>Guy launches himself</font></b> to the target, dealing <b>Physical Damage</b> on impact and a brief <b>Movement Speed Slow</b>. <br><br> <b><font color='#00A244'>Range and Movement Speed Slow</font><b> are increased if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_description"			"Guy launches himself to the target, dealing <b><font color='#00A244'>Phyiscal Damage and reducing Armor</font></b> on impact for a short duration. <br><br> <b><font color='#00A244'>Range and Armor reduction</font><b> are increased if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_cast_range"				"RANGE: "
 		
 		"DOTA_Tooltip_modifier_guy_dynamic_entry_debuff"				"<b><font color='#00A244'>Dynamic Entry</font></b>"
-		"DOTA_Tooltip_modifier_guy_dynamic_entry_debuff_description"	"This Unit's <b><font color='#00A244'>Movement Speed is Slowed.</font></b>"
+		"DOTA_Tooltip_modifier_guy_dynamic_entry_debuff_description"	"This Unit's <b><font color='#00A244'>Armor is reduced.</font></b>"
 
 
 		// Dynamic Entry Ulti
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult"						"<b><font color='#00A244'>Dynamic Entry</font></b>"
-		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_description"			"<b><font color='#00A244'>Guy launches himself</font></b> to the target, dealing <b>Physical Damage</b> on impact. <br><br> <b><font color='#00A244'>Range is increased</font></b> and applies a <b><font color='#00A244'>Movement Speed Slow</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
+		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_description"			"<b><font color='#00A244'>Guy launches himself to the target, dealing <b>Physical Damage</b> on impact. <br><br> <b><font color='#00A244'>Range is increased</font></b> and applies a <b><font color='#00A244'>Movement Speed Slow</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>"
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_ms_slow"			"%MOVEMENT SPEED DEBUFF: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_duration"				"DEBUFF DURATION: "
 		"DOTA_Tooltip_ability_guy_dynamic_entry_ult_cast_range"				"RANGE: "
@@ -1001,13 +1016,16 @@
 		// Leaf Strong Whirlwind
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind"				"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_lore"			"Konoha Gōriki Senpū"
-		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_description"	"Performs a spin kick dealing base<b><font color='#72FF8C'> Physical Damage </font></b> plus <b><font color='#72FF8C'>Guy's Attack Damage</font></b> as well as a <b><font color='#72FF8C'>brief Stun</font></b> to all enemies near Guy. <br><br> Cast time is lowered if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>" 
+		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_description"	"Performs a spin kick dealing <b><font color='#72FF8C'>base Phyiscal Damage</font></b> plus <b><font color='#72FF8C'>Guy's Attack Damage</font></b> to all enemies near Guy. <br><br> Enemies hit by this attack will have their <b><font color='#72FF8C'>Movement Speed Slowed</font></b> for a short duration. <br><br> Cast time is lowered if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b>" 
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stun_duration"	"STUN DURATION: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_stomp_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_guy_leaf_strong_whirlwind_cast_time"			"CAST TIME: "
 		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun"						"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
 		"DOTA_Tooltip_modfiier_guy_leaf_strong_whirlwind_stun_description" 			"This Unit is <b><font color='#72FF8C'>Stunned.</font></b>"
+
+		"DOTA_Tooltip_modifier_guy_string_whirlwind_slow_debuff"		"<b><font color='#72FF8C'>Leaf Strong Whirlwind</font></b>"
+		"DOTA_Tooltip_modifier_guy_string_whirlwind_slow_debuff_description"		"This unit's <b><font color='#72FF8C'>Movement Speed is slowed.</font></b>"
 		
 		
 		// Leaf Strong Whirlwind Ulti
@@ -1027,7 +1045,7 @@
 		"DOTA_Tooltip_ability_guy_strong_fist_lore"						"Goken"
 		"DOTA_Tooltip_ability_guy_strong_fist_crit"					"%CRITICAL DAMAGE: "
 		"DOTA_Tooltip_ability_guy_strong_fist_stun"					"STUN DURATION IN GATES: "
-		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
+		"DOTA_Tooltip_ability_guy_strong_fist_description"			"<b><font color='#FFFFFF'>ACTIVE</font></b> - Guy's next attack <b><font color='#F4E8C7'>deals Critical Damage.</font></b> <br><br> <b><font color='#F4E8C7'>Critical Strike will Stun</font></b> if Guy has <b><font color='#00A913'>Sixth Gate Opened.</font></b> <br><br> <b><font color='#FFFFFF'>AUTO CAST</font></b> - Right click this ability to automatically use <b><font color='#F4E8C7'>Strong Fist</font></b> when off cooldown. <br><br> <b><font color='#FFFFFF'>PASSIVE</font></b> - <b><font color='#F4E8C7'>Cooldown is reduced</font></b> for each attack made by Guy."
 		
 		"DOTA_Tooltip_modifier_guy_strong_fist"					"<b><font color='#F4E8C7'>Strong Fist</font></b>"
 		"DOTA_Tooltip_modifier_guy_strong_fist_description"		"Guy's next attack will be a <b><font color='#F4E8C7'>Critical Strike.</font></b>"
@@ -1057,14 +1075,16 @@
 		"DOTA_Tooltip_ability_guy_seventh_gate_open"				"<b><font color='#00A913'>Sixth Gate: Open</font></b>"
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_lore"			"Kyomon: Kai"
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_ms_bonus"		"%MOVEMENT SPEED BONUS: "
-		"DOTA_Tooltip_ability_guy_seventh_gate_open_bonus_damage"	"BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_bat"			"BASE ATTACK TIME: "
 		"DOTA_Tooltip_ability_guy_seventh_gate_open_hp_drain"		"%MAXIMUM HEALTH PER SECOND: "
 		
 		
-		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, grants increased <b><font color='#00A244'>Movement Speed</font></b> and <b><font color='#F4E8C7'>Attack Damage</font></b>. <br><br> This ability also decreases <b><font color='#72FF8C'>Base Attack Time</font></b> and <b><font color='#00A913'>improves his other abilities.</font></b> <br><br> <b><font color='#00A913'>Drains health</font></b> from Guy while toggled on."
+		"DOTA_Tooltip_ability_guy_seventh_gate_open_description"		"<b><font color='#FFFFFF'>TOGGLE</font></b> - While active, grants increased <b><font color='#00A244'>Movement Speed</font></b> and decreased <b><font color='#72FF8C'>Base Attack Time</font></b>. <br><br> While active, <b><font color='#00A913'>improves Guy's other abilities</font></b> in unique ways. <br><br> <b><font color='#00A913'>Drains health</font></b> from Guy while toggled on."
 		"DOTA_Tooltip_modifier_guy_seventh_gate"							"<b><font color='#00A913'>Sixth Gate: Open</font></b>"
 		"DOTA_Tooltip_modifier_guy_seventh_gate_description"				"Guy has increased <b><font color='#00A244'>Movement Speed</font></b> and <b><font color='#F4E8C7'>Attack Damage</font></b> along with decreased <b><font color='#72FF8C'>Base Attack Time.</font></b>"
+
+		"DOTA_Tooltip_ability_guy_seventh_gate_close"			"<b><font color='#00A913'>Sixth Gate: Close</font></b>"
+		"DOTA_Tooltip_ability_guy_seventh_gate_close_description"			"Removes the effects of <b><font color='#00A913'>Sixth Gate: Open.</font></b>"
 
 		//--------------------
 		//Onoki
@@ -1095,11 +1115,11 @@
 		"DOTA_Tooltip_ability_onoki_added_weight_speed_bonus_perc"	"%MOVEMENT SPEED INCREASE: "
 		"DOTA_Tooltip_ability_onoki_added_weight_speed_penalty_perc"	"%MOVEMENT SPEED SLOW: "
 		"DOTA_Tooltip_ability_onoki_added_weight_duration"			"DURATION: "
-		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"<b><font color='#FFFFFF'>ON ALLY</font></b> - <b><font color='#FEEDC9'>Increases an ally's Movement Speed</font></b> for a short duration. <br><br> <b><font color='#FFFFFF'>ON ENEMY</font></b> - <b><font color='#D86C26'>Decreases an enemy's Movement Speed</font></b> for a short duration."
+		"DOTA_Tooltip_ability_onoki_added_weight_Description"			"<b><font color='#FFFFFF'>ON ALLY</font></b> - <b><font color='#FEEDC9'>Increases an ally's Movement Speed</font></b> and decreases the mana costs of their abilities for a short duration. <br><br> <b><font color='#FFFFFF'>ON ENEMY</font></b> - <b><font color='#D86C26'>Decreases an enemy's Movement Speed</font></b> and increases the mana cost of their abilities for a short duration."
 		"DOTA_Tooltip_modifier_onoki_added_weight_enemy"						"<b><font color='#D86C26'>Weighted Rock Technique</font></b>"
-		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"This Unit has <b><font color='#D86C26'>reduced Movement Speed.</font></b>"
+		"DOTA_Tooltip_modifier_onoki_added_weight_enemy_description"			"This Unit has <b><font color='#D86C26'>reduced Movement Speed</font></b> and <b><font color='#D86C26'>increased Mana costs.</font></b>"
 		"DOTA_Tooltip_modifier_onoki_added_weight_allies"						"<b><font color='#FEEDC9'>Weighted Rock Technique</font></b>"
-		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The Unit has <b><font color='#FEEDC9'>increased Movement Speed.</font></b>"
+		"DOTA_Tooltip_modifier_onoki_added_weight_allies_description"			"The Unit has <b><font color='#FEEDC9'>increased Movement Speed</font></b> and <b><font color='#FEEDC9'>reduced Mana costs.</font></b>"
 		
 		//Turn to Dust
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu"					"<b><font color='#CABA9E'>Turn to Dust</font></b>"
@@ -1107,7 +1127,7 @@
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_duration"			"DURATION: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_radius"			"RADIUS: "
 		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_threshold_factor_tooltips"			"%INSTANT DEATH THRESHOLD: "
-		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"<b><font color='#CABA9E'>Deals Pure Damage around Onoki</font></b> across <b><font color='#FFFFFF'>5</font></b> Pulses based on each enemy's maximum HP. <br><br> <b><font color='#FFFFFF'>Enemy's below a heath threshold</font></b> are <b>Instantly Killed</b> when damaged by a Pulse."
+		"DOTA_Tooltip_ability_onoki_kajutan_no_jutsu_Description"		"<b><font color='#CABA9E'>Deals Pure Damage around Onoki</font></b> across <b><font color='#FFFFFF'>5</font></b> Pulses based on each enemy's maximum HP. <br><br> The final pulse will deal <b><font color='#FFFFFF'>4%</font></b> <b><font color='#C1943D'>increased maximum HP damage.</font></b> <br><br> <b><font color='#FFFFFF'>Enemy's below a heath threshold</font></b> are <b>Instantly Killed</b> when damaged by a Pulse."
 		
 		//25: +100 Atomic Dismantling Damage and Pure / +4% Turn to dust Kill Threshold
 	    //20: +7%/-7% Weighted Rock Effect / +8 Stalagmite Armor
@@ -1305,10 +1325,11 @@
 		"DOTA_Tooltip_ability_anko_senei_jyashu"					"<b><font color='#2CEA5E'>Striking Snakes</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_jyashu_lore"				"Senei Jyashu"
 		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage"		"DAMAGE: "
-		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage_interval" "COOLDOWN: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_snake_damage_interval" "SNAKE COOLDOWN: "
+		"DOTA_Tooltip_ability_anko_senei_jyashu_damage_per_stack"	"BONUS DAMAGE: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_jyashu_magic_resist"	"%MAGIC RESISTANCE BONUS: "
 		"DOTA_Tooltip_ability_anko_senei_jyashu_senei_seek_radius"	"RADIUS: "
-		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"<b><font color='#2CEA5E'>Periodically unleashes a snake</font></b> that inflicts Magic Damage to a nearby enemy Hero. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
+		"DOTA_Tooltip_ability_anko_senei_jyashu_Description"		"For a short duration, <b><font color='#2CEA5E'>unleashes snakes overtime</font></b> from Anko that inflict Magic Damage to nearby enemies prioritizing Heroes. <br><br> Enemies take <b><font color='#2CEA5E'>increased damage for each consecutive snake</font></b> that damages them. <br><br> In addition, grants <b><font color='#2CEA5E'>increased Magic Resistance.</font></b>"
 		
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu"					"<b><font color='#78D590'>Snake Bite</font></b>"
 		"DOTA_Tooltip_ability_anko_senei_ta_jashu_lore"				""
@@ -1336,14 +1357,15 @@
 		"npc_dota_hero_temari"  									"Temari"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Dust Wind</font></b>"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_lore"					"Fusajin no Jutsu"
-		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"<b><font color='#7FD3FF'>Deals Magic Damage</font></b> to a target enemy unit. <br><br> On cast, <b><font color='#7FD3FF'>reduces the Cooldown</font></b> of Temari's other abilities."
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"<b><font color='#7FD3FF'>Deals Magic Damage</font></b> to a target and nearby enemy units. <br><br> On cast, <b><font color='#7FD3FF'>reduces the Cooldown</font></b> of Temari's other abilities by <b><font color='#FFFFFF'>1</font></b> second."
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_damage"			"DAMAGE: "
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_cd_reduc"			"COOLDOWN REDUCTION (TALENT): "
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_radius"			"RADIUS: "
 
 		
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu"				"<b><font color='#EAF8FF'>Wind Scythe</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lore"			"Kamaitachi No Jutsu"
-		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"<b><font color='#EAF8FF'>Unleashes a tornado</font></b> towards the target point <b><font color='#EAF8FF'>lifting enemies</font></b> into the air. <br><br> Enemies take <b><font color='#EAF8FF'>Magic Damage upon landing.</font></b>"
+		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_Description"	"<b><font color='#EAF8FF'>Unleashes a tornado</font></b> towards the target point <b><font color='#EAF8FF'>lifting enemies</font></b> into the air where they are disabled but Invulnerable. <br><br> Enemies take <b><font color='#EAF8FF'>Magic Damage upon landing.</font></b>"
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_base_damage"	"DAMAGE: "
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_travel_distance"	"RANGE: "
 		"DOTA_Tooltip_ability_temari_kamaitachi_no_jutsu_lift_duration"	 "LIFT DURATION: "
@@ -2337,7 +2359,7 @@
 		//15: +2.5s Tskuyomi Slow Duration / +20 Attack Speed
 		//10: +20 Movement Speed / +1.75 Mana Regen
 		"DOTA_Tooltip_Ability_special_bonus_itachi_1"						"+2.5s Tskuyomi Slow Duration"
-		"DOTA_Tooltip_Ability_special_bonus_itachi_2"						"-3s Crow Genjutsu Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_itachi_2"						"+10s Crow Genjutsu Clone Duration"
 		"DOTA_Tooltip_Ability_special_bonus_itachi_3"						"+1.50s Tsukyomi Stun"
 		"DOTA_Tooltip_Ability_special_bonus_itachi_4"						"+225 Amateratsu Spread AOE"
 
@@ -2371,6 +2393,8 @@
 		"DOTA_Tooltip_Ability_special_bonus_hidan_2"						"+225 Self Pain Damage"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_3"						"+15% Jashin's Blessing Heal"
 		"DOTA_Tooltip_Ability_special_bonus_hidan_4"						"+75 Cull the Weak Range"
+		"DOTA_Tooltip_Ability_special_bonus_hidan_5"						"-3s Cull the Weak Cooldown"
+
 
 		//25: +60 Damage Inside Hidden Mist / +100% Cleave
 		//20: +7% Executioner Health Threshold / -0.8s Hidden Mist Fade Delay
@@ -2443,10 +2467,10 @@
 		//20: +20 Strength / +80 Snake Hand Damage
 		//15: +250 Giant Snake Cast Range / +2s Striking Snakes Movement Speed Debuff Duration
 		//10: +2 Mana Regeneration / +100 Cast Range
-		"DOTA_Tooltip_Ability_special_bonus_anko_1"						"+250 Giant Snake Cast Range"
-		"DOTA_Tooltip_Ability_special_bonus_anko_2"						"+2s Striking Snakes Movement Speed Debuff Duration"
-		"DOTA_Tooltip_Ability_special_bonus_anko_3"						"+80 Snake Hand Damage"
-		"DOTA_Tooltip_Ability_special_bonus_anko_4"						"-1s Snake Hand Cooldown"
+		"DOTA_Tooltip_Ability_special_bonus_anko_1"						"+250 Giant Snake Cast Range"buff Duration"
+		"DOTA_Tooltip_Ability_special_bonus_anko_3"						"+80 Snake Hand Damage
+		"DOTA_Tooltip_Ability_special_bonus_anko_2"						"+2s Striking Snakes Movement Speed De"
+		"DOTA_Tooltip_Ability_special_bonus_anko_4"						"+1 Striking Snakes Per Second"
 		"DOTA_Tooltip_Ability_special_bonus_anko_5"						"-4s Giant Snake Cooldown"
 
 

@@ -4,5 +4,6 @@
 #base "guy_strong_fist_ult.txt"
 #base "guy_dynamic_entry.txt"
 #base "guy_seventh_gate_open.txt"
+#base "guy_seventh_gate_close.txt"
 #base "guy_morning_peacock.txt"
 #base "talents.txt"

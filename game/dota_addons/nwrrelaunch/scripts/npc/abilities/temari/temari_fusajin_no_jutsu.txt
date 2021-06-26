@@ -21,11 +21,11 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"750"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	"AbilityCastPoint"				"0.1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"5"
+	"AbilityCooldown"				"8 7 6 5"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"80 160 240 320"
+			"damage"				"80 150 220 290"
 			"LinkedSpecialBonus"	"special_bonus_temari_1"
 		}
 
@@ -60,6 +60,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"cooldown_reduction_other_abilities"				"1"
 			"LinkedSpecialBonus"	"special_bonus_temari_2"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"radius"							"200"
 		}
 	}
 	// "OnSpellStart"

@@ -22,7 +22,7 @@ function ResetHp( keys )
 
 	local cooldown = ability:GetCooldown( ability:GetLevel() )
 	local modifierName = "modifier_jashins_blessing"
-	if not keys.caster:IsAlive() then
+	if not keys.caster:IsAlive() and not keys.caster:PassivesDisabled() then
 
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hidan/hidan_passive_a.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
@@ -32,7 +32,8 @@ function ResetHp( keys )
 	ParticleManager:DestroyParticle(keys.ability.buffeffect, true)
 	
 
-	EmitSoundOn("hidan_jashinblessing_proc", caster) 
+	EmitSoundOn("hidan_jashinblessing_proc", caster)
+
 
 
 

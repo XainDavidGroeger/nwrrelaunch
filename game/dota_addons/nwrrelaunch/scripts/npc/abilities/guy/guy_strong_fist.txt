@@ -7,11 +7,12 @@
         {
             // General  
             // ----------------------------------------------------------------------------------------
-            "BaseClass"                 "ability_datadriven"
-            "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+            "BaseClass"                 "ability_lua"
+            "ScriptFile"                "heroes/guy/strong_fist.lua"
+            "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
             "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL" 
             "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
-            "AbilityTextureName"        "guy_strong_fist"
+            // "AbilityTextureName"        "guy_strong_fist"
         
             // Casting
             //-------------------------------------------------------------------------------------------------------------
@@ -20,7 +21,7 @@
         
             // Time     
             //-------------------------------------------------------------------------------------------------------------
-            "AbilityCooldown"               "17 14 11 8"
+            "AbilityCooldown"               "14 12 10 8"
             "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
         
         
@@ -30,6 +31,11 @@
             {
             "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
             "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_talking_6.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_impact.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_gouken_impact_6.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_morningpeacock_talking.vsndevts"
+            "soundfile"                 "soundevents/heroes/guy/guy_morningpeacock_impact.vsndevts"
             }
         
             "AbilitySpecial"
@@ -37,12 +43,27 @@
                 "01"
                 { 
                     "var_type" "FIELD_FLOAT"
-                    "crit" "225"
+                    "crit" "180 195 210 225"
                 }
                 "02"
                 {
                     "var_type" "FIELD_FLOAT"
-                    "stun" "0.50 0.75 1.00 1.25"
+                    "stun" "1.0"
+                }
+                "03"
+                {
+                    "var_type" "FIELD_INTEGER"
+                    "morning_peacock_bonus_attack_count" "5"
+                }
+                "04"
+                {
+                    "var_type" "FIELD_FLOAT"
+                    "morning_peacock_attack_damage_perc" "36"
+                }
+                "05"
+                {
+                    "var_type" "FIELD_FLOAT"
+                    "morning_peacock_attack_interval" "0.1"
                 }
             }
         

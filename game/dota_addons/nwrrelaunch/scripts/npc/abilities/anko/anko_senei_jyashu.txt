@@ -11,12 +11,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/anko/anko_senei_jyashu.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
 		"AbilityTextureName"			"anko_senei_jyashu"
+
+		"AbilityCooldown"		"13 12 11 10"
+		"AbilityManaCost"		"100"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -33,13 +36,13 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"snake_damage"		"80 100 120 140" 
+				"snake_damage"		"40 50 60 70" 
 				"LinkedSpecialBonus" "special_bonus_anko_3"
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"snake_damage_interval"		"2" 
+				"var_type"			"FIELD_FLOAT"
+				"snake_damage_interval"		"1" 
 				"LinkedSpecialBonus"	"special_bonus_anko_4"
 			}
 			"04"
@@ -51,6 +54,26 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"projectile_speed"		"1250"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"active_duration"		"5"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stacks_duration"		"5.0"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_stack"		"10 12 14 16"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_stacks"		"5"
 			}
 		}
 	}

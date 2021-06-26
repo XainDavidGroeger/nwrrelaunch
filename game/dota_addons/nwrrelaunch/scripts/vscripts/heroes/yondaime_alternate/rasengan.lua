@@ -45,7 +45,7 @@ function rasengan(keys)
 	local knockbackModifierTable =
 	{
 		should_stun = 1,
-		knockback_duration = 0.50,
+		knockback_duration = 0.30,
 		duration = stun_duration,
 		knockback_distance = len,
 		knockback_height = 0,
@@ -55,7 +55,12 @@ function rasengan(keys)
 	}
 
 	if keys.target:IsMagicImmune() == false then
-		keys.target:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
+		if not keys.ability:GetAutoCastState() then
+			-- dont apply knockback if ability is autocasted
+			keys.target:AddNewModifier( keys.caster, nil, "modifier_knockback", knockbackModifierTable )
+		else
+			keys.target:AddNewModifier( keys.caster, nil, "modifier_stunned", {duration = stun_duration} )
+		end
 
 		local averageDamage = caster:GetBaseDamageMin() + ((caster:GetBaseDamageMax() - caster:GetBaseDamageMin())  / 2 )
 		local damage = averageDamage + (averageDamage / 100 * bonus_damage_percent) + base_bonus_damage

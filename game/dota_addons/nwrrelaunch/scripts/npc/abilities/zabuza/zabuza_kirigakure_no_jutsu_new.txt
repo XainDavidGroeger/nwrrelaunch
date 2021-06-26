@@ -16,7 +16,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"700"
 	"AbilityCastPoint"				"0.4"
-	"AbilityCooldown"				"36 29 22 15"
+	"AbilityCooldown"				"32 24 16 9"
 	"AbilityManaCost"				"50"
 
 	// Precache
@@ -99,7 +99,7 @@
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"15"
+			"duration"				"9"
 		}
 		"14"
 		{

@@ -14,7 +14,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"guy_dynamic_entry"
+		// "AbilityTextureName"			"guy_dynamic_entry"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -23,10 +23,10 @@
 	
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16 15 14 13"
+		"AbilityCooldown"				"12 11 10 9"
 	
 		//Damage
-		"AbilityDamage"					"90 150 210 270"
+		"AbilityDamage"					"70 120 170 220"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70"		
@@ -38,17 +38,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"ms_slow"						"-25"
+				"armor_debuff"						"1 2 3 4"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"1 1.5 2 2.5"
+				"duration"						"4"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"ms_slow_ulti"						"-35"
+				"armor_debuff_ulti"						"4 5 6 7"
 			}
 			"04"
 			{

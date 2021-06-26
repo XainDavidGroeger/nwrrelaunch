@@ -15,7 +15,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 60 60 60"
+		"AbilityManaCost"				"75"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -28,8 +28,20 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"illusion_duration"		"4"
+				"LinkedSpecialBonus"		"special_bonus_itachi_2"
+
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_incoming_damage"		"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_outgoing_damage"		"20"
 			}
 		}
 	}

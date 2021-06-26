@@ -69,6 +69,7 @@ function modifier_onoki_stalagmite_armor:GetModifierPhysicalArmorBonus()
 end
 
 function modifier_onoki_stalagmite_armor:OnAttacked(params)
+	if params.target ~= self:GetParent() then return end
     if IsServer() then
 
 		if params.target == self:GetParent() 

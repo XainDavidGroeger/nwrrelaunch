@@ -55,6 +55,9 @@ function onoki_kajutan_no_jutsu:OnSpellStart()
 	Timers:CreateTimer(0.0, function ()
 	    if timerDur < duration then
 	        timerDur = timerDur + 1
+			if timerDur == duration then
+				damage_factor = damage_factor + self:GetSpecialValueFor("last_wave_bonus_damage")
+			end
 	        local enemiesDelayd = FindUnitsInRadius(
 	        	caster:GetTeamNumber(),	-- int, your team number
 	        	casterOrigin,	-- point, center point

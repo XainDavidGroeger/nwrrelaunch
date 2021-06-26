@@ -19,7 +19,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"750"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.5"
 
 		"AOERadius"						"300"
 
@@ -29,7 +29,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 170 240 300"
+		// "AbilityDamage"					"100 170 240 300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -46,38 +46,38 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"300"
+				"radius"					"425"
 				"LinkedSpecialBonus"		"special_bonus_gaara_2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"delay"						"0.3 0.3 0.3 0.3"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"thinker_interval"				"1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"thinker_damage"				"25 42.5 60 75"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"				"2 2 2 2"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1 1 1 1"
+				"thinker_interval"				"0.1"
 			}
-			"07"
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"1.25 2 2.75 3.5"
+			}
+			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius_special"					"380"
+				"radius_special"					"505"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_perc"					"100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per_second"					"100"
+			}
+			"07" //This is only for tooltips
+			{
+				"var_type"					"FIELD_FLOAT"
+				"total_damage"					"125 200 275 350"
 			}
 
 		}

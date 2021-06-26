@@ -1,0 +1,35 @@
+	
+    "DOTAAbilities"
+{
+    
+ "guy_seventh_gate_close"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				        "ability_lua"
+		"ScriptFile"			        "heroes/guy/guy_seventh_gate_open.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"guy_seventh_gate_close"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "MaxLevel"                      "1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// "AbilityCooldown"				"0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		// "AbilityManaCost"				"25"
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	
+	}
+
+}

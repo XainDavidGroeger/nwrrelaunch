@@ -142,6 +142,7 @@ function gaara_sabaku_taiso:OnSpellStart()
 		bReplaceExisting	= false,
 		iUnitTargetTeam		= DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType		= DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
+		iUnitTargetFlags    = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
 	--	fExpireTime			= ,
 		bDeleteOnHit		= false,
 		vVelocity			= direction * speed,
@@ -175,12 +176,18 @@ function gaara_sabaku_taiso:OnProjectileHit(hTarget, vLocation)
 			knockback_height = 150
 		}
 
-		hTarget:AddNewModifier(hTarget, nil, "modifier_knockback", knockbackProperties)
-	
-		ApplyDamage({ victim =hTarget, attacker = self.caster, damage = self:GetAbilityDamage(), damage_type = DAMAGE_TYPE_MAGICAL })
-	
+		hTarget:AddNewModifier(hTarget, nil, "modifier_knockback", knockbackProperties)	
 		hTarget:AddNewModifier(self.caster, self.ability, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration")})
 
+		if not hTarget:IsMagicImmune() then
+			ApplyDamage({ 
+				victim =hTarget, 
+				attacker = self.caster, 
+				damage = self:GetAbilityDamage(), 
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = self.ability
+			})
+		end
 	end
 
 end

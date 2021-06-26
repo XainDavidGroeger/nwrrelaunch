@@ -8,7 +8,7 @@
     // General  
     // ----------------------------------------------------------------------------------------
     "BaseClass"                 "ability_datadriven"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
     "AbilityUnitDamageType"     "DAMAGE_TYPE_PHYSICAL" 
     "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"        "yondaime_rasengan"
@@ -21,7 +21,7 @@
 
     // Time     
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"               "12"
+    "AbilityCooldown"               "12 11 10 9"
     "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
 
     // Cost
@@ -44,34 +44,34 @@
 
     "AbilitySpecial"
     {
-          "05"
+        "01"
         {
             "var_type" "FIELD_FLOAT"
             "base_bonus_damage" "50 75 100 125"
         }
-        "01"
+        "02"
         { 
             "var_type" "FIELD_FLOAT"
             "bonus_damage" "25 50 75 100"
 			"LinkedSpecialBonus"	"special_bonus_yondaime_6"
         }
-        "02"
+        "03"
         {
             "var_type" "FIELD_FLOAT"
             "bonus_ms" "2 4 6 8"
         }
-	    "05"
+	    "04"
         {
             "var_type" "FIELD_FLOAT"
-            "stun_duration" "0.75 0.75 0.75 0.75"
+            "stun_duration" "0.8"
 			"LinkedSpecialBonus"	"special_bonus_yondaime_3"
         }
-        "03"
+        "05"
         {
             "var_type" "FIELD_FLOAT"
             "distance" "500"
         }
-        "04"
+        "06"
         {
             "var_type" "FIELD_FLOAT"
             "bonus_damage_real" "1"

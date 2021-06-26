@@ -63,6 +63,16 @@ function hidan_cull_the_weak:CastFilterResultLocation(location)
 	return UF_SUCCESS
 end
 
+function hidan_cull_the_weak:GetCooldown(level)
+	-- if self:GetCaster():HasTalent("special_bonus_hidan_5") then
+	-- 	return self.BaseClass.GetCooldown( self, level ) - self:GetCaster():FindTalentValue("special_bonus_hidan_5")
+	-- else
+	-- 	return self.BaseClass.GetCooldown( self, level )
+	-- end
+	return self.BaseClass.GetCooldown( self, level ) - self:GetCaster():FindTalentValue("special_bonus_hidan_5")
+end
+
+
 function hidan_cull_the_weak:CanBeReflected(bool, target)
     if bool == true then
         if target:TriggerSpellReflect(self) then return end
