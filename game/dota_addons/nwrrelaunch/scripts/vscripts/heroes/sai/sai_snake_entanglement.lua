@@ -1,166 +1,212 @@
-sai_snake_entanglement = sai_snake_entanglement or class({})
+-- Created by Elfansoer
+--[[
+Ability checklist (erase if done/checked):
+- Scepter Upgrade
+- Break behavior
+- Linken/Reflect behavior
+- Spell Immune/Invulnerable/Invisible behavior
+- Illusion behavior
+- Stolen behavior
+]]
+--------------------------------------------------------------------------------
+sai_snake_entanglement = class({})
+LinkLuaModifier( "modifier_sai_snake_entanglement_thinker", "heroes/sai/sai_snake_entanglement", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_sai_snake_entanglement_debuff", "heroes/sai/sai_snake_entanglement", LUA_MODIFIER_MOTION_NONE )
+--link modifier with abyliti
+--mod name/ filepath
 
-LinkLuaModifier("modifier_sai_snake_entanglement_thinker", "heroes/sai/sai_snake_entanglement.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_sai_snake_entanglement_debuff", "heroes/sai/sai_snake_entanglement.lua", LUA_MODIFIER_MOTION_NONE)
-
-function sai_snake_entanglement:Precache( context )
-    PrecacheResource( "soundfile", "soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts", context )
-end
-
-function sai_snake_entanglement:GetAbilityTextureName()
-	return "sai_snake_entanglement"
-end
--------------------------------------------
+--------------------------------------------------------------------------------
+-- Custom KV
+-- AOE Radius
 function sai_snake_entanglement:GetAOERadius()
-	return self:GetSpecialValueFor("radius")
+	return self:GetSpecialValueFor( "radius" )--get var by name
 end
 
-function sai_snake_entanglement:ProcsMagicStick()
-    return true
+--------------------------------------------------------------------------------
+-- Ability Start
+function sai_snake_entanglement:OnSpellStart()--evt; when animation completed
+	-- unit identifier
+	local caster = self:GetCaster()
+	local point = self:GetCursorPosition()
+	local vector = point-caster:GetOrigin()--direction for prejectile
+
+	-- load data
+	local projectile_name = "particles/econ/items/viper/viper_immortal_tail_ti8/viper_immortal_ti8_nethertoxin_proj.vpcf"
+	local projectile_speed = self:GetSpecialValueFor( "projectile_speed" )
+	--distance based stuff (abnd speed) its all int and everityng else float
+	local projectile_distance = vector:Length2D()--dont need z chek next line
+	local projectile_direction = vector
+	projectile_direction.z = 0
+	projectile_direction = projectile_direction:Normalized()--because direction doesnt need to scale the distance when multiplyed by length
+
+	-- create ink projectile
+	local info = {
+		Source = caster,
+		Ability = self,
+		vSpawnOrigin = caster:GetAbsOrigin(),--origin witou z coords (2d)
+		
+	    iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_NONE,
+	    iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+	    iUnitTargetType = DOTA_UNIT_TARGET_NONE,
+	    
+	    EffectName = projectile_name,
+	    fDistance = projectile_distance,
+	    fStartRadius = 0, --size
+	    fEndRadius = 0, --size
+		vVelocity = projectile_direction * projectile_speed, --this why jwe normalized it
+	}
+	ProjectileManager:CreateLinearProjectile(info) --init projectile. launches
+
+	-- play effects
+	--self:PlayEffects( point )--just sound fx and visuals
+end
+--------------------------------------------------------------------------------
+-- Projectile
+function sai_snake_entanglement:OnProjectileHit( target, location ) -- it can intercept before final target
+	-- should be no target
+	if target then return false end --do nothing but not dissapera; true disappears.https://moddota.com/api/#!/vscripts?search=OnProjectileHit
+
+	-- references
+	local duration = self:GetSpecialValueFor( "duration" )
+
+	-- create thinker dummy nuit in place. aura somwhere with given modifier
+	CreateModifierThinker(
+		self:GetCaster(), -- player source
+		self, -- ability source
+		"modifier_sai_snake_entanglement_thinker", -- modifier name
+		{ duration = duration }, -- kv
+		location,
+		self:GetCaster():GetTeamNumber(), --default needed
+		false --dnot touch
+	)
 end
 
-function sai_snake_entanglement:OnSpellStart()
+------------------------------------------------------------------------------
+function sai_snake_entanglement:PlayEffects( point )--this is gonna be had
+	-- Get Resources
+	local particle_cast = "particles/units/heroes/hero_viper/viper_nethertoxin_proj.vpcf"
+	local sound_cast = "Hero_Viper.Nethertoxin.Cast"
 
-	-- Ability properties    
-	self.caster = self:GetCaster()
-	self.ability = self
+	-- Get Data
+	local projectile_speed = self:GetSpecialValueFor( "projectile_speed" )
 
-	self.caster:EmitSound("shikamaru_stitch_talking")
+	-- Create Particle
+	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+	ParticleManager:SetParticleControlEnt(
+		effect_cast,
+		0,
+		self:GetCaster(),
+		PATTACH_POINT_FOLLOW,
+		"attach_attack1",
+		Vector(0,0,0), -- unknown
+		true -- unknown, true
+	)
+	ParticleManager:SetParticleControl( effect_cast, 1, Vector( projectile_speed, 0, 0 ) )
+	ParticleManager:SetParticleControl( effect_cast, 5, point )
+	ParticleManager:ReleaseParticleIndex( effect_cast )
 
-	-- Ability specials
-	self.radius = self.ability:GetSpecialValueFor("radius")
-	self.duration = self.ability:GetSpecialValueFor("duration")
-
-	self.team_id = self.caster:GetTeamNumber()
-	
-	self.target_point = self:GetCursorPosition()
-	self.interval_time = self.ability:GetSpecialValueFor("interval_time")
-
-	self.ability_target_team	= self.ability:GetAbilityTargetTeam()
-	self.ability_target_type	= self.ability:GetAbilityTargetType()
-	self.ability_target_flags	= self.ability:GetAbilityTargetFlags()
-
-	-- Add sandstorm particles
-	local particle_sandstorm = "particles/units/heroes/shikamaru/shikamaru_shadow_stitching.vpcf"
-	self.particle_sandstorm_fx = ParticleManager:CreateParticle(particle_sandstorm, PATTACH_WORLDORIGIN, self.thinker)
-	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 0, self.target_point)
-	ParticleManager:SetParticleControl(self.particle_sandstorm_fx, 1, Vector(self.radius, self.radius, 0))
-
-	self.thinker = CreateModifierThinker(caster, self, "modifier_sai_snake_entanglement_thinker", {duration = self.duration}, self.target_point, self.team_id, false)
+	-- Create Sound
+	EmitSoundOn( sound_cast, self:GetCaster() )
 end
 
-modifier_sai_snake_entanglement_thinker = modifier_sai_snake_entanglement_thinker or class({})
 
+modifier_sai_snake_entanglement_thinker= class({})
+
+--------------------------------------------------------------------------------
+-- Classifications
+function modifier_sai_snake_entanglement_thinker:IsHidden() --shown or not as debuff
+	return true
+end
+
+function modifier_sai_snake_entanglement_thinker:IsDebuff() --type of
+	return true
+end
+
+function modifier_sai_snake_entanglement_thinker:IsStunDebuff() 
+	return false
+end
+
+function modifier_sai_snake_entanglement_thinker:IsPurgable()
+	return false
+end
+
+--------------------------------------------------------------------------------
+-- Initializations
+-- in modifier self:GetAbility() get owning ability
+function modifier_sai_snake_entanglement_thinker:OnCreated( kv )
+	self.radius= self:GetAbility():GetSpecialValueFor("radius") --initialize radius here
+
+
+end
+
+function modifier_sai_snake_entanglement_thinker:OnRefresh( kv )
+
+end
+
+function modifier_sai_snake_entanglement_thinker:OnRemoved()
+end
+
+function modifier_sai_snake_entanglement_thinker:OnDestroy()
+
+end
+-------------------------------------------------------------------------------
+-- Aura Effects
 function modifier_sai_snake_entanglement_thinker:IsAura()
 	return true
 end
 
-function modifier_sai_snake_entanglement_thinker:OnCreated(keys)
-	if IsServer() then
-		-- Ability specials
-
-		self.caster = self:GetCaster()
-		self.thinker = self:GetParent()
-		self.ability = self:GetAbility()
-		self.old_caster = self:GetCaster()
-		
-
-		self.thinker_loc = self.thinker:GetAbsOrigin()
-
-		self.radius = self.ability:GetSpecialValueFor("radius")
-		self.interval_time = self.ability:GetSpecialValueFor("interval_time")
-		self.debuff_duration = self.ability:GetSpecialValueFor("debuff_duration")
-		self.ms_slow_percentage_per_stack = self.ability:GetSpecialValueFor("ms_slow_percentage_per_stack")
-
-		local sound_cast = "Ability.SandKing_SandStorm.start"
-		local sound_loop = "Ability.SandKing_SandStorm.loop"
-		local sound_darude = "Imba.SandKingSandStorm"
-
-		-- Play cast sound
-		self.thinker:EmitSound(sound_cast)
-		self.thinker:EmitSound(sound_loop)
-
-		self:StartIntervalThink(self.interval_time)
-		EmitSoundOn("shikamaru_stitch_area", self.thinker)
-
-	end
+function modifier_sai_snake_entanglement_thinker:GetModifierAura()-- for the aoe effect we make new modfier effect
+	return "modifier_sai_snake_entanglement_debuff"
 end
 
-function modifier_sai_snake_entanglement_thinker:OnIntervalThink()
-
-	-- Find all enemies in the radius
-	local units = FindUnitsInRadius(self.thinker:GetTeamNumber(),
-		self.thinker_loc,
-		nil,
-		self.radius,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		DOTA_UNIT_TARGET_FLAG_NONE,
-		FIND_ANY_ORDER,
-		false
-	)
-
-	for _,enemy in pairs(units) do
-		if enemy:IsMagicImmune() == false then 
-			if enemy:HasModifier("modifier_sai_snake_entanglement_debuff") === false then
-				enemy:AddNewModifier(self:GetAbility():GetCaster(), self:GetAbility(), "modifier_sai_snake_entanglement_debuff", {duration = self.debuff_duration})
-				local debuff = enemy:FindModifierByNameAndCaster("modifier_sai_snake_entanglement_debuff", self:GetAbility():GetCaster())
-				if debuff ~= nil then
-					debuff:SetStackCount(debuff:GetStackCount() + self.ms_slow_percentage_per_stack) 
-				end
-			else
-			end
-		end
-	end
+function modifier_sai_snake_entanglement_thinker:GetAuraRadius()
+	return self.radius
 end
 
-function modifier_sai_snake_entanglement_thinker:OnDestroy(keys)
-	if IsServer() then
-		-- local thinker = self:GetParent()
-		StopSoundOn("shikamaru_stitch_area", self.thinker)
-		--ParticleManager:DestroyParticle(self.particle_sandstorm_fx, true)
-		--ParticleManager:ReleaseParticleIndex(self.particle_sandstorm_fx)
-	end
+function modifier_sai_snake_entanglement_thinker:GetAuraDuration() --duration for aura fdebuff time (float bcus time)
+	return 2.0
 end
 
-modifier_sai_snake_entanglement_debuff = class({})
+function modifier_sai_snake_entanglement_thinker:GetAuraSearchTeam() --team 
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
 
-function modifier_sai_snake_entanglement_debuff:IsHidden()
+function modifier_sai_snake_entanglement_thinker:GetAuraSearchType() --targer
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC -- not array. with +
+end
+-----------------------------
+
+modifier_sai_snake_entanglement_debuff= class({})
+
+-- Classifications defaults required
+function modifier_sai_snake_entanglement_debuff:IsHidden() --shown or not as debuff
 	return false
 end
 
-function modifier_sai_snake_entanglement_debuff:IsDebuff()
+function modifier_sai_snake_entanglement_debuff:IsDebuff() --type of
 	return true
 end
 
-function modifier_sai_snake_entanglement_debuff:IsStunDebuff()
+function modifier_sai_snake_entanglement_debuff:IsStunDebuff() 
 	return false
 end
 
 function modifier_sai_snake_entanglement_debuff:IsPurgable()
-	return true
+	return false
 end
 
-function modifier_sai_snake_entanglement_debuff:OnCreated()
-	self.turn_rate_slow = self:GetAbility():GetSpecialValueFor( "turn_rate_slow_percentage" )
-	self:SetStackCount(self:GetAbility():GetSpecialValueFor( "ms_slow_percentage_per_stack" ))
-end
+function modifier_sai_snake_entanglement_debuff:OnCreated( kv )
+	self.ms_slow_percentage_per_stack= self:GetAbility():GetSpecialValueFor("ms_slow_percentage_per_stack") --initialize 
 
-function modifier_sai_snake_entanglement_debuff:OnRemoved()
 end
+----------------------------------
+--MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE in negative is debuff is the value to mod
+--getter GetModifierMoveSpeedBonus_Percentage
 
-function modifier_sai_snake_entanglement_debuff:OnDestroy()
-end
-
-function modifier_sai_snake_entanglement_debuff:DeclareFunctions() return {
-	MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-	MODIFIER_PROPERTY_TURN_RATE_OVERRIDE,
-} end
+function modifier_sai_snake_entanglement_debuff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
+end	
 
 function modifier_sai_snake_entanglement_debuff:GetModifierMoveSpeedBonus_Percentage()
-	return (-1) * self:GetStackCount()
-end
-
-function modifier_sai_snake_entanglement_debuff:GetModifierTurnRate_Override()
-	return 1 - self.turn_rate_slow
-end
+	return self.ms_slow_percentage_per_stack
+end	
