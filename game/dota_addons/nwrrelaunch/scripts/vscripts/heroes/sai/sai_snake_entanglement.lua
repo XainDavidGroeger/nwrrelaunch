@@ -208,5 +208,5 @@ function modifier_sai_snake_entanglement_debuff:DeclareFunctions()
 end	
 
 function modifier_sai_snake_entanglement_debuff:GetModifierMoveSpeedBonus_Percentage()
-	return self.ms_slow_percentage_per_stack
+	return self.ms_slow_percentage_per_stack *-1
 end	

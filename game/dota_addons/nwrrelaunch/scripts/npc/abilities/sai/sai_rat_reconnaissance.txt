@@ -7,67 +7,81 @@
         // General  
         // ----------------------------------------------------------------------------------------
         "BaseClass"                 "ability_lua"
-        "ScriptFile"                "heroes/raikage/raikage_raiton_no_yoroi.lua"
-        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-        "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-        "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
-        "AbilityTextureName"        "sai_rat_reconnaissance" 
+        "ScriptFile"                "heroes/sai/sai_rat_reconnaissance.lua"
+        "AbilityTextureName"            "sai_rat_reconnaissance"
+        "FightRecapLevel"               "1"
+        "MaxLevel"                      "4"
+        "HasScepterUpgrade"             "1"
 
-
-        "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
-        "MaxLevel"               "4"
-
-        // Casting
+        "precache"
+        {
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+            "particle"  "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+            "particle"  "particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
+            "particle"  "particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
+        }// Ability General
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"              "0"
-        "AbilityDuration"               "15"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+        //DOTA_UNIT_TARGET_FLAG_NO_INVIS
 
-
-        // Time     
+        // Ability Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "15 13 11 9"
-        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+        "AbilityCastRange"              "1800"
+        "AbilityCastPoint"              "0.3"
 
-        // Cost
+        // Ability Resource
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"               "90"
+        "AbilityCooldown"               "11 10 9 8"
+        "AbilityManaCost"               "80 90 100 110"
 
+        // Damage
+        //-------------------------------------------------------------------------------------------------------------
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
             "01"
             {
-                "var_type" "FIELD_FLOAT"
-                "duration" "15.0"
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "125 200 275 350"
             }
             "02"
             {
-                "var_type" "FIELD_FLOAT"
-                "charge_damage_amount" "120 160 200 240"
-                "LinkedSpecialBonus"	"special_bonus_raikage_2"
+                "var_type"          "FIELD_INTEGER"
+                "radius"            "2500 2500 2500 2500"
             }
             "03"
-            { 
-                "var_type"  "FIELD_INTEGER"
-                "release_aoe" "250"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "targets"           "2 2 2 2"
             }
             "04"
             {
-                "var_type" "FIELD_FLOAT"
-                "release_purge_duration" "2"
+                "var_type"          "FIELD_INTEGER"
+                "speed"             "700"
             }
             "05"
             {
-                "var_type" "FIELD_FLOAT"
-                "release_damage" "120 160 200 240"
+                "var_type"          "FIELD_INTEGER"
+                "targets_scepter"   "4 4 4 4"
             }
             "06"
             {
-                "var_type" "FIELD_FLOAT"
-                "release_ms_slow" "-35.0" 
+                "var_type"          "FIELD_FLOAT"
+                "ms_slow_percentage"   "100"
             }
-            
+            "07"
+            {
+                "var_type"           "FIELD_FLOAT"
+                "debuff_duration"    "2"
+            }
         }
     }
-
-
 }

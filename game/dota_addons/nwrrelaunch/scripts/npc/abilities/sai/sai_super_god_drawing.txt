@@ -8,15 +8,15 @@
     // General  
     // ----------------------------------------------------------------------------------------
     "BaseClass"                 "ability_lua"
-    "ScriptFile"                "heroes/raikage/raigyaku_suihei.lua"
+    "ScriptFile"                "heroes/sai/sai_rat_reconnaissance.lua"
     "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"        "sai_super_god_drawing"
 
 
-    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
-    "MaxLevel"               "4"
+    "AbilityType"            "DOTA_ABILITY_TYPE_ULTIMATE"
+    "MaxLevel"               "3"
 
 
     // Casting
