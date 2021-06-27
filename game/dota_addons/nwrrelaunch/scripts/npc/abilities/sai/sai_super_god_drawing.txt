@@ -9,7 +9,7 @@
     // ----------------------------------------------------------------------------------------
     "BaseClass"                 "ability_lua"
     "ScriptFile"                "heroes/sai/sai_rat_reconnaissance.lua"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"        "sai_super_god_drawing"

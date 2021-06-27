@@ -55,7 +55,7 @@
             "02"
             {
                 "var_type"          "FIELD_INTEGER"
-                "radius"            "2500 2500 2500 2500"
+                "radius"            "1800"
             }
             "03"
             {
@@ -70,7 +70,7 @@
             "05"
             {
                 "var_type"          "FIELD_INTEGER"
-                "targets_scepter"   "4 4 4 4"
+                "targets_scepter"   "3"
             }
             "06"
             {
