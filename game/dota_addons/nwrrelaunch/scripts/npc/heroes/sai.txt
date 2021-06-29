@@ -89,6 +89,4 @@
 		    "SpectatorLoadoutScale" "0.40" 
 	      "VersusScale"		"0.40"
 	}
-
-
 }
