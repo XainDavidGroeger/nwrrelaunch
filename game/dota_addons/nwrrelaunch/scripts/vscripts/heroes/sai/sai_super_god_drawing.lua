@@ -43,19 +43,24 @@ function sai_super_god_drawing:OnSpellStart()
 	)
 	self:GetCaster():EmitSound("kisame_shark")
 	self:GetCaster():EmitSound("kisame_shark_cast")
+	local i=2
+	while( i ~= 0)do
+   		print("This loop will run forever.")
 	--kisame_bunshin
 		local hTreant = CreateUnitByName( "kisame_bunshin",
 			 vTargetPosition, true, self:GetCaster(),
-			  self:GetCaster():GetOwner(),
-			   self:GetCaster():GetTeamNumber() )
+			 self:GetCaster():GetOwner(),
+			 self:GetCaster():GetTeamNumber() )
 		if hTreant ~= nil then
 			hTreant:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
 			hTreant:SetOwner( self:GetCaster() )
 
-			local kv = {duration = self.duration}
+			--local kv = {duration = self.duration}
 
-			hTreant:AddNewModifier( self:GetCaster(), self, "modifier_sai_super_god_drawing_lua", kv )
-		end
+			--hTreant:AddNewModifier( self:GetCaster(), self, "modifier_sai_super_god_drawing_lua", kv )
+		end	
+		i= i-1
+	end
 end
 
 --------------------------------------------------------------------------------
