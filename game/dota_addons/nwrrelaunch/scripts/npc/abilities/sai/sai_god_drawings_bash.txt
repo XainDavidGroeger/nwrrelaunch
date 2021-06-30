@@ -1,0 +1,42 @@
+    "DOTAAbilities"
+{
+
+"sai_god_drawings_bash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"					"5214"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                 	"ability_lua"
+		"ScriptFile"                	"heroes/sai/sai_god_drawings_bash.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityTextureName"            "tianzhao"
+		
+
+    	"MaxLevel"               		"3"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"25 75 125"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"0.7 0.9 1.1"
+			}
+		}
+		//"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+}

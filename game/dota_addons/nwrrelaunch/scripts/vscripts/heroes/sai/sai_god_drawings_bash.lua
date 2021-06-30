@@ -1,0 +1,1 @@
+sai_god_drawings_bash= sai_god_drawings_bash or class({})
