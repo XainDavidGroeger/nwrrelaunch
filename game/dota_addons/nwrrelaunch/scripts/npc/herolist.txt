@@ -10,8 +10,6 @@
 	"npc_dota_hero_hidan" "1"  //hidan
 	"npc_dota_hero_kisame" "1" //kisame
 	"npc_dota_hero_naruto" "1" //naruto
-	"npc_dota_hero_naruto_new" "1" //naruto2
-	"npc_dota_hero_naruto_new_two" "1" //naruto3
 	"npc_dota_hero_guy" "1" // guy
 	"npc_dota_hero_kakashi" "1"
 	"npc_dota_hero_anko" "1"

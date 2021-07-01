@@ -47,7 +47,432 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Hips"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Hips"
+								m_vMinBounds = [ -28.913908, -32.922813, -20.332294 ]
+								m_vMaxBounds = [ 29.122484, 17.890892, 14.557003 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Spine"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Spine"
+								m_vMinBounds = [ -21.16251, -9.74704, -14.910303 ]
+								m_vMaxBounds = [ 21.018085, 21.835281, 16.266672 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Spine1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Spine1"
+								m_vMinBounds = [ -19.896908, -14.718826, -13.908283 ]
+								m_vMaxBounds = [ 19.839886, 14.941246, 16.26667 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Spine2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Spine2"
+								m_vMinBounds = [ -23.11521, -23.585121, -12.797619 ]
+								m_vMaxBounds = [ 25.059385, 21.974625, 16.26667 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftShoulder"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftShoulder"
+								m_vMinBounds = [ -13.918636, -1.134113, -14.658882 ]
+								m_vMaxBounds = [ 11.812134, 34.857594, 19.582726 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightShoulder"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightShoulder"
+								m_vMinBounds = [ -12.096781, -1.677364, -15.835335 ]
+								m_vMaxBounds = [ 14.491526, 35.415741, 19.740364 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftArm"
+								m_vMinBounds = [ -13.169386, -12.160282, -9.615067 ]
+								m_vMaxBounds = [ 10.453196, 42.383858, 16.389961 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightArm"
+								m_vMinBounds = [ -11.024197, -11.547382, -9.435379 ]
+								m_vMaxBounds = [ 12.827724, 42.744354, 17.144638 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftForeArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftForeArm"
+								m_vMinBounds = [ -7.222743, -13.658792, -6.575607 ]
+								m_vMaxBounds = [ 6.338955, 29.225784, 6.921783 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightForeArm"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightForeArm"
+								m_vMinBounds = [ -6.394767, -13.837055, -6.662262 ]
+								m_vMaxBounds = [ 7.028301, 29.084488, 6.732208 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHand"
+								m_vMinBounds = [ -6.745061, -5.512974, -6.334412 ]
+								m_vMaxBounds = [ 7.009451, 18.346355, 6.25119 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHand"
+								m_vMinBounds = [ -3.887375, -7.166742, -2.951843 ]
+								m_vMaxBounds = [ 6.301528, 17.345541, 5.198959 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftUpLeg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftUpLeg"
+								m_vMinBounds = [ -18.410538, -11.475218, -20.939222 ]
+								m_vMaxBounds = [ 28.030136, 62.157272, 13.102243 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightUpLeg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightUpLeg"
+								m_vMinBounds = [ -31.284302, -11.204046, -20.903873 ]
+								m_vMaxBounds = [ 18.069668, 62.189201, 12.921474 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandThumb1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandThumb1"
+								m_vMinBounds = [ -3.120363, -8.836208, -5.184135 ]
+								m_vMaxBounds = [ 6.733829, 8.847519, 4.121368 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandIndex1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandIndex1"
+								m_vMinBounds = [ -5.928818, -8.814623, -3.730286 ]
+								m_vMaxBounds = [ 3.310492, 7.724419, 1.632797 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandThumb1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandThumb1"
+								m_vMinBounds = [ -4.561807, -3.614708, -4.235458 ]
+								m_vMaxBounds = [ 2.495337, 7.721123, 2.129677 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandIndex1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandIndex1"
+								m_vMinBounds = [ -3.515403, -13.279984, -2.722549 ]
+								m_vMaxBounds = [ 6.090066, 9.274868, 3.66024 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftLeg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftLeg"
+								m_vMinBounds = [ -7.86328, -13.276844, -9.909952 ]
+								m_vMaxBounds = [ 7.918192, 49.70174, 14.139658 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightLeg"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightLeg"
+								m_vMinBounds = [ -7.807234, -15.187536, -8.941456 ]
+								m_vMaxBounds = [ 8.683853, 49.856895, 13.675104 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Neck"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Neck"
+								m_vMinBounds = [ -11.468112, -2.206711, -10.588922 ]
+								m_vMaxBounds = [ 9.753886, 14.415298, 12.610476 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandThumb2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandThumb2"
+								m_vMinBounds = [ -1.783562, -3.56859, -4.964325 ]
+								m_vMaxBounds = [ 6.096697, 6.51466, 1.983315 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandIndex2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandIndex2"
+								m_vMinBounds = [ -5.280127, -8.07719, -1.839935 ]
+								m_vMaxBounds = [ 3.301121, 5.909819, 3.014084 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandThumb2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandThumb2"
+								m_vMinBounds = [ -4.22427, -4.639893, -4.120773 ]
+								m_vMaxBounds = [ 1.721203, 6.174526, 1.972412 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandIndex2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandIndex2"
+								m_vMinBounds = [ -3.521454, -7.551572, -2.149567 ]
+								m_vMaxBounds = [ 6.084014, 6.917204, 2.501587 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftFoot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftFoot"
+								m_vMinBounds = [ -6.007878, -13.043823, -11.276812 ]
+								m_vMaxBounds = [ 6.669787, 21.846508, 19.329762 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightFoot"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightFoot"
+								m_vMinBounds = [ -6.083575, -11.682297, -11.262644 ]
+								m_vMaxBounds = [ 6.376054, 21.992916, 18.35931 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Head"
+								m_vMinBounds = [ -13.714312, -5.900208, -47.243004 ]
+								m_vMaxBounds = [ 12.465487, 33.326797, 13.920391 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandThumb3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandThumb3"
+								m_vMinBounds = [ -2.071633, -1.927114, -2.632599 ]
+								m_vMaxBounds = [ 1.415751, 3.078448, 1.306099 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftHandIndex3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftHandIndex3"
+								m_vMinBounds = [ -4.970581, -3.514379, -1.723412 ]
+								m_vMaxBounds = [ 3.16913, 3.687042, 1.277924 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandThumb3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandThumb3"
+								m_vMinBounds = [ -1.371669, -3.973475, -1.34668 ]
+								m_vMaxBounds = [ 2.209187, 3.126787, 1.963638 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightHandIndex3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightHandIndex3"
+								m_vMinBounds = [ -3.334077, -4.406672, -2.163696 ]
+								m_vMaxBounds = [ 5.113672, 4.161724, 1.660629 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "LeftToeBase"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "LeftToeBase"
+								m_vMinBounds = [ -5.772087, -19.684422, -0.730513 ]
+								m_vMaxBounds = [ 7.600777, 6.290604, 20.331682 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "RightToeBase"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "RightToeBase"
+								m_vMinBounds = [ -7.856661, -19.52726, -0.68437 ]
+								m_vMaxBounds = [ 6.106652, 6.440472, 22.602524 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
 	m_pAttachmentLists = [  ]
 	m_pAnimGroup = 
 	{
@@ -89,7 +514,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_CAST_ABILITY_6"
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
 							m_nWeight = 1
 						},
 					]
@@ -135,7 +560,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_Name = "ACT_DOTA_CAST_ABILITY_2"
 							m_nWeight = 1
 						},
 					]
@@ -290,7 +715,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_IDLE"
+							m_Name = "ACD_DOTA_IDLE"
 							m_nWeight = 1
 						},
 					]
@@ -382,7 +807,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_ATTACK2"
+							m_Name = "ACT_DOTA_ATTACK"
 							m_nWeight = 1
 						},
 					]
@@ -428,7 +853,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = "ACT_DOTA_ATTACK_EVENT"
+							m_Name = "ACT_DOTA_ATTACK"
 							m_nWeight = 1
 						},
 					]
@@ -474,7 +899,7 @@
 					m_Activities = 
 					[
 						{
-							m_Name = ""
+							m_Name = "ACT_DOTA_ATTACK"
 							m_nWeight = 1
 						},
 					]
@@ -501,7 +926,7 @@
 					m_Filepath = "models/kc_naruto/run.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 19
-					m_flFps = 5.0
+					m_flFps = 30.0
 					m_Loop = 
 					{
 						m_bLoop = true
@@ -602,43 +1027,43 @@
 		[
 			{
 				m_sSearchMaterial = "material #28.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto5.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto5.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #27.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto1.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto1.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #26.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto1.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto1.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #31.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto3.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto3.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #30.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto4.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto4.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #29.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto2.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto2.vmat"
 			},
 			{
 				m_sSearchMaterial = "material #32.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto5.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto5.vmat"
 			},
 			{
 				m_sSearchMaterial = "material__27.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto5.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto5.vmat"
 			},
 			{
 				m_sSearchMaterial = "material__29.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto5.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto5.vmat"
 			},
 			{
 				m_sSearchMaterial = "material__26.vmat"
-				m_sReplaceMaterial = "materials/models/kc_naruto/kc_naruto2.vmat"
+				m_sReplaceMaterial = "materials/kc_naruto/kc_naruto2.vmat"
 			},
 		]
 	}

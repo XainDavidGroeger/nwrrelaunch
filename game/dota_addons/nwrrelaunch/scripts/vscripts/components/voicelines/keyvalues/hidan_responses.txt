@@ -126,13 +126,13 @@
 	// Ability casts
 	"OnAbilityCast"
 	{
-		"hidan_doton"
+		"hidan_cull_the_weak"
 		{
 			"Priority"  "1"
 			"Global" "1"
 			"Sounds"
 			{
-				"hidan_doton"      "1"
+				"hidan_cull_the_weak_fire"      "1"
 			}
 		}
 		"hidan_sharingan"

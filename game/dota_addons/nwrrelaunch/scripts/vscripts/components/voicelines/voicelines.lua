@@ -129,6 +129,7 @@ function VoiceResponses:PlayTrigger(responses, response_rules, unit)
 	for soundName, weight in pairs(response_rules.Sounds) do
 		count = count + weight
 		if count >= selection then
+			print(soundName, unit, global)
 			return Timers:CreateTimer(delay, function () self:PlaySound(soundName, unit, global) end)
 		end
 	end
@@ -165,6 +166,7 @@ function VoiceResponses:PlaySound(soundName, unit, global)
 		end
 	end
 end
+
 --================================================================================
 -- EVENT HANDLERS
 --================================================================================

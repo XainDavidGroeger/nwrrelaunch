@@ -2,10 +2,6 @@
 -- GameEvent:OnGameRulesStateChange
 --------------------------------------------------------------------------------
 ListenToGameEvent('game_rules_state_change', function()
-	if IsInToolsMode() == false then
-		if GetMapName() ~= "imba_demo" then return end
-	end
-
 	local state = GameRules:State_Get()
 
 	if state == DOTA_GAMERULES_STATE_HERO_SELECTION then

@@ -2,7 +2,7 @@
 {
 	width: 100%;
 	height: 100%;
-	visibility:  collapse;
+//	visibility:  collapse;
 }
 
 .CustomHudRoot.visible {
@@ -31,6 +31,12 @@
 	visibility: collapse;
 }
 
+.HUDFlipped .ControlPanel {
+	transform: translateX( 365px ) translateY( -100px );
+	horizontal-align: right;
+	flow-children: left-wrap;
+}
+
 .ControlPanel.visible
 {
 	visibility: visible;
@@ -41,11 +47,11 @@
 	flow-children: right;
 	vertical-align: middle;
 	horizontal-align: left;
-	width: 160px;
+	width: 150px;
 	font-size: 16;
 	background-color: #181818dd;
 	border: 2px solid #222222;
-	box-shadow: #000000aa -4px -4px 8px 8px;
+	box-shadow: #000000aa 0px 0px 2px 2px;
 }
 
 #ControlPanelSlideThumb
@@ -56,8 +62,15 @@
 	background-color: #181818cc;
 	border-top-right-radius: 12px;
 	border-bottom-right-radius: 12px;
-	box-shadow: #00000055 -4px -4px 8px 8px;
+	box-shadow: #00000055 -1px 0px 3px 3px;
 	vertical-align: middle;
+}
+
+.HUDFlipped #ControlPanelSlideThumb {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;	
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;	
 }
 
 .RightArrowButtonIcon
@@ -66,7 +79,7 @@
 	height: 16px;
 	vertical-align: middle;
 	horizontal-align: right;
-	background-image: url("file://panorama/images/control_icons/double_arrow_left_png.png");
+	background-image: url("s2r://panorama/images/control_icons/double_arrow_left_png.vtex");
 	background-position: 0% 50%;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -110,7 +123,12 @@
 
 .Minimized .ControlPanel
 {
-	transform: translateX( -160px ) translateY( -100px );
+	transform: translateX( -360px ) translateY( -100px );
+}
+
+.HUDFlipped .Minimized .ControlPanel
+{
+	transform: translateX( 0px ) translateY( -100px );
 }
 
 .QuitPausePanel
@@ -268,7 +286,7 @@
 	border-width: 0%;
 	//border-radius: 5px;
 
-	box-shadow: fill #00000011 -4px -4px 8px 9px;
+	box-shadow: fill #00000011 0px 0px 0px 4px;
 
 	padding: 5px;
 
@@ -289,7 +307,7 @@
 	horizontal-align: right;
 	margin-left: 5px;
 	margin-right: 5px;
-	font-size: 18;
+	font-size: 14;
 	color: #888888;
 }
 
@@ -367,6 +385,43 @@
 	transition-timing-function: linear;
 }
 
+#Lane1,
+#Lane2,
+#lane3,
+#Heal,
+#Humans,
+#UpgradeTechTree1,
+#UpgradeTechTree2,
+#UpgradeTechTree3,
+#RefreshCD,
+#Exhaust,
+#Levelup,
+#Damage {
+	width: 32%;
+}
+
+#Xpos1,
+#Xpos2,
+#Xpos3,
+#Xpos4,
+#Xpos5 {
+	width: 18%;
+}
+
+#Elves,
+#Orcs,
+#RemoveRestrictedCommand,
+#DestroyBench,
+#Ypos1,
+#Ypos2,
+#Ypos3,
+#Ypos4,
+#Ypos5,
+#Team2,
+#Team3 {
+	width: 49%;
+}
+
 .Category .Row .DemoButton#FieldButton
 {
 	height: 40px;
@@ -380,9 +435,10 @@
 	color: #cccccc;
 	font-size: 15;
 	font-weight: thin;
-	vertical-align: middle;
+	align: center center;
 	text-transform: none;
 //	letter-spacing: 0px;
+	min-width: 0%;
 }
 
 .Category .DemoButton:hover
@@ -450,7 +506,7 @@
 #SelectAllyHeroContainer
 {
 	vertical-align: center;
-	margin-left: 200px;
+	margin-left: 400px;
 	background-color: #000c;
 
 	opacity: 0.0;
@@ -460,10 +516,50 @@
 	transition-duration: 0.2s;
 }
 
-#SelectAllyHeroContainer.HeroPickerVisible 
+#HeroPicker {
+	flow-children: down;
+}
+
+.HeroPickerContainer {
+	width: 40px;
+	height: 40px;
+}
+
+#UnitContainers {
+	flow-children: right;
+	vertical-align: center;
+	margin-left: 400px;
+	margin-bottom: 100px;
+}
+
+#SelectelvesContainer,
+#SelecthumansContainer,
+#SelectorcsContainer
 {
-	opacity: 1.0;
-	transform: translateX( 0px ) translateY( -20px );
+	background-color: #000c;
+
+	visibility: collapse;
+//	transform: translateX( -60px ) translateY( -20px );
+
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	flow-children: right;
+	overflow: squish scroll;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 800px;
+}
+
+.ControlPanelSeparator {
+	height: 20px;
+}
+
+#SelectelvesContainer.HeroPickerVisible,
+#SelecthumansContainer.HeroPickerVisible,
+#SelectorcsContainer.HeroPickerVisible
+{
+	visibility: visible;
+//	transform: translateX( 0px ) translateY( -20px );
 }
 
 #AllyCancelButton
@@ -473,69 +569,10 @@
 	height: 14px;
 }
 
-
-#SelectCosmeticsContainer
-{
-	horizontal-align: right;
-	vertical-align: center;
-	margin-bottom: 180px;
-	margin-right: 20px;
-	z-index: 10;
-	
-	opacity: 0.0;
-	transform: translateX( 100px ) translateY( 0px );
-
-	transition-property: opacity, transform;
-	transition-duration: 0.2s;
-}
-
 #SelectCosmeticsContainer.CosmeticsContainerVisible 
 {
 	opacity: 1.0;
 	transform: translateX( 0px ) translateY( 0px );
-}
-
-#CosmeticsCloseButton
-{
-	horizontal-align: right;
-	width: 14px;
-	height: 14px;
-}
-
-#HeroInspectBackground
-{
-	horizontal-align: center;
-	/* margin-top: 200px; */
-	margin-right: 0px;
-	width: 680px;
-	height: 640px;
-	background-color: black;
-	background-image: url("file://panorama/images/hud/reborn/bg_hud_inspect_psd.psd");
-	background-size: cover;
-	/* background-repeat: no-repeat; */
-	box-shadow: #000000 -12px -12px 24px 24px;
-	z-index: -10;
-}
-
-.EconItemContainer
-{
-	horizontal-align: center;
-	vertical-align: top;
-	flow-children: down;
-	width: 100%;
-}
-
-#EquipItemContainer
-{
-	flow-children: down;
-	horizontal-align: center;
-	vertical-align: top;
-	max-width: 100%;
-	height: 255px;
-	flow-children: right-wrap;
-	z-index: 20;
-	margin-top: 30px;
-	/* margin-left: 800px; */
 }
 
 .NotWearable #PleaseSelectWearableUnit
@@ -549,50 +586,6 @@
 	vertical-align: middle;
 	visibility: collapse;
 	font-size: 22px;
-}
-
-#EquipItemContainer DOTAEconItem
-{
-	width: 100px;
-	height: 100px;
-	tooltip-position: left;
-}
-
-#PurchaseTooltip
-{
-	font-size: 17px;
-	width: 53%;
-}
-
-.EconItemSlot
-{
-	flow-children: down;
-	height: 130px; 
-	width: 120px;
-	overflow: noclip noclip;
-}
-
-.EconItemSlot > Label
-{
-	text-transform: uppercase;
-	margin-left: 7px;
-	font-size: 14px;
-	color: #999;
-	margin-bottom: -6px;
-	margin-top: 2px;
-	text-overflow: ellipsis;
-	width: 84px;
-	height: 20px;
-}
-
-.EconItemSlot > DOTAEconItem:hover
-{
-	box-shadow:  #CCCCCC 0px 0px 10px 1px;
-}
-
-.Selected > DOTAEconItem
-{
-	box-shadow:  grey 0px 0px 10px 1px;
 }
 
 .EconItemStyleContents 
@@ -707,7 +700,7 @@
 	background-position: center;
 	background-size: contain;
 
-	background-image: url("file://panorama/images/icon_treasure_arrow_psd.psd");
+	background-image: url("s2r://panorama/images/icon_treasure_arrow_psd.vtex");
 }
 
 #SourceIcon
@@ -725,12 +718,12 @@
 
 #Bundle #SourceIcon
 {
-	background-image: url("file://panorama/images/control_icons/brackets_png.png");
+	background-image: url("s2r://panorama/images/control_icons/brackets_png.vtex");
 }
 
 #Single #SourceIcon
 {
-	background-image: url("file://panorama/images/topbar/armory_icon_off_png.png");
+	background-image: url("s2r://panorama/images/topbar/armory_icon_off_png.vtex");
 	brightness: 7;
 }
 
@@ -865,7 +858,7 @@
 	vertical-align: middle;
 	horizontal-align: right;
 	margin-right: 10px;
-	background-image: url("file://panorama/images/control_icons/double_arrow_right_png.png");
+	background-image: url("s2r://panorama/images/control_icons/double_arrow_right_png.vtex");
 	background-position: 0% 50%;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -889,23 +882,6 @@
 	transform: translateX( -6px );
 	wash-color: white;
 }
-
-.GemMinimized #GemContainer
-{
-	transform: translateX( 820px );
-}
-
-.GemMinimized #GemContainer .LeftArrowButtonIcon
-{
-	transform: rotateZ(180deg) translateX( -12px );
-}
-
-.GemMinimized #GemContainer #GemSlideThumb:hover .LeftArrowButtonIcon
-{
-	transform: translateX( 15px ) rotateZ(180deg);
-	wash-color: white;
-}
-
 
 #GemContainer #GemSlideThumb:hover .RightArrowButtonIcon
 {
@@ -999,7 +975,7 @@
 	height: 23px;
 	wash-color: none;
 	z-index:1;
-	background-image: url("file://panorama/images/status_icons/econtooltip_equipped_immortal_psd.psd");
+	background-image: url("s2r://panorama/images/status_icons/econtooltip_equipped_immortal_psd.vtex");
 	background-repeat: no-repeat;
 	transform: rotateY(180deg);
 	background-size: 100% 100%;
@@ -1077,7 +1053,7 @@
 	height: 18px;
 	wash-color: #B3DFDC;
 	z-index:1;
-	background-image: url("file://panorama/images/status_icons/econtooltip_equipped_psd.psd");
+	background-image: url("s2r://panorama/images/status_icons/econtooltip_equipped_psd.vtex");
 	background-repeat: no-repeat;
 	transform: rotateY(180deg);
 	background-size: 100% 100%;
@@ -1135,7 +1111,7 @@
 
 #HeroImageContainer .HeroImageItem
 {
-	opacity-mask: url("file://panorama/images/masks/topbar_heroslant_left_psd.psd");
+	opacity-mask: url("s2r://panorama/images/masks/topbar_heroslant_left_psd.vtex");
 	max-width: 80px;
 	height: 50px;
 	overflow: clip;
@@ -1209,12 +1185,12 @@
 
 .TeamSelector.Radiant
 {
-	background-image: url("file://panorama/images/team_icons/radiant_png.png");
+	background-image: url("s2r://panorama/images/team_icons/radiant_png.vtex");
 }
 
 .TeamSelector.Dire
 {
-	background-image: url("file://panorama/images/team_icons/dire_png.png");
+	background-image: url("s2r://panorama/images/team_icons/dire_png.vtex");
 }
 
 .TeamSelector.Radiant
@@ -1267,13 +1243,13 @@
 
 .FlySelector.Ground
 {
-	background-image: url("file://panorama/images/items/courier_png.png");
+	background-image: url("s2r://panorama/images/items/courier_png.vtex");
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #a1a1a1 ), to( #757575 ));
 }
 
 .FlySelector.Fly
 {
-	background-image: url("file://panorama/images/items/courier_radiant_flying_png.png");
+	background-image: url("s2r://panorama/images/items/courier_radiant_flying_png.vtex");
 }
 
 .FlySelector.Ground:hover
@@ -1294,4 +1270,30 @@
 #FlySelectorContainer.FlySelected .FlySelector.Fly
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #a1a1a1 ), to( #757575 ));
+}
+
+#lane_label {
+	font-size: 15px;
+}
+
+#RadiantEndRound,
+#DireEndRound,
+#ForceEndRound {
+	width: 31.5%;
+}
+
+#RadiantEndRound {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( darkgreen ), to( black ));
+}
+
+#DireEndRound {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( darkred ), to( black ));
+}
+
+#RadiantEndRound {
+//	background-color: gradient( linear, 0% 0%, 0% 100%, from( green ), to( darkgreen ));
+}
+
+.DebugLabel {
+	visibility: collapse;
 }

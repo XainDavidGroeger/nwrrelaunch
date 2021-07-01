@@ -95,3 +95,7 @@ function CDOTA_BaseNPC:IsRoshan()
 		return false
 	end
 end
+
+function CDOTA_BaseNPC:GetIllusionBounty()
+	return self:GetLevel() * 2
+end
