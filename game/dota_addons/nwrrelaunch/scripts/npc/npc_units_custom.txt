@@ -172,12 +172,96 @@
            // Movement
         //----------------------------------------------------------------
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
-
-
-
 	//Inventory
 	"HasInventory"				"1"
+}
 
+"sai_god_drawings"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models/kisame_new/kisame.vmdl"
+	"SoundSet"					"Hero_Kunkka"					// Name of sound set.
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+	"Level"						"1"
+	"ModelScale"				"1.25"
+    "LoadoutScale"				"1.0" 
+
+	// Precache
+	//----------------------------------------------------------------
+	"precache"
+	{
+		"model"				"models/heroes/kisame/kisame.vmdl"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"soundfile" "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts"
+	}
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"kisame_bunshin_water_prison"			// Ability 1.
+	"Ability2"					"sai_god_drawings_bash"			// Ability 2.
+	"Ability3"					""			// roshan_bash 3.
+	"Ability4"					""			// Ability 4.
+	"Ability5"					""			// Ability 5.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"5.0"			// Physical protection.
+	"MagicalResistance"			"35"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"65"			// Damage range min.		//20,27,35
+	"AttackDamageMax"			"75"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.3"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	//"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+	"AttackRange"				"130"		// Range within a target can be attacked.
+
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+	"HealthBarOffset"			"140"
+	"RingRadius"				"70"
+	"IsSummoned"                "1"
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"800"		// Base health.
+	"StatusHealthRegen"			"20.0 40.0 60.0"		// Health regeneration rate.
+	"StatusMana"				"1"			// Base mana.
+	"StatusManaRegen"			"1"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+	"CombatClassAttack"     	"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"     	"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+    "UnitRelationShipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"  	"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"360.0"		// Speed
+	//Inventory
+	"HasInventory"				"1"
+		// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"35"		// Experience earn.
+	"BountyGoldMin"				"75"		// Gold earned min.
+	"BountyGoldMax"				"75"
+	"Creature"
+	{
+		//Level Up
+		"HPGain"					"800"
+		"DamageGain"				"45"
+		"ArmorGain"					"3.0"
+		"MoveSpeedGain"				"20.0"
+		"BountyGain"				"3"
+		"XPGain"					"15"
+	}
 }
 
 

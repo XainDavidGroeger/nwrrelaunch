@@ -2,4 +2,5 @@
 #base "sai_snake_entanglement.txt"
 #base "sai_rat_reconnaissance.txt"
 #base "sai_super_god_drawing.txt"
+#base "sai_god_drawings_bash.txt"
 #base "talents.txt"

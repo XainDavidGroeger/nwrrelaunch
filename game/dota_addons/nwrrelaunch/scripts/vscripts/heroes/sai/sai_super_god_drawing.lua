@@ -11,7 +11,6 @@ function sai_super_god_drawing:GetAOERadius()
 end
 
 function sai_super_god_drawing:IsHiddenWhenStolen()return true end
-
 --------------------------------------------------------------------------------
 --function sai_super_god_drawing:OnAbilityPhaseStart()
 	--self:GetCaster():EmitSound("kisame_shark")
@@ -23,6 +22,7 @@ function sai_super_god_drawing:OnSpellStart()
 	self.area_of_effect = self:GetSpecialValueFor( "area_of_effect" )
 	self.max_treants = self:GetSpecialValueFor( "max_treants" )
 	self.duration = self:GetSpecialValueFor( "duration" )
+	self.ability_lvl= self:GetLevel()
 
 	local vTargetPosition = self:GetCursorPosition()
 	local trees = GridNav:GetAllTreesAroundPoint( vTargetPosition, self.area_of_effect, true )
@@ -36,31 +36,28 @@ function sai_super_god_drawing:OnSpellStart()
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 	GridNav:DestroyTreesAroundPoint( vTargetPosition, self.area_of_effect, true )
-	--local nTreantsToSpawn = math.min( self.max_treants, nTreeCount )
-	--EmitSoundOnLocationWithCaster( vTargetPosition, "Hero_Furion.ForceOfNature", self:GetCaster() )
 	EmitSoundOnLocationWithCaster(vTargetPosition, 
 		"kisame_shark_cast", self:GetCaster()
 	)
 	self:GetCaster():EmitSound("kisame_shark")
 	self:GetCaster():EmitSound("kisame_shark_cast")
-	local i=2
-	while( i ~= 0)do
-   		print("This loop will run forever.")
+	
 	--kisame_bunshin
-		local hTreant = CreateUnitByName( "kisame_bunshin",
+		local sai_god_drawing = CreateUnitByName( "sai_god_drawings",
 			 vTargetPosition, true, self:GetCaster(),
 			 self:GetCaster():GetOwner(),
 			 self:GetCaster():GetTeamNumber() )
-		if hTreant ~= nil then
-			hTreant:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
-			hTreant:SetOwner( self:GetCaster() )
+		if sai_god_drawing ~= nil then
+			sai_god_drawing:SetControllableByPlayer( self:GetCaster():GetPlayerID(), false )
+			sai_god_drawing:SetOwner( self:GetCaster() )
+			sai_god_drawing:CreatureLevelUp(self.ability_lvl-1)
+			 --get abnbilitylvl
+			--TODO set lvl to copy check if ability lvls too
 
 			--local kv = {duration = self.duration}
-
+--timedlife o stats
 			--hTreant:AddNewModifier( self:GetCaster(), self, "modifier_sai_super_god_drawing_lua", kv )
 		end	
-		i= i-1
-	end
 end
 
 --------------------------------------------------------------------------------
@@ -77,7 +74,7 @@ function modifier_sai_super_god_drawing_lua:IsHidden()	return true end
 
 --------------------------------------------------------------------------------
 
-function modifier_sai_super_god_drawing_lua:IsPurgable()	return false
+function modifier_sai_super_god_drawing_lua:IsPurgable() return false
 end
 
 --------------------------------------------------------------------------------
