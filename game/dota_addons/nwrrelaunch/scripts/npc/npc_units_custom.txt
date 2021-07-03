@@ -187,7 +187,6 @@
 	"Level"						"1"
 	"ModelScale"				"1.25"
     "LoadoutScale"				"1.0" 
-
 	// Precache
 	//----------------------------------------------------------------
 	"precache"
@@ -196,7 +195,6 @@
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		"soundfile" "soundevents/heroes/kisame/kisame_bunshin_water_prison.vsndevts"
 	}
-
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"					"kisame_bunshin_water_prison"			// Ability 1.
@@ -204,12 +202,10 @@
 	"Ability3"					""			// roshan_bash 3.
 	"Ability4"					""			// Ability 4.
 	"Ability5"					""			// Ability 5.
-
 	// Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"				"5.0"			// Physical protection.
 	"MagicalResistance"			"35"			// Magical protection.
-
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -220,8 +216,6 @@
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	//"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 	"AttackRange"				"130"		// Range within a target can be attacked.
-
-
 	// Bounds
 	//----------------------------------------------------------------
 	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
@@ -231,10 +225,9 @@
 	// Status
 	//----------------------------------------------------------------
 	"StatusHealth"				"800"		// Base health.
-	"StatusHealthRegen"			"20.0 40.0 60.0"		// Health regeneration rate.
+	"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 	"StatusMana"				"1"			// Base mana.
 	"StatusManaRegen"			"1"			// Mana regeneration rate.
-
 	// Team
 	//----------------------------------------------------------------
 	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
@@ -258,7 +251,7 @@
 		"HPGain"					"800"
 		"DamageGain"				"45"
 		"ArmorGain"					"3.0"
-		"MoveSpeedGain"				"20.0"
+		"MoveSpeedGain"				"1" //20
 		"BountyGain"				"3"
 		"XPGain"					"15"
 	}

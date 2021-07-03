@@ -2,20 +2,12 @@ sai_god_drawings_bash= sai_god_drawings_bash or class({})
 LinkLuaModifier( "modifier_god_drawings_bash",
 				"heroes/sai/sai_god_drawings_bash.lua",
 				 LUA_MODIFIER_MOTION_NONE )
---LinkLuaModifier( "modifier_generic_arc_lua",
---				 "lua_abilities/generic/modifier_generic_arc_lua",
---				  LUA_MODIFIER_MOTION_BOTH )
---LinkLuaModifier( "modifier_generic_stunned_lua",
---				 "lua_abilities/generic/modifier_generic_stunned_lua",
---				  LUA_MODIFIER_MOTION_NONE )
 --passive
 function sai_god_drawings_bash:GetIntrinsicModifierName() return 
 	"modifier_god_drawings_bash"
 end
---init
-function sai_god_drawings_bash:Spawn()
-	if not IsServer() then return end
-end
+--init check
+function sai_god_drawings_bash:Spawn() if not IsServer() then return end end
 
 modifier_god_drawings_bash= modifier_god_drawings_bash or class({})
 
@@ -54,10 +46,6 @@ function modifier_god_drawings_bash:GetModifierProcAttack_Feedback( params )
 	if not IsServer() then return end
 	if self.parent:PassivesDisabled() then return end
 	if not self.ability:IsFullyCastable() then return end
-	--if not self.ability:IsCooldownReady() then return end
-
-
-	-- unit filter
 	local filter = UnitFilter(
 		params.target,
 		DOTA_UNIT_TARGET_TEAM_ENEMY,
@@ -66,75 +54,27 @@ function modifier_god_drawings_bash:GetModifierProcAttack_Feedback( params )
 		self.parent:GetTeamNumber()
 	)
 	if filter~=UF_SUCCESS then return end
-	-- roll pseudo random
---[[ dark pro solution
-if RollPercentage(random_per) then
-	self:PlayEffects(params.attacker)
-	params.attacker:AddNewModifier(parent, self, "modifier_stunned", {duration = stun_duration})
-	ApplyDamage({ victim = params.attacker, attacker = parent, damage = damage, damage_type = damage_type })
-end
-]]
 	if not RollPseudoRandomPercentage( self.chance, self.pseudoseed, self.parent ) then return end
 	-- procDabash
 	self:ApplyDaBash( params.target )
-	-- set cooldown
-	self.ability:UseResources( false, false, true )
 end
 --helper
 function modifier_god_drawings_bash:ApplyDaBash(target)
---[[ create arc
-	target:AddNewModifier(
-		self.parent, -- player source
-		self.ability, -- ability source
-		"modifier_generic_arc_lua", -- modifier name
-		{
-			dir_x = direction.x,
-			dir_y = direction.y,
-			duration = self.knockback_duration,
-			distance = dist,
-			height = self.knockback_height,
-			activity = ACT_DOTA_FLAIL,
-		} -- kv
-	)
-]]
---[[stun1
-	target:AddNewModifier(
-		self.parent, -- player source
-		self.ability, -- ability source
-		"modifier_generic_stunned_lua", -- modifier name
-		{ duration = self.duration } -- kv
-	)
-]] 
--- stun2
 	target:AddNewModifier(self.parent, self.ability, 
 						"modifier_stunned", 
 						{duration = self.stun_duration})
 
-	--TODO calculate damage base+  bonus
+	-- set cooldown
+	self.ability:UseResources( false, false, true )
 	local damage = self.bonus_damage + self:GetAbility():GetCaster():GetAttackDamage()
-
 	-- apply damage
-	local damageTable = {
-		victim = target,
+	ApplyDamage({victim = target,
+		ability = self.ability,
 		attacker = self.parent,
 		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
-		ability = self.ability, --Optional.
-	}
-	--[[
-ApplyDamage({attacker = self.parent, 
-			victim = target, 
-			ability = self.ability, 
-			damage = self.damage, 
-			damage_type = DAMAGE_TYPE_PHYSICAL})
-	]]
-	ApplyDamage(damageTable)
-	--TODO apply bonus damage
-	--damageTable.damage = damage
-	--ApplyDamage( damageTable )
-	--TODO LF crit dmg output cosa esto es sangrado normal
+		damage_type = DAMAGE_TYPE_MAGICAL})
+	--TODO LF crit dmg output cosa esto es?
 	PopupDamage(target, damage)
 	--TODO play effects
-	--self:PlayEffects( target, target:IsCreep() )
 	target:EmitSound("sakura_strength_impact")
 end

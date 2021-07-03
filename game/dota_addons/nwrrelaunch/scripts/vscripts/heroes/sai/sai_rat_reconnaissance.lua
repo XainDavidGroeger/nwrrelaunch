@@ -150,7 +150,7 @@ function modifier_sai_rat_reconnaissance_debuff:GetModifierProvidesFOWVision()
 end
 
 --------------------------------------------------------------------------------
--- Effects
+--TODO Effects
 function sai_rat_reconnaissance:PlayEffects1( target )
 	local particle_cast = "particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
 	local sound_cast = "Hero_Tinker.Heat-Seeking_Missile.Impact"
