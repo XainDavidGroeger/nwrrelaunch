@@ -17,7 +17,7 @@
   "Ability1"        "sai_super_beast_drawing"
   "Ability2"        "sai_snake_entanglement"
   "Ability3"        "sai_rat_reconnaissance" 
-  "Ability4"        "sai_god_drawings_bash" 
+  "Ability4"        "sai_god_drawings_kami_strength" 
   "Ability5"        "generic_hidden" 
   "Ability6"        "sai_super_god_drawing"
   "Ability10"		"special_bonus_mp_regen_175"

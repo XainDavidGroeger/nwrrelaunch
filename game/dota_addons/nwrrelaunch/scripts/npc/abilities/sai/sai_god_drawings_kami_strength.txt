@@ -1,0 +1,79 @@
+	
+"DOTAAbilities"
+{
+    "sai_god_drawings_kami_strength"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "ScriptFile"                "heroes/sai/sai_god_drawings_kami_strength.lua"
+        //"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"        "tianzhao"
+        "AbilityType"               "DOTA_ABILITY_TYPE_BASIC"
+        "MaxLevel"                  "3"
+        // Casting
+        "AbilityCastPoint"           "0"
+        //review dis
+        "AbilityCastAnimation"      "ACT_DOTA_ALCHEMIST_CHEMICAL_RAGE_START"
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "20"
+        "AbilityManaCost"               "0"
+        "precache"
+        {
+            //tobereworked
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+            "particle"  "particles/status_fx/status_effect_chemical_rage.vpcf"
+            "particle"  "particles/units/heroes/hero_alchemist/alchemist_chemical_rage.vpcf"
+        }
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "duration"              "4 6 8"
+            }
+            "02"
+            { 
+                "var_type"              "FIELD_FLOAT"
+                "bonus_ms_percentage"   "12 12 12"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "attak_speed_percentage" "45 60 75"
+            }
+        }
+        
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"   "Hero_Alchemist.ChemicalRage.Cast"
+                "Target"       "CASTER"
+            }
+
+            "ApplyModifier"
+            {
+                "ModifierName" "modifier_god_drawings_kami_strength"
+                "Target"       "CASTER"
+            }
+        
+        }
+
+        "Modifiers"
+        {
+            "modifier_god_drawings_kami_strength"
+            {
+                "IsBuff"   "1"
+                "IsHidden" "0"
+                "Duration" "%duration"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attak_speed_percentage"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%bonus_ms_percentage"
+                }
+            }
+        }
+    }
+}

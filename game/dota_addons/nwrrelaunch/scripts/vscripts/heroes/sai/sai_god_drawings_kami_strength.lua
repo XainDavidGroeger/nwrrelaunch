@@ -1,0 +1,1 @@
+sai_god_drawings_kami_strength = sai_god_drawings_kami_strength or class({})

@@ -4,8 +4,7 @@
 "sai_god_drawings_bash"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		//"ID"					"5214"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		//--------------------------------------------------------------------------
 		"BaseClass"                 	"ability_lua"
 		"ScriptFile"                	"heroes/sai/sai_god_drawings_bash.lua"
 		"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
