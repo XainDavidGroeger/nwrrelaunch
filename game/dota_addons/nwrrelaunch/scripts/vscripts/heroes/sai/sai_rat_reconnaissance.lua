@@ -1,35 +1,21 @@
 --[[
-Ability checklist (erase if done/checked):
 - Active
 Unleashes rat drawings to hunt down the nearest enemy heroes within range, including those in the fog of war. Upon reaching a target, the rats deal damage and slow the unit while also granting vision for a short duration.
-
-x Cast Animation - 0.3 Seconds
-x Search Radius - 1800
 x Number of Targets - 2 (3)
-x Damage per Snake - 90/155/220/285
-x Move Speed Slow - 100%
 x Slow Duration - 0.4/0.5/0.6/0.7 Seconds
 x Vision Duration - 2 (4) seconds
-x Mana Cost - 80/90/100/110
-x Cooldown - 11/10/9/8 Seconds
-x (Rat Travel Speed - 700)
 ]]
 -------------------------------------------------------------------------
 sai_rat_reconnaissance = class({})
 LinkLuaModifier( "modifier_sai_rat_reconnaissance_debuff", "heroes/sai/sai_rat_reconnaissance", LUA_MODIFIER_MOTION_NONE )
 
-
 --------------------------------------------------------------------------------
---init not working
 function sai_rat_reconnaissance:OnCreated(kv)
 	-- NOT WORKING self.debuff_duration= self:GetSpecialValueFor("debuff_duration")
 end
--- Ability Start
 function sai_rat_reconnaissance:OnSpellStart()
-	-- unit identifier
 	local caster = self:GetCaster()
 
-	-- load data
 	local radius = self:GetSpecialValueFor("radius")
 	local damage = self:GetSpecialValueFor("damage")	
 	local targets = self:GetSpecialValueFor("targets")
@@ -39,7 +25,6 @@ function sai_rat_reconnaissance:OnSpellStart()
 	local projectile_name = "particles/units/heroes/hero_tinker/tinker_missile.vpcf"
 	local projectile_speed = self:GetSpecialValueFor("speed")
 
-	-- find enemies
 	local enemies = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
 		caster:GetOrigin(),	-- point, center point
@@ -52,7 +37,6 @@ function sai_rat_reconnaissance:OnSpellStart()
 		false	-- bool, can grow cache
 	)
 
-	-- create projectile for each enemy
 	local info = {
 		Source = caster,
 		-- Target = target,
@@ -101,35 +85,17 @@ end
 ---------------
 modifier_sai_rat_reconnaissance_debuff= class({})
 
-
 -- Classifications defaults required
-function modifier_sai_rat_reconnaissance_debuff:IsHidden() --shown or not as debuff
-	return false
-end
-
-function modifier_sai_rat_reconnaissance_debuff:IsDebuff() --type of
-	return true
-end
-
-function modifier_sai_rat_reconnaissance_debuff:IsStunDebuff() 
-	return false
-end
-
-function modifier_sai_rat_reconnaissance_debuff:IsPurgable()
-	return false
-end
-
+function modifier_sai_rat_reconnaissance_debuff:IsHidden()	return false end
+function modifier_sai_rat_reconnaissance_debuff:IsDebuff() 	return true end
+function modifier_sai_rat_reconnaissance_debuff:IsStunDebuff() return false end
+function modifier_sai_rat_reconnaissance_debuff:IsPurgable() return false end
 function modifier_sai_rat_reconnaissance_debuff:OnCreated( kv )
 	self.ms_slow_percentage= self:GetAbility():GetSpecialValueFor("ms_slow_percentage") --initialize 
 end
-function modifier_sai_rat_reconnaissance_debuff:OnRefresh( kv )
-end
-
-function modifier_sai_rat_reconnaissance_debuff:OnRemoved()
-end
-
-function modifier_sai_rat_reconnaissance_debuff:OnDestroy()
-end
+function modifier_sai_rat_reconnaissance_debuff:OnRefresh( kv ) end
+function modifier_sai_rat_reconnaissance_debuff:OnRemoved() end
+function modifier_sai_rat_reconnaissance_debuff:OnDestroy() end
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_sai_rat_reconnaissance_debuff:DeclareFunctions()
@@ -145,10 +111,9 @@ function modifier_sai_rat_reconnaissance_debuff:GetModifierMoveSpeedBonus_Percen
 	return self.ms_slow_percentage *-1
 end
 
-function modifier_sai_rat_reconnaissance_debuff:GetModifierProvidesFOWVision()
-	return 1
+function modifier_sai_rat_reconnaissance_debuff:GetModifierProvidesFOWVision() return 
+	1
 end
-
 --------------------------------------------------------------------------------
 --TODO Effects
 function sai_rat_reconnaissance:PlayEffects1( target )

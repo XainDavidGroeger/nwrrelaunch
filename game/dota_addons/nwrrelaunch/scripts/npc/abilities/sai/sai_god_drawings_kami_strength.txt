@@ -7,7 +7,7 @@
         "ScriptFile"                "heroes/sai/sai_god_drawings_kami_strength.lua"
         //"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-        "AbilityTextureName"        "tianzhao"
+        "AbilityTextureName"        "itachi_dust_crow_genjustsu"
         "AbilityType"               "DOTA_ABILITY_TYPE_BASIC"
         "MaxLevel"                  "3"
         // Casting

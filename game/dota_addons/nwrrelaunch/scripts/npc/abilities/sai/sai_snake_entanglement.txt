@@ -2,7 +2,6 @@
     "DOTAAbilities"
 {
     
-
 "sai_snake_entanglement"
 {
 	// General
@@ -88,9 +87,5 @@
 			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_fire.vsndevts"
 			"soundfile"						"soundevents/heroes/shikamaru/shikamaru_stitch_area.vsndevts"
 		}
-	
-	}
-
-
-
+}
 }

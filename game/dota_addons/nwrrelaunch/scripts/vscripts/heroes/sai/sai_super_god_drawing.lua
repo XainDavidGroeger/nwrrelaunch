@@ -31,11 +31,9 @@ function sai_super_god_drawing:OnSpellStart()
 	EmitSoundOnLocationWithCaster(vTargetPosition, 
 		"kisame_shark_cast", self:GetCaster()
 	)
-		--self:SpawnInitGodDrawings(sai_god_drawing) toberefactored
 	self:SpawnInitGodDrawings(vTargetPosition)
 end
 
---modifier 
 modifier_sai_super_god_drawing_lua = modifier_sai_super_god_drawing_lua or class({})
 
 function modifier_sai_super_god_drawing_lua:IsBuff()	return true end
