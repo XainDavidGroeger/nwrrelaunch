@@ -785,7 +785,7 @@
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu"				"<b><font color='#B5B5B5'>Техника Вороньего Клона</font></b>"
 		"DOTA_Tooltip_ability_itachi_dust_crow_genjustsu_description"	"<b><font color='#B5B5B5'>Итачи мгновенно телепортируется</font></b> в выбранную точку, <br><br> <b><font color='#B5B5B5'>оставляя на своём месте клона</font></b>."
 
-		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Тсукуёми</font></b>"
+		"DOTA_Tooltip_ability_itachi_tsukiyomi"							"<b><font color='#9C352C'>Цукуёми</font></b>"
 		"DOTA_Tooltip_ability_itachi_tsukiyomi_description"				"<b><font color='#9C352C'>Оглушает и наносит магический урон</font></b> выбранной цели, <br><br> а так же <b><font color='#9C352C'>замедляет её на короткий период</font></b> после оглушения."
 
 		"DOTA_Tooltip_ability_itachi_sharingan"							"<b><font color='#E21C30'>Мангекё Шаринган</font></b>"
@@ -1099,7 +1099,7 @@
 		"DOTA_Tooltip_ability_raikage_lariat_Description"				"<b><font color='#00D4FF'>Бросается вперед в выбранном направлении</font></b> на высокой скорости, тараня рукой первого попавшегося на пути врага, нанося <b><font color='#00D4FF'>Магический урон и оглушая его.</font></b>"
 		
 
-		"DOTA_Tooltip_ability_raikage_raigyaku_suihei"					"<b><font color='#FFD038'>Горизонтальное Удушение</font></b>"
+		"DOTA_Tooltip_ability_raikage_raigyaku_suihei"					"<b><font color='#FFD038'>Горизонтальная Молния</font></b>"
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_lore"				"Raigyaku Suihei"
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_str_ratio_damage"	"КОЭФФИЦИЕНТ СИЛЫ: "
 		"DOTA_Tooltip_ability_raikage_raigyaku_suihei_damage_reduction"	"%УМЕНЬШЕНИЕ УРОНА: "
@@ -1205,7 +1205,7 @@
 		//Temari
 		//--------------------
 		"npc_dota_hero_temari"  									"Темари"
-		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Песчаный Ветер</font></b>"
+		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu"					"<b><font color='#7FD3FF'>Техника Пыльного Ветра</font></b>"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_lore"					"Fusajin no Jutsu"
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_Description"		"<b><font color='#7FD3FF'>Наносит Магический урон</font></b> цели. <br><br> При использовании, <b><font color='#7FD3FF'>уменьшает оставшееся время перезарядки</font></b> других способностей Темари."
 		"DOTA_Tooltip_ability_temari_fusajin_no_jutsu_damage"			"УРОН: "
@@ -1410,7 +1410,7 @@
 		"DOTA_Tooltip_Ability_special_bonus_sakura_2"						"-3с перезарядки Удара Расцветающей Вишни"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_3"						"+15 брони от Силы Ста Печатей"
 		"DOTA_Tooltip_Ability_special_bonus_sakura_4"						"+4с длительности Взрыва Чакры"
-		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+20% к шансу Усиленной Чакрой Физической Силе"
+		"DOTA_Tooltip_Ability_special_bonus_sakura_5"						"+1.5с оглушения Удара Расцветающей Вишни"
 
 
 		//25: -25% Cooldown Reduction / +225 Karasu Attack Damage
