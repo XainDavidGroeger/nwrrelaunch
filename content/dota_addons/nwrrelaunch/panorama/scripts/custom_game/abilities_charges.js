@@ -17,6 +17,9 @@ function GetDotaHud() {
 function InitChargeUI(args) {
 //	$.Msg(args)
 
+	if (Entities.IsIllusion(args.unit_index))
+		return;
+
 	// Toggle Visibility for ability charge UI
 	GetDotaHud().FindChildTraverse("Ability" + args.ability_index).FindChildTraverse("AbilityCharges").style.visibility = "visible";
 	GetDotaHud().FindChildTraverse("Ability" + args.ability_index).FindChildTraverse("AbilityCharges").GetChild(1).text = 0;

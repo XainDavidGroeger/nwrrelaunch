@@ -11,7 +11,7 @@
 		"BaseClass"					"npc_dota_hero_dragon_knight"
 		"Model" 					"models\kc_naruto/kc_naruto.vmdl"
 		"Ability1"  				"naruto_shadow_clone_technique"
-		"Ability2"  				"naruto_kawazu_kumite" 
+		"Ability2"  				"naruto_rasengan" 
 		"Ability3"  				"naruto_kage_bunshin_mastery" 
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"

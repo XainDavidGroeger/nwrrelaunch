@@ -834,6 +834,12 @@
 		"DOTA_Tooltip_modifier_rasenshuriken_datadriven"						"<b><font color='#3CFEFF'>Rasenshuriken</font></b>"
 		"DOTA_Tooltip_modifier_rasenshuriken_datadriven_description"			"Stunned by <b><font color='#3CFEFF'>Wind Release: Rasenshuriken.</font></b>"
 
+		"DOTA_Tooltip_ability_naruto_shadow_clone_technique"				"Shadow Clone Technique"
+		"DOTA_Tooltip_ability_naruto_shadow_clone_technique_Description"	"Naruto generates Shadow Clone charges over time. Charges are used on activation, creating controllable clones of Naruto that spawn in random locations within a nearby radius. These clones deal a percentage of his damage and take additional incoming damage."
+
+		"DOTA_Tooltip_ability_naruto_rasengan"								"Rasengan"
+		"DOTA_Tooltip_ability_naruto_rasengan_Description"					"By amassing chakra into his hand, Naruto creates a Rasengan to attack his foe with. Naruto’s next attack deals additional magic damage and knocks the foe backwards. Afterwards, the enemy is slowed for a short duration."
+
 		//--------------------
 		//Itachi
 		//--------------------
