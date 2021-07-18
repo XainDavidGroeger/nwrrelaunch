@@ -4,6 +4,8 @@ LinkLuaModifier("modifier_naruto_rasengan_slow", "heroes/naruto/rasengan", LUA_M
 naruto_rasengan = naruto_rasengan or class({})
 
 function naruto_rasengan:OnSpellStart()
+	if not IsServer() then return end
+
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_naruto_rasengan", {duration = self:GetSpecialValueFor("duration")})
 end
 

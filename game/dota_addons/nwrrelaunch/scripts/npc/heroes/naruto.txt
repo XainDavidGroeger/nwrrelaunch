@@ -12,7 +12,7 @@
 		"Model" 					"models\kc_naruto/kc_naruto.vmdl"
 		"Ability1"  				"naruto_shadow_clone_technique"
 		"Ability2"  				"naruto_rasengan" 
-		"Ability3"  				"naruto_kage_bunshin_mastery" 
+		"Ability3"  				"naruto_rendan" 
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
 		"Ability6"  				"naruto_rasenshuriken"

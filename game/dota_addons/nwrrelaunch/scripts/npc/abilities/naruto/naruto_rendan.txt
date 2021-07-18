@@ -1,28 +1,30 @@
 "DOTAAbilities"
 {
-	"naruto_rasengan"
+	"naruto_rendan"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/naruto/rasengan.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ScriptFile"					"heroes/naruto/rendan.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"naruto_rasengan"
+		"AbilityTextureName"			"naruto_rendan"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.6"
+		"AbilityCastRange"				"600 700 800 900"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0"
+		"AbilityCooldown"				"20.0 16.0 12.0 8.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"90 110 130 150"
+		"AbilityManaCost"				"50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -31,33 +33,38 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"90 180 270 360"
-				"LinkedSpecialBonus"		"special_bonus_anko_3"
+				"clone_gather_range"		"900"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"8.0"
+				"var_type"					"FIELD_INTEGER"
+				"charge_speed"				"575 650 725 800"
+				"LinkedSpecialBonus"		"special_bonus_naruto_rendan_charge_speed"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2.0"
+				"stun_duration"				"0.7"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"knockback_duration"		"1.0"
+				"var_type"					"FIELD_INTEGER"
+				"damage"	            	"75 125 175 225"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"15 20 25 30"
-			}	
+				"clone_damage"				"20 24 28 32"
+			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"knockback_distance"		"450"
+				"max_duration"				"5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_distance"				"250"
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 #base "naruto_shadow_clone_technique.txt"
 #base "naruto_rasengan.txt"
+#base "naruto_rendan.txt"
 #base "naruto_kawazu_kumite.txt"
 #base "naruto_rasenshuriken.txt"
 #base "talents.txt"
