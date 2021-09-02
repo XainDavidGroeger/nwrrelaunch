@@ -61,6 +61,9 @@
 		//--------------------
 		"npc_dota_hero_zabuza" 						"Zabuza"
 		"npc_dota_hero_zabuza_lore"  					""
+
+		// Generic
+		"DOTA_Tooltip_modifier_generic_charges"									"Charges"
 		
 		// Water Dragon Bullet
 		"DOTA_Tooltip_ability_zabuza_water_dragon_bullet"						"<b><font color='#55AFFD'> Water Dragon Bullet </font></b>"
@@ -839,6 +842,20 @@
 
 		"DOTA_Tooltip_ability_naruto_rasengan"								"Rasengan"
 		"DOTA_Tooltip_ability_naruto_rasengan_Description"					"By amassing chakra into his hand, Naruto creates a Rasengan to attack his foe with. Naruto’s next attack deals additional magic damage and knocks the foe backwards. Afterwards, the enemy is slowed for a short duration."
+
+		"DOTA_Tooltip_ability_naruto_rendan"								"Naruto Rendan"
+		"DOTA_Tooltip_ability_naruto_rendan_Description"					"Grants Naruto and his clones the ability to charge an enemy unit. When used by Naruto, this ability will cause himself and all nearby clones to charge the enemy. If the original Naruto reaches the target, he will appear behind the target to deal physical damage and a knockup. If a Clone reaches the target, they will deal a small amount of damage. Clones can use this ability separately by issuing an attack on the target, costing no mana."
+
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode"							"Kyuubi Chakra Mode"
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_Description"				"Utilizing the chakra shared with him by the Nine-Tailed Fox, Naruto enters Kyuubi Chakra Mode thus greatly increasing his combat capabilities. Grants a brief period of magic immunity, along with additional Movement Speed, Health regeneration, Mana regeneration and reduced Base Attack Time over the full duration of the transformation. Additionally, Naruto gains new powers while in this form.\n\nLevel 1 - Replaces Rasengan with Wind Release: Rasenshuriken.\nLevel 2 - Gains +20% Critical Strike (180%) and increases Naruto Rendan Speed.\nLevel 3 - Gains new ability Tailed Beast Ball."
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_magic_immune_duration"		"MAGIC IMMUNE DURATION:"
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_bonus_ms"					"BONUS MOVESPEED:"
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_bonus_health_regen"			"BONUS HEALTH REGEN:"
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_bonus_mana_regen"			"BONUS MANA REGEN:"
+		"DOTA_Tooltip_ability_naruto_kyuubi_chakra_mode_base_attack_time"			"BASE ATTACK TIME:"
+
+		"DOTA_Tooltip_modifier_kyuubi_chakra_mode_magic_immune"				"Magic Immune"
+		"DOTA_Tooltip_modifier_kyuubi_chakra_mode"							"Kyuubi Chakra Form"
 
 		//--------------------
 		//Itachi

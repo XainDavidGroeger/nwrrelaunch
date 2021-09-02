@@ -15,7 +15,9 @@
 		"Ability3"  				"naruto_rendan" 
 		"Ability4"					"generic_hidden"
 		"Ability5"					"generic_hidden"
-		"Ability6"  				"naruto_rasenshuriken"
+		"Ability6"  				"naruto_kyuubi_chakra_mode"
+		"Ability7"  				"naruto_rasenshuriken"
+		"Ability8"  				"naruto_tailed_beast_bomb"
 
 		"Ability10"					"special_bonus_all_stats_5"
 		"Ability11"					"special_bonus_naruto_1"

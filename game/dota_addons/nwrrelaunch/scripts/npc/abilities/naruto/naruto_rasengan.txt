@@ -9,7 +9,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"naruto_rasengan"
+		"AbilityTextureName"			"naruto/rasengan"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------

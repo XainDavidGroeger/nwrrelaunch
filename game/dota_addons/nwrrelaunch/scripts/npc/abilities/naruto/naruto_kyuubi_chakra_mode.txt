@@ -1,0 +1,99 @@
+"DOTAAbilities"
+{
+	"naruto_kyuubi_chakra_mode"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/naruto/kyuubi_chakra_mode.lua"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"naruto/kyuubi_chakra_mode"
+		"AOERadius"						"%rs_aoe"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"soundfile"			"soundevents/naruto_rasen_shuriken.vsndevts"
+			"soundfile"			"soundevents/heroes/naruto/naruto_ulti_talking.vsndevts"
+			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_cast.vsndevts"
+			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_fire.vsndevts"
+			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_impact.vsndevts"
+			"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+			"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"			"particles/units/heroes/naruto/shuriken2.vpcf"
+			"particle"			"particles/units/heroes/naruto/rasenshuriken_alt.vpcf"
+			"particle"  		"particles/units/heroes/yondaime/raseng_model.vpcf"
+			"particle"			"particles/units/heroes/naruto/shuriken_impact.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.6"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_immune_duration"	"1.0 1.5 2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_attack_time"		"1.6 1.5 1.4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_ms"				"30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"20 35 50"
+				"LinkedSpecialBonus"	"special_bonus_naruto_7"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"3 7 11"
+				"LinkedSpecialBonus"	"special_bonus_naruto_7"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"20"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_mult"				"180"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tailed_beast_bomb_cd"	"10"
+			}
+		}
+	}
+}

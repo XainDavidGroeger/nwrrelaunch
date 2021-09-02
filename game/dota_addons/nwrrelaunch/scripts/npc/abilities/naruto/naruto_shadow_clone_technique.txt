@@ -8,7 +8,7 @@
 		"ScriptFile"					"heroes/naruto/shadow_clone_technique.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"naruto_shadow_clone_technique"
+		"AbilityTextureName"			"naruto/shadow_clone_technique"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
