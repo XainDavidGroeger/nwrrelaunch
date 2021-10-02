@@ -4,16 +4,19 @@
 *.soc
 *.tmp
 
-# Compiled formats
-.vmat_c
-.vagrp_c
-.vmesh_c
-.vmdl_c
-.vtex_c
-.vsnd_c
-.vsndevts_c
-.vpcf_c
-.vanim_c
+# Compiled files, excerpted from 
+# https://github.com/ModDota/TypeScriptAddonTemplate/blob/9d2059daec891823ff501074346de5d5d9e00b99/.gitignore
+*.vcss_c
+*.vxml_c
+*.vtex_c
+*.vjs_c
+*.vpcf_c
+*.vmat_c
+*.vpk
+*.vmdl_c
+*.vmesh_c
+*.vsndevts_c
+*.vsnd_c
 
 # Map files
 
