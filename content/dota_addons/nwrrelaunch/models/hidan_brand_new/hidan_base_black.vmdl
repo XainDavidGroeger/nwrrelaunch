@@ -591,7 +591,19 @@
 	}
 	m_pMaterialGroupList = 
 	{
-		m_pObject = null
+		m_pObject = 
+		{
+			m_materialGroups = 
+			[
+				{
+					m_name = "default"
+					m_materialList = 
+					[
+						"materials/hidan_brand_new/hidan_brand_black_fixed.vmat",
+					]
+				},
+			]
+		}
 	}
 	m_pMeshGroupList = 
 	{
