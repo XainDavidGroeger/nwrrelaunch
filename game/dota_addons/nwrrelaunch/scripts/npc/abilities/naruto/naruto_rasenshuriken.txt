@@ -4,47 +4,25 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/naruto/rasenshuriken.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"naruto_rasenshuriken"
-		"AOERadius"						"%rs_aoe"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-			"soundfile"			"soundevents/naruto_rasen_shuriken.vsndevts"
-			"soundfile"			"soundevents/heroes/naruto/naruto_ulti_talking.vsndevts"
-			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_cast.vsndevts"
-			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_fire.vsndevts"
-			"soundfile"			"soundevents/heroes/naruto/naruto_rasenshuriken_impact.vsndevts"
-			"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
-			"particle"			"particles/units/heroes/naruto/shuriken2.vpcf"
-			"particle"			"particles/units/heroes/naruto/rasenshuriken_alt.vpcf"
-			"particle"  		"particles/units/heroes/yondaime/raseng_model.vpcf"
-			"particle"			"particles/units/heroes/naruto/shuriken_impact.vpcf"
-		}
+		"AbilityTextureName"			"naruto/rasenshuriken"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"65.0"
+		"AbilityCooldown"				"15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 200 250"
+		"AbilityManaCost"				"90 110 130 150"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -52,137 +30,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"rs_speed"				"1000"
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"90 180 270 360"
+				"LinkedSpecialBonus"		"special_bonus_anko_3"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"rs_stun_duration"		"2.0 2.5 3.0"
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"8.0"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"rs_aoe"				"300"
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"2.0"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"225"
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.0"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"900"
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"15 20 25 30" // %
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"275 400 525"
-				"LinkedSpecialBonus"	"special_bonus_naruto_6"
-			}
-		}
-
-		"OnAbilityPhaseStart"
-		{
-			"FireSound"
-			{
-				"EffectName"		"naruto_ulti_talking"
-				"Target"			"CASTER"
-			}
-
-			"FireSound"
-			{
-				"EffectName"		"naruto_rasenshuriken_cast"
-				"Target"			"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/naruto/rasenshuriken.lua"
-				"Function"		"addEffect"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/naruto/rasenshuriken.lua"
-				"Function"		"rasenshuriken_start"
-				"Target"		"TARGET"
-				"rs_speed"		"%rs_speed"
-				"vision_radius"	"%vision_radius"
-			}
-
-			"FireSound"
-			{
-				"EffectName"		"naruto_rasenshuriken_fire"
-				"Target"			"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/naruto/rasenshuriken.lua"
-				"Function"		"removeEffect"
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"FireSound"
-			{
-				"EffectName"		"naruto_rasenshuriken_impact"
-				"Target"			"TARGET"
-			}
-
-			"RunScript"
-	        {
-				"ScriptFile"    "items.lua"
-				"Function"      "CheckForSpellBlock"
-
-				"filePath"		"heroes/naruto/rasenshuriken"
-				"functionName"	"rasenshuriken_impact"
-
-				"AoE"			"%rs_aoe"
-				"rs_modifier"	"modifier_rasenshuriken_datadriven"
-
-				"PierceMagicImmune"	"true"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_rasenshuriken_datadriven"
-			{
-				"Duration"		"%rs_stun_duration"
-				"IsDebuff"		"1"
-				"OverrideAnimation"	"ACT_DOTA_DISABLED"
-
-				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"EffectName"	"particles/units/heroes/naruto/shuriken_impact.vpcf"
-						"EffectAttachType"	"attach_origin"
-						"Target"		"TARGET"
-						"ControlPointEntities"
-						{
-							"TARGET"	"attach_origin"
-							"TARGET"	"attach_origin"
-							"TARGET"	"attach_origin"
-							"TARGET"	"attach_origin"	//CP3 has a child explosion origin
-						}
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_range"		"600"
 			}
 		}
 	}

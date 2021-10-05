@@ -16,11 +16,7 @@ function naruto_shadow_clone_technique:OnSpellStart()
 
 	local count = 0
 	local intrinsic_modifier = self:GetCaster():FindModifierByName(self:GetIntrinsicModifierName())
---	local image_count = intrinsic_modifier:GetStackCount() * self:GetSpecialValueFor("clones_per_charge")
 	local image_count = self:GetSpecialValueFor("clones_per_charge")
-
---	intrinsic_modifier:SetStackCount(0)
---	intrinsic_modifier:CalculateCharge()
 
 	self:GetCaster():SetContextThink(DoUniqueString("naruto_shadow_clone_technique"), function()
 		-- "API Additions - Global (Server): * CreateIllusions( hOwner, hHeroToCopy, hModifierKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace ) Note: See script_help2 for supported modifier keys"
@@ -32,7 +28,7 @@ function naruto_shadow_clone_technique:OnSpellStart()
 			outgoing_damage_structure	= nil,
 			outgoing_damage_roshan		= nil,
 			duration					= self:GetSpecialValueFor("illusion_duration")
-		}, 1, self:GetCaster():GetHullRadius(), true, true)
+		}, 1, self:GetCaster():GetHullRadius(), false, true)
 
 		count = count + 1
 

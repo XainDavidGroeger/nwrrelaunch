@@ -99,21 +99,19 @@ function GameMode:OnHeroInGame(hero)
 		else
 			EmitSoundOnEntityForPlayer("akat_start", hero, playerId)
 		end
-
-		
 	end)
 
 	hero:AddNewModifier(hero, nil, "modifier_custom_mechanics", {})
 
 	GameMode:RemoveWearables( hero )
 
+	hero:InitializeAbilities()
+
 	if hero:IsCustomHero() then
 		sendOverrideHeroImage(hero)
 
 		VoiceResponses:RegisterUnit(hero:GetUnitName(), "scripts/vscripts/components/voicelines/keyvalues/"..string.gsub(hero:GetUnitName(), "npc_dota_hero_", "").."_responses.txt")
 	end
-
-
 end
 
 -- TODO add live api url / add api security?

@@ -3,6 +3,14 @@ LinkLuaModifier("modifier_naruto_rasengan_slow", "heroes/naruto/rasengan", LUA_M
 
 naruto_rasengan = naruto_rasengan or class({})
 
+function naruto_rasengan:OnUpgrade()
+	local ability = self:GetCaster():FindAbilityByName("naruto_rasenshuriken")
+
+	if ability then
+		ability:SetLevel(self:GetLevel())
+	end
+end
+
 function naruto_rasengan:OnSpellStart()
 	if not IsServer() then return end
 
@@ -17,12 +25,6 @@ function modifier_naruto_rasengan:DeclareFunctions() return {
 
 function modifier_naruto_rasengan:GetAttackSound()
 	return "Hero_Ancient_Apparition.ChillingTouch.Cast"
-end
-
-function modifier_naruto_rasengan:OnCreated()
-	if not IsServer() then return end
-
-	self:GetParent():SetRangedProjectileName("particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_projectile.vpcf")
 end
 
 function modifier_naruto_rasengan:OnAttackLanded( keys )
@@ -46,14 +48,6 @@ function modifier_naruto_rasengan:OnAttackLanded( keys )
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, keys.target, damage, nil)
 
 	self:Destroy()
-end
-
-function modifier_naruto_rasengan:OnRemoved()
-	if not IsServer() then return end
-
-	local projectile_name = GetUnitKV(self:GetParent():GetUnitName(), "ProjectileName") or ""
-
-	self:GetParent():SetRangedProjectileName(projectile_name)
 end
 
 modifier_naruto_rasengan_slow = modifier_naruto_rasengan_slow or class({})

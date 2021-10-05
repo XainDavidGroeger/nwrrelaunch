@@ -3,6 +3,5 @@
 #base "naruto_rendan.txt"
 #base "naruto_kyuubi_chakra_mode.txt"
 #base "naruto_rasenshuriken.txt"
-#base "naruto_kawazu_kumite.txt"
 #base "naruto_tailed_beast_bomb.txt"
 #base "talents.txt"

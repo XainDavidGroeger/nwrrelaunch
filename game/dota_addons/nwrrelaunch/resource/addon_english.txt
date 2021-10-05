@@ -857,6 +857,10 @@
 		"DOTA_Tooltip_modifier_kyuubi_chakra_mode_magic_immune"				"Magic Immune"
 		"DOTA_Tooltip_modifier_kyuubi_chakra_mode"							"Kyuubi Chakra Form"
 
+		"DOTA_Tooltip_ability_naruto_tailed_beast_bomb"							"Tailed Beast Bomb"
+		"DOTA_Tooltip_ability_naruto_tailed_beast_bomb_Description"				"Amassing a massive amount of chakra with the help of Kurama, Naruto fires a large ball of pure energy that deals magic damage in a line. A fixed amount of magic damage is dealt to all enemies caught in the attack, plus additional damage based on a multiplier of Naruto’s Strength. Deals 10% less damage per hero hit."
+		"DOTA_Tooltip_ability_naruto_tailed_beast_bomb_Note0"					"Naruto will lose the effects of Kyuubi Chakra Mode after using this ability."
+
 		//--------------------
 		//Itachi
 		//--------------------

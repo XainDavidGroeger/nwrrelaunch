@@ -99,3 +99,21 @@ end
 function CDOTA_BaseNPC:GetIllusionBounty()
 	return self:GetLevel() * 2
 end
+
+-- Initializes heroes' innate abilities
+function CDOTA_BaseNPC:InitializeAbilities()	
+	-- Cycle through all of the heroes' abilities, and upgrade the innates ones
+	for i = 0, 15 do		
+		local current_ability = self:GetAbilityByIndex(i)		
+
+		if current_ability then
+			if current_ability.IsInnateAbility and current_ability:IsInnateAbility() then
+				current_ability:SetLevel(1)
+			end
+
+			if current_ability.IsDisabledByDefault and current_ability:IsDisabledByDefault() then
+				current_ability:SetActivated(false)
+			end
+		end
+	end
+end

@@ -36,7 +36,7 @@ function modifier_kyuubi_chakra_mode:OnCreated()
 
 		if tailed_beast_bomb then
 			tailed_beast_bomb:StartCooldown(self:GetAbility():GetSpecialValueFor("tailed_beast_bomb_cd"))
-			tailed_beast_bomb:SetActivated(true)
+			tailed_beast_bomb:SetHidden(false)
 		end
 	end
 end
@@ -65,8 +65,10 @@ function modifier_kyuubi_chakra_mode:OnRemoved()
 	local tailed_beast_bomb = self:GetCaster():FindAbilityByName("naruto_tailed_beast_bomb")
 
 	if tailed_beast_bomb then
-		tailed_beast_bomb:SetActivated(false)
+		tailed_beast_bomb:SetHidden(true)
 	end
+
+	self:GetParent():RemoveModifierByName("modifier_kyuubi_chakra_mode_crit")
 end
 
 modifier_kyuubi_chakra_mode_magic_immune = modifier_kyuubi_chakra_mode_magic_immune or class({})

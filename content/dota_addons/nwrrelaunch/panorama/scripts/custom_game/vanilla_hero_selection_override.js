@@ -55,8 +55,12 @@ function UpdatePortrait(sHeroName) {
 		if (Parent.FindChildTraverse("CustomHeroMoviePortrait"))
 			Parent.FindChildTraverse("CustomHeroMoviePortrait").DeleteAsync(0);
 
-		var MovieContainer = $.CreatePanel( "Panel", PortraitContainer, "CustomHeroMoviePortrait" )
-		MovieContainer.BLoadLayoutFromString( '<root><Panel><MoviePanel src="s2r://panorama/videos/heroes/npc_dota_hero_' + sHeroName + '.webm" repeat="true" autoplay="onload" /></Panel></root>', false, false )
+		var MovieContainer = $.CreatePanelWithProperties('MoviePanel', PortraitContainer, "CustomHeroMoviePortrait", {
+			src: 's2r://panorama/videos/heroes/npc_dota_hero_' + sHeroName + '.webm',
+			repeat: true,
+			autoplay: "onload"
+		});
+	
 		MovieContainer.style.width = "160px";
 		MovieContainer.style.height = "203px";
 		MovieContainer.style.boxShadow = "#000000aa 0px 0px 16px 0px";
@@ -111,8 +115,11 @@ function SetWebmPanels(button, hero_name) {
 
 			TooltipHeroName.text = $.Localize("npc_dota_hero_" + hero_name).toUpperCase();
 
-			var MovieContainer = $.CreatePanel( "Panel", Parent.FindChildTraverse("ImageContainer"), "CustomHeroMovie" )
-			MovieContainer.BLoadLayoutFromString( '<root><Panel><MoviePanel src="s2r://panorama/videos/heroes/npc_dota_hero_' + hero_name + '.webm" repeat="true" autoplay="onload" /></Panel></root>', false, false )
+			var MovieContainer = $.CreatePanelWithProperties('MoviePanel', Parent.FindChildTraverse("ImageContainer"), "CustomHeroMovie", {
+				src: 's2r://panorama/videos/heroes/npc_dota_hero_' + hero_name + '.webm',
+				repeat: true,
+				autoplay: "onload"
+			});
 
 			fully_init = true;
 		})
@@ -127,10 +134,16 @@ function SetWebmPanels(button, hero_name) {
 }
 
 function SetStrategyHeroModel(data) {
-	var HeroModel = $.CreatePanel("Panel", Parent.FindChildTraverse("EconSetPreview2"), "");
+//	var HeroModel = $.CreatePanel("Panel", Parent.FindChildTraverse("EconSetPreview2"), "");
+//	HeroModel.BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width:100%; height:100%;" particleonly="false" unit="' + data.sHeroName + '"/></Panel></root>', false, false);
+
+	var HeroModel = $.CreatePanelWithProperties('DOTAScenePanel', Parent.FindChildTraverse("EconSetPreview2"), "", {
+		unit: data.sHeroName,
+		particleonly: false,
+	});
+
 	HeroModel.style.width = "100%";
 	HeroModel.style.height = "100%";
-	HeroModel.BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width:100%; height:100%;" particleonly="false" unit="' + data.sHeroName + '"/></Panel></root>', false, false);
 //	HeroModel.style.opacityMask = 'url("s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex");'
 }
 
