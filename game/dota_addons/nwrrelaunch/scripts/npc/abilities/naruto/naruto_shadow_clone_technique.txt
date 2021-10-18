@@ -30,6 +30,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"max_charges"				"3"
+				"LinkedSpecialBonus"		"special_bonus_naruto_4"
 			}
 			"02"
 			{
@@ -55,12 +56,14 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage"			"700"
+				"LinkedSpecialBonus"		"special_bonus_naruto_5"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"incoming_damage_tooltip"	"800"
-			}		
+				"LinkedSpecialBonus"		"special_bonus_naruto_5"
+			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
