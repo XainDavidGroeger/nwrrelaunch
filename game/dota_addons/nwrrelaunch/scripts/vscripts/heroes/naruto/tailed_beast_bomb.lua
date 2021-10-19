@@ -5,11 +5,16 @@ naruto_tailed_beast_bomb = naruto_tailed_beast_bomb or class({})
 -- naruto_tailed_beast_bomb --
 -------------------------------
 
+function naruto_tailed_beast_bomb:Precache( context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_cast_talking.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_fire_talking.vsndevts", context )
+end
+
 function naruto_tailed_beast_bomb:IsInnateAbility() return true end
 
 function naruto_tailed_beast_bomb:OnAbilityPhaseStart()
-	EmitSoundOnLocationForAllies(self:GetCaster():GetAbsOrigin(), "Ability.PowershotPull", self:GetCaster())
-
+	local caster = self:GetCaster()
+	caster:EmitSound("beastbomb_cast_talking")
 	return true
 end
 
@@ -30,6 +35,8 @@ function naruto_tailed_beast_bomb:FireBomb()
 	dummy_unit.units_hit = 0
 	
 	self:GetCaster():StartGesture(ACT_DOTA_OVERRIDE_ABILITY_2)
+
+	self:GetCaster():EmitSound("beastbomb_fire_talking")
 
 	ProjectileManager:CreateLinearProjectile({
 		Source = self:GetCaster(),

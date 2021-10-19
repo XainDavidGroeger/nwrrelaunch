@@ -3,6 +3,11 @@ LinkLuaModifier("modifier_naruto_rasengan_slow", "heroes/naruto/rasengan", LUA_M
 
 naruto_rasengan = naruto_rasengan or class({})
 
+function naruto_rasengan:Precache( context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_charged.vsndevts", context )
+end
+
 function naruto_rasengan:OnUpgrade()
 	local ability = self:GetCaster():FindAbilityByName("naruto_rasenshuriken")
 
@@ -11,10 +16,17 @@ function naruto_rasengan:OnUpgrade()
 	end
 end
 
+function naruto_rasengan:OnAbilityPhaseStart()
+	local caster = self:GetCaster()
+	caster:EmitSound("rasengan_cast")
+	return true
+end
+
 function naruto_rasengan:OnSpellStart()
 	if not IsServer() then return end
 
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_naruto_rasengan", {duration = self:GetSpecialValueFor("duration")})
+	self:GetCaster():EmitSound("rasengan_charged")
 end
 
 modifier_naruto_rasengan = modifier_naruto_rasengan or class({})
@@ -22,10 +34,6 @@ modifier_naruto_rasengan = modifier_naruto_rasengan or class({})
 function modifier_naruto_rasengan:DeclareFunctions() return {
 	MODIFIER_EVENT_ON_ATTACK_LANDED,
 } end
-
-function modifier_naruto_rasengan:GetAttackSound()
-	return "Hero_Ancient_Apparition.ChillingTouch.Cast"
-end
 
 function modifier_naruto_rasengan:OnAttackLanded( keys )
 	if keys.attacker ~= self:GetParent() then return end
