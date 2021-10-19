@@ -42,7 +42,7 @@ function modifier_naruto_rasengan:OnAttackLanded( keys )
 	keys.target:EmitSound("Hero_Ancient_Apparition.ChillingTouch.Target")
 	keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_naruto_rasengan_slow", { duration = self:GetAbility():GetSpecialValueFor("knockback_duration") + self:GetAbility():GetSpecialValueFor("slow_duration")})
 
-	local damage = self:GetAbility():GetSpecialValueFor("damage") + self:GetParent():FindTalentValue("special_bonus_naruto_rasengan_damage")
+	local damage = self:GetAbility():GetSpecialValueFor("damage") + self:GetParent():FindTalentValue("special_bonus_naruto_4")
 
 	ApplyDamage({
 		victim 			= keys.target,

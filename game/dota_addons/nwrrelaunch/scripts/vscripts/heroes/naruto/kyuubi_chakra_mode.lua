@@ -58,11 +58,11 @@ function modifier_kyuubi_chakra_mode:GetModifierBaseAttackTimeConstant()
 end
 
 function modifier_kyuubi_chakra_mode:GetModifierConstantHealthRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
+	return self:GetAbility():GetSpecialValueFor("bonus_health_regen") + self:GetParent():FindTalentValue("special_bonus_naruto_3")
 end
 
 function modifier_kyuubi_chakra_mode:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") + self:GetParent():FindTalentValue("special_bonus_naruto_2")
 end
 
 function modifier_kyuubi_chakra_mode:OnRemoved()
