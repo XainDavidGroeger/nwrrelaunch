@@ -6,6 +6,10 @@ naruto_rasengan = naruto_rasengan or class({})
 function naruto_rasengan:Precache( context )
 	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_cast.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_charged.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_impact.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rasengan_talking.vsndevts", context )
+
+    PrecacheResource( "particle",  "particles/units/heroes/yondaime/raseng_impact.vpcf", context )
 end
 
 function naruto_rasengan:OnUpgrade()
@@ -39,7 +43,10 @@ function modifier_naruto_rasengan:OnAttackLanded( keys )
 	if keys.attacker ~= self:GetParent() then return end
 	if keys.target:IsMagicImmune() then return end
 
-	keys.target:EmitSound("Hero_Ancient_Apparition.ChillingTouch.Target")
+	keys.target:EmitSound("rasengan_impact")
+	keys.attacker:EmitSound("rasengan_talking")
+	keys.attacker:StopSound("rasengan_charged")
+	
 	keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_naruto_rasengan_slow", { duration = self:GetAbility():GetSpecialValueFor("knockback_duration") + self:GetAbility():GetSpecialValueFor("slow_duration")})
 
 	local damage = self:GetAbility():GetSpecialValueFor("damage") + self:GetParent():FindTalentValue("special_bonus_naruto_4")

@@ -2,18 +2,13 @@ LinkLuaModifier("modifier_generic_charges", "modifiers/modifier_generic_charges"
 
 special_bonus_naruto_4 = special_bonus_naruto_4 or class({})
 
-function special_bonus_naruto_4:GetIntrinsicModifierName() return "modifier_special_bonus_naruto_4" end
-
-function modifier_special_bonus_naruto_4:OnCreated()
-	if not IsServer() then return end
-
-	-- Refresh modifier to update max charges count
-	print("Refresh charge max count!")
-	self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_generic_charges", {})
-	self:Destroy()
-end
-
 naruto_shadow_clone_technique = naruto_shadow_clone_technique or class({})
+
+function naruto_shadow_clone_technique:Precache( context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_fire.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_talking.vsndevts", context )
+end
 
 function naruto_shadow_clone_technique:IsHiddenWhenStolen() return false end
 function naruto_shadow_clone_technique:IsRefreshable() return true end
@@ -22,6 +17,11 @@ function naruto_shadow_clone_technique:IsNetherWardStealable() return false end
 
 function naruto_shadow_clone_technique:GetIntrinsicModifierName()
 	return "modifier_generic_charges"
+end
+
+function naruto_shadow_clone_technique:OnAbilityPhaseStart()
+	self:GetCaster():EmitSound("shadow_clone_cast")
+	return true
 end
 
 function naruto_shadow_clone_technique:OnSpellStart()
@@ -65,5 +65,6 @@ function naruto_shadow_clone_technique:OnSpellStart()
 
 	end, 0.0)
 
-	self:GetCaster():EmitSound("Hero_NagaSiren.MirrorImage")
+	self:GetCaster():EmitSound("shadow_clone_fire")
+	self:GetCaster():EmitSound("shadow_clone_talking")
 end

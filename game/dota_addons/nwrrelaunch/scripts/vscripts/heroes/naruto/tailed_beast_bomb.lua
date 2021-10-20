@@ -8,6 +8,9 @@ naruto_tailed_beast_bomb = naruto_tailed_beast_bomb or class({})
 function naruto_tailed_beast_bomb:Precache( context )
 	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_cast_talking.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_fire_talking.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_cast.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_fire.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/heroes/naruto/beastbomb_ball.vsndevts", context )
 end
 
 function naruto_tailed_beast_bomb:IsInnateAbility() return true end
@@ -15,6 +18,7 @@ function naruto_tailed_beast_bomb:IsInnateAbility() return true end
 function naruto_tailed_beast_bomb:OnAbilityPhaseStart()
 	local caster = self:GetCaster()
 	caster:EmitSound("beastbomb_cast_talking")
+	caster:EmitSound("beastbomb_cast")
 	return true
 end
 
@@ -30,13 +34,14 @@ end
 function naruto_tailed_beast_bomb:FireBomb()
 	-- This "dummy" literally only exists to attach the gush travel sound to
 	local dummy_unit = CreateModifierThinker(self:GetCaster(), self, nil, {}, self:GetCaster():GetAbsOrigin(), self:GetCaster():GetTeamNumber(), false)
-	dummy_unit:EmitSound("Ability.Powershot")
+	dummy_unit:EmitSound("beastbomb_ball")
 	-- Keep track of how many units the Bomb will hit to calculate damage reductions
 	dummy_unit.units_hit = 0
 	
 	self:GetCaster():StartGesture(ACT_DOTA_OVERRIDE_ABILITY_2)
 
 	self:GetCaster():EmitSound("beastbomb_fire_talking")
+	self:GetCaster():EmitSound("beastbomb_fire")
 
 	ProjectileManager:CreateLinearProjectile({
 		Source = self:GetCaster(),
@@ -70,7 +75,7 @@ function naruto_tailed_beast_bomb:OnProjectileThink_ExtraData(location, data)
 		EntIndexToHScript(data.dummy_index):SetAbsOrigin(location)
 	end
 
-	GridNav:DestroyTreesAroundPoint(location, 75, true)
+	GridNav:DestroyTreesAroundPoint(location, 375, true)
 end
 
 function naruto_tailed_beast_bomb:OnProjectileHit_ExtraData(target, location, data)
