@@ -59,12 +59,12 @@
 						m_HitBoxes = 
 						[
 							{
-								m_name = "Chest"
+								m_name = "m3bone_root"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Chest"
-								m_vMinBounds = [ -100.0, -120.465446, -100.0 ]
-								m_vMaxBounds = [ 100.0, 210.464996, 100.0 ]
+								m_sBoneName = "m3bone_root"
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_flShapeRadius = 0.0
 								m_nShapeType = "VHITBOX_SHAPE_BOX"
 								m_bTranslationOnly = false

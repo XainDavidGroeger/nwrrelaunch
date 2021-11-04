@@ -63,7 +63,42 @@ function GameMode:OnNPCSpawned(keys)
 	end
 
 	self:_OnNPCSpawned(keys)
-
+	
+	--if npc:GetUnitName() == "npc_dota_badguys_siege_upgraded_mega" or npc:GetUnitName() == "npc_dota_badguys_siege_upgraded" or npc:GetUnitName() == "npc_dota_badguys_siege" then
+	--    npc:SetModel("models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl")
+	--    npc:SetOriginalModel("models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl")
+	--end
+	
+	if npc:GetUnitName() == "npc_dota_creep_badguys_melee" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee.vmdl")
+	end
+	
+	if npc:GetUnitName() == "npc_dota_creep_badguys_melee_upgraded_mega" or npc:GetUnitName() == "npc_dota_creep_badguys_melee_upgraded" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl")
+	end
+	
+	if npc:GetUnitName() == "npc_dota_creep_badguys_ranged" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl")
+	end
+	
+	if npc:GetUnitName() == "npc_dota_creep_badguys_ranged_upgraded_mega" or npc:GetUnitName() == "npc_dota_creep_badguys_ranged_upgraded" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged_mega.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged_mega.vmdl")
+	end
+	
+	if npc:GetUnitName() == "npc_dota_creep_goodguys_melee" or npc:GetUnitName() == "npc_dota_creep_goodguys_melee_upgraded" or npc:GetUnitName() == "npc_dota_creep_goodguys_melee_upgraded_mega" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl")
+	end
+	
+	if npc:GetUnitName() == "npc_dota_creep_goodguys_ranged_upgraded_mega" or npc:GetUnitName() == "npc_dota_creep_goodguys_ranged_upgraded" or npc:GetUnitName() == "npc_dota_creep_goodguys_ranged" then
+	    npc:SetModel("models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl")
+	    npc:SetOriginalModel("models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl")
+	end
+	
 	GameMode:RescaleUnit(npc)
 
 	if GetMapName() == "turbo" then --If the map was selected turbo, then at the beginning of the game each courier is given a buff for speed, and the player is given a buff for experience and gold.

@@ -4,19 +4,11 @@ LinkLuaModifier("modifier_kyuubi_chakra_mode_crit", "heroes/naruto/kyuubi_chakra
 
 naruto_kyuubi_chakra_mode = naruto_kyuubi_chakra_mode or class({})
 
-function naruto_kyuubi_chakra_mode:Precache( context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/kcm_cast_talking.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/kcm_cast.vsndevts", context )
-end
-
 function naruto_kyuubi_chakra_mode:OnSpellStart()
 	if not IsServer() then return end
 
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_kyuubi_chakra_mode", {duration = self:GetSpecialValueFor("duration")})
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_kyuubi_chakra_mode_magic_immune", {duration = self:GetSpecialValueFor("magic_immune_duration")})
-
-	self:GetCaster():EmitSound("kcm_cast_talking")
-	self:GetCaster():EmitSound("kcm_cast")
 end
 
 modifier_kyuubi_chakra_mode = modifier_kyuubi_chakra_mode or class({})
@@ -58,11 +50,11 @@ function modifier_kyuubi_chakra_mode:GetModifierBaseAttackTimeConstant()
 end
 
 function modifier_kyuubi_chakra_mode:GetModifierConstantHealthRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_health_regen") + self:GetParent():FindTalentValue("special_bonus_naruto_3")
+	return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
 end
 
 function modifier_kyuubi_chakra_mode:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") + self:GetParent():FindTalentValue("special_bonus_naruto_2")
+	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 
 function modifier_kyuubi_chakra_mode:OnRemoved()

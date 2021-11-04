@@ -6,12 +6,11 @@
 	//=================================================================================================================
 	// Naruto Special Bonus
 	//=================================================================================================================	
-	// 25: Tailed Beast Bomb Pure Damage / +4 Shadow Clone Charges after KCM Expires
-	// 20: -200% Shadow Clone Incoming Damage / +220 Rasengan/Rasenshuriken Damage
-	// 15: +12 KCM Health Regen / +7 KCM Mana Regen
-	// 10: +5 All Stats / +1 Shadow Clone Max Charges
+	//25: +320 Rasenshuriken Damage / -4s Bunshin Rasengan Cooldown
+	//20: +4.5s Frog Kata Duration / +13% Bunshin Damage
+	//15: -2s Bunshin Swap Cooldown / +90 Bunshin Rasengan Damage
+	//10: +5 All Stats / +200 Bunshin Swap Range
 
-	// +1 Shadow Clone Max Charges
 	"special_bonus_naruto_1"	
 	{
 		// General
@@ -32,12 +31,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"1"
+				"value"					"200"
 			}
 		}
 	}
 
-	// +7 KCM Mana Regen
 	"special_bonus_naruto_2"	
 	{
 		// General
@@ -49,6 +47,7 @@
 		"LinkedAbility"
 		{
 			"01" 	"naruto_kage_bunshin_mastery"
+
 		}
 
 		// Special
@@ -58,12 +57,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"7"
+				"value"					"-2"
 			}
 		}
 	}
 
-	// +12 KCM Health Regen
 	"special_bonus_naruto_3"	
 	{
 		// General
@@ -84,12 +82,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"12"
+				"value"					"90"
 			}
 		}
 	}
 
-	// +220 Rasengan/Rasenshuriken Damage
+
 	"special_bonus_naruto_4"	
 	{
 		// General
@@ -109,13 +107,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"220"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"4.5"
 			}
 		}
 	}
 
-	// -200% Shadow Clone Incoming Damage
+
 	"special_bonus_naruto_5"	
 	{
 		// General
@@ -136,13 +134,12 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"-200"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"13"
 			}
 		}
 	}
 
-	// +4 Shadow Clone Charges after KCM Expires
 	"special_bonus_naruto_6"	
 	{
 		// General
@@ -163,12 +160,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"4"
+				"value"					"320"
 			}
 		}
 	}
 
-	// Tailed Beast Bomb Pure Damage
 	"special_bonus_naruto_7"	
 	{
 		// General
@@ -189,7 +185,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"1"
+				"value"					"-4"
+			}
+		}
+	}
+
+	"special_bonus_naruto_rasengan_damage"	
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"LinkedAbility"
+		{
+			"01" 	"naruto_rasengan"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"220"
 			}
 		}
 	}

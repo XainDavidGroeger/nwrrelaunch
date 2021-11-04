@@ -19,7 +19,7 @@
 			// *************** ERROR MESSAGES ****************
 
 		"error_must_target_owner_illusion"			"Целью должны быть собственные иллюзии"
-
+        
 		"npc_dota_roshan"								"Курама"
 		"npc_dota_roshan_datadriven"								"Курама"
 		"npc_dota_neutral_black_drake"					"Чиби Кьюби"
@@ -1238,6 +1238,21 @@
 		"npc_dota_hero_batrider"  											"Sarutobi"
 		"DOTA_Tooltip_ability_sarutobi_katon_doton_combo"					"Katon/Doton Combo"
 		"DOTA_Tooltip_ability_sarutobi_katon_doton_combo_Description"		"By combining Katon: karyuu endan with Doton: doryuu taiga Sarutobi cause heavy burns to enemies and also weaken their attacks while they are burning. Last for 10 seconds."
+		
+		// Shukaku
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu"						"<b><font color='#D86C26'>Песчаные Похороны</font></b>"
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_lore"					"Sabaku Kyu"
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_description"			"<b><font color='#FFFFFF'>ПРЕРЫВАЕМАЯ:</font></b> Окутывает цель песком <b><font color='#D86C26'>выводя её из строя.</font></b> <br><br> <b><font color='#D86C26'>Магический урон наносится</font></b> после <b><font color='#FFFFFF'>1.4</font></b> секунды."
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_dmg"				"УРОН: "
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_duration"				"ДЛИТЕЛЬНОСТЬ: "
+		
+		// beasts passive
+		"DOTA_Tooltip_ability_tailed_beast_slayer"						"<b>Древняя Вражда</b>"
+		"DOTA_Tooltip_ability_tailed_beast_slayer_description"			"Получает 20% бонусного урона и 7% снижения урона за стак против врагов, ранее убивших хвостатого зверя. До 80% бонусного урона и 28% снижения урона."
+		
+		// wind blast shukaku
+		"DOTA_Tooltip_ability_shukaku_futon_sasandan"						"<b>Futon: Sasandan</b>"
+		"DOTA_Tooltip_ability_shukaku_futon_sasandan_description"			"После небольшой задержки Шукаку стреляет большим ветряным снарядом. Снаряд отталкивает врагов и способен уничтожать леса."
 
 		//Neji special bonus
 		//10: +9 Strength / +20 Attack Speed

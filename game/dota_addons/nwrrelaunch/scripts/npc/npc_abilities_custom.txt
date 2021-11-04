@@ -27,6 +27,8 @@
 #base "abilities/madara/madara.txt"
 #base "abilities/haku/haku.txt"
 #base "abilities/sai/sai.txt"
+#base "abilities/shukaku/shukaku.txt"
+#base "abilities/beasts/beasts.txt"
 
 // Dota Heroes File
 "DOTAAbilities"

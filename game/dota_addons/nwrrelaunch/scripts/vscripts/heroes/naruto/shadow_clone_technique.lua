@@ -1,14 +1,6 @@
 LinkLuaModifier("modifier_generic_charges", "modifiers/modifier_generic_charges", LUA_MODIFIER_MOTION_NONE)
 
-special_bonus_naruto_4 = special_bonus_naruto_4 or class({})
-
 naruto_shadow_clone_technique = naruto_shadow_clone_technique or class({})
-
-function naruto_shadow_clone_technique:Precache( context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_cast.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_fire.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/shadow_clone_talking.vsndevts", context )
-end
 
 function naruto_shadow_clone_technique:IsHiddenWhenStolen() return false end
 function naruto_shadow_clone_technique:IsRefreshable() return true end
@@ -17,11 +9,6 @@ function naruto_shadow_clone_technique:IsNetherWardStealable() return false end
 
 function naruto_shadow_clone_technique:GetIntrinsicModifierName()
 	return "modifier_generic_charges"
-end
-
-function naruto_shadow_clone_technique:OnAbilityPhaseStart()
-	self:GetCaster():EmitSound("shadow_clone_cast")
-	return true
 end
 
 function naruto_shadow_clone_technique:OnSpellStart()
@@ -35,7 +22,7 @@ function naruto_shadow_clone_technique:OnSpellStart()
 		-- "API Additions - Global (Server): * CreateIllusions( hOwner, hHeroToCopy, hModifierKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace ) Note: See script_help2 for supported modifier keys"
 		self.illusion = CreateIllusions(self:GetCaster(), self:GetCaster(), {
 			outgoing_damage 			= self:GetSpecialValueFor("outgoing_damage"),
-			incoming_damage				= self:GetSpecialValueFor("incoming_damage") + self:GetCaster():FindTalentValue("special_bonus_naruto_5"),
+			incoming_damage				= self:GetSpecialValueFor("incoming_damage"),
 			bounty_base					= self:GetCaster():GetIllusionBounty(),
 			bounty_growth				= nil,
 			outgoing_damage_structure	= nil,
@@ -65,6 +52,5 @@ function naruto_shadow_clone_technique:OnSpellStart()
 
 	end, 0.0)
 
-	self:GetCaster():EmitSound("shadow_clone_fire")
-	self:GetCaster():EmitSound("shadow_clone_talking")
+	self:GetCaster():EmitSound("Hero_NagaSiren.MirrorImage")
 end

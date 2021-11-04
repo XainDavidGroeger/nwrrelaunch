@@ -14,7 +14,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.7"
+		"AbilityCastPoint"				"0.6"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"12.0"
+				"duration"					"8.0"
 			}
 			"03"
 			{
@@ -47,7 +47,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"knockback_duration"		"0.5"
+				"knockback_duration"		"1.0"
 			}
 			"05"
 			{
@@ -57,7 +57,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"knockback_distance"		"600"
+				"knockback_distance"		"450"
 			}
 		}
 	}

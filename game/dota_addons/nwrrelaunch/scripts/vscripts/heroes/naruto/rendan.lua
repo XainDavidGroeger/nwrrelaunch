@@ -3,18 +3,11 @@ LinkLuaModifier("modifier_naruto_rendan_boost", "heroes/naruto/rendan", LUA_MODI
 
 naruto_rendan = naruto_rendan or class({})
 
-function naruto_rendan:Precache( context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rendan_talking.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/heroes/naruto/rendan_fire.vsndevts", context )
-end
-
 function naruto_rendan:GetIntrinsicModifierName()
 	return "modifier_naruto_rendan"
 end
 
 function naruto_rendan:OnSpellStart()
-	self:GetCaster():EmitSound("rendan_talking")
-	self:GetCaster():EmitSound("rendan_fire")
 	for k, v in pairs(Entities:FindAllByClassname("npc_dota_hero_dragon_knight")) do
 		if v:GetTeam() == self:GetCaster():GetTeam() then
 			local distance = (v:GetAbsOrigin() - self:GetCaster():GetAbsOrigin()):Length2D()
@@ -55,7 +48,7 @@ end
 
 function modifier_naruto_rendan:OnIntervalThink()
 	if self.bRushChecking and self:GetParent():GetAggroTarget() == self.target and (self.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= self:GetAbility():GetTalentSpecialValueFor("max_distance") then
-		self:GetParent():EmitSound("rendan_fire")
+		self:GetParent():EmitSound("Hero_PhantomLancer.PhantomEdge")
 
 		local rush_modifier = self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_naruto_rendan_boost", {duration = 5})
 
@@ -81,7 +74,7 @@ function modifier_naruto_rendan:OnOrder(keys)
 	if keys.unit == self:GetParent() and self:GetAbility() and caster_ability and caster_ability:GetAutoCastState() and self:GetAbility():IsCooldownReady() and not self:GetParent():PassivesDisabled() and keys.target then
 		if keys.order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
 			if (keys.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= GetAbilityKV(self:GetAbility():GetAbilityName(), "AbilityCastRange", self:GetAbility():GetLevel()) and (keys.target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() >= self:GetAbility():GetTalentSpecialValueFor("min_distance") then
-				self:GetParent():EmitSound("rendan_fire")
+				self:GetParent():EmitSound("Hero_PhantomLancer.PhantomEdge")
 
 				local rush_modifier
 
@@ -109,7 +102,7 @@ end
 function modifier_naruto_rendan:OnAttackRecord(keys)
 	if keys.attacker == self:GetParent() and self:GetAbility() and not self:GetAbility():GetToggleState() and self:GetAbility():IsCooldownReady() and self:GetParent():HasScepter() and not keys.no_attack_cooldown and not self:GetParent():PassivesDisabled() then
 		if not self:GetParent():HasModifier("modifier_naruto_rendan_boost") then
-			self:GetParent():EmitSound("rendan_fire")
+			self:GetParent():EmitSound("Hero_PhantomLancer.PhantomEdge")
 		
 			local rush_modifier = self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_naruto_rendan_boost", {duration = 5})
 		

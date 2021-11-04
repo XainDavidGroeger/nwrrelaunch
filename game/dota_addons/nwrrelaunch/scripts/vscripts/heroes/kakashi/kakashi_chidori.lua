@@ -72,20 +72,22 @@ function kakashi_chidori:OnChannelFinish(bInterrupted)
 	local ability_level = self:GetLevel()
 	local velocity = self:GetSpecialValueFor("speed")
 
-
 	if bInterrupted == true then
 		self.caster:StopSound("kakashi_raikiri_cast")
 		--self.target:StopSound("kakashi_raikiri_impact")
 	    self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
 	    self.caster:RemoveGesture(ACT_DOTA_CHANNEL_ABILITY_4)
 	    self.caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_5)
-		ParticleManager:DestroyParticle(self.chidori_particle, true)
-		ParticleManager:ReleaseParticleIndex(self.chidori_particle)
+		if self.chidori_particle ~= nil then
+		    ParticleManager:DestroyParticle(self.chidori_particle, true)
+		    ParticleManager:ReleaseParticleIndex(self.chidori_particle)
+		end
 		if self.caster:FindModifierByName("modifier_stunned") then
 		    self.caster:RemoveModifierByName("modifier_stunned")
 		end
 		self:RemovePhysics(self.caster)
 		self.ability:EndCooldown()
+		return
 	else
 		Timers:CreateTimer(0.1, function() -- 2 = delay before Kakashi runs at the target
 			--EmitSoundOn("kakashi_raikiri_loop", caster)
@@ -156,7 +158,6 @@ function kakashi_chidori:OnChannelFinish(bInterrupted)
 			end
 			return 0.03
 		end)
-		
 	end
 end
 

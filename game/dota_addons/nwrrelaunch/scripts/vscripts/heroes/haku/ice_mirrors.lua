@@ -139,8 +139,6 @@ function modifier_haku_mirror_mirror:OnDeath(keys)
 	ParticleManager:SetParticleControl(explosion, 0, self:GetParent():GetAbsOrigin())
 	ParticleManager:ReleaseParticleIndex(explosion)
 
-	self:GetParent():Destroy()
-
 	if self:GetRemainingTime() <= 0 then
 		return
 	end
@@ -159,6 +157,10 @@ function modifier_haku_mirror_mirror:OnDeath(keys)
 	if should_die and keys.attacker then
 		self:GetAbility():GetCaster():Kill(nil, keys.attacker)
 	end
+	
+	Timers:CreateTimer(0.2, function()
+	    self:GetParent():Destroy()
+	end)
 end
 
 function modifier_haku_mirror_mirror:GetModifierIncomingDamage_Percentage()

@@ -1,0 +1,64 @@
+"DOTAAbilities"
+{
+	"shukaku_sabaku_kyuu"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/shukaku/shukaku_sabaku_kyuu.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"shukaku_sabaku_kyuu"
+		"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0 0 0 0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"2.8"
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"tick_interval"					"0.1"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg"						"320"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"2.8"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay_to_dmg"					"1.4"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"75"
+			}
+		}
+	}
+}

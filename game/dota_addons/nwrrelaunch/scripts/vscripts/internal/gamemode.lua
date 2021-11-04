@@ -20,6 +20,7 @@ function GameMode:_InitGameMode()
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
 	GameRules:SetShowcaseTime(0)
 	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+	CUSTOM_TEAM_PLAYER_COUNT = {}
 	
 	GameRules:SetFirstBloodActive( ENABLE_FIRST_BLOOD )
 	GameRules:SetHideKillMessageHeaders( HIDE_KILL_BANNERS )

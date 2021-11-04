@@ -1426,6 +1426,21 @@
 		"npc_dota_hero_batrider"  											"Sarutobi"
 		"DOTA_Tooltip_ability_sarutobi_katon_doton_combo"					"Katon/Doton Combo"
 		"DOTA_Tooltip_ability_sarutobi_katon_doton_combo_Description"		"By combining Katon: karyuu endan with Doton: doryuu taiga Sarutobi cause heavy burns to enemies and also weaken their attacks while they are burning. Last for 10 seconds."
+		
+		// Shukaku
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu"						"<b><font color='#D86C26'>Sand Coffin</font></b>"
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_lore"					"Sabaku Kyu"
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_description"			"<b><font color='#FFFFFF'>CHANNELED</font></b> - Encases the target in sand <b><font color='#D86C26'>fully disabling them while Channeled.</font></b> <br><br> <b><font color='#D86C26'>Magic Damage is dealt</font></b> after <b><font color='#FFFFFF'>1.4</font></b> seconds of being Channeled."
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_dmg"				"DAMAGE: "
+		"DOTA_Tooltip_ability_shukaku_sabaku_kyuu_duration"				"DURATION: "
+		
+		// beasts passive
+		"DOTA_Tooltip_ability_tailed_beast_slayer"						"<b>ANCIENT GRUDGE</b>"
+		"DOTA_Tooltip_ability_tailed_beast_slayer_description"			"Gains 20% bonus damage and 7% damage reduction per stack against enemies who previously killed a Tailed Beast. Up to 80% bonus damage and 28% damage reduction."
+		
+		// wind blast shukaku
+		"DOTA_Tooltip_ability_shukaku_futon_sasandan"						"<b>Futon: Sasandan</b>"
+		"DOTA_Tooltip_ability_shukaku_futon_sasandan_description"			"After a short delay, Shukaku fires a large wind projectile. The projectile repels enemies and is capable of destroying forests."
 	
 		//------------------------
 		// Items

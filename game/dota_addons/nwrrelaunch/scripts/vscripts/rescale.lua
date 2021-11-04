@@ -1,6 +1,6 @@
 function GameMode:RescaleUnit( unit )
 	if unit:GetName() == "npc_dota_roshan" then 
-		GameMode:kyuubi(unit)
+		--GameMode:kyuubi(unit)
 	elseif  unit:GetName() == "npc_dota_courier" then 
 		GameMode:rescaleCourier(unit)
 	elseif  unit:GetModelName() == "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl" then 

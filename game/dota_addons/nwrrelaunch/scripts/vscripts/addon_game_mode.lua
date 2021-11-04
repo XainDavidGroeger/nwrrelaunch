@@ -95,3 +95,8 @@ function Activate()
 	GameRules.GameMode:InitGameMode()
 	GameRules:SetCustomGameAllowHeroPickMusic(false)
 end
+
+function GameMode:OnGameInProgress()
+    print("OnGameInProgress")
+	GameMode:TailedSpawner()
+end

@@ -47,7 +47,7 @@
 	 
 		"AttackRange"				"100"
 		"StatusHealth"				"205"
-		"StatusHealthRegen"			"0.000000"
+		"StatusHealthRegen"			"0.300000"
 		"AttackDamageMin"			"34"
 		"AttackDamageMax"			"37"
 		"AttackRate"				"1.700000"

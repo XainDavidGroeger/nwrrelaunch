@@ -45,6 +45,9 @@ require('settings')
 -- events.lua is where you can specify the actions to be taken when any event occurs and is one of the core barebones files.
 require('events')
 
+LinkLuaModifier("modifier_courier_speed", "scripts/vscripts/modifiers/modifier_courier_speed.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_beastmaster", "scripts/vscripts/modifiers/modifier_beastmaster.lua", LUA_MODIFIER_MOTION_NONE)
+
 --[[
 	This function should be used to set up Async precache calls at the beginning of the gameplay.
 
@@ -185,8 +188,55 @@ function GameMode:OnNewHeroChosen(event)
 
 end
 
-function GameMode:OnEntityKilled(event)
+function GameMode:TailedSpawner()
+    local point = Entities:FindByName( nil, "tail_beast_spawner"):GetAbsOrigin()
+	
+	if point == nil then
+	    return
+	end
+	
+	Timers:CreateTimer(10, function()
+	    local rand = math.random(1, 9)
+		--self.tailedBeastUnit = CreateUnitByName( "npc_dota_tailed_beast_1", point + RandomVector( RandomFloat( 0, 100 ) ), true, nil, nil, DOTA_TEAM_NEUTRALS )
+		self.tailedBeastUnit = CreateUnitByName( "npc_dota_tailed_beast_" .. rand, point + RandomVector( RandomFloat( 0, 100 ) ), true, nil, nil, DOTA_TEAM_NEUTRALS )
+		self.tailedBeastUnit:SetForwardVector(Entities:FindByName( nil, "tail_beast_spawner"):GetForwardVector())
+	    print(self.tailedBeastUnit:GetUnitName())
+	end)
+end
 
+function GameMode:TailedBeastBuffs(target)
+    self.buffTailName = 'modifier_courier_speed'
+	
+    if target:GetUnitName() == "npc_dota_tailed_beast_1" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_2" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_3" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_4" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_5" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_6" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_7" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_8" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+	if target:GetUnitName() == "npc_dota_tailed_beast_9" then
+	    self.buffTailName = 'modifier_courier_speed'
+	end
+end
+
+function GameMode:OnEntityKilled(event)
 	local hAttacker = ( type(event.entindex_attacker) == "number" ) and EntIndexToHScript(event.entindex_attacker) or nil
 	local hTarget   = ( type(event.entindex_killed) == "number" ) and EntIndexToHScript(event.entindex_killed) or nil
 
@@ -197,6 +247,51 @@ function GameMode:OnEntityKilled(event)
 	if hTarget:GetName() == "dota_goodguys_fort" then
 		print("AKATSUKI WON")
 		sendGameEndStatsToApi(3)
+	end
+	
+	if self.tailedBeastUnit ~= nil then
+	    if hAttacker and hTarget == self.tailedBeastUnit then
+	        print(hAttacker:GetTeamNumber())
+	    	
+	    	GameMode:TailedBeastBuffs(hTarget)
+			
+			if hAttacker:HasModifier("modifier_beastmaster") then
+				local counter = hAttacker:FindModifierByName("modifier_beastmaster")
+				local current_stacks = counter:GetStackCount()
+				if not current_stacks == 4 then
+				    counter:SetStackCount(current_stacks + 1)
+				end
+			end
+			if not hAttacker:HasModifier("modifier_beastmaster") then
+			    hAttacker:AddNewModifier(hTarget, nil, "modifier_beastmaster",{})
+			end
+	    	
+	    	local tailedBeastKiller = FindUnitsInRadius(
+	        	hAttacker:GetTeamNumber(),	-- int, your team number
+	        	hAttacker:GetAbsOrigin(),	-- point, center point
+	        	nil,	-- handle, cacheUnit. (not known)
+	        	FIND_UNITS_EVERYWHERE,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+	        	DOTA_UNIT_TARGET_TEAM_FRIENDLY,	-- int, team filter
+	        	DOTA_UNIT_TARGET_HERO,	-- int, type filter
+	        	DOTA_UNIT_TARGET_FLAG_INVULNERABLE,	-- int, flag filter
+	        	0,	-- int, order filter
+	        	false	-- bool, can grow cache
+	        )
+	    	
+	    	for _,friendlyBeastKiller in pairs(tailedBeastKiller) do
+			    if friendlyBeastKiller:HasModifier(self.buffTailName) then
+			        local counter = friendlyBeastKiller:FindModifierByName(self.buffTailName)
+				    local current_stacks = counter:GetStackCount()
+				    counter:SetStackCount(current_stacks + 1)
+			    end
+				
+				if not friendlyBeastKiller:HasModifier(self.buffTailName) then
+			        friendlyBeastKiller:AddNewModifier(hAttacker, nil, self.buffTailName, {})
+			    end
+	    	end
+	    	
+	        GameMode:TailedSpawner()
+	    end
 	end
 
 	if hTarget:GetOwner() ~= nil then
