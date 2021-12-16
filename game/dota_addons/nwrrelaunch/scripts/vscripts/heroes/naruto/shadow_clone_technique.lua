@@ -1,7 +1,5 @@
 LinkLuaModifier("modifier_generic_charges", "modifiers/modifier_generic_charges", LUA_MODIFIER_MOTION_NONE)
 
-special_bonus_naruto_4 = special_bonus_naruto_4 or class({})
-
 naruto_shadow_clone_technique = naruto_shadow_clone_technique or class({})
 
 function naruto_shadow_clone_technique:Precache( context )
@@ -17,6 +15,10 @@ function naruto_shadow_clone_technique:IsNetherWardStealable() return false end
 
 function naruto_shadow_clone_technique:GetIntrinsicModifierName()
 	return "modifier_generic_charges"
+end
+
+function naruto_shadow_clone_technique:GetCooldown(iLevel)
+	return self.BaseClass.GetCooldown(self, iLevel) - self:GetCaster():FindTalentValue("special_bonus_naruto_5")
 end
 
 function naruto_shadow_clone_technique:OnAbilityPhaseStart()
@@ -35,7 +37,7 @@ function naruto_shadow_clone_technique:OnSpellStart()
 		-- "API Additions - Global (Server): * CreateIllusions( hOwner, hHeroToCopy, hModifierKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace ) Note: See script_help2 for supported modifier keys"
 		self.illusion = CreateIllusions(self:GetCaster(), self:GetCaster(), {
 			outgoing_damage 			= self:GetSpecialValueFor("outgoing_damage"),
-			incoming_damage				= self:GetSpecialValueFor("incoming_damage") + self:GetCaster():FindTalentValue("special_bonus_naruto_5"),
+			incoming_damage				= self:GetSpecialValueFor("incoming_damage"),
 			bounty_base					= self:GetCaster():GetIllusionBounty(),
 			bounty_growth				= nil,
 			outgoing_damage_structure	= nil,

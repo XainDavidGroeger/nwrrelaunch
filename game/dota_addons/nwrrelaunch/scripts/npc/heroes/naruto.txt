@@ -13,21 +13,20 @@
 		"Ability1"  				"naruto_shadow_clone_technique"
 		"Ability2"  				"naruto_rasengan" 
 		"Ability3"  				"naruto_rendan" 
-		"Ability4"					"naruto_tailed_beast_bomb"
-		"Ability5"					"generic_hidden"
+		"Ability4"					"naruto_rasenshuriken"
+		"Ability5"					"naruto_tailed_beast_bomb"
 		"Ability6"  				"naruto_kyuubi_chakra_mode"
-		"Ability7"  				"naruto_rasenshuriken"
 
 		"Ability10"					"special_bonus_all_stats_5"
-		"Ability11"					"special_bonus_naruto_1"
+		"Ability11"					"special_bonus_naruto_6"
 
 		"Ability12"					"special_bonus_naruto_2"
 		"Ability13"					"special_bonus_naruto_3"
 
-		"Ability14"					"special_bonus_naruto_4"  //kawazu kumite duration bonus
+		"Ability14"					"special_bonus_naruto_4"
 		"Ability15"					"special_bonus_naruto_5"
 
-		"Ability16"					"special_bonus_naruto_6"
+		"Ability16"					"special_bonus_naruto_1"
 		"Ability17"					"special_bonus_naruto_7"
 
 		"SoundSet"					"Punch"

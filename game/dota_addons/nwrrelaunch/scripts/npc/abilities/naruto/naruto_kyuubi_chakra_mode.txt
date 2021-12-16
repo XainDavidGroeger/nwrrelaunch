@@ -69,14 +69,14 @@
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"20 35 50"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"4.0"
 				"LinkedSpecialBonus"	"special_bonus_naruto_7"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"		"3 7 11"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.0"
 				"LinkedSpecialBonus"	"special_bonus_naruto_7"
 			}
 			"07"
@@ -93,6 +93,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tailed_beast_bomb_cd"	"10"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"active_regen_multiplier"	"300"
 			}
 		}
 	}

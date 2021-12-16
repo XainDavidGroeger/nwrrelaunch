@@ -44,17 +44,17 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"0.7"
+				"bonus_damage"				"0.7"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"	            	"75 125 175 225"
+				"damage"	            	"50 100 150 200"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"clone_damage"				"20 24 28 32"
+				"clone_damage"				"10 14 18 22"
 			}
 			"06"
 			{

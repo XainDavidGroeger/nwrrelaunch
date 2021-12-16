@@ -1,17 +1,15 @@
 	
-    "DOTAAbilities"
+"DOTAAbilities"
 {
-    
-
 	//=================================================================================================================
 	// Naruto Special Bonus
 	//=================================================================================================================	
-	// 25: Tailed Beast Bomb Pure Damage / +4 Shadow Clone Charges after KCM Expires
-	// 20: -200% Shadow Clone Incoming Damage / +220 Rasengan/Rasenshuriken Damage
-	// 15: +12 KCM Health Regen / +7 KCM Mana Regen
-	// 10: +5 All Stats / +1 Shadow Clone Max Charges
+	// 25: Tailed Beast Bomb Pure Damage / +3 Shadow Clone Max Charges
+	// 20: -2s Shadow Clone Charge Time  / +230 Rasengan Damage
+	// 15: +4 Kyuubi Chakra Health Regen / +2.50 Kyuubi Chakra Mana Regen 
+	// 10: +5 All Stats / +300 Rendan Movement Speed
 
-	// +1 Shadow Clone Max Charges
+	// + Shadow Clone Max Charges
 	"special_bonus_naruto_1"	
 	{
 		// General
@@ -32,12 +30,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"value"					"1"
+				"value"					"3"
 			}
 		}
 	}
 
-	// +7 KCM Mana Regen
+	// + KCM Mana Regen
 	"special_bonus_naruto_2"	
 	{
 		// General
@@ -57,13 +55,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"7"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"2.5"
 			}
 		}
 	}
 
-	// +12 KCM Health Regen
+	// + KCM Health Regen
 	"special_bonus_naruto_3"	
 	{
 		// General
@@ -83,8 +81,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"12"
+				"var_type"				"FIELD_FLOAT"
+				"value"					"4.0"
 			}
 		}
 	}
@@ -110,7 +108,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"220"
+				"value"					"230"
 			}
 		}
 	}
@@ -137,12 +135,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"-200"
+				"value"					"-2"
 			}
 		}
 	}
 
-	// +4 Shadow Clone Charges after KCM Expires
+	// + Rendan ms
 	"special_bonus_naruto_6"	
 	{
 		// General
@@ -163,7 +161,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"4"
+				"value"					"300"
 			}
 		}
 	}

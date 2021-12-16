@@ -39,7 +39,7 @@ function modifier_naruto_rendan:IsPurgable() return false end
 
 function modifier_naruto_rendan:DeclareFunctions() return {
 	MODIFIER_EVENT_ON_ORDER,
-	MODIFIER_EVENT_ON_ATTACK_RECORD
+	MODIFIER_EVENT_ON_ATTACK_RECORD,
 } end
 
 function modifier_naruto_rendan:OnCreated()
@@ -136,15 +136,21 @@ function modifier_naruto_rendan_boost:DeclareFunctions() return {
 	MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN,
 	MODIFIER_EVENT_ON_ORDER,
 	MODIFIER_EVENT_ON_STATE_CHANGED,
-	MODIFIER_EVENT_ON_ATTACK_START
+	MODIFIER_EVENT_ON_ATTACK_LANDED,
+	MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 } end
 
 function modifier_naruto_rendan_boost:OnCreated(keys)
-	self.bonus_speed = self:GetAbility():GetTalentSpecialValueFor("charge_speed")
+	self.bonus_speed = self:GetAbility():GetTalentSpecialValueFor("charge_speed") + self:GetCaster():FindTalentValue("special_bonus_naruto_6")
+	self.bonus_damage = self:GetAbility():GetTalentSpecialValueFor("damage")
 
 	self:StartIntervalThink(FrameTime())	
 
 	if not IsServer() then return end
+
+	if self:GetParent():IsIllusion() then
+		self.bonus_damage = self:GetAbility():GetTalentSpecialValueFor("clone_damage")
+	end
 
 	self.destroy_orders	=
 	{
@@ -192,8 +198,12 @@ function modifier_naruto_rendan_boost:OnStateChanged(keys)
 	end
 end
 
-function modifier_naruto_rendan_boost:OnAttackStart(keys)
+function modifier_naruto_rendan_boost:OnAttackLanded(keys)
 	if keys.attacker == self:GetParent() and not keys.no_attack_cooldown then		
 		self:Destroy()
 	end
+end
+
+function modifier_naruto_rendan_boost:GetModifierPreAttack_BonusDamage()
+	return self.bonus_damage
 end
