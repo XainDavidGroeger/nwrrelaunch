@@ -9,7 +9,8 @@
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_MINIMAP, true );
 		GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );
 	</script>
-	<script scr="file://{recources}/scripts/custom_game/better_cooldown.js"></script>
+
+<!--	<script scr="file://{recources}/scripts/custom_game/better_cooldown.js"> </script> -->
 
 	<Panel>
 		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/vanilla_hero_selection_override.xml" />
