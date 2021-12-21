@@ -248,6 +248,19 @@ function GameMode:OnEntityKilled(event)
 		print("AKATSUKI WON")
 		sendGameEndStatsToApi(3)
 	end
+
+        if GetMapName() == "duel" then
+            if hTarget:GetName() == "dota_badguys_tower2_mid" then
+	    		print("KONOHA WON")
+	    	    sendGameEndStatsToApi(2)
+            	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+	    	end
+            if hTarget:GetName() == "dota_goodguys_tower2_mid" then
+	    		print("AKATSUKI WON")
+	    	    sendGameEndStatsToApi(3)
+            	GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+            end
+        end
 	
 	if self.tailedBeastUnit ~= nil then
 	    if hAttacker and hTarget == self.tailedBeastUnit then
